@@ -1,9 +1,14 @@
 #!/usr/bin/env sh
 
-# Change the wallpaper and generate the colorscheme
+# Wallpaper utility
 # by David Oniani <onianidavid@gmail.com>
 # License: GNU GPLv3
 
-# Change a wallpaper and generate a colorscheme
 # NOTE: `wallpaper` command works only on macOS
-wallpaper set "$1" && wal -n -i "$1"
+
+# Set a particular wallpaper
+[ -f "$1" ] && wallpaper set "$1" && wal -n -i "$1"
+
+# Set a random wallpaper from the directory
+[ -d "$1" ] && wp="$(find "$1" | shuf -n 1)" && wallpaper set "$wp" && \
+  wal -n -i "$wp"
