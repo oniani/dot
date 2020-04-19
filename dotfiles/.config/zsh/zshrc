@@ -13,7 +13,7 @@
 # Environment Variables {{{
 
 # Make directories reachable
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.config/cargo/bin:$PATH"
 export PATH="$HOME/.scripts:$PATH"
 
 # Core utilities
@@ -25,19 +25,22 @@ export PLAYER="mpv"
 export READER="open -a /Applications/Preview.app"
 export TERMINAL="kitty"
 
+# fzf
+export FZF_DEFAULT_COMMAND="fd --hidden --type f"
+export FZF_DEFAULT_OPTS="--color=16 --height=50% --reverse"
+
 # nnn
 export NNN_BMS="D:~/Documents;d:~/Desktop;p:~/Pictures;w:~/work-in-progress;"
 export NNN_PLUG='d:newdir;f:newfile;g:githubclone;p:pager'
 export NNN_TRASH=1
 
 # Move to ~/.config
+export CARGO_HOME="$HOME/.config/cargo"
 export IPYTHONDIR="$HOME/.config/ipython"
 export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"
 
 # Additional settings
 export CLICOLOR="yes"
-export FZF_DEFAULT_COMMAND="fd --hidden --type f"
-export FZF_DEFAULT_OPTS="--color=16 --height=50% --reverse"
 export HISTFILE="$HOME/.cache/zsh_history"
 export HISTSIZE=SAVEHIST=1000
 export LANG=en_US.UTF-8
