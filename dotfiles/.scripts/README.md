@@ -6,6 +6,7 @@ The list of currently available scripts is shown below.
 | -------------- | -------------------------------------------- |
 | compile_or_run | General purpose compiler and runner          |
 | fe             | Open the selected file in the default editor |
+| fkill          | Fuzzy search and kill processes              |
 | github_setup   | Clone Github repositories                    |
 | glp            | Lazy git push                                |
 | lorem_ipsum    | Generate a dummy text                        |
