@@ -41,7 +41,7 @@ export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"
 export RUSTUP_HOME="$HOME/.config/rustup"
 
 # Move to ~/.cache
-export HISTFILE="$HOME/.cache/zsh_history"
+export HISTFILE="$HOME/.cache/zsh/zsh_history"
 export NPM_CONFIG_CACHE="$HOME/.cache/npm"
 
 # Additional settings
@@ -118,7 +118,7 @@ alias clock="tty-clock -c -s -t"
 autoload -Uz colors && colors
 
 # Load and enable completion
-autoload -Uz compinit && compinit -d "$HOME/.cache/zcompdump_$ZSH_VERSION"
+autoload -Uz compinit && compinit -d "$HOME/.cache/zsh/zcompdump_$ZSH_VERSION"
 
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
