@@ -1,0 +1,144 @@
+#!/usr/bin/env sh
+
+# UNIX-based meta distribution setup wizard
+# by David Oniani <onianidavid@gmail.com>
+# License: GNU GPLv3
+
+help() {
+  printf "UNIX-based meta distribution setup wizard
+by David Oniani <onianidavid@gmail.com>
+License: GNU GPLv3
+
+SYNOPSIS
+  ./setup [cfg | bsc | vim | zsh | py3 | rst | pkg | all]
+
+OPTIONS
+  cfg  : install configuration files
+  bsc  : install basic         environment
+  vim  : install (Neo)Vim      plugins
+  zsh  : install Zsh           plugins
+  py3  : install Python3       packages
+  rst  : install Rust          packages
+  pkg  : install Homebrew      packages
+  all  : install everything
+
+Running ./setup with no options will print a help message (this message)
+
+EXAMPLES
+  ./setup pkg
+  ./setup vim
+  ./setup zsh
+"
+}
+
+config_setup() {
+  arrange && vim_install && zsh_install
+}
+
+arrange() {
+  cp -f  "./dotfiles/ghci.conf"    "$HOME/.ghc"
+
+  cp -Rf "./dotfiles/.config/."    "$HOME/.config"
+  cp -Rf "./dotfiles/.scripts"     "$HOME"
+  cp -Rf "./wallpapers"            "$HOME/Pictures"
+
+  ln -sf "$HOME/.config/zsh/zshrc" "$HOME/.zshrc"
+}
+
+vim_install() {
+  printf "Installing and updating Vim plugins...\n"
+  $EDITOR +PlugUpgrade +PlugClean! +PlugInstall +PlugUpdate +qa!
+  printf "Done!\n\n"
+}
+
+zsh_install() {
+  printf "Removing %s/.config/zsh/plugin/zsh-autosuggestions...\n" "$HOME"
+  rm -rf "$HOME/.config/zsh/plugin/zsh-autosuggestions"
+  printf "Done!\n"
+
+  printf "Removing %s/.config/zsh/plugin/zsh-syntax-highlighting...\n" "$HOME"
+  rm -rf "$HOME/.config/zsh/plugin/zsh-syntax-highlighting"
+  printf "Done!\n\n"
+
+  printf "Installing zsh-autosuggestions...\n"
+  git clone https://github.com/zsh-users/zsh-autosuggestions \
+    "$HOME/.config/zsh/plugin/zsh-autosuggestions" \
+    --quiet
+  printf "Done!\n"
+
+  printf "Installing zsh-syntax-highlighting...\n"
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+    "$HOME/.config/zsh/plugin/zsh-syntax-highlighting" \
+    --quiet
+  printf "Done!\n"
+}
+
+pip_install() {
+  printf "Installing Python 3 packages..."
+  python3 -m pip install black ipython jupyterlab mypy pygments pylint pywal
+  printf "Done!"
+}
+
+brew_install() {
+  brew update
+  brew upgrade
+  brew doctor
+  brew cleanup
+
+  # Language support
+  brew install ghc lua node perl python r ruby rustup && rustup-init
+
+  # Linting
+  brew install hlint shellcheck
+
+  # Formatting
+  brew install prettier
+
+  # File format handlers
+  brew install ffmpeg imagemagick p7zip pandoc
+
+  # Music, Videos, and navigation
+  brew install mpc mpd mpv ncmpcpp neovim newsboat nnn
+
+  # Fancy
+  brew install bat cmatrix figlet wallpaper
+
+  # System-wide
+  brew install coreutils fd findutils fzf htop neofetch rg tree trash-cli pidof
+
+  # Web
+  brew install curl git youtube-dl
+
+  # Cask
+  brew cask install amethyst firefox kitty rstudio mactex-no-gui
+
+  # Install Zathura document viewer (currently, not in use)
+  # brew cask install xquartz
+  # brew tap zegervdv/zathura
+  # brew install zathura
+  # brew install zathura-pdf-poppler
+  # mkdir -p $(brew --prefix zathura)/lib/zathura
+  # ln -s $(brew --prefix zathura-pdf-poppler)/libpdf-poppler.dylib $(brew --prefix zathura)/lib/zathura/libpdf-poppler.dylib
+  # brew untap zegervdv/zathura
+
+  brew update
+  brew upgrade
+  brew doctor
+  brew cleanup
+}
+
+rust_install() {
+  rustup component add clippy rustfmt
+}
+
+case $1 in
+  cfg) arrange;;
+  bsc) config_setup;;
+  vim) vim_install;;
+  zsh) zsh_install;;
+  py3) pip_install;;
+  rst) rust_install;;
+  pkg) brew_install;;
+  all) brew_install && pip_install && rust_install && config_setup;;
+  *) help
+esac

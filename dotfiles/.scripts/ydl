@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+
+# Download audio/video files using youtube-dl
+# by David Oniani <onianidavid@gmail.com>
+# License: GNU GPLv3
+
+printf "Enter a link: "
+read -r link
+
+printf "[a] Audio\n"
+printf "[v] Video\n"
+printf "Option: "
+read -r option
+
+if [ "$option" = "a" ]; then
+  youtube-dl --add-metadata -cix -o \
+    "%(upload_date)s - %(duration)ss - %(title)s.%(ext)s" \
+    "$link"
+elif [ "$option" = "v" ]; then
+  youtube-dl --add-metadata -cio \
+    "%(upload_date)s - %(duration)ss - %(title)s.%(ext)s" \
+    "$link"
+else
+  printf "Unknown option\n"
+fi

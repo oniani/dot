@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+# Change the wallpaper at random (and generate a colorscheme)
+# by David Oniani <onianidavid@gmail.com>
+# License: GNU GPLv3
+
+wp="$(find "$HOME/Pictures/wallpapers" | shuf -n 1)"
+
+# NOTE: `wallpaper` command works only on macOS
+wallpaper set "$wp"
+
+# Generate a colorscheme
+wal -n -i "$wp"

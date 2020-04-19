@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+
+# Clone personal Github repositories
+# by David Oniani <onianidavid@gmail.com>
+# License: GNU GPLv3
+
+git clone https://github.com/oniani/arduino-stuff.git
+git clone https://github.com/oniani/bizarre-structures.git
+git clone https://github.com/oniani/blogplate.git
+git clone https://github.com/oniani/document-preparation.git
+git clone https://github.com/oniani/experiments.git
+git clone https://github.com/oniani/galton.git
+git clone https://github.com/oniani/ichigo.git
+git clone https://github.com/oniani/ira-analysis.git
+git clone https://github.com/oniani/miniframe.git
+git clone https://github.com/oniani/nero.git
+git clone https://github.com/oniani/notes.git
+git clone https://github.com/oniani/oniani.github.io.git
+git clone https://github.com/oniani/os-scheduling.git
+git clone https://github.com/oniani/pixelation.git
+git clone https://github.com/oniani/project-euler.git
+git clone https://github.com/oniani/profile-generation.git
+git clone https://github.com/oniani/purity.git
+git clone https://github.com/oniani/pyfunctional.git
+git clone https://github.com/oniani/quickspell.git
+git clone https://github.com/oniani/tictactoe.git
+git clone https://github.com/oniani/sat-sudoku.git
+git clone https://github.com/oniani/smart-jokes.git
+git clone https://github.com/oniani/tsds.git
+git clone https://github.com/oniani/ugcs.git
+git clone https://github.com/oniani/ugmath.git

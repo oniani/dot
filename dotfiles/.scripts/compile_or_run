@@ -1,0 +1,58 @@
+#!/usr/bin/env sh
+
+# General purpose compiler and runner
+# by David Oniani <onianidavid@gmail.com>
+# License: GNU GPLv3
+
+filename="./$1"
+basename="${filename%.*}"
+
+cppcompile() {
+  g++ -std=c++17 \
+      -o \
+      "$1" \
+      "$2" \
+      && \
+      "./$1"
+}
+
+mdcompile() {
+  pandoc -V fontsize=11pt \
+         -V geometry:a4paper \
+         -V linkcolor:blue \
+         -V mainfont="Latin Modern Roman" \
+         -V monofont="Hack Nerd Font" \
+         -V margin=1in \
+         -f markdown \
+         --highlight-style=pygments \
+         --pdf-engine=pdflatex \
+         "$1" \
+         -o \
+         "$2"
+}
+
+texcompile() {
+  latexmk -file-line-error \
+          -interaction=nonstopmode \
+          -pdf \
+          -shell-escape \
+          -synctex=1 \
+          -verbose \
+          "$1"
+}
+
+case $filename in
+  *.cpp) cppcompile "$basename.out" "$filename";;
+  *.dot) dot -Tpdf "$filename" -o "$basename.pdf";;
+  *.hs) runhaskell "$filename";;
+  *.md) mdcompile "$filename" "$basename.pdf";;
+  *.present) pandoc -t revealjs -s -o "$basename".html "$filename" -V revealjs-url=https://revealjs.com -V theme=solarized;;
+  *.py) python3 "$filename";;
+  *.R) Rscript "$filename";;
+  *.Rmd) Rscript -e "rmarkdown::render('$filename', 'pdf_document')";;
+  *.rs) cargo run "$filename";;
+  *.sh) sh "$filename";;
+  *.tex) texcompile "$filename";;
+  *.ts) tsc "$filename";;
+  *) printf "Unknown file format\n";;
+esac

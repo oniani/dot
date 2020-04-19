@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+# Make a note template
+# by David Oniani <onianidavid@gmail.com>
+# License: GNU GPLv3
+
+cp -R "$HOME/git-managed/document-preparation/note" "$1"
+cd "$1/note" || exit
+"$EDITOR" "note.md"

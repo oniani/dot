@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+# Create a new directory in nnn
+# by David Oniani <onianidavid@gmail.com>
+# License: GNU GPLv3
+
+printf "Enter dirname: "
+read -r dirname
+mkdir -p "$dirname"
