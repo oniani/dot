@@ -38,6 +38,7 @@ export NNN_TRASH=1
 export CARGO_HOME="$HOME/.config/cargo"
 export IPYTHONDIR="$HOME/.config/ipython"
 export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"
+export RUSTUP_HOME="$HOME/.config/rustup"
 
 # Additional settings
 export CLICOLOR="yes"
