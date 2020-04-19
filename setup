@@ -40,7 +40,6 @@ arrange() {
 
   cp -Rf "./dotfiles/.config/."    "$HOME/.config"
   cp -Rf "./dotfiles/.scripts"     "$HOME"
-  cp -Rf "./wallpapers"            "$HOME/Pictures"
 
   ln -sf "$HOME/.config/zsh/zshrc" "$HOME/.zshrc"
 }
