@@ -12,7 +12,7 @@ Clean templates and configuration files for various purposes.
 - [Philosophy](#philosophy)
 - [Setup](#setup)
 - [Z Shell](#z-shell)
-- [Vim](#vim)
+- [Neovim](#neovim)
 - [Automated Installation](#automated-installation)
 - [License](#license)
 
@@ -93,7 +93,7 @@ No plugin manager is used. Plugins are sourced at the end of `.zshrc`.
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
-### Vim
+### Neovim
 
 #### Plugins
 
