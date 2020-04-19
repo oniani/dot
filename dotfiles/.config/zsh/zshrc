@@ -40,9 +40,12 @@ export IPYTHONDIR="$HOME/.config/ipython"
 export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"
 export RUSTUP_HOME="$HOME/.config/rustup"
 
+# Move to ~/.cache
+export HISTFILE="$HOME/.cache/zsh_history"
+export NPM_CONFIG_CACHE="$HOME/.cache/npm"
+
 # Additional settings
 export CLICOLOR="yes"
-export HISTFILE="$HOME/.cache/zsh_history"
 export HISTSIZE=SAVEHIST=1000
 export LANG=en_US.UTF-8
 export LESSHISTFILE="-"
