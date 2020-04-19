@@ -1,11 +1,9 @@
 #!/usr/bin/env sh
 
-# Change the wallpaper and generate the colorscheme at random
+# Change the wallpaper and generate the colorscheme
 # by David Oniani <onianidavid@gmail.com>
 # License: GNU GPLv3
 
-wp="$(find "$HOME/git-managed/wallpapers/wallpapers" | shuf -n 1)"
-
 # Change a wallpaper and generate a colorscheme
 # NOTE: `wallpaper` command works only on macOS
-wallpaper set "$wp" && wal -n -i "$wp"
+wallpaper set "$1" && wal -n -i "$1"
