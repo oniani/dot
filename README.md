@@ -100,13 +100,13 @@ No plugin manager is used. Plugins are sourced at the end of `.zshrc`.
 Plugins are installed and managed using a minimalist plugin manager
 [vim-plug](https://github.com/junegunn/vim-plug).
 
+- [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
+- [ale](https://github.com/dense-analysis/ale)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [goyo.vim](https://github.com/junegunn/goyo.vim)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
-- [vim-surround](https://github.com/tpope/vim-surround)
-- [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
-- [ale](https://github.com/dense-analysis/ale)
 - [vim-polyglot](https://github.com/sheerun/vim-polyglot)
+- [vim-surround](https://github.com/tpope/vim-surround)
 
 #### Current Stats
 
@@ -115,13 +115,13 @@ Plugins arranged according to their startup time.
 | TOP | Time (ms) | Plugin         |
 | --- | --------- | -------------- |
 | 1   | 3.744     | vim-polyglot   |
-| 3   | 1.001     | ale            |
-| 4   | 0.749     | fzf.vim        |
-| 5   | 0.555     | fzf            |
-| 6   | 0.451     | vim-surround   |
-| 7   | 0.151     | vim-commentary |
-| 8   | 0.113     | VimCompletesMe |
-| 9   | 0.023     | goyo.vim       |
+| 2   | 1.001     | ale            |
+| 3   | 0.749     | fzf.vim        |
+| 4   | 0.555     | fzf            |
+| 5   | 0.451     | vim-surround   |
+| 6   | 0.151     | vim-commentary |
+| 7   | 0.113     | VimCompletesMe |
+| 8   | 0.023     | goyo.vim       |
 
 This results in an average of 6.727 ms delay for the startup time.
 
