@@ -1,7 +1,7 @@
 #
 # Filename: .zshrc
 # Author:   David Oniani
-# Modified: April 19, 2020
+# Modified: April 20, 2020
 #
 #          _
 #  _______| |__  _ __ ___
@@ -14,7 +14,7 @@
 
 # Make directories reachable
 export PATH="$HOME/.config/cargo/bin:$PATH"
-export PATH="$HOME/.scripts:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Core utilities
 export BROWSER="open -a /Applications/Firefox.app"
@@ -30,7 +30,7 @@ export FZF_DEFAULT_COMMAND="fd --hidden --type f"
 export FZF_DEFAULT_OPTS="--color=16 --height=50% --reverse"
 
 # nnn
-export NNN_BMS="D:~/Documents;d:~/Desktop;p:~/Pictures;w:~/work-in-progress;"
+export NNN_BMS="D:~/Downloads;d:~/Documents;p:~/Pictures;w:~/work-in-progress;"
 export NNN_PLUG='d:newdir;f:newfile;g:githubclone;p:pager'
 export NNN_TRASH=1
 
