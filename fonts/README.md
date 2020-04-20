@@ -2,7 +2,7 @@
 
 Below is the current list of fonts.
 
-- Hack Regular Nerd Font Complete.ttf
+- Hack Regular Nerd Font Complete Mono.ttf
   - Powerline-patched, supports glyphs, font awesome icons, etc.
 - lmroman12-regular.otf
   - Latin Modern Roman
