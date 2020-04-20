@@ -107,6 +107,10 @@ setopt COMPLETE_ALIASES  # Complete aliases
 setopt GLOBDOTS          # Complete dotfiles
 
 # History settings
+HISTFILE="$HOME/.cache/zsh/zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+
 setopt EXTENDED_HISTORY        # Add timestamps
 setopt HIST_EXPIRE_DUPS_FIRST  # Remove duplicates first if over HISTSIZE
 setopt HIST_IGNORE_DUPS        # Ignore duplicated commands history list

@@ -40,12 +40,10 @@ export RUSTUP_HOME="$HOME/.config/rustup"
 export ZDOTDIR="$HOME/.config/zsh"
 
 # Move to ~/.cache
-export HISTFILE="$HOME/.cache/zsh/zsh_history"
 export MYPY_CACHE_DIR="$HOME/.cache/mypy"
 export NPM_CONFIG_CACHE="$HOME/.cache/npm"
 
 # Additional settings
 export CLICOLOR=1
-export HISTSIZE=SAVEHIST=1000
 export LANG=en_US.UTF-8
 export LESSHISTFILE="-"
