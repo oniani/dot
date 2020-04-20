@@ -50,7 +50,6 @@ export CLICOLOR=1
 export HISTSIZE=SAVEHIST=1000
 export LANG=en_US.UTF-8
 export LESSHISTFILE="-"
-export PS1="%F{11}%c %F{39}❯%F{reset_color} "
 
 # }}}
 
@@ -114,6 +113,9 @@ alias clock="tty-clock -c -s -t"
 # }}}
 
 # Z Shell Settings {{{
+
+# Set the prompt
+PROMPT="%F{11}%c %F{39}❯%F{reset_color} "
 
 # Load and enable colors
 autoload -Uz colors && colors
