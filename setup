@@ -39,7 +39,7 @@ arrange() {
   cp -f  "./dotfiles/ghci.conf"    "$HOME/.ghc"
 
   cp -Rf "./dotfiles/.config/."    "$HOME/.config"
-  cp -Rf "./dotfiles/.scripts"     "$HOME"
+  cp -Rf "./dotfiles/.local"       "$HOME"
 
   ln -sf "$HOME/.config/zsh/zshrc" "$HOME/.zshrc"
 }

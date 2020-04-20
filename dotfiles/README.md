@@ -13,4 +13,5 @@ Below is a brief description of the configuration files and dotfiles.
 | .config/nvim     | Configuration folder for neovim   |
 | .config/zathura  | Configuration folder for Zathura  |
 | .config/zsh      | Configuration folder for Z shell  |
+| .local/bin       | Custom scripts                    |
 | ghci.conf        | Configuration file for ghci       |
