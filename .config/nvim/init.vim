@@ -80,8 +80,21 @@ let g:ale_rust_cargo_use_clippy = 1
 
 " Convenience {{{
 
+" Make folded text darker
+highlight! Folded ctermbg=black
+
+" This command does three things:
+"   1. Cause the editor to use 'ftdetect' files to detect and set 'filetype'
+"      and trigger FileType events
+"   2. Cause the editor to autoload 'ftplugin' files on FileType events
+"   3. Cause the editor to autoload 'indent' files on FileType events
+filetype plugin indent on
+
+" Turn on the syntax highlighting
+syntax on
+
 " Set how many lines of history Vim has to remember
-set history=1000
+set history=10000
 
 " Allow full clipboard
 set clipboard=unnamedplus
@@ -99,16 +112,6 @@ set lazyredraw
 " Possibility to have more than one unsaved buffers
 set hidden
 
-" This command does three things:
-"   1. Cause the editor to use 'ftdetect' files to detect and set 'filetype'
-"      and trigger FileType events
-"   2. Cause the editor to autoload 'ftplugin' files on FileType events
-"   3. Cause the editor to autoload 'indent' files on FileType events
-filetype plugin indent on
-
-" Turn on the syntax highlighting
-syntax on
-
 " This command does two things:
 "   1. Set the numbering
 "   2. Display numbering relative to the line
@@ -124,16 +127,13 @@ set splitbelow splitright
 set mouse=a
 
 " Set the GUI font
-set guifont=Hack\ Nerd\ Font:h16
+set guifont=Hack\ Nerd\ Font\ Mono:h16
 
 " UTF-8 encoding
 set encoding=utf-8
 
 " Get rid of the statusline
 set laststatus=0
-
-" Make folded text darker
-highlight! Folded ctermbg=black
 
 " }}}
 
