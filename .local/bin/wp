@@ -10,5 +10,5 @@
 [ -f "$1" ] && wallpaper set "$1" && wal -n -i "$1"
 
 # Set a random wallpaper from the directory
-[ -d "$1" ] && wp="$(find "$1" | shuf -n 1)" && wallpaper set "$wp" && \
-  wal -n -i "$wp"
+[ -d "$1" ] && wp="$(find "$1" -type f | shuf -n 1)" && \
+  wallpaper set "$wp" && wal -n -i "$wp"
