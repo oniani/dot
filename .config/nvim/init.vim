@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: March 30, 2019
+" Modified: April 23, 2019
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -44,9 +44,7 @@ call plug#end()
 
 " }}}
 
-" Plugins' Settings {{{
-
-" Configuration for ALE {{{
+" Asynchronous Lint Engine (ALE) {{{
 
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
@@ -77,8 +75,6 @@ let g:ale_linters = {
 let g:ale_prettier_options = '--print-width=79'
 let g:ale_python_black_options = '--line-length=79'
 let g:ale_rust_cargo_use_clippy = 1
-
-" }}}
 
 " }}}
 
@@ -231,17 +227,5 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" Disable arrow keys in normal, visual, select, and operator-pending modes
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-
-" Disable arrow keys in the insert mode
-inoremap <Up> <Nop>
-inoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
 
 " }}}
