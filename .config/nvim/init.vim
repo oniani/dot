@@ -156,7 +156,6 @@ set wildmode=longest:full,full
 " Folding {{{
 
 set fillchars=fold:\   " Get rid of fold dashes
-set foldlevel=0        " Fold everything by default
 set foldmethod=marker  " Fold based on marker
 
 " }}}
