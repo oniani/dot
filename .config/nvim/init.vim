@@ -100,7 +100,6 @@ set history=10000
 set clipboard=unnamedplus
 
 " Some servers have issues with backup files
-set nobackup
 set nowritebackup
 
 " Stop generating annoying swap files
@@ -116,6 +115,13 @@ set hidden
 "   1. Set the numbering
 "   2. Display numbering relative to the line
 set number relativenumber
+
+" This means that on first <Tab> it will complete to the longest common string
+" and will invoke wildmenu (a horizontal and unobstructive little menu).
+" On the next <Tab>, it will complete the first alternative and the will start
+" to cycle through the rest. You can go back and forth with <Tab> and <S-Tab>
+" respectively.
+set wildmode=longest:full,full
 
 " Set a marker at column 80
 set colorcolumn=80
@@ -137,19 +143,12 @@ set laststatus=0
 
 " }}}
 
-" Tabs, Tab-completion, and Indentation {{{
+" Tabs and Indentation {{{
 
-set expandtab      " On pressing tab, insert 4 spaces
-set shiftwidth=2   " When indenting with '>', use 4 spaces width
-set softtabstop=2  " Show existing tab with 4 spaces width
+set expandtab      " On pressing tab, insert 2 spaces
+set shiftwidth=2   " When indenting with '>', use 2 spaces width
+set softtabstop=2  " Show existing tab with 2 spaces width
 set tabstop=2      " Number of spaces that a <Tab> in the file counts for
-
-" This means that on first <Tab> it will complete to the longest common string
-" and will invoke wildmenu (a horizontal and unobstructive little menu).
-" On the next <Tab>, it will complete the first alternative and the will start
-" to cycle through the rest. You can go back and forth with <Tab> and <S-Tab>
-" respectively.
-set wildmode=longest:full,full
 
 " }}}
 
