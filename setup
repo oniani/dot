@@ -108,7 +108,7 @@ brew_install() {
   brew install curl git youtube-dl
 
   # Cask
-  brew cask install amethyst firefox kitty rstudio mactex-no-gui
+  brew cask install amethyst firefox kitty mactex-no-gui rstudio signal
 
   # Install Zathura document viewer (currently, not in use)
   # brew cask install xquartz
