@@ -1,7 +1,7 @@
 #
 # Filename: config
 # Author:   David Oniani
-# Modified: August 20, 2019
+# Modified: April 28, 2020
 #                   __ _
 #   ___ ___  _ __  / _(_) __ _
 #  / __/ _ \| '_ \| |_| |/ _` |
@@ -20,7 +20,6 @@ mpd_host = "127.0.0.1"
 mpd_port = "6600"
 
 # Visualizer
-visualizer_color = "039"
 visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_in_stereo = "yes"
 visualizer_look = "▋▋"
@@ -28,16 +27,10 @@ visualizer_output_name = "visualizer"
 visualizer_type = "spectrum" (spectrum/wave)
 
 # Main window
-main_window_color= "039"
-current_item_prefix = "$(039)$r"
+current_item_prefix = "$r"
 current_item_suffix = "$/r$(end)"
 
-# Header window
-header_window_color = "039"
-
 # Progressbar
-progressbar_color = "039"
-progressbar_elapsed_color = "039"
 progressbar_look = "—▬—"
 
 # Currently playing
@@ -45,7 +38,6 @@ now_playing_prefix = "$b$2> "
 now_playing_suffix = "$8$/b"
 
 # Song formatting
-song_columns_list_format = "(25f)[039]{a} (25)[039]{b} (25)[039]{f|t} (8)[039]{l}"
 song_list_format = "%a - {%t}|{%f}$R%l"
 song_status_format = "$5%a $5%t $5%b"
 
