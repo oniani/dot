@@ -59,6 +59,7 @@ number of bugs (or no bugs at all).
 - Image Viewer: [Preview](<https://en.wikipedia.org/wiki/Preview_(macOS)>) / [sxiv](https://github.com/muennich/sxiv)
 - Music Player: [ncmpcpp](https://rybczak.net/ncmpcpp/) (with [mpd](https://www.musicpd.org/) as a backend)
 - Package Manager: [Homebrew](https://brew.sh/)
+- Password Manager: [Pass](https://www.passwordstore.org/)
 - RSS Reader: [Newsboat](https://newsboat.org/)
 - Shell: [Z Shell](http://zsh.sourceforge.net/)
 - Terminal Emulator: [kitty](https://sw.kovidgoyal.net/kitty/)
