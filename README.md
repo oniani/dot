@@ -2,8 +2,6 @@
 
 ![Desktop](demo.png)
 
-Clean templates and configuration files for various purposes.
-
 ---
 
 ## Table of Contents
