@@ -12,25 +12,25 @@
 # Read and Send Mail {{{
 
 set folder = "~/.local/share/mail/"
-set smtp_pass = "XXX"
-set smtp_url = "smtps://email@provider:port"
+set smtp_url = "smtps://onianidavid@gmail.com@smtp.gmail.com:587"
+set smtp_pass = `pass show gmail`
 
 # }}}
 
 # Mailboxes {{{
 
 set spoolfile = "+INBOX"
-set record = "+Sent"
-set trash = "+Trash"
-set postponed = "+Drafts"
-mailboxes =INBOX =Sent =Drafts =Junk =Trash
+set record="+[Gmail].Sent Mail"
+set postponed = "+[Gmail].Drafts"
+set trash = "+[Gmail].Trash"
+mailboxes =INBOX =[Gmail].Sent\ Mail =[Gmail].Drafts =[Gmail].Spam =[Gmail].Trash
 
 # }}}
 
 # Personal info {{{
 
-set from = "trickster@420blaze.it"
-set realname = "Trickster Trickingson"
+set from = "onianidavid@gmail.com"
+set realname = "David Oniani"
 
 # }}}
 
@@ -93,6 +93,12 @@ bind index,pager J sidebar-next
 bind index,pager K sidebar-prev
 bind index,pager L sidebar-open
 bind index,pager S sidebar-toggle-visible
+
+bind pager g top
+bind pager G bottom
+
+bind attach,index g first-entry
+bind attach,index G last-entry
 
 # }}}
 

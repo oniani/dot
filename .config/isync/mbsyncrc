@@ -12,10 +12,10 @@
 #
 
 IMAPStore oniani-remote
-Host mail.name.something
-Port XXX
-User user@name.something
-Pass XXX
+Host imap.gmail.com
+Port 993
+User onianidavid@gmail.com
+PassCmd "pass show gmail"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /usr/local/etc/openssl/cert.pem

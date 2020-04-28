@@ -34,8 +34,10 @@ export NNN_TRASH=1
 
 # Move to ~/.config
 export CARGO_HOME="$HOME/.config/cargo"
+export GNUPGHOME="$HOME/.config/gnupg"
 export IPYTHONDIR="$HOME/.config/ipython"
 export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"
+export PASSWORD_STORE_DIR="$HOME/.config/pass"
 export RUSTUP_HOME="$HOME/.config/rustup"
 export ZDOTDIR="$HOME/.config/zsh"
 

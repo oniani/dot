@@ -96,7 +96,7 @@ brew_install() {
   brew install ffmpeg imagemagick p7zip pandoc
 
   # Essentials
-  brew install mbsync mpc mpd mpv ncmpcpp neomutt neovim newsboat nnn
+  brew install gpg mbsync mpc mpd mpv ncmpcpp neomutt neovim newsboat nnn pass
 
   # Fancy
   brew install bat cmatrix figlet wallpaper
