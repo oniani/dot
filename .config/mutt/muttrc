@@ -1,0 +1,138 @@
+#
+# Filename: muttrc
+# Author:   David Oniani
+# Modified: April 28, 2020
+#                  _   _
+#  _ __ ___  _   _| |_| |_ _ __ ___
+# | '_ ` _ \| | | | __| __| '__/ __|
+# | | | | | | |_| | |_| |_| | | (__
+# |_| |_| |_|\__,_|\__|\__|_|  \___|
+#
+
+# Read and Send Mail {{{
+
+set folder = "~/.local/share/mail/"
+set smtp_pass = "XXX"
+set smtp_url = "smtps://email@provider:port"
+
+# }}}
+
+# Mailboxes {{{
+
+set spoolfile = "+INBOX"
+set record = "+Sent"
+set trash = "+Trash"
+set postponed = "+Drafts"
+mailboxes =INBOX =Sent =Drafts =Junk =Trash
+
+# }}}
+
+# Personal info {{{
+
+set from = "trickster@420blaze.it"
+set realname = "Trickster Trickingson"
+
+# }}}
+
+# Mail settings {{{
+
+# Editor
+set editor = "$EDITOR"
+
+# Reply
+set include
+set fast_reply
+set reverse_name
+set markers = no
+set mark_old = no
+
+# Forward
+set fcc_attach
+set forward_format = "Fwd: %s"
+set forward_quote
+set mime_forward = yes
+
+# Performance Tuning
+set sleep_time = 0
+set mail_check = 60
+
+# Other
+set wait_key = no
+
+# }}}
+
+# Index {{{
+
+set date_format="%y/%m/%d %I:%M%p"
+set index_format="%5C %Z %?X?A& ? %D %-20.20F %s (%-4.4c)"
+set sort = 'reverse-date'
+
+# }}}
+
+# Sidebar {{{
+
+set mail_check_stats
+set sidebar_width = 25
+set sidebar_visible = no
+set sidebar_short_path = yes
+set sidebar_next_new_wrap = yes
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/? %?S?%S?"
+
+# }}}
+
+# Key Bindings {{{
+
+macro index R "<shell-escape>mbsync -a -q -c ~/.config/isync/mbsyncrc<enter>" "sync all mail"
+
+bind index,pager h exit
+bind index,pager j next-entry
+bind index,pager k previous-entry
+bind index l display-message
+
+bind index,pager J sidebar-next
+bind index,pager K sidebar-prev
+bind index,pager L sidebar-open
+bind index,pager S sidebar-toggle-visible
+
+# }}}
+
+# Colors {{{
+
+# Index {{{
+
+# Default
+color index         red         default ".*"
+color index_author  green       default ".*"
+color index_subject blue        default ".*"
+color index_number  yellow      default
+
+# New mail
+color index         brightred   default "~N"
+color index_author  brightgreen default "~N"
+color index_subject brightblue  default "~N"
+
+# Tags
+color index         brightred   default "~T"
+color index_author  brightgreen default "~T"
+color index_subject brightblue  default "~T"
+
+# }}}
+
+# Sidebar {{{
+
+color sidebar_highlight red default
+color sidebar_divider   red default
+color sidebar_flagged   red default
+color sidebar_new       red default
+
+# }}}
+
+# Other {{{
+
+color status     red  default
+color signature  red  default
+color hdrdefault red  default
+
+# }}}
+
+# }}}

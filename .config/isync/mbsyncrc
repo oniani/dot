@@ -1,0 +1,36 @@
+#
+# Filename: mbsyncrc
+# Author:   David Oniani
+# Modified: April 28, 2020
+#
+#            _
+#  _ __ ___ | |__  ___ _   _ _ __   ___ _ __ ___
+# | '_ ` _ \| '_ \/ __| | | | '_ \ / __| '__/ __|
+# | | | | | | |_) \__ \ |_| | | | | (__| | | (__
+# |_| |_| |_|_.__/|___/\__, |_| |_|\___|_|  \___|
+#                      |___/
+#
+
+IMAPStore oniani-remote
+Host mail.name.something
+Port XXX
+User user@name.something
+Pass XXX
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /usr/local/etc/openssl/cert.pem
+
+MaildirStore oniani-local
+Subfolders Verbatim
+PATH ~/.local/share/mail/
+Inbox ~/.local/share/mail/INBOX
+Flatten .
+
+Channel oniani
+Master :oniani-remote:
+Slave :oniani-local:
+ExpireUnread no
+Create Both
+Expunge Both
+Patterns *
+SyncState *
