@@ -12,25 +12,27 @@
 # Read and Send Mail {{{
 
 set folder = "~/.local/share/mail/"
+
 set smtp_url = "smtps://onianidavid@gmail.com@smtp.gmail.com:587"
 set smtp_pass = `pass show gmail`
+
+set from = "onianidavid@gmail.com"
+set realname = "David Oniani"
 
 # }}}
 
 # Mailboxes {{{
 
 set spoolfile = "+INBOX"
-set record="+[Gmail].Sent Mail"
+set record    = "+[Gmail].Sent Mail"
 set postponed = "+[Gmail].Drafts"
-set trash = "+[Gmail].Trash"
-mailboxes =INBOX =[Gmail].Sent\ Mail =[Gmail].Drafts =[Gmail].Spam =[Gmail].Trash
+set trash     = "+[Gmail].Trash"
 
-# }}}
-
-# Personal info {{{
-
-set from = "onianidavid@gmail.com"
-set realname = "David Oniani"
+named-mailboxes "  Inbox"  ="INBOX"
+named-mailboxes "  Sent"   ="[Gmail].Sent Mail"
+named-mailboxes "  Drafts" ="[Gmail].Drafts"
+named-mailboxes "  Junk"   ="[Gmail].Spam"
+named-mailboxes "  Trash"  ="[Gmail].Trash"
 
 # }}}
 
@@ -64,7 +66,7 @@ set wait_key = no
 # Index {{{
 
 set date_format="%y/%m/%d %I:%M%p"
-set index_format="%5C %Z %?X?A& ? %D %-20.20F %s (%-4.4c)"
+set index_format="%5C %Z %?X?A& ? %D %-25.25F %s (%-5.5c)"
 set sort = 'reverse-date'
 
 # }}}
@@ -76,7 +78,7 @@ set sidebar_width = 25
 set sidebar_visible = no
 set sidebar_short_path = yes
 set sidebar_next_new_wrap = yes
-set sidebar_format = "%B%?F? [%F]?%* %?N?%N/? %?S?%S?"
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 
 # }}}
 
@@ -126,18 +128,18 @@ color index_subject brightblue  default "~T"
 
 # Sidebar {{{
 
-color sidebar_highlight red default
-color sidebar_divider   red default
-color sidebar_flagged   red default
-color sidebar_new       red default
+color sidebar_highlight yellow default
+color sidebar_divider   yellow default
+color sidebar_flagged   yellow default
+color sidebar_new       yellow default
 
 # }}}
 
 # Other {{{
 
-color status     red  default
-color signature  red  default
-color hdrdefault red  default
+color status     yellow  default
+color signature  yellow  default
+color hdrdefault yellow  default
 
 # }}}
 
