@@ -59,7 +59,7 @@ set mail_check = 60
 # Other
 set wait_key = no
 set rfc2047_parameters = yes
-set query_command = "abook --mutt-query '%s'"
+set query_command = "abook --datafile ~/.local/share/abook --mutt-query '%s'"
 
 # }}}
 
