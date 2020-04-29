@@ -96,13 +96,16 @@ brew_install() {
   brew install ffmpeg imagemagick p7zip pandoc
 
   # Essentials
-  brew install gpg mbsync mpc mpd mpv ncmpcpp neomutt neovim newsboat nnn pass
+  brew install mpc mpd mpv ncmpcpp neovim newsboat nnn
+
+  # Mail
+  brew install abook gpg mbsync msmtp neomutt pass
 
   # Fancy
   brew install bat cmatrix figlet wallpaper
 
   # System-wide
-  brew install coreutils fd findutils fzf htop neofetch rg tree trash-cli pidof
+  brew install coreutils fd findutils fzf htop neofetch rg tree trash-cli
 
   # Web
   brew install curl git youtube-dl
@@ -116,7 +119,8 @@ brew_install() {
   # brew install zathura
   # brew install zathura-pdf-poppler
   # mkdir -p $(brew --prefix zathura)/lib/zathura
-  # ln -s $(brew --prefix zathura-pdf-poppler)/libpdf-poppler.dylib $(brew --prefix zathura)/lib/zathura/libpdf-poppler.dylib
+  # ln -s $(brew --prefix zathura-pdf-poppler)/libpdf-poppler.dylib \
+  #   $(brew --prefix zathura)/lib/zathura/libpdf-poppler.dylib
   # brew untap zegervdv/zathura
 
   brew update
