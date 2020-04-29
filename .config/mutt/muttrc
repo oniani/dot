@@ -86,9 +86,6 @@ set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 
 # Key Bindings {{{
 
-macro index,pager A "<pipe-message>abook --datafile ~/.local/share/abook/abook --add-email-quiet<return>" "new abook entry"
-macro index,pager R "<shell-escape>mbsync -a -q -c ~/.config/isync/mbsyncrc<enter>" "sync all mail"
-
 # Abook completion
 bind editor <Tab> complete-query
 
@@ -97,12 +94,6 @@ bind index,pager h exit
 bind index,pager j next-entry
 bind index,pager k previous-entry
 bind index l display-message
-
-# Comfy folder navigation
-bind index,pager J sidebar-next
-bind index,pager K sidebar-prev
-bind index,pager L sidebar-open
-bind index,pager S sidebar-toggle-visible
 
 # Other
 bind pager g top
@@ -113,6 +104,15 @@ bind attach,index G last-entry
 
 bind index,pager,browser \Cb previous-page
 bind index,pager,browser \Cf next-page
+
+# Comfy folder navigation
+macro index,pager J <sidebar-next><sidebar-open>
+macro index,pager K <sidebar-prev><sidebar-open>
+macro index,pager S <sidebar-toggle-visible>
+
+# Automation
+macro index,pager A "<pipe-message>abook --datafile ~/.local/share/abook/abook --add-email-quiet<return>" "new abook entry"
+macro index,pager R "<shell-escape>mbsync -a -q -c ~/.config/isync/mbsyncrc<enter>" "sync all mail"
 
 # }}}
 
