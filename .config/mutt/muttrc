@@ -18,7 +18,7 @@ set sendmail = "msmtp -a gmail"
 set smtp_authenticators = "gssapi:login"
 
 set header_cache = "~/.cache/gmail/headers"
-set message_cachedir = "~/.cache/$mail/messages"
+set message_cachedir = "~/.cache/gmail/messages"
 
 # }}}
 
