@@ -11,23 +11,29 @@
 
 # Read and Send Mail {{{
 
+set mbox_type = Maildir
 set folder = "~/.local/share/mail/"
-set smtp_authenticators = 'gssapi:login'
+
+set sendmail = "msmtp -a gmail"
+set smtp_authenticators = "gssapi:login"
+
+set header_cache = "~/.cache/gmail/headers"
+set message_cachedir = "~/.cache/$mail/messages"
 
 # }}}
 
 # Mailboxes {{{
 
 set spoolfile = "+INBOX"
-set record    = "+[Gmail].Sent Mail"
-set postponed = "+[Gmail].Drafts"
-set trash     = "+[Gmail].Trash"
+set record    = "+[Gmail]/Sent Mail"
+set postponed = "+[Gmail]/Drafts"
+set trash     = "+[Gmail]/Trash"
 
 named-mailboxes "  Inbox"  ="INBOX"
-named-mailboxes "  Sent"   ="[Gmail].Sent Mail"
-named-mailboxes "  Drafts" ="[Gmail].Drafts"
-named-mailboxes "  Junk"   ="[Gmail].Spam"
-named-mailboxes "  Trash"  ="[Gmail].Trash"
+named-mailboxes "  Sent"   ="[Gmail]/Sent Mail"
+named-mailboxes "  Drafts" ="[Gmail]/Drafts"
+named-mailboxes "  Junk"   ="[Gmail]/Spam"
+named-mailboxes "  Trash"  ="[Gmail]/Trash"
 
 # }}}
 
