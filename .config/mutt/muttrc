@@ -85,7 +85,7 @@ set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 # Key Bindings {{{
 
 macro index R "<shell-escape>mbsync -a -q -c ~/.config/isync/mbsyncrc<enter>" "sync all mail"
-macro index,pager A "<pipe-message>abook --datafile ~/.local/share/abook --add-email<return>" "new abook entry"
+macro index,pager A "<pipe-message>abook --datafile ~/.local/share/abook --add-email-quiet<return>" "new abook entry"
 
 bind editor <Tab> complete-query
 
