@@ -1,7 +1,7 @@
 #
 # Filename: muttrc
 # Author:   David Oniani
-# Modified: April 28, 2020
+# Modified: April 29, 2020
 #                  _   _
 #  _ __ ___  _   _| |_| |_ _ __ ___
 # | '_ ` _ \| | | | __| __| '__/ __|
@@ -69,7 +69,10 @@ set query_command = "abook --datafile ~/.local/share/abook/abook --mutt-query '%
 
 set date_format="%y/%m/%d %I:%M%p"
 set index_format="%5C %Z %?X?A& ? %D %-25.25F %s (%-5.5c)"
-set sort = 'reverse-date'
+
+set sort = "threads"
+set sort_aux = "reverse-date"
+set collapse_all = yes
 
 # }}}
 
@@ -95,20 +98,27 @@ bind index,pager j next-entry
 bind index,pager k previous-entry
 bind index l display-message
 
-# Other
-bind pager g top
-bind pager G bottom
+# Comfy sidebar navigation
+macro index,pager J <sidebar-next><sidebar-open> "switch to folder down"
+macro index,pager K <sidebar-prev><sidebar-open> "switch to folder up"
 
-bind attach,index g first-entry
+# G and g
 bind attach,index G last-entry
+bind attach,index g first-entry
 
+bind pager G bottom
+bind pager g top
+
+# Fast navigation
 bind index,pager,browser \Cb previous-page
 bind index,pager,browser \Cf next-page
 
-# Comfy folder navigation
-macro index,pager J <sidebar-next><sidebar-open>
-macro index,pager K <sidebar-prev><sidebar-open>
-macro index,pager S <sidebar-toggle-visible>
+# Toggle the sidebar
+bind index,pager S sidebar-toggle-visible
+
+# Thread management
+bind index - collapse-thread
+bind index _ collapse-all
 
 # Automation
 macro index,pager A "<pipe-message>abook --datafile ~/.local/share/abook/abook --add-email-quiet<return>" "new abook entry"
