@@ -27,13 +27,15 @@ set message_cachedir = "~/.cache/gmail/messages"
 set spoolfile = "+INBOX"
 set record    = "+[Gmail].Sent Mail"
 set postponed = "+[Gmail].Drafts"
+set mbox      = "+[Gmail].All Mail"
 set trash     = "+[Gmail].Trash"
 
-named-mailboxes "  Inbox"  ="INBOX"
-named-mailboxes "  Sent"   ="[Gmail].Sent Mail"
-named-mailboxes "  Drafts" ="[Gmail].Drafts"
-named-mailboxes "  Junk"   ="[Gmail].Spam"
-named-mailboxes "  Trash"  ="[Gmail].Trash"
+named-mailboxes "  Inbox"   ="INBOX"
+named-mailboxes "  Sent"    ="[Gmail].Sent Mail"
+named-mailboxes "  Drafts"  ="[Gmail].Drafts"
+named-mailboxes "  Junk"    ="[Gmail].Spam"
+named-mailboxes "  Archive" ="[Gmail].All Mail"
+named-mailboxes "  Trash"   ="[Gmail].Trash"
 
 # }}}
 
