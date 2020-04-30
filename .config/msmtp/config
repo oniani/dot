@@ -23,4 +23,3 @@ port 587
 from onianidavid@gmail.com
 user onianidavid@gmail.com
 passwordeval "pass gmail"
-tls_starttls off
