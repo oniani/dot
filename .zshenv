@@ -1,7 +1,7 @@
 #
 # Filename: .zshenv
 # Author:   David Oniani
-# Modified: April 20, 2020
+# Modified: April 30, 2020
 #
 #            _
 #    _______| |__   ___ _ ____   __
@@ -15,12 +15,13 @@ export PATH="$HOME/.config/cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Core utilities
-export BROWSER="open -a /Applications/Firefox.app"
+export BROWSER="firefox"
 export EDITOR="nvim"
 export FILEMANAGER="nnn"
+export IMAGE="preview"
 export PAGER="less"
 export PLAYER="mpv"
-export READER="open -a /Applications/Preview.app"
+export READER="preview"
 export TERMINAL="kitty"
 
 # fzf
