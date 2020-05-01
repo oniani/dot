@@ -4,22 +4,22 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: GNU GPLv3
 
-csv="$(grep -Rh "To:\s.[a-zA-Z].*.<.*.@.*.\..*.>" \
-    "$HOME/.local/share/mail/[Gmail].All Mail/cur"  |
-  grep -v "reply" |
-  sed "s/\s*.</,/g; s/>//g" |
-  awk -F 'To: ' '{ print $2 }' |
-  sort -u)"
+ABOOKDB="$HOME/.local/share/abook/abook"
+MAILDIR="$HOME/.local/share/mail/[Gmail].Sent Mail/cur"
+TMPFILE="$(mktemp)"
 
-tmpfile="$(mktemp)"
+CSVFILE="$(grep -Rh "To:[[:space:]].*.<.*.@.*.\..*.>" "$MAILDIR" |
+           grep -iv "reply" |
+           sed "s/.*:[[:space:]]*//g; s/>.*//g; s/[[:space:]]</,/g" |
+           sort -fu)"
 
-printf "%s\n" "$csv" > "$tmpfile"
+printf "%s\n" "$CSVFILE" > "$TMPFILE"
 
-rm -f "$HOME/.local/share/abook/abook"
+rm -f "$ABOOKDB"
 
-abook --datafile "$HOME/.local/share/abook/abook" \
+abook --datafile "$ABOOKDB" \
       --convert \
-      --infile "$tmpfile" --informat csv \
+      --infile "$TMPFILE" --informat csv \
       --outfile "$HOME/.local/share/abook/abook" --outformat abook
 
-rm -f "$tmpfile" >/dev/null
+rm -f "$TMPFILE" >/dev/null
