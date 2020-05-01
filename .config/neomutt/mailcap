@@ -1,4 +1,4 @@
-text/plain; open -a $EDITOR %s ;
+text/plain; $EDITOR %s ;
 text/html; open -a $BROWSER %s ; nametemplate=%s.html
 image/*; open -a $IMAGE %s ;
 video/*; setsid $PLAYER --quiet %s &; copiousoutput
