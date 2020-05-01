@@ -1,7 +1,7 @@
 #
 # Filename: urls
 # Author:   David Oniani
-# Modified: August 26, 2019
+# Modified: April 30, 2020
 #             _
 #  _   _ _ __| |___
 # | | | | '__| / __|
@@ -33,3 +33,4 @@ http://rss.sciam.com/ScientificAmerican-Global      "~News Feed: Scientific Amer
 
 # Personal Websites
 https://terrytao.wordpress.com/feed/ "~Personal Website: Terry Tao"
+https://www.davidoniani.com/rss.xml  "~Personal Website: David Oniani"
