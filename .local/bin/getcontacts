@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+
+# Get all contacts by parsing a maildir (experimental script)
+# by David Oniani <onianidavid@gmail.com>
+# License: GNU GPLv3
+
+csv="$(grep -Rh "To:\s.[a-zA-Z].*.<.*.@.*.\..*.>" \
+    "$HOME/.local/share/mail/[Gmail].All Mail/cur"  |
+  sed "s/\s*.</,/g; s/>//g" |
+  awk -F 'To: ' '{ print $2 }' |
+  sort -u)"
+
+tmpfile="$(mktemp)"
+
+printf "%s\n" "$csv" > "$tmpfile"
+
+rm -f "$HOME/.local/share/abook/abook"
+
+abook --datafile "$HOME/.local/share/abook/abook" \
+      --convert \
+      --infile "$tmpfile" --informat csv \
+      --outfile "$HOME/.local/share/abook/abook" --outformat abook
+
+rm -f "$tmpfile" >/dev/null
