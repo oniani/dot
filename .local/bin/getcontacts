@@ -6,6 +6,7 @@
 
 csv="$(grep -Rh "To:\s.[a-zA-Z].*.<.*.@.*.\..*.>" \
     "$HOME/.local/share/mail/[Gmail].All Mail/cur"  |
+  grep -v "reply" |
   sed "s/\s*.</,/g; s/>//g" |
   awk -F 'To: ' '{ print $2 }' |
   sort -u)"
