@@ -46,7 +46,7 @@ named-mailboxes "  Trash"   ="[Gmail].Trash"
 # Personal Info
 set from = "onianidavid@gmail.com"
 set realname = "David Oniani"
-set signature = "~/.config/mutt/signature"
+set signature = "~/.config/neomutt/signature"
 
 # Editor
 set editor = "$EDITOR"
