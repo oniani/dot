@@ -1,7 +1,7 @@
 #
 # Filename: neomuttrc
 # Author:   David Oniani
-# Modified: April 30, 2020
+# Modified: May 01, 2020
 #                                   _   _            
 #  _ __   ___  ___  _ __ ___  _   _| |_| |_ _ __ ___ 
 # | '_ \ / _ \/ _ \| '_ ` _ \| | | | __| __| '__/ __|
@@ -17,10 +17,14 @@ set folder = "~/.local/share/mail/"
 set sendmail = "msmtp -a gmail"
 set smtp_authenticators = "gssapi:login"
 
-set header_cache = "~/.cache/gmail/headers"
-set message_cachedir = "~/.cache/gmail/messages"
-
 set mailcap_path = "~/.config/neomutt/mailcap"
+
+# }}}
+
+# Caching {{{
+
+set header_cache = "~/.cache/neomutt/headers"
+set message_cachedir = "~/.cache/neomutt/messages"
 
 # }}}
 
@@ -88,7 +92,7 @@ set collapse_all = yes
 
 # Sidebar {{{
 
-set mail_check_stats
+set mail_check_stats = yes
 set sidebar_width = 25
 set sidebar_visible = no
 set sidebar_short_path = yes
