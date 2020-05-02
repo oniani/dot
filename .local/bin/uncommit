@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+# Uncommit the previous commit (safely)
+# by David Oniani <onianidavid@gmail.com>
+# License: GNU GPLv3
+
+git reset --soft HEAD^
+git push origin +master

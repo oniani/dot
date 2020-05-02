@@ -1,7 +1,7 @@
 #
 # Filename: .zshrc
 # Author:   David Oniani
-# Modified: April 20, 2020
+# Modified: May 02, 2020
 #
 #            _              
 #    _______| |__  _ __ ___ 
@@ -17,12 +17,6 @@ function colormap() {
   for i in {0..255}; do
     print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'};
   done
-}
-
-# Uncommit the previous commit (safely)
-function uncommit() {
-  git reset --soft HEAD^
-  git push origin +master
 }
 
 # Configure cd on quit for nnn
@@ -57,8 +51,9 @@ alias mkd="mkdir -p"
 # Interactive
 alias e='$EDITOR'
 alias f='nnn_autocd'
-alias mp="ncmpcpp --quiet"
-alias rss="newsboat --quiet"
+alias m='$MAIL'
+alias mp='$MUSIC --quiet'
+alias rss='$RSS --quiet'
 
 # Code formatting
 alias black="black --line-length=79"
@@ -84,25 +79,14 @@ autoload -Uz compinit && compinit -d "$HOME/.cache/zsh/zcompdump_$ZSH_VERSION"
 kitty + complete setup zsh | source /dev/stdin
 
 # Completion settings
-zstyle ":completion:*" rehash true                       # Update PATH entries
 zstyle ":completion:*" accept-exact-dirs true            # No parent completion
 zstyle ":completion:*" insert-tab false                  # Do not insert a TAB
 zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"  # Colored menu
 zstyle ":completion:*" list-dirs-first true              # Separate dir & file
 zstyle ":completion:*" menu select                       # Completion menu
-zstyle ":completion:*" show-completer true               # Show completion
-zstyle ":completion:*" verbose true                      # Verbose completion
 
 # Case/hyphen-insensitive autocompletion (à la Oh My Zsh)
 zstyle ":completion:*" matcher-list "m:{a-zA-Z-_}={A-Za-z_-}" "r:|=*" "l:|=* r:|=*"
-
-# Nicer and fancier completions
-zstyle ":completion:*:descriptions" format "%U%B%d%b%u"
-zstyle ":completion:*:messages" format "%d"
-zstyle ":completion:*:corrections" format "%U%d (errors: %e)%f%u"
-zstyle ":completion:*:warnings" format "No matches for: %d%b"
-
-setopt COMPLETEINWORD    # Complete from both ends
 setopt COMPLETE_ALIASES  # Complete aliases
 setopt GLOBDOTS          # Complete dotfiles
 
@@ -113,8 +97,6 @@ SAVEHIST=10000
 
 setopt EXTENDED_HISTORY        # Add timestamps
 setopt HIST_EXPIRE_DUPS_FIRST  # Remove duplicates first if over HISTSIZE
-setopt HIST_IGNORE_DUPS        # Ignore duplicated commands history list
-setopt HIST_VERIFY             # Expand history before running commands
 setopt INC_APPEND_HISTORY      # Save commands in the order of execution
 
 # }}}
