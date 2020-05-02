@@ -1,7 +1,7 @@
 #
 # Filename: neomuttrc
 # Author:   David Oniani
-# Modified: May 01, 2020
+# Modified: May 02, 2020
 #                                   _   _            
 #  _ __   ___  ___  _ __ ___  _   _| |_| |_ _ __ ___ 
 # | '_ \ / _ \/ _ \| '_ ` _ \| | | | __| __| '__/ __|
@@ -148,6 +148,7 @@ bind editor <Tab> complete-query
 
 # Automation
 macro index,pager A "<pipe-message>newcontact<return>" "new abook entry"
+macro index,pager C "<tag-pattern>~A<return><tag-prefix>A" "fill abook"
 macro index,pager R "<shell-escape>refreshmail<enter>" "sync all mail"
 
 # }}}
