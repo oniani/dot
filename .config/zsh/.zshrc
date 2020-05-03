@@ -167,27 +167,6 @@ zle-line-init() {
 zle -N zle-keymap-select
 zle -N zle-line-init
 
-# Enable abbreviations à la Fish shell
-# Alias expansion, adapted from the following link
-# https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/globalias
-abbreviate() {
-  globalias() {
-    zle _expand_alias
-    zle expand-word
-    zle self-insert
-  }
-  zle -N globalias
-
-  # Space expands all aliases, including global
-  bindkey -M viins " " globalias
-
-  # Control-space to make a normal space
-  bindkey -M viins "^ " magic-space
-
-  # Normal space during searches
-  bindkey -M isearch " " magic-space
-}
-
 # }}}
 
 # Key Bindings {{{
