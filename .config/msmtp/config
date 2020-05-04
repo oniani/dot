@@ -1,7 +1,7 @@
 #
 # Filename: config
 # Author:   David Oniani
-# Modified: April 28, 2020
+# Modified: May 04, 2020
 #
 #                   __ _
 #   ___ ___  _ __  / _(_) __ _
@@ -22,4 +22,4 @@ host smtp.gmail.com
 port 587
 from onianidavid@gmail.com
 user onianidavid@gmail.com
-passwordeval "pass gmail"
+passwordeval "pass gmailapp"

@@ -1,7 +1,7 @@
 #
 # Filename: mbsyncrc
 # Author:   David Oniani
-# Modified: April 28, 2020
+# Modified: May 04, 2020
 #
 #            _
 #  _ __ ___ | |__  ___ _   _ _ __   ___ _ __ ___
@@ -15,7 +15,7 @@ IMAPStore oniani-remote
 Host imap.gmail.com
 Port 993
 User onianidavid@gmail.com
-PassCmd "pass gmail"
+PassCmd "pass gmailapp"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /usr/local/etc/openssl/cert.pem
