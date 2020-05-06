@@ -56,7 +56,7 @@ set realname = "David Oniani"
 set signature = "~/.config/neomutt/signature"
 
 # Editor
-set editor = "$EDITOR"
+set editor = "$EDITOR -c 'set cc=80 tw=79' -c 'norm O' -c 'startinsert'"
 
 # Reply
 set include
