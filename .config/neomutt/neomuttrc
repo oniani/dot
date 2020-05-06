@@ -1,7 +1,7 @@
 #
 # Filename: neomuttrc
 # Author:   David Oniani
-# Modified: May 05, 2020
+# Modified: May 06, 2020
 #                                   _   _            
 #  _ __   ___  ___  _ __ ___  _   _| |_| |_ _ __ ___ 
 # | '_ \ / _ \/ _ \| '_ ` _ \| | | | __| __| '__/ __|
@@ -114,8 +114,8 @@ bind index l display-message
 
 # Comfy pager navigation
 bind pager h exit
-bind pager j next-entry
-bind pager k previous-entry
+bind pager j next-line
+bind pager k previous-line
 bind pager l view-attachments
 
 # Comfy attachment menu navigation
