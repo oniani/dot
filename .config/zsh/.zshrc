@@ -174,9 +174,6 @@ zle -N zle-line-init
 # Launch the file manager
 bindkey -s "^f" "f\n"
 
-# Launch the mail client
-bindkey -s "^n" "m\n"
-
 # ipython deserves its own key binding
 bindkey -s "^p" "ipython\n"
 
