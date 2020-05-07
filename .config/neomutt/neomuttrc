@@ -1,7 +1,7 @@
 #
 # Filename: neomuttrc
 # Author:   David Oniani
-# Modified: May 06, 2020
+# Modified: May 07, 2020
 #                                   _   _            
 #  _ __   ___  ___  _ __ ___  _   _| |_| |_ _ __ ___ 
 # | '_ \ / _ \/ _ \| '_ ` _ \| | | | __| __| '__/ __|
@@ -12,12 +12,12 @@
 # Read and Send Mail {{{
 
 set mbox_type = Maildir
-set folder = "~/.local/share/mail/"
+set folder = "$HOME/.local/share/mail/"
 
 set sendmail = "msmtp -a gmail"
 set smtp_authenticators = "gssapi:login"
 
-set mailcap_path = "~/.config/neomutt/mailcap"
+set mailcap_path = "$HOME/.config/neomutt/mailcap"
 
 # }}}
 
@@ -53,7 +53,7 @@ set copy = no
 # Personal Info
 set from = "onianidavid@gmail.com"
 set realname = "David Oniani"
-set signature = "~/.config/neomutt/signature"
+set signature = "$HOME/.config/neomutt/signature"
 
 # Editor
 set editor = "$EDITOR -c 'set cc=80 tw=79' -c 'norm O' -c 'startinsert'"
@@ -78,7 +78,7 @@ set mail_check = 60
 # Other
 set wait_key = no
 set rfc2047_parameters = yes
-set query_command = "abook --datafile ~/.local/share/abook/abook --mutt-query '%s'"
+set query_command = "aquery"
 
 # }}}
 

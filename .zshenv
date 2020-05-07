@@ -1,7 +1,7 @@
 #
 # Filename: .zshenv
 # Author:   David Oniani
-# Modified: May 02, 2020
+# Modified: May 07, 2020
 #
 #            _
 #    _______| |__   ___ _ ____   __
@@ -41,6 +41,7 @@ export CARGO_HOME="$HOME/.config/cargo"
 export GNUPGHOME="$HOME/.config/gnupg"
 export IPYTHONDIR="$HOME/.config/ipython"
 export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"
+export NOTMUCH_CONFIG="$HOME/.config/notmuch/notmuch-config"
 export PASSWORD_STORE_DIR="$HOME/.config/pass"
 export RUSTUP_HOME="$HOME/.config/rustup"
 export ZDOTDIR="$HOME/.config/zsh"

@@ -99,7 +99,7 @@ brew_install() {
   brew install mpc mpd mpv ncmpcpp neovim newsboat nnn
 
   # Mail
-  brew install abook gpg mbsync msmtp neomutt pass
+  brew install abook gpg mbsync msmtp neomutt notmuch pass
 
   # Fancy
   brew install bat cmatrix figlet wallpaper
