@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: April 23, 2020
+" Modified: May 12, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -81,7 +81,7 @@ let g:ale_rust_cargo_use_clippy = 1
 " Convenience {{{
 
 " Make folded text darker
-highlight! Folded ctermbg=black
+highlight! Folded ctermbg=none
 
 " This command does three things:
 "   1. Cause the editor to use 'ftdetect' files to detect and set 'filetype'
