@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: May 12, 2020
+" Modified: May 15, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -39,10 +39,16 @@ Plug 'ajh17/VimCompletesMe'                       " Minimal code completion
 Plug 'dense-analysis/ale'                         " Lint and fix asynchronously
 Plug 'sheerun/vim-polyglot'                       " Language support
 
+" Fancy
+Plug 'chriskempson/base16-vim'                    " Base16 colorschemes
+Plug 'itchyny/lightline.vim'                      " Light statusline
+
 " Initialize the plugin system
 call plug#end()
 
 " }}}
+
+" Plugin Settings {{{
 
 " Asynchronous Lint Engine (ALE) {{{
 
@@ -78,10 +84,26 @@ let g:ale_rust_cargo_use_clippy = 1
 
 " }}}
 
-" Convenience {{{
+" Base16 {{{
 
-" Make folded text darker
-highlight! Folded ctermbg=none
+if (has("termguicolors"))
+  set termguicolors
+  colorscheme base16-tomorrow-night-eighties
+endif
+
+" }}}
+
+" Lightline {{{
+
+let g:lightline = {
+      \ 'colorscheme': 'Tomorrow_Night_Eighties',
+      \ }
+
+" }}}
+
+" }}}
+
+" Convenience {{{
 
 " This command does three things:
 "   1. Cause the editor to use 'ftdetect' files to detect and set 'filetype'
@@ -90,6 +112,9 @@ highlight! Folded ctermbg=none
 "   3. Cause the editor to autoload 'indent' files on FileType events
 filetype plugin indent on
 
+" Remove folded text background
+highlight! Folded ctermbg=none
+
 " Turn on the syntax highlighting
 syntax on
 
@@ -97,7 +122,7 @@ syntax on
 set history=10000
 
 " Allow full clipboard
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 
 " Some servers have issues with backup files
 set nowritebackup
@@ -105,7 +130,7 @@ set nowritebackup
 " Stop generating annoying swap files
 set noswapfile
 
-" Do not redraw while executing macros (better performance)
+" Do not redraw while executing untyped commands (better performance)
 set lazyredraw
 
 " Possibility to have more than one unsaved buffers
@@ -126,20 +151,17 @@ set wildmode=longest:full,full
 " Set a marker at column 80
 set colorcolumn=80
 
+" Highlight the current line
+set cursorline
+
 " Splits happen on the bottom and right
 set splitbelow splitright
 
 " Enable mouse support
 set mouse=a
 
-" Set the GUI font
-set guifont=Hack\ Nerd\ Font\ Mono:h16
-
 " UTF-8 encoding
 set encoding=utf-8
-
-" Get rid of the statusline
-set laststatus=0
 
 " }}}
 
@@ -207,6 +229,9 @@ nnoremap <Leader>l :Lines<CR>
 
 " Open the PDF file that has the same name as the currently opened file
 nnoremap <Leader>o :!open %:r.pdf<CR><CR>
+
+" Use fzf for picking a colorscheme
+nnoremap <Leader>p :Colors<CR>
 
 " Spell check
 nnoremap <Leader>s :setlocal spell! spelllang=en_us<CR>

@@ -48,6 +48,7 @@ number of bugs (or no bugs at all).
 
 - Addressbook: [Abook](http://abook.sourceforge.net/)
 - Colorscheme Generator: [pywal](https://github.com/dylanaraps/pywal)
+- Default Colorscheme: [Tomorrow Night Eighties](https://github.com/chriskempson/tomorrow-theme)
 - Document Viewer: [Preview](<https://en.wikipedia.org/wiki/Preview_(macOS)>) / [Zathura](https://github.com/zegervdv/homebrew-zathura)
 - Editor: [Neovim](https://neovim.io/)
 - Email: [neomutt](https://neomutt.org/) (with [isync](http://isync.sourceforge.net/) for mailbox synchronization and [msmtp](https://marlam.de/msmtp/) for sending emails)
@@ -115,16 +116,18 @@ Plugins arranged according to their startup time.
 
 | TOP | Time (ms) | Plugin         |
 | --- | --------- | -------------- |
-| 1   | 3.744     | vim-polyglot   |
-| 2   | 1.001     | ale            |
-| 3   | 0.749     | fzf.vim        |
-| 4   | 0.555     | fzf            |
-| 5   | 0.451     | vim-surround   |
-| 6   | 0.151     | vim-commentary |
-| 7   | 0.113     | VimCompletesMe |
-| 8   | 0.023     | goyo.vim       |
+| 1   | 21.510    | base16-vim     |
+| 2   | 5.205     | vim-polyglot   |
+| 3   | 4.700     | lightline.vim  |
+| 4   | 1.490     | ale            |
+| 5   | 1.252     | fzf.vim        |
+| 6   | 0.999     | fzf            |
+| 7   | 0.523     | vim-surround   |
+| 8   | 0.190     | vim-commentary |
+| 9   | 0.141     | VimCompletesMe |
+| 10  | 0.030     | goyo.vim       |
 
-This results in an average of 6.727 ms delay for the startup time.
+This results in an average of 36.04 ms delay for the startup time.
 
 The chart was generated using
 [vim-plugins-profile](https://github.com/hyiltiz/vim-plugins-profile).
@@ -141,6 +144,7 @@ The chart was generated using
 | `<Leader>f`      | Use fzf for file searching                 | Find     |
 | `<Leader>l`      | Search for a line with a pattern in a file | Line     |
 | `<Leader>o`      | Open the generated PDF file                | Open     |
+| `<Leader>p`      | Use fzf for picking a colorscheme          | Palette  |
 | `<Leader>s`      | Toggle spell checking                      | Spell    |
 | `<Leader>w`      | Toggle line-wrapping                       | Wrap     |
 | `<Leader>z`      | Toggle Goyo                                | Zen      |
