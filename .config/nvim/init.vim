@@ -89,6 +89,7 @@ let g:ale_rust_cargo_use_clippy = 1
 if (has("termguicolors"))
   set termguicolors
   colorscheme base16-tomorrow-night-eighties
+  highlight! Normal ctermbg=none guibg=none
 endif
 
 " }}}
