@@ -62,16 +62,6 @@ alias brittany="brittany --write-mode inplace --indent 4"
 # Fancy
 alias clock="tty-clock -c -s -t"
 
-# Navigation
-alias dls="cd $HOME/Downloads"
-alias docs="cd $HOME/Documents"
-alias ds="cd $HOME/Desktop"
-alias gm="cd $HOME/git-managed/"
-alias pics="cd $HOME/Pictures"
-alias sc="cd $HOME/.local/share/bin"
-alias sf="cd $HOME/git-managed/regulated-minimalism"
-alias win="cd $HOME/work-in-progress"
-
 # }}}
 
 # Z Shell Settings {{{
