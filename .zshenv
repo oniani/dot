@@ -1,7 +1,7 @@
 #
 # Filename: .zshenv
 # Author:   David Oniani
-# Modified: May 15, 2020
+# Modified: May 16, 2020
 #
 #            _
 #    _______| |__   ___ _ ____   __
@@ -33,7 +33,7 @@ export FZF_DEFAULT_OPTS="--color=16 --height=50% --reverse"
 
 # nnn
 export NNN_BMS="D:~/Downloads;d:~/Documents;p:~/Pictures;w:~/work-in-progress;"
-export NNN_OPTS="cErx"
+export NNN_OPTS="Eerx"
 export NNN_PLUG='d:newdir;f:newfile;s:showfile'
 export NNN_TRASH=1
 
