@@ -39,9 +39,8 @@ Plug 'ajh17/VimCompletesMe'                       " Minimal code completion
 Plug 'dense-analysis/ale'                         " Lint and fix asynchronously
 Plug 'sheerun/vim-polyglot'                       " Language support
 
-" Fancy
+" Consistency
 Plug 'chriskempson/base16-vim'                    " Base16 colorschemes
-Plug 'itchyny/lightline.vim'                      " Light statusline
 
 " Initialize the plugin system
 call plug#end()
@@ -94,14 +93,6 @@ endif
 
 " }}}
 
-" Lightline {{{
-
-let g:lightline = {
-      \ 'colorscheme': 'Tomorrow_Night_Eighties',
-      \ }
-
-" }}}
-
 " }}}
 
 " Convenience {{{
@@ -151,6 +142,9 @@ set wildmode=longest:full,full
 
 " Set a marker at column 80
 set colorcolumn=80
+
+" Set the signcolumn
+set signcolumn=yes
 
 " Highlight the current line
 set cursorline

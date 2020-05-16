@@ -102,6 +102,7 @@ No plugin manager is used. Plugins are sourced at the end of `.zshrc`.
 Plugins are installed and managed using a minimalist plugin manager
 [vim-plug](https://github.com/junegunn/vim-plug).
 
+- [Base16 Vim](https://github.com/chriskempson/base16-vim/)
 - [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
 - [ale](https://github.com/dense-analysis/ale)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
@@ -118,16 +119,15 @@ Plugins arranged according to their startup time.
 | --- | --------- | -------------- |
 | 1   | 21.510    | base16-vim     |
 | 2   | 5.205     | vim-polyglot   |
-| 3   | 4.700     | lightline.vim  |
-| 4   | 1.490     | ale            |
-| 5   | 1.252     | fzf.vim        |
-| 6   | 0.999     | fzf            |
-| 7   | 0.523     | vim-surround   |
-| 8   | 0.190     | vim-commentary |
-| 9   | 0.141     | VimCompletesMe |
-| 10  | 0.030     | goyo.vim       |
+| 3   | 1.490     | ale            |
+| 4   | 1.252     | fzf.vim        |
+| 5   | 0.999     | fzf            |
+| 6   | 0.523     | vim-surround   |
+| 7   | 0.190     | vim-commentary |
+| 8   | 0.141     | VimCompletesMe |
+| 9   | 0.030     | goyo.vim       |
 
-This results in an average of 36.04 ms delay for the startup time.
+This results in an average of 31.34 ms delay for the startup time.
 
 The chart was generated using
 [vim-plugins-profile](https://github.com/hyiltiz/vim-plugins-profile).
