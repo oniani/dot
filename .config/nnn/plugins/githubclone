@@ -1,9 +1,0 @@
-#!/usr/bin/env sh
-
-# Clone a repository from GitHub
-# by David Oniani <onianidavid@gmail.com>
-# License: GNU GPLv3
-
-printf "Enter a path to GitHub repository: "
-read -r repo
-git clone "https://github.com/$repo"

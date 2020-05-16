@@ -29,7 +29,7 @@ function nnn_autocd() {
 
   export NNN_TMPFILE="$HOME/.config/nnn/.lastd"
 
-  nnn -e "$@"
+  nnn "$@"
 
   if [ -f "$NNN_TMPFILE" ]; then
     . "$NNN_TMPFILE"

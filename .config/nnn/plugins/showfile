@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-# Create a new directory in nnn
+# Show a file using the default pager
 # by David Oniani <onianidavid@gmail.com>
 # License: GNU GPLv3
 
