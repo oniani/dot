@@ -122,11 +122,10 @@ Plugins arranged according to their startup time.
 | 3   | 1.490     | ale            |
 | 4   | 1.252     | fzf.vim        |
 | 5   | 0.999     | fzf            |
-| 6   | 0.523     | vim-surround   |
-| 7   | 0.190     | vim-commentary |
-| 8   | 0.030     | goyo.vim       |
+| 6   | 0.190     | vim-commentary |
+| 7   | 0.030     | goyo.vim       |
 
-This results in an average of 31.199 ms delay for the startup time.
+This results in an average of 30.676 ms delay for the startup time.
 
 The chart was generated using
 [vim-plugins-profile](https://github.com/hyiltiz/vim-plugins-profile).

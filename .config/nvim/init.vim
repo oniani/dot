@@ -32,7 +32,6 @@ Plug 'junegunn/fzf', { 'do': './install --bin' }  " fzf fuzzy file finder
 Plug 'junegunn/fzf.vim'                           " Commands for fzf
 Plug 'junegunn/goyo.vim'                          " Distraction-free writing
 Plug 'tpope/vim-commentary'                       " Comment stuff out
-Plug 'tpope/vim-surround'                         " Quoting/parenthesizing
 
 " Language support
 Plug 'dense-analysis/ale'                         " Lint and fix asynchronously
