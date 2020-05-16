@@ -42,6 +42,7 @@ function nnn_autocd() {
 # Aliases {{{
 
 # Core commands
+alias :q="exit"
 alias grep="grep --color=auto"
 alias icat="kitty +kitten icat"
 alias l="ls -Ahu"
