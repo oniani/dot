@@ -85,7 +85,7 @@ let g:ale_rust_cargo_use_clippy = 1
 
 if (has("termguicolors"))
   set termguicolors
-  colorscheme base16-tomorrow-night-eighties
+  colorscheme base16-gruvbox-dark-hard
   highlight! Normal ctermbg=none guibg=none
 endif
 
