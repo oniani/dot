@@ -35,7 +35,6 @@ Plug 'tpope/vim-commentary'                       " Comment stuff out
 Plug 'tpope/vim-surround'                         " Quoting/parenthesizing
 
 " Language support
-Plug 'ajh17/VimCompletesMe'                       " Minimal code completion
 Plug 'dense-analysis/ale'                         " Lint and fix asynchronously
 Plug 'sheerun/vim-polyglot'                       " Language support
 
