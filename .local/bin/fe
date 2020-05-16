@@ -4,4 +4,4 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: GNU GPLv3
 
-fzf | xargs -I {} "$EDITOR" "{}"
+FILE="$(fzf)" && [ "$FILE" != "" ] && "$EDITOR" "$FILE" || exit 1
