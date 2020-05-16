@@ -48,7 +48,7 @@ number of bugs (or no bugs at all).
 
 - Addressbook: [Abook](http://abook.sourceforge.net/)
 - Colorscheme Generator: [pywal](https://github.com/dylanaraps/pywal)
-- Default Colorscheme: [Tomorrow Night Eighties](https://github.com/chriskempson/tomorrow-theme)
+- Default Colorscheme: [Gruvbox Dark Hard](https://github.com/morhetz/gruvbox)
 - Document Viewer: [Preview](<https://en.wikipedia.org/wiki/Preview_(macOS)>) / [Zathura](https://github.com/zegervdv/homebrew-zathura)
 - Editor: [Neovim](https://neovim.io/)
 - Email: [neomutt](https://neomutt.org/) (with [isync](http://isync.sourceforge.net/) for mailbox synchronization and [msmtp](https://marlam.de/msmtp/) for sending emails)
