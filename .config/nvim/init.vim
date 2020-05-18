@@ -115,6 +115,7 @@ set history=10000
 set clipboard+=unnamedplus
 
 " Some servers have issues with backup files
+set nobackup
 set nowritebackup
 
 " Stop generating annoying swap files
