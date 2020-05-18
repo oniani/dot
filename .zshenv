@@ -53,5 +53,5 @@ export NPM_CONFIG_CACHE="$HOME/.cache/npm"
 
 # Additional settings
 export CLICOLOR=1
-export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 export LESSHISTFILE="-"
