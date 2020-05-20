@@ -4,4 +4,4 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: GNU GPLv3
 
-FILE="$(fzf)" && [ "$FILE" != "" ] && "$EDITOR" "$FILE" || exit
+FILE="$(fzf)" && [ -z "$FILE" ] && "$EDITOR" "$FILE" || exit
