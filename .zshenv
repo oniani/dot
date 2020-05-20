@@ -1,7 +1,7 @@
 #
 # Filename: .zshenv
 # Author:   David Oniani
-# Modified: May 16, 2020
+# Modified: May 19, 2020
 #
 #            _
 #    _______| |__   ___ _ ____   __
@@ -55,3 +55,4 @@ export NPM_CONFIG_CACHE="$HOME/.cache/npm"
 export CLICOLOR=1
 export LC_ALL=en_US.UTF-8
 export LESSHISTFILE="-"
+export MANPAGER="nvim -c 'set ft=man'"
