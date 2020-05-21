@@ -8,6 +8,7 @@
 
 - [Introduction](#regulated-minimalism)
 - [Philosophy](#philosophy)
+- [Organization](#organization)
 - [Setup](#setup)
 - [Z Shell](#z-shell)
 - [Neovim](#neovim)
@@ -43,6 +44,20 @@ happen.
 NOTE: Word minimal, depending on a context, can have a lot of different meanings.
 In this repository, _minimal_ refers to software that runs fast and has a limited
 number of bugs (or no bugs at all).
+
+## Organization
+
+My setup is not fully compliant with the [XDG Base Directory
+Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
+That said, the goal is consistency, hence there is a structure in place for the
+system.
+
+```sh
+dotfiles                        --> ~/.config
+user-written scripts            --> ~/.local/bin
+data shared across aplications  --> ~/.local/share
+cache                           --> ~/.cache
+```
 
 ## Setup
 
