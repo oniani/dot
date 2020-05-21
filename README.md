@@ -53,10 +53,10 @@ That said, the goal is consistency, hence there is a structure in place for the
 system.
 
 ```sh
-dotfiles                        --> ~/.config
-user-written scripts            --> ~/.local/bin
-data shared across aplications  --> ~/.local/share
-cache                           --> ~/.cache
+cache                          --> ~/.cache
+dotfiles                       --> ~/.config
+user-written scripts           --> ~/.local/bin
+data shared across aplications --> ~/.local/share
 ```
 
 ## Setup
