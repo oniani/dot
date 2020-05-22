@@ -159,6 +159,7 @@ The chart was generated using
 | `<Leader>o`      | Open the generated PDF file                | Open     |
 | `<Leader>p`      | Use fzf for picking a colorscheme          | Palette  |
 | `<Leader>s`      | Toggle spell checking                      | Spell    |
+| `<Leader>t`      | Open to-do list in the vertical split      | To-do    |
 | `<Leader>w`      | Toggle line-wrapping                       | Wrap     |
 | `<Leader>z`      | Toggle Goyo                                | Zen      |
 | `<CR>`           | Unset the last registered search pattern   |          |
