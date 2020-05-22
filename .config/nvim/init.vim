@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: May 16, 2020
+" Modified: May 21, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -18,14 +18,14 @@ set nocompatible
 " Plugins and vim-plug {{{
 
 " Install vim-plug automatically
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+if empty(glob('$HOME/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo "$HOME/.config/nvim/autoload/plug.vim" --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  autocmd VimEnter * PlugInstall --sync | source "$MYVIMRC"
 endif
 
 " Start the plugin declaration block
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('$HOME/.config/nvim/plugged')
 
 " Productivity
 Plug 'junegunn/fzf', { 'do': './install --bin' }  " fzf fuzzy file finder
@@ -229,6 +229,9 @@ nnoremap <Leader>p :Colors<CR>
 
 " Spell check
 nnoremap <Leader>s :setlocal spell! spelllang=en_us<CR>
+
+" Open to-do list in the vertical split
+nnoremap <Leader>t :vs<Space>$HOME/work-in-progress/TODO<CR>
 
 " Toggle line-wrapping
 nnoremap <Leader>w :set wrap!<CR>
