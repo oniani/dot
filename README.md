@@ -158,6 +158,7 @@ The chart was generated using
 | `<Leader>l`      | Search for a line with a pattern in a file | Line     |
 | `<Leader>o`      | Open the generated PDF file                | Open     |
 | `<Leader>p`      | Use fzf for picking a colorscheme          | Palette  |
+| `<Leader>r`      | Use fzf and rg for the string search       | Rg       |
 | `<Leader>s`      | Toggle spell checking                      | Spell    |
 | `<Leader>t`      | Open to-do list in the vertical split      | To-do    |
 | `<Leader>w`      | Toggle line-wrapping                       | Wrap     |

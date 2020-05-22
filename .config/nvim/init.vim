@@ -227,6 +227,9 @@ nnoremap <Leader>o :!open %:r.pdf<CR><CR>
 " Use fzf for picking a colorscheme
 nnoremap <Leader>p :Colors<CR>
 
+" Use fzf and rg for the string search
+nnoremap <Leader>r :Rg<CR>
+
 " Spell check
 nnoremap <Leader>s :setlocal spell! spelllang=en_us<CR>
 
