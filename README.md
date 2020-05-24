@@ -76,7 +76,7 @@ data shared across aplications --> ~/.local/share
 - Terminal Emulator: [kitty](https://sw.kovidgoyal.net/kitty/)
 - Version Control: [Git](https://git-scm.com/downloads)
 - Video Player: [mpv](https://mpv.io/)
-- Wallpaper: [wallpaper3.jpg](https://github.com/oniani/templates/blob/master/wallpapers/wallpaper003.jpg)
+- Wallpaper: [wallpaper47.jpg](https://github.com/oniani/wallpapers/blob/master/wallpapers/wallpaper47.jpg)
 - Web Browser: [Firefox](https://www.mozilla.org/en-US/firefox/)
 - Window Manager: [Amethyst](https://github.com/ianyh/Amethyst) / [bspwm](https://github.com/baskerville/bspwm)
 
