@@ -45,8 +45,7 @@ happen.
 
 The setup is not fully compliant with the [XDG Base Directory
 Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
-That said, the goal is consistency, hence there is a structure in place for the
-system.
+That said, the goal is consistency, hence there is a structure in place:
 
 ```sh
 cache                          --> ~/.cache
