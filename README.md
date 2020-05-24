@@ -1,4 +1,4 @@
-# Regulated Minimalism
+# `dots`
 
 ![Desktop](demo.png)
 
@@ -6,7 +6,6 @@
 
 ## Table of Contents
 
-- [Introduction](#regulated-minimalism)
 - [Philosophy](#philosophy)
 - [Organization](#organization)
 - [Setup](#setup)
@@ -17,37 +16,34 @@
 
 ---
 
-# Philosophy
+## Philosophy
 
-All of the templates and configuration files along with the programs are
-chosen with the simplicity in mind and in most cases, cross-platform tools
-and applications are preferred.
+All of the templates and configuration files along with the programs are chosen
+with the simplicity in mind, and in most cases, cross-platform tools and
+applications are preferred. The repository attempts to only include minimal
+software, following the UNIX philosophy. In other words, software that software
+that runs fast and has a limited number of bugs (or no bugs at all).
 
-Regulated Minimalism was initially designed for **macOS** operating system, but
-virtually everything works on most **Linux** distributions with a few
-exceptions including `rwp` script and the tiling window manager **Amethyst**.
-**Homebrew** might not work on all Linux distributions, so one will have to use
-some other distribution-specific package manager such as `apt`, `pacman`, etc.
+`dots` was initially designed for **macOS** operating system, but virtually
+everything works on most **Linux** distributions with a few exceptions
+including `wp` script and the tiling window manager **Amethyst**. **Homebrew**
+might not work on all Linux distributions, so one will have to use some other,
+distribution-specific package manager such as `apt`, `pacman`, etc. Some
+applications and tools used for this setup have even more minimal alternatives,
+yet the functionality of such tools is usually more limited and therefore,
+there is a size/minimalism-functionality trade-off. The repo tries to get the
+most without losing the performance.
 
 For **macOS** users, there is an automated installation option that takes care
 of the setup.
 
-For those who are wondering, the repository is called _**Regulated** Minimalism_
-since most of the applications and tools used for this setup have even more
-minimal alternatives, yet the functionality of such tools is usually a lot more
-limited and therefore, there is a size/minimalism-functionality trade-off.
-
-Bear in mind that this repository will always be a work-in-progress until
-that **ONE** perfect setup is found which, quite frankly, will probably never
+Bear in mind that this repository will always be a work-in-progress until that
+**ONE** perfect setup is found which, quite frankly, will probably never
 happen.
-
-NOTE: Word minimal, depending on a context, can have a lot of different meanings.
-In this repository, _minimal_ refers to software that runs fast and has a limited
-number of bugs (or no bugs at all).
 
 ## Organization
 
-My setup is not fully compliant with the [XDG Base Directory
+The setup is not fully compliant with the [XDG Base Directory
 Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
 That said, the goal is consistency, hence there is a structure in place for the
 system.
@@ -173,7 +169,7 @@ The chart was generated using
 
 In order to start the installation wizard, run the following command:
 
-`git clone https://github.com/oniani/regulated-minimalism -q && cd regulated-minimalism && ./setup all`
+`git clone https://github.com/oniani/dots -q && cd dots && ./setup all`
 
 Also, please make sure that the system runs the latest macOS operating system.
 
