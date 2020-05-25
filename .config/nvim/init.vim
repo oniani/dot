@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: May 21, 2020
+" Modified: May 25, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -75,6 +75,8 @@ let g:ale_linters = {
   \ 'sh': ['shellcheck']
   \}
 
+let g:ale_linters_explicit = 1
+
 let g:ale_prettier_options = '--print-width=79'
 let g:ale_python_black_options = '--line-length=79'
 let g:ale_rust_cargo_use_clippy = 1
@@ -117,6 +119,10 @@ set clipboard+=unnamedplus
 " Some servers have issues with backup files
 set nobackup
 set nowritebackup
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience
+set updatetime=300
 
 " Stop generating annoying swap files
 set noswapfile
