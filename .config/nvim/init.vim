@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: May 25, 2020
+" Modified: May 28, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -88,7 +88,6 @@ let g:ale_rust_cargo_use_clippy = 1
 if (has("termguicolors"))
   set termguicolors
   colorscheme base16-gruvbox-dark-hard
-  highlight! Normal ctermbg=none guibg=none
 endif
 
 " }}}
@@ -104,11 +103,20 @@ endif
 "   3. Cause the editor to autoload 'indent' files on FileType events
 filetype plugin indent on
 
+" Turn on the syntax highlighting
+syntax on
+
+" Italic comments
+highlight! Comment cterm=italic gui=italic
+
 " Remove folded text background
 highlight! Folded ctermbg=none
 
-" Turn on the syntax highlighting
-syntax on
+" Transparent background
+highlight! Normal ctermbg=none guibg=none
+
+" Brighter comments (for Base 16)
+call Base16hi("Comment", g:base16_gui09, "", g:base16_cterm09, "", "", "")
 
 " Set how many lines of history Vim has to remember
 set history=10000
