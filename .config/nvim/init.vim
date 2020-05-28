@@ -10,16 +10,11 @@
 " |_|_| |_|_|\__(_)_/ |_|_| |_| |_|
 "
 
-" Use Vim/Neovim settings, rather than Vi settings (much better!)
-" This must be on the first line, because it changes other
-" options as a side effect
-set nocompatible
-
 " Plugins and vim-plug {{{
 
 " Install vim-plug automatically
 if empty(glob('$HOME/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo "$HOME/.config/nvim/autoload/plug.vim" --create-dirs
+  silent !curl -Lfo "$HOME/.config/nvim/autoload/plug.vim" --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source "$MYVIMRC"
 endif
@@ -77,6 +72,7 @@ let g:ale_linters = {
 
 let g:ale_linters_explicit = 1
 
+let g:ale_python_mypy_options = '--ignore-missing-imports'
 let g:ale_prettier_options = '--print-width=79'
 let g:ale_python_black_options = '--line-length=79'
 let g:ale_rust_cargo_use_clippy = 1
@@ -95,13 +91,6 @@ endif
 " }}}
 
 " Convenience {{{
-
-" This command does three things:
-"   1. Cause the editor to use 'ftdetect' files to detect and set 'filetype'
-"      and trigger FileType events
-"   2. Cause the editor to autoload 'ftplugin' files on FileType events
-"   3. Cause the editor to autoload 'indent' files on FileType events
-filetype plugin indent on
 
 " Turn on the syntax highlighting
 syntax on
