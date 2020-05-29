@@ -31,12 +31,6 @@ export VIDEO="preview"
 export FZF_DEFAULT_COMMAND="fd --hidden --type f"
 export FZF_DEFAULT_OPTS="--color=16 --height=50% --reverse"
 
-# nnn
-export NNN_BMS="D:~/Downloads;d:~/Documents;p:~/Pictures;w:~/work-in-progress;"
-export NNN_OPTS="Eerx"
-export NNN_PLUG='d:newdir;f:newfile;s:showfile'
-export NNN_TRASH=1
-
 # Move to ~/.config
 export CARGO_HOME="$HOME/.config/cargo"
 export GNUPGHOME="$HOME/.config/gnupg"

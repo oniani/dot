@@ -83,6 +83,9 @@ brew_install() {
   brew doctor
   brew cleanup
 
+  # Core utilities
+  brew install coreutils exa fd findutils fzf htop neofetch rg tree trash-cli
+
   # Language support
   brew install ghc lua node perl python r ruby rustup && rustup-init
 
@@ -96,16 +99,13 @@ brew_install() {
   brew install ffmpeg imagemagick p7zip pandoc
 
   # Essentials
-  brew install mpc mpd mpv ncmpcpp neovim newsboat nnn
+  brew install mpc mpd mpv ncmpcpp neovim newsboat
 
   # Mail
   brew install abook gpg mbsync msmtp neomutt notmuch pass
 
   # Fancy
   brew install bat cmatrix figlet wallpaper
-
-  # System-wide
-  brew install coreutils fd findutils fzf htop neofetch rg tree trash-cli
 
   # Web
   brew install curl git youtube-dl

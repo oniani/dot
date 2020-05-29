@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+# List files
+# by David Oniani <onianidavid@gmail.com>
+# License: GNU GPLv3
+
+(command -v exa >/dev/null && exa -Faghl --git --group-directories-first) ||
+  ls -Ahlu

@@ -1,7 +1,7 @@
 #
 # Filename: .zshrc
 # Author:   David Oniani
-# Modified: May 15, 2020
+# Modified: May 29, 2020
 #
 #            _
 #    _______| |__  _ __ ___
@@ -19,24 +19,6 @@ function colormap() {
   done
 }
 
-# Configure cd on quit for nnn
-function nnn_autocd() {
-  # Block nesting of nnn in subshells
-  if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-    printf "nnn is already running\n"
-    return
-  fi
-
-  export NNN_TMPFILE="$HOME/.config/nnn/.lastd"
-
-  nnn "$@"
-
-  if [ -f "$NNN_TMPFILE" ]; then
-    . "$NNN_TMPFILE"
-    rm -f "$NNN_TMPFILE" > /dev/null
-  fi
-}
-
 # }}}
 
 # Aliases {{{
@@ -45,13 +27,9 @@ function nnn_autocd() {
 alias :q="exit"
 alias grep="grep --color=auto"
 alias icat="kitty +kitten icat"
-alias l="ls -Ahu"
-alias ll="ls -Ahlu"
-alias mkd="mkdir -p"
 
 # Interactive
 alias e='$EDITOR'
-alias f='nnn_autocd'
 alias m='$MAIL'
 alias mp='$MUSIC --quiet'
 alias rss='$RSS --quiet'
@@ -171,9 +149,6 @@ zle -N zle-line-init
 # }}}
 
 # Key Bindings {{{
-
-# Launch the file manager
-bindkey -s "^f" "f\n"
 
 # ipython deserves its own key binding
 bindkey -s "^p" "ipython\n"
