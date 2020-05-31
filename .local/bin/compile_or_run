@@ -46,7 +46,8 @@ case $filename in
   *.dot) dot -Tpdf "$filename" -o "$basename.pdf";;
   *.hs) runhaskell "$filename";;
   *.md) mdcompile "$filename" "$basename.pdf";;
-  *.present) pandoc -t revealjs -s -o "$basename".html "$filename" -V revealjs-url=https://revealjs.com -V theme=solarized;;
+  *.present) pandoc -t revealjs -s -o "$basename".html "$filename" \
+                    -V revealjs-url=https://revealjs.com -V theme=solarized;;
   *.py) python3 "$filename";;
   *.R) Rscript "$filename";;
   *.Rmd) Rscript -e "rmarkdown::render('$filename', 'pdf_document')";;

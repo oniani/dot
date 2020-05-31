@@ -45,36 +45,30 @@ arrange() {
 
 vim_install() {
   printf "Installing and updating Vim plugins...\n"
-  $EDITOR +PlugUpgrade +PlugClean! +PlugInstall +PlugUpdate +qa!
+  "$EDITOR" +PlugUpgrade +PlugClean! +PlugInstall +PlugUpdate +qa!
   printf "Done!\n\n"
 }
 
 zsh_install() {
-  printf "Removing %s/.config/zsh/plugin/zsh-autosuggestions...\n" "$HOME"
-  rm -rf "$HOME/.config/zsh/plugin/zsh-autosuggestions"
-  printf "Done!\n"
-
-  printf "Removing %s/.config/zsh/plugin/zsh-syntax-highlighting...\n" "$HOME"
-  rm -rf "$HOME/.config/zsh/plugin/zsh-syntax-highlighting"
-  printf "Done!\n\n"
-
   printf "Installing zsh-autosuggestions...\n"
+  rm -rf "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/zsh-autosuggestions"
   git clone https://github.com/zsh-users/zsh-autosuggestions \
-    "$HOME/.config/zsh/plugin/zsh-autosuggestions" \
-    --quiet
+      "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/zsh-autosuggestions" \
+      --quiet
   printf "Done!\n"
 
-  printf "Installing zsh-syntax-highlighting...\n"
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-    "$HOME/.config/zsh/plugin/zsh-syntax-highlighting" \
-    --quiet
+  printf "Installing fast-syntax-highlighting...\n"
+  rm -rf "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/fast-syntax-highlighting"
+  git clone https://github.com/zdharma/fast-syntax-highlighting \
+      "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/fast-syntax-highlighting" \
+      --quiet
   printf "Done!\n"
 }
 
 pip_install() {
-  printf "Installing Python 3 packages..."
+  printf "Installing Python 3 packages...\n"
   python3 -m pip install black ipython jupyterlab mypy pygments pylint pywal
-  printf "Done!"
+  printf "Done!\n"
 }
 
 brew_install() {

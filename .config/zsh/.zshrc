@@ -1,7 +1,7 @@
 #
 # Filename: .zshrc
 # Author:   David Oniani
-# Modified: May 30, 2020
+# Modified: May 31, 2020
 #
 #            _
 #    _______| |__  _ __ ___
@@ -55,7 +55,8 @@ RPROMPT="%D{%y-%m-%d %I:%M %p}"
 autoload -Uz colors && colors
 
 # Load and enable completion
-autoload -Uz compinit && compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump_$ZSH_VERSION"
+autoload -Uz compinit && compinit -d \
+  "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump_$ZSH_VERSION"
 
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
@@ -163,7 +164,7 @@ bindkey -s "^p" "ipython\n"
 # Source Fish-like autocompletions for activation
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-# Source syntax highlighting for activation
-source "${XFG_CONFIG_HOME:-$HOME/.config}/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+# Source fast syntax highlighting for activation
+source "${XFG_CONFIG_HOME:-$HOME/.config}/zsh/plugin/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
 # }}}

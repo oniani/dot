@@ -4,18 +4,13 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: GNU GPLv3
 
-TEXT="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Aenean porta purus et sem gravida rutrum.
-Maecenas blandit nulla ac luctus tempus.
-Nam finibus posuere ante, et lacinia massa vestibulum sit amet.
-Nulla velit arcu, efficitur quis turpis nec, sollicitudin lobortis nisi.
-Vivamus ut diam ut eros faucibus fringilla.
-Suspendisse pellentesque magna nec velit tristique sollicitudin.
-Morbi ultrices nec augue et molestie.
-Nam sapien ante, ullamcorper elementum convallis id, faucibus in lectus.
-Fusce pellentesque mollis velit efficitur porta.
-Sed finibus ligula quam, et lacinia velit posuere auctor.
-Donec ligula lorem, dictum nec lectus in, vehicula tincidunt massa.
-In hac habitasse platea dictumst."
+TEXT="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et
+sollicitudin lorem. Sed id purus eros. Nullam cursus elit mauris, sit amet
+maximus leo gravida quis. Nullam suscipit, orci in condimentum ultrices, est
+tortor volutpat nibh, ac bibendum massa libero luctus velit. Integer mollis ac
+est eu consequat. In hac habitasse platea dictumst. Maecenas blandit, sapien
+eget pretium malesuada, nisl neque commodo justo, mollis laoreet diam justo at
+neque. Quisque aliquam dignissim interdum.
+"
 
-printf "%s\n" "$TEXT"
+printf "%s" "$TEXT"

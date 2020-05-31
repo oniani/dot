@@ -4,4 +4,5 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: GNU GPLv3
 
-abook --datafile "$HOME/.local/share/abook/abook" --mutt-query "$1"
+abook --datafile "${XDG_DATA_HOME:-$HOME/.local/share}/abook/abook" \
+      --mutt-query "$1"
