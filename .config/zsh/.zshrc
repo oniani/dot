@@ -49,7 +49,7 @@ alias clock="tty-clock -c -s -t"
 PROMPT="%F{03}%c %F{39}❯%F{reset_color} "
 
 # Set the right prompt
-RPROMPT="%D{%y-%m-%d %I:%M %p}"
+RPROMPT="[ %D{%y-%m-%d | %I:%M %p} ]"
 
 # Load and enable colors
 autoload -Uz colors && colors
