@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: May 28, 2020
+" Modified: May 30, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -16,7 +16,7 @@
 if empty(glob('$HOME/.config/nvim/autoload/plug.vim'))
   silent !curl -Lfo "$HOME/.config/nvim/autoload/plug.vim" --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source "$MYVIMRC"
+  autocmd VimEnter * PlugInstall --sync | source '$MYVIMRC'
 endif
 
 " Start the plugin declaration block
@@ -105,7 +105,7 @@ highlight! Folded ctermbg=none
 highlight! Normal ctermbg=none guibg=none
 
 " Brighter comments (for Base 16)
-call Base16hi("Comment", g:base16_gui09, "", g:base16_cterm09, "", "", "")
+call Base16hi('Comment', g:base16_gui09, '', g:base16_cterm09, '', '', '')
 
 " Set how many lines of history Vim has to remember
 set history=10000

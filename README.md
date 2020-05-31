@@ -43,16 +43,8 @@ happen.
 
 ## Organization
 
-The setup is not fully compliant with the [XDG Base Directory
+The setup is compliant with the [XDG Base Directory
 Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
-That said, the goal is consistency, hence there is a structure in place:
-
-```sh
-cache                          --> ~/.cache
-configuration files            --> ~/.config
-user-written scripts           --> ~/.local/bin
-data shared across aplications --> ~/.local/share
-```
 
 ## Setup
 

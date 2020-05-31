@@ -1,7 +1,7 @@
 #
 # Filename: .zshenv
 # Author:   David Oniani
-# Modified: May 19, 2020
+# Modified: May 30, 2020
 #
 #            _
 #    _______| |__   ___ _ ____   __
@@ -10,8 +10,13 @@
 # (_)___|___/_| |_|\___|_| |_|\_/
 #
 
+# XDG base directory specification
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+
 # Make directories reachable
-export PATH="$HOME/.config/cargo/bin:$PATH"
+export PATH="${XDG_CONFIG_HOME:-$HOME/.config}/cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Core utilities
@@ -32,18 +37,18 @@ export FZF_DEFAULT_COMMAND="fd --hidden --type f"
 export FZF_DEFAULT_OPTS="--color=16 --height=50% --reverse"
 
 # Move to ~/.config
-export CARGO_HOME="$HOME/.config/cargo"
-export GNUPGHOME="$HOME/.config/gnupg"
-export IPYTHONDIR="$HOME/.config/ipython"
-export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"
-export NOTMUCH_CONFIG="$HOME/.config/notmuch/notmuch-config"
-export PASSWORD_STORE_DIR="$HOME/.config/pass"
-export RUSTUP_HOME="$HOME/.config/rustup"
-export ZDOTDIR="$HOME/.config/zsh"
+export CARGO_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/cargo"
+export GNUPGHOME="${XDG_CONFIG_HOME:-$HOME/.config}/gnupg"
+export IPYTHONDIR="${XDG_CONFIG_HOME:-$HOME/.config}/ipython"
+export JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/jupyter"
+export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch/config"
+export PASSWORD_STORE_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/pass"
+export RUSTUP_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/rustup"
+export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
 # Move to ~/.cache
-export MYPY_CACHE_DIR="$HOME/.cache/mypy"
-export NPM_CONFIG_CACHE="$HOME/.cache/npm"
+export MYPY_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/mypy"
+export NPM_CONFIG_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/npm"
 
 # Additional settings
 export CLICOLOR=1

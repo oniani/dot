@@ -11,4 +11,4 @@ ping -q -c 1 8.8.8.8 >/dev/null || { printf "No internet\n" ; exit ; }
 pgrep -x mbsync >/dev/null && { printf "mbsync already running\n" ; exit ; }
 
 # Synchronize
-mbsync -a -q -c "$HOME/.config/isync/mbsyncrc"
+mbsync -a -q -c "${$XDG_CONFIG_HOME:-$HOME/.config}/isync/mbsyncrc"

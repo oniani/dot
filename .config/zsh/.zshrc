@@ -1,7 +1,7 @@
 #
 # Filename: .zshrc
 # Author:   David Oniani
-# Modified: May 29, 2020
+# Modified: May 30, 2020
 #
 #            _
 #    _______| |__  _ __ ___
@@ -48,11 +48,14 @@ alias clock="tty-clock -c -s -t"
 # Set the prompt
 PROMPT="%F{03}%c %F{39}❯%F{reset_color} "
 
+# Set the right prompt
+RPROMPT="%D{%y-%m-%d %I:%M %p}"
+
 # Load and enable colors
 autoload -Uz colors && colors
 
 # Load and enable completion
-autoload -Uz compinit && compinit -d "$HOME/.cache/zsh/zcompdump_$ZSH_VERSION"
+autoload -Uz compinit && compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump_$ZSH_VERSION"
 
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
@@ -70,7 +73,7 @@ setopt COMPLETE_ALIASES  # Complete aliases
 setopt GLOBDOTS          # Complete dotfiles
 
 # History settings
-HISTFILE="$HOME/.cache/zsh/zsh_history"
+HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 
@@ -158,9 +161,9 @@ bindkey -s "^p" "ipython\n"
 # Sourcing {{{
 
 # Source Fish-like autocompletions for activation
-source "$HOME/.config/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # Source syntax highlighting for activation
-source "$HOME/.config/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "${XFG_CONFIG_HOME:-$HOME/.config}/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # }}}
