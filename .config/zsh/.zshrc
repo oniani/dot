@@ -167,7 +167,7 @@ bindkey -s "^z" "fg; clear\n"
 # Source Fish-like autocompletions for activation
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-# Source fast syntax highlighting for activation
-source "${XFG_CONFIG_HOME:-$HOME/.config}/zsh/plugin/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+# Source zsh syntax highlighting for activation
+source "${XFG_CONFIG_HOME:-$HOME/.config}/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # }}}

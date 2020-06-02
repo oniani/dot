@@ -57,10 +57,10 @@ zsh_install() {
       --quiet
   printf "Done!\n"
 
-  printf "Installing fast-syntax-highlighting...\n"
-  rm -rf "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/fast-syntax-highlighting"
-  git clone https://github.com/zdharma/fast-syntax-highlighting \
-      "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/fast-syntax-highlighting" \
+  printf "Installing zsh-syntax-highlighting...\n"
+  rm -rf "${XFG_CONFIG_HOME:-$HOME/.config}/zsh/plugin/zsh-syntax-highlighting"
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting \
+      "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/zsh-syntax-highlighting" \
       --quiet
   printf "Done!\n"
 }
