@@ -26,13 +26,13 @@ that runs fast and has a limited number of bugs (or no bugs at all).
 
 `dots` was initially designed for **macOS** operating system, but virtually
 everything works on most **Linux** distributions with a few exceptions
-including `wp` script and the tiling window manager **Amethyst**. **Homebrew**
-might not work on all Linux distributions, so one will have to use some other,
-distribution-specific package manager such as `apt`, `pacman`, etc. Some
-applications and tools used for this setup have even more minimal alternatives,
-yet the functionality of such tools is usually more limited and therefore,
-there is a size/minimalism-functionality trade-off. The repo tries to get the
-most without losing the performance.
+including `wp` script, **skhd** and the tiling window manager **Amethyst**.
+**Homebrew** might not work on all Linux distributions, so one will have to use
+some other, distribution-specific package manager such as `apt`, `pacman`, etc.
+Some applications and tools used for this setup have even more minimal
+alternatives, yet the functionality of such tools is usually more limited and
+therefore, there is a size/minimalism-functionality trade-off. The repo tries
+to get the most without losing the performance.
 
 For **macOS** users, there is an automated installation option that takes care
 of the setup.

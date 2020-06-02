@@ -1,0 +1,27 @@
+#
+# Filename: skhdrc
+# Author:   David Oniani
+# Modified: June 02, 2020
+#
+#      _    _         _
+#  ___| | _| |__   __| |_ __ ___
+# / __| |/ / '_ \ / _` | '__/ __|
+# \__ \   <| | | | (_| | | | (__
+# |___/_|\_\_| |_|\__,_|_|  \___|
+#
+
+# GUI applications
+cmd - return : kitty --directory "$HOME" --single-instance &> /dev/null
+cmd - s : open -a signal
+cmd - w : open -a firefox
+cmd - m : open -a messages
+
+# Terminal applications
+cmd + shift - h : kitty --directory "$HOME" --single-instance &> /dev/null htop
+cmd + shift - n : kitty --directory "$HOME" --single-instance &> /dev/null ncmpcpp
+cmd + shift - m : kitty --directory "$HOME" --single-instance &> /dev/null neomutt
+
+# Disable skhd for the following apps
+.blacklist [
+  "firefox"
+]
