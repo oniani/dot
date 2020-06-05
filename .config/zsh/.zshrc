@@ -1,7 +1,7 @@
 #
 # Filename: .zshrc
 # Author:   David Oniani
-# Modified: June 04, 2020
+# Modified: June 05, 2020
 #
 #            _
 #    _______| |__  _ __ ___
@@ -32,6 +32,7 @@ alias icat="kitty +kitten icat"
 
 # Interactive
 alias e='$EDITOR'
+alias f='cd "$(command vifm --choose-dir - "$@")"'
 alias m='$MAIL'
 alias mp='$MUSIC --quiet'
 alias rss='$RSS --quiet'
@@ -155,6 +156,9 @@ zle -N zle-line-init
 # }}}
 
 # Key Bindings {{{
+
+# Key binding for Vifm
+bindkey -s "^f" "f\n"
 
 # Key binding for IPython
 bindkey -s "^p" "ipython\n"
