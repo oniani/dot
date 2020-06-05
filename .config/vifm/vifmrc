@@ -1,0 +1,62 @@
+"
+" Filename: vifmrc
+" Author:   David Oniani
+" Modified: June 05, 2020
+"
+"        _  __
+" __   _(_)/ _|_ __ ___  _ __ ___
+" \ \ / / | |_| '_ ` _ \| '__/ __|
+"  \ V /| |  _| | | | | | | | (__
+"   \_/ |_|_| |_| |_| |_|_|  \___|
+"
+
+" Convenience {{{
+
+colorscheme gruvbox
+
+set vicmd="$EDITOR"
+set syscalls
+set ignorecase
+set incsearch
+set smartcase
+set sortnumbers
+set wildmenu
+set wildstyle=popup
+set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
+
+" }}}
+
+" File previews {{{
+
+fileview */  tree %c -L 1 --dirsfirst
+fileview ../ tree %c -L 1 --dirsfirst
+
+" }}}
+
+" Key bindings {{{
+
+nnoremap <Space> tj
+nnoremap . za
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" }}}
+
+" Aliases {{{
+
+nnoremap cs   :cd ~/.config<CR>
+nnoremap docs :cd ~/Documents<CR>
+nnoremap ds   :cd ~/Desktop<CR>
+nnoremap gm   :cd ~/git-managed<CR>
+nnoremap sf   :cd ~/git-managed/dots<CR>
+
+" }}}
+
+" Sourcing {{{
+
+source $HOME/.config/vifm/icons/icons.vifm
+
+" }}}

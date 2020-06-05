@@ -55,7 +55,7 @@ Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-
 - Editor: [Neovim](https://neovim.io/)
 - Email: [neomutt](https://neomutt.org/) (with [isync](http://isync.sourceforge.net/) for mailbox synchronization and [msmtp](https://marlam.de/msmtp/) for sending emails)
 - File Format Handler: [pandoc](https://pandoc.org/)
-- File Manager: in search of one... (prefer `exa` over `nnn`)
+- File Manager: [Vifm](https://vifm.info/)
 - Font: [Hack Regular Nerd Font Complete](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf)
 - Fuzzy Finder: [fzf](https://github.com/junegunn/fzf)
 - Image Viewer: [Preview](<https://en.wikipedia.org/wiki/Preview_(macOS)>) / [sxiv](https://github.com/muennich/sxiv)
