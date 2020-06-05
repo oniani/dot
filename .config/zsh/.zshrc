@@ -1,7 +1,7 @@
 #
 # Filename: .zshrc
 # Author:   David Oniani
-# Modified: June 01, 2020
+# Modified: June 04, 2020
 #
 #            _
 #    _______| |__  _ __ ___
@@ -26,6 +26,8 @@ function colormap() {
 # Core commands
 alias :q="exit"
 alias grep="grep --color=auto"
+alias l="ls -Ahu"
+alias ll="ls -Ahlu"
 alias icat="kitty +kitten icat"
 
 # Interactive
