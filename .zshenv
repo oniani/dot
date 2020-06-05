@@ -54,4 +54,4 @@ export NPM_CONFIG_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/npm"
 export CLICOLOR=1
 export LC_ALL=en_US.UTF-8
 export LESSHISTFILE="-"
-export MANPAGER="nvim -c 'set ft=man'"
+export MANPAGER="nvim +Man!"
