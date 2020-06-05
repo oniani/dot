@@ -37,7 +37,6 @@ fileview ../ tree %c -L 1 --dirsfirst
 
 nnoremap <Space> tj
 nnoremap . za
-nnoremap g gg
 nnoremap S :!git status %S<CR>
 
 nnoremap <C-h> <C-w>h
