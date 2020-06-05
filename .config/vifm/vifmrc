@@ -48,6 +48,7 @@ nnoremap <C-l> <C-w>l
 
 " Aliases {{{
 
+nnoremap cd   :cd<CR>
 nnoremap cs   :cd ~/.config<CR>
 nnoremap docs :cd ~/Documents<CR>
 nnoremap ds   :cd ~/Desktop<CR>
