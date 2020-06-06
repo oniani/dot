@@ -4,4 +4,4 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: GNU GPLv3
 
-git log --oneline | fzf | cut -d' ' -f1 | xargs -I {} git diff "{}"
+git log --oneline | fzf | cut -d' ' -f1 | xargs git diff
