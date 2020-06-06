@@ -158,9 +158,13 @@ The chart was generated using
 
 ### Automated Installation
 
-In order to start the installation wizard, run the following command:
+In order to start the installation wizard, execute the commands below:
 
-`git clone https://github.com/oniani/dots -q && cd dots && ./setup all`
+```sh
+git clone https://github.com/oniani/dots
+cd dots
+./setup all
+```
 
 Also, please make sure that the system runs the latest macOS operating system.
 
