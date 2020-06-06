@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: May 30, 2020
+" Modified: June 06, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -91,9 +91,6 @@ endif
 " }}}
 
 " Convenience {{{
-
-" Turn on the syntax highlighting
-syntax on
 
 " Italic comments
 highlight! Comment cterm=italic gui=italic

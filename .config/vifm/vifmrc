@@ -1,7 +1,7 @@
 "
 " Filename: vifmrc
 " Author:   David Oniani
-" Modified: June 05, 2020
+" Modified: June 06, 2020
 "
 "        _  __
 " __   _(_)/ _|_ __ ___  _ __ ___
@@ -48,7 +48,7 @@ filetype *.pdf open -a preview %c
 " Key bindings {{{
 
 nnoremap . za
-nnoremap <Space> tj
+nnoremap <Space> :view<CR>
 nnoremap S :!git status %S<CR>
 nnoremap W :!wp %c<CR>
 
