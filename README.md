@@ -140,7 +140,6 @@ The chart was generated using
 | `<Space><Space>` | Toggle between buffers                     |          |
 | `<Leader>b`      | Select a buffer                            | Buffer   |
 | `<Leader>c`      | Generic compiler and runner                | Compile  |
-| `<Leader>d`      | Paste a dummy text                         | Dummy    |
 | `<Leader>f`      | Use fzf for file searching                 | Find     |
 | `<Leader>l`      | Search for a line with a pattern in a file | Line     |
 | `<Leader>o`      | Open the generated PDF file                | Open     |

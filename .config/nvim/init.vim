@@ -95,17 +95,11 @@ endif
 " Italic comments
 highlight! Comment cterm=italic gui=italic
 
-" Remove folded text background
-highlight! Folded ctermbg=none
-
 " Transparent background
 highlight! Normal ctermbg=none guibg=none
 
 " Brighter comments (for Base 16)
 call Base16hi('Comment', g:base16_gui09, '', g:base16_cterm09, '', '', '')
-
-" Set how many lines of history Vim has to remember
-set history=10000
 
 " Allow full clipboard
 set clipboard+=unnamedplus
@@ -153,9 +147,6 @@ set splitbelow splitright
 
 " Enable mouse support
 set mouse=a
-
-" UTF-8 encoding
-set encoding=utf-8
 
 " }}}
 
@@ -211,9 +202,6 @@ nnoremap <Leader>b :Buffers<CR>
 
 " Compile or run a program
 nnoremap <Leader>c :!compile_or_run %<CR>
-
-" Paste a dummy text
-nnoremap <Leader>d :read !lorem_ipsum<CR>
 
 " Use fzf for file finding
 nnoremap <Leader>f :Files<CR>
