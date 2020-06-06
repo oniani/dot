@@ -49,10 +49,10 @@ alias clock="tty-clock -c -s -t"
 # Z Shell Settings {{{
 
 # Set the prompt
-PROMPT="%F{03}%c %F{39}❯%F{reset_color} "
+PROMPT="%F{#8ec07c}%c %F{#d65d0e}❯%F{reset_color} "
 
 # Set the right prompt
-RPROMPT="[ %D{%y-%m-%d | %I:%M %p} ]"
+RPROMPT="%F{#fe8019}%D{%y-%m-%d | %I:%M %p}%F{reset_color}"
 
 # Load and enable colors
 autoload -Uz colors && colors
