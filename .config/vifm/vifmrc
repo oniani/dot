@@ -14,6 +14,8 @@
 
 colorscheme gruvbox
 
+view
+
 set vicmd="$EDITOR"
 set syscalls
 set ignorecase
@@ -26,18 +28,29 @@ set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 
 " }}}
 
-" File previews {{{
+" File previews and open actions {{{
 
-fileview */  tree %c -L 1 --dirsfirst
+fileview *.bmp,*.gif,*.jpeg,*.jpg,*.png,*.xpm
+  \ kitty +kitten icat --transfer-mode=file --place=%pwx%ph@%pxx%py %c
+  \ %pc
+  \ kitty +kitten icat --transfer-mode=file --clear
+
+fileview */ tree %c -L 1 --dirsfirst
 fileview ../ tree %c -L 1 --dirsfirst
+fileview *.pdf pdftotext -nopgbrk %c -
+fileview * env -uCOLORTERM bat --color always --wrap never --pager never %c -p
+
+filetype *.bmp,*.gif,*.jpeg,*.jpg,*.png,*.xpm open -a preview %c
+filetype *.pdf open -a preview %c
 
 " }}}
 
 " Key bindings {{{
 
-nnoremap <Space> tj
 nnoremap . za
+nnoremap <Space> tj
 nnoremap S :!git status %S<CR>
+nnoremap W :!wp %c<CR>
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -54,6 +67,7 @@ nnoremap docs :cd ~/Documents<CR>
 nnoremap ds   :cd ~/Desktop<CR>
 nnoremap gm   :cd ~/git-managed<CR>
 nnoremap sf   :cd ~/git-managed/dots<CR>
+nnoremap wl   :cd ~/git-managed/walls/walls<CR>
 
 " }}}
 
