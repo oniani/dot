@@ -36,11 +36,11 @@ config_setup() {
 }
 
 arrange() {
-  cp -f  "ghci.conf" "$HOME/.ghc"
-  cp -f  ".zshenv"   "$HOME"
+  cp -f  ".zshenv" "$HOME"
 
-  cp -Rf ".config"   "$HOME"
-  cp -Rf ".local"    "$HOME"
+  cp -Rf ".config" "$HOME"
+  cp -Rf ".local"  "$HOME"
+  cp -Rf ".ghc"    "$HOME"
 }
 
 vim_install() {
