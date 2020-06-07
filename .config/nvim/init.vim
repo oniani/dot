@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: June 06, 2020
+" Modified: June 07, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -41,6 +41,13 @@ call plug#end()
 " }}}
 
 " Plugin Settings {{{
+
+" fzf {{{
+
+let $FZF_DEFAULT_OPTS='--layout=reverse'
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+
+" }}}
 
 " Asynchronous Lint Engine (ALE) {{{
 
@@ -188,7 +195,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=o formatoptions-=r
 autocmd VimLeave *.tex :!texclean
 
 " Highlight yanked region
-autocmd TextYankPost * lua require 'vim.highlight'.on_yank('Substitute', 500)
+autocmd TextYankPost * lua require'vim.highlight'.on_yank('Substitute', 500)
 
 " }}}
 
