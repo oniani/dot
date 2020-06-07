@@ -65,6 +65,7 @@ qnoremap <C-h> q
 
 nnoremap cd   :cd<CR>
 nnoremap cs   :cd ~/.config<CR>
+nnoremap dls  :cd ~/Downloads<CR>
 nnoremap docs :cd ~/Documents<CR>
 nnoremap ds   :cd ~/Desktop<CR>
 nnoremap gm   :cd ~/git-managed<CR>
