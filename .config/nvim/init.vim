@@ -187,6 +187,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=o formatoptions-=r
 " Clean up LaTeX build files after closing a file with .tex extension
 autocmd VimLeave *.tex :!texclean
 
+" Highlight yanked region
+autocmd TextYankPost * lua require 'vim.highlight'.on_yank('Substitute', 500)
+
 " }}}
 
 " Key Mappings {{{
