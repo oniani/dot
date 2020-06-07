@@ -69,7 +69,7 @@ nnoremap gm   :cd ~/git-managed<CR>
 nnoremap sc   :cd ~/.local/bin<CR>
 nnoremap sf   :cd ~/git-managed/dots<CR>
 nnoremap win  :cd ~/work-in-progress<CR>
-nnoremap wl   :cd ~/git-managed/oniani.github.io<CR>
+nnoremap web  :cd ~/git-managed/oniani.github.io<CR>
 nnoremap wl   :cd ~/git-managed/walls/walls<CR>
 
 " }}}
