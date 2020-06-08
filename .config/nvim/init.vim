@@ -238,7 +238,7 @@ nnoremap <Leader>t :vs<Space>$HOME/work-in-progress/TODO<CR>
 nnoremap <Leader>w :set wrap!<CR>
 
 " Toggle Goyo
-nnoremap <Leader>z :Goyo \| set linebreak \| set wrap!<CR>
+nnoremap <Leader>z :Goyo \| set linebreak<CR>
 
 " Unset last registered search pattern by hitting return
 nnoremap <CR> :nohlsearch<CR>
