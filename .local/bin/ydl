@@ -4,22 +4,38 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: GNU GPLv3
 
-printf "Enter a link: "
-read -r link
+help() {
+  printf "Download audio/video files using youtube-dl
+by David Oniani <onianidavid@gmail.com>
+License: GNU GPLv3
 
-printf "[a] Audio\n"
-printf "[v] Video\n"
-printf "Option: "
-read -r option
+SYNOPSIS
+  ydl [-ahv] [link ...]
 
-if [ "$option" = "a" ]; then
-  youtube-dl --add-metadata -cix -o \
-    "%(upload_date)s - %(duration)ss - %(title)s.%(ext)s" \
-    "$link"
-elif [ "$option" = "v" ]; then
-  youtube-dl --add-metadata -cio \
-    "%(upload_date)s - %(duration)ss - %(title)s.%(ext)s" \
-    "$link"
-else
-  printf "Unknown option\n"
-fi
+OPTIONS
+  a  : download audio
+  h  : help (this) message
+  v  : download video
+
+Running ./setup with no options will print a help message (this message)
+
+EXAMPLES
+  ydl -a https://www.youtube.com/watch?v=1XtD4bgz7A0
+  ydl -h
+  ydl -v https://www.youtube.com/watch?v=AaF7rXatU9E
+"
+}
+
+OPTION="$1"
+LINK="$2"
+
+case $OPTION in
+  "-a") youtube-dl --add-metadata -cix -o \
+          "%(upload_date)s - %(duration)ss - %(title)s.%(ext)s" \
+          "$LINK";;
+  "-h") help;;
+  "-v") youtube-dl --add-metadata -cio \
+          "%(upload_date)s - %(duration)ss - %(title)s.%(ext)s" \
+          "$LINK";;
+  *) help
+esac
