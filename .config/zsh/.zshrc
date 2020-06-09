@@ -1,7 +1,7 @@
 #
 # Filename: .zshrc
 # Author:   David Oniani
-# Modified: June 05, 2020
+# Modified: June 08, 2020
 #
 #            _
 #    _______| |__  _ __ ___
@@ -49,7 +49,7 @@ alias clock="tty-clock -c -s -t"
 # Z Shell Settings {{{
 
 # Set the prompt
-PS1="%F{#fe8019}[%D{%I:%M %p}] %F{#8ec07c}%c %F{#d3869b}❯%F{reset_color} "
+PS1="%F{#fe8019}%c %F{#8ec07c}▶%F{reset_color} "
 
 # Load and enable colors
 autoload -Uz colors && colors
