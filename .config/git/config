@@ -1,7 +1,7 @@
 #
 # Filename: .gitconfig
 # Author:   David Oniani
-# Modified: April 11, 2020
+# Modified: June 08, 2020
 #
 #         _ _                   __ _
 #    __ _(_) |_ ___ ___  _ __  / _(_) __ _
@@ -12,38 +12,40 @@
 #
 
 [user]
-        name = David Oniani
-        email = onianidavid@gmail.com
-        username = oniani
+    name = David Oniani
+    email = onianidavid@gmail.com
+    username = oniani
 
 [github]
-        user = oniani
+    user = oniani
 
 [url "https://bitbucket.org/"]
-        insteadOf = bb:
+    insteadOf = bb:
 
 [url "https://github.com/"]
-        insteadOf = gh:
+    insteadOf = gh:
 
 [url "https://gist.github.com/"]
-        insteadOf = gist:
+    insteadOf = gist:
 
 [core]
-        editor = $EDITOR
-        whitespace = tabwidth=4
+    editor = $EDITOR
+    whitespace = tabwidth=4
 
 [diff]
-        mnemonicprefix = true
+    mnemonicprefix = true
 
 [merge]
-        log = true
-        ff = false
+    log = true
+    ff = false
 
 [push]
-        default = simple
+    default = simple
 
 [color]
-        ui = auto
+    ui = auto
 
 [alias]
-        ll = "log --name-only --graph --abbrev-commit --pretty='format:%C(#0080ff)%h%Creset -%C(red)%d%Creset %C(#c0d6de)%s%Creset %C(#17b062)(%cr) %C(#cd9a00)<%an>%Creset'"
+    c = "commit"
+    ll = "log --all --pretty='format:%C(red)%h%Creset - %C(green)%ai %C(blue)by %an <%ae>%C(cyan)%d%Creset %C(yellow)%s%Creset %Creset'"
+    s = "status"
