@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: June 08, 2020
+" Modified: June 10, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -29,7 +29,6 @@ Plug 'junegunn/goyo.vim'                          " Distraction-free writing
 Plug 'tpope/vim-commentary'                       " Comment stuff out
 
 " Language support
-Plug 'dense-analysis/ale'                         " Lint and fix asynchronously
 Plug 'sheerun/vim-polyglot'                       " Language support
 
 " Consistency
@@ -46,43 +45,6 @@ call plug#end()
 
 let $FZF_DEFAULT_OPTS='--reverse'
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-
-" }}}
-
-" Asynchronous Lint Engine (ALE) {{{
-
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-let g:ale_fix_on_save = 1
-
-let b:ale_fixers = {
-  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-  \ 'css': ['prettier'],
-  \ 'html': ['prettier'],
-  \ 'javascript': ['prettier'],
-  \ 'markdown': ['prettier'],
-  \ 'python': ['black'],
-  \ 'r': ['styler'],
-  \ 'rust': ['rustfmt']
-  \}
-
-let g:ale_linters = {
-  \ 'haskell': ['hlint'],
-  \ 'javascript': ['eslint'],
-  \ 'markdown': ['mdl'],
-  \ 'python': ['mypy', 'pylint'],
-  \ 'r': ['lintr'],
-  \ 'sh': ['shellcheck']
-  \}
-
-let g:ale_linters_explicit = 1
-
-let g:ale_python_mypy_options = '--ignore-missing-imports'
-let g:ale_prettier_options = '--print-width=79'
-let g:ale_python_black_options = '--line-length=79'
-let g:ale_rust_cargo_use_clippy = 1
 
 " }}}
 
@@ -206,6 +168,9 @@ let mapleader = "\<Space>"
 
 " Toggle between buffers
 nnoremap <Leader><Leader> <C-^>
+
+" Reformat and realign the text
+nnoremap <Leader>a :%!format %<CR>
 
 " Select a buffer
 nnoremap <Leader>b :Buffers<CR>

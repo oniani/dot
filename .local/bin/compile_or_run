@@ -4,7 +4,7 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: GNU GPLv3
 
-filename="./$1"
+filename="$1"
 basename="${filename%.*}"
 
 cppcompile() {

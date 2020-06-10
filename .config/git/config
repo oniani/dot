@@ -46,8 +46,4 @@
     ui = auto
 
 [alias]
-    a = "add -A"
-    c = "commit"
     l = "log --all --pretty='format:%C(red)%h%Creset - %C(green)%ai %C(blue)by %an <%ae>%C(cyan)%d%Creset %C(yellow)%s%Creset %Creset'"
-    p = "push"
-    s = "status"
