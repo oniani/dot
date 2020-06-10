@@ -78,7 +78,7 @@ brew_install() {
   brew cleanup
 
   # Core utilities
-  brew install dash fd findutils fzf htop neofetch rg tree trash-cli
+  brew install coreutils dash fd findutils fzf htop neofetch rg tree trash-cli
 
   # Language support
   brew install ghc lua node perl python r ruby rustup && rustup-init
