@@ -105,13 +105,10 @@ Plugins are installed and managed using a minimalist plugin manager
 [vim-plug](https://github.com/junegunn/vim-plug).
 
 - [Base16 Vim](https://github.com/chriskempson/base16-vim/)
-- [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
-- [ale](https://github.com/dense-analysis/ale)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [goyo.vim](https://github.com/junegunn/goyo.vim)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
 - [vim-polyglot](https://github.com/sheerun/vim-polyglot)
-- [vim-surround](https://github.com/tpope/vim-surround)
 
 #### Current Stats
 
@@ -119,15 +116,14 @@ Plugins arranged according to their startup time.
 
 | TOP | Time (ms) | Plugin         |
 | --- | --------- | -------------- |
-| 1   | 21.510    | base16-vim     |
-| 2   | 5.205     | vim-polyglot   |
-| 3   | 1.490     | ale            |
-| 4   | 1.252     | fzf.vim        |
-| 5   | 0.999     | fzf            |
-| 6   | 0.190     | vim-commentary |
-| 7   | 0.030     | goyo.vim       |
+| 1   | 10.064    | base16-vim     |
+| 2   | 2.719     | vim-polyglot   |
+| 3   | 1.029     | fzf.vim        |
+| 4   | 0.898     | fzf            |
+| 5   | 0.200     | vim-commentary |
+| 6   | 0.031     | goyo.vim       |
 
-This results in an average of 30.676 ms delay for the startup time.
+This results in an average of 14.941 ms delay for the startup time.
 
 The chart was generated using
 [vim-plugins-profile](https://github.com/hyiltiz/vim-plugins-profile).
@@ -138,6 +134,7 @@ The chart was generated using
 | ---------------- | ------------------------------------------ | -------- |
 | `<Space>`        | Space is the Leader key                    |          |
 | `<Space><Space>` | Toggle between buffers                     |          |
+| `<Leader>a`      | Select a buffer                            | Align    |
 | `<Leader>b`      | Select a buffer                            | Buffer   |
 | `<Leader>c`      | Generic compiler and runner                | Compile  |
 | `<Leader>f`      | Use fzf for file searching                 | Find     |
