@@ -29,6 +29,7 @@ Plug 'junegunn/goyo.vim'                          " Distraction-free writing
 Plug 'tpope/vim-commentary'                       " Comment stuff out
 
 " Language support
+Plug 'dense-analysis/ale'                         " Lint and fix asynchronously
 Plug 'sheerun/vim-polyglot'                       " Language support
 
 " Consistency
