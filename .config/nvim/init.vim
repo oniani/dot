@@ -48,6 +48,43 @@ let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 
 " }}}
 
+" Asynchronous Lint Engine (ALE) {{{
+
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+let g:ale_fix_on_save = 1
+
+let b:ale_fixers = {
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \ 'css': ['prettier'],
+  \ 'html': ['prettier'],
+  \ 'javascript': ['prettier'],
+  \ 'markdown': ['prettier'],
+  \ 'python': ['black'],
+  \ 'r': ['styler'],
+  \ 'rust': ['rustfmt']
+  \}
+
+let g:ale_linters = {
+  \ 'haskell': ['hlint'],
+  \ 'javascript': ['eslint'],
+  \ 'markdown': ['mdl'],
+  \ 'python': ['mypy', 'pylint'],
+  \ 'r': ['lintr'],
+  \ 'sh': ['shellcheck']
+  \}
+
+let g:ale_linters_explicit = 1
+
+let g:ale_python_mypy_options = '--ignore-missing-imports'
+let g:ale_prettier_options = '--print-width=79'
+let g:ale_python_black_options = '--line-length=79'
+let g:ale_rust_cargo_use_clippy = 1
+
+" }}}
+
 " Base16 {{{
 
 if (has("termguicolors"))

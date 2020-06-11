@@ -8,7 +8,7 @@ filename="$1"
 
 case $filename in
   *.css | *.html | *.js | *.md) prettier --print-width=79 "$filename";;
-  *.py) black --line-length=79 --quiet -;;
+  *.py) black --line-length=79 --quiet;;
   *.r) styler;;
   *.rs) rustfmt;;
   *) printf "Unknown file format\n";;
