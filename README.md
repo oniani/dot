@@ -134,7 +134,6 @@ The chart was generated using
 | ---------------- | ------------------------------------------ | -------- |
 | `<Space>`        | Space is the Leader key                    |          |
 | `<Space><Space>` | Toggle between buffers                     |          |
-| `<Leader>a`      | Select a buffer                            | Align    |
 | `<Leader>b`      | Select a buffer                            | Buffer   |
 | `<Leader>c`      | Generic compiler and runner                | Compile  |
 | `<Leader>f`      | Use fzf for file searching                 | Find     |

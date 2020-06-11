@@ -207,9 +207,6 @@ let mapleader = "\<Space>"
 " Toggle between buffers
 nnoremap <Leader><Leader> <C-^>
 
-" Reformat and realign the text
-nnoremap <Leader>a :%!format %<CR>
-
 " Select a buffer
 nnoremap <Leader>b :Buffers<CR>
 
