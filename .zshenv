@@ -1,7 +1,7 @@
 #
 # Filename: .zshenv
 # Author:   David Oniani
-# Modified: May 30, 2020
+# Modified: June 12, 2020
 #
 #            _
 #    _______| |__   ___ _ ____   __
@@ -31,6 +31,11 @@ export READER="preview"
 export RSS="newsboat"
 export TERMINAL="kitty"
 export VIDEO="preview"
+
+# nnn
+export NNN_BMS="D:~/Downloads;d:~/Documents;p:~/Pictures;w:~/work-in-progress;"
+export NNN_OPTS="EHderx"
+export NNN_TRASH=1
 
 # fzf
 export FZF_DEFAULT_COMMAND="fd --hidden --type f"
