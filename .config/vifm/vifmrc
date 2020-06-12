@@ -1,7 +1,7 @@
 "
 " Filename: vifmrc
 " Author:   David Oniani
-" Modified: June 10, 2020
+" Modified: June 12, 2020
 "
 "        _  __
 " __   _(_)/ _|_ __ ___  _ __ ___
@@ -53,6 +53,7 @@ nnoremap <Space> :view<CR>
 nnoremap D :!git diff %S<CR>
 nnoremap S :!git status %S<CR>
 nnoremap W :!wp %c<CR>
+nnoremap / =
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
