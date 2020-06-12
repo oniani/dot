@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: June 10, 2020
+" Modified: June 11, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -14,7 +14,7 @@
 
 " Install vim-plug automatically
 if empty(glob('$HOME/.config/nvim/autoload/plug.vim'))
-  silent !curl -Lfo "$HOME/.config/nvim/autoload/plug.vim" --create-dirs
+  silent !curl -Lfo '$HOME/.config/nvim/autoload/plug.vim' --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source '$MYVIMRC'
 endif
@@ -23,17 +23,18 @@ endif
 call plug#begin('$HOME/.config/nvim/plugged')
 
 " Productivity
-Plug 'junegunn/fzf', { 'do': './install --bin' }  " fzf fuzzy file finder
-Plug 'junegunn/fzf.vim'                           " Commands for fzf
-Plug 'junegunn/goyo.vim'                          " Distraction-free writing
-Plug 'tpope/vim-commentary'                       " Comment stuff out
+Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-commentary'
 
 " Language support
-Plug 'dense-analysis/ale'                         " Lint and fix asynchronously
-Plug 'sheerun/vim-polyglot'                       " Language support
+Plug 'haorenW1025/completion-nvim'
+Plug 'haorenW1025/diagnostic-nvim'
+Plug 'neovim/nvim-lsp'
 
-" Consistency
-Plug 'chriskempson/base16-vim'                    " Base16 colorschemes
+" Color consistency
+Plug 'chriskempson/base16-vim'
 
 " Initialize the plugin system
 call plug#end()
@@ -49,40 +50,33 @@ let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 
 " }}}
 
-" Asynchronous Lint Engine (ALE) {{{
+" completion-nvim {{{
 
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:completion_enable_auto_paren = 1
+let g:completion_timer_cycle = 100
 
-let g:ale_fix_on_save = 1
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-let b:ale_fixers = {
-  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-  \ 'css': ['prettier'],
-  \ 'html': ['prettier'],
-  \ 'javascript': ['prettier'],
-  \ 'markdown': ['prettier'],
-  \ 'python': ['black'],
-  \ 'r': ['styler'],
-  \ 'rust': ['rustfmt']
-  \}
+" Use <Tab> as a trigger key
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
-let g:ale_linters = {
-  \ 'haskell': ['hlint'],
-  \ 'javascript': ['eslint'],
-  \ 'markdown': ['mdl'],
-  \ 'python': ['mypy', 'pylint'],
-  \ 'r': ['lintr'],
-  \ 'sh': ['shellcheck']
-  \}
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ completion#trigger_completion()
 
-let g:ale_linters_explicit = 1
+" }}}
 
-let g:ale_python_mypy_options = '--ignore-missing-imports'
-let g:ale_prettier_options = '--print-width=79'
-let g:ale_python_black_options = '--line-length=79'
-let g:ale_rust_cargo_use_clippy = 1
+" diagnostic-nvim {{{
+
+let g:diagnostic_enable_virtual_text = 1
+let g:diagnostic_virtual_text_prefix = ' '
+let g:diagnostic_insert_delay = 1
 
 " }}}
 
@@ -91,6 +85,7 @@ let g:ale_rust_cargo_use_clippy = 1
 if (has("termguicolors"))
   set termguicolors
   colorscheme base16-gruvbox-dark-hard
+  call Base16hi('Comment', g:base16_gui09, '', g:base16_cterm09, '', '', '')
 endif
 
 " }}}
@@ -105,8 +100,11 @@ highlight! Comment cterm=italic gui=italic
 " Transparent background
 highlight! Normal ctermbg=none guibg=none
 
-" Brighter comments (for Base 16)
-call Base16hi('Comment', g:base16_gui09, '', g:base16_cterm09, '', '', '')
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
 
 " Allow full clipboard
 set clipboard+=unnamedplus
@@ -159,24 +157,37 @@ set mouse=a
 
 " Tabs and Indentation {{{
 
-set expandtab      " On pressing tab, insert 2 spaces
-set shiftwidth=2   " When indenting with '>', use 2 spaces width
-set softtabstop=2  " Show existing tab with 2 spaces width
-set tabstop=2      " Number of spaces that a <Tab> in the file counts for
+" On pressing tab, insert 2 spaces
+set expandtab
+
+" When indenting with '>', use 2 spaces width
+set shiftwidth=2
+
+" Show existing tab with 2 spaces width
+set softtabstop=2
+
+" Number of spaces that a <Tab> in the file counts for
+set tabstop=2
 
 " }}}
 
 " Folding {{{
 
-set fillchars=fold:\   " Get rid of fold dashes
-set foldmethod=marker  " Fold based on marker
+" Get rid of fold dashes
+set fillchars=fold:\ 
+
+" Fold based on marker
+set foldmethod=marker
 
 " }}}
 
 " Search and Replace {{{
 
-set ignorecase      " The case of normal letters is ignored
-set smartcase       " Enable smartcase
+" The case of normal letters is ignored
+set ignorecase
+
+" Enable smartcase
+set smartcase
 
 " }}}
 
@@ -248,5 +259,11 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" }}}
+
+" Sourcing {{{
+
+luafile $HOME/.config/nvim/init.lua
 
 " }}}
