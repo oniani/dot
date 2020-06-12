@@ -1,7 +1,7 @@
 #
 # Filename: urls
 # Author:   David Oniani
-# Modified: April 30, 2020
+# Modified: June 11, 2020
 #             _
 #  _   _ _ __| |___
 # | | | | '__| / __|
@@ -18,18 +18,20 @@ https://www.cnbc.com/id/100727362/device/rss/rss.html "~World News: CNBC"
 http://feeds.bbci.co.uk/news/world/rss.xml            "~World News: BBC"
 https://www.cbsnews.com/latest/rss/world              "~World News: CBS"
 http://feeds.feedburner.com/time/world                "~World News: Time"
-http://reddit.com/r/worldnews.rss                     "~World News: Subreddit"
+http://reddit.com/r/worldnews.rss                     "~World News: World News Subreddit"
 
 # Science and Technology
-https://www.nasa.gov/rss/dyn/breaking_news.rss      "~News Feed: NASA - Breaking"
-https://www.nasa.gov/rss/dyn/shuttle_station.rss    "~News Feed: NASA - Space Station"
-https://www.nasa.gov/rss/dyn/educationnews.rss      "~News Feed: NASA - Education"
-https://www.space.com/feeds/all                     "~News Feed: Space.com"
-https://news.nationalgeographic.com/index.rss       "~News Feed: National Geographic"
-http://feeds.feedburner.com/sciencealert-latestnews "~News Feed: Science Alert"
-https://www.wired.com/category/science/feed         "~News Feed: WIRED Magazine"
-https://www.distrowatch.com/news/dw.xml             "~News Feed: DistroWatch.com"
-http://rss.sciam.com/ScientificAmerican-Global      "~News Feed: Scientific American"
+https://www.nasa.gov/rss/dyn/breaking_news.rss       "~News Feed: NASA - Breaking"
+https://www.nasa.gov/rss/dyn/shuttle_station.rss     "~News Feed: NASA - Space Station"
+https://www.nasa.gov/rss/dyn/educationnews.rss       "~News Feed: NASA - Education"
+https://www.space.com/feeds/all                      "~News Feed: Space.com"
+https://feeds.feedburner.com/sciencealert-latestnews "~News Feed: Science Alert"
+https://www.distrowatch.com/news/dw.xml              "~News Feed: DistroWatch.com"
+
+# Programming
+https://www.reddit.com/r/neovim.rss "~Subreddit: Neovim"
+https://www.reddit.com/r/python.rss "~Subreddit: Python"
+https://www.reddit.com/r/rust.rss   "~Subreddit: Rust"
 
 # Personal Websites
 https://terrytao.wordpress.com/feed/ "~Personal Website: Terry Tao"
