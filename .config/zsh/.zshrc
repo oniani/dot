@@ -1,7 +1,7 @@
 #
 # Filename: .zshrc
 # Author:   David Oniani
-# Modified: June 08, 2020
+# Modified: June 12, 2020
 #
 #            _
 #    _______| |__  _ __ ___
@@ -19,6 +19,34 @@ function colormap() {
   done
 }
 
+# Change directory on quit
+nnn_autocd() {
+  # Block nesting of nnn in subshells
+  if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+    echo "nnn is already running"
+    return
+  fi
+
+  # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
+  # To cd on quit only on ^G, remove the "export" as in:
+  #     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+  # NOTE: NNN_TMPFILE is fixed, should not be modified
+  export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+  # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
+  # stty start undef
+  # stty stop undef
+  # stty lwrap undef
+  # stty lnext undef
+
+  nnn "$@"
+
+  if [ -f "$NNN_TMPFILE" ]; then
+    . "$NNN_TMPFILE"
+    rm -f "$NNN_TMPFILE" > /dev/null
+  fi
+}
+
 # }}}
 
 # Aliases {{{
@@ -32,7 +60,6 @@ alias icat="kitty +kitten icat"
 
 # Interactive
 alias e='$EDITOR'
-alias f='cd "$(command vifm --choose-dir - "$@")"'
 alias m='$MAIL'
 alias mp='$MUSIC --quiet'
 alias rss='$RSS --quiet'
@@ -155,7 +182,7 @@ zle -N zle-line-init
 # Key Bindings {{{
 
 # Key binding for Vifm
-bindkey -s "^f" "f\n"
+bindkey -s "^f" "nnn_autocd\n"
 
 # Key binding for IPython
 bindkey -s "^p" "ipython\n"
