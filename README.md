@@ -106,24 +106,29 @@ Plugins are installed and managed using a minimalist plugin manager
 
 - [Base16 Vim](https://github.com/chriskempson/base16-vim/)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
-- [goyo.vim](https://github.com/junegunn/goyo.vim)
+- [fzf](https://github.com/junegunn/fzf)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
-- [vim-polyglot](https://github.com/sheerun/vim-polyglot)
+- [completion-nvim](https://github.com/haorenW1025/completion-nvim)
+- [diagnostic-nvim](https://github.com/haorenW1025/diagnostic-nvim)
+- [nvim-lsp](https://github.com/neovim/nvim-lsp)
+- [goyo.vim](https://github.com/junegunn/goyo.vim)
 
 #### Current Stats
 
 Plugins arranged according to their startup time.
 
-| TOP | Time (ms) | Plugin         |
-| --- | --------- | -------------- |
-| 1   | 10.064    | base16-vim     |
-| 2   | 2.719     | vim-polyglot   |
-| 3   | 1.029     | fzf.vim        |
-| 4   | 0.898     | fzf            |
-| 5   | 0.200     | vim-commentary |
-| 6   | 0.031     | goyo.vim       |
+| TOP | Time (ms) | Plugin          |
+| --- | --------- | --------------- |
+| 1   | 10.062    | base16-vim      |
+| 2   | 1.184     | fzf.vim         |
+| 3   | 1.056     | fzf             |
+| 4   | 0.218     | vim-commentary  |
+| 5   | 0.189     | completion-nvim |
+| 6   | 0.115     | diagnostic-nvim |
+| 7   | 0.082     | nvim-lsp        |
+| 8   | 0.030     | goyo.vim        |
 
-This results in an average of 14.941 ms delay for the startup time.
+This results in the total average of 12.936 ms delay for the startup time.
 
 The chart was generated using
 [vim-plugins-profile](https://github.com/hyiltiz/vim-plugins-profile).
