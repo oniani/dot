@@ -68,6 +68,7 @@ zsh_install() {
 pip_install() {
   printf "Installing Python 3 packages...\n"
   python3 -m pip install black ipython jupyterlab mypy pygments pylint pywal
+  python3 -m pip install "python-language-server[all]"
   printf "Done!\n"
 }
 
@@ -124,7 +125,7 @@ brew_install() {
 }
 
 rust_install() {
-  rustup component add clippy rustfmt
+  rustup component add clippy rls rust-analysis rust-src rustfmt
 }
 
 case $1 in
