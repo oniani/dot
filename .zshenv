@@ -22,7 +22,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # Core utilities
 export BROWSER="firefox"
 export EDITOR="nvim"
-export FILEMANAGER="vifm"
+export FILEMANAGER="nnn"
 export IMAGE="preview"
 export MAIL="neomutt"
 export MUSIC="ncmpcpp"
