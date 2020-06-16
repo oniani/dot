@@ -1,7 +1,7 @@
 #
 # Filename: .zshrc
 # Author:   David Oniani
-# Modified: June 12, 2020
+# Modified: June 16, 2020
 #
 #            _
 #    _______| |__  _ __ ___
@@ -188,7 +188,7 @@ bindkey -s "^f" "nnn_autocd\n"
 bindkey -s "^p" "ipython\n"
 
 # Key binding for fg
-bindkey -s "^z" "fg; clear\n"
+bindkey -s "^z" "fg\n"
 
 # }}}
 
