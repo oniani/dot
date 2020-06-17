@@ -1,7 +1,7 @@
 --
 -- Filename: init.vim
 -- Author:   David Oniani
--- Modified: June 11, 2020
+-- Modified: June 17, 2020
 --
 --  _       _ _     _             
 -- (_)_ __ (_) |_  | |_   _  __ _ 
@@ -19,7 +19,16 @@ local custom_attach = function(_, bufnr)
   require'diagnostic'.on_attach()
 
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-  vim.api.nvim_command('au BufWritePost <buffer> lua vim.lsp.buf.formatting()')
+
+  vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.lsp.util.show_line_diagnostics()')
+  vim.api.nvim_command('autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()')
+
+  local opts = {noremap=true, silent=true}
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'ge', ':NextDiagnosticCycle<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gE', ':PrevDiagnosticCycle<CR>', opts)
 end
 
 -- Configure and initialize language servers

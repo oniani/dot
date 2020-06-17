@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: June 11, 2020
+" Modified: June 17, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -74,8 +74,6 @@ inoremap <silent><expr> <TAB>
 
 " diagnostic-nvim {{{
 
-let g:diagnostic_enable_virtual_text = 1
-let g:diagnostic_virtual_text_prefix = ' '
 let g:diagnostic_insert_delay = 1
 
 " }}}
