@@ -24,11 +24,11 @@ local custom_attach = function(_, bufnr)
   vim.api.nvim_command('autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()')
 
   local opts = {noremap=true, silent=true}
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'ge', ':NextDiagnosticCycle<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gE', ':PrevDiagnosticCycle<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 end
 
 -- Configure and initialize language servers
