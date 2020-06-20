@@ -10,26 +10,26 @@
 #
 
 # Individuals
-https://yaronbrookshow.com/feed            "~Yaron Brook"
 https://danieljmitchell.wordpress.com/feed "~Daniel Mitchell"
 https://www.davidoniani.com/rss.xml        "~David Oniani"
+https://nassimtaleb.org/feed/              "~Nassim Taleb"
+https://yaronbrookshow.com/feed            "~Yaron Brook"
 
 # World News
-https://www.aljazeera.com/xml/rss/all.xml             "!Al Jazeera"           news
-http://feeds.reuters.com/Reuters/worldNews            "!Reuters"              news
-https://www.economist.com/the-world-this-week/rss.xml "!The Economist"        news
-https://feeds.feedburner.com/time/world               "!Time"                 news
-https://reddit.com/r/worldnews.rss                    "!World News Subreddit" news
+https://www.aljazeera.com/xml/rss/all.xml             "!Al Jazeera"     news
+https://www.cato.org/feed                             "!Cato Institute" news
+http://feeds.reuters.com/Reuters/worldNews            "!Reuters"        news
+https://www.economist.com/the-world-this-week/rss.xml "!The Economist"  news
+https://feeds.feedburner.com/time/world               "!Time"           news
 
 # NASA
-https://www.nasa.gov/rss/dyn/breaking_news.rss       "!NASA - Breaking"      nasa
-https://www.nasa.gov/rss/dyn/educationnews.rss       "!NASA - Education"     nasa
-https://www.nasa.gov/rss/dyn/shuttle_station.rss     "!NASA - Space Station" nasa
+https://www.nasa.gov/rss/dyn/breaking_news.rss   "!NASA - Breaking"      nasa
+https://www.nasa.gov/rss/dyn/educationnews.rss   "!NASA - Education"     nasa
+https://www.nasa.gov/rss/dyn/shuttle_station.rss "!NASA - Space Station" nasa
 
 # Science and Technology
-https://www.distrowatch.com/news/dw.xml              "!DistroWatch.com" science
-https://www.space.com/feeds/all                      "!Space.com"       science
-https://feeds.feedburner.com/sciencealert-latestnews "!Science Alert"   science
+https://feeds.feedburner.com/sciencealert-latestnews "!Science Alert" scitech
+https://www.space.com/feeds/all                      "!Space.com"     scitech
 
 # Programming
 https://www.reddit.com/r/neovim.rss "!Subreddit: Neovim" programming
@@ -39,5 +39,5 @@ https://www.reddit.com/r/rust.rss   "!Subreddit: Rust"   programming
 # Query Feeds
 "query:News:tags # \"news\""
 "query:NASA:tags # \"nasa\""
-"query:Science and Technology:tags # \"science\""
+"query:Science and Technology:tags # \"scitech\""
 "query:Programming:tags # \"programming\""
