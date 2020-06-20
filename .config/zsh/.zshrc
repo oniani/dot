@@ -1,7 +1,7 @@
 #
 # Filename: .zshrc
 # Author:   David Oniani
-# Modified: June 16, 2020
+# Modified: June 19, 2020
 #
 #            _
 #    _______| |__  _ __ ___
@@ -54,19 +54,15 @@ nnn_autocd() {
 # Core commands
 alias :q="exit"
 alias grep="grep --color=auto"
-alias l="ls -Ahu"
-alias ll="ls -Ahlu"
+alias l="ls -A"
+alias ll="ls -Ahl"
 alias icat="kitty +kitten icat"
 
 # Interactive
-alias e='$EDITOR'
-alias m='$MAIL'
-alias mp='$MUSIC --quiet'
-alias rss='$RSS --quiet'
-
-# Code formatting
-alias black="black --line-length=79"
-alias brittany="brittany --write-mode inplace --indent 4"
+alias e="nvim"
+alias m="neomutt"
+alias mp="ncmpcpp --quiet"
+alias news="newsboat --quiet"
 
 # Fancy
 alias clock="tty-clock -c -s -t"
@@ -144,9 +140,9 @@ KEYTIMEOUT=1
 # Use Vi keys in tab complete menu
 zmodload zsh/complist
 bindkey -M menuselect "h" vi-backward-char
+bindkey -M menuselect "j" vi-down-line-or-history
 bindkey -M menuselect "k" vi-up-line-or-history
 bindkey -M menuselect "l" vi-forward-char
-bindkey -M menuselect "j" vi-down-line-or-history
 
 # Edit command in Vim
 autoload -Uz edit-command-line

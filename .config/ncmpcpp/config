@@ -1,7 +1,7 @@
 #
 # Filename: config
 # Author:   David Oniani
-# Modified: May 23, 2020
+# Modified: June 19, 2020
 #                   __ _
 #   ___ ___  _ __  / _(_) __ _
 #  / __/ _ \| '_ \| |_| |/ _` |
@@ -11,9 +11,9 @@
 #
 
 # Files
-lyrics_directory  = ~/.config/ncmpcpp/lyrics
+lyrics_directory = ~/.config/ncmpcpp/lyrics
 mpd_music_dir = ~/Music
-ncmpcpp_directory  = ~/.config/ncmpcpp
+ncmpcpp_directory = ~/.config/ncmpcpp
 
 # Connection
 mpd_host = "127.0.0.1"

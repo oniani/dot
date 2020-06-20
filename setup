@@ -13,14 +13,14 @@ SYNOPSIS
   ./setup [cfg | bsc | vim | zsh | py3 | rst | pkg | all]
 
 OPTIONS
-  cfg  : install configuration files
+  all  : install everything
   bsc  : install basic         environment
-  vim  : install (Neo)Vim      plugins
-  zsh  : install Zsh           plugins
+  cfg  : install configuration files
+  pkg  : install Homebrew      packages
   py3  : install Python3       packages
   rst  : install Rust          packages
-  pkg  : install Homebrew      packages
-  all  : install everything
+  vim  : install (Neo)Vim      plugins
+  zsh  : install Zsh           plugins
 
 Running ./setup with no options will print a help message (this message)
 
@@ -31,45 +31,12 @@ EXAMPLES
 "
 }
 
-config_setup() {
-  arrange && vim_install && zsh_install
-}
-
 arrange() {
   cp -f  ".zshenv" "$HOME"
 
   cp -Rf ".config" "$HOME"
   cp -Rf ".local"  "$HOME"
   cp -Rf ".ghc"    "$HOME"
-}
-
-vim_install() {
-  printf "Installing and updating Vim plugins...\n"
-  "$EDITOR" +PlugUpgrade +PlugClean! +PlugInstall +PlugUpdate +qa!
-  printf "Done!\n\n"
-}
-
-zsh_install() {
-  printf "Installing zsh-autosuggestions...\n"
-  rm -rf "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/zsh-autosuggestions"
-  git clone https://github.com/zsh-users/zsh-autosuggestions \
-      "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/zsh-autosuggestions" \
-      --quiet
-  printf "Done!\n"
-
-  printf "Installing zsh-syntax-highlighting...\n"
-  rm -rf "${XFG_CONFIG_HOME:-$HOME/.config}/zsh/plugin/zsh-syntax-highlighting"
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting \
-      "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/zsh-syntax-highlighting" \
-      --quiet
-  printf "Done!\n"
-}
-
-pip_install() {
-  printf "Installing Python 3 packages...\n"
-  python3 -m pip install black ipython jupyterlab mypy pygments pylint pywal
-  python3 -m pip install "python-language-server[all]"
-  printf "Done!\n"
 }
 
 brew_install() {
@@ -118,24 +85,61 @@ brew_install() {
   #   $(brew --prefix zathura)/lib/zathura/libpdf-poppler.dylib
   # brew untap zegervdv/zathura
 
+  # Key bindings
+  brew install koekeishiya/formulae/skhd
+  brew services start skhd
+
   brew update
   brew upgrade
   brew doctor
   brew cleanup
 }
 
+config_setup() {
+  arrange && vim_install && zsh_install
+}
+
+pip_install() {
+  printf "Installing Python 3 packages...\n"
+  python3 -m pip install black ipython jupyterlab mypy pygments pylint pywal
+  python3 -m pip install "python-language-server[all]"
+  printf "Done!\n"
+}
+
 rust_install() {
   rustup component add clippy rls rust-analysis rust-src rustfmt
 }
 
+vim_install() {
+  printf "Installing and updating Vim plugins...\n"
+  "$EDITOR" +PlugUpgrade +PlugClean! +PlugInstall +PlugUpdate +qa!
+  printf "Done!\n\n"
+}
+
+zsh_install() {
+  printf "Installing zsh-autosuggestions...\n"
+  rm -rf "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/zsh-autosuggestions"
+  git clone https://github.com/zsh-users/zsh-autosuggestions \
+      "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/zsh-autosuggestions" \
+      --quiet
+  printf "Done!\n"
+
+  printf "Installing zsh-syntax-highlighting...\n"
+  rm -rf "${XFG_CONFIG_HOME:-$HOME/.config}/zsh/plugin/zsh-syntax-highlighting"
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting \
+      "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/zsh-syntax-highlighting" \
+      --quiet
+  printf "Done!\n"
+}
+
 case $1 in
-  cfg) arrange;;
+  all) brew_install && pip_install && rust_install && config_setup;;
   bsc) config_setup;;
-  vim) vim_install;;
-  zsh) zsh_install;;
+  cfg) arrange;;
+  pkg) brew_install;;
   py3) pip_install;;
   rst) rust_install;;
-  pkg) brew_install;;
-  all) brew_install && pip_install && rust_install && config_setup;;
+  vim) vim_install;;
+  zsh) zsh_install;;
   *) help
 esac
