@@ -19,7 +19,6 @@ https://yaronbrookshow.com/feed            "~Yaron Brook"
 # World News
 https://www.aljazeera.com/xml/rss/all.xml             "!Al Jazeera"     news
 https://www.cato.org/feed                             "!Cato Institute" news
-http://feeds.reuters.com/Reuters/worldNews            "!Reuters"        news
 https://www.economist.com/the-world-this-week/rss.xml "!The Economist"  news
 https://feeds.feedburner.com/time/world               "!Time"           news
 
