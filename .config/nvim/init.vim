@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: June 17, 2020
+" Modified: June 21, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -80,11 +80,9 @@ let g:diagnostic_insert_delay = 1
 
 " Base16 {{{
 
-if (has("termguicolors"))
-  set termguicolors
-  colorscheme base16-gruvbox-dark-hard
-  call Base16hi('Comment', g:base16_gui09, '', g:base16_cterm09, '', '', '')
-endif
+set termguicolors
+colorscheme base16-gruvbox-dark-hard
+call Base16hi('Comment', g:base16_gui09, '', g:base16_cterm09, '', '', '')
 
 " }}}
 
