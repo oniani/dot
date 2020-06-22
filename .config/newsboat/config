@@ -44,4 +44,4 @@ color article white default
 
 # Highlighting
 highlight all ".*●.*" magenta
-highlight feedlist ".*(0/0))" black
+highlight feedlist "\s*.0/0." black
