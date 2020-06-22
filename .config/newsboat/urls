@@ -1,7 +1,7 @@
 #
 # Filename: urls
 # Author:   David Oniani
-# Modified: June 20, 2020
+# Modified: June 22, 2020
 #             _
 #  _   _ _ __| |___
 # | | | | '__| / __|
@@ -10,34 +10,50 @@
 #
 
 # Individuals
-https://karpathy.github.io/feed.xml        "~Andrej Karpathy"
-https://danieljmitchell.wordpress.com/feed "~Daniel Mitchell"
-https://www.davidoniani.com/rss.xml        "~David Oniani"
-https://nassimtaleb.org/feed/              "~Nassim Taleb"
-https://yaronbrookshow.com/feed            "~Yaron Brook"
+"● Individuals"
+https://karpathy.github.io/feed.xml        "~    Andrej Karpathy"
+https://danieljmitchell.wordpress.com/feed "~    Daniel Mitchell"
+https://www.davidoniani.com/rss.xml        "~    David Oniani"
+https://nassimtaleb.org/feed/              "~    Nassim Taleb"
+https://yaronbrookshow.com/feed            "~    Yaron Brook"
 
-# World News
-https://www.aljazeera.com/xml/rss/all.xml             "!Al Jazeera"     news
-https://www.cato.org/feed                             "!Cato Institute" news
-https://www.economist.com/the-world-this-week/rss.xml "!The Economist"  news
-https://feeds.feedburner.com/time/world               "!Time"           news
+# News
+"● News"
+https://www.aljazeera.com/xml/rss/all.xml             "~    Al Jazeera"
+https://www.cato.org/feed                             "~    Cato Institute"
+https://feeds.feedburner.com/sciencealert-latestnews  "~    Science Alert"
+https://www.space.com/feeds/all                       "~    Space.com"
+https://www.economist.com/the-world-this-week/rss.xml "~    The Economist"
+https://feeds.feedburner.com/time/world               "~    Time"
+
+# Reddit
+"● Reddit"
+
+# Subreddits on Economics and Finance
+"    ● Economics and Finance"
+https://www.reddit.com/r/economics.rss          "~        /r/Economics"
+https://www.reddit.com/r/finance.rss            "~        /r/Finance"
+https://www.reddit.com/r/capitalism.rss         "~        /r/Capitalism"
+https://www.reddit.com/r/classical_Liberals.rss "~        /r/Classical_Liberals"
+https://www.reddit.com/r/objectivism.rss        "~        /r/Objectivism"
+
+# Subreddits on Programming
+"    ● Programming"
+https://www.reddit.com/r/haskell.rss "~        /r/Haskell"
+https://www.reddit.com/r/neovim.rss  "~        /r/Neovim"
+https://www.reddit.com/r/python.rss  "~        /r/Python"
+https://www.reddit.com/r/rust.rss    "~        /r/Rust"
+https://www.reddit.com/r/zsh.rss     "~        /r/Zsh"
+
+# Subreddits on Information Technology
+"    ● Technology"
+https://www.reddit.com/r/technology.rss            "~        /r/Technology"
+https://www.reddit.com/r/informationtechnology.rss "~        /r/InformationTechnology"
+https://www.reddit.com/r/fintech.rss               "~        /r/Fintech"
+https://www.reddit.com/r/biotech.rss               "~        /r/Biotech"
 
 # NASA
-https://www.nasa.gov/rss/dyn/breaking_news.rss   "!NASA - Breaking"      nasa
-https://www.nasa.gov/rss/dyn/educationnews.rss   "!NASA - Education"     nasa
-https://www.nasa.gov/rss/dyn/shuttle_station.rss "!NASA - Space Station" nasa
-
-# Science and Technology
-https://feeds.feedburner.com/sciencealert-latestnews "!Science Alert" scitech
-https://www.space.com/feeds/all                      "!Space.com"     scitech
-
-# Programming
-https://www.reddit.com/r/neovim.rss "!Subreddit: Neovim" programming
-https://www.reddit.com/r/python.rss "!Subreddit: Python" programming
-https://www.reddit.com/r/rust.rss   "!Subreddit: Rust"   programming
-
-# Query Feeds
-"query:News:tags # \"news\""
-"query:NASA:tags # \"nasa\""
-"query:Science and Technology:tags # \"scitech\""
-"query:Programming:tags # \"programming\""
+"● NASA"
+https://www.nasa.gov/rss/dyn/breaking_news.rss   "~    Breaking"
+https://www.nasa.gov/rss/dyn/educationnews.rss   "~    Education"
+https://www.nasa.gov/rss/dyn/shuttle_station.rss "~    Space Station"
