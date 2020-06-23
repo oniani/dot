@@ -1,7 +1,7 @@
 #
 # Filename: skhdrc
 # Author:   David Oniani
-# Modified: June 13, 2020
+# Modified: June 22, 2020
 #
 #      _    _         _
 #  ___| | _| |__   __| |_ __ ___
@@ -11,10 +11,11 @@
 #
 
 # GUI applications
-cmd - return : kitty --directory "$HOME/work-in-progress" --single-instance &> /dev/null
+cmd - return : kitty --single-instance &> /dev/null
+cmd - i : open -a messages
+cmd - m : open -a spotify
 cmd - s : open -a signal
 cmd - w : open -a firefox
-cmd - m : open -a messages
 
 # Terminal applications
 cmd + shift - h : kitty --single-instance &> /dev/null htop
