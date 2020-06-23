@@ -1,7 +1,7 @@
 #
 # Filename: .zshenv
 # Author:   David Oniani
-# Modified: June 12, 2020
+# Modified: June 22, 2020
 #
 #            _
 #    _______| |__   ___ _ ____   __
@@ -22,13 +22,9 @@ export PATH="$HOME/.local/bin:$PATH"
 # Core utilities
 export BROWSER="firefox"
 export EDITOR="nvim"
-export FILEMANAGER="nnn"
 export IMAGE="preview"
-export MAIL="neomutt"
-export MUSIC="ncmpcpp"
 export PAGER="less"
 export READER="preview"
-export RSS="newsboat"
 export TERMINAL="kitty"
 export VIDEO="preview"
 
