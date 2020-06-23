@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: June 21, 2020
+" Modified: June 22, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -134,8 +134,8 @@ set number relativenumber
 " respectively.
 set wildmode=longest:full,full
 
-" Set a marker at column 80
-set colorcolumn=80
+" Set a marker at column 100
+set colorcolumn=100
 
 " Set the signcolumn
 set signcolumn=yes
@@ -153,17 +153,17 @@ set mouse=a
 
 " Tabs and Indentation {{{
 
-" On pressing tab, insert 2 spaces
+" On pressing <Tab>, insert spaces instead
 set expandtab
 
-" When indenting with '>', use 2 spaces width
-set shiftwidth=2
+" When indenting with '>', use 4 spaces width
+set shiftwidth=4
 
-" Show existing tab with 2 spaces width
-set softtabstop=2
+" Show existing tab with 4 spaces width
+set softtabstop=4
 
-" Number of spaces that a <Tab> in the file counts for
-set tabstop=2
+" <Tab> counts for 4 spaces
+set tabstop=4
 
 " }}}
 
@@ -188,12 +188,6 @@ set smartcase
 " }}}
 
 " Automatic Commands {{{
-
-" Tab is 4 spaces in C++
-autocmd FileType cpp setlocal shiftwidth=4 softtabstop=4 tabstop=4
-
-" Tab is 4 spaces in Haskell
-autocmd FileType haskell setlocal shiftwidth=4 softtabstop=4 tabstop=4
 
 " Disable automatic comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=o formatoptions-=r
