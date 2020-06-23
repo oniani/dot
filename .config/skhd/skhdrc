@@ -11,7 +11,7 @@
 #
 
 # GUI applications
-cmd - return : kitty --single-instance &> /dev/null
+cmd - return : kitty --directory "$HOME" --single-instance &> /dev/null
 cmd - i : open -a messages
 cmd - m : open -a spotify
 cmd - s : open -a signal
