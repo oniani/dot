@@ -1,7 +1,7 @@
 #
 # Filename: urls
 # Author:   David Oniani
-# Modified: June 22, 2020
+# Modified: June 24, 2020
 #             _
 #  _   _ _ __| |___
 # | | | | '__| / __|
@@ -17,6 +17,11 @@ https://www.davidoniani.com/rss.xml        "~    David Oniani"
 https://nassimtaleb.org/feed/              "~    Nassim Taleb"
 https://yaronbrookshow.com/feed            "~    Yaron Brook"
 
+# Think tanks
+"● Think Tanks"
+https://www.cato.org/feed                  "~    Cato Institute"
+https://fee.org/feeds/fulltext             "~    Foundation for Economic Education"
+
 # NASA
 "● NASA"
 https://www.nasa.gov/rss/dyn/breaking_news.rss   "~    Breaking"
@@ -26,7 +31,6 @@ https://www.nasa.gov/rss/dyn/shuttle_station.rss "~    Space Station"
 # News
 "● News"
 https://www.aljazeera.com/xml/rss/all.xml             "~    Al Jazeera"
-https://www.cato.org/feed                             "~    Cato Institute"
 https://feeds.feedburner.com/sciencealert-latestnews  "~    Science Alert"
 https://www.space.com/feeds/all                       "~    Space.com"
 https://www.economist.com/the-world-this-week/rss.xml "~    The Economist"
