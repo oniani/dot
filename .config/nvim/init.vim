@@ -179,6 +179,24 @@ set smartcase
 
 " }}}
 
+" Statusline {{{
+
+" Left side settings
+set statusline=
+set statusline+=%#IncSearch#
+set statusline+=\ %Y
+set statusline+=\ %r
+set statusline+=%#CursorLineNr#
+set statusline+=\ %F
+
+" Right side settings
+set statusline+=%=
+set statusline+=%#Search#
+set statusline+=\ %l/%L
+set statusline+=\ [%c]
+
+" }}}
+
 " Automatic Commands {{{
 
 " Disable automatic comment insertion
