@@ -1,7 +1,7 @@
 --
 -- Filename: init.vim
 -- Author:   David Oniani
--- Modified: June 21, 2020
+-- Modified: June 30, 2020
 --
 --  _       _ _     _             
 -- (_)_ __ (_) |_  | |_   _  __ _ 
@@ -22,6 +22,7 @@ local custom_attach = function(_, bufnr)
 
   vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.lsp.util.show_line_diagnostics()')
   vim.api.nvim_command('autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()')
+  vim.api.nvim_command('set signcolumn=yes')
 
   local opts = {noremap=true, silent=true}
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>', opts)

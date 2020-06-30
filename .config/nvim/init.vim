@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: June 22, 2020
+" Modified: June 30, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -34,7 +34,7 @@ Plug 'haorenW1025/diagnostic-nvim'
 Plug 'neovim/nvim-lsp'
 
 " Color consistency
-Plug 'chriskempson/base16-vim'
+Plug 'lifepillar/vim-gruvbox8'
 
 " Initialize the plugin system
 call plug#end()
@@ -78,17 +78,16 @@ let g:diagnostic_insert_delay = 1
 
 " }}}
 
-" Base16 {{{
+" Colorscheme {{{
 
 set termguicolors
-colorscheme base16-gruvbox-dark-hard
-call Base16hi('Comment', g:base16_gui09, '', g:base16_cterm09, '', '', '')
+colorscheme gruvbox8_hard
 
 " }}}
 
 " }}}
 
-" Convenience {{{
+" General Settings {{{
 
 " Italic comments
 highlight! Comment cterm=italic gui=italic
@@ -105,13 +104,11 @@ set shortmess+=c
 " Allow full clipboard
 set clipboard+=unnamedplus
 
-" Some servers have issues with backup files
-set nobackup
-set nowritebackup
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience
+" Default updatetime leads to noticeable delays and poor user experience
 set updatetime=300
+
+" Some servers have issues with backup files
+set nobackup nowritebackup
 
 " Stop generating annoying swap files
 set noswapfile
@@ -122,9 +119,7 @@ set lazyredraw
 " Possibility to have more than one unsaved buffers
 set hidden
 
-" This command does two things:
-"   1. Set the numbering
-"   2. Display numbering relative to the line
+" Enable line numbers and set it relative to the line
 set number relativenumber
 
 " This means that on first <Tab> it will complete to the longest common string
@@ -134,11 +129,8 @@ set number relativenumber
 " respectively.
 set wildmode=longest:full,full
 
-" Set a marker at column 100
-set colorcolumn=100
-
-" Set the signcolumn
-set signcolumn=yes
+" Set a marker at column 80
+set colorcolumn=80
 
 " Highlight the current line
 set cursorline
@@ -223,9 +215,6 @@ nnoremap <Leader>l :Lines<CR>
 " Open the PDF file that has the same name as the currently opened file
 nnoremap <Leader>o :!open %:r.pdf<CR><CR>
 
-" Use fzf for picking a colorscheme
-nnoremap <Leader>p :Colors<CR>
-
 " Use fzf and rg for the string search
 nnoremap <Leader>r :Rg<CR>
 
@@ -235,11 +224,11 @@ nnoremap <Leader>s :setlocal spell! spelllang=en_us<CR>
 " Open to-do list in the vertical split
 nnoremap <Leader>t :vs<Space>$HOME/work-in-progress/TODO<CR>
 
-" Toggle line-wrapping
+" Toggle line wrapping
 nnoremap <Leader>w :set wrap!<CR>
 
 " Toggle Goyo
-nnoremap <Leader>z :Goyo \| set linebreak<CR>
+nnoremap <Leader>z :Goyo<CR>
 
 " Unset last registered search pattern by hitting return
 nnoremap <CR> :nohlsearch<CR>
@@ -249,6 +238,12 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Resize splits
+nnoremap <Left> :vertical resize +5<CR>
+nnoremap <Right> :vertical resize -5<CR>
+nnoremap <Up> :resize +5<CR>
+nnoremap <Down> :resize -5<CR>
 
 " }}}
 
