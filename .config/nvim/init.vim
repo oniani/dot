@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: June 30, 2020
+" Modified: July 02, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -92,9 +92,6 @@ colorscheme gruvbox8_hard
 " Italic comments
 highlight! Comment cterm=italic gui=italic
 
-" Transparent background
-highlight! Normal ctermbg=none guibg=none
-
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
 
@@ -141,10 +138,6 @@ set splitbelow splitright
 " Enable mouse support
 set mouse=a
 
-" }}}
-
-" Tabs and Indentation {{{
-
 " On pressing <Tab>, insert spaces instead
 set expandtab
 
@@ -157,19 +150,11 @@ set softtabstop=4
 " <Tab> counts for 4 spaces
 set tabstop=4
 
-" }}}
-
-" Folding {{{
-
 " Get rid of fold dashes
 set fillchars=fold:\ 
 
 " Fold based on marker
 set foldmethod=marker
-
-" }}}
-
-" Search and Replace {{{
 
 " The case of normal letters is ignored
 set ignorecase
@@ -230,6 +215,9 @@ nnoremap <Leader>f :Files<CR>
 " Search for a pattern in a file
 nnoremap <Leader>l :Lines<CR>
 
+" Toggle the netrw file manager in a vertical split
+nnoremap <Leader>n :Lex \| vertical resize 25<CR>
+
 " Open the PDF file that has the same name as the currently opened file
 nnoremap <Leader>o :!open %:r.pdf<CR><CR>
 
@@ -238,9 +226,6 @@ nnoremap <Leader>r :Rg<CR>
 
 " Spell check
 nnoremap <Leader>s :setlocal spell! spelllang=en_us<CR>
-
-" Open to-do list in the vertical split
-nnoremap <Leader>t :vs<Space>$HOME/work-in-progress/TODO<CR>
 
 " Toggle line wrapping
 nnoremap <Leader>w :set wrap!<CR>
