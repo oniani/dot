@@ -89,9 +89,6 @@ colorscheme gruvbox8_hard
 
 " General Settings {{{
 
-" Italic comments
-highlight! Comment cterm=italic gui=italic
-
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
 
