@@ -168,15 +168,15 @@ set smartcase
 
 " Left side settings
 set statusline=
-set statusline+=%#IncSearch#
+set statusline+=%#InsertMode#
 set statusline+=\ %Y
 set statusline+=\ %r
-set statusline+=%#CursorLineNr#
+set statusline+=%#CursorLine#
 set statusline+=\ %F
 
 " Right side settings
 set statusline+=%=
-set statusline+=%#Search#
+set statusline+=%#DiffChange#
 set statusline+=\ %l/%L
 set statusline+=\ [%c]
 
