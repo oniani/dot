@@ -34,7 +34,7 @@ end
 
 -- Configure and initialize language servers
 local servers = {'pyls', 'rls', 'tsserver'}
-for _, lsp in ipairs(local_servers) do
+for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = custom_attach;
   }
