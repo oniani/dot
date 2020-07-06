@@ -1,7 +1,7 @@
 --
 -- Filename: init.vim
 -- Author:   David Oniani
--- Modified: June 30, 2020
+-- Modified: July 06, 2020
 --
 --  _       _ _     _             
 -- (_)_ __ (_) |_  | |_   _  __ _ 
@@ -33,7 +33,7 @@ local custom_attach = function(_, bufnr)
 end
 
 -- Configure and initialize language servers
-local_servers = {'pyls', 'rls', 'tsserver'}
+local servers = {'pyls', 'rls', 'tsserver'}
 for _, lsp in ipairs(local_servers) do
   nvim_lsp[lsp].setup {
     on_attach = custom_attach;
