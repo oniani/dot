@@ -33,7 +33,7 @@ local custom_attach = function(_, bufnr)
 end
 
 -- Configure and initialize language servers
-local servers = {'pyls', 'rls', 'tsserver'}
+local servers = {'pyls', 'rust_analyzer', 'tsserver'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = custom_attach;
