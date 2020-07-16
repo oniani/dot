@@ -1,7 +1,7 @@
 --
 -- Filename: init.vim
 -- Author:   David Oniani
--- Modified: July 06, 2020
+-- Modified: July 16, 2020
 --
 --  _       _ _     _             
 -- (_)_ __ (_) |_  | |_   _  __ _ 
@@ -9,6 +9,15 @@
 -- | | | | | | |_ _| | |_| | (_| |
 -- |_|_| |_|_|\__(_)_|\__,_|\__,_|
 --
+
+-- Basics {{{
+
+-- Highlighted yank
+vim.api.nvim_command('autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup=\'Substitute\', timeout=500}')
+
+-- }}}
+
+-- Language Server {{{
 
 -- 'nvim_lsp' is a requirement!
 local nvim_lsp = require'nvim_lsp'
@@ -39,3 +48,5 @@ for _, lsp in ipairs(servers) do
     on_attach = custom_attach;
   }
 end
+
+-- }}}

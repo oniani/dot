@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: July 02, 2020
+" Modified: July 16, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -186,9 +186,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=o formatoptions-=r
 
 " Clean up LaTeX build files after closing a file with .tex extension
 autocmd VimLeave *.tex :!texclean
-
-" Highlight yanked region
-autocmd TextYankPost * lua require'vim.highlight'.on_yank('Substitute', 500)
 
 " }}}
 
