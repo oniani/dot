@@ -17,7 +17,7 @@ vim.api.nvim_command('autocmd TextYankPost * silent! lua vim.highlight.on_yank {
 
 -- }}}
 
--- Language Server {{{
+-- LSP (Language Server Protocol) {{{
 
 -- 'nvim_lsp' is a requirement!
 local nvim_lsp = require'nvim_lsp'
