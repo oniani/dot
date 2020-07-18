@@ -13,7 +13,10 @@
 -- Basics {{{
 
 -- Highlighted yank
+vim.api.nvim_command('augroup LuaHighlight')
+vim.api.nvim_command('autocmd!')
 vim.api.nvim_command('autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup=\'Substitute\', timeout=500}')
+vim.api.nvim_command('augroup END')
 
 -- }}}
 
