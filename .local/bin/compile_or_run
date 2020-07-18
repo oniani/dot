@@ -45,6 +45,7 @@ case $filename in
   *.cpp) cppcompile "$basename.out" "$filename";;
   *.dot) dot -Tpdf "$filename" -o "$basename.pdf";;
   *.hs) runhaskell "$filename";;
+  *.lua) lua "$filename";;
   *.md) mdcompile "$filename" "$basename.pdf";;
   *.present) pandoc -t revealjs -s -o "$basename".html "$filename" \
                     -V revealjs-url=https://revealjs.com -V theme=solarized;;
