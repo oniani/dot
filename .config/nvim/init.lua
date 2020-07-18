@@ -1,7 +1,7 @@
 --
 -- Filename: init.vim
 -- Author:   David Oniani
--- Modified: July 17, 2020
+-- Modified: July 18, 2020
 --
 --  _       _ _     _
 -- (_)_ __ (_) |_  | |_   _  __ _
@@ -26,15 +26,18 @@ vim.api.nvim_command('augroup END')
 local nvim_lsp = require'nvim_lsp'
 
 -- Define what happens on attaching a language server
-local custom_attach = function(_, bufnr)
+local custom_attach = function(client, bufnr)
   require'completion'.on_attach()
   require'diagnostic'.on_attach()
 
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.lsp.util.show_line_diagnostics()')
-  vim.api.nvim_command('autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()')
   vim.api.nvim_command('set signcolumn=yes')
+
+  if client.resolved_capabilities.document_formatting then
+    vim.api.nvim_command('autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()')
+  end
 
   local opts = {noremap=true, silent=true}
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
