@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: July 16, 2020
+" Modified: July 18, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -27,11 +27,12 @@ Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 
 " Language support
-Plug 'haorenW1025/completion-nvim'
-Plug 'haorenW1025/diagnostic-nvim'
 Plug 'neovim/nvim-lsp'
+Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-lua/diagnostic-nvim'
 
 " Color consistency
 Plug 'lifepillar/vim-gruvbox8'
