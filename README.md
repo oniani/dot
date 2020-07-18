@@ -108,6 +108,7 @@ Plugins are installed and managed using a minimalist plugin manager
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [fzf](https://github.com/junegunn/fzf)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
+- [vim-surround](https://github.com/tpope/vim-surround)
 - [completion-nvim](https://github.com/haorenW1025/completion-nvim)
 - [diagnostic-nvim](https://github.com/haorenW1025/diagnostic-nvim)
 - [nvim-lsp](https://github.com/neovim/nvim-lsp)
@@ -119,16 +120,17 @@ Plugins arranged according to their startup time.
 
 | TOP | Time (ms) | Plugin          |
 | --- | --------- | --------------- |
-| 1   | 10.062    | base16-vim      |
-| 2   | 1.184     | fzf.vim         |
-| 3   | 1.056     | fzf             |
-| 4   | 0.218     | vim-commentary  |
-| 5   | 0.189     | completion-nvim |
-| 6   | 0.115     | diagnostic-nvim |
-| 7   | 0.082     | nvim-lsp        |
-| 8   | 0.030     | goyo.vim        |
+| 1   | 1.931     | vim-gruvbox8    |
+| 2   | 1.015     | fzf.vim         |
+| 3   | 0.895     | fzf             |
+| 4   | 0.569     | vim-surround    |
+| 5   | 0.214     | completion-nvim |
+| 6   | 0.197     | vim-commentary  |
+| 7   | 0.111     | diagnostic-nvim |
+| 8   | 0.066     | nvim-lsp        |
+| 9   | 0.028     | goyo.vim        |
 
-This results in the total average of 12.936 ms delay for the startup time.
+This results in the total average of 5.026 ms delay for the startup time.
 
 The chart was generated using
 [vim-plugins-profile](https://github.com/hyiltiz/vim-plugins-profile).
