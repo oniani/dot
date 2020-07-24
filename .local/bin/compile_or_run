@@ -16,6 +16,14 @@ cppcompile() {
       "./$1"
 }
 
+ccompile() {
+  gcc -o \
+      "$1" \
+      "$2" \
+      && \
+      "./$1"
+}
+
 mdcompile() {
   pandoc -V fontsize=11pt \
          -V geometry:a4paper \
@@ -42,6 +50,7 @@ texcompile() {
 }
 
 case $filename in
+  *.c) ccompile "$basename.out" "$filename";;
   *.cpp) cppcompile "$basename.out" "$filename";;
   *.dot) dot -Tpdf "$filename" -o "$basename.pdf";;
   *.hs) runhaskell "$filename";;
