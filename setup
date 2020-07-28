@@ -50,7 +50,7 @@ brew_install() {
   brew install coreutils dash fd findutils fzf htop neofetch rg tree trash-cli
 
   # Language support
-  brew install ghc lua node perl python r ruby rustup && rustup-init
+  brew install ccls ghc lua node perl python r ruby rustup && rustup-init
 
   # Linting
   brew install hlint shellcheck
