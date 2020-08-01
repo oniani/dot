@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: July 18, 2020
+" Modified: August 01, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -27,6 +27,7 @@ Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
 " Language support
@@ -198,9 +199,6 @@ let mapleader = "\<Space>"
 " Toggle between buffers
 nnoremap <Leader><Leader> <C-^>
 
-" Select a buffer
-nnoremap <Leader>b :Buffers<CR>
-
 " Compile or run a program
 nnoremap <Leader>c :!compile_or_run %<CR>
 
@@ -208,10 +206,7 @@ nnoremap <Leader>c :!compile_or_run %<CR>
 nnoremap <Leader>f :Files<CR>
 
 " Search for a pattern in a file
-nnoremap <Leader>l :Lines<CR>
-
-" Toggle the netrw file manager in a vertical split
-nnoremap <Leader>n :Lex \| vertical resize 25<CR>
+nnoremap <Leader>l :BLines<CR>
 
 " Open the PDF file that has the same name as the currently opened file
 nnoremap <Leader>o :!open %:r.pdf<CR><CR>

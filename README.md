@@ -108,6 +108,7 @@ Plugins are installed and managed using a minimalist plugin manager
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [fzf](https://github.com/junegunn/fzf)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
+- [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [vim-surround](https://github.com/tpope/vim-surround)
 - [completion-nvim](https://github.com/haorenW1025/completion-nvim)
 - [diagnostic-nvim](https://github.com/haorenW1025/diagnostic-nvim)
@@ -120,17 +121,18 @@ Plugins arranged according to their startup time.
 
 | TOP | Time (ms) | Plugin          |
 | --- | --------- | --------------- |
-| 1   | 1.931     | vim-gruvbox8    |
-| 2   | 1.015     | fzf.vim         |
-| 3   | 0.895     | fzf             |
-| 4   | 0.569     | vim-surround    |
-| 5   | 0.214     | completion-nvim |
-| 6   | 0.197     | vim-commentary  |
-| 7   | 0.111     | diagnostic-nvim |
-| 8   | 0.066     | nvim-lsp        |
-| 9   | 0.028     | goyo.vim        |
+| 1   | 1.842     | vim-gruvbox8    |
+| 2   | 1.496     | vim-fugitive    |
+| 3   | 1.008     | fzf.vim         |
+| 4   | 0.861     | fzf             |
+| 5   | 0.498     | vim-surround    |
+| 6   | 0.392     | nvim-lsp        |
+| 7   | 0.223     | completion-nvim |
+| 8   | 0.197     | vim-commentary  |
+| 9   | 0.115     | diagnostic-nvim |
+| 10  | 0.046     | goyo.vim        |
 
-This results in the total average of 5.026 ms delay for the startup time.
+This results in the total average of 6.678 ms delay for the startup time.
 
 The chart was generated using
 [vim-plugins-profile](https://github.com/hyiltiz/vim-plugins-profile).
@@ -141,7 +143,6 @@ The chart was generated using
 | ---------------- | ------------------------------------------ | -------- |
 | `<Space>`        | Space is the Leader key                    |          |
 | `<Space><Space>` | Toggle between buffers                     |          |
-| `<Leader>b`      | Select a buffer                            | Buffer   |
 | `<Leader>c`      | Generic compiler and runner                | Compile  |
 | `<Leader>f`      | Use fzf for file searching                 | Find     |
 | `<Leader>l`      | Search for a line with a pattern in a file | Line     |
