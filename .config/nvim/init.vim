@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: August 01, 2020
+" Modified: August 06, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -26,6 +26,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -80,7 +81,7 @@ let g:diagnostic_insert_delay = 1
 
 " }}}
 
-" Colorscheme {{{
+" colorscheme {{{
 
 set termguicolors
 colorscheme gruvbox8_hard
