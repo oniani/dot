@@ -1,7 +1,7 @@
 --
 -- Filename: init.vim
 -- Author:   David Oniani
--- Modified: August 06, 2020
+-- Modified: August 07, 2020
 --
 --  _       _ _     _
 -- (_)_ __ (_) |_  | |_   _  __ _
@@ -47,7 +47,7 @@ local custom_attach = function(client, bufnr)
 
   -- Define mappings and corresponding options
   local mappings = {
-    ['K']  =  '<cmd>lua vim.lsp.buf.hover()<CR>';
+    ['K'] = '<cmd>lua vim.lsp.buf.hover()<CR>';
     ['gd'] = '<cmd>lua vim.lsp.buf.definition()<CR>';
     ['gr'] = '<cmd>lua vim.lsp.buf.references()<CR>';
     ['ge'] = ':NextDiagnosticCycle<CR>';
