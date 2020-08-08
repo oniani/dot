@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: August 06, 2020
+" Modified: August 08, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -37,7 +37,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/diagnostic-nvim'
 
 " Color consistency
-Plug 'lifepillar/vim-gruvbox8'
+Plug 'chriskempson/base16-vim'
 
 " Initialize the plugin system
 call plug#end()
@@ -84,7 +84,7 @@ let g:diagnostic_insert_delay = 1
 " colorscheme {{{
 
 set termguicolors
-colorscheme gruvbox8_hard
+colorscheme base16-gruvbox-dark-hard
 
 " }}}
 
@@ -168,7 +168,7 @@ set smartcase
 
 " Left side settings
 set statusline=
-set statusline+=%#InsertMode#
+set statusline+=%#IncSearch#
 set statusline+=\ %Y
 set statusline+=\ %r
 set statusline+=%#CursorLine#
@@ -176,9 +176,12 @@ set statusline+=\ %F
 
 " Right side settings
 set statusline+=%=
-set statusline+=%#DiffChange#
-set statusline+=\ %l/%L
-set statusline+=\ [%c]
+set statusline+=\ %{&fileformat}
+set statusline+=\ \|
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\ %#Search#
+set statusline+=\ %p%%
+set statusline+=\ [%l:%c]
 
 " }}}
 
