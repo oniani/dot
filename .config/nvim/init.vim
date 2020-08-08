@@ -171,7 +171,7 @@ set statusline=
 set statusline+=%#IncSearch#
 set statusline+=\ %Y
 set statusline+=\ %r
-set statusline+=%#CursorLine#
+set statusline+=%#StatusLine#
 set statusline+=\ %F
 
 " Right side settings
@@ -179,9 +179,10 @@ set statusline+=%=
 set statusline+=\ %{&fileformat}
 set statusline+=\ \|
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\ %#Search#
+set statusline+=\ %#Cursor#
 set statusline+=\ %p%%
-set statusline+=\ [%l:%c]
+set statusline+=\ %l:%c
+set statusline+=\ 
 
 " }}}
 

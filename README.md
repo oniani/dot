@@ -104,35 +104,36 @@ No plugin manager is used. Plugins are sourced at the end of `.zshrc`.
 Plugins are installed and managed using a minimalist plugin manager
 [vim-plug](https://github.com/junegunn/vim-plug).
 
-- [Base16 Vim](https://github.com/chriskempson/base16-vim/)
+- [base16-vim](https://github.com/chriskempson/base16-vim/)
+- [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
+- [completion-nvim](https://github.com/haorenW1025/completion-nvim)
+- [diagnostic-nvim](https://github.com/haorenW1025/diagnostic-nvim)
+- [goyo.vim](https://github.com/junegunn/goyo.vim)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [fzf](https://github.com/junegunn/fzf)
+- [nvim-lsp](https://github.com/neovim/nvim-lsp)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [vim-surround](https://github.com/tpope/vim-surround)
-- [completion-nvim](https://github.com/haorenW1025/completion-nvim)
-- [diagnostic-nvim](https://github.com/haorenW1025/diagnostic-nvim)
-- [nvim-lsp](https://github.com/neovim/nvim-lsp)
-- [goyo.vim](https://github.com/junegunn/goyo.vim)
 
 #### Current Stats
 
 Plugins arranged according to their startup time.
 
-| TOP | Time (ms) | Plugin          |
-| --- | --------- | --------------- |
-| 1   | 1.842     | vim-gruvbox8    |
-| 2   | 1.496     | vim-fugitive    |
-| 3   | 1.008     | fzf.vim         |
-| 4   | 0.861     | fzf             |
-| 5   | 0.498     | vim-surround    |
-| 6   | 0.392     | nvim-lsp        |
-| 7   | 0.223     | completion-nvim |
-| 8   | 0.197     | vim-commentary  |
-| 9   | 0.115     | diagnostic-nvim |
-| 10  | 0.046     | goyo.vim        |
+| TOP | Time (ms) | Plugin             |
+| --- | --------- | ------------------ |
+| 1   | 10.457    | base16-vim         |
+| 2   | 1.495     | vim-fugitive       |
+| 3   | 1.350     | fzf                |
+| 4   | 1.033     | fzf.vim            |
+| 5   | 0.500     | vim-surround       |
+| 6   | 0.445     | nvim-lsp           |
+| 7   | 0.213     | completion-nvim    |
+| 8   | 0.199     | vim-commentary     |
+| 9   | 0.114     | diagnostic-nvim    |
+| 10  | 0.041     | nvim-colorizer.lua |
 
-This results in the total average of 6.678 ms delay for the startup time.
+This results in the total average of 15.847 ms delay for the startup time.
 
 The chart was generated using
 [vim-plugins-profile](https://github.com/hyiltiz/vim-plugins-profile).
