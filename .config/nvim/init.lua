@@ -47,11 +47,11 @@ local custom_attach = function(client, bufnr)
 
   -- Define mappings and corresponding options
   local mappings = {
-    ['K'] = '<cmd>lua vim.lsp.buf.hover()<CR>';
-    ['gd'] = '<cmd>lua vim.lsp.buf.definition()<CR>';
-    ['gr'] = '<cmd>lua vim.lsp.buf.references()<CR>';
-    ['ge'] = ':NextDiagnosticCycle<CR>';
-    ['gE'] = ':PrevDiagnosticCycle<CR>';
+    ['K'] = '<cmd>lua vim.lsp.buf.hover()<CR>',
+    ['gd'] = '<cmd>lua vim.lsp.buf.definition()<CR>',
+    ['gr'] = '<cmd>lua vim.lsp.buf.references()<CR>',
+    ['ge'] = ':NextDiagnosticCycle<CR>',
+    ['gE'] = ':PrevDiagnosticCycle<CR>'
   }
 
   local opts = {noremap=true, silent=true}
