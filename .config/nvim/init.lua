@@ -63,24 +63,23 @@ local custom_attach = function(client, bufnr)
 end
 
 -- Configure and initialize language servers
-local servers = {'ccls', 'pyls', 'rust_analyzer', 'sumneko_lua', 'tsserver'}
+local servers = {'ccls', 'pyls', 'rust_analyzer', 'tsserver'}
 for _, lsp in pairs(servers) do
-  if lsp == 'sumneko_lua' then
-    nvim_lsp[lsp].setup {
-      on_attach = custom_attach,
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = {"vim"}
-          }
-        }
+  nvim_lsp[lsp].setup {
+    on_attach = custom_attach
+  }
+end
+
+-- LSP complains that `vim` is undefined global
+nvim_lsp['sumneko_lua'].setup {
+  on_attach = custom_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = {"vim"}
       }
     }
-  else
-    nvim_lsp[lsp].setup {
-      on_attach = custom_attach
-    }
-  end
-end
+  }
+}
 
 -- }}}
