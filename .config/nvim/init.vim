@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: August 08, 2020
+" Modified: August 16, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -37,7 +37,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/diagnostic-nvim'
 
 " Color consistency
-Plug 'chriskempson/base16-vim'
+Plug 'lifepillar/gruvbox8'
 
 " Initialize the plugin system
 call plug#end()
@@ -84,7 +84,7 @@ let g:diagnostic_insert_delay = 1
 " colorscheme {{{
 
 set termguicolors
-colorscheme base16-gruvbox-dark-hard
+colorscheme gruvbox8_hard
 
 " }}}
 
