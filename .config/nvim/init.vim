@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: August 16, 2020
+" Modified: August 17, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -227,9 +227,6 @@ nnoremap <Leader>w :set wrap!<CR>
 
 " Toggle Goyo
 nnoremap <Leader>z :Goyo<CR>
-
-" Unset last registered search pattern by hitting return
-nnoremap <CR> :nohlsearch<CR>
 
 " Window navigation commands (saves a keystroke)
 nnoremap <C-h> <C-w>h
