@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: August 21, 2020
+" Modified: August 23, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -19,27 +19,18 @@ if empty(glob('$HOME/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source '$MYVIMRC'
 endif
 
-" Start the plugin declaration block
 call plug#begin('$HOME/.config/nvim/plugged')
-
-" Productivity
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'norcalli/nvim-colorizer.lua'
+
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
-" Language support
-Plug 'neovim/nvim-lsp'
-Plug 'nvim-lua/completion-nvim'
-Plug 'nvim-lua/diagnostic-nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Color consistency
 Plug 'chriskempson/base16-vim'
-
-" Initialize the plugin system
 call plug#end()
 
 " }}}
@@ -53,31 +44,44 @@ let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 
 " }}}
 
-" completion-nvim {{{
+" coc.nvim {{{
 
-let g:completion_enable_auto_paren = 1
-let g:completion_timer_cycle = 100
+let g:coc_global_extensions = [
+  \ 'coc-clangd',
+  \ 'coc-json',
+  \ 'coc-pyright',
+  \ 'coc-rust-analyzer',
+  \ 'coc-tsserver'
+  \ ]
 
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+"       other plugin before putting this into your config
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" Use <Tab> as a trigger key
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
+" Code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gy <Plug>(coc-type-definition)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
 endfunction
 
-inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ completion#trigger_completion()
-
-" }}}
-
-" diagnostic-nvim {{{
-
-let g:diagnostic_insert_delay = 1
+" Format the current buffer on save
+autocmd BufWritePost <buffer> :call CocAction('format')
 
 " }}}
 
@@ -125,6 +129,9 @@ set number relativenumber
 " to cycle through the rest. You can go back and forth with <Tab> and <S-Tab>
 " respectively.
 set wildmode=longest:full,full
+
+" Always have signcolumn enabled
+set signcolumn=yes
 
 " Set a marker at column 80
 set colorcolumn=80
@@ -191,7 +198,7 @@ set statusline+=\
 " Disable automatic comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=o formatoptions-=r
 
-" Clean up LaTeX build files after closing a file with .tex extension
+" Clean up LaTeX build files
 autocmd VimLeave *.tex :!texclean
 
 " }}}
@@ -239,11 +246,5 @@ nnoremap <Left> :vertical resize +5<CR>
 nnoremap <Right> :vertical resize -5<CR>
 nnoremap <Up> :resize +5<CR>
 nnoremap <Down> :resize -5<CR>
-
-" }}}
-
-" Sourcing {{{
-
-luafile $HOME/.config/nvim/init.lua
 
 " }}}

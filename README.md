@@ -105,13 +105,10 @@ Plugins are installed and managed using a minimalist plugin manager
 [vim-plug](https://github.com/junegunn/vim-plug).
 
 - [base16-vim](https://github.com/chriskempson/base16-vim/)
-- [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
-- [completion-nvim](https://github.com/haorenW1025/completion-nvim)
-- [diagnostic-nvim](https://github.com/haorenW1025/diagnostic-nvim)
+- [coc.nvim](https://github.com/neoclide/coc.nvim)
 - [goyo.vim](https://github.com/junegunn/goyo.vim)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [fzf](https://github.com/junegunn/fzf)
-- [nvim-lsp](https://github.com/neovim/nvim-lsp)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [vim-surround](https://github.com/tpope/vim-surround)
