@@ -1,7 +1,7 @@
 #
 # Filename: .zshrc
 # Author:   David Oniani
-# Modified: August 20, 2020
+# Modified: August 23, 2020
 #
 #            _
 #    _______| |__  _ __ ___
@@ -181,7 +181,7 @@ zle -N zle-line-init
 
 # Key Bindings {{{
 
-# Key binding for Vifm
+# Key binding for nnn
 bindkey -s "^f" "nnn_autocd\n"
 
 # Key binding for IPython
