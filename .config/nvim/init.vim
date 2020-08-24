@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: August 23, 2020
+" Modified: August 24, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -166,7 +166,7 @@ set foldmethod=marker
 " The case of normal letters is ignored
 set ignorecase
 
-" Enable smartcase
+" Case-sensitive if a capital letter is present, case-insensitive otherwise
 set smartcase
 
 " }}}
@@ -195,11 +195,18 @@ set statusline+=\
 
 " Automatic Commands {{{
 
-" Disable automatic comment insertion
-autocmd FileType * setlocal formatoptions-=c formatoptions-=o formatoptions-=r
-
 " Clean up LaTeX build files
-autocmd VimLeave *.tex :!texclean
+augroup TexClean
+  autocmd!
+  autocmd VimLeave *.tex :!texclean
+augroup END
+
+" Highlighted yank
+augroup LuaHighlight
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Search', timeout=500}
+augroup END
+
 
 " }}}
 
