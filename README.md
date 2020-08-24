@@ -166,6 +166,7 @@ cd dots
 ```
 
 Also, please make sure that the system runs the latest macOS operating system.
+Note that the setup script is idempotent: it can safely be run multiple times.
 
 ## License
 
