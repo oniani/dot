@@ -1,7 +1,7 @@
 "
 " Filename: init.vim
 " Author:   David Oniani
-" Modified: August 25, 2020
+" Modified: August 29, 2020
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -31,6 +31,7 @@ Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'chriskempson/base16-vim'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 " }}}
@@ -69,14 +70,14 @@ function! s:check_back_space() abort
 endfunction
 
 " Code navigation
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gy <Plug>(coc-type-definition)
+nnoremap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> gi <Plug>(coc-implementation)
+nnoremap <silent> gr <Plug>(coc-references)
+nnoremap <silent> gy <Plug>(coc-type-definition)
 
 " Diagnostics navigation
-nmap <silent> ge <Plug>(coc-diagnostic-next)
-nmap <silent> gE <Plug>(coc-diagnostic-prev)
+nnoremap <silent> ge <Plug>(coc-diagnostic-next)
+nnoremap <silent> gE <Plug>(coc-diagnostic-prev)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -90,7 +91,11 @@ function! s:show_documentation()
 endfunction
 
 " Format the current buffer on save
-autocmd BufWritePost <buffer> :call CocAction('format')
+augroup Format
+  autocmd!
+  autocmd BufWritePost <buffer> :call CocAction('format')
+augroup END
+
 
 " }}}
 
@@ -98,6 +103,22 @@ autocmd BufWritePost <buffer> :call CocAction('format')
 
 set termguicolors
 colorscheme base16-gruvbox-dark-hard
+
+" }}}
+
+" lightline.vim {{{
+
+let g:lightline = {
+  \ 'colorscheme': 'Tomorrow_Night_Eighties',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+  \ },
+  \ 'component_function': {
+  \   'filename': 'LightlineFilename',
+  \   'cocstatus': 'coc#status'
+  \ },
+  \ }
 
 " }}}
 
@@ -180,28 +201,6 @@ set smartcase
 
 " }}}
 
-" Statusline {{{
-
-" Left side settings
-set statusline=
-set statusline+=%#IncSearch#
-set statusline+=\ %Y
-set statusline+=\ %r
-set statusline+=%#StatusLine#
-set statusline+=\ %F
-
-" Right side settings
-set statusline+=%=
-set statusline+=\ %{&fileformat}
-set statusline+=\ \|
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\ %#Cursor#
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
-set statusline+=\ 
-
-" }}}
-
 " Automatic Commands {{{
 
 " Clean up LaTeX build files
@@ -213,7 +212,7 @@ augroup END
 " Highlighted yank
 augroup LuaHighlight
   autocmd!
-  autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Search', timeout=500}
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Search'}
 augroup END
 
 
