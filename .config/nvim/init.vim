@@ -70,14 +70,14 @@ function! s:check_back_space() abort
 endfunction
 
 " Code navigation
-nnoremap <silent> gd <Plug>(coc-definition)
-nnoremap <silent> gi <Plug>(coc-implementation)
-nnoremap <silent> gr <Plug>(coc-references)
-nnoremap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gy <Plug>(coc-type-definition)
 
 " Diagnostics navigation
-nnoremap <silent> ge <Plug>(coc-diagnostic-next)
-nnoremap <silent> gE <Plug>(coc-diagnostic-prev)
+nmap <silent> ge <Plug>(coc-diagnostic-next)
+nmap <silent> gE <Plug>(coc-diagnostic-prev)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
