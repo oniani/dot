@@ -31,6 +31,7 @@ Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'chriskempson/base16-vim'
+Plug 'sheerun/vim-polyglot'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 

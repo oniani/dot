@@ -29,7 +29,7 @@ export TERMINAL="kitty"
 export VIDEO="preview"
 
 # nnn
-export NNN_BMS="D:~/Downloads;d:~/Documents;p:~/Pictures;w:~/work-in-progress;"
+export NNN_BMS="D:~/Downloads;d:~/Documents;w:~/wip;"
 export NNN_OPTS="EHderx"
 export NNN_TRASH=1
 
