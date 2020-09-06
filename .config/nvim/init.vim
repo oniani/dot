@@ -1,7 +1,5 @@
 "
-" Filename: init.vim
-" Author:   David Oniani
-" Modified: August 29, 2020
+" Author: David Oniani
 "
 "  _       _ _         _
 " (_)_ __ (_) |___   _(_)_ __ ___
@@ -96,7 +94,6 @@ augroup Format
   autocmd!
   autocmd BufWritePost <buffer> :call CocAction('format')
 augroup END
-
 
 " }}}
 
@@ -215,7 +212,6 @@ augroup LuaHighlight
   autocmd!
   autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Search'}
 augroup END
-
 
 " }}}
 

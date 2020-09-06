@@ -1,7 +1,5 @@
 #
-# Filename: .zshrc
-# Author:   David Oniani
-# Modified: August 23, 2020
+# Author: David Oniani
 #
 #            _
 #    _______| |__  _ __ ___
@@ -63,13 +61,6 @@ alias e="nvim"
 alias m="neomutt"
 alias mp="ncmpcpp --quiet"
 alias news="newsboat --quiet"
-
-# Shortcuts
-alias -g E="| nvim -"
-alias -g F="| fzf"
-alias -g G="| grep -i"
-alias -g H="| head"
-alias -g L="| less"
 
 # }}}
 
