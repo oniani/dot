@@ -83,9 +83,9 @@ Code Linting
 - Haskell: [hlint](http://hackage.haskell.org/package/hlint)
 - JavaScript: [eslint](https://eslint.org/)
 - Markdown: [mdl](https://github.com/DavidAnson/markdownlint)
-- Python: [pylint](https://www.pylint.org/) and [mypy](http://mypy-lang.org/)
+- Python: [pyright](https://github.com/Microsoft/pyright)
 - R: [lintr](https://github.com/jimhester/lintr)
-- Rust: [Clippy](https://rust-lang.github.io/rust-clippy/)
+- Rust: [rust-analyzer](https://github.com/rust-analyzer/rust-analyzer)
 - Shell: [ShellCheck](https://www.shellcheck.net/)
 
 ### Z Shell
@@ -106,31 +106,33 @@ Plugins are installed and managed using a minimalist plugin manager
 
 - [base16-vim](https://github.com/chriskempson/base16-vim/)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
-- [goyo.vim](https://github.com/junegunn/goyo.vim)
-- [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [fzf](https://github.com/junegunn/fzf)
+- [fzf.vim](https://github.com/junegunn/fzf.vim)
+- [goyo.vim](https://github.com/junegunn/goyo.vim)
+- [lightline.vim](https://github.com/itchyny/lightline.vim)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
+- [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 - [vim-surround](https://github.com/tpope/vim-surround)
 
 #### Current Stats
 
 Plugins arranged according to their startup time.
 
-| TOP | Time (ms) | Plugin             |
-| --- | --------- | ------------------ |
-| 1   | 10.457    | base16-vim         |
-| 2   | 1.495     | vim-fugitive       |
-| 3   | 1.350     | fzf                |
-| 4   | 1.033     | fzf.vim            |
-| 5   | 0.500     | vim-surround       |
-| 6   | 0.445     | nvim-lsp           |
-| 7   | 0.213     | completion-nvim    |
-| 8   | 0.199     | vim-commentary     |
-| 9   | 0.114     | diagnostic-nvim    |
-| 10  | 0.041     | nvim-colorizer.lua |
+| TOP | Time (ms) | Plugin         |
+| --- | --------- | -------------- |
+| 1   | 18.500    | vim-polyglot   |
+| 2   | 15.803    | base16-vim     |
+| 3   | 11.543    | coc.nvim       |
+| 4   | 7.473     | lightline.vim  |
+| 5   | 2.392     | vim-fugitive   |
+| 6   | 1.834     | fzf            |
+| 7   | 1.665     | fzf.vim        |
+| 8   | 0.703     | vim-surround   |
+| 9   | 0.295     | vim-commentary |
+| 10  | 0.037     | goyo.vim       |
 
-This results in the total average of 15.847 ms delay for the startup time.
+This results in the total average of 60.245 ms delay for the startup time.
 
 The chart was generated using
 [vim-plugins-profile](https://github.com/hyiltiz/vim-plugins-profile).
@@ -149,7 +151,6 @@ The chart was generated using
 | `<Leader>s`      | Toggle spell checking                      | Spell    |
 | `<Leader>w`      | Toggle line-wrapping                       | Wrap     |
 | `<Leader>z`      | Toggle Goyo                                | Zen      |
-| `<CR>`           | Unset the last registered search pattern   |          |
 | `C-h`            | Switch to the left window                  |          |
 | `C-j`            | Switch to the bottom window                |          |
 | `C-k`            | Switch to the top window                   |          |
