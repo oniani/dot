@@ -4,41 +4,6 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: GNU GPLv3
 
-help() {
-  printf "UNIX-based meta distribution setup wizard
-by David Oniani <onianidavid@gmail.com>
-License: GNU GPLv3
-
-SYNOPSIS
-  ./setup [cfg | bsc | vim | zsh | py3 | rst | pkg | all]
-
-OPTIONS
-  all  : install everything
-  bsc  : install basic         environment
-  cfg  : install configuration files
-  npm  : install npm           packages
-  pkg  : install Homebrew      packages
-  py3  : install Python3       packages
-  rst  : install Rust          packages
-  vim  : install (Neo)Vim      plugins
-  zsh  : install Zsh           plugins
-
-Running ./setup with no options will print a help message (this message)
-
-EXAMPLES
-  ./setup pkg
-  ./setup vim
-  ./setup zsh
-"
-}
-
-arrange() {
-  cp -f  ".zshenv" "$HOME"
-
-  cp -Rf ".config" "$HOME"
-  cp -Rf ".local"  "$HOME"
-  cp -Rf ".ghc"    "$HOME"
-}
 
 brew_install() {
   brew update
@@ -98,57 +63,3 @@ brew_install() {
   brew doctor
   brew cleanup
 }
-
-config_setup() {
-  arrange && vim_install && zsh_install
-}
-
-npm_install() {
-  npm install -g typescript-language-server vtop
-}
-
-pip_install() {
-  printf "Installing Python 3 packages...\n"
-  python3 -m pip install black ipython jupyterlab mypy pygments pylint pywal
-  python3 -m pip install "python-language-server[all]"
-  printf "Done!\n"
-}
-
-rust_install() {
-  rustup component add clippy rls rust-analysis rust-src rustfmt
-}
-
-vim_install() {
-  printf "Installing and updating Vim plugins...\n"
-  "$EDITOR" +PlugUpgrade +PlugClean! +PlugInstall +PlugUpdate +qa!
-  printf "Done!\n\n"
-}
-
-zsh_install() {
-  printf "Installing zsh-autosuggestions...\n"
-  rm -rf "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/zsh-autosuggestions"
-  git clone https://github.com/zsh-users/zsh-autosuggestions \
-      "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/zsh-autosuggestions" \
-      --quiet
-  printf "Done!\n"
-
-  printf "Installing zsh-syntax-highlighting...\n"
-  rm -rf "${XFG_CONFIG_HOME:-$HOME/.config}/zsh/plugin/zsh-syntax-highlighting"
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting \
-      "${XDG_CONFIG_HOME-:$HOME/.config}/zsh/plugin/zsh-syntax-highlighting" \
-      --quiet
-  printf "Done!\n"
-}
-
-case $1 in
-  all) brew_install && pip_install && rust_install && config_setup;;
-  bsc) config_setup;;
-  cfg) arrange;;
-  npm) npm_install;;
-  pkg) brew_install;;
-  py3) pip_install;;
-  rst) rust_install;;
-  vim) vim_install;;
-  zsh) zsh_install;;
-  *) help
-esac
