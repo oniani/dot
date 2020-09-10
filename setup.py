@@ -24,18 +24,24 @@ elif OS == "Linux":
 elif OS == "Windows":
     raise NotImplementedError("Not sure what to use, yet...")
 
-# XDG base directory specification
-CFG_DIR = os.environ.get("XDG_CONFIG_HOME")
-if not CFG_DIR:
-    CFG_DIR = CFG_DIR = os.environ["HOME"]
+# Environment variables
+HOME: str = os.environ["HOME"]
+
+EDITOR: str = "nvim"
+if not os.environ.get("EDITOR"):
+    EDITOR = os.environ["EDITOR"]
+
+CFG_DIR: str = HOME
+if not os.environ.get("XDG_CONFIG_HOME"):
+    CFG_DIR = os.environ["XDG_CONFIG_HOME"]
 
 # Configuration files
 CFG_DIRS: List[str] = [".config", ".local", ".ghc"]
 CFG_FILES: List[str] = [".zshenv"]
 
 
-class Dataset:
-    """A class for operating on the dataset."""
+class Programs:
+    """A class for operating on programs."""
 
     def __init__(self) -> None:
         "Initialize variables." ""
@@ -90,37 +96,59 @@ def main() -> None:
 
     # Parse the command line arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument("-i", "--install", help="install a package")
-    parser.add_argument("-u", "--uninstall", help="uninstall a package")
-    parser.add_argument("-c", "--config", action="store_true", help="configs")
-    parser.add_argument("-v", "--vim", action="store_true", help="plugins")
-    parser.add_argument("-z", "--zsh", action="store_true", help="plugins")
-    parser.add_argument("-l", "--list", action="store_true", help="list")
+    parser.add_argument(
+        "-i", "--install", metavar="program", help="install a program"
+    )
+    parser.add_argument(
+        "-u", "--uninstall", metavar="program", help="uninstall a program"
+    )
+    parser.add_argument(
+        "-a", "--install_all", action="store_true", help="install all programs"
+    )
+    parser.add_argument(
+        "-c", "--config", action="store_true", help="copy configs"
+    )
+    parser.add_argument(
+        "-v", "--vim", action="store_true", help="install Vim plugins"
+    )
+    parser.add_argument(
+        "-z", "--zsh", action="store_true", help="install Z shell plugins"
+    )
+    parser.add_argument(
+        "-l", "--list", action="store_true", help="list all programs"
+    )
     args = parser.parse_args()
 
     # Get the data
-    data = Dataset()
+    programs = Programs()
 
-    # Perform an action depending on command line flags
+    # Copy configs
     if args.config:
         for item in CFG_DIRS:
-            subprocess.run(["cp", "-Rf", item, os.environ["HOME"]])
+            subprocess.run(["cp", "-Rf", item, HOME])
 
         for item in CFG_FILES:
-            subprocess.run(["cp", "-f", item, os.environ["HOME"]])
+            subprocess.run(["cp", "-f", item, HOME])
 
-    # TODO: Handle GUI vs regular programs and consider incorporating tags
-    #       It could potentially help simplify the setup script
+    # Install a program
     elif args.install:
         subprocess.run([PACKAGE_MANAGER, INSTALL_CMD, args.install])
 
+    # Remove a program
     elif args.uninstall:
         subprocess.run([PACKAGE_MANAGER, UNINSTALL_CMD, args.uninstall])
 
+    # Install all programs
+    elif args.install_all:
+        for name in programs.names:
+            subprocess.run([PACKAGE_MANAGER, INSTALL_CMD, name])
+            subprocess.run(["brew", "services", "start", "skhd"])
+
+    # Install Vim plugins
     elif args.vim:
         subprocess.run(
             [
-                os.environ["EDITOR"],
+                EDITOR,
                 "+PlugUpgrade",
                 "+PlugClean!",
                 "+PlugInstall",
@@ -129,6 +157,7 @@ def main() -> None:
             ]
         )
 
+    # Install Z shell plugins
     elif args.zsh:
         subprocess.run(
             ["rm", "-rf", f"{CFG_DIR}/zsh/plugin/zsh-autosuggestions",]
@@ -158,8 +187,9 @@ def main() -> None:
             ]
         )
 
+    # List all programs
     elif args.list:
-        print(data)
+        print(programs)
 
 
 if __name__ == "__main__":

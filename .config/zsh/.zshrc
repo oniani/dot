@@ -67,7 +67,7 @@ alias news="newsboat --quiet"
 # Z Shell Settings {{{
 
 # Set the prompt
-PS1="%F{#fe8019}%c %F{#8ec07c}▶%F{reset_color} "
+PS1="%F{#fe8019}%c %F{#8ec07c}$%F{reset_color} "
 
 # Load and enable colors
 autoload -Uz colors && colors
