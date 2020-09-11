@@ -139,6 +139,8 @@ def main() -> None:
         subprocess.run([PACKAGE_MANAGER, UNINSTALL_CMD, args.uninstall])
 
     # Install all programs
+    # TODO: Handle GUI programs:
+    #           amethyst firefox kitty mactex-no-gui rstudio signal
     elif args.install_all:
         for name in programs.names:
             subprocess.run([PACKAGE_MANAGER, INSTALL_CMD, name])
