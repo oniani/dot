@@ -31,9 +31,9 @@ EDITOR: str = "nvim"
 if not os.environ.get("EDITOR"):
     EDITOR = os.environ["EDITOR"]
 
-CFG_DIR: str = HOME
-if not os.environ.get("XDG_CONFIG_HOME"):
-    CFG_DIR = os.environ["XDG_CONFIG_HOME"]
+CONFIG: str = f"{HOME}/.config"
+if os.environ.get("XDG_CONFIG_HOME"):
+    CONFIG = os.environ["XDG_CONFIG_HOME"]
 
 # Configuration files
 CFG_DIRS: List[str] = [".config", ".local", ".ghc"]
@@ -162,11 +162,11 @@ def main() -> None:
     # Install Z shell plugins
     elif args.zsh:
         subprocess.run(
-            ["rm", "-rf", f"{CFG_DIR}/zsh/plugin/zsh-autosuggestions",]
+            ["rm", "-rf", f"{CONFIG}/zsh/plugin/zsh-autosuggestions",]
         )
 
         subprocess.run(
-            ["rm", "-rf", f"{CFG_DIR}/zsh/plugin/zsh-syntax-highlighting",]
+            ["rm", "-rf", f"{CONFIG}/zsh/plugin/zsh-syntax-highlighting",]
         )
 
         subprocess.run(
@@ -174,7 +174,7 @@ def main() -> None:
                 "git",
                 "clone",
                 "https://github.com/zsh-users/zsh-autosuggestions",
-                f"{CFG_DIR}/zsh/plugin/zsh-autosuggestions",
+                f"{CONFIG}/zsh/plugin/zsh-autosuggestions",
                 "--quiet",
             ]
         )
@@ -184,7 +184,7 @@ def main() -> None:
                 "git",
                 "clone",
                 "https://github.com/zsh-users/zsh-syntax-highlighting",
-                f"{CFG_DIR}/zsh/plugin/zsh-syntax-highlighting",
+                f"{CONFIG}/zsh/plugin/zsh-syntax-highlighting",
                 "--quiet",
             ]
         )
