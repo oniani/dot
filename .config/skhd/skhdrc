@@ -10,7 +10,7 @@
 
 # GUI applications
 cmd - return : kitty --directory "$HOME" --single-instance &> /dev/null
-cmd - b : open -a firefox
+cmd - f : open -a firefox
 cmd - i : open -a messages
 cmd - m : open -a spotify
 cmd - p : open -a signal

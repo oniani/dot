@@ -164,9 +164,6 @@ set signcolumn=yes
 " Set a marker at column 80
 set colorcolumn=80
 
-" Highlight the current line
-set cursorline
-
 " Splits happen on the bottom and right
 set splitbelow splitright
 
