@@ -221,7 +221,7 @@ let mapleader = "\<Space>"
 nnoremap <Leader><Leader> <C-^>
 
 " Compile or run a program
-nnoremap <Leader>c :!compile_or_run %<CR>
+nnoremap <Leader>c :!run %<CR>
 
 " Use fzf for file finding
 nnoremap <Leader>f :Files<CR>
