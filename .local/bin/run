@@ -4,8 +4,8 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: GNU GPLv3
 
-filename="$1"
-basename="${filename%.*}"
+file="$1"
+base="${file%.*}"
 
 mdcompile() {
   pandoc -V fontsize=11pt \
@@ -23,18 +23,18 @@ mdcompile() {
 }
 
 case $filename in
-  *.c) gcc -o "$basename.out" "$filename";;
-  *.cpp) clang++ -Wall -std=c++17 "$filename" -o "$basename.out";;
-  *.dot) dot -Tpdf "$filename" -o "$basename.pdf";;
-  *.hs) runhaskell "$filename";;
-  *.lua) lua "$filename";;
-  *.md) mdcompile "$filename" "$basename.pdf";;
-  *.py) python3 "$filename";;
-  *.R) Rscript "$filename";;
-  *.Rmd) Rscript -e "rmarkdown::render('$filename', 'pdf_document')";;
-  *.rs) cargo run "$filename";;
-  *.sh) sh "$filename";;
-  *.tex) latexmk -interaction=nonstopmode -pdf -shell-escape "$filename";;
-  *.ts) tsc "$filename";;
+  *.c) gcc -o "$base.out" "$file" && "./$base.out";;
+  *.cpp) clang++ -Wall -std=c++17 "$file" -o "$base.out" && "./$base.out";;
+  *.dot) dot -Tpdf "$file" -o "$base.pdf";;
+  *.hs) runhaskell "$file";;
+  *.lua) lua "$file";;
+  *.md) mdcompile "$file" "$base.pdf";;
+  *.py) python3 "$file";;
+  *.R) Rscript "$file";;
+  *.Rmd) Rscript -e "rmarkdown::render('$file', 'pdf_document')";;
+  *.rs) cargo run "$file";;
+  *.sh) sh "$file";;
+  *.tex) latexmk -interaction=nonstopmode -pdf -shell-escape "$file";;
+  *.ts) tsc "$file";;
   *) printf "Unknown file format\n";;
 esac
