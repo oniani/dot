@@ -22,7 +22,7 @@ mdcompile() {
          "$2"
 }
 
-case $filename in
+case $file in
   *.c) gcc -o "$base.out" "$file" && "./$base.out";;
   *.cpp) clang++ -Wall -std=c++17 "$file" -o "$base.out" && "./$base.out";;
   *.dot) dot -Tpdf "$file" -o "$base.pdf";;
