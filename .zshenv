@@ -1,7 +1,5 @@
 #
-# Filename: .zshenv
 # Author:   David Oniani
-# Modified: June 22, 2020
 #
 #            _
 #    _______| |__   ___ _ ____   __
