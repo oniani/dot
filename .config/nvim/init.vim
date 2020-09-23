@@ -37,20 +37,12 @@ call plug#end()
 
 " Plugin Settings {{{
 
-" fzf {{{
-
-let $FZF_DEFAULT_OPTS='--reverse'
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-
-" }}}
-
 " coc.nvim {{{
 
 let g:coc_global_extensions = [
   \ 'coc-clangd',
   \ 'coc-json',
   \ 'coc-pyright',
-  \ 'coc-rust-analyzer',
   \ 'coc-tsserver'
   \ ]
 
@@ -110,11 +102,12 @@ let g:lightline = {
   \ 'colorscheme': 'Tomorrow_Night_Eighties',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+  \             [ 'gitbranch', 'cocstatus', 'filename', 'modified' ] ]
   \ },
   \ 'component_function': {
   \   'filename': 'LightlineFilename',
-  \   'cocstatus': 'coc#status'
+  \   'cocstatus': 'coc#status',
+  \   'gitbranch': 'FugitiveHead'
   \ },
   \ }
 
