@@ -109,7 +109,7 @@ def main() -> None:
         "-c", "--config", action="store_true", help="copy configs"
     )
     parser.add_argument(
-        "-v", "--vim", action="store_true", help="install Vim plugins"
+        "-n", "--nvim", action="store_true", help="install Neovim plugins"
     )
     parser.add_argument(
         "-z", "--zsh", action="store_true", help="install Z shell plugins"
@@ -147,7 +147,7 @@ def main() -> None:
             subprocess.run(["brew", "services", "start", "skhd"])
 
     # Install Vim plugins
-    elif args.vim:
+    elif args.nvim:
         subprocess.run(
             [
                 EDITOR,

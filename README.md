@@ -18,24 +18,19 @@
 
 ## Philosophy
 
-All of the templates and configuration files along with the programs are chosen
-with the simplicity in mind, and in most cases, cross-platform tools and
-applications are preferred. The repository attempts to only include minimal
-software, following the UNIX philosophy. In other words, software that software
-that runs fast and has a limited number of bugs (or no bugs at all).
+All programs are chosen with simplicity in mind. Cross-platform programs that
+follow to UNIX philosophy are preferred. In other words, software that runs
+fast and has a limited number of bugs (or no bugs at all).
 
 `dots` was initially designed for **macOS** operating system, but virtually
 everything works on most **Linux** distributions with a few exceptions
-including `wp` script, **skhd** and the tiling window manager **Amethyst**.
+including `wp` script, **skhd**, and the tiling window manager **Amethyst**.
 **Homebrew** might not work on all Linux distributions, so one will have to use
 some other, distribution-specific package manager such as `apt`, `pacman`, etc.
-Some applications and tools used for this setup have even more minimal
-alternatives, yet the functionality of such tools is usually more limited and
-therefore, there is a size/minimalism-functionality trade-off. The repo tries
-to get the most without losing the performance.
-
-For **macOS** users, there is an automated installation option that takes care
-of the setup.
+Some programs used for this setup have even more minimal alternatives, yet the
+functionality of such tools is often more limited and therefore, there is a
+functionality-minimalism trade-off. The repo tries to get the most without
+compromising too much.
 
 Bear in mind that this repository will always be a work-in-progress until that
 **ONE** perfect setup is found which, quite frankly, will probably never
@@ -50,7 +45,7 @@ Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-
 
 - Addressbook: [Abook](http://abook.sourceforge.net/)
 - Colorscheme Generator: [pywal](https://github.com/dylanaraps/pywal)
-- Default Colorscheme: [Gruvbox Dark Hard](https://github.com/morhetz/gruvbox)
+- Default Colorscheme: [moonfly](https://github.com/bluz71/vim-moonfly-colors)
 - Document Viewer: [Preview](<https://en.wikipedia.org/wiki/Preview_(macOS)>) / [Zathura](https://github.com/zegervdv/homebrew-zathura)
 - Editor: [Neovim](https://neovim.io/)
 - Email: [neomutt](https://neomutt.org/) (with [isync](http://isync.sourceforge.net/) for mailbox synchronization and [msmtp](https://marlam.de/msmtp/) for sending emails)
@@ -67,7 +62,6 @@ Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-
 - Terminal Emulator: [kitty](https://sw.kovidgoyal.net/kitty/)
 - Version Control: [Git](https://git-scm.com/downloads)
 - Video Player: [mpv](https://mpv.io/)
-- Wallpaper: [wallpaper47.jpg](https://github.com/oniani/wallpapers/blob/master/wallpapers/wallpaper47.jpg)
 - Web Browser: [Firefox](https://www.mozilla.org/en-US/firefox/)
 - Window Manager: [Amethyst](https://github.com/ianyh/Amethyst) / [bspwm](https://github.com/baskerville/bspwm)
 
@@ -75,8 +69,6 @@ Code Formatting
 
 - CSS/HTML/JavaScript/Markdown: [Prettier](https://prettier.io/)
 - Python: [Black](https://black.readthedocs.io/en/stable/)
-- R: [styler](https://github.com/r-lib/styler)
-- Rust: [rustfmt](https://github.com/rust-lang/rustfmt)
 
 Code Linting
 
@@ -84,8 +76,6 @@ Code Linting
 - JavaScript: [eslint](https://eslint.org/)
 - Markdown: [mdl](https://github.com/DavidAnson/markdownlint)
 - Python: [pyright](https://github.com/Microsoft/pyright)
-- R: [lintr](https://github.com/jimhester/lintr)
-- Rust: [rust-analyzer](https://github.com/rust-analyzer/rust-analyzer)
 - Shell: [ShellCheck](https://www.shellcheck.net/)
 
 ### Z Shell
@@ -104,7 +94,6 @@ No plugin manager is used. Plugins are sourced at the end of `.zshrc`.
 Plugins are installed and managed using a minimalist plugin manager
 [vim-plug](https://github.com/junegunn/vim-plug).
 
-- [base16-vim](https://github.com/chriskempson/base16-vim/)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 - [fzf](https://github.com/junegunn/fzf)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
@@ -112,6 +101,7 @@ Plugins are installed and managed using a minimalist plugin manager
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
+- [vim-moonfly-colors](https://github.com/bluz71/vim-moonfly-colors)
 - [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 - [vim-surround](https://github.com/tpope/vim-surround)
 
@@ -119,20 +109,21 @@ Plugins are installed and managed using a minimalist plugin manager
 
 Plugins arranged according to their startup time.
 
-| TOP | Time (ms) | Plugin         |
-| --- | --------- | -------------- |
-| 1   | 18.500    | vim-polyglot   |
-| 2   | 15.803    | base16-vim     |
-| 3   | 11.543    | coc.nvim       |
-| 4   | 7.473     | lightline.vim  |
-| 5   | 2.392     | vim-fugitive   |
-| 6   | 1.834     | fzf            |
-| 7   | 1.665     | fzf.vim        |
-| 8   | 0.703     | vim-surround   |
-| 9   | 0.295     | vim-commentary |
-| 10  | 0.037     | goyo.vim       |
+| TOP | Time (ms) | Plugin             |
+| --- | --------- | ------------------ |
+| 1   | 27.572    | vim-polyglot       |
+| 2   | 12.027    | vim-fugitive       |
+| 3   | 11.635    | coc.nvim           |
+| 4   | 7.789     | vim-moonfly-colors |
+| 5   | 1.588     | lightline.vim      |
+| 6   | 1.268     | fzf.vim            |
+| 7   | 1.011     | fzf                |
+| 8   | 0.640     | vim-surround       |
+| 9   | 0.265     | vim-commentary     |
+| 10  | 0.087     | goyo.vim           |
 
-This results in the total average of 60.245 ms delay for the startup time.
+This results in the total average of approximately 63.882 ms delay for the
+startup time.
 
 The chart was generated using
 [vim-plugins-profile](https://github.com/hyiltiz/vim-plugins-profile).
@@ -162,8 +153,7 @@ In order to start the installation wizard, execute the commands below:
 
 ```sh
 git clone https://github.com/oniani/dots
-cd dots
-./setup all
+./setup.py --help
 ```
 
 Also, please make sure that the system runs the latest macOS operating system.
