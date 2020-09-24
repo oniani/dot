@@ -28,7 +28,7 @@ Plug 'tpope/vim-surround'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'chriskempson/base16-vim'
+Plug 'bluz71/vim-moonfly-colors'
 Plug 'sheerun/vim-polyglot'
 Plug 'itchyny/lightline.vim'
 call plug#end()
@@ -93,14 +93,14 @@ augroup END
 " colorscheme {{{
 
 set termguicolors
-colorscheme base16-gruvbox-dark-hard
+colorscheme moonfly
 
 " }}}
 
 " lightline.vim {{{
 
 let g:lightline = {
-  \ 'colorscheme': 'Tomorrow_Night_Eighties',
+  \ 'colorscheme': 'moonfly',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch', 'cocstatus', 'filename', 'modified' ] ]
