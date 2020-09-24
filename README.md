@@ -1,8 +1,9 @@
 # `dots`
 
-<img src="demo.png" alt="Desktop" align="right" width="400px">
 
 ---
+
+<img src="demo.png" alt="Desktop" align="right" width="600px">
 
 ## Table of Contents
 
