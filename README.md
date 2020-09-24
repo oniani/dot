@@ -1,6 +1,6 @@
 # `dots`
 
-![Desktop](demo.png)
+<img src="demo.png" alt="Desktop" align="right" width="400px">
 
 ---
 
