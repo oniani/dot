@@ -3,8 +3,6 @@
 
 ---
 
-<img src="demo.png" alt="Desktop" align="right" width="600px">
-
 ## Table of Contents
 
 - [Philosophy](#philosophy)
@@ -18,6 +16,10 @@
 ---
 
 ## Philosophy
+
+
+<img src="demo.png" alt="Desktop" align="right" width="500px">
+
 
 All programs are chosen with simplicity in mind. Cross-platform programs that
 follow to UNIX philosophy are preferred. In other words, software that runs
