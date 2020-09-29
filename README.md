@@ -1,6 +1,5 @@
 # `dots`
 
-
 ---
 
 ## Table of Contents
@@ -17,13 +16,10 @@
 
 ## Philosophy
 
-
 <img src="demo.png" alt="Desktop" align="right" width="500px">
 
-
 All programs are chosen with simplicity in mind. Cross-platform programs that
-follow to UNIX philosophy are preferred. In other words, software that runs
-fast and has a limited number of bugs (or no bugs at all).
+follow the UNIX philosophy are preferred.
 
 `dots` was initially designed for **macOS** operating system, but virtually
 everything works on most **Linux** distributions with a few exceptions
@@ -49,7 +45,7 @@ Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-
 - Addressbook: [Abook](http://abook.sourceforge.net/)
 - Colorscheme Generator: [pywal](https://github.com/dylanaraps/pywal)
 - Default Colorscheme: [moonfly](https://github.com/bluz71/vim-moonfly-colors)
-- Document Viewer: [Preview](<https://en.wikipedia.org/wiki/Preview_(macOS)>) / [Zathura](https://github.com/zegervdv/homebrew-zathura)
+- Document Viewer: [Preview](https://support.apple.com/guide/preview/welcome/mac) / [Zathura](https://github.com/zegervdv/homebrew-zathura)
 - Editor: [Neovim](https://neovim.io/)
 - Email: [neomutt](https://neomutt.org/) (with [isync](http://isync.sourceforge.net/) for mailbox synchronization and [msmtp](https://marlam.de/msmtp/) for sending emails)
 - File Format Handler: [pandoc](https://pandoc.org/)
@@ -133,22 +129,22 @@ The chart was generated using
 
 #### Key Mappings
 
-| Key Mapping      | Functionality                              | Mnemonic |
-| ---------------- | ------------------------------------------ | -------- |
-| `<Space>`        | Space is the Leader key                    |          |
-| `<Space><Space>` | Toggle between buffers                     |          |
-| `<Leader>c`      | Generic compiler and runner                | Compile  |
-| `<Leader>f`      | Use fzf for file searching                 | Find     |
-| `<Leader>l`      | Search for a line with a pattern in a file | Line     |
-| `<Leader>o`      | Open the generated PDF file                | Open     |
-| `<Leader>r`      | Use fzf and rg for the string search       | Rg       |
-| `<Leader>s`      | Toggle spell checking                      | Spell    |
-| `<Leader>w`      | Toggle line-wrapping                       | Wrap     |
-| `<Leader>z`      | Toggle Goyo                                | Zen      |
-| `C-h`            | Switch to the left window                  |          |
-| `C-j`            | Switch to the bottom window                |          |
-| `C-k`            | Switch to the top window                   |          |
-| `C-l`            | Switch to the right window                 |          |
+| Key Mapping        | Functionality                              | Mnemonic |
+| ------------------ | ------------------------------------------ | -------- |
+| `<Space>`          | Space is the Leader key                    |          |
+| `<Leader><Leader>` | Toggle between buffers                     |          |
+| `<Leader>c`        | Generic compiler and runner                | Compile  |
+| `<Leader>f`        | Use fzf for file searching                 | Find     |
+| `<Leader>l`        | Search for a line with a pattern in a file | Line     |
+| `<Leader>o`        | Open the generated PDF file                | Open     |
+| `<Leader>r`        | Use fzf and rg for the string search       | Rg       |
+| `<Leader>s`        | Toggle spell checking                      | Spell    |
+| `<Leader>w`        | Toggle line-wrapping                       | Wrap     |
+| `<Leader>z`        | Toggle Goyo                                | Zen      |
+| `C-h`              | Switch to the left window                  |          |
+| `C-j`              | Switch to the bottom window                |          |
+| `C-k`              | Switch to the top window                   |          |
+| `C-l`              | Switch to the right window                 |          |
 
 ### Automated Installation
 
