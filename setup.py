@@ -39,6 +39,19 @@ if os.environ.get("XDG_CONFIG_HOME"):
 CFG_DIRS: List[str] = [".config", ".local", ".ghc"]
 CFG_FILES: List[str] = [".zshenv"]
 
+# Git
+ZSH_AUTOSUGGEST: str = "https://github.com/zsh-users/zsh-autosuggestions"
+ZSH_AUTOSUGGEST_DIR: str = f"{CONFIG}/zsh/plugin/zsh-autosuggestions"
+
+ZSH_SYNTAX: str = "https://github.com/zsh-users/zsh-syntax-highlighting"
+ZSH_SYNTAX_DIR: str = f"{CONFIG}/zsh/plugin/zsh-syntax-highlighting"
+
+
+def git_clone(link: str, path: str) -> None:
+    """Clone a repository into a new directory."""
+
+    subprocess.run(["git", "clone", link, path, "--quiet"])
+
 
 class Programs:
     """A class for operating on programs."""
@@ -169,25 +182,8 @@ def main() -> None:
             ["rm", "-rf", f"{CONFIG}/zsh/plugin/zsh-syntax-highlighting",]
         )
 
-        subprocess.run(
-            [
-                "git",
-                "clone",
-                "https://github.com/zsh-users/zsh-autosuggestions",
-                f"{CONFIG}/zsh/plugin/zsh-autosuggestions",
-                "--quiet",
-            ]
-        )
-
-        subprocess.run(
-            [
-                "git",
-                "clone",
-                "https://github.com/zsh-users/zsh-syntax-highlighting",
-                f"{CONFIG}/zsh/plugin/zsh-syntax-highlighting",
-                "--quiet",
-            ]
-        )
+        git_clone(ZSH_AUTOSUGGEST, ZSH_AUTOSUGGEST_DIR)
+        git_clone(ZSH_SYNTAX, ZSH_SYNTAX_DIR)
 
     # List all programs
     elif args.list:
