@@ -5,4 +5,4 @@
 # License: GNU GPLv3
 
 git reset --soft HEAD^
-git push origin +master
+git push origin +main
