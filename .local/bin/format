@@ -4,10 +4,10 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: GNU GPLv3
 
-filename="$1"
+file="$1"
 
 case $filename in
-  *.css | *.html | *.js | *.md) prettier --write --print-width=79 "$filename";;
+  *.css | *.html | *.js | *.md) prettier --write --print-width=79 "$file";;
   *.py) black --line-length=79 --quiet;;
   *.r) styler;;
   *.rs) rustfmt;;

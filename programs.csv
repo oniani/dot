@@ -1,7 +1,6 @@
 tag,name,description
 FILE,ffmpeg,"Play, record, convert, and stream audio and video"
 FILE,imagemagick,Tools and libraries to manipulate images in many formats
-FILE,p7zip,7-Zip (high compression file archiver) implementation
 FILE,pandoc,Swiss-army knife of markup format conversion
 GUI,amethyst,Automatic tiling window manager for macOS à la xmonad
 GUI,firefox,Firefox browser
