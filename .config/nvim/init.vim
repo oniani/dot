@@ -95,6 +95,7 @@ augroup END
 
 set termguicolors
 colorscheme moonfly
+highlight! Normal ctermbg=none guibg=none
 
 " }}}
 
