@@ -222,9 +222,6 @@ nnoremap <Leader>c :!run %<CR>
 " Use fzf for file finding
 nnoremap <Leader>f :Files<CR>
 
-" Open fugitive window
-nnoremap <Leader>g :G<CR>
-
 " Search for a pattern in a file
 nnoremap <Leader>l :BLines<CR>
 

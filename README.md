@@ -135,7 +135,6 @@ The chart was generated using
 | `<Leader><Leader>` | Toggle between buffers                     |          |
 | `<Leader>c`        | Generic compiler and runner                | Compile  |
 | `<Leader>f`        | Use fzf for file searching                 | Find     |
-  `<Leader>g`        | Open fugitive window                       | Git      |
 | `<Leader>l`        | Search for a line with a pattern in a file | Line     |
 | `<Leader>o`        | Open the generated PDF file                | Open     |
 | `<Leader>r`        | Use fzf and rg for the string search       | Rg       |

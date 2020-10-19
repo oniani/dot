@@ -53,6 +53,12 @@ def git_clone(link: str, path: str) -> None:
     subprocess.run(["git", "clone", link, path, "--quiet"])
 
 
+def rm_rf(path: str) -> None:
+    """Recursively remove directory entries"""
+
+    subprocess.run(["rm", "-rf", path])
+
+
 class Programs:
     """A class for operating on programs."""
 
@@ -174,13 +180,8 @@ def main() -> None:
 
     # Install Z shell plugins
     elif args.zsh:
-        subprocess.run(
-            ["rm", "-rf", f"{CONFIG}/zsh/plugin/zsh-autosuggestions",]
-        )
-
-        subprocess.run(
-            ["rm", "-rf", f"{CONFIG}/zsh/plugin/zsh-syntax-highlighting",]
-        )
+        rm_rf(ZSH_AUTOSUGGEST_DIR)
+        rm_rf(ZSH_SYNTAX_DIR)
 
         git_clone(ZSH_AUTOSUGGEST, ZSH_AUTOSUGGEST_DIR)
         git_clone(ZSH_SYNTAX, ZSH_SYNTAX_DIR)
