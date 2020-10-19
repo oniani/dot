@@ -83,6 +83,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> ge <Plug>(coc-diagnostic-next)
 nmap <silent> gE <Plug>(coc-diagnostic-prev)
 
+" Symbol renaming
+nmap <silent> rs <Plug>(coc-rename)
+
 " Format the current buffer on save
 augroup Format
   autocmd!
@@ -96,6 +99,7 @@ augroup END
 set termguicolors
 colorscheme moonfly
 highlight! Normal ctermbg=black guibg=black
+highlight! CursorLineNr ctermbg=none guibg=none
 
 " }}}
 
