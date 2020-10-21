@@ -22,5 +22,6 @@ cmd + shift - m : kitty --single-instance &> /dev/null neomutt
 
 # Disable skhd for the following apps
 .blacklist [
-  "firefox"
+  "firefox",
+  "safari"
 ]

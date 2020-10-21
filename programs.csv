@@ -13,7 +13,6 @@ LANG,ghc,Glorious Glasgow Haskell Compilation System
 LANG,hlint,Haskell source code suggestions
 LANG,lua,"Powerful, lightweight programming language"
 LANG,node,Platform built on V8 to build network applications
-LANG,perl,"Highly capable, feature-rich programming language"
 LANG,python,"Interpreted, interactive, object-oriented programming language"
 LANG,r,"Software environment for statistical computing"
 LANG,rustup,"The Rust toolchain installer"
