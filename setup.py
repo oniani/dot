@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import argparse
-import csv
+import json
 import os
 import platform
 import subprocess
@@ -65,36 +65,32 @@ class Programs:
     def __init__(self) -> None:
         "Initialize variables." ""
 
-        self._data = list(csv.DictReader(open("programs.csv")))
-        self._fields = ["tag", "name", "description"]
-
-        # Make sure the fields match
-        assert list(next(iter(self._data)).keys()) == self._fields
+        self._programs = json.load(open("programs.json"))
 
     @property
     def tags(self) -> List[str]:
         """Gets the names of the programs."""
 
-        return [row_dict["tag"] for row_dict in self._data]
+        return [program["tag"] for program in self._programs]
 
     @property
     def names(self) -> List[str]:
         """Gets the names of the programs."""
 
-        return [row_dict["name"] for row_dict in self._data]
+        return [program["name"] for program in self._programs]
 
     @property
     def descriptions(self) -> List[str]:
         """Gets the names of the programs."""
 
-        return [row_dict["description"] for row_dict in self._data]
+        return [program["description"] for program in self._programs]
 
     def get(self, field: str, name: str) -> Optional[Dict[str, str]]:
         """Get the particular item by name."""
 
-        for row_dict in self._data:
-            if row_dict[field] == name:
-                return row_dict
+        for program in self._programs:
+            if program[field] == name:
+                return program
 
         return None
 
@@ -103,8 +99,8 @@ class Programs:
 
         val = max([len(name) for name in self.names])
         out = []
-        for row_dict in self._data:
-            out.append(f"{row_dict['name']:<{val}}: {row_dict['description']}")
+        for program in self._programs:
+            out.append(f"{program['name']:<{val}}: {program['description']}")
         out.sort()
 
         return "\n".join(out)
