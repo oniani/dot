@@ -244,9 +244,6 @@ nnoremap <Leader>f :Files<CR>
 " Search for a pattern in a file
 nnoremap <Leader>l :BLines<CR>
 
-" Open the PDF file that has the same name as the currently opened file
-nnoremap <Leader>o :!open %:r.pdf<CR><CR>
-
 " Use fzf and rg for the string search
 nnoremap <Leader>r :Rg<CR>
 

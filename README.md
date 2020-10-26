@@ -136,7 +136,6 @@ The chart was generated using
 | `<Leader>c`        | Generic compiler and runner                | Compile  |
 | `<Leader>f`        | Use fzf for file searching                 | Find     |
 | `<Leader>l`        | Search for a line with a pattern in a file | Line     |
-| `<Leader>o`        | Open the generated PDF file                | Open     |
 | `<Leader>r`        | Use fzf and rg for the string search       | Rg       |
 | `<Leader>s`        | Toggle spell checking                      | Spell    |
 | `<Leader>w`        | Toggle line-wrapping                       | Wrap     |
