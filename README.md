@@ -149,9 +149,9 @@ The chart was generated using
 
 In order to start the installation wizard, execute the commands below:
 
-```sh
-git clone https://github.com/oniani/dots
-./setup.py --help
+```console
+$ git clone https://github.com/oniani/dots
+$ ./setup.py --help
 ```
 
 Also, please make sure that the system runs the latest macOS operating system.
