@@ -159,7 +159,6 @@ def main() -> None:
     elif args.install_all:
         for name in programs.names:
             subprocess.run([PACKAGE_MANAGER, INSTALL_CMD, name])
-            subprocess.run(["brew", "services", "start", "skhd"])
 
     # Install Vim plugins
     elif args.nvim:

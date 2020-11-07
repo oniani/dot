@@ -96,11 +96,6 @@
     },
     {
         "tag": "MAC",
-        "name": "koekeishiya/formulae/skhd",
-        "description": "Simple hotkey-daemon for macOS"
-    },
-    {
-        "tag": "MAC",
         "name": "mactex-no-gui",
         "description": "MacTex with no GUI programs"
     },
