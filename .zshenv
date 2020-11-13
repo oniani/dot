@@ -18,7 +18,7 @@ export PATH="${XDG_CONFIG_HOME:-$HOME/.config}/cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Core utilities
-export BROWSER="firefox"
+export BROWSER="brave browser"
 export EDITOR="nvim"
 export IMAGE="preview"
 export PAGER="less"

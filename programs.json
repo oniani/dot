@@ -21,8 +21,8 @@
     },
     {
         "tag": "GUI",
-        "name": "firefox",
-        "description": "Firefox browser"
+        "name": "brave-browser",
+        "description": "Web browser focusing on privacy"
     },
     {
         "tag": "GUI",

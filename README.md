@@ -61,7 +61,7 @@ Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-
 - Terminal Emulator: [kitty](https://sw.kovidgoyal.net/kitty/)
 - Version Control: [Git](https://git-scm.com/downloads)
 - Video Player: [mpv](https://mpv.io/)
-- Web Browser: [Firefox](https://www.mozilla.org/en-US/firefox/)
+- Web Browser: [Brave](https://brave.com/)
 - Window Manager: [Amethyst](https://github.com/ianyh/Amethyst) / [bspwm](https://github.com/baskerville/bspwm)
 
 Code Formatting
