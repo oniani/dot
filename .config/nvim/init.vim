@@ -86,11 +86,8 @@ nmap <silent> gE <Plug>(coc-diagnostic-prev)
 " Symbol renaming
 nmap <silent> rs <Plug>(coc-rename)
 
-" Format the current buffer on save
-augroup Format
-  autocmd!
-  autocmd BufWritePost <buffer> :call CocAction('format')
-augroup END
+" Format the current buffer
+command! -nargs=0 Format :call CocAction('format')
 
 " }}}
 
