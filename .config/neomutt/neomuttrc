@@ -43,6 +43,12 @@ named-mailboxes "  Junk"      ="[Gmail].Spam"
 named-mailboxes "  Trash"     ="[Gmail].Trash"
 named-mailboxes "  Archive"   ="[Gmail].All Mail"
 
+# Informative icons
+set crypt_chars = " "
+set flag_chars = "      "
+set to_chars=""
+set status_chars = " "
+
 # Do not save copies of outgoing messages (Gmail does it by default)
 set copy = no
 
@@ -100,7 +106,7 @@ set sidebar_width = 25
 set sidebar_visible = no
 set sidebar_short_path = yes
 set sidebar_next_new_wrap = yes
-set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_format = "%D%?F? [%F]?%* %?N?%N/?%S"
 
 # }}}
 
@@ -136,8 +142,8 @@ bind pager G bottom
 bind pager g top
 
 # Quick navigation
-bind attach,index,pager \Cb previous-page
-bind attach,index,pager \Cf next-page
+bind attach,index,pager \Cu half-up
+bind attach,index,pager \Cd half-down
 
 # Group reply
 bind index,pager R group-reply
