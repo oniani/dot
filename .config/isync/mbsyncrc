@@ -16,7 +16,7 @@ User onianidavid@gmail.com
 PassCmd "pass gmailapp"
 AuthMechs LOGIN
 SSLType IMAPS
-CertificateFile /usr/local/etc/openssl/cert.pem
+CertificateFile /usr/local/etc/openssl@1.1/cert.pem
 
 MaildirStore oniani-local
 Subfolders Verbatim
