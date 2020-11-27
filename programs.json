@@ -176,6 +176,11 @@
     },
     {
         "tag": "TOOL",
+        "name": "gdb",
+        "description": "GNU debugger"
+    },
+    {
+        "tag": "TOOL",
         "name": "htop",
         "description": "Improved top (interactive process viewer)"
     },

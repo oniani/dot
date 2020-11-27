@@ -5,9 +5,6 @@ import os
 import platform
 import subprocess
 
-from typing import Dict, List, Optional
-
-
 # Operating system
 OS: str = platform.system()
 
@@ -36,8 +33,8 @@ if os.environ.get("XDG_CONFIG_HOME"):
     CONFIG = os.environ["XDG_CONFIG_HOME"]
 
 # Configuration files
-CFG_DIRS: List[str] = [".config", ".local", ".ghc"]
-CFG_FILES: List[str] = [".zshenv"]
+CFG_DIRS: list[str] = [".config", ".local", ".ghc"]
+CFG_FILES: list[str] = [".zshenv"]
 
 # Git
 ZSH_AUTOSUGGEST: str = "https://github.com/zsh-users/zsh-autosuggestions"
@@ -65,34 +62,26 @@ class Programs:
     def __init__(self) -> None:
         "Initialize variables." ""
 
-        self._programs = json.load(open("programs.json"))
+        with open("programs.json") as programs:
+            self._programs: list[dict[str, str]] = json.load(programs)
 
     @property
-    def tags(self) -> List[str]:
+    def tags(self) -> list[str]:
         """Gets the names of the programs."""
 
         return [program["tag"] for program in self._programs]
 
     @property
-    def names(self) -> List[str]:
+    def names(self) -> list[str]:
         """Gets the names of the programs."""
 
         return [program["name"] for program in self._programs]
 
     @property
-    def descriptions(self) -> List[str]:
+    def descriptions(self) -> list[str]:
         """Gets the names of the programs."""
 
         return [program["description"] for program in self._programs]
-
-    def get(self, field: str, name: str) -> Optional[Dict[str, str]]:
-        """Get the particular item by name."""
-
-        for program in self._programs:
-            if program[field] == name:
-                return program
-
-        return None
 
     def __repr__(self) -> str:
         """Dataset representation."""
@@ -110,7 +99,9 @@ def main() -> None:
     """Process the command line arguments."""
 
     # Parse the command line arguments
-    parser = argparse.ArgumentParser()
+    parser: argparse.ArgumentParser = argparse.ArgumentParser()
+
+    # Specify the arguments
     parser.add_argument(
         "-i", "--install", metavar="program", help="install a program"
     )
@@ -132,10 +123,12 @@ def main() -> None:
     parser.add_argument(
         "-l", "--list", action="store_true", help="list all programs"
     )
-    args = parser.parse_args()
+
+    # Parse the arguments
+    args: argparse.Namespace = parser.parse_args()
 
     # Get the data
-    programs = Programs()
+    programs: Programs = Programs()
 
     # Copy configs
     if args.config:
