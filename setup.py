@@ -56,6 +56,19 @@ def rm_rf(path: str) -> None:
     subprocess.run(["rm", "-rf", path])
 
 
+def nvim_install() -> None:
+    """Install Neovim plugins."""
+
+    cmds: list[str] = [
+        "+PlugUpgrade",
+        "+PlugClean!",
+        "+PlugInstall",
+        "+PlugUpdate",
+    ]
+
+    subprocess.run([EDITOR, *cmds, "+qa!"])
+
+
 class Programs:
     """A class for operating on programs."""
 
@@ -151,18 +164,9 @@ def main() -> None:
         for name in programs.names:
             subprocess.run([PACKAGE_MANAGER, INSTALL_CMD, name])
 
-    # Install Vim plugins
+    # Install Neovim plugins
     elif args.nvim:
-        subprocess.run(
-            [
-                EDITOR,
-                "+PlugUpgrade",
-                "+PlugClean!",
-                "+PlugInstall",
-                "+PlugUpdate",
-                "+qa!",
-            ]
-        )
+        nvim_install()
 
     # Install Z shell plugins
     elif args.zsh:
