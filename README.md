@@ -119,7 +119,7 @@ Plugins arranged according to their startup time.
 | 8   | 0.287     | vim-commentary     |
 | 9   | 0.037     | goyo.vim           |
 
-This results in the total average of approximately 63.882 ms delay for the
+This results in the total average of approximately 58.23 ms delay for the
 startup time.
 
 The chart was generated using
