@@ -24,7 +24,6 @@ Plug 'junegunn/goyo.vim'
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -84,7 +83,7 @@ nmap <silent> ge <Plug>(coc-diagnostic-next)
 nmap <silent> gE <Plug>(coc-diagnostic-prev)
 
 " Symbol renaming
-nmap <silent> rs <Plug>(coc-rename)
+nmap <silent> ms <Plug>(coc-rename)
 
 " Format the current buffer
 command! -nargs=0 Format :call CocAction('format')

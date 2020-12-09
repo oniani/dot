@@ -93,16 +93,15 @@ No plugin manager is used. Plugins are sourced at the end of `.zshrc`.
 Plugins are installed and managed using a minimalist plugin manager
 [vim-plug](https://github.com/junegunn/vim-plug).
 
-- [coc.nvim](https://github.com/neoclide/coc.nvim)
-- [fzf](https://github.com/junegunn/fzf)
-- [fzf.vim](https://github.com/junegunn/fzf.vim)
-- [goyo.vim](https://github.com/junegunn/goyo.vim)
-- [lightline.vim](https://github.com/itchyny/lightline.vim)
-- [vim-commentary](https://github.com/tpope/vim-commentary)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
+- [coc.nvim](https://github.com/neoclide/coc.nvim)
 - [vim-moonfly-colors](https://github.com/bluz71/vim-moonfly-colors)
-- [vim-polyglot](https://github.com/sheerun/vim-polyglot)
-- [vim-surround](https://github.com/tpope/vim-surround)
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [lightline.vim](https://github.com/itchyny/lightline.vim)
+- [fzf.vim](https://github.com/junegunn/fzf.vim)
+- [fzf](https://github.com/junegunn/fzf)
+- [vim-commentary](https://github.com/tpope/vim-commentary)
+- [goyo.vim](https://github.com/junegunn/goyo.vim)
 
 #### Current Stats
 
@@ -110,16 +109,15 @@ Plugins arranged according to their startup time.
 
 | TOP | Time (ms) | Plugin             |
 | --- | --------- | ------------------ |
-| 1   | 27.572    | vim-polyglot       |
-| 2   | 12.027    | vim-fugitive       |
-| 3   | 11.635    | coc.nvim           |
-| 4   | 7.789     | vim-moonfly-colors |
-| 5   | 1.588     | lightline.vim      |
-| 6   | 1.268     | fzf.vim            |
-| 7   | 1.011     | fzf                |
-| 8   | 0.640     | vim-surround       |
-| 9   | 0.265     | vim-commentary     |
-| 10  | 0.087     | goyo.vim           |
+| 1   | 16.084    | vim-fugitive       |
+| 2   | 16.001    | coc.nvim           |
+| 3   | 14.566    | vim-moonfly-colors |
+| 4   | 6.470     | nvim-treesitter    |
+| 5   | 1.992     | lightline.vim      |
+| 6   | 1.619     | fzf.vim            |
+| 7   | 1.174     | fzf                |
+| 8   | 0.287     | vim-commentary     |
+| 9   | 0.037     | goyo.vim           |
 
 This results in the total average of approximately 63.882 ms delay for the
 startup time.
