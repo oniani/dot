@@ -18,7 +18,7 @@ if empty(glob('$HOME/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('$HOME/.config/nvim/plugged')
-Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 
