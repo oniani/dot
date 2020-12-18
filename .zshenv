@@ -28,7 +28,7 @@ export VIDEO="preview"
 
 # nnn
 export NNN_BMS="D:~/Downloads;c:~/git/dots;d:~/Documents;g:~/git;w:~/wip;"
-export NNN_FCOLORS='0000E631000000E000000000'
+export NNN_FCOLORS='0000E600000000E600000000'
 export NNN_OPTS="EHderx"
 export NNN_TRASH=1
 
