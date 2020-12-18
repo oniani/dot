@@ -93,33 +93,33 @@ No plugin manager is used. Plugins are sourced at the end of `.zshrc`.
 Plugins are installed and managed using a minimalist plugin manager
 [vim-plug](https://github.com/junegunn/vim-plug).
 
-- [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
-- [vim-moonfly-colors](https://github.com/bluz71/vim-moonfly-colors)
-- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [lightline.vim](https://github.com/itchyny/lightline.vim)
-- [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [fzf](https://github.com/junegunn/fzf)
-- [vim-commentary](https://github.com/tpope/vim-commentary)
+- [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [goyo.vim](https://github.com/junegunn/goyo.vim)
+- [lightline.vim](https://github.com/itchyny/lightline.vim)
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [vim-commentary](https://github.com/tpope/vim-commentary)
+- [vim-fugitive](https://github.com/tpope/vim-fugitive)
+- [vim-gruvbox8](https://github.com/lifepillar/vim-gruvbox8)
 
 #### Current Stats
 
 Plugins arranged according to their startup time.
 
-| TOP | Time (ms) | Plugin             |
-| --- | --------- | ------------------ |
-| 1   | 16.084    | vim-fugitive       |
-| 2   | 16.001    | coc.nvim           |
-| 3   | 14.566    | vim-moonfly-colors |
-| 4   | 6.470     | nvim-treesitter    |
-| 5   | 1.992     | lightline.vim      |
-| 6   | 1.619     | fzf.vim            |
-| 7   | 1.174     | fzf                |
-| 8   | 0.287     | vim-commentary     |
-| 9   | 0.037     | goyo.vim           |
+| TOP | Time (ms) | Plugin          |
+| --- | --------- | --------------- |
+| 1   | 13.503    | coc.nvim        |
+| 2   | 12.805    | vim-fugitive    |
+| 3   | 11.274    | lightline.vim   |
+| 4   | 3.290     | vim-gruvbox8    |
+| 5   | 2.899     | nvim-treesitter |
+| 6   | 2.336     | fzf.vim         |
+| 7   | 1.559     | fzf             |
+| 8   | 0.461     | vim-commentary  |
+| 9   | 0.073     | goyo.vim        |
 
-This results in the total average of approximately 58.23 ms delay for the
+This results in the total average of approximately 48.2 ms delay for the
 startup time.
 
 The chart was generated using
