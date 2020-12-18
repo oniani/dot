@@ -27,7 +27,7 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'bluz71/vim-moonfly-colors'
+Plug 'lifepillar/vim-gruvbox8'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'itchyny/lightline.vim'
 call plug#end()
@@ -93,14 +93,14 @@ command! -nargs=0 Format :call CocAction('format')
 " colorscheme {{{
 
 set termguicolors
-colorscheme moonfly
+colorscheme gruvbox8_hard
 
 " }}}
 
 " lightline.vim {{{
 
 let g:lightline = {
-  \ 'colorscheme': 'moonfly',
+  \ 'colorscheme': 'Tomorrow_Night_Eighties',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch', 'cocstatus', 'filename', 'modified' ] ]
