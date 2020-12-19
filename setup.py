@@ -80,7 +80,7 @@ class Programs:
 
     @property
     def tags(self) -> list[str]:
-        """Gets the names of the programs."""
+        """Gets the tags of the programs."""
 
         return [program["tag"] for program in self._programs]
 
