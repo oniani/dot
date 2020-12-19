@@ -6,10 +6,10 @@
 
 file="$1"
 
-case $filename in
-  *.css | *.html | *.js | *.md) prettier --write --print-width=79 "$file";;
-  *.py) black --line-length=79 --quiet;;
-  *.r) styler;;
-  *.rs) rustfmt;;
-  *) printf "Unknown file format\n";;
+case $file in
+    *.css | *.html | *.js | *.md) prettier --write --print-width=79 "$file";;
+    *.py) black --line-length=79 --quiet;;
+    *.r) styler;;
+    *.rs) rustfmt;;
+    *) printf "Unknown file format\n";;
 esac

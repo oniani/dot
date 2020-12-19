@@ -8,33 +8,33 @@ file="$1"
 base="${file%.*}"
 
 mdcompile() {
-  pandoc -V fontsize=11pt \
-         -V geometry:a4paper \
-         -V linkcolor:blue \
-         -V mainfont="Latin Modern Roman" \
-         -V monofont="Hack Nerd Font" \
-         -V margin=1in \
-         -f markdown \
-         --highlight-style=pygments \
-         --pdf-engine=pdflatex \
-         "$1" \
-         -o \
-         "$2"
+    pandoc -V fontsize=11pt \
+        -V geometry:a4paper \
+        -V linkcolor:blue \
+        -V mainfont="Latin Modern Roman" \
+        -V monofont="Hack Nerd Font" \
+        -V margin=1in \
+        -f markdown \
+        --highlight-style=pygments \
+        --pdf-engine=pdflatex \
+        "$1" \
+        -o \
+        "$2"
 }
 
 case $file in
-  *\.c) gcc -o "$base.out" "$file" && "./$base.out";;
-  *\.cpp) clang++ -Wall -std=c++17 "$file" -o "$base.out" && "./$base.out";;
-  *\.dot) dot -Tpdf "$file" -o "$base.pdf";;
-  *\.hs) runhaskell "$file";;
-  *\.lua) lua "$file";;
-  *\.md) mdcompile "$file" "$base.pdf";;
-  *\.py) python3 "$file";;
-  *\.R) Rscript "$file";;
-  *\.Rmd) Rscript -e "rmarkdown::render('$file', 'pdf_document')";;
-  *\.rs) cargo run "$file";;
-  *\.sh) sh "$file";;
-  *\.tex) latexmk -interaction=nonstopmode -pdf -shell-escape "$file";;
-  *\.ts) tsc "$file";;
-  *) printf "Unknown file format\n";;
+    *\.c) gcc -o "$base.out" "$file" && "./$base.out";;
+    *\.cpp) clang++ -Wall -std=c++17 "$file" -o "$base.out" && "./$base.out";;
+    *\.dot) dot -Tpdf "$file" -o "$base.pdf";;
+    *\.hs) runhaskell "$file";;
+    *\.lua) lua "$file";;
+    *\.md) mdcompile "$file" "$base.pdf";;
+    *\.py) python3 "$file";;
+    *\.R) Rscript "$file";;
+    *\.Rmd) Rscript -e "rmarkdown::render('$file', 'pdf_document')";;
+    *\.rs) cargo run "$file";;
+    *\.sh) sh "$file";;
+    *\.tex) latexmk -interaction=nonstopmode -pdf -shell-escape "$file";;
+    *\.ts) tsc "$file";;
+    *) printf "Unknown file format\n";;
 esac

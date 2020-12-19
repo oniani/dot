@@ -5,4 +5,4 @@
 # License: GNU GPLv3
 
 abook --datafile "${XDG_DATA_HOME:-$HOME/.local/share}/abook/abook" \
-      --add-email-quiet
+    --add-email-quiet

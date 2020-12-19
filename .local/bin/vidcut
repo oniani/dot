@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# Cut a video
+# by David Oniani <onianidavid@gmail.com>
+# License: GNU GPLv3
+
+IN="$1"
+START="$2"
+END="$3"
+OUT="$4"
+
+ffmpeg -ss "$START" -i "$IN" -to "$END" -c copy "$OUT"

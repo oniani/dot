@@ -1,41 +1,35 @@
 #!/usr/bin/env sh
 
-# Download audio/video files using youtube-dl
+# Download audio/video via youtube-dl
 # by David Oniani <onianidavid@gmail.com>
 # License: GNU GPLv3
 
 help() {
-  printf "Download audio/video files using youtube-dl
+  printf "Download audio/video via youtube-dl
 by David Oniani <onianidavid@gmail.com>
 License: GNU GPLv3
 
 SYNOPSIS
-  ydl [-ahv] [link ...]
+    ydl [-ahv] [link]
 
 OPTIONS
-  a  : download audio
-  h  : help (this) message
-  v  : download video
-
-Running ./setup with no options will print a help message (this message)
+    a  : download audio
+    h  : help (this) message
+    v  : download video
 
 EXAMPLES
-  ydl -a https://www.youtube.com/watch?v=1XtD4bgz7A0
-  ydl -h
-  ydl -v https://www.youtube.com/watch?v=AaF7rXatU9E
+    ydl -a \"https://www.youtube.com/watch?v=1XtD4bgz7A0\"
+    ydl -v \"https://www.youtube.com/watch?v=AaF7rXatU9E\"
+    ydl -h
 "
 }
 
 OPTION="$1"
 LINK="$2"
+FORMAT="%(upload_date)s - %(duration)ss - %(title)s.%(ext)s"
 
 case $OPTION in
-  "-a") youtube-dl --add-metadata -cix -o \
-          "%(upload_date)s - %(duration)ss - %(title)s.%(ext)s" \
-          "$LINK";;
-  "-h") help;;
-  "-v") youtube-dl --add-metadata -cio \
-          "%(upload_date)s - %(duration)ss - %(title)s.%(ext)s" \
-          "$LINK";;
-  *) help
+    "-a") youtube-dl --add-metadata -cix -o "$FORMAT" "$LINK";;
+    "-v") youtube-dl --add-metadata -cio "$FORMAT" "$LINK";;
+    "-h") help;;
 esac

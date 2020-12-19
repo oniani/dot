@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+# Compress a video
+# by David Oniani <onianidavid@gmail.com>
+# License: GNU GPLv3
+
+ffmpeg -i "$1" -vcodec libx265 -crf 27 "$2"
