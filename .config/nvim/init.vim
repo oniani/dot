@@ -103,6 +103,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> ge <Plug>(coc-diagnostic-next)
 nmap <silent> gE <Plug>(coc-diagnostic-prev)
 
+" Diagnostics window
+nnoremap <silent><nowait> md :<C-u>CocList diagnostics<CR>
+
 " Symbol renaming
 nmap <silent> ms <Plug>(coc-rename)
 
