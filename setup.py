@@ -79,22 +79,10 @@ class Programs:
             self._programs: list[dict[str, str]] = json.load(programs)
 
     @property
-    def tags(self) -> list[str]:
-        """Gets the tags of the programs."""
-
-        return [program["tag"] for program in self._programs]
-
-    @property
     def names(self) -> list[str]:
-        """Gets the names of the programs."""
+        """Get the names of programs."""
 
         return [program["name"] for program in self._programs]
-
-    @property
-    def descriptions(self) -> list[str]:
-        """Gets the names of the programs."""
-
-        return [program["description"] for program in self._programs]
 
     def __repr__(self) -> str:
         """Dataset representation."""
