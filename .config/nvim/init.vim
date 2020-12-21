@@ -12,9 +12,9 @@
 
 " Install vim-plug automatically
 if empty(glob('$HOME/.config/nvim/autoload/plug.vim'))
-  silent !curl -Lfo "$HOME/.config/nvim/autoload/plug.vim" --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source '$MYVIMRC'
+    silent !curl -Lfo "$HOME/.config/nvim/autoload/plug.vim" --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source '$MYVIMRC'
 endif
 
 call plug#begin('$HOME/.config/nvim/plugged')
@@ -40,54 +40,54 @@ call plug#end()
 
 " Apply Gruvbox colorscheme
 let g:fzf_colors =  {
-  \ 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment']
-  \ }
+    \ 'fg':      ['fg', 'Normal'],
+    \ 'bg':      ['bg', 'Normal'],
+    \ 'hl':      ['fg', 'Comment'],
+    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+    \ 'hl+':     ['fg', 'Statement'],
+    \ 'info':    ['fg', 'PreProc'],
+    \ 'border':  ['fg', 'Ignore'],
+    \ 'prompt':  ['fg', 'Conditional'],
+    \ 'pointer': ['fg', 'Exception'],
+    \ 'marker':  ['fg', 'Keyword'],
+    \ 'spinner': ['fg', 'Label'],
+    \ 'header':  ['fg', 'Comment']
+    \ }
 
 " }}}
 
 " coc.nvim {{{
 
 let g:coc_global_extensions = [
-  \ 'coc-clangd',
-  \ 'coc-json',
-  \ 'coc-pyright',
-  \ 'coc-rust-analyzer',
-  \ 'coc-tsserver'
-  \ ]
+    \ 'coc-clangd',
+    \ 'coc-json',
+    \ 'coc-pyright',
+    \ 'coc-rust-analyzer',
+    \ 'coc-tsserver'
+    \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 "       other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Show documentation
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocActionAsync('doHover')
-  endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocActionAsync('doHover')
+    endif
 endfunction
 
 " Use K to show documentation in a preview window
@@ -126,13 +126,13 @@ colorscheme gruvbox8_hard
 let g:lightline = {
   \ 'colorscheme': 'Tomorrow_Night_Eighties',
   \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'gitbranch', 'cocstatus', 'filename', 'modified' ] ]
+  \     'left': [ [ 'mode', 'paste' ],
+  \               [ 'gitbranch', 'cocstatus', 'filename', 'modified' ] ]
   \ },
   \ 'component_function': {
-  \   'filename': 'LightlineFilename',
-  \   'cocstatus': 'coc#status',
-  \   'gitbranch': 'FugitiveHead'
+  \     'filename': 'LightlineFilename',
+  \     'cocstatus': 'coc#status',
+  \     'gitbranch': 'FugitiveHead'
   \ },
   \ }
 
@@ -235,14 +235,14 @@ set smartcase
 
 " Clean up LaTeX build files
 augroup TexClean
-  autocmd!
-  autocmd VimLeave *.tex :!texclean
+    autocmd!
+    autocmd VimLeave *.tex :!texclean
 augroup END
 
 " Highlighted yank
 augroup LuaHighlight
-  autocmd!
-  autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Search'}
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Search'}
 augroup END
 
 " }}}
