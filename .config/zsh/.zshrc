@@ -10,39 +10,39 @@
 
 # Functions {{{
 
-# Print the color map
-function colormap() {
-  for i in {0..255}; do
-    print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'};
-  done
-}
-
 # Change directory on quit
 nnn_autocd() {
-  # Block nesting of nnn in subshells
-  if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-    echo "nnn is already running"
-    return
-  fi
+    # Block nesting of nnn in subshells
+    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+        printf "nnn is already running\n"
+        return
+    fi
+  
+    # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # To cd on quit only on ^G, remove the "export" as in:
+    #     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    # NOTE: NNN_TMPFILE is fixed, should not be modified
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+  
+    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
+    # stty start undef
+    # stty stop undef
+    # stty lwrap undef
+    # stty lnext undef
+  
+    nnn "$@"
+  
+    if [ -f "$NNN_TMPFILE" ]; then
+        . "$NNN_TMPFILE"
+        rm -f "$NNN_TMPFILE" > /dev/null
+    fi
+}
 
-  # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
-  # To cd on quit only on ^G, remove the "export" as in:
-  #     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-  # NOTE: NNN_TMPFILE is fixed, should not be modified
-  export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-
-  # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
-  # stty start undef
-  # stty stop undef
-  # stty lwrap undef
-  # stty lnext undef
-
-  nnn "$@"
-
-  if [ -f "$NNN_TMPFILE" ]; then
-    . "$NNN_TMPFILE"
-    rm -f "$NNN_TMPFILE" > /dev/null
-  fi
+# Print the color map
+function colormap() {
+    for i in {0..255}; do
+        print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'};
+    done
 }
 
 # }}}
@@ -58,8 +58,7 @@ alias icat="kitty +kitten icat"
 
 # Interactive
 alias e="nvim"
-alias m="neomutt"
-alias mp="ncmpcpp --quiet"
+alias m="ncmpcpp --quiet"
 alias news="newsboat --quiet"
 
 # }}}
@@ -80,16 +79,20 @@ autoload -Uz compinit && compinit -d \
 kitty + complete setup zsh | source /dev/stdin
 
 # Completion settings
-zstyle ":completion:*" accept-exact-dirs true            # No parent completion
-zstyle ":completion:*" insert-tab false                  # Do not insert a TAB
-zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"  # Colored menu
-zstyle ":completion:*" list-dirs-first true              # Separate dir & file
-zstyle ":completion:*" menu select                       # Completion menu
+zstyle ":completion:*" accept-exact-dirs true
+zstyle ":completion:*" insert-tab false
+zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
+zstyle ":completion:*" list-dirs-first true
+zstyle ":completion:*" menu select
 
 # Case/hyphen-insensitive autocompletion (à la Oh My Zsh)
 zstyle ":completion:*" matcher-list "m:{a-zA-Z-_}={A-Za-z_-}" "r:|=*" "l:|=* r:|=*"
-setopt COMPLETE_ALIASES  # Complete aliases
-setopt GLOBDOTS          # Complete dotfiles
+
+# Complete aliases
+setopt COMPLETE_ALIASES
+
+# Complete dotfiles
+setopt GLOBDOTS
 
 # History settings
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zsh_history"
@@ -147,22 +150,20 @@ bindkey -M viins "^e" edit-command-line
 
 # Change cursor shape based on the Vi mode
 zle-keymap-select() {
-  # Normal mode
-  if [ $KEYMAP = vicmd ] || [ $1 = 'block' ]; then
-    echo -ne '\e[1 q'
+    case $KEYMAP in
+        # Normal mode
+        vicmd) echo -ne "\e[1 q";;
 
-  # Insert mode
-  elif [ $KEYMAP = main ] || [ $KEYMAP = viins ] || [ $KEYMAP = '' ] ||
-       [ $1 = 'beam' ]; then
-    echo -ne '\e[5 q'
-  fi
+        # Insert mode
+        viins|main) echo -ne "\e[5 q";;
+    esac
 }
 
 zle-line-init() {
     # Initiate `vi insert` as keymap
     # NOTE: Can be removed if `bindkey -V` has been set elsewhere
     zle -K viins
-    echo -ne '\e[5 q'
+    echo -ne "\e[5 q"
 }
 
 zle -N zle-keymap-select
