@@ -62,6 +62,7 @@ let g:fzf_colors =  {
 let g:coc_global_extensions = [
     \ 'coc-clangd',
     \ 'coc-json',
+    \ 'coc-marketplace',
     \ 'coc-pyright',
     \ 'coc-rust-analyzer',
     \ 'coc-tsserver'
@@ -105,6 +106,9 @@ nmap <silent> gE <Plug>(coc-diagnostic-prev)
 
 " Diagnostics window
 nnoremap <silent><nowait> md :<C-u>CocList diagnostics<CR>
+
+" Marketplace window
+nnoremap <silent><nowait> mm :<C-u>CocList marketplace<CR>
 
 " Symbol renaming
 nmap <silent> ms <Plug>(coc-rename)
