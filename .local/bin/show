@@ -2,6 +2,6 @@
 
 # Show the changes in git
 # by David Oniani <onianidavid@gmail.com>
-# License: GNU GPLv3
+# License: MIT
 
 git log --all --pretty='%h - %s' | fzf | cut -d ' ' -f 1 | xargs git show

@@ -2,7 +2,7 @@
 
 # Clone personal Github repositories
 # by David Oniani <onianidavid@gmail.com>
-# License: GNU GPLv3
+# License: MIT
 
 git clone https://github.com/oniani/arduino-stuff
 git clone https://github.com/oniani/bizarre-structures

@@ -157,4 +157,4 @@ Note that the setup script is idempotent: it can safely be run multiple times.
 
 ## License
 
-[GNU General Public License v3.0](LICENSE)
+[MIT License](LICENSE)

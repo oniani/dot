@@ -2,7 +2,7 @@
 
 # Cut a video
 # by David Oniani <onianidavid@gmail.com>
-# License: GNU GPLv3
+# License: MIT
 
 IN="$1"
 START="$2"

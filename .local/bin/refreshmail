@@ -2,7 +2,7 @@
 
 # Synchronize mail using mbsync
 # by David Oniani <onianidavid@gmail.com>
-# License: GNU GPLv3
+# License: MIT
 
 # Check for internet connection
 ping -q -c 1 8.8.8.8 >/dev/null || { printf "No internet\n" ; exit ; }

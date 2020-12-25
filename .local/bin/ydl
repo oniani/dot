@@ -2,7 +2,7 @@
 
 # Download audio/video via youtube-dl
 # by David Oniani <onianidavid@gmail.com>
-# License: GNU GPLv3
+# License: MIT
 
 help() {
   printf "Download audio/video via youtube-dl

@@ -2,6 +2,10 @@
 
 # Open the selected file in the default editor
 # by David Oniani <onianidavid@gmail.com>
-# License: GNU GPLv3
+# License: MIT
 
-fzf | xargs "$EDITOR"
+PREVIEW_CMD="bat --theme=gruvbox {}"
+
+[ -z "$1" ] && fzf --preview "$PREVIEW_CMD" | xargs "$EDITOR" && exit 1
+
+fd . --hidden --type f "$1" | fzf --preview "$PREVIEW_CMD" | xargs "$EDITOR"

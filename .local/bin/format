@@ -2,7 +2,7 @@
 
 # General purpose formatter and fixer
 # by David Oniani <onianidavid@gmail.com>
-# License: GNU GPLv3
+# License: MIT
 
 file="$1"
 
