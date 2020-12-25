@@ -118,6 +118,7 @@ command! -nargs=0 Format :call CocAction('format')
 
 set termguicolors
 colorscheme gruvbox8_hard
+highlight! Normal guibg=none
 
 " }}}
 
