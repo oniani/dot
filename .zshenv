@@ -34,7 +34,7 @@ export NNN_TRASH=1
 
 # fzf
 export FZF_DEFAULT_COMMAND="fd --hidden --type f"
-export FZF_DEFAULT_OPTS="--reverse --height=50%"
+export FZF_DEFAULT_OPTS="--reverse"
 
 # Move to ~/.config
 export CARGO_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/cargo"

@@ -4,7 +4,7 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT
 
-PREVIEW_CMD="bat --theme=gruvbox {}"
+PREVIEW_CMD="bat --color=always --theme=gruvbox {}"
 
 [ -z "$1" ] && fzf --preview "$PREVIEW_CMD" | xargs "$EDITOR" && exit 1
 
