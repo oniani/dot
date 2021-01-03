@@ -2,6 +2,6 @@
 
 # Compress a video
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT
+# License: MIT License
 
 ffmpeg -i "$1" -vcodec libx265 -crf 27 "$2"

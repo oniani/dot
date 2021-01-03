@@ -2,12 +2,12 @@
 
 # Download audio/video via youtube-dl
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT
+# License: MIT License
 
 help() {
   printf "Download audio/video via youtube-dl
 by David Oniani <onianidavid@gmail.com>
-License: GNU GPLv3
+License: MIT License
 
 SYNOPSIS
     ydl [-ahv] [link]

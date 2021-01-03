@@ -1,0 +1,53 @@
+#!/usr/bin/env sh
+
+# Compress a PDF document
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+help() {
+  printf "Compress a PDF document
+by David Oniani <onianidavid@gmail.com>
+License: MIT License
+
+SYNOPSIS
+  pdfress [-ebook | -extreme | -printer | -universal] [input] [output]
+
+OPTIONS
+  -ebook     : compression suitable for documents that will be read (150 dpi)
+  -extreme   : enhanced compression, might result in a loss of quality (72 dpi)
+  -prepress  : produces prepress optimized document (300 dpi)
+  -printer   : produces print optimied document (300 dpi)
+  -universal : intended to be useful across a wide variety of uses (bigger dpi)
+
+EXAMPLES
+  pdfpress -ebook     input.pdf output.pdf
+  pdfpress -extreme   input.pdf output.pdf
+  pdfpress -prepress  input.pdf output.pdf
+  pdfpress -printer   input.pdf output.pdf
+  pdfpress -universal input.pdf output.pdf
+"
+}
+
+INPUT="$1"
+OUTPUT="$2"
+OPTION="$3"
+
+case $OPTION in
+    "-ebook") gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
+                  -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH \
+                  -sOutputFile="$OUTPUT" "$INPUT";;
+    "-extreme") gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
+                    -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH \
+                    -sOutputFile="$OUTPUT" "$INPUT";;
+    "-prepress") gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
+                     -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH \
+                     -sOutputFile="$OUTPUT" "$INPUT";;
+    "-printer") gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
+                    -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH \
+                    -sOutputFile="$OUTPUT" "$INPUT";;
+    "-universal") gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
+                      -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH \
+                      -sOutputFile="$OUTPUT" "$INPUT";;
+    "-h") help;;
+esac
+

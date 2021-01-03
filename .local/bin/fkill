@@ -2,6 +2,6 @@
 
 # Fuzzy search and kill processes
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT
+# License: MIT License
 
 ps aux | fzf -m | awk '{ print $2 }' | xargs -I {} kill -9 "{}"

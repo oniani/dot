@@ -181,6 +181,11 @@
     },
     {
         "tag": "TOOL",
+        "name": "gs",
+        "description": "Interpreter for PostScript and PDF"
+    },
+    {
+        "tag": "TOOL",
         "name": "htop",
         "description": "Improved top (interactive process viewer)"
     },

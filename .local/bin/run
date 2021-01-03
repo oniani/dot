@@ -2,10 +2,10 @@
 
 # General purpose program runner
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT
+# License: MIT License
 
-file="$1"
-base="${file%.*}"
+FILE="$1"
+BASE="${FILE%.*}"
 
 mdcompile() {
     pandoc -V fontsize=11pt \
@@ -22,19 +22,19 @@ mdcompile() {
         "$2"
 }
 
-case $file in
-    *\.c) gcc -o "$base.out" "$file" && "./$base.out";;
-    *\.cpp) clang++ -Wall -std=c++17 "$file" -o "$base.out" && "./$base.out";;
-    *\.dot) dot -Tpdf "$file" -o "$base.pdf";;
-    *\.hs) runhaskell "$file";;
-    *\.lua) lua "$file";;
-    *\.md) mdcompile "$file" "$base.pdf";;
-    *\.py) python3 "$file";;
-    *\.R) Rscript "$file";;
-    *\.Rmd) Rscript -e "rmarkdown::render('$file', 'pdf_document')";;
-    *\.rs) cargo run "$file";;
-    *\.sh) sh "$file";;
-    *\.tex) latexmk -interaction=nonstopmode -pdf -shell-escape "$file";;
-    *\.ts) tsc "$file";;
-    *) printf "Unknown file format\n";;
+case $FILE in
+    *\.c) gcc -o "$BASE.out" "$FILE" && "./$BASE.out";;
+    *\.cpp) clang++ -Wall -std=c++17 "$FILE" -o "$BASE.out" && "./$BASE.out";;
+    *\.dot) dot -Tpdf "$FILE" -o "$BASE.pdf";;
+    *\.hs) runhaskell "$FILE";;
+    *\.lua) lua "$FILE";;
+    *\.md) mdcompile "$FILE" "$BASE.pdf";;
+    *\.py) python3 "$FILE";;
+    *\.R) Rscript "$FILE";;
+    *\.Rmd) Rscript -e "rmarkdown::render('$FILE', 'pdf_document')";;
+    *\.rs) cargo run "$FILE";;
+    *\.sh) sh "$FILE";;
+    *\.tex) latexmk -interaction=nonstopmode -pdf -shell-escape "$FILE";;
+    *\.ts) tsc "$FILE";;
+    *) printf "Unknown FILE format\n";;
 esac

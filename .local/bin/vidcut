@@ -2,11 +2,11 @@
 
 # Cut a video
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT
+# License: MIT License
 
-IN="$1"
+INPUT="$1"
 START="$2"
 END="$3"
-OUT="$4"
+OUTPUT="$4"
 
-ffmpeg -ss "$START" -i "$IN" -to "$END" -c copy "$OUT"
+ffmpeg -ss "$START" -i "$INPUT" -to "$END" -c copy "$OUTPUT"

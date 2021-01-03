@@ -2,7 +2,7 @@
 
 # Clean up LaTeX build files
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT
+# License: MIT License
 
 rm -f ./*-blx.bib
 rm -f ./*.aux

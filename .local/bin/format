@@ -2,12 +2,12 @@
 
 # General purpose formatter and fixer
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT
+# License: MIT License
 
-file="$1"
+FILE="$1"
 
-case $file in
-    *.css | *.html | *.js | *.md) prettier --write --print-width=79 "$file";;
+case $FILE in
+    *.css | *.html | *.js | *.md) prettier --write --print-width=79 "$FILE";;
     *.py) black --line-length=79 --quiet;;
     *.r) styler;;
     *.rs) rustfmt;;
