@@ -87,8 +87,8 @@ class Programs:
     def __repr__(self) -> str:
         """Dataset representation."""
 
-        val = max([len(name) for name in self.names])
-        out = []
+        val: int = max([len(name) for name in self.names])
+        out: list[str] = []
         for program in self._programs:
             out.append(f"{program['name']:<{val}}: {program['description']}")
         out.sort()
