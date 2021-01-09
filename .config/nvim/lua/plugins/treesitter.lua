@@ -8,5 +8,5 @@ require('nvim-treesitter.configs').setup {
     },
 
     -- one of 'all', 'maintained', 'language', or a list of languages
-    -- ensure_installed = 'all';
+    ensure_installed = 'all'
 }
