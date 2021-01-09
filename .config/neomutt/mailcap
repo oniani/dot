@@ -1,5 +1,0 @@
-text/plain; $EDITOR %s ;
-text/html; open -a $BROWSER %s ; nametemplate=%s.html
-image/*; open -a $IMAGE %s ;
-video/*; open -a $VIDEO %s &; copiousoutput
-application/pdf; open -a $READER %s ;
