@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-
-# Add a new contact to the addressabook (abook)
-# by David Oniani <onianidavid@gmail.com>
-# License: MIT License
-
-abook --datafile "${XDG_DATA_HOME:-$HOME/.local/share}/abook/abook" \
-    --add-email-quiet

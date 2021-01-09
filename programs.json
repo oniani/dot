@@ -110,41 +110,6 @@
         "description": "Manage the desktop wallpaper"
     },
     {
-        "tag": "MAIL",
-        "name": "abook",
-        "description": "Address book with mutt support"
-    },
-    {
-        "tag": "MAIL",
-        "name": "gpg",
-        "description": "GNU Pretty Good Privacy (PGP) package"
-    },
-    {
-        "tag": "MAIL",
-        "name": "isync",
-        "description": "Synchronize a maildir with an IMAP server"
-    },
-    {
-        "tag": "MAIL",
-        "name": "msmtp",
-        "description": "SMTP client that can be used as an SMTP plugin for Mutt"
-    },
-    {
-        "tag": "MAIL",
-        "name": "neomutt",
-        "description": "E-mail reader with support for Notmuch, NNTP and much more"
-    },
-    {
-        "tag": "MAIL",
-        "name": "notmuch",
-        "description": "Thread-based email index, search, and tagging"
-    },
-    {
-        "tag": "MAIL",
-        "name": "pass",
-        "description": "Password manager"
-    },
-    {
         "tag": "TOOL",
         "name": "cmatrix",
         "description": "Console Matrix"
