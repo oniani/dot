@@ -10,17 +10,17 @@ by David Oniani <onianidavid@gmail.com>
 License: MIT License
 
 SYNOPSIS
-    ydl [-ahv] [link]
+  ydl [-ahv] [link]
 
 OPTIONS
-    a  : download audio
-    h  : help (this) message
-    v  : download video
+  a : download audio
+  h : help (this) message
+  v : download video
 
 EXAMPLES
-    ydl -a \"https://www.youtube.com/watch?v=1XtD4bgz7A0\"
-    ydl -v \"https://www.youtube.com/watch?v=AaF7rXatU9E\"
-    ydl -h
+  ydl -a \"https://www.youtube.com/watch?v=1XtD4bgz7A0\"
+  ydl -v \"https://www.youtube.com/watch?v=AaF7rXatU9E\"
+  ydl -h
 "
 }
 

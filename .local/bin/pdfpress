@@ -28,9 +28,9 @@ EXAMPLES
 "
 }
 
-INPUT="$1"
-OUTPUT="$2"
-OPTION="$3"
+OPTION="$1"
+INPUT="$2"
+OUTPUT="$3"
 
 case $OPTION in
     "-ebook") gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
@@ -50,4 +50,3 @@ case $OPTION in
                       -sOutputFile="$OUTPUT" "$INPUT";;
     "-h") help;;
 esac
-
