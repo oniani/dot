@@ -32,6 +32,6 @@ return require("packer").startup(function()
         "hoob3rt/lualine.nvim",
         "kyazdani42/nvim-web-devicons",
         "lifepillar/vim-gruvbox8",
-        "nvim-treesitter/nvim-treesitter",
+        "nvim-treesitter/nvim-treesitter"
     }
 end)
