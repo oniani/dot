@@ -47,7 +47,6 @@ Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-
 - Default Colorscheme: [moonfly](https://github.com/bluz71/vim-moonfly-colors)
 - Document Viewer: [Preview](https://support.apple.com/guide/preview/welcome/mac) / [Zathura](https://github.com/zegervdv/homebrew-zathura)
 - Editor: [Neovim](https://neovim.io/)
-- Email: [neomutt](https://neomutt.org/) (with [isync](http://isync.sourceforge.net/) for mailbox synchronization and [msmtp](https://marlam.de/msmtp/) for sending emails)
 - File Format Handler: [pandoc](https://pandoc.org/)
 - File Manager: [nnn](https://github.com/jarun/nnn)
 - Font: [Iosevka Term Nerd Font Complete Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka)
@@ -96,7 +95,6 @@ Plugins are installed and managed using a minimalist plugin manager
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 - [fzf](https://github.com/junegunn/fzf)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
-- [goyo.vim](https://github.com/junegunn/goyo.vim)
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
@@ -107,19 +105,18 @@ Plugins are installed and managed using a minimalist plugin manager
 
 Plugins arranged according to their startup time.
 
-| TOP | Time (ms) | Plugin          |
-| --- | --------- | --------------- |
-| 1   | 13.503    | coc.nvim        |
-| 2   | 12.805    | vim-fugitive    |
-| 3   | 11.274    | lightline.vim   |
-| 4   | 3.290     | vim-gruvbox8    |
-| 5   | 2.899     | nvim-treesitter |
-| 6   | 2.336     | fzf.vim         |
-| 7   | 1.559     | fzf             |
-| 8   | 0.461     | vim-commentary  |
-| 9   | 0.073     | goyo.vim        |
+| TOP | Time (ms) | Plugin            |
+| --- | --------- | ----------------- |
+| 1   | 9.349     | coc.nvim          |
+| 2   | 4.959     | vim-gruvbox8      |
+| 3   | 3.270     | nvim-treesitter   |
+| 4   | 2.615     | vim-fugitive      |
+| 5   | 2.034     | fzf.vim           |
+| 6   | 1.629     | fzf               |
+| 7   | 0.280     | vim-commentary    |
+| 8   | 0.067     | nvim-web-devicons |
 
-This results in the total average of approximately 48.2 ms delay for the
+This results in the total average of approximately 24.203 ms delay for the
 startup time.
 
 The chart was generated using
@@ -137,7 +134,6 @@ The chart was generated using
 | `<Leader>r`        | Use fzf and rg for the string search       | Rg       |
 | `<Leader>s`        | Toggle spell checking                      | Spell    |
 | `<Leader>w`        | Toggle line-wrapping                       | Wrap     |
-| `<Leader>z`        | Toggle Goyo                                | Zen      |
 | `C-h`              | Switch to the left window                  |          |
 | `C-j`              | Switch to the bottom window                |          |
 | `C-k`              | Switch to the top window                   |          |
@@ -145,7 +141,7 @@ The chart was generated using
 
 ### Automated Installation
 
-In order to start the installation wizard, execute the commands below:
+Check out the installation wizard!
 
 ```console
 $ git clone https://github.com/oniani/dots

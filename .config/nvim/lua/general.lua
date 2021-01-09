@@ -14,7 +14,7 @@ util.set("clipboard", "unnamedplus", "+")
 util.set("updatetime", 300)
 
 -- Some servers have issues with backup files
-util.set("nobackup nowritebackup")
+util.set("nowritebackup")
 
 -- Stop generating annoying swap files
 util.set("noswapfile")
@@ -25,8 +25,11 @@ util.set("lazyredraw")
 -- Possibility to have more than one unsaved buffers
 util.set("hidden")
 
--- Enable line numbers and set it relative to the line
-util.set("number relativenumber")
+-- Enable line numbers
+util.set("number")
+
+-- Enable relative line numbers
+util.set("relativenumber")
 
 -- Completion mode
 util.set("wildmode", "longest:full,full")
@@ -37,8 +40,11 @@ util.set("signcolumn", "yes")
 -- Set a marker at column 80
 util.set("colorcolumn", 80)
 
--- Splits happen on the bottom and right
-util.set("splitbelow splitright")
+-- Horizontal splits below
+util.set("splitbelow")
+
+-- Vertical splits right
+util.set("splitright")
 
 -- Enable mouse support
 util.set("mouse", "a")

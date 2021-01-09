@@ -20,13 +20,12 @@ function _G.check_back_space()
     local col = vim.fn.col(".") - 1
     if col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
         return true
-    else
-        return false
     end
+    return false
 end
 
 util.imap("<TAB>", "pumvisible() ? \"<C-N>\" : v:lua.check_back_space() ? \"<TAB>\" : coc#refresh()", { expr = true })
-util.imap("<S-TAB>", "pumvisible() ? '<C-P>' : '<C-H>'", { expr = true })
+util.imap("<S-TAB>", "pumvisible() ? \"<C-P>\" : \"<C-H>\"", { expr = true })
 
 -- Show documentation
 function show_documentation()
@@ -50,18 +49,14 @@ util.nmap("gr", "<Plug>(coc-references)", { noremap = false })
 util.nmap("gy", "<Plug>(coc-type-definition)", { noremap = false })
 
 -- Diagnostics navigation
-util.nmap("ge", "<Plug>(coc-diagnostic-next)",
-    { noremap = false, nowait = true })
-util.nmap("gE", "<Plug>(coc-diagnostic-prev)",
-    { noremap = false, nowait = true })
+util.nmap("ge", "<Plug>(coc-diagnostic-next)", { noremap = false })
+util.nmap("gE", "<Plug>(coc-diagnostic-prev)", { noremap = false })
 
 -- Diagnostics window
-util.nmap("md", ":<C-u>CocList diagnostics<CR>",
-    { nowait = true, silent = true })
+util.nmap("md", ":<C-u>CocList diagnostics<CR>", { nowait = true })
 
 -- -- Marketplace window
-util.nmap("mm", ":<C-u>CocList marketplace<CR>",
-    { nowait = true, silent = true })
+util.nmap("mm", ":<C-u>CocList marketplace<CR>", { nowait = true })
 
 -- Symbol renaming
 util.nmap("ms", "<Plug>(coc-rename)", { noremap = false })

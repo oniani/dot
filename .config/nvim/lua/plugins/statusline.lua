@@ -1,5 +1,8 @@
 -- Statusline settings
+
+-- Use `lualine.nvim`
 local lualine = require("lualine")
+
 lualine.theme = "gruvbox"
 lualine.separator = "|"
 lualine.sections = {
