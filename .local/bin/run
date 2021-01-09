@@ -36,5 +36,5 @@ case $FILE in
     *\.sh) sh "$FILE";;
     *\.tex) latexmk -interaction=nonstopmode -pdf -shell-escape "$FILE";;
     *\.ts) tsc "$FILE";;
-    *) printf "Unknown FILE format\n";;
+    *) printf "Unknown file format\n";;
 esac

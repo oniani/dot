@@ -8,7 +8,7 @@ FILE="$1"
 
 case $FILE in
     *.css | *.html | *.js | *.md) prettier --write --print-width=79 "$FILE";;
-    *.py) black --line-length=79 --quiet;;
+    *.py) black --line-length=79;;
     *.r) styler;;
     *.rs) rustfmt;;
     *) printf "Unknown file format\n";;
