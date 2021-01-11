@@ -1,5 +1,3 @@
--- FZF
-
 -- Use utiliies
 local util = require("util")
 

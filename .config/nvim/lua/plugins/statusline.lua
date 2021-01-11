@@ -1,6 +1,4 @@
--- Statusline settings
-
--- Use `lualine.nvim`
+-- Use `lualine.nvim` as a statusline
 local lualine = require("lualine")
 
 lualine.theme = "gruvbox"

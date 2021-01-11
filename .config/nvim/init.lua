@@ -12,7 +12,7 @@ local filenames = {
     "general",
     "autocmds",
     "mappings",
-    "plugins",
+    "plugins/packer",
     "plugins/colorscheme",
     "plugins/fzf",
     "plugins/lsp",
