@@ -51,7 +51,7 @@ def git_clone(link: str, path: str) -> None:
 
 
 def rm_rf(path: str) -> None:
-    """Recursively remove directory entries"""
+    """Recursively remove directory entries."""
 
     subprocess.run(["rm", "-rf", path])
 
