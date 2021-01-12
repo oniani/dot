@@ -8,15 +8,10 @@ import subprocess
 # Operating system
 OS: str = platform.system()
 
-if OS == "Darwin":
+if OS in {"Darwin", "Linux"}:
     PACKAGE_MANAGER = "brew"
     INSTALL_CMD = "install"
     UNINSTALL_CMD = "uninstall"
-
-elif OS == "Linux":
-    PACKAGE_MANAGER = "sudo apt"
-    INSTAL_CMDL = "install"
-    UNINSTALL_CMD = "remove"
 
 elif OS == "Windows":
     raise NotImplementedError("Not sure what to use, yet...")
@@ -25,7 +20,7 @@ elif OS == "Windows":
 HOME: str = os.environ["HOME"]
 
 EDITOR: str = "nvim"
-if not os.environ.get("EDITOR"):
+if os.environ.get("EDITOR"):
     EDITOR = os.environ["EDITOR"]
 
 CONFIG: str = f"{HOME}/.config"
