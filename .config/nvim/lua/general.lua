@@ -34,8 +34,8 @@ util.set("relativenumber")
 -- Completion mode
 util.set("wildmode", "longest:full,full")
 
--- Always have signcolumn enabled
-util.set("signcolumn", "yes")
+-- Always have `signcolumn` enabled the `number` column
+util.set("signcolumn", "number")
 
 -- Set a marker at column 80
 util.set("colorcolumn", 80)

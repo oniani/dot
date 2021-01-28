@@ -21,9 +21,3 @@ vim.cmd [[ augroup ItalicCommments ]]
 vim.cmd [[     autocmd! ]]
 vim.cmd [[     autocmd ColorScheme * hi! Comment cterm=italic gui=italic ]]
 vim.cmd [[ augroup END ]]
-
--- Orange comments
-vim.cmd [[ augroup OrangeCommments ]]
-vim.cmd [[     autocmd! ]]
-vim.cmd [[     autocmd ColorScheme * hi! Comment ctermfg=214 guifg=orange ]]
-vim.cmd [[ augroup END ]]
