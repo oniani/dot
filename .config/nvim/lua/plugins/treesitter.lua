@@ -1,4 +1,9 @@
--- Treesitter settings
+-- Neovim Treesitter settings
+
+-- Use utiliies
+local util = require("util")
+
+-- Set up treesitter
 require('nvim-treesitter.configs').setup {
     highlight = {
         -- false will disable the whole extension
@@ -23,3 +28,5 @@ require('nvim-treesitter.configs').setup {
     -- one of 'all', 'maintained', 'language', or a list of languages
     ensure_installed = 'all'
 }
+
+util.nmap("<Leader>t", ":TSPlaygroundToggle<CR>")
