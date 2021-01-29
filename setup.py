@@ -19,10 +19,6 @@ elif OS == "Windows":
 # Environment variables
 HOME: str = os.environ["HOME"]
 
-EDITOR: str = "nvim"
-if os.environ.get("EDITOR"):
-    EDITOR = os.environ["EDITOR"]
-
 CONFIG: str = f"{HOME}/.config"
 if os.environ.get("XDG_CONFIG_HOME"):
     CONFIG = os.environ["XDG_CONFIG_HOME"]
