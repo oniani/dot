@@ -10,6 +10,7 @@ vim.g.coc_global_extensions = {
     "coc-marketplace",
     "coc-pyright",
     "coc-rust-analyzer",
+    "coc-texlab",
     "coc-tsserver"
 }
 
