@@ -1,4 +1,4 @@
--- Use utiliies
+-- Use utilities
 local util = require("util")
 
 -- Set completeopt to have a better completion experience
