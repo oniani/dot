@@ -93,13 +93,14 @@ Plugins are installed and managed using a minimalist plugin manager
 [vim-plug](https://github.com/junegunn/vim-plug).
 
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
+- [dracula](https://github.com/dracula/vim)
 - [fzf](https://github.com/junegunn/fzf)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [playground](https://github.com/nvim-treesitter/playground)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
-- [vim-gruvbox8](https://github.com/lifepillar/vim-gruvbox8)
 
 #### Current Stats
 
@@ -107,16 +108,17 @@ Plugins arranged according to their startup time.
 
 | TOP | Time (ms) | Plugin            |
 | --- | --------- | ----------------- |
-| 1   | 9.349     | coc.nvim          |
-| 2   | 4.959     | vim-gruvbox8      |
-| 3   | 3.270     | nvim-treesitter   |
-| 4   | 2.615     | vim-fugitive      |
-| 5   | 2.034     | fzf.vim           |
-| 6   | 1.629     | fzf               |
-| 7   | 0.280     | vim-commentary    |
-| 8   | 0.067     | nvim-web-devicons |
+| 1   | 14.847    | vim               |
+| 2   | 11.254    | coc.nvim          |
+| 3   | 2.445     | vim-fugitive      |
+| 4   | 2.046     | nvim-treesitter   |
+| 5   | 1.561     | fzf.vim           |
+| 6   | 1.377     | fzf               |
+| 7   | 0.374     | playground        |
+| 8   | 0.283     | vim-commentary    |
+| 9   | 0.062     | nvim-web-devicons |
 
-This results in the total average of approximately 24.203 ms delay for the
+This results in the total average of approximately 34.249 ms delay for the
 startup time.
 
 The chart was generated using

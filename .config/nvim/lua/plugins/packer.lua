@@ -31,7 +31,7 @@ return require("packer").startup(function()
         -- Visuals
         "hoob3rt/lualine.nvim",
         "kyazdani42/nvim-web-devicons",
-        "lifepillar/vim-gruvbox8",
+        "dracula/vim",
 
         -- Parsing and related information
         "nvim-treesitter/nvim-treesitter",
