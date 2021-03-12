@@ -6,6 +6,7 @@ local util = require("util")
 vim.g.coc_global_extensions = {
     "coc-clangd",
     "coc-git",
+    "coc-go",
     "coc-json",
     "coc-lua",
     "coc-marketplace",
