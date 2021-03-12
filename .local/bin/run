@@ -26,6 +26,7 @@ case $FILE in
     *\.c) gcc -o "$BASE.out" "$FILE" && "./$BASE.out";;
     *\.cpp) clang++ -Wall -std=c++17 "$FILE" -o "$BASE.out" && "./$BASE.out";;
     *\.dot) dot -Tpdf "$FILE" -o "$BASE.pdf";;
+    *\.go) go build "$FILE" && "./$BASE";;
     *\.hs) runhaskell "$FILE";;
     *\.lua) lua "$FILE";;
     *\.md) mdcompile "$FILE" "$BASE.pdf";;
