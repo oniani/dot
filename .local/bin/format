@@ -8,6 +8,7 @@ FILE="$1"
 
 case $FILE in
     *\.css | *\.html | *\.js | *\.md) prettier --write --print-width=79 $FILE;;
+    *\.go) gofmt -s -w "$FILE";;
     *\.py) black --line-length=79 $FILE;;
     *\.r) styler $FILE;;
     *\.rs) rustfmt $FILE;;
