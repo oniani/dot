@@ -17,7 +17,7 @@ vim.g.coc_global_extensions = {
 }
 
 -- Use tab for trigger completion with characters ahead and navigate.
--- NOTE: Use command ":verbose imap <tab>" to make sure tab is not mapped by
+-- NOTE: Use command ":verbose imap <TAB>" to make sure tab is not mapped by
 --       other plugin before putting this into your config.
 function _G.check_back_space()
     local col = vim.fn.col(".") - 1
@@ -27,6 +27,7 @@ function _G.check_back_space()
     return false
 end
 
+-- Use the <TAB> key properly
 util.imap("<TAB>", "pumvisible() ? \"<C-N>\" : v:lua.check_back_space() ? \"<TAB>\" : coc#refresh()", { expr = true })
 util.imap("<S-TAB>", "pumvisible() ? \"<C-P>\" : \"<C-H>\"", { expr = true })
 
