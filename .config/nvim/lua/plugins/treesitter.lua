@@ -4,7 +4,7 @@
 local util = require("util")
 
 -- Set up treesitter
-require('nvim-treesitter.configs').setup {
+require("nvim-treesitter.configs").setup {
     highlight = {
         -- false will disable the whole extension
         enable = true,
@@ -25,8 +25,8 @@ require('nvim-treesitter.configs').setup {
         use_virtual_text = true,
         lint_events = {"BufWrite", "CursorHold"},
     },
-    -- one of 'all', 'maintained', 'language', or a list of languages
-    ensure_installed = 'all'
+    -- one of "all", "maintained", "language", or a list of languages
+    ensure_installed = "maintained"
 }
 
 util.nmap("<Leader>t", ":TSPlaygroundToggle<CR>")
