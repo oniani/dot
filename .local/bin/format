@@ -7,7 +7,8 @@
 FILE="$1"
 
 case $FILE in
-    *\.css | *\.html | *\.js | *\.md) prettier --write --print-width=79 $FILE;;
+    *\.css | *\.html | *\.md) prettier --write --print-width=79 $FILE;;
+    *\.js | *\.json) prettier --write --print-width=79 --tab-width=4 $FILE;;
     *\.go) gofmt -s -w "$FILE";;
     *\.py) black --line-length=79 $FILE;;
     *\.r) styler $FILE;;

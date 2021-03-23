@@ -56,6 +56,11 @@
     },
     {
         "tag": "LANG",
+        "name": "go",
+        "description": "Open source programming language to build simple/reliable/efficient software"
+    },
+    {
+        "tag": "LANG",
         "name": "hlint",
         "description": "Haskell source code suggestions"
     },
