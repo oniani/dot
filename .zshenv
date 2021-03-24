@@ -20,11 +20,8 @@ export PATH="$HOME/.local/bin:$PATH"
 # Core utilities
 export BROWSER="brave browser"
 export EDITOR="nvim"
-export IMAGE="preview"
 export PAGER="less"
-export READER="preview"
 export TERMINAL="kitty"
-export VIDEO="preview"
 
 # nnn
 export NNN_BMS="D:~/Downloads;c:~/git/dots;d:~/Documents;g:~/git;w:~/wip;"
