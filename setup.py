@@ -9,9 +9,9 @@ import subprocess
 OS: str = platform.system()
 
 if OS in {"Darwin", "Linux"}:
-    PACKAGE_MANAGER = "brew"
-    INSTALL_CMD = "install"
-    UNINSTALL_CMD = "uninstall"
+    PACKAGE_MANAGER: str = "brew"
+    INSTALL_CMD: str = "install"
+    UNINSTALL_CMD: str = "uninstall"
 
 elif OS == "Windows":
     raise NotImplementedError("Not sure what to use, yet...")
