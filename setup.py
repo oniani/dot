@@ -51,7 +51,7 @@ class Programs:
     """A class for operating on programs."""
 
     def __init__(self) -> None:
-        "Initialize variables." ""
+        """Initialize variables."""
 
         with open("programs.json") as programs:
             self._programs: list[dict[str, str]] = json.load(programs)
