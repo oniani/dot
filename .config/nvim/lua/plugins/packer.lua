@@ -2,9 +2,11 @@
 local api = vim.api
 local fn = vim.fn
 
-local repo = "https://github.com/wbthomason/packer.nvim"
+-- Specify the path and repository for `packer.nvim`
 local path = fn.stdpath("data").."/site/pack/packer/opt/packer.nvim"
+local repo = "https://github.com/wbthomason/packer.nvim"
 
+-- Clone `packer.nvim` repositoru and and source any plugin files found
 if fn.empty(fn.glob(path)) > 0 then
     api.nvim_command(string.format("!git clone %s %s", repo, path))
     api.nvim_command("packadd packer.nvim")
@@ -35,6 +37,5 @@ return require("packer").startup(function()
 
         -- Parsing and related information
         "nvim-treesitter/nvim-treesitter",
-        "nvim-treesitter/playground"
     }
 end)

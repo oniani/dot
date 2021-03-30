@@ -114,11 +114,10 @@ Plugins arranged according to their startup time.
 | 4   | 2.046     | nvim-treesitter   |
 | 5   | 1.561     | fzf.vim           |
 | 6   | 1.377     | fzf               |
-| 7   | 0.374     | playground        |
-| 8   | 0.283     | vim-commentary    |
-| 9   | 0.062     | nvim-web-devicons |
+| 7   | 0.283     | vim-commentary    |
+| 8   | 0.062     | nvim-web-devicons |
 
-This results in the total average of approximately 34.249 ms delay for the
+This results in the total average of approximately 33.875 ms delay for the
 startup time.
 
 The chart was generated using
@@ -147,6 +146,7 @@ Check out the installation wizard!
 
 ```console
 $ git clone https://github.com/oniani/dots
+$ cd dots
 $ ./setup.py --help
 ```
 
