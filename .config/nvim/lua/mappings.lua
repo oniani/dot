@@ -16,6 +16,9 @@ util.nmap("<Leader>s", ":setlocal spell! spelllang=en_us<CR>")
 -- Toggle line wrapping
 util.nmap("<Leader>w", ":set wrap!<CR>")
 
+-- Toggle file explorer
+util.nmap("<C-n>", ":NvimTreeToggle<CR>")
+
 -- Window navigation commands (saves a keystroke)
 util.nmap("<C-h>", "<C-w>h")
 util.nmap("<C-j>", "<C-w>j")

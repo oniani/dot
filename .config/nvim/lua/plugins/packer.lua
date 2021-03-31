@@ -24,6 +24,7 @@ return require("packer").startup(function()
         -- Productivity
         { "junegunn/fzf", run = ":call fzf#install()" },
         "junegunn/fzf.vim",
+        "kyazdani42/nvim-tree.lua",
         "tpope/vim-commentary",
         "tpope/vim-fugitive",
 
