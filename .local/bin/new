@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+# Create a tmux work environment
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+# If not in tmux, create a new session or attach the existing one
+# If already in tmux, detach the session
+if [ -z "$TMUX" ]; then
+    tmux new -s "future" 2>/dev/null || tmux attach -t "future"
+else
+    [ $(tmux display -p "#S") = "future" ] && tmux detach
+fi
