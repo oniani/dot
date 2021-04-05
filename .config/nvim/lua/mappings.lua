@@ -1,4 +1,4 @@
--- Access Vim api
+-- Access Vim API
 api = vim.api
 
 -- Map the leader key to space

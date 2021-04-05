@@ -1,9 +1,9 @@
--- Ensure that `packer.nvim` is installed
+-- Access Vim API and functions
 local api = vim.api
 local fn = vim.fn
 
 -- Specify the path and repository for `packer.nvim`
-local path = fn.stdpath("data").."/site/pack/packer/opt/packer.nvim"
+local path = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
 local repo = "https://github.com/wbthomason/packer.nvim"
 
 -- Clone `packer.nvim` repositoru and and source any plugin files found

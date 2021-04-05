@@ -1,4 +1,4 @@
--- Access Vim api
+-- Access Vim API
 api = vim.api
 
 -- Use fzf for file finding

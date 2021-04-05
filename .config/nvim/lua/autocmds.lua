@@ -1,23 +1,34 @@
--- Clean up LaTeX build files
-vim.cmd [[ augroup TexClean ]]
-vim.cmd [[     autocmd! ]]
-vim.cmd [[     autocmd VimLeave *.tex :!texclean ]]
-vim.cmd [[ augroup END ]]
+-- Access Vim API
+api = vim.api
 
--- Highlighted yank
-vim.cmd [[ augroup LuaHighlight ]]
-vim.cmd [[     autocmd! ]]
-vim.cmd [[     autocmd TextYankPost * silent! lua vim.highlight.on_yank { } ]]
-vim.cmd [[ augroup END ]]
+-- Allow for defining autocommands
+function _G.augroups(definitions)
+    for group_name, definition in pairs(definitions) do
+        api.nvim_command("augroup " .. group_name)
+        api.nvim_command("autocmd!")
+        for _, def in ipairs(definition) do
+            local command = table.concat(vim.tbl_flatten {"autocmd", def}, " ")
+            api.nvim_command(command)
+        end
+        api.nvim_command("augroup END")
+    end
+end
 
--- Transparent background
-vim.cmd [[ augroup TransparentBackground ]]
-vim.cmd [[     autocmd! ]]
-vim.cmd [[     autocmd ColorScheme * hi! Normal ctermbg=none guibg=none ]]
-vim.cmd [[ augroup END ]]
+-- Define all autocommands
+local autocmds = {
+    TexClean = {
+        { "VimLeave", "*.tex", ":!texclean" }
+    },
+    LuaHighlight = {
+        { "TextYankPost", "*", "silent! lua vim.highlight.on_yank { }" }
+    },
+    TransparentBackground = {
+        { "ColorScheme", "*", "hi! Normal ctermbg=none guibg=none"  }
+    },
+    ItalicCommments = {
+        { "ColorScheme", "*", "hi! Comment cterm=italic gui=italic" }
+    }
+}
 
--- Italic comments
-vim.cmd [[ augroup ItalicCommments ]]
-vim.cmd [[     autocmd! ]]
-vim.cmd [[     autocmd ColorScheme * hi! Comment cterm=italic gui=italic ]]
-vim.cmd [[ augroup END ]]
+-- Activate all autocommands
+augroups(autocmds)

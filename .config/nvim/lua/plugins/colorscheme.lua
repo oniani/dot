@@ -1,2 +1,2 @@
 -- Set the colorscheme
-vim.cmd [[ colorscheme dracula ]]
+vim.api.nvim_command([[ colorscheme dracula ]])
