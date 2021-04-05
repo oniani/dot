@@ -1,32 +1,33 @@
--- Use utiliies
-local util = require("util")
+-- Access Vim api
+api = vim.api
 
 -- Map the leader key to space
 vim.g.mapleader = " "
 
 -- Toggle between buffers
-util.nmap("<Leader><Leader>", "<C-^>")
+api.nvim_set_keymap("n", "<Leader><Leader>", "<C-^>", { noremap = true })
 
 -- Compile or run a program
-util.nmap("<Leader>c", ":!run %<CR>")
+api.nvim_set_keymap("n", "<Leader>c", ":!run %<CR>", { noremap = true })
 
 -- Spell check
-util.nmap("<Leader>s", ":setlocal spell! spelllang=en_us<CR>")
+api.nvim_set_keymap("n", "<Leader>s", ":setlocal spell! spelllang=en_us<CR>",
+    { noremap = true })
 
 -- Toggle line wrapping
-util.nmap("<Leader>w", ":set wrap!<CR>")
+api.nvim_set_keymap("n", "<Leader>w", ":set wrap!<CR>", { noremap = true })
 
 -- Toggle file explorer
-util.nmap("<C-n>", ":NvimTreeToggle<CR>")
+api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true })
 
 -- Window navigation commands (saves a keystroke)
-util.nmap("<C-h>", "<C-w>h")
-util.nmap("<C-j>", "<C-w>j")
-util.nmap("<C-k>", "<C-w>k")
-util.nmap("<C-l>", "<C-w>l")
+api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { noremap = true })
+api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { noremap = true })
+api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = true })
+api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { noremap = true })
 
 -- Resize splits
-util.nmap("<Left>", ":vertical resize +5<CR>")
-util.nmap("<Right>", ":vertical resize -5<CR>")
-util.nmap("<Up>", ":resize +5<CR>")
-util.nmap("<Down>", ":resize -5<CR>")
+api.nvim_set_keymap("n", "<Left>", ":vert resize +5<CR>", { noremap = true })
+api.nvim_set_keymap("n", "<Right>", ":vert resize -5<CR>", { noremap = true })
+api.nvim_set_keymap("n", "<Up>", ":res +5<CR>", { noremap = true })
+api.nvim_set_keymap("n", "<Down>", ":res -5<CR>", { noremap = true })

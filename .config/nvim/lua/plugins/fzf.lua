@@ -1,11 +1,11 @@
--- Use utiliies
-local util = require("util")
+-- Access Vim api
+api = vim.api
 
 -- Use fzf for file finding
-util.nmap("<Leader>f", ":Files<CR>")
+api.nvim_set_keymap("n", "<Leader>f", ":Files<CR>", { noremap = true })
 
 -- Search for a pattern in a file
-util.nmap("<Leader>l", ":BLines<CR>")
+api.nvim_set_keymap("n", "<Leader>l", ":BLines<CR>", { noremap = true })
 
 -- utilse fzf and rg for the string search
-util.nmap("<Leader>r", ":Rg<CR>")
+api.nvim_set_keymap("n", "<Leader>r", ":Rg<CR>", { noremap = true })

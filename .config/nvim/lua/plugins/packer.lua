@@ -32,9 +32,9 @@ return require("packer").startup(function()
         { "neoclide/coc.nvim", branch = "release" },
 
         -- Visuals
+        "dracula/vim",
         "hoob3rt/lualine.nvim",
         "kyazdani42/nvim-web-devicons",
-        "dracula/vim",
 
         -- Parsing and related information
         "nvim-treesitter/nvim-treesitter",
