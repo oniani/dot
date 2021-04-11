@@ -26,7 +26,7 @@ local autocmds = {
         { "VimLeave", "*.tex", ":!texclean" }
     },
     TransparentBackground = {
-        { "ColorScheme", "*", "hi! Normal ctermbg=none guibg=none"  }
+        { "ColorScheme", "*", "hi! Normal ctermbg=none guibg=#12131a"  }
     }
 }
 
