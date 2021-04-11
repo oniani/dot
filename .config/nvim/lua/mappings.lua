@@ -12,7 +12,7 @@ api.nvim_set_keymap("n", "<Leader>c", ":!run %<CR>", { noremap = true })
 
 -- Spell check
 api.nvim_set_keymap("n", "<Leader>s", ":setlocal spell! spelllang=en_us<CR>",
-    { noremap = true })
+                    { noremap = true })
 
 -- Toggle line wrapping
 api.nvim_set_keymap("n", "<Leader>w", ":set wrap!<CR>", { noremap = true })

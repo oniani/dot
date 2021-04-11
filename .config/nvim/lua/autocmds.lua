@@ -16,17 +16,17 @@ end
 
 -- Define all autocommands
 local autocmds = {
-    TexClean = {
-        { "VimLeave", "*.tex", ":!texclean" }
+    ItalicCommments = {
+        { "ColorScheme", "*", "hi! Comment cterm=italic gui=italic" }
     },
     LuaHighlight = {
         { "TextYankPost", "*", "silent! lua vim.highlight.on_yank { }" }
     },
+    TexClean = {
+        { "VimLeave", "*.tex", ":!texclean" }
+    },
     TransparentBackground = {
         { "ColorScheme", "*", "hi! Normal ctermbg=none guibg=none"  }
-    },
-    ItalicCommments = {
-        { "ColorScheme", "*", "hi! Comment cterm=italic gui=italic" }
     }
 }
 
