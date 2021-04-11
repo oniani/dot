@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-# Use `cheat.sh` and `bat` for a cozy look at community-driven documentations
-# by David Oniani <onianidavid@gmail.com>
-# License: MIT License
-
-curl -s "https://cheat.sh/$1" | bat -

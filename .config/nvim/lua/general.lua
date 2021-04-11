@@ -4,6 +4,7 @@ local bo = vim.bo
 local wo = vim.wo
 
 -- Global options
+o.backup = false
 o.clipboard = o.clipboard .. "unnamedplus"
 o.completeopt = "menuone,noinsert,noselect"
 o.fillchars = "fold: "
@@ -15,6 +16,7 @@ o.shortmess = o.shortmess .. "c"
 o.smartcase = true
 o.splitbelow = true
 o.splitright = true
+o.swapfile = false
 o.termguicolors = true
 o.updatetime = 300
 o.wildmode = "longest:full,full"
@@ -31,5 +33,4 @@ wo.signcolumn = "number"
 bo.expandtab = true
 bo.shiftwidth = 4
 bo.softtabstop = 4
-bo.swapfile = false
 bo.tabstop = 4

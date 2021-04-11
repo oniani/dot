@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-# Show the changes in git
-# by David Oniani <onianidavid@gmail.com>
-# License: MIT License
-
-git log --all --pretty='%h - %s' | fzf | cut -d ' ' -f 1 | xargs git show
