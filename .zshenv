@@ -44,14 +44,12 @@ export NPM_CONFIG_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/npm"
 export GNUPGHOME="${XDG_CONFIG_HOME:-$HOME/.config}/gnupg"
 export IPYTHONDIR="${XDG_CONFIG_HOME:-$HOME/.config}/ipython"
 export JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/jupyter"
-export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch/config"
-export PASSWORD_STORE_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/pass"
-export RUSTUP_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/rustup"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
 # Move to ~/.local/share
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
 
 # Additional settings
 export CLICOLOR=1
