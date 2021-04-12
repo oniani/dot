@@ -9,24 +9,17 @@
 #                    |_|
 #
 
+# Clone the repository
+git clone https://github.com/oniani/dots && cd dots || exit
+
 # Copy configs
-for cfg in ".config" ".local" ".ghc" ".zshenv"; do
-    cp -Rf "$cfg" "$HOME"
-done
+cp -Rf {.config,.local,.ghc,.zshenv} "$HOME"
 
-# Install Z shell plugins
-PLUGIN_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin"
+# Install/update Z shell plugins
+DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin"
+ORG="https://github.com/zsh-users"
 
-ZSH_AUTOSUGGEST_DIR="$PLUGIN_PATH/zsh-autosuggestions"
-ZSH_AUTOSUGGEST_REPOSITORY="https://github.com/zsh-users/zsh-autosuggestions"
+rm -rf "$DIR"/{zsh-autosuggestions,zsh-syntax-highlighting}
 
-ZSH_SYNTAX_DIR="$PLUGIN_PATH/zsh-syntax-highlighting"
-ZSH_SYNTAX_REPOSITORY="https://github.com/zsh-users/zsh-syntax-highlighting"
-
-# Remove plugins
-rm -rf $ZSH_AUTOSUGGEST_DIR
-rm -rf $ZSH_SYNTAX_DIR
-
-# Quietly clone Git repositories
-git clone --quiet $ZSH_AUTOSUGGEST_REPOSITORY $ZSH_AUTOSUGGEST_DIR
-git clone --quiet $ZSH_SYNTAX_REPOSITORY $ZSH_SYNTAX_DIR
+git clone -q "$ORG/zsh-autosuggestions" "$DIR/zsh-autosuggestions"
+git clone -q "$ORG/zsh-syntax-highlighting" "$DIR/zsh-syntax-highlighting"
