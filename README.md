@@ -31,39 +31,21 @@ Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-
 
 ## Setup
 
-- Addressbook: [Abook](http://abook.sourceforge.net/)
 - Colorscheme Generator: [pywal](https://github.com/dylanaraps/pywal)
-- Default Colorscheme: [moonfly](https://github.com/bluz71/vim-moonfly-colors)
-- Document Viewer: [Preview](https://support.apple.com/guide/preview/welcome/mac) / [Zathura](https://github.com/zegervdv/homebrew-zathura)
+- Default Colorscheme: [Dracula](https://github.com/dracula)
+- Document/Image Viewer: [Preview](https://support.apple.com/guide/preview/welcome/mac)
 - Editor: [Neovim](https://neovim.io/)
-- File Format Handler: [pandoc](https://pandoc.org/)
 - File Manager: [nnn](https://github.com/jarun/nnn)
 - Font: [Iosevka Term Nerd Font Complete Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka)
 - Fuzzy Finder: [fzf](https://github.com/junegunn/fzf)
-- Image Viewer: [Preview](<https://en.wikipedia.org/wiki/Preview_(macOS)>) / [sxiv](https://github.com/muennich/sxiv)
 - Music Player: [ncmpcpp](https://rybczak.net/ncmpcpp/) (with [mpd](https://www.musicpd.org/) as a backend)
 - Package Manager: [Homebrew](https://brew.sh/)
-- Password Manager: [Pass](https://www.passwordstore.org/)
 - RSS Reader: [Newsboat](https://newsboat.org/)
 - Shell: [Z Shell](http://zsh.sourceforge.net/)
 - Terminal Emulator: [kitty](https://sw.kovidgoyal.net/kitty/)
-- Version Control: [Git](https://git-scm.com/downloads)
 - Video Player: [mpv](https://mpv.io/)
 - Web Browser: [Brave](https://brave.com/)
-- Window Manager: [Amethyst](https://github.com/ianyh/Amethyst) / [bspwm](https://github.com/baskerville/bspwm)
-
-Code Formatting
-
-- CSS/HTML/JavaScript/Markdown: [Prettier](https://prettier.io/)
-- Python: [Black](https://black.readthedocs.io/en/stable/)
-
-Code Linting
-
-- Haskell: [hlint](http://hackage.haskell.org/package/hlint)
-- JavaScript: [eslint](https://eslint.org/)
-- Markdown: [mdl](https://github.com/DavidAnson/markdownlint)
-- Python: [pyright](https://github.com/Microsoft/pyright)
-- Shell: [ShellCheck](https://www.shellcheck.net/)
+- Window Manager: [Amethyst](https://github.com/ianyh/Amethyst)
 
 ### Z Shell
 
