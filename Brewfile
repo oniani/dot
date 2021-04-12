@@ -43,7 +43,7 @@ brew "ncmpcpp"
 brew "neofetch"
 brew "neovim", args: ["HEAD"]
 brew "newsboat"
-brew "nnn", args["HEAD"]
+brew "nnn", args: ["HEAD"]
 brew "pandoc"
 brew "tree"
 brew "pass"
