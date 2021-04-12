@@ -9,9 +9,6 @@
 #                    |_|
 #
 
-# Clone the repository
-git clone https://github.com/oniani/dots && cd dots || exit
-
 # Copy configs
 cp -Rf {.config,.local,.ghc,.zshenv} "$HOME"
 
