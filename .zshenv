@@ -18,7 +18,6 @@ export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Core utilities
-export BROWSER="brave browser"
 export EDITOR="nvim"
 export PAGER="less"
 export TERMINAL="kitty"
