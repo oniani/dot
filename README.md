@@ -94,9 +94,10 @@ Plugins are installed and managed using a minimalist plugin manager
 
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 - [dracula](https://github.com/dracula/vim)
-- [fzf](https://github.com/junegunn/fzf)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
+- [fzf](https://github.com/junegunn/fzf)
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
+- [nvim-tree.lua](kyazdani42/nvim-tree.lua)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [playground](https://github.com/nvim-treesitter/playground)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
@@ -108,46 +109,47 @@ Plugins arranged according to their startup time.
 
 | TOP | Time (ms) | Plugin            |
 | --- | --------- | ----------------- |
-| 1   | 14.847    | vim               |
-| 2   | 11.254    | coc.nvim          |
-| 3   | 2.445     | vim-fugitive      |
-| 4   | 2.046     | nvim-treesitter   |
-| 5   | 1.561     | fzf.vim           |
-| 6   | 1.377     | fzf               |
-| 7   | 0.283     | vim-commentary    |
-| 8   | 0.062     | nvim-web-devicons |
+| 1   | 12.583    | vim               |
+| 2   | 9.108     | coc.nvim          |
+| 3   | 1.763     | vim-fugitive      |
+| 4   | 1.709     | nvim-treesitter   |
+| 5   | 1.139     | fzf               |
+| 6   | 1.103     | fzf.vim           |
+| 7   | 0.213     | vim-commentary    |
+| 8   | 0.118     | nvim-tree.lua     |
+| 9   | 0.056     | nvim-web-devicons |
 
-This results in the total average of approximately 33.875 ms delay for the
-startup time.
+This results in approximately 27.792 ms delay on average for the startup time.
 
 The chart was generated using
 [vim-plugins-profile](https://github.com/hyiltiz/vim-plugins-profile).
 
 #### Key Mappings
 
-| Key Mapping        | Functionality                              | Mnemonic |
-| ------------------ | ------------------------------------------ | -------- |
-| `<Space>`          | Space is the Leader key                    |          |
-| `<Leader><Leader>` | Toggle between buffers                     |          |
-| `<Leader>c`        | Generic compiler and runner                | Compile  |
-| `<Leader>f`        | Use fzf for file searching                 | Find     |
-| `<Leader>l`        | Search for a line with a pattern in a file | Line     |
-| `<Leader>r`        | Use fzf and rg for the string search       | Rg       |
-| `<Leader>s`        | Toggle spell checking                      | Spell    |
-| `<Leader>w`        | Toggle line-wrapping                       | Wrap     |
-| `C-h`              | Switch to the left window                  |          |
-| `C-j`              | Switch to the bottom window                |          |
-| `C-k`              | Switch to the top window                   |          |
-| `C-l`              | Switch to the right window                 |          |
+| Key Mapping        | Functionality                              | Mnemonic  |
+| ------------------ | ------------------------------------------ | --------- |
+| `<Space>`          | Space is the Leader key                    |           |
+| `<Leader><Leader>` | Toggle between buffers                     |           |
+| `<Leader>c`        | Generic compiler and runner                | Compile   |
+| `<Leader>f`        | Use fzf for file searching                 | Find      |
+| `<Leader>l`        | Search for a line with a pattern in a file | Line      |
+| `<Leader>r`        | Use fzf and rg for the string search       | Rg        |
+| `<Leader>s`        | Toggle spell checking                      | Spell     |
+| `<Leader>w`        | Toggle line-wrapping                       | Wrap      |
+| `C-n`              | Open nvim-tree window                      | nvim-tree |
+| `C-h`              | Switch to the left window                  |           |
+| `C-j`              | Switch to the bottom window                |           |
+| `C-k`              | Switch to the top window                   |           |
+| `C-l`              | Switch to the right window                 |           |
 
 ### Automated Installation
-
-Check out the installation wizard!
 
 ```console
 $ git clone https://github.com/oniani/dots
 $ cd dots
-$ ./setup.py --help
+$ ./setup.lua
+$ brew bundle
+$ exec zsh -l
 ```
 
 Also, please make sure that the system runs the latest macOS operating system.

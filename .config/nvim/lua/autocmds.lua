@@ -16,17 +16,17 @@ end
 
 -- Define all autocommands
 local autocmds = {
-    ItalicCommments = {
-        { "ColorScheme", "*", "hi! Comment cterm=italic gui=italic" }
+    Design = {
+        { "ColorScheme", "*", "hi! Comment cterm=italic, gui=italic" },
+        { "ColorScheme", "*", "hi! Comment ctermfg=61, guifg=#5a699d" },
+        { "ColorScheme", "*", "hi! LineNr ctermfg=237 guifg=#3c3c3c" },
+        { "ColorScheme", "*", "hi! Normal ctermfg=233 guibg=#12131a" },
     },
     LuaHighlight = {
         { "TextYankPost", "*", "silent! lua vim.highlight.on_yank { }" }
     },
     TexClean = {
         { "VimLeave", "*.tex", ":!texclean" }
-    },
-    TransparentBackground = {
-        { "ColorScheme", "*", "hi! Normal ctermbg=none guibg=#12131a"  }
     }
 }
 

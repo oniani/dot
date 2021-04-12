@@ -187,9 +187,9 @@ bindkey -s "^z" "fg\n"
 # Sourcing {{{
 
 # Source Fish-like autocompletions for activation
-source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # Source zsh syntax highlighting for activation
-source "${XFG_CONFIG_HOME:-$HOME/.config}/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # }}}
