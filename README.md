@@ -1,18 +1,7 @@
 # `dots`
 
----
-
-## Table of Contents
-
-- [Philosophy](#philosophy)
-- [Organization](#organization)
-- [Setup](#setup)
-- [Z Shell](#z-shell)
-- [Neovim](#neovim)
-- [Automated Installation](#automated-installation)
-- [License](#license)
-
----
+Configurations files and the setup wizard for \*nix (UNIX-like) meta
+distribution.
 
 ## Philosophy
 
@@ -147,7 +136,7 @@ The chart was generated using
 ```console
 $ git clone https://github.com/oniani/dots
 $ cd dots
-$ ./setup.lua
+$ ./setup.sh
 $ brew bundle
 $ exec zsh -l
 ```

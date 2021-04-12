@@ -1,5 +1,5 @@
 #
-# Author:   David Oniani
+# Author: David Oniani
 #
 #            _
 #    _______| |__   ___ _ ____   __
