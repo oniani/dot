@@ -10,7 +10,7 @@
 #
 
 # Copy configs
-cp -Rf {.config,.local,.ghc,.zshenv} "$HOME"
+cp -Rf {.config,.ghc,.local,.zshenv} "$HOME"
 
 # Install/update Z shell plugins
 DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin"
