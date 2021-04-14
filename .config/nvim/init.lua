@@ -9,13 +9,13 @@
 --
 
 local filenames = {
-    "general",
     "autocmds",
+    "general",
     "mappings",
-    "plugins/packer",
     "plugins/colorscheme",
     "plugins/fzf",
     "plugins/lsp",
+    "plugins/packer",
     "plugins/statusline",
     "plugins/treesitter"
 }
