@@ -10,13 +10,16 @@
 #
 
 # Copy configs
-cp -Rf {.config,.ghc,.local,.zshenv} "$HOME"
+cp -R .config "$HOME"
+cp -R .ghc "$HOME"
+cp -R .local "$HOME"
+cp .zshenv "$HOME"
 
 # Install/update Z shell plugins
 DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin"
 ORG="https://github.com/zsh-users"
 
-rm -rf "$DIR"/{zsh-autosuggestions,zsh-syntax-highlighting}
+rm -rf "$DIR/zsh-autosuggestions" "$DIR/zsh-syntax-highlighting"
 
 git clone -q "$ORG/zsh-autosuggestions" "$DIR/zsh-autosuggestions"
 git clone -q "$ORG/zsh-syntax-highlighting" "$DIR/zsh-syntax-highlighting"
