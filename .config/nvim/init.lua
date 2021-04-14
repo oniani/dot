@@ -14,7 +14,6 @@ local filenames = {
     "mappings",
     "plugins/packer",
     "plugins/colorscheme",
-    "plugins/devicons",
     "plugins/fzf",
     "plugins/lsp",
     "plugins/statusline",

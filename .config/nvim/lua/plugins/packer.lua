@@ -17,26 +17,24 @@ api.nvim_command("packadd packer.nvim")
 
 -- Initialize the plugin system
 return require("packer").startup(function()
-    use {
-        -- Activate `packer.nvim`
-        { "wbthomason/packer.nvim", opt = true },
+    -- `packer.nvim` can manage itself
+    use { "wbthomason/packer.nvim", opt = true }
 
-        -- Productivity
-        { "junegunn/fzf", run = ":call fzf#install()" },
-        "junegunn/fzf.vim",
-        "kyazdani42/nvim-tree.lua",
-        "tpope/vim-commentary",
-        "tpope/vim-fugitive",
+    -- Productivity
+    use { "junegunn/fzf", run = ":call fzf#install()" }
+    use "junegunn/fzf.vim"
+    use "kyazdani42/nvim-tree.lua"
+    use "tpope/vim-commentary"
+    use "tpope/vim-fugitive"
 
-        -- LSP support
-        { "neoclide/coc.nvim", branch = "release" },
+    -- LSP
+    use { "neoclide/coc.nvim", branch = "release" }
 
-        -- Visuals
-        "dracula/vim",
-        "hoob3rt/lualine.nvim",
-        "kyazdani42/nvim-web-devicons",
+    -- Visuals
+    use { "dracula/vim", as = "dracula" }
+    use "hoob3rt/lualine.nvim"
+    use "kyazdani42/nvim-web-devicons"
 
-        -- Parsing and related information
-        "nvim-treesitter/nvim-treesitter",
-    }
+    -- Parsers, highlighting, and incremental selection
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 end)

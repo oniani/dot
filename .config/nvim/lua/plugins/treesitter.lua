@@ -1,11 +1,11 @@
 -- Neovim Treesitter settings
 require("nvim-treesitter.configs").setup {
     highlight = {
-        -- false will disable the whole extension
+        -- Set to `false` in order to disable the whole extension
         enable = true,
-        -- list of language that will be disabled
+        -- List of language that will be disabled
         disable = { },
     },
-    -- one of "all", "maintained", "language", or a list of languages
+    -- One of "all", "maintained", "language", or a list of languages
     ensure_installed = "maintained"
 }
