@@ -24,8 +24,8 @@ local filenames = {
 
     -- Language server
     "settings.lsp.compe",
-    "settings.lsp.icons",
-    "settings.lsp.lsp"
+    "settings.lsp.lsp",
+    "settings.lsp.signs"
 }
 
 -- Iterate and set up all of the lua modules

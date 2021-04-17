@@ -40,9 +40,8 @@ local check_back_space = function()
     local col = fn.col(".") - 1
     if col == 0 or fn.getline("."):sub(col, col):match("%s") then
         return true
-    else
-        return false
     end
+    return false
 end
 
 -- Use <C-n>/<Tab> to:
@@ -51,11 +50,11 @@ end
 _G.tab_complete = function()
     if fn.pumvisible() == 1 then
         return api.nvim_replace_termcodes("<C-n>", true, true, true)
-    elseif check_back_space() then
-        return api.nvim_replace_termcodes("<Tab>", true, true, true)
-    else
-        return fn["compe#complete"]()
     end
+    if check_back_space() then
+        return api.nvim_replace_termcodes("<Tab>", true, true, true)
+    end
+    return fn["compe#complete"]()
 end
 
 -- Use <C-p>/<S-Tab> to:
@@ -64,9 +63,8 @@ end
 _G.s_tab_complete = function()
     if fn.pumvisible() == 1 then
         return api.nvim_replace_termcodes("<C-p>", true, true, true)
-    else
-        return api.nvim_replace_termcodes("<S-Tab>", true, true, true)
     end
+    return api.nvim_replace_termcodes("<S-Tab>", true, true, true)
 end
 
 -- Set up the mappings

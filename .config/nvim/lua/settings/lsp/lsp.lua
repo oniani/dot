@@ -20,19 +20,19 @@ local on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true }
 
     -- Mappings
-    buf_set_keymap("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
     buf_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    buf_set_keymap("n", "T", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-    buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
     buf_set_keymap("n", "Ld", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
     buf_set_keymap("n", "Lr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+    buf_set_keymap("n", "T", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+    buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
     buf_set_keymap("n", "nD", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
     buf_set_keymap("n", "nd", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
+    buf_set_keymap("n", "nr", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 
     -- If a language server has document formatting capabilities, format on save
     if client.resolved_capabilities.document_formatting then
         api.nvim_exec([[
-            augroup Formatting
+            augroup Format
                 autocmd!
                 autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()
             augroup END
@@ -69,7 +69,7 @@ local function make_config()
     return {
         -- Enable snippet support
         capabilities = capabilities,
-        -- Map buffer local keybindings when the language server attaches
+        -- Map buffer-local keybindings when the language server attaches
         on_attach = on_attach
     }
 end
@@ -108,8 +108,7 @@ end
 -- Set up language servers
 setup_servers()
 
--- Automatically reload after `:LspInstall <server>` so we don't have to
--- restart neovim
+-- Automatically reload after `:LspInstall <server>`, without restarting Neovim
 require("lspinstall").post_install_hook = function()
     -- Reload installed servers
     setup_servers()
