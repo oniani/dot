@@ -1,5 +1,5 @@
--- Access Vim API
-api = vim.api
+-- Access Nvim API
+local api = vim.api
 
 -- Use fzf for file finding
 api.nvim_set_keymap("n", "<Leader>f", ":Files<CR>", { noremap = true })

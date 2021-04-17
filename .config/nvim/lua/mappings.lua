@@ -1,5 +1,5 @@
--- Access Vim API
-api = vim.api
+-- Access Nvim API
+local api = vim.api
 
 -- Map the leader key to space
 vim.g.mapleader = " "

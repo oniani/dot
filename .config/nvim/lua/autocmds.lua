@@ -1,5 +1,5 @@
--- Access Vim API
-api = vim.api
+-- Access Nvim API
+local api = vim.api
 
 -- Allow for defining autocommands
 function _G.augroups(definitions)

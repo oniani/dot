@@ -11,7 +11,7 @@ require("lualine").setup {
     sections = {
         lualine_b = { "branch", "diff" },
         lualine_c = {
-            { "diagnostics", sources = { "coc" } },
+            { "diagnostics", sources = { "nvim_lsp" } },
             { "filename", full_path = true }
         }
     },
