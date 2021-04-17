@@ -15,14 +15,15 @@ local filenames = {
     "general",
     "mappings",
 
-    -- Plugins
+    -- Packer and plugins
     "settings.packer",
     "settings.colorscheme",
     "settings.fzf",
     "settings.statusline",
     "settings.treesitter",
+    "settings.indentblankline",
 
-    -- Language server
+    -- Language server and relates settings
     "settings.lsp.compe",
     "settings.lsp.lsp",
     "settings.lsp.signs"
