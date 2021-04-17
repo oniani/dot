@@ -1,6 +1,6 @@
 -- Access Nvim API and functions
 local api = vim.api
-local fn = vim.fn
+local fn  = vim.fn
 
 -- Specify the path and repository for `packer.nvim`
 local path = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"

@@ -1,11 +1,7 @@
 -- Access Nvim API
 local api = vim.api
 
--- Use fzf for file finding
-api.nvim_set_keymap("n", "<Leader>f", ":Files<CR>", { noremap = true })
-
--- Search for a pattern in a file
+-- Use `fzf` for navigation using filenames, buffer-local lines, and patterns
+api.nvim_set_keymap("n", "<Leader>f", ":Files<CR>",  { noremap = true })
 api.nvim_set_keymap("n", "<Leader>l", ":BLines<CR>", { noremap = true })
-
--- utilse fzf and rg for the string search
-api.nvim_set_keymap("n", "<Leader>r", ":Rg<CR>", { noremap = true })
+api.nvim_set_keymap("n", "<Leader>r", ":Rg<CR>",     { noremap = true })

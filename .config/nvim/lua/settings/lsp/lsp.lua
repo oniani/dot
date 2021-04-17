@@ -5,7 +5,7 @@ local nvim_lsp = require("lspconfig")
 
 -- Access Nvim API and functions
 local api = vim.api
-local fn = vim.fn
+local fn  = vim.fn
 
 -- Set these options on language server attachment
 local on_attach = function(client, bufnr)

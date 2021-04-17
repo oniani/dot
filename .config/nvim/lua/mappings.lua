@@ -27,7 +27,7 @@ api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = true })
 api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { noremap = true })
 
 -- Resize splits
-api.nvim_set_keymap("n", "<Left>", ":vert resize +5<CR>", { noremap = true })
+api.nvim_set_keymap("n", "<Left>",  ":vert resize +5<CR>", { noremap = true })
 api.nvim_set_keymap("n", "<Right>", ":vert resize -5<CR>", { noremap = true })
-api.nvim_set_keymap("n", "<Up>", ":res +5<CR>", { noremap = true })
-api.nvim_set_keymap("n", "<Down>", ":res -5<CR>", { noremap = true })
+api.nvim_set_keymap("n", "<Up>",    ":res +5<CR>",         { noremap = true })
+api.nvim_set_keymap("n", "<Down>",  ":res -5<CR>",         { noremap = true })

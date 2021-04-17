@@ -1,40 +1,41 @@
--- Compe setup
-require("compe").setup {
-    enabled = true;
-    autocomplete = true;
-    debug = false;
-    min_length = 1;
-    preselect = "enable";
-    throttle_time = 80;
-    source_timeout = 200;
-    incomplete_delay = 400;
-    max_abbr_width = 100;
-    max_kind_width = 100;
-    max_menu_width = 100;
-    documentation = true;
-
-    source = {
-        path = true;
-        buffer = false;
-        calc = true;
-        vsnip = false;
-        nvim_lsp = true;
-        nvim_lua = true;
-        spell = true;
-        tags = false;
-        snippets_nvim = true;
-        treesitter = true;
-    };
-}
-
 -- Access Nvim API and functions
 local api = vim.api
-local fn = vim.fn
+local fn  = vim.fn
 
-local t = function(str)
-  return api.nvim_replace_termcodes(str, true, true, true)
-end
+-- Set up `nvim-compe`
+require("compe").setup {
+    autocomplete = true,
+    debug = false,
+    documentation = true,
+    enabled = true,
+    incomplete_delay = 400,
+    max_abbr_width = 100,
+    max_kind_width = 100,
+    max_menu_width = 100,
+    min_length = 1,
+    preselect = "enable",
+    source_timeout = 200,
+    throttle_time = 80,
 
+    source = {
+        buffer = {
+            menu = ' Buffer',
+        },
+        calc = true,
+        nvim_lsp = true,
+        nvim_lua = true,
+        path = true,
+        snippets_nvim = true,
+        spell = {
+            menu = ' Spell'
+        },
+        tags = false,
+        treesitter = true,
+        vsnip = false
+    }
+}
+
+-- Check a back space
 local check_back_space = function()
     local col = fn.col(".") - 1
     if col == 0 or fn.getline("."):sub(col, col):match("%s") then
@@ -44,28 +45,32 @@ local check_back_space = function()
     end
 end
 
--- Use <S-Tab> to:
---     * Move to prev/next item in completion menuone
---     * Jump to prev/next snippet's placeholder
+-- Use <C-n>/<Tab> to:
+--     * Move to next item in completion menuone
+--     * Jump to next snippet's placeholder
 _G.tab_complete = function()
-  if fn.pumvisible() == 1 then
-    return t "<C-n>"
-  elseif check_back_space() then
-    return t "<Tab>"
-  else
-    return fn["compe#complete"]()
-  end
+    if fn.pumvisible() == 1 then
+        return api.nvim_replace_termcodes("<C-n>", true, true, true)
+    elseif check_back_space() then
+        return api.nvim_replace_termcodes("<Tab>", true, true, true)
+    else
+        return fn["compe#complete"]()
+    end
 end
 
+-- Use <C-p>/<S-Tab> to:
+--     * Move to previous item in completion menuone
+--     * Jump to previous snippet's placeholder
 _G.s_tab_complete = function()
-  if fn.pumvisible() == 1 then
-    return t "<C-p>"
-  else
-    return t "<S-Tab>"
-  end
+    if fn.pumvisible() == 1 then
+        return api.nvim_replace_termcodes("<C-p>", true, true, true)
+    else
+        return api.nvim_replace_termcodes("<S-Tab>", true, true, true)
+    end
 end
 
-api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+-- Set up the mappings
+api.nvim_set_keymap("i", "<Tab>",   "v:lua.tab_complete()",   {expr = true})
+api.nvim_set_keymap("s", "<Tab>",   "v:lua.tab_complete()",   {expr = true})
 api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
