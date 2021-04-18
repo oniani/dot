@@ -11,24 +11,24 @@
 -- List of lua modules
 local filenames = {
     -- Plugin-independent, general settings
-    "autocmds",
-    "general",
-    "mappings",
+    "general/autocmds",
+    "general/mappings",
+    "general/options",
 
     -- Packer and plugins
-    "settings.packer",
-    "settings.dracula",
-    "settings.fzf",
-    "settings.indentblankline",
-    "settings.nvimtree",
-    "settings.statusline",
-    "settings.treesitter",
-    "settings.undotree",
+    "plugins.packer",
+    "plugins.dracula",
+    "plugins.fzf",
+    "plugins.indentblankline",
+    "plugins.nvimtree",
+    "plugins.statusline",
+    "plugins.treesitter",
+    "plugins.undotree",
 
     -- Language server and relates settings
-    "settings.lsp.compe",
-    "settings.lsp.lsp",
-    "settings.lsp.signs"
+    "plugins.lsp.compe",
+    "plugins.lsp.lsp",
+    "plugins.lsp.signs"
 }
 
 -- Iterate and set up all of the lua modules
