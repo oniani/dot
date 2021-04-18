@@ -13,7 +13,7 @@ api.nvim_exec([[
 api.nvim_exec([[
     augroup ItalicComments
         autocmd!
-        autocmd ColorScheme highlight! Comment cterm=italic, gui=italic
+        autocmd ColorScheme * highlight! Comment cterm=italic, gui=italic
     augroup end
 ]], false)
 
