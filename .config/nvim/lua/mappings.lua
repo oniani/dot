@@ -17,9 +17,6 @@ api.nvim_set_keymap("n", "<Leader>s", ":setlocal spell! spelllang=en_us<CR>",
 -- Toggle line wrapping
 api.nvim_set_keymap("n", "<Leader>w", ":set wrap!<CR>", { noremap = true })
 
--- Toggle file explorer
-api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true })
-
 -- Window navigation commands (saves a keystroke)
 api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { noremap = true })
 api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { noremap = true })

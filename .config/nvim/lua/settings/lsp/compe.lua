@@ -19,7 +19,7 @@ require("compe").setup {
 
     source = {
         buffer = {
-            menu = ' Buffer',
+            menu = " Buffer",
         },
         calc = true,
         nvim_lsp = true,
@@ -27,7 +27,7 @@ require("compe").setup {
         path = true,
         snippets_nvim = true,
         spell = {
-            menu = ' Spell'
+            menu = " Spell"
         },
         tags = false,
         treesitter = true,

@@ -25,6 +25,7 @@ return require("packer").startup {
         use { "junegunn/fzf", run = ":call fzf#install()" }
         use "junegunn/fzf.vim"
         use "kyazdani42/nvim-tree.lua"
+        use "mbbill/undotree"
         use "tpope/vim-commentary"
         use "tpope/vim-fugitive"
 

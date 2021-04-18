@@ -1,6 +1,7 @@
 -- Language Server Client (LSP) settings
 
--- Get the LSP configurations
+-- Get the LSP install and LSP configurations
+local lspinstall = require("lspinstall")
 local nvim_lsp = require("lspconfig")
 
 -- Access Nvim API and functions
@@ -77,19 +78,19 @@ end
 -- A function for setting language servers
 local function setup_servers()
     -- Make sure the plugin is set up
-    require("lspinstall").setup()
+    lspinstall.setup()
 
     -- Get all servers to be automatically installed
     local required_servers = { "go", "lua", "python", "rust" }
 
     -- Get all installed servers
-    local installed_servers = require("lspinstall").installed_servers()
+    local installed_servers = lspinstall.installed_servers()
 
     -- Set up defined servers and map buffer-local keybindings on attachment
     for _, server in pairs(required_servers) do
         -- Install a language server if it is not already installed
         if not vim.tbl_contains(installed_servers, server) then
-            require("lspinstall").install_server(server)
+            lspinstall.install_server(server)
         end
 
         -- Get the config

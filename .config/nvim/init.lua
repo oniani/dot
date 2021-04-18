@@ -19,9 +19,11 @@ local filenames = {
     "settings.packer",
     "settings.colorscheme",
     "settings.fzf",
+    "settings.indentblankline",
+    "settings.nvimtree",
     "settings.statusline",
     "settings.treesitter",
-    "settings.indentblankline",
+    "settings.undotree",
 
     -- Language server and relates settings
     "settings.lsp.compe",
