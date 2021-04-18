@@ -67,8 +67,11 @@ _G.s_tab_complete = function()
     return api.nvim_replace_termcodes("<S-Tab>", true, true, true)
 end
 
+-- Mapping options
+local opts = { expr = true }
+
 -- Set up the mappings
-api.nvim_set_keymap("i", "<Tab>",   "v:lua.tab_complete()",   {expr = true})
-api.nvim_set_keymap("s", "<Tab>",   "v:lua.tab_complete()",   {expr = true})
-api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+api.nvim_set_keymap("i", "<Tab>",   "v:lua.tab_complete()",   opts)
+api.nvim_set_keymap("s", "<Tab>",   "v:lua.tab_complete()",   opts)
+api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", opts)
+api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", opts)
