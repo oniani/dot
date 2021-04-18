@@ -17,7 +17,7 @@ local filenames = {
 
     -- Packer and plugins
     "settings.packer",
-    "settings.colorscheme",
+    "settings.dracula",
     "settings.fzf",
     "settings.indentblankline",
     "settings.nvimtree",
