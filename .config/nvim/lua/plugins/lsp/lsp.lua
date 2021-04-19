@@ -1,6 +1,7 @@
 -- Language Server Client (LSP) settings
 
--- Access LSP configurations
+-- Access LSP install and LSP configurations
+local lspinstall = require("lspinstall")
 local nvim_lsp = require("lspconfig")
 
 -- Access Nvim API and functions
@@ -41,33 +42,78 @@ local custom_attach = function(client, bufnr)
 end
 
 -- Configure lua language server for neovim development
-local lua_attach = {
+local lua_settings = {
     Lua = {
-	runtime = {
-	    -- LuaJIT in the case of Neovim
-	    version = "LuaJIT",
-	    path = vim.split(package.path, ";"),
-	},
-	diagnostics = {
-	    -- Get the language server to recognize the `vim` global
-	    globals = { "vim" },
-	},
-	workspace = {
-	    -- Make the server aware of Neovim runtime files
-	    library = {
-		[fn.expand("$VIMRUNTIME/lua")] = true,
-		[fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
-	    },
-	},
+        runtime = {
+            -- LuaJIT in the case of Neovim
+            version = "LuaJIT",
+            -- Set up the Lua path
+            path = vim.split(package.path, ";"),
+        },
+        diagnostics = {
+            -- Get the language server to recognize the `vim` global
+            globals = { "vim" },
+        },
+        workspace = {
+            -- Make the server aware of Neovim runtime files
+            library = {
+                [fn.expand("$VIMRUNTIME/lua")] = true,
+                [fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
+            },
+        },
     }
 }
 
--- All language servers
-local servers = { "gopls", "sumneko_lua", "pyright", "rust_analyzer" }
-
--- Loop over all language servers and set them up
-for _, server in ipairs(servers) do
-    nvim_lsp[server].setup {
-	on_attach = custom_attach
+-- Config that activates keymaps and enables snippet support
+local function make_config()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
+    return {
+        -- Enable snippet support
+        capabilities = capabilities,
+        -- Map buffer-local keybindings when the language server attaches
+        on_attach = custom_attach
     }
+end
+
+-- A function for setting language servers
+local function setup_servers()
+    -- Make sure the plugin is set up
+    lspinstall.setup()
+
+    -- Get all servers to be automatically installed
+    local required_servers = { "go", "lua", "python", "rust" }
+
+    -- Get all installed servers
+    local installed_servers = lspinstall.installed_servers()
+
+    -- Set up defined servers and map buffer-local keybindings on attachment
+    for _, server in pairs(required_servers) do
+        -- Install a language server if it is not already installed
+        if not vim.tbl_contains(installed_servers, server) then
+            lspinstall.install_server(server)
+        end
+
+        -- Get the config
+        local config = make_config()
+
+        -- Language specific config
+        if server == "lua" then
+            config.settings = lua_settings
+        end
+
+        -- Set up the language server
+        nvim_lsp[server].setup(config)
+    end
+end
+
+-- Set up language servers
+setup_servers()
+
+-- Automatically reload after `:LspInstall <server>`, without restarting Neovim
+lspinstall.post_install_hook = function()
+    -- Reload installed servers
+    setup_servers()
+    -- This triggers the FileType autocmd that starts the server
+    vim.cmd("bufdo e")
 end
