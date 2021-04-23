@@ -24,3 +24,11 @@ api.nvim_exec([[
         autocmd VimLeave *.tex :!texclean
     augroup end
 ]], false)
+
+-- Allow for the transparent background
+api.nvim_exec([[
+    augroup TransparentBackground
+        autocmd!
+        autocmd ColorScheme * highlight! Normal guibg=none ctermbg=none
+    augroup end
+]], false)

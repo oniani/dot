@@ -6,7 +6,6 @@ api.nvim_exec([[
     function! MyHighlights() abort
         highlight Comment ctermfg=61 guifg=#5a699d
         highlight LineNr ctermfg=237 guifg=#3c3c3c
-        highlight Normal ctermfg=233 guibg=#12131a
     endfunction
 ]], false)
 
