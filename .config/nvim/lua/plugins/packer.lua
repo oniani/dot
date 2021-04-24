@@ -36,7 +36,6 @@ return require("packer").startup {
 
         -- Visuals
         use { "dracula/vim", as = "dracula" }
-        use { "lukas-reineke/indent-blankline.nvim", branch="lua" }
         use "hoob3rt/lualine.nvim"
         use "kyazdani42/nvim-web-devicons"
 

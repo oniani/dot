@@ -19,7 +19,6 @@ local filenames = {
     "plugins.packer",
     "plugins.dracula",
     "plugins.fzf",
-    "plugins.indentblankline",
     "plugins.nvimtree",
     "plugins.statusline",
     "plugins.treesitter",
