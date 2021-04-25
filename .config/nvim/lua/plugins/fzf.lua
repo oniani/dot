@@ -11,3 +11,4 @@ api.nvim_set_keymap("n", "<Leader>r", ":Rg<CR>",     opts)
 
 -- Configure the layout
 vim.g.fzf_layout = { down = "24%" }
+vim.g.fzf_preview_window = { "left:50%:hidden", "ctrl-p" }
