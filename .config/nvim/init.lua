@@ -16,13 +16,13 @@ local filenames = {
     "general/options",
 
     -- Packer and plugins
-    "plugins.packer",
+    "plugins.dashboard",
     "plugins.dracula",
     "plugins.fzf",
     "plugins.nvimtree",
+    "plugins.packer",
     "plugins.statusline",
     "plugins.treesitter",
-    "plugins.undotree",
 
     -- Language server and relates settings
     "plugins.lsp.compe",

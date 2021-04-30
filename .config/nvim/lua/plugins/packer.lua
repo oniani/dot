@@ -25,7 +25,6 @@ return require("packer").startup {
         use { "junegunn/fzf", run = ":call fzf#install()" }
         use "junegunn/fzf.vim"
         use "kyazdani42/nvim-tree.lua"
-        use "mbbill/undotree"
         use "tpope/vim-commentary"
         use "tpope/vim-fugitive"
 
@@ -36,6 +35,7 @@ return require("packer").startup {
 
         -- Visuals
         use { "dracula/vim", as = "dracula" }
+        use "glepnir/dashboard-nvim"
         use "hoob3rt/lualine.nvim"
         use "kyazdani42/nvim-web-devicons"
 
