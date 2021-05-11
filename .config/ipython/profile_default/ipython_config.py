@@ -13,7 +13,7 @@ from IPython.terminal.prompts import ClassicPrompts
 
 config = get_config()
 
-config.InteractiveShell.colors = "NoColor"
+config.InteractiveShell.colors = "Linux"
 config.InteractiveShell.color_info = True
 config.TerminalIPythonApp.display_banner = False
 config.TerminalInteractiveShell.confirm_exit = False
