@@ -32,6 +32,7 @@ return require("packer").startup {
         use "hrsh7th/nvim-compe"
         use "kabouzeid/nvim-lspinstall"
         use "neovim/nvim-lspconfig"
+        use "SirVer/ultisnips"
 
         -- Visuals
         use { "dracula/vim", as = "dracula" }

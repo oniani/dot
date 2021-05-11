@@ -33,10 +33,10 @@ local on_attach = function(client, bufnr)
     -- If a language server has document formatting capabilities, format on save
     if client.resolved_capabilities.document_formatting then
         api.nvim_exec([[
-        augroup Format
-        autocmd!
-        autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()
-        augroup END
+            augroup Format
+                autocmd!
+                autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()
+            augroup END
         ]], false)
     end
 end
@@ -68,6 +68,9 @@ local lua_settings = {
 local function make_config(server)
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
+    capabilities.textDocument.completion.completionItem.resolveSupport = {
+      properties = { "documentation", "detail", "additionalTextEdits" }
+    }
     local config = { capabilities = capabilities, on_attach = on_attach }
     if server == "lua" then
         config.settings = lua_settings
