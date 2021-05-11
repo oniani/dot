@@ -47,4 +47,4 @@
     ui = auto
 
 [alias]
-    l = "log --all --pretty='format:%C(red)%h%Creset - %C(green)%cs %C(blue)<%ce>%C(cyan)%d%Creset %C(yellow)%s%Creset %Creset'"
+    l = "log --all --graph --pretty=format:'%C(red)%h%Creset -%C(blue)%d%Creset %C(yellow)%s%Creset %C(green)(%cr) %C(bold blue)<%an>%Creset'"
