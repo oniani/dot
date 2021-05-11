@@ -4,36 +4,34 @@ local fn  = vim.fn
 
 -- Set up `nvim-compe`
 require("compe").setup {
-    enabled          = true,
     autocomplete     = true,
-    debug            = false,
-    min_length       = 1,
-    preselect        = "enable",
-    throttle_time    = 80,
-    source_timeout   = 200,
+    debug	     = false,
+    documentation    = true,
+    enabled	     = true,
     incomplete_delay = 400,
     max_abbr_width   = 100,
     max_kind_width   = 100,
     max_menu_width   = 100,
-    documentation    = true,
+    min_length	     = 1,
+    preselect	     = "enable",
+    source_timeout   = 200,
+    throttle_time    = 80,
 
     source = {
-        calc       = true,
-        nvim_lsp   = true,
-        nvim_lua   = true,
-        path       = true,
-        tags       = false,
-        treesitter = true,
-        vsnip      = false,
-        ultisnips  = true,
-        buffer     = { menu = " Buffer" },
-        spell      = { menu = " Spell" }
+	calc	   = true,
+	nvim_lsp   = true,
+	path	   = true,
+	tabnine    = true,
+	tags	   = true,
+	treesitter = true,
+	buffer	   = { menu = " Buffer" },
+	spell	   = { menu = " Spell" }
     }
 }
 
 -- Replace term codes
 local t = function(str)
-  return api.nvim_replace_termcodes(str, true, true, true)
+    return api.nvim_replace_termcodes(str, true, true, true)
 end
 
 -- Check a back space
@@ -47,29 +45,23 @@ end
 
 -- Use <C-n>/<Tab> to:
 --     * Move to next item in completion menuone
---     * Jump to next snippet's placeholder
+--     * Jump to next snippet placeholder
 _G.tab_complete = function()
     if fn.pumvisible() == 1 then
         return t("<C-n>")
     end
-    if fn.call("vsnip#available", {1}) == 1 then
-        return t("<Plug>(vsnip-expand-or-jump)")
-    end
     if check_back_space() then
         return t("<Tab>")
     end
-    return fn['compe#complete']()
+    return fn["compe#complete"]()
 end
 
 -- Use <C-p>/<S-Tab> to:
 --     * Move to previous item in completion menuone
---     * Jump to previous snippet's placeholder
+--     * Jump to previous snippet placeholder
 _G.s_tab_complete = function()
     if fn.pumvisible() == 1 then
         return t("<C-p>")
-    end
-    if fn.call("vsnip#jumpable", {-1}) == 1 then
-        return t("<Plug>(vsnip-jump-prev)")
     end
     return t("<S-Tab>")
 end
