@@ -22,17 +22,18 @@ return require("packer").startup {
         use { "wbthomason/packer.nvim", opt = true }
 
         -- Productivity
-        use { "junegunn/fzf", run = ":call fzf#install()" }
         use "junegunn/fzf.vim"
+        use { "junegunn/fzf", run = ":call fzf#install()" }
+        use { "kkoomen/vim-doge", run = ":call doge#install()" }
         use "kyazdani42/nvim-tree.lua"
         use "tpope/vim-commentary"
         use "tpope/vim-fugitive"
 
         -- LSP
-        use { "tzachar/compe-tabnine", run="./install.sh" }
         use "hrsh7th/nvim-compe"
         use "kabouzeid/nvim-lspinstall"
         use "neovim/nvim-lspconfig"
+        use { "tzachar/compe-tabnine", run="./install.sh" }
 
         -- Visuals
         use { "dracula/vim", as = "dracula" }

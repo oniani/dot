@@ -21,14 +21,14 @@ local on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true }
 
     -- Mappings
-    keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+    keymap("n", "K",  "<cmd>lua vim.lsp.buf.hover()<CR>",              opts)
     keymap("n", "Ld", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
-    keymap("n", "Lr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-    keymap("n", "T", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-    keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-    keymap("n", "nD", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-    keymap("n", "nd", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
-    keymap("n", "nr", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+    keymap("n", "Lr", "<cmd>lua vim.lsp.buf.references()<CR>",         opts)
+    keymap("n", "T",  "<cmd>lua vim.lsp.buf.signature_help()<CR>",     opts)
+    keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>",         opts)
+    keymap("n", "nD", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>",   opts)
+    keymap("n", "nd", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",   opts)
+    keymap("n", "nr", "<cmd>lua vim.lsp.buf.rename()<CR>",             opts)
 
     -- If a language server has document formatting capabilities, format on save
     if client.resolved_capabilities.document_formatting then
@@ -64,7 +64,7 @@ local lua_settings = {
     }
 }
 
--- Create a custom config that enables the snippet support
+-- Makes a custom config with the snippet support
 local function make_config(server)
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -97,5 +97,5 @@ setup_servers()
 --     * Triggers the FileType autocommand that starts the server
 lspinstall.post_install_hook = function ()
     setup_servers()
-    vim.cmd("bufdo e")
+    api.nvim_command("bufdo e")
 end

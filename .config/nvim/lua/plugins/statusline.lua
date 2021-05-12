@@ -12,7 +12,7 @@ require("lualine").setup {
         lualine_b = { "branch", "diff" },
         lualine_c = {
             { "diagnostics", sources = { "nvim_lsp" } },
-            { "filename", full_path = true }
+            { "filename", path = 1 }
         }
     },
     -- Specify extensions
