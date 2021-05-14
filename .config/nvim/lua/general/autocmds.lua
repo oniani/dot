@@ -1,22 +1,6 @@
 -- Access Nvim API
 local api = vim.api
 
--- Highlight on yank
-api.nvim_exec([[
-    augroup YankHighlight
-        autocmd!
-        autocmd TextYankPost * silent! lua vim.highlight.on_yank()
-    augroup end
-]], false)
-
--- Italic comments
-api.nvim_exec([[
-    augroup ItalicComments
-        autocmd!
-        autocmd ColorScheme * highlight! Comment cterm=italic, gui=italic
-    augroup end
-]], false)
-
 -- Clean up LaTeX build files on exit
 api.nvim_exec([[
     augroup TexClean
@@ -25,10 +9,10 @@ api.nvim_exec([[
     augroup end
 ]], false)
 
--- Allow for the transparent background
+-- Highlight on yank
 api.nvim_exec([[
-    augroup TransparentBackground
+    augroup YankHighlight
         autocmd!
-        autocmd ColorScheme * highlight! Normal guibg=none ctermbg=none
+        autocmd TextYankPost * silent! lua vim.highlight.on_yank()
     augroup end
 ]], false)

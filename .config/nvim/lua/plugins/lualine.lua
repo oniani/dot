@@ -5,7 +5,7 @@ require("lualine").setup {
         component_separators = "",
         icons_enabled = true,
         section_separators = "",
-        theme = "dracula"
+        theme = "tokyonight"
     },
     -- Additional options
     sections = {

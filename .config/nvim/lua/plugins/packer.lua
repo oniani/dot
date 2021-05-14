@@ -23,11 +23,11 @@ return require("packer").startup {
 
         -- Productivity
         use "junegunn/fzf.vim"
-        use { "junegunn/fzf", run = ":call fzf#install()" }
-        use { "kkoomen/vim-doge", run = ":call doge#install()" }
         use "kyazdani42/nvim-tree.lua"
         use "tpope/vim-commentary"
-        use "tpope/vim-fugitive"
+        use { "junegunn/fzf", run = ":call fzf#install()" }
+        use { "kkoomen/vim-doge", run = ":call doge#install()" }
+        use { "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" }
 
         -- LSP
         use "hrsh7th/nvim-compe"
@@ -36,7 +36,7 @@ return require("packer").startup {
         use { "tzachar/compe-tabnine", run="./install.sh" }
 
         -- Visuals
-        use { "dracula/vim", as = "dracula" }
+        use "folke/tokyonight.nvim"
         use "glepnir/dashboard-nvim"
         use "hoob3rt/lualine.nvim"
         use "kyazdani42/nvim-web-devicons"

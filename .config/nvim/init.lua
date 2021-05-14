@@ -18,11 +18,12 @@ local filenames = {
     -- Packer and plugins
     "plugins.dashboard",
     "plugins.doge",
-    "plugins.dracula",
     "plugins.fzf",
     "plugins.lualine",
+    "plugins.neogit",
     "plugins.nvimtree",
     "plugins.packer",
+    "plugins.tokyonight",
     "plugins.treesitter",
 
     -- Language server and relates settings
