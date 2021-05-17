@@ -1,16 +1,16 @@
 #
-# Filename: config
 # Author:   David Oniani
-# Modified: June 22, 2020
+#
 #                   __ _
 #   ___ ___  _ __  / _(_) __ _
 #  / __/ _ \| '_ \| |_| |/ _` |
 # | (_| (_) | | | |  _| | (_| |
 #  \___\___/|_| |_|_| |_|\__, |
 #                        |___/
+#
 
 # General settings
-# auto-reload yes
+auto-reload yes
 browser open -a $BROWSER
 
 # Key bindings
