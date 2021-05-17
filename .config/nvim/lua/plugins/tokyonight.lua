@@ -19,3 +19,6 @@ g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
 -- Set the colorscheme
 vim.api.nvim_command("colorscheme tokyonight")
+
+-- Make nvim-tree background transparent
+vim.defer_fn(function() vim.cmd("hi! NvimTreeNormal guibg=none") end, 200)
