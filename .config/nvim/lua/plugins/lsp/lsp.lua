@@ -1,12 +1,12 @@
 -- Language Server Client (LSP) settings
 
--- Access LSP install and LSP configurations
-local lspinstall = require("lspinstall")
-local lspconfig  = require("lspconfig")
-
 -- Access Nvim API and functions
 local api = vim.api
 local fn  = vim.fn
+
+-- Access LSP install and LSP configurations
+local lspinstall = require("lspinstall")
+local lspconfig  = require("lspconfig")
 
 -- Set these options on language server attachment
 local on_attach = function(client, bufnr)

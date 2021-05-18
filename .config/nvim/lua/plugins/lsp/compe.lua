@@ -5,27 +5,27 @@ local fn  = vim.fn
 -- Set up `nvim-compe`
 require("compe").setup {
     autocomplete     = true,
-    debug	     = false,
+    debug            = false,
     documentation    = true,
-    enabled	     = true,
+    enabled          = true,
     incomplete_delay = 400,
     max_abbr_width   = 100,
     max_kind_width   = 100,
     max_menu_width   = 100,
-    min_length	     = 1,
-    preselect	     = "enable",
+    min_length       = 1,
+    preselect        = "enable",
     source_timeout   = 200,
     throttle_time    = 80,
 
     source = {
-	calc	   = true,
-	nvim_lsp   = true,
-	path	   = true,
-	tabnine    = true,
-	tags	   = true,
-	treesitter = true,
-	buffer	   = { menu = " Buffer" },
-	spell	   = { menu = " Spell" }
+        calc       = true,
+        nvim_lsp   = true,
+        path       = true,
+        tabnine    = true,
+        tags       = true,
+        treesitter = true,
+        buffer     = { menu = " Buffer" },
+        spell      = { menu = " Spell" }
     }
 }
 

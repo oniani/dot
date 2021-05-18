@@ -17,7 +17,6 @@ local filenames = {
 
     -- Packer and plugins
     "plugins.dashboard",
-    "plugins.doge",
     "plugins.fzf",
     "plugins.lualine",
     "plugins.neogit",

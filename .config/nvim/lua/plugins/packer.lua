@@ -26,7 +26,6 @@ return require("packer").startup {
         use "kyazdani42/nvim-tree.lua"
         use "tpope/vim-commentary"
         use { "junegunn/fzf", run = ":call fzf#install()" }
-        use { "kkoomen/vim-doge", run = ":call doge#install()" }
         use { "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" }
 
         -- LSP
