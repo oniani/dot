@@ -30,6 +30,3 @@ api.nvim_set_keymap("n", "<Down>",  ":res -5<CR>",         opts)
 api.nvim_set_keymap("n", "<Left>",  ":vert resize +5<CR>", opts)
 api.nvim_set_keymap("n", "<Right>", ":vert resize -5<CR>", opts)
 api.nvim_set_keymap("n", "<Up>",    ":res +5<CR>",         opts)
-
--- Enter the normal mode faster with jj
-api.nvim_set_keymap("i", "jj", "<Esc>", opts)
