@@ -62,9 +62,9 @@ alias m="ncmpcpp --quiet"
 alias news="newsboat --quiet"
 
 # Safer commands
-alias cp="cp -iv"
-alias mv="mv -iv"
-alias rm="rm -iv"
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
 
 # }}}
 
