@@ -16,12 +16,12 @@ local filenames = {
     "general/options",
 
     -- Packer and plugins
+    "plugins.packer",
     "plugins.dashboard",
     "plugins.fzf",
     "plugins.lualine",
     "plugins.neogit",
     "plugins.nvimtree",
-    "plugins.packer",
     "plugins.tokyonight",
     "plugins.treesitter",
 

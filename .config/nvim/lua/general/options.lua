@@ -1,34 +1,38 @@
--- Access global, buffer-local, and window-local options
-local o  = vim.o
-local bo = vim.bo
-local wo = vim.wo
+-- Access vim options
+local opt = vim.opt
 
--- Global options
-o.backup        = false
-o.clipboard     = o.clipboard .. "unnamedplus"
-o.completeopt   = "menuone,noinsert,noselect"
-o.fillchars     = "fold: "
-o.hidden        = true
-o.ignorecase    = true
-o.lazyredraw    = true
-o.mouse         = "a"
-o.shortmess     = o.shortmess .. "c"
-o.smartcase     = true
-o.swapfile      = false
-o.termguicolors = true
-o.updatetime    = 300
-o.wildmode      = "longest:full,full"
-o.writebackup   = false
+-- Search
+opt.ignorecase = true
+opt.smartcase  = true
 
--- Buffer-local options
-bo.expandtab   = true
-bo.shiftwidth  = 4
-bo.softtabstop = 4
-bo.tabstop     = 4
+-- Backup
+opt.backup      = false
+opt.swapfile    = false
+opt.writebackup = false
 
--- Window-local options
-wo.colorcolumn    = "80"
-wo.foldmethod     = "marker"
-wo.number         = true
-wo.relativenumber = true
-wo.signcolumn     = "number"
+-- Indent
+opt.expandtab   = true
+opt.shiftwidth  = 4
+opt.softtabstop = 4
+opt.tabstop     = 4
+
+-- Visual
+opt.colorcolumn    = "80"
+opt.foldmethod     = "marker"
+opt.lazyredraw     = true
+opt.number         = true
+opt.relativenumber = true
+opt.signcolumn     = "number"
+opt.termguicolors  = true
+
+-- Completion
+opt.completeopt = "menuone,noinsert,noselect"
+opt.shortmess:append("c")
+
+-- Miscellaneous
+opt.clipboard  = "unnamedplus"
+opt.fillchars  = "fold: "
+opt.hidden     = true
+opt.mouse      = "a"
+opt.updatetime = 300
+opt.wildmode   = "longest:full,full"
