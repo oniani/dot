@@ -16,6 +16,10 @@ opt.shiftwidth  = 4
 opt.softtabstop = 4
 opt.tabstop     = 4
 
+-- Formatting
+opt.formatoptions = opt.formatoptions + "c" + "q"
+opt.textwidth = 79
+
 -- Visual
 opt.colorcolumn    = "80"
 opt.foldmethod     = "marker"
