@@ -41,8 +41,8 @@ local on_attach = function(client, bufnr)
     end
 end
 
--- Configure lua language server for neovim development
-local lua_settings = {
+-- Configure sumneko_lua language server
+local sumneko_lua_settings = {
     Lua = {
         runtime = {
             -- LuaJIT in the case of Neovim
@@ -64,6 +64,23 @@ local lua_settings = {
     }
 }
 
+-- Configure rust_analyzer language server
+local rust_analyzer_settings = {
+    ["rust-analyzer"] = {
+        checkOnSave = {
+            allFeatures = true,
+            overrideCommand = {
+                "cargo",
+                "clippy",
+                "--workspace",
+                "--message-format=json",
+                "--all-targets",
+                "--all-features"
+            }
+        }
+    }
+}
+
 -- Makes a custom config with the snippet support
 local function make_config(server)
     local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -73,7 +90,9 @@ local function make_config(server)
     }
     local config = { capabilities = capabilities, on_attach = on_attach }
     if server == "lua" then
-        config.settings = lua_settings
+        config.settings = sumneko_lua_settings
+    elseif server == "rust" then
+        config.settings = rust_analyzer_settings
     end
     return config
 end
