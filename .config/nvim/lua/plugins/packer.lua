@@ -32,7 +32,6 @@ return require("packer").startup {
         use "hrsh7th/nvim-compe"
         use "kabouzeid/nvim-lspinstall"
         use "neovim/nvim-lspconfig"
-        use { "tzachar/compe-tabnine", run="./install.sh" }
 
         -- Visuals
         use "folke/tokyonight.nvim"
