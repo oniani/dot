@@ -22,9 +22,6 @@ export EDITOR="nvim"
 export PAGER="less"
 export TERMINAL="kitty"
 
-# Bat
-export BAT_THEME="Dracula"
-
 # nnn
 export NNN_BMS="D:~/Downloads;c:~/git/dots;d:~/Documents;g:~/git;w:~/wip;"
 export NNN_FCOLORS="000004000700000700000000"
