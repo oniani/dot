@@ -10,12 +10,8 @@ local lspconfig  = require("lspconfig")
 
 -- Set these options on language server attachment
 local on_attach = function(client, bufnr)
-    -- Convenient functions for setting keymaps and options
+    -- Convenient function for setting keymaps
     local function keymap(...) api.nvim_buf_set_keymap(bufnr, ...) end
-    local function option(...) api.nvim_buf_set_option(bufnr, ...) end
-
-    -- Enable omni completion
-    option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
     -- Mapping options
     local opts = { noremap = true, silent = true }
@@ -35,7 +31,7 @@ local on_attach = function(client, bufnr)
         api.nvim_exec([[
             augroup Format
                 autocmd!
-                autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()
+                autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync()
             augroup END
         ]], false)
     end
@@ -72,10 +68,10 @@ local rust_analyzer_settings = {
             overrideCommand = {
                 "cargo",
                 "clippy",
-                "--workspace",
-                "--message-format=json",
+                "--all-features",
                 "--all-targets",
-                "--all-features"
+                "--message-format=json",
+                "--workspace"
             }
         }
     }
