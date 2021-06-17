@@ -16,6 +16,10 @@ opt.shiftwidth  = 4
 opt.softtabstop = 4
 opt.tabstop     = 4
 
+-- Splits
+opt.splitbelow = true
+opt.splitright = true
+
 -- Formatting
 opt.formatoptions = opt.formatoptions + "c" + "q"
 opt.textwidth = 79
