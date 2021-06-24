@@ -17,14 +17,14 @@ local on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true }
 
     -- Mappings
-    keymap("n", "K",  "<cmd>lua vim.lsp.buf.hover()<CR>",              opts)
-    keymap("n", "Ld", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
-    keymap("n", "Lr", "<cmd>lua vim.lsp.buf.references()<CR>",         opts)
-    keymap("n", "T",  "<cmd>lua vim.lsp.buf.signature_help()<CR>",     opts)
-    keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>",         opts)
-    keymap("n", "nD", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>",   opts)
-    keymap("n", "nd", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",   opts)
-    keymap("n", "nr", "<cmd>lua vim.lsp.buf.rename()<CR>",             opts)
+    keymap("n", "K",  "<Cmd>lua vim.lsp.buf.hover()<CR>",              opts)
+    keymap("n", "Ld", "<Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
+    keymap("n", "Lr", "<Cmd>lua vim.lsp.buf.references()<CR>",         opts)
+    keymap("n", "T",  "<Cmd>lua vim.lsp.buf.signature_help()<CR>",     opts)
+    keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>",         opts)
+    keymap("n", "nD", "<Cmd>lua vim.lsp.diagnostic.goto_prev()<CR>",   opts)
+    keymap("n", "nd", "<Cmd>lua vim.lsp.diagnostic.goto_next()<CR>",   opts)
+    keymap("n", "nr", "<Cmd>lua vim.lsp.buf.rename()<CR>",             opts)
 
     -- If a language server has document formatting capabilities, format on save
     if client.resolved_capabilities.document_formatting then

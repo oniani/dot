@@ -10,14 +10,11 @@ vim.g.mapleader = " "
 -- Toggle between buffers
 api.nvim_set_keymap("n", "<Leader><Leader>", "<C-^>", opts)
 
--- Compile or run a program
-api.nvim_set_keymap("n", "<Leader>c", ":!run %<CR>", opts)
-
 -- Spell check
-api.nvim_set_keymap("n", "<Leader>s", ":setlocal spell! spl=en_us<CR>", opts)
+api.nvim_set_keymap("n", "<Leader>s", "<Cmd>setl spell! spl=en_us<CR>", opts)
 
 -- Toggle line wrapping
-api.nvim_set_keymap("n", "<Leader>w", ":set wrap!<CR>", opts)
+api.nvim_set_keymap("n", "<Leader>w", "<Cmd>set wrap!<CR>", opts)
 
 -- Window navigation commands (saves a keystroke)
 api.nvim_set_keymap("n", "<C-h>", "<C-w>h", opts)
@@ -26,7 +23,7 @@ api.nvim_set_keymap("n", "<C-k>", "<C-w>k", opts)
 api.nvim_set_keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize splits
-api.nvim_set_keymap("n", "<Down>",  ":res -5<CR>",         opts)
-api.nvim_set_keymap("n", "<Left>",  ":vert resize +5<CR>", opts)
-api.nvim_set_keymap("n", "<Right>", ":vert resize -5<CR>", opts)
-api.nvim_set_keymap("n", "<Up>",    ":res +5<CR>",         opts)
+api.nvim_set_keymap("n", "<Down>",  "<Cmd>res -5<CR>",         opts)
+api.nvim_set_keymap("n", "<Left>",  "<Cmd>vert resize +5<CR>", opts)
+api.nvim_set_keymap("n", "<Right>", "<Cmd>vert resize -5<CR>", opts)
+api.nvim_set_keymap("n", "<Up>",    "<Cmd>res +5<CR>",         opts)

@@ -21,14 +21,15 @@ local filenames = {
     "plugins.fzf",
     "plugins.lualine",
     "plugins.neogit",
+    "plugins.neoterm",
     "plugins.nvimtree",
     "plugins.tokyonight",
     "plugins.treesitter",
 
     -- Language server and relates settings
     "plugins.lsp.compe",
-    "plugins.lsp.lsp",
-    "plugins.lsp.signs"
+    "plugins.lsp.kinds",
+    "plugins.lsp.lsp"
 }
 
 -- Iterate and set up all of the lua modules
