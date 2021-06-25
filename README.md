@@ -5,8 +5,6 @@ distribution.
 
 ## Philosophy
 
-<img src="demo.png" alt="Desktop" align="right" width="500px">
-
 All programs are chosen with simplicity in mind. Cross-platform programs that
 follow the UNIX philosophy are preferred.
 
