@@ -60,40 +60,17 @@ No plugin manager is used. Plugins are sourced at the end of `.zshrc`.
 
 #### Plugins
 
-Plugins are installed and managed using a minimalist plugin manager
-[vim-plug](https://github.com/junegunn/vim-plug).
+Plugins are installed and managed using
+[packer.nvim](https://github.com/wbthomason/packer.nvim).
 
-- [coc.nvim](https://github.com/neoclide/coc.nvim)
-- [dracula](https://github.com/dracula/vim)
-- [fzf.vim](https://github.com/junegunn/fzf.vim)
-- [fzf](https://github.com/junegunn/fzf)
-- [lightline.vim](https://github.com/itchyny/lightline.vim)
-- [nvim-tree.lua](kyazdani42/nvim-tree.lua)
-- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [playground](https://github.com/nvim-treesitter/playground)
-- [vim-commentary](https://github.com/tpope/vim-commentary)
-- [vim-fugitive](https://github.com/tpope/vim-fugitive)
-
-#### Current Stats
-
-Plugins arranged according to their startup time.
-
-| TOP | Time (ms) | Plugin            |
-| --- | --------- | ----------------- |
-| 1   | 12.583    | vim               |
-| 2   | 9.108     | coc.nvim          |
-| 3   | 1.763     | vim-fugitive      |
-| 4   | 1.709     | nvim-treesitter   |
-| 5   | 1.139     | fzf               |
-| 6   | 1.103     | fzf.vim           |
-| 7   | 0.213     | vim-commentary    |
-| 8   | 0.118     | nvim-tree.lua     |
-| 9   | 0.056     | nvim-web-devicons |
-
-This results in approximately 27.792 ms delay on average for the startup time.
-
-The chart was generated using
-[vim-plugins-profile](https://github.com/hyiltiz/vim-plugins-profile).
+- [](https://github.com/junegunn/fzf.vim)
+- [](https://github.com/)
+- [](https://github.com/)
+- [](https://github.com/)
+- [](https://github.com/)
+- [](https://github.com/)
+- [](https://github.com/)
+- [](https://github.com/)
 
 #### Key Mappings
 

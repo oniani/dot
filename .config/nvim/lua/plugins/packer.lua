@@ -28,6 +28,7 @@ return require("packer").startup {
         use "tpope/vim-commentary"
         use { "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" }
         use { "junegunn/fzf", run = ":call fzf#install()" }
+        use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
         -- LSP
         use "hrsh7th/nvim-compe"
@@ -39,8 +40,5 @@ return require("packer").startup {
         use "glepnir/dashboard-nvim"
         use "hoob3rt/lualine.nvim"
         use "kyazdani42/nvim-web-devicons"
-
-        -- Parsers, highlighting, and incremental selection
-        use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
     end
 }
