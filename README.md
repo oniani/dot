@@ -74,20 +74,20 @@ Visuals:
 
 | Key Mapping                 | Functionality                              | Mnemonic  |
 | --------------------------- | ------------------------------------------ | --------- |
-| <key><Space></key>          | Space is the Leader key                    |           |
-| <key><Leader><Leader></key> | Toggle between buffers                     |           |
-| <key><Leader>c</key>        | Generic compiler and runner                | Compile   |
-| <key><Leader>f</key>        | Use fzf for file searching                 | Find      |
-| <key><Leader>l</key>        | Search for a line with a pattern in a file | Line      |
-| <key><Leader>r</key>        | Use fzf and rg for the string search       | Rg        |
-| <key><Leader>s</key>        | Toggle spell checking                      | Spell     |
-| <key><Leader>t</key>        | Toggle Neoterm vertical split              | Toggle    |
-| <key><Leader>w</key>        | Toggle line-wrapping                       | Wrap      |
-| <key>C-n</key>              | Open nvim-tree window                      | nvim-tree |
-| <key>C-h</key>              | Switch to the left window                  |           |
-| <key>C-j</key>              | Switch to the bottom window                |           |
-| <key>C-k</key>              | Switch to the top window                   |           |
-| <key>C-l</key>              | Switch to the right window                 |           |
+| <kbd><Space></kbd>          | Space is the Leader key                    |           |
+| <kbd><Leader><Leader></kbd> | Toggle between buffers                     |           |
+| <kbd><Leader>c</kbd>        | Generic compiler and runner                | Compile   |
+| <kbd><Leader>f</kbd>        | Use fzf for file searching                 | Find      |
+| <kbd><Leader>l</kbd>        | Search for a line with a pattern in a file | Line      |
+| <kbd><Leader>r</kbd>        | Use fzf and rg for the string search       | Rg        |
+| <kbd><Leader>s</kbd>        | Toggle spell checking                      | Spell     |
+| <kbd><Leader>t</kbd>        | Toggle Neoterm vertical split              | Toggle    |
+| <kbd><Leader>w</kbd>        | Toggle line-wrapping                       | Wrap      |
+| <kbd>C-n</kbd>              | Open nvim-tree window                      | nvim-tree |
+| <kbd>C-h</kbd>              | Switch to the left window                  |           |
+| <kbd>C-j</kbd>              | Switch to the bottom window                |           |
+| <kbd>C-k</kbd>              | Switch to the top window                   |           |
+| <kbd>C-l</kbd>              | Switch to the right window                 |           |
 
 ### Automated Installation
 
