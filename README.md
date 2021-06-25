@@ -10,24 +10,9 @@ distribution.
 All programs are chosen with simplicity in mind. Cross-platform programs that
 follow the UNIX philosophy are preferred.
 
-`dots` was initially designed for **macOS** operating system, but virtually
-everything works on most **Linux** distributions with a few exceptions
-including `wp` script and the tiling window manager **Amethyst**. **Homebrew**
-might not work on all Linux distributions, so one will have to use some other,
-distribution-specific package manager such as `apt`, `pacman`, etc. Some
-programs used for this setup have even more minimal alternatives, yet the
-functionality of such tools is often more limited and therefore, there is a
-functionality-minimalism trade-off. The repo tries to get the most without
-compromising too much.
-
-Bear in mind that this repository will always be a work-in-progress until that
-**ONE** perfect setup is found which, quite frankly, will probably never
-happen.
-
 ## Organization
 
-The setup is compliant with the [XDG Base Directory
-Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
+The setup is _mostly_ compliant with the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
 
 ## Setup
 
@@ -63,32 +48,46 @@ No plugin manager is used. Plugins are sourced at the end of `.zshrc`.
 Plugins are installed and managed using
 [packer.nvim](https://github.com/wbthomason/packer.nvim).
 
-- [](https://github.com/junegunn/fzf.vim)
-- [](https://github.com/)
-- [](https://github.com/)
-- [](https://github.com/)
-- [](https://github.com/)
-- [](https://github.com/)
-- [](https://github.com/)
-- [](https://github.com/)
+Productivity:
+
+- [neogit](https://github.com/TimUntersberger/neogit)
+- [fzf](https://github.com/junegunn/fzf)
+- [fzf.vim](https://github.com/junegunn/fzf.vim)
+- [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [vim-commentary](https://github.com/tpope/vim-commentary)
+
+LSP:
+
+- [nvim-compe](https://github.com/hrsh7th/nvim-compe)
+- [nvim-lspinstall](https://github.com/kabouzeid/nvim-lspinstall)
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+
+Visuals:
+
+- [tokyonight](https://github.com/folke/tokyonight.nvim)
+- [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
+- [lualine.nvim](https://github.com/hoob3rt/lualine.nvim)
+- [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
 
 #### Key Mappings
 
-| Key Mapping        | Functionality                              | Mnemonic  |
-| ------------------ | ------------------------------------------ | --------- |
-| `<Space>`          | Space is the Leader key                    |           |
-| `<Leader><Leader>` | Toggle between buffers                     |           |
-| `<Leader>c`        | Generic compiler and runner                | Compile   |
-| `<Leader>f`        | Use fzf for file searching                 | Find      |
-| `<Leader>l`        | Search for a line with a pattern in a file | Line      |
-| `<Leader>r`        | Use fzf and rg for the string search       | Rg        |
-| `<Leader>s`        | Toggle spell checking                      | Spell     |
-| `<Leader>w`        | Toggle line-wrapping                       | Wrap      |
-| `C-n`              | Open nvim-tree window                      | nvim-tree |
-| `C-h`              | Switch to the left window                  |           |
-| `C-j`              | Switch to the bottom window                |           |
-| `C-k`              | Switch to the top window                   |           |
-| `C-l`              | Switch to the right window                 |           |
+| Key Mapping                 | Functionality                              | Mnemonic  |
+| --------------------------- | ------------------------------------------ | --------- |
+| <key><Space></key>          | Space is the Leader key                    |           |
+| <key><Leader><Leader></key> | Toggle between buffers                     |           |
+| <key><Leader>c</key>        | Generic compiler and runner                | Compile   |
+| <key><Leader>f</key>        | Use fzf for file searching                 | Find      |
+| <key><Leader>l</key>        | Search for a line with a pattern in a file | Line      |
+| <key><Leader>r</key>        | Use fzf and rg for the string search       | Rg        |
+| <key><Leader>s</key>        | Toggle spell checking                      | Spell     |
+| <key><Leader>t</key>        | Toggle Neoterm vertical split              | Toggle    |
+| <key><Leader>w</key>        | Toggle line-wrapping                       | Wrap      |
+| <key>C-n</key>              | Open nvim-tree window                      | nvim-tree |
+| <key>C-h</key>              | Switch to the left window                  |           |
+| <key>C-j</key>              | Switch to the bottom window                |           |
+| <key>C-k</key>              | Switch to the top window                   |           |
+| <key>C-l</key>              | Switch to the right window                 |           |
 
 ### Automated Installation
 
