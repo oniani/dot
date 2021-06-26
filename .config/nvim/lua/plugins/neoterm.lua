@@ -2,7 +2,7 @@
 local api = vim.api
 
 -- Mapping options
-local opts = { noremap = true }
+local opts = {noremap = true}
 
 -- Mappings
 api.nvim_set_keymap("n", "<Leader>c", "<Cmd>T run %<CR>", opts)

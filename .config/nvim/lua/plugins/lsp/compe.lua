@@ -1,37 +1,36 @@
 -- Access Nvim API and functions
 local api = vim.api
-local fn  = vim.fn
+local fn = vim.fn
 
 -- Set up `nvim-compe`
 require("compe").setup {
-    autocomplete     = true,
-    debug            = false,
-    documentation    = true,
-    enabled          = true,
+    autocomplete = true,
+    debug = false,
+    documentation = true,
+    enabled = true,
     incomplete_delay = 400,
-    max_abbr_width   = 100,
-    max_kind_width   = 100,
-    max_menu_width   = 100,
-    min_length       = 1,
-    preselect        = "enable",
-    source_timeout   = 200,
-    throttle_time    = 80,
+    max_abbr_width = 100,
+    max_kind_width = 100,
+    max_menu_width = 100,
+    min_length = 1,
+    preselect = "enable",
+    source_timeout = 200,
+    throttle_time = 80,
 
     source = {
-        calc       = true,
-        nvim_lsp   = true,
-        path       = true,
-        tags       = true,
+        calc = true,
+        nvim_lsp = true,
+        path = true,
+        tags = true,
         treesitter = true,
-        buffer     = { menu = " Buffer" },
-        spell      = { menu = " Spell" }
+        buffer = {menu = " Buffer"},
+        spell = {menu = " Spell"}
     }
 }
 
 -- Replace term codes
-local t = function(str)
-    return api.nvim_replace_termcodes(str, true, true, true)
-end
+local t = function(str) return
+    api.nvim_replace_termcodes(str, true, true, true) end
 
 -- Check a back space
 local check_back_space = function()
@@ -46,12 +45,8 @@ end
 --     * Move to next item in completion menuone
 --     * Jump to next snippet placeholder
 _G.tab_complete = function()
-    if fn.pumvisible() == 1 then
-        return t("<C-n>")
-    end
-    if check_back_space() then
-        return t("<Tab>")
-    end
+    if fn.pumvisible() == 1 then return t("<C-n>") end
+    if check_back_space() then return t("<Tab>") end
     return fn["compe#complete"]()
 end
 
@@ -59,18 +54,16 @@ end
 --     * Move to previous item in completion menuone
 --     * Jump to previous snippet placeholder
 _G.s_tab_complete = function()
-    if fn.pumvisible() == 1 then
-        return t("<C-p>")
-    end
+    if fn.pumvisible() == 1 then return t("<C-p>") end
     return t("<S-Tab>")
 end
 
 -- Mapping options
-local opts = { expr = true, silent = true }
+local opts = {expr = true, silent = true}
 
 -- Set up the mappings
-api.nvim_set_keymap("i", "<Tab>",   "v:lua.tab_complete()",    opts)
-api.nvim_set_keymap("s", "<Tab>",   "v:lua.tab_complete()",    opts)
-api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()",  opts)
-api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()",  opts)
-api.nvim_set_keymap("i", "<CR>",    "compe#confirm(\"<CR>\")", opts)
+api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", opts)
+api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", opts)
+api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", opts)
+api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", opts)
+api.nvim_set_keymap("i", "<CR>", "compe#confirm(\"<CR>\")", opts)

@@ -9,12 +9,11 @@ require("lualine").setup {
     },
     -- Additional options
     sections = {
-        lualine_b = { "branch", "diff" },
+        lualine_b = {"branch", "diff"},
         lualine_c = {
-            { "diagnostics", sources = { "nvim_lsp" } },
-            { "filename", path = 1 }
+            {"diagnostics", sources = {"nvim_lsp"}}, {"filename", path = 1}
         }
     },
     -- Specify extensions
-    extensions = { "fugitive", "fzf" }
+    extensions = {"fugitive", "fzf"}
 }
