@@ -10,9 +10,6 @@ fn.sign_define("LspDiagnosticsSignHint", {text = ""})
 fn.sign_define("LspDiagnosticsSignInformation", {text = ""})
 fn.sign_define("LspDiagnosticsSignWarning", {text = ""})
 
-
-
-
 -- Icons
 kinds[kinds.Class] = " Class"
 kinds[kinds.Color] = " Color"

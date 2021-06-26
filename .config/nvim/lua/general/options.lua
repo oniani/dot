@@ -42,5 +42,5 @@ opt.clipboard = "unnamedplus"
 opt.fillchars = "fold: "
 opt.hidden = true
 opt.mouse = "a"
-opt.updatetime = 300
+opt.updatetime = 250
 opt.wildmode = "longest:full,full"

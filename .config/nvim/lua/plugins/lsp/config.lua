@@ -47,6 +47,12 @@ local efm_settings = {
                 formatStdin = true
             }
         },
+        markdown = {
+            {
+                formatCommand = "prettier --stdin-filepath ${INPUT}",
+                formatStdin = true
+            }
+        },
         python = {{formatCommand = "black -l 79 -", formatStdin = true}}
     }
 }
@@ -96,7 +102,7 @@ local function make_config(server)
     }
     local config = {capabilities = capabilities, on_attach = on_attach}
     if server == "efm" then
-        config.filetypes = {"go", "lua", "python"}
+        config.filetypes = {"go", "lua", "markdown", "python"}
         config.init_options = {documentFormatting = true}
         config.settings = efm_settings
     elseif server == "lua" then

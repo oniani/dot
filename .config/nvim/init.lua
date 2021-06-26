@@ -13,9 +13,8 @@ local filenames = {
     "general/autocmds", "general/mappings", "general/options",
 
     -- Packer and plugins
-    "plugins.packer", "plugins.dashboard", "plugins.fzf", "plugins.lualine",
-    "plugins.neogit", "plugins.neoterm", "plugins.nvimtree",
-    "plugins.tokyonight", "plugins.treesitter",
+    "plugins.packer", "plugins.fzf", "plugins.lualine", "plugins.neogit",
+    "plugins.nvimtree", "plugins.tokyonight", "plugins.treesitter",
 
     -- Language server and relates settings
     "plugins.lsp.compe", "plugins.lsp.config", "plugins.lsp.kinds"

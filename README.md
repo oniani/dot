@@ -64,7 +64,6 @@ LSP:
 Visuals:
 
 - [tokyonight](https://github.com/folke/tokyonight.nvim)
-- [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
 - [lualine.nvim](https://github.com/hoob3rt/lualine.nvim)
 - [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
 
@@ -74,12 +73,10 @@ Visuals:
 | ------------------------ | ------------------------------------------ | --------- |
 | <kbd>Space</kbd>         | Space is the Leader key                    |           |
 | <kbd>Leader-Leader</kbd> | Toggle between buffers                     |           |
-| <kbd>Leader-c</kbd>      | Generic compiler and runner                | Compile   |
 | <kbd>Leader-f</kbd>      | Use fzf for file searching                 | Find      |
 | <kbd>Leader-l</kbd>      | Search for a line with a pattern in a file | Line      |
 | <kbd>Leader-r</kbd>      | Use fzf and rg for the string search       | Rg        |
 | <kbd>Leader-s</kbd>      | Toggle spell checking                      | Spell     |
-| <kbd>Leader-t</kbd>      | Toggle Neoterm vertical split              | Toggle    |
 | <kbd>Leader-w</kbd>      | Toggle line-wrapping                       | Wrap      |
 | <kbd>C-n</kbd>           | Open nvim-tree window                      | nvim-tree |
 | <kbd>C-h</kbd>           | Switch to the left window                  |           |

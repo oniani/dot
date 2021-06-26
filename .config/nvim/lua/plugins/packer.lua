@@ -23,7 +23,6 @@ return require("packer").startup {
 
         -- Productivity
         use "junegunn/fzf.vim"
-        use "kassio/neoterm"
         use "kyazdani42/nvim-tree.lua"
         use "tpope/vim-commentary"
         use {"TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim"}
@@ -37,7 +36,6 @@ return require("packer").startup {
 
         -- Visuals
         use "folke/tokyonight.nvim"
-        use "glepnir/dashboard-nvim"
         use "hoob3rt/lualine.nvim"
         use "kyazdani42/nvim-web-devicons"
     end
