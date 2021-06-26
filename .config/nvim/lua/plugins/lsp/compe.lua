@@ -29,8 +29,9 @@ require("compe").setup {
 }
 
 -- Replace term codes
-local t = function(str) return
-    api.nvim_replace_termcodes(str, true, true, true) end
+local t = function(str)
+    return api.nvim_replace_termcodes(str, true, true, true)
+end
 
 -- Check a back space
 local check_back_space = function()
