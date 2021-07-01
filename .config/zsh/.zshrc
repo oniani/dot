@@ -60,6 +60,7 @@ alias icat="kitty +kitten icat"
 alias e="nvim"
 alias m="ncmpcpp --quiet"
 alias news="newsboat --quiet"
+alias ssh="kitty +kitten ssh"
 
 # Safer commands
 alias cp="cp -i"
