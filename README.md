@@ -3,7 +3,7 @@
 <p align="center"><img src="kitty.png" alt="Logo" width="225" /></p>
 <p align="center"><b>Configuration files and the setup wizard for *nix (UNIX-like) meta distribution</b></p>
 
-## Thanks for dropping by!
+## Organization and Setup
 
 All programs are chosen with simplicity in mind. Cross-platform programs that
 follow the UNIX philosophy are preferred. The setup is _mostly_ compliant with
