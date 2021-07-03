@@ -1,7 +1,6 @@
 # `dots`
 
 <p align="center"><img src="kitty.png" alt="Logo" width="225" /></p>
-<p align="center"><b>Configuration files and the setup wizard for *nix (UNIX-like) meta distribution</b></p>
 
 ## Organization and Setup
 
