@@ -1,16 +1,15 @@
 # `dots`
 
-<p align="center"><img src="demo.png" alt="Logo" width="225" /></p>
-<p align="center"> <b> configuration files </b> </p>
+<p align="center"><img src="kitty.png" alt="Logo" width="225" /></p>
+<p align="center"><b>Configuration files and the setup wizard for *nix (UNIX-like) meta distribution</b></p>
 
 ## Thanks for dropping by!
 
-Configurations files and the setup wizard for \*nix (UNIX-like) meta
-distribution. All programs are chosen with simplicity in mind. Cross-platform
-programs that follow the UNIX philosophy are preferred. The setup is _mostly_
-compliant with the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
+All programs are chosen with simplicity in mind. Cross-platform programs that
+follow the UNIX philosophy are preferred. The setup is _mostly_ compliant with
+the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
 
-Here are some details about my setup:
+Setup:
 
 - **Browser**: [Brave](https://github.com/brave/brave-browser)
 - **Editor**: [Neovim](https://github.com/neovim/neovim/)
