@@ -1,12 +1,14 @@
 # `dots`
 
+
+
 <p align="center"><img src="kitty.png" alt="Logo" width="225" /></p>
 
 ## Organization and Setup
 
 All programs are chosen with simplicity in mind. Cross-platform programs that
-follow the UNIX philosophy are preferred. The setup is _mostly_ compliant with
-the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
+follow the UNIX philosophy are preferred. The setup is compliant with the
+[XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
 
 Setup:
 
