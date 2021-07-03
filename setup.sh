@@ -11,7 +11,6 @@
 
 # Copy configs
 cp -R .config "$HOME"
-cp -R .ghc "$HOME"
 cp -R .local "$HOME"
 cp .zshenv "$HOME"
 
