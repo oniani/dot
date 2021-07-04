@@ -4,14 +4,11 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-FILE="$1"
-
+FILE=$1
 case $FILE in
-    *\.css | *\.html | *\.md) prettier --write --print-width=79 $FILE;;
-    *\.js | *\.json) prettier --write --print-width=79 --tab-width=4 $FILE;;
+    *\.css | *\.html | *\.js | *\.json | *\.md) prettier --write "$FILE";;
     *\.go) gofmt -s -w "$FILE";;
-    *\.py) black --line-length=79 $FILE;;
-    *\.r) styler $FILE;;
-    *\.rs) rustfmt $FILE;;
+    *\.py) black "$FILE";;
+    *\.rs) rustfmt "$FILE";;
     *) printf "Unknown file format\n";;
 esac

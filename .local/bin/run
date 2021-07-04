@@ -4,23 +4,8 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-FILE="$1"
-BASE="${FILE%.*}"
-
-mdcompile() {
-    pandoc -V fontsize=11pt \
-        -V geometry:a4paper \
-        -V linkcolor:blue \
-        -V mainfont="Latin Modern Roman" \
-        -V monofont="Hack Nerd Font" \
-        -V margin=1in \
-        -f markdown \
-        --highlight-style=pygments \
-        --pdf-engine=pdflatex \
-        "$1" \
-        -o \
-        "$2"
-}
+FILE=$1
+BASE=${FILE%.*}
 
 case $FILE in
     *\.c) gcc -o "$BASE.out" "$FILE" && "./$BASE.out";;
@@ -29,7 +14,7 @@ case $FILE in
     *\.go) go run .;;
     *\.hs) runhaskell "$FILE";;
     *\.lua) lua "$FILE";;
-    *\.md) mdcompile "$FILE" "$BASE.pdf";;
+    *\.md) pandoc -V linkcolor:blue -f markdown "$FILE" -o "$BASE.pdf";;
     *\.py) python3 "$FILE";;
     *\.R) Rscript "$FILE";;
     *\.Rmd) Rscript -e "rmarkdown::render('$FILE', 'pdf_document')";;
