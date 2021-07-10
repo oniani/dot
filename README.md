@@ -8,7 +8,7 @@ All programs are chosen with simplicity in mind. Cross-platform programs that
 follow the UNIX philosophy are preferred. The setup is compliant with the
 [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
 
-Setup:
+Apps:
 
 - **Browser**: [Brave](https://github.com/brave/brave-browser)
 - **Editor**: [Neovim](https://github.com/neovim/neovim/)
