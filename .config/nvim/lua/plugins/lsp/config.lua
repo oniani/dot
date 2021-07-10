@@ -41,19 +41,14 @@ local efm_settings = {
     rootMarkers = {".git/"},
     languages = {
         go = {{formatCommand = "gofmt -s", formatStdin = true}},
-        lua = {
-            {
-                formatCommand = "lua-format --column-limit=79",
-                formatStdin = true
-            }
-        },
+        lua = {{formatCommand = "lua-format --column-limit=100", formatStdin = true}},
         markdown = {
             {
-                formatCommand = "prettier --stdin-filepath ${INPUT}",
+                formatCommand = "prettier --print-width=100 --stdin-filepath ${INPUT}",
                 formatStdin = true
             }
         },
-        python = {{formatCommand = "black -l 79 -", formatStdin = true}}
+        python = {{formatCommand = "black -l 100 -", formatStdin = true}}
     }
 }
 
@@ -86,8 +81,8 @@ local rust_analyzer_settings = {
         checkOnSave = {
             allFeatures = true,
             overrideCommand = {
-                "cargo", "clippy", "--all-features", "--all-targets",
-                "--message-format=json", "--workspace"
+                "cargo", "clippy", "--all-features", "--all-targets", "--message-format=json",
+                "--workspace"
             }
         }
     }
@@ -117,9 +112,7 @@ end
 local function setup_servers()
     lspinstall.setup()
     local servers = lspinstall.installed_servers()
-    for _, server in ipairs(servers) do
-        lspconfig[server].setup(make_config(server))
-    end
+    for _, server in ipairs(servers) do lspconfig[server].setup(make_config(server)) end
 end
 
 -- Set up the servers

@@ -4,26 +4,16 @@ local fn = vim.fn
 
 -- Set up `nvim-compe`
 require("compe").setup {
-    source = {
-        buffer = true,
-        calc = true,
-        nvim_lsp = true,
-        path = true,
-        spell = true,
-        tags = true
-    }
+    source = {buffer = true, calc = true, nvim_lsp = true, path = true, spell = true, tags = true}
 }
 
 -- Replace term codes
-local t = function(str) return
-    api.nvim_replace_termcodes(str, true, true, true) end
+local t = function(str) return api.nvim_replace_termcodes(str, true, true, true) end
 
 -- Check a back space
 local check_back_space = function()
     local col = fn.col(".") - 1
-    if col == 0 or fn.getline("."):sub(col, col):match("%s") then
-        return true
-    end
+    if col == 0 or fn.getline("."):sub(col, col):match("%s") then return true end
     return false
 end
 

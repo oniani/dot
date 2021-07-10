@@ -22,10 +22,9 @@ opt.splitright = true
 
 -- Formatting
 opt.formatoptions = opt.formatoptions + "c" + "q"
-opt.textwidth = 79
+opt.textwidth = 100
 
 -- Visual
-opt.colorcolumn = "80"
 opt.foldmethod = "marker"
 opt.lazyredraw = true
 opt.number = true
@@ -42,5 +41,5 @@ opt.clipboard = "unnamedplus"
 opt.fillchars = "fold: "
 opt.hidden = true
 opt.mouse = "a"
-opt.updatetime = 250
+opt.updatetime = 128
 opt.wildmode = "longest:full,full"

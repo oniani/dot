@@ -1,8 +1,11 @@
 # `dots`
 
-<p align="center"><img src="kitty.png" alt="Logo" width="225" /></p>
+<p align="center"><img src="kitty.png" alt="Logo" width="224" /></p>
 
 ## Organization and Setup
+
+
+
 
 All programs are chosen with simplicity in mind. Cross-platform programs that
 follow the UNIX philosophy are preferred. The setup is compliant with the
@@ -28,9 +31,6 @@ $ ./setup.sh
 $ brew bundle
 $ exec zsh -l
 ```
-
-Also, please make sure that the system runs the latest macOS operating system.
-Note that the setup script is idempotent: it can be safely run multiple times.
 
 ## License
 
