@@ -19,7 +19,7 @@ Setup:
 - **Shell**: [zsh](https://github.com/zsh-users/zsh)
 - **Terminal**: [kitty](https://github.com/kovidgoyal/kitty/)
 
-## Automated Installation
+## Installation
 
 ```console
 $ git clone https://github.com/oniani/dots
