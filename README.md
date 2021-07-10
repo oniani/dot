@@ -2,10 +2,7 @@
 
 <p align="center"><img src="kitty.png" alt="Logo" width="224" /></p>
 
-## Organization and Setup
-
-
-
+## Setup
 
 All programs are chosen with simplicity in mind. Cross-platform programs that
 follow the UNIX philosophy are preferred. The setup is compliant with the
