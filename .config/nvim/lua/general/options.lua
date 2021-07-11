@@ -21,7 +21,7 @@ opt.splitbelow = true
 opt.splitright = true
 
 -- Formatting
-opt.formatoptions = opt.formatoptions + "c" + "q"
+opt.formatoptions:append("c", "q")
 opt.textwidth = 100
 
 -- Visual
@@ -41,5 +41,5 @@ opt.clipboard = "unnamedplus"
 opt.fillchars = "fold: "
 opt.hidden = true
 opt.mouse = "a"
-opt.updatetime = 128
+opt.updatetime = 100
 opt.wildmode = "longest:full,full"
