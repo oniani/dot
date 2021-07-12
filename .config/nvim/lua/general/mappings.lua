@@ -11,7 +11,7 @@ vim.g.mapleader = " "
 api.nvim_set_keymap("n", "<Leader><Leader>", "<C-^>", opts)
 
 -- Spell check
-api.nvim_set_keymap("n", "<Leader>s", "<Cmd>setl spell! spl=en_us<CR>", opts)
+api.nvim_set_keymap("n", "<Leader>s", "<Cmd>setlocal spell! spl=en_us<CR>", opts)
 
 -- Toggle line wrapping
 api.nvim_set_keymap("n", "<Leader>w", "<Cmd>set wrap!<CR>", opts)
