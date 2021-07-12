@@ -4,7 +4,17 @@ local fn = vim.fn
 
 -- Set up `nvim-compe`
 require("compe").setup {
-    source = {buffer = true, calc = true, nvim_lsp = true, path = true, spell = true, tags = true}
+    source = {
+        buffer = false,
+        calc = false,
+        emoji = false,
+        luasnip = false,
+        nvim_lsp = true,
+        nvim_lua = false,
+        path = true,
+        ultisnips = false,
+        vsnip = false
+    }
 }
 
 -- Replace term codes
