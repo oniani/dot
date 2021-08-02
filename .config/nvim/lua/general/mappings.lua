@@ -16,6 +16,9 @@ api.nvim_set_keymap("n", "<Leader>s", "<Cmd>setlocal spell! spl=en_us<CR>", opts
 -- Toggle line wrapping
 api.nvim_set_keymap("n", "<Leader>w", "<Cmd>set wrap!<CR>", opts)
 
+-- Make sure Y works like C, D, etc.
+api.nvim_set_keymap("n", "Y", "yg_", opts)
+
 -- Window navigation commands (saves a keystroke)
 api.nvim_set_keymap("n", "<C-h>", "<C-w>h", opts)
 api.nvim_set_keymap("n", "<C-j>", "<C-w>j", opts)
