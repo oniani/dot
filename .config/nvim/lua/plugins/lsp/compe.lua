@@ -5,9 +5,9 @@ local fn = vim.fn
 -- Set up `nvim-compe`
 require("compe").setup {
     source = {
-        buffer = false,
+        buffer = true,
         calc = false,
-        emoji = false,
+        emoji = true,
         luasnip = false,
         nvim_lsp = true,
         nvim_lua = false,

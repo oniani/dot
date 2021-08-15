@@ -33,11 +33,12 @@ opt.signcolumn = "number"
 opt.termguicolors = true
 
 -- Completion
-opt.completeopt = "menuone,noinsert,noselect"
+opt.completeopt = "menuone,noselect"
 opt.shortmess:append("c")
 
 -- Miscellaneous
 opt.clipboard = "unnamedplus"
+opt.colorcolumn = "100"
 opt.fillchars = "fold: "
 opt.hidden = true
 opt.mouse = "a"
