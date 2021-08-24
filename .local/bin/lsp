@@ -1,0 +1,70 @@
+#!/usr/bin/env sh
+
+# Install LSPs
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+install_cpp() {
+    os=$(uname -s | tr "[:upper:]" "[:lower:]")
+    case $os in
+        linux) platform="linux";;
+        darwin) platform="mac";;
+    esac
+    curl -L -o "clangd.zip" $(curl -s https://api.github.com/repos/clangd/clangd/releases/latest | grep 'browser_' | cut -d\" -f4 | grep "clangd-$platform")
+    rm -rf clangd
+    unzip clangd.zip && rm clangd.zip
+    mv clangd_* clangd
+    mv clangd/bin/clangd ~/.local/bin
+    rm -rf clangd
+}
+
+install_lua() {
+    os=$(uname -s | tr "[:upper:]" "[:lower:]")
+    case $os in
+        linux) platform="Linux";;
+        darwin) platform="macOS";;
+    esac
+    curl -L -o sumneko-lua.vsix $(curl -s https://api.github.com/repos/sumneko/vscode-lua/releases/latest | grep 'browser_' | cut -d\" -f4)
+    rm -rf sumneko-lua
+    unzip sumneko-lua.vsix -d sumneko-lua
+    rm sumneko-lua.vsix
+    chmod +x sumneko-lua/extension/server/bin/$platform/lua-language-server
+    echo "#!/usr/bin/env bash" > sumneko-lua-language-server
+    echo "\$(dirname \$0)/sumneko-lua/extension/server/bin/$platform/lua-language-server -E -e LANG=en \$(dirname \$0)/sumneko-lua/extension/server/main.lua \$*" >> sumneko-lua-language-server
+    chmod +x sumneko-lua-language-server
+    mv sumneko-lua-language-server ~/.local/bin
+}
+
+install_rust() {
+    curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
+    chmod +x ~/.local/bin/rust-analyzer
+
+    os=$(uname -s | tr "[:upper:]" "[:lower:]")
+    mchn=$(uname -m | tr "[:upper:]" "[:lower:]")
+
+    if [ $mchn = "arm64" ]; then
+        mchn="aarch64"
+    fi
+
+    case $os in
+        linux) platform="unknown-linux-gnu";;
+        darwin) platform="apple-darwin";;
+    esac
+
+    curl -L -o "rust-analyzer-$mchn-$platform.gz" "https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-$mchn-$platform.gz"
+    gzip -d rust-analyzer-$mchn-$platform.gz
+    mv rust-analyzer-$mchn-$platform rust-analyzer
+    chmod +x rust-analyzer
+    mv rust-analyzer ~/.local/bin
+}
+
+case $1 in
+    bash) sudo npm install -g bash-language-server@latest;;
+    cmake) python3 -m pip install -U cmake-language-server;;
+    cpp) install_cpp;;
+    go) GO111MODULE=on go get golang.org/x/tools/gopls@latest && GO111MODULE=on go clean -modcache;;
+    lua) install_lua;;
+    python) sudo npm install -g pyright;;
+    rust) install_rust;;
+    *) printf "Unknown language\n";;
+esac
