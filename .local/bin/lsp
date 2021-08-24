@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-# Install LSPs
+# Install language servers
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
