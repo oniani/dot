@@ -59,10 +59,11 @@ install_rust() {
 }
 
 case $1 in
-    bash) sudo npm install -g bash-language-server@latest;;
+    bash) sudo npm install -g bash-language-server;;
     cmake) python3 -m pip install -U cmake-language-server;;
     cpp) install_cpp;;
-    go) GO111MODULE=on go get golang.org/x/tools/gopls@latest && GO111MODULE=on go clean -modcache;;
+    efm) GO111MODULE=on go get github.com/mattn/efm-langserver;;
+    go) GO111MODULE=on go get golang.org/x/tools/gopls@latest;;
     lua) install_lua;;
     python) sudo npm install -g pyright;;
     rust) install_rust;;

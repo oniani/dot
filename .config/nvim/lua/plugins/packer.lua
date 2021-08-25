@@ -29,8 +29,9 @@ return require("packer").startup {
         use {"nvim-telescope/telescope.nvim", requires = "nvim-lua/plenary.nvim"}
 
         -- LSP
-        use "hrsh7th/nvim-compe"
-        use "kabouzeid/nvim-lspinstall"
+        use "hrsh7th/cmp-buffer"
+        use "hrsh7th/cmp-nvim-lsp"
+        use "hrsh7th/nvim-cmp"
         use "neovim/nvim-lspconfig"
 
         -- Visuals

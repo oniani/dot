@@ -3,8 +3,7 @@
 local api = vim.api
 local fn = vim.fn
 
--- Access LSP install and LSP configurations
-local lspinstall = require("lspinstall")
+-- Access LSP configurations
 local lspconfig = require("lspconfig")
 
 -- Set these options on language server attachment
@@ -40,7 +39,6 @@ end
 local efm_settings = {
     rootMarkers = {".git/"},
     languages = {
-        go = {{formatCommand = "gofmt -s", formatStdin = true}},
         lua = {{formatCommand = "lua-format --column-limit=100", formatStdin = true}},
         markdown = {
             {
@@ -49,29 +47,6 @@ local efm_settings = {
             }
         },
         python = {{formatCommand = "black -l 100 -", formatStdin = true}}
-    }
-}
-
--- Configure sumneko_lua language server
-local sumneko_lua_settings = {
-    Lua = {
-        runtime = {
-            -- LuaJIT in the case of Neovim
-            version = "LuaJIT",
-            -- Set up the Lua path
-            path = vim.split(package.path, ";")
-        },
-        diagnostics = {
-            -- Get the language server to recognize the `vim` global
-            globals = {"vim"}
-        },
-        workspace = {
-            -- Make the server aware of Neovim runtime files
-            library = {
-                [fn.expand("$VIMRUNTIME/lua")] = true,
-                [fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
-            }
-        }
     }
 }
 
@@ -100,30 +75,12 @@ local function make_config(server)
         config.filetypes = fn.keys(efm_settings.languages)
         config.init_options = {documentFormatting = true}
         config.settings = efm_settings
-    elseif server == "lua" then
-        config.settings = sumneko_lua_settings
-    elseif server == "rust" then
+    elseif server == "rust_analyzer" then
         config.settings = rust_analyzer_settings
     end
     return config
 end
 
--- A function for setting up the language servers
-local function setup_servers()
-    lspinstall.setup()
-    local servers = lspinstall.installed_servers()
-    for _, server in ipairs(servers) do lspconfig[server].setup(make_config(server)) end
-end
-
 -- Set up the servers
-setup_servers()
-
--- Automatically reload after `:LspInstall <server>`, without restarting Neovim
---
--- It does two things:
---     * Reloads installed servers
---     * Triggers the FileType autocommand that starts the server
-lspinstall.post_install_hook = function()
-    setup_servers()
-    api.nvim_command("bufdo e")
-end
+local servers = {"bashls", "cmake", "clangd", "efm", "gopls", "pyright", "rust_analyzer"}
+for _, server in ipairs(servers) do lspconfig[server].setup(make_config(server)) end
