@@ -14,10 +14,10 @@ require("general.options")
 
 -- Packer and plugins
 require("plugins.packer")
+require("plugins.fzf")
 require("plugins.lualine")
 require("plugins.neogit")
 require("plugins.nvimtree")
-require("plugins.telescope")
 require("plugins.tokyonight")
 require("plugins.treesitter")
 
