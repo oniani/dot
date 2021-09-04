@@ -24,4 +24,3 @@ require("plugins.treesitter")
 -- Language server and related settings
 require("plugins.lsp.cmp")
 require("plugins.lsp.config")
-require("plugins.lsp.kinds")

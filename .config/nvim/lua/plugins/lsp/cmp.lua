@@ -1,3 +1,31 @@
+local kinds = {
+    Class = "ﴯ Class",
+    Color = " Color",
+    Constant = " Constant",
+    Constructor = " Constructor",
+    Enum = " Enum",
+    EnumMember = " Enum-member",
+    Event = " Event",
+    Field = "ﰠ Field",
+    File = " File",
+    Folder = " Folder",
+    Fun = " Fun",
+    Interface = " Interface",
+    Keyword = " Keyword",
+    Method = " Method",
+    Module = " Module",
+    Operator = " Operator",
+    Property = "ﰠ Property",
+    Reference = " Reference",
+    Snippet = "﬌ Snippet",
+    Struct = "פּ Struct",
+    Text = " Text",
+    TypeParameter = ' Type-param',
+    Unit = ' Unit',
+    Value = " Value",
+    Var = " Var"
+}
+
 local cmp = require("cmp")
 
 cmp.setup {
@@ -25,5 +53,11 @@ cmp.setup {
             end
         end
     },
-    sources = {{name = "buffer"}, {name = "nvim_lsp"}}
+    sources = {{name = "buffer"}, {name = "nvim_lsp"}},
+    formatting = {
+        format = function(_, vim_item)
+            vim_item.kind = kinds[vim_item.kind]
+            return vim_item
+        end
+    }
 }
