@@ -30,3 +30,7 @@ api.nvim_set_keymap("n", "<Down>", "<Cmd>res -5<CR>", opts)
 api.nvim_set_keymap("n", "<Left>", "<Cmd>vert resize +5<CR>", opts)
 api.nvim_set_keymap("n", "<Right>", "<Cmd>vert resize -5<CR>", opts)
 api.nvim_set_keymap("n", "<Up>", "<Cmd>res +5<CR>", opts)
+
+-- Command mode navigation
+api.nvim_set_keymap("c", "<C-A>", "<Home>", opts)
+api.nvim_set_keymap("c", "<C-E>", "<End>", opts)
