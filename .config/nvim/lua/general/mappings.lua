@@ -10,14 +10,17 @@ vim.g.mapleader = " "
 -- Toggle between buffers
 api.nvim_set_keymap("n", "<Leader><Leader>", "<C-^>", opts)
 
--- Spell check
+-- Run the built-in spell checker
 api.nvim_set_keymap("n", "<Leader>s", "<Cmd>setlocal spell! spl=en_us<CR>", opts)
 
 -- Toggle line wrapping
 api.nvim_set_keymap("n", "<Leader>w", "<Cmd>set wrap!<CR>", opts)
 
--- Make sure Y works like C, D, etc.
-api.nvim_set_keymap("n", "Y", "yg_", opts)
+-- Make Y similar to C, D, etc.
+api.nvim_set_keymap("n", "Y", "y$", opts)
+
+-- Toggle command mode
+api.nvim_set_keymap("n", "<CR>", ":", opts)
 
 -- Window navigation commands (saves a keystroke)
 api.nvim_set_keymap("n", "<C-h>", "<C-w>h", opts)

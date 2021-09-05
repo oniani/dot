@@ -17,10 +17,9 @@ require("plugins.packer")
 require("plugins.fzf")
 require("plugins.lualine")
 require("plugins.neogit")
-require("plugins.nvimtree")
 require("plugins.tokyonight")
 require("plugins.treesitter")
 
--- Language server and related settings
+-- LSP and related settings
 require("plugins.lsp.cmp")
 require("plugins.lsp.config")

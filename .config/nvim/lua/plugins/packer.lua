@@ -23,7 +23,6 @@ return require("packer").startup {
 
         -- Productivity
         use "junegunn/fzf.vim"
-        use "kyazdani42/nvim-tree.lua"
         use "tpope/vim-commentary"
         use {"TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim"}
         use {"junegunn/fzf", run = ":call fzf#install()"}
