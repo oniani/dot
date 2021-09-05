@@ -1,6 +1,6 @@
 # `dots`
 
-<p align="center"><img src="kitty.png" alt="Logo" width="224" /></p>
+<p align="center"><img src="kitty.png" alt="Logo" width="180" /></p>
 
 ## Setup
 
