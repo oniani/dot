@@ -13,5 +13,5 @@ require("lualine").setup {
         lualine_c = {{"diagnostics", sources = {"nvim_lsp"}}, {"filename", path = 1}}
     },
     -- Specify extensions
-    extensions = {"fzf", "nvim-tree", "quickfix"}
+    extensions = {"fzf", "quickfix"}
 }

@@ -29,10 +29,8 @@ return require("packer").startup {
         use {"nvim-treesitter/nvim-treesitter", branch = "0.5-compat", run = ":TSUpdate"}
 
         -- LSP
-        use "hrsh7th/cmp-buffer"
-        use "hrsh7th/cmp-nvim-lsp"
-        use "hrsh7th/nvim-cmp"
         use "neovim/nvim-lspconfig"
+        use {"hrsh7th/nvim-cmp", requires = {"hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp"}}
 
         -- Visuals
         use "folke/tokyonight.nvim"
