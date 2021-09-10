@@ -1,3 +1,11 @@
+-- Equalize splits when resized
+vim.api.nvim_exec([[
+    augroup AutoResize
+        autocmd!
+        autocmd VimResized * wincmd =
+    augroup end
+]], false)
+
 -- Highlight on yank
 vim.api.nvim_exec([[
     augroup YankHighlight
