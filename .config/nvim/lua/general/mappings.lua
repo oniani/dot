@@ -19,9 +19,6 @@ api.nvim_set_keymap("n", "<Leader>w", "<Cmd>set wrap!<CR>", opts)
 -- Make Y similar to C, D, etc.
 api.nvim_set_keymap("n", "Y", "y$", opts)
 
--- Toggle command mode
-api.nvim_set_keymap("n", "<CR>", ":", opts)
-
 -- Window navigation commands (saves a keystroke)
 api.nvim_set_keymap("n", "<C-h>", "<C-w>h", opts)
 api.nvim_set_keymap("n", "<C-j>", "<C-w>j", opts)
