@@ -4,6 +4,8 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-[ -z "$1" ] && fzf --preview bat | xargs "$EDITOR" && exit 1
+PREVIEW_CMD="bat --color=always --theme=base16-256 {}"
 
-fd . --hidden --type f "$1" | fzf --preview bat | xargs "$EDITOR"
+[ -z "$1" ] && fzf --preview "$PREVIEW_CMD" | xargs "$EDITOR" && exit 1
+
+fd . --hidden --type f "$1" | fzf --preview "$PREVIEW_CMD" | xargs "$EDITOR"

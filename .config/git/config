@@ -48,3 +48,7 @@
 
 [alias]
     l = "log --all --graph --pretty=format:'%C(red)%h%Creset -%C(blue)%d%Creset %C(yellow)%s%Creset %C(green)(%cr) %C(bold blue)<%an>%Creset'"
+    stashls = "stash list"
+    stashadd = "!f() { git stash push -m $1; }; f"
+    stashget = "!f() { git stash apply $(git stash list | grep $1 | cut -d ':' -f 1); }; f"
+    stashpop = "!f() { git stash pop $(git stash list | grep $1 | cut -d ':' -f 1); }; f"
