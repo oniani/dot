@@ -28,7 +28,6 @@ opt.textwidth = 100
 opt.foldmethod = "marker"
 opt.lazyredraw = true
 opt.number = true
-opt.relativenumber = true
 opt.signcolumn = "number"
 opt.termguicolors = true
 

@@ -17,38 +17,37 @@
 [github]
     user = oniani
 
-[url "https://bitbucket.org/"]
-    insteadOf = bb:
-
-[url "https://github.com/"]
-    insteadOf = gh:
-
-[url "https://gist.github.com/"]
-    insteadOf = gist:
-
-[init]
-    defaultBranch = main
-
 [core]
     editor = $EDITOR
     whitespace = tabwidth=4
 
-[diff]
-    mnemonicprefix = true
-
-[merge]
-    log = true
-    ff = false
+[init]
+    defaultBranch = main
 
 [push]
     default = simple
 
-[color]
-    ui = auto
+[diff]
+    tool = nvimdiff
+
+[difftool]
+    prompt = false
+
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$REMOTE\" \"$LOCAL\""
+
+[merge]
+    tool = nvimdiff
+
+[mergetool]
+    prompt = true
+
+[mergetool "nvimdiff"]
+    cmd = "nvim -d \"$REMOTE\" \"$LOCAL\" \"$MERGED\" -c 'wincmd w' -c 'wincmd J'"
 
 [alias]
     l = "log --all --graph --pretty=format:'%C(red)%h%Creset -%C(blue)%d%Creset %C(yellow)%s%Creset %C(green)(%cr) %C(bold blue)<%an>%Creset'"
     stashls = "stash list"
-    stashadd = "!f() { git stash push -m $1; }; f"
     stashget = "!f() { git stash apply $(git stash list | grep $1 | cut -d ':' -f 1); }; f"
     stashpop = "!f() { git stash pop $(git stash list | grep $1 | cut -d ':' -f 1); }; f"
+    stashput = "!f() { git stash push -m $1; }; f"
