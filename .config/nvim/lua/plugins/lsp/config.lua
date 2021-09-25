@@ -1,4 +1,4 @@
--- Access Nvim API and functions
+-- Access nvim API and functions
 local api = vim.api
 local fn = vim.fn
 
