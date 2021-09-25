@@ -32,7 +32,7 @@ opt.signcolumn = "number"
 opt.termguicolors = true
 
 -- Completion
-opt.completeopt = "menuone,noselect"
+opt.completeopt = "menu,menuone,noselect"
 opt.shortmess:append("c")
 
 -- Miscellaneous

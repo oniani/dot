@@ -1,3 +1,4 @@
+-- Icons
 local kinds = {
     Class = "ﴯ Class",
     Color = " Color",
@@ -26,8 +27,10 @@ local kinds = {
     Var = " Var"
 }
 
+-- Access cmp configurations
 local cmp = require("cmp")
 
+-- Set up cmp
 cmp.setup {
     snippet = {expand = function(args) require("luasnip").lsp_expand(args.body) end},
     mapping = {
@@ -53,7 +56,7 @@ cmp.setup {
             end
         end
     },
-    sources = {{name = "buffer"}, {name = "nvim_lsp"}},
+    sources = {{name = "buffer"}, {name = "nvim_lsp"}, {name = "path"}},
     formatting = {
         format = function(_, vim_item)
             vim_item.kind = kinds[vim_item.kind]

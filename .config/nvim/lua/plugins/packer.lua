@@ -30,7 +30,10 @@ return require("packer").startup {
 
         -- LSP
         use "neovim/nvim-lspconfig"
-        use {"hrsh7th/nvim-cmp", requires = {"hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp"}}
+        use {
+            "hrsh7th/nvim-cmp",
+            requires = {"hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-path"}
+        }
 
         -- Visuals
         use "folke/tokyonight.nvim"

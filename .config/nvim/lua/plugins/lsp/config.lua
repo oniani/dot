@@ -1,4 +1,3 @@
--- Language Server Client (LSP) settings
 -- Access Nvim API and functions
 local api = vim.api
 local fn = vim.fn
@@ -6,28 +5,23 @@ local fn = vim.fn
 -- Access LSP configurations
 local lspconfig = require("lspconfig")
 
--- Set these options on language server attachment
+-- Options to be set when attaching a language server
 local on_attach = function(client, bufnr)
-    -- Convenient function for setting keymaps
     local function keymap(...) api.nvim_buf_set_keymap(bufnr, ...) end
-
-    -- Mapping options
     local opts = {noremap = true, silent = true}
 
-    -- Mappings
     keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    keymap("n", "Ld", "<Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
-    keymap("n", "Lr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts)
     keymap("n", "T", "<Cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+    keymap("n", "cn", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)
+    keymap("n", "dl", "<Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
+    keymap("n", "dn", "<Cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
+    keymap("n", "dp", "<Cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
+    keymap("n", "dr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts)
     keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
-    keymap("n", "nD", "<Cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-    keymap("n", "nd", "<Cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
-    keymap("n", "nr", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)
 
-    -- If a language server has document formatting capabilities, format on save
     if client.resolved_capabilities.document_formatting then
         api.nvim_exec([[
-            augroup Format
+            augroup AutoFormat
                 autocmd!
                 autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync()
             augroup END
@@ -40,12 +34,7 @@ local efm_settings = {
     rootMarkers = {".git/"},
     languages = {
         lua = {{formatCommand = "lua-format --column-limit=100", formatStdin = true}},
-        markdown = {
-            {
-                formatCommand = "prettier --print-width=100 --stdin-filepath ${INPUT}",
-                formatStdin = true
-            }
-        },
+        markdown = {{formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}},
         python = {{formatCommand = "black -l 100 -", formatStdin = true}}
     }
 }
@@ -56,7 +45,11 @@ local rust_analyzer_settings = {
         checkOnSave = {
             allFeatures = true,
             overrideCommand = {
-                "cargo", "clippy", "--all-features", "--all-targets", "--message-format=json",
+                "cargo",
+                "clippy",
+                "--all-features",
+                "--all-targets",
+                "--message-format=json",
                 "--workspace"
             }
         }
@@ -82,5 +75,7 @@ local function make_config(server)
 end
 
 -- Set up the servers
-local servers = {"bashls", "cmake", "clangd", "efm", "gopls", "pyright", "rust_analyzer"}
-for _, server in ipairs(servers) do lspconfig[server].setup(make_config(server)) end
+local servers = {"bashls", "clangd", "cmake", "efm", "gopls", "pyright", "rust_analyzer"}
+for _, server in ipairs(servers) do
+    lspconfig[server].setup(make_config(server))
+end
