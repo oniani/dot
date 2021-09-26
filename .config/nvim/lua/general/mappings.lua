@@ -2,7 +2,7 @@
 local api = vim.api
 
 -- Mapping options
-local opts = {noremap = true}
+local opts = { noremap = true }
 
 -- Map the leader key to space
 vim.g.mapleader = " "
@@ -19,7 +19,11 @@ api.nvim_set_keymap("n", "<Leader>w", "<Cmd>set wrap!<CR>", opts)
 -- Make Y similar to C, D, etc.
 api.nvim_set_keymap("n", "Y", "y$", opts)
 
--- Window navigation commands (saves a keystroke)
+-- Buffer navigation
+api.nvim_set_keymap("n", "<C-n>", "<Cmd>bn<CR>", opts)
+api.nvim_set_keymap("n", "<C-p>", "<Cmd>bp<CR>", opts)
+
+-- Window navigation
 api.nvim_set_keymap("n", "<C-h>", "<C-w>h", opts)
 api.nvim_set_keymap("n", "<C-j>", "<C-w>j", opts)
 api.nvim_set_keymap("n", "<C-k>", "<C-w>k", opts)

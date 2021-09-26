@@ -9,7 +9,7 @@ FILE=$1
 case $FILE in
     *\.css | *\.html | *\.js | *\.json | *\.md) prettier --print-width=100 --write "$FILE";;
     *\.go) gofmt -s -w "$FILE";;
-    *\.lua) lua-format --column-limit=100 "$FILE";;
+    *\.lua) stylua "$FILE";;
     *\.py) black -l 100 "$FILE";;
     *\.rs) rustfmt "$FILE";;
     *) printf "Unknown file format\n";;

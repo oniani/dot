@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# Install language formatters
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+case $1 in
+    css | html | js | json | md) sudo npm install -g prettier;;
+    lua) cargo install stylua;;
+    python) python3 -m pip install black;;
+    *) printf "Unknown language\n";;
+esac
