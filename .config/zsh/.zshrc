@@ -118,9 +118,9 @@ bindkey -v
 
 # Add missing Vim hotkeys
 # Confer http://zshwiki.org/home/zle/vi-mode
-bindkey -a u undo                  # u for undo
-bindkey -a "^r" redo               # CTRL + r to redo
-bindkey "^?" backward-delete-char  # Backspace
+bindkey -a u undo
+bindkey -a "^r" redo
+bindkey "^?" backward-delete-char
 
 # History search in Vi mode
 # Adapted from the following link
@@ -183,7 +183,7 @@ zle -N zle-line-init
 bindkey -s "^f" "nnn_autocd\n"
 
 # Key binding for IPython
-bindkey -s "^p" "ipython\n"
+bindkey -s "^p" "ipython3\n"
 
 # Key binding for fg
 bindkey -s "^z" "fg\n"
