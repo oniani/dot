@@ -27,6 +27,9 @@
 [push]
     default = simple
 
+[pull]
+	rebase = true
+
 [diff]
     tool = nvimdiff
 
