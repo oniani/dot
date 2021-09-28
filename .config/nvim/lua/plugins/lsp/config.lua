@@ -33,7 +33,7 @@ local efm_settings = {
 	languages = {
 		lua = { { formatCommand = "stylua -", formatStdin = true } },
 		markdown = { { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true } },
-		python = { { formatCommand = "black -l 100 -", formatStdin = true } },
+		python = { { formatCommand = "black -", formatStdin = true } },
 	},
 }
 
