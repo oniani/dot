@@ -37,7 +37,7 @@ opt.shortmess:append("c")
 
 -- Miscellaneous
 opt.clipboard = "unnamedplus"
-opt.colorcolumn = "100"
+opt.colorcolumn = "101"
 opt.fillchars = "fold: "
 opt.hidden = true
 opt.mouse = "a"
