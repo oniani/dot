@@ -20,11 +20,8 @@ opt.tabstop = 4
 opt.splitbelow = true
 opt.splitright = true
 
--- Formatting
-opt.formatoptions:append("c", "q")
-opt.textwidth = 100
-
 -- Visual
+kpt.fillchars = "fold: "
 opt.foldmethod = "marker"
 opt.lazyredraw = true
 opt.number = true
@@ -33,13 +30,10 @@ opt.termguicolors = true
 
 -- Completion
 opt.completeopt = "menu,menuone,noselect"
-opt.shortmess:append("c")
 
 -- Miscellaneous
 opt.clipboard = "unnamedplus"
-opt.colorcolumn = "101"
-opt.fillchars = "fold: "
 opt.hidden = true
 opt.mouse = "a"
-opt.updatetime = 100
+opt.updatetime = 250
 opt.wildmode = "longest:full,full"
