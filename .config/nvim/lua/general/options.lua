@@ -21,7 +21,7 @@ opt.splitbelow = true
 opt.splitright = true
 
 -- Visual
-kpt.fillchars = "fold: "
+opt.fillchars = "fold: "
 opt.foldmethod = "marker"
 opt.lazyredraw = true
 opt.number = true
