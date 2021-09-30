@@ -29,11 +29,11 @@ opt.signcolumn = "number"
 opt.termguicolors = true
 
 -- Completion
-opt.completeopt = "menu,menuone,noselect"
+opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- Miscellaneous
 opt.clipboard = "unnamedplus"
 opt.hidden = true
 opt.mouse = "a"
 opt.updatetime = 250
-opt.wildmode = "longest:full,full"
+opt.wildmode = { "longest", "full", "full" }
