@@ -37,7 +37,7 @@ return require("packer").startup({
 
 		-- Visuals
 		use("folke/tokyonight.nvim")
-		use("hoob3rt/lualine.nvim")
 		use("kyazdani42/nvim-web-devicons")
+		use("shadmansaleh/lualine.nvim")
 	end,
 })

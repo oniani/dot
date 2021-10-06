@@ -31,8 +31,9 @@ end
 local efm_settings = {
 	rootMarkers = { ".git/" },
 	languages = {
+		json = { { formatCommand = "prettier --tab-width 4 --stdin-filepath ${INPUT}", formatStdin = true } },
 		lua = { { formatCommand = "stylua -", formatStdin = true } },
-		markdown = { { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true } },
+		markdown = { { formatCommand = "prettier --tab-width 4 --stdin-filepath ${INPUT}", formatStdin = true } },
 		python = { { formatCommand = "black -", formatStdin = true } },
 	},
 }

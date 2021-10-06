@@ -7,7 +7,7 @@
 FILE=$1
 
 case $FILE in
-    *\.css | *\.html | *\.js | *\.json | *\.md) prettier --print-width=100 --write "$FILE";;
+    *\.css | *\.html | *\.js | *\.json | *\.md) prettier --tab-width 4 --write "$FILE";;
     *\.go) gofmt -s -w "$FILE";;
     *\.lua) stylua "$FILE";;
     *\.py) black -l 100 "$FILE";;
