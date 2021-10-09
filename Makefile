@@ -1,28 +1,31 @@
-#! ===============================================
-#!     Makefile
-#!     by David Oniani <onianidavid@gmail.com>
-#!     License: MIT License
-#! ===============================================
-#! 
+# ===============================================
+#     Makefile
+#     by David Oniani <onianidavid@gmail.com>
+#     License: MIT License
+# ===============================================
 
 DIR = $${XDG_DATA_HOME:-$(HOME)/.local/share}/zsh/plugin
 ORG = https://github.com/zsh-users
 
-all: cp zsh
+default: cp
 
-default: help
+cp: .config .local .zshenv
+	cp -R .config $(HOME)
+	cp -R .local  $(HOME)
+	cp    .zshenv $(HOME)
 
-help: #! Show this message
-	@sed -ne '/@sed/!s/#! //p' $(MAKEFILE_LIST)
+nnn:
+	git clone https://github.com/jarun/nnn
+	cd nnn && make O_NERD=1 && sudo make install
+	rm -rf nnn
 
-cp:   #! Copy configs
-	cp -R .config "$(HOME)"
-	cp -R .local "$(HOME)"
-	cp .zshenv "$(HOME)"
-
-zsh:  #! Install/update Z shell plugins
+zsh:
 	rm -rf $(DIR)/zsh-autosuggestions $(DIR)/zsh-syntax-highlighting
 	git clone $(ORG)/zsh-autosuggestions $(DIR)/zsh-autosuggestions
 	git clone $(ORG)/zsh-syntax-highlighting $(DIR)/zsh-syntax-highlighting
+	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 
-.SILENT: copy zsh
+rust:
+	curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+.PHONY: cp nnn zsh

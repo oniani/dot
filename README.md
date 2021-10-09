@@ -10,23 +10,18 @@ follow the UNIX philosophy are preferred. The setup is compliant with the
 
 Tools:
 
-- **Browser**: [Brave](https://github.com/brave/brave-browser)
-- **Editor**: [Neovim](https://github.com/neovim/neovim/)
-- **File Manager**: [nnn](https://github.com/jarun/nnn)
-- **Media Player**: [mpv](https://mpv.io/)
-- **Music Player**: [ncmpcpp](https://rybczak.net/ncmpcpp/) (with [mpd](https://www.musicpd.org/) as a backend)
-- **RSS Reader**: [Newsboat](https://newsboat.org/)
-- **Shell**: [zsh](https://github.com/zsh-users/zsh)
-- **Terminal**: [kitty](https://github.com/kovidgoyal/kitty/)
+-   **Browser**: [Brave](https://github.com/brave/brave-browser)
+-   **Editor**: [Neovim](https://github.com/neovim/neovim/)
+-   **File Manager**: [nnn](https://github.com/jarun/nnn)
+-   **Media Player**: [mpv](https://mpv.io/)
+-   **RSS Reader**: [Newsboat](https://github.com/newsboat/newsboat)
+-   **Shell**: [zsh](https://github.com/zsh-users/zsh)
+-   **Terminal**: [kitty](https://github.com/kovidgoyal/kitty/)
 
-## Installation
+In order to install:
 
 ```console
-$ git clone https://github.com/oniani/dots
-$ cd dots
-$ ./setup.sh
-$ brew bundle
-$ exec zsh -l
+make help
 ```
 
 ## License
