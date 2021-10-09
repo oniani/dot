@@ -2,17 +2,18 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-DIR = $${XDG_DATA_HOME:-$(HOME)/.local/share}/zsh/plugin
-ORG = https://github.com/zsh-users
+DIR = $${XDG_DATA_HOME:-$$HOME/.local/share}/zsh/plugin
 
 default: help
 
 all: cp nnn rust zsh
 
 cp: .config .local .zshenv
-	cp -R .config $(HOME)
-	cp -R .local  $(HOME)
-	cp    .zshenv $(HOME)
+	cp    -R .config $$HOME
+	cp 	  -R .local  $$HOME
+	cp       .zshenv $$HOME
+	mkdir -p $$HOME/.local/{bin,share}
+	mkdir -p $${XDG_CACHE_HOME:-$$HOME/.cache}
 
 help:
 	printf "OPTIONS:\n \
@@ -39,7 +40,7 @@ rust:
 
 zsh:
 	rm -rf $(DIR)/zsh-autosuggestions $(DIR)/zsh-syntax-highlighting
-	git clone $(ORG)/zsh-autosuggestions $(DIR)/zsh-autosuggestions
-	git clone $(ORG)/zsh-syntax-highlighting $(DIR)/zsh-syntax-highlighting
+	git clone https://github.com/zsh-users/zsh-autosuggestions $(DIR)/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting $(DIR)/zsh-syntax-highlighting
 
 .SILENT: help
