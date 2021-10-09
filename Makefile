@@ -23,6 +23,11 @@ help:
 		rust	Install Rust programming language\n \
 		zsh	Install Z Shell plugins\n"
 
+mpv:
+	git clone https://github.com/mpv-player/mpv
+	cd mpv && ./bootstrap.py && ./waf configure && ./waf && ./waf install
+	rm -rf mpv
+
 nnn:
 	git clone https://github.com/jarun/nnn
 	cd nnn && make O_NERD=1 && sudo make install

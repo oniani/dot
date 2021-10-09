@@ -11,12 +11,12 @@ follow the UNIX philosophy are preferred. The setup is compliant with the
 Tools:
 
 -   Browser: [Brave](https://github.com/brave/brave-browser)
--   Editor: [Neovim](https://github.com/neovim/neovim/)
+-   Editor: [Neovim](https://github.com/neovim/neovim)
 -   File Manager: [nnn](https://github.com/jarun/nnn)
--   Media Player: [mpv](https://mpv.io/)
+-   Media Player: [mpv](https://github.com/mpv-player/mpv)
 -   RSS Reader: [Newsboat](https://github.com/newsboat/newsboat)
 -   Shell: [zsh](https://github.com/zsh-users/zsh)
--   Terminal: [kitty](https://github.com/kovidgoyal/kitty/)
+-   Terminal: [kitty](https://github.com/kovidgoyal/kitty)
 
 Automation:
 
