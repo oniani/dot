@@ -187,6 +187,8 @@ bindkey -s "^z" "fg\n"
 
 # Sourcing {{{
 
+eval "$(pyenv init -)"
+
 source "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 

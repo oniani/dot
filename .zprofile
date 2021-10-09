@@ -13,26 +13,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-# Make directories reachable
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/cargo/bin:$PATH"
-export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/go/bin:$PATH"
-
-# Core utilities
-export EDITOR="nvim"
-export PAGER="less"
-export TERMINAL="kitty"
-
-# nnn
-export NNN_BMS="D:~/Downloads;c:~/git/dots;d:~/Documents;g:~/git;w:~/wip;"
-export NNN_FCOLORS="000004000700000700000000"
-export NNN_OPTS="EHderx"
-export NNN_TRASH=1
-
-# fzf
-export FZF_DEFAULT_COMMAND="fd --hidden --type f"
-export FZF_DEFAULT_OPTS="--reverse"
-
 # Move to ~/.cache
 export MYPY_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/mypy"
 export NPM_CONFIG_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/npm"
@@ -46,9 +26,35 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 # Move to ~/.local/share
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+export PYENV_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/pyenv"
 export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
 
-# Additional settings
+# Make directories reachable
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/shims:$PATH"
+export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/cargo/bin:$PATH"
+export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/go/bin:$PATH"
+
+# pyenv
+export PYENV_VERSION="3.10.0"
+
+# nnn
+export NNN_BMS="D:~/Downloads;c:~/git/dots;d:~/Documents;g:~/git;w:~/wip;"
+export NNN_FCOLORS="000004000700000700000000"
+export NNN_OPTS="EHderx"
+export NNN_TRASH=1
+
+# fzf
+export FZF_DEFAULT_COMMAND="fd --hidden --type f"
+export FZF_DEFAULT_OPTS="--reverse"
+
+# Utilities
+export EDITOR="nvim"
+export PAGER="less"
+export TERMINAL="kitty"
+
+# Miscellaneous settings
 export CLICOLOR=1
 export LC_ALL=en_US.UTF-8
 export LESSHISTFILE="-"
