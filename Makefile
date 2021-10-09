@@ -9,9 +9,9 @@ default: help
 all: cp nnn rust zsh
 
 cp: .config .local .zshenv
+	cp       .zshenv $$HOME
 	cp    -R .config $$HOME
 	cp 	  -R .local  $$HOME
-	cp       .zshenv $$HOME
 	mkdir -p $$HOME/.local/{bin,share}
 	mkdir -p $${XDG_CACHE_HOME:-$$HOME/.cache}
 
