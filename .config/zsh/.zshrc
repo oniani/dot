@@ -11,27 +11,28 @@
 # Functions {{{
 
 # Change directory on quit
-nnn_autocd() {
+function nnn_autocd() {
     # Block nesting of nnn in subshells
     if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
         printf "nnn is already running\n"
         return
     fi
-  
-    # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
-    # To cd on quit only on ^G, remove the "export" as in:
-    #     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-    # NOTE: NNN_TMPFILE is fixed, should not be modified
+
+    # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # To cd on quit only on ^G, either remove the "export" as in:
+    #    NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    #    (or, to a custom path: NNN_TMPFILE=/tmp/.lastd)
+    # or, export NNN_TMPFILE after nnn invocation
     export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-  
+
     # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
     # stty start undef
     # stty stop undef
     # stty lwrap undef
     # stty lnext undef
-  
+
     nnn "$@"
-  
+
     if [ -f "$NNN_TMPFILE" ]; then
         . "$NNN_TMPFILE"
         rm -f "$NNN_TMPFILE" > /dev/null
@@ -52,13 +53,12 @@ function colormap() {
 # Core commands
 alias :q="exit"
 alias grep="grep --color=auto"
+alias icat="kitty +kitten icat"
 alias l="ls -A"
 alias ll="ls -Ahl"
-alias icat="kitty +kitten icat"
 
 # Interactive
 alias e="nvim"
-alias m="ncmpcpp --quiet"
 alias news="newsboat --quiet"
 alias ssh="kitty +kitten ssh"
 
@@ -78,8 +78,7 @@ PS1="%F{111}%c %F{50}➜%F{reset_color} "
 autoload -Uz colors && colors
 
 # Load and enable completion
-autoload -Uz compinit && compinit -d \
-  "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump_$ZSH_VERSION"
+autoload -Uz compinit && compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump_$ZSH_VERSION"
 
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
@@ -105,9 +104,10 @@ HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 
-setopt EXTENDED_HISTORY        # Add timestamps
-setopt HIST_EXPIRE_DUPS_FIRST  # Remove duplicates first if over HISTSIZE
-setopt INC_APPEND_HISTORY      # Save commands in the order of execution
+# History options
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt INC_APPEND_HISTORY
 
 # }}}
 
@@ -179,23 +179,15 @@ zle -N zle-line-init
 
 # Key Bindings {{{
 
-# Key binding for nnn
 bindkey -s "^f" "nnn_autocd\n"
-
-# Key binding for IPython
 bindkey -s "^p" "ipython3\n"
-
-# Key binding for fg
 bindkey -s "^z" "fg\n"
 
 # }}}
 
 # Sourcing {{{
 
-# Source Fish-like autocompletions for activation
 source "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh"
-
-# Source zsh syntax highlighting for activation
 source "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # }}}

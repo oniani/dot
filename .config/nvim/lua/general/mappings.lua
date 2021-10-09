@@ -38,5 +38,7 @@ api.nvim_set_keymap("n", "<Up>", "<Cmd>res +5<CR>", opts)
 -- Command mode navigation
 api.nvim_set_keymap("c", "<C-A>", "<Home>", opts)
 api.nvim_set_keymap("c", "<C-E>", "<End>", opts)
+api.nvim_set_keymap("c", "<C-h>", "<Left>", opts)
 api.nvim_set_keymap("c", "<C-j>", "<Down>", opts)
 api.nvim_set_keymap("c", "<C-k>", "<Up>", opts)
+api.nvim_set_keymap("c", "<C-l>", "<Right>", opts)
