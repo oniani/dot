@@ -19,6 +19,7 @@ help:
 		all	Perform all actions listed below at once\n \
 		cp	Copy configuration files\n \
 		kitty	Install kitty terminal emulator\n \
+		nnn	Install mpv media player\n \
 		nnn	Install nnn file manager\n \
 		rust	Install Rust programming language\n \
 		zsh	Install Z Shell plugins\n"
