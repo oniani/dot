@@ -28,11 +28,9 @@ opt.number = true
 opt.signcolumn = "number"
 opt.termguicolors = true
 
--- Completion
-opt.completeopt = { "menu", "menuone", "noselect" }
-
 -- Miscellaneous
 opt.clipboard = "unnamedplus"
+opt.completeopt = { "menu", "menuone", "noselect" }
 opt.hidden = true
 opt.mouse = "a"
 opt.updatetime = 250
