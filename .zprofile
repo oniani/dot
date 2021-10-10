@@ -36,9 +36,6 @@ export PATH="$PYENV_ROOT/shims:$PATH"
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/cargo/bin:$PATH"
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/go/bin:$PATH"
 
-# pyenv
-export PYENV_VERSION="3.10.0"
-
 # nnn
 export NNN_BMS="D:~/Downloads;c:~/git/dots;d:~/Documents;g:~/git;w:~/wip;"
 export NNN_FCOLORS="000004000700000700000000"

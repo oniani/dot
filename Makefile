@@ -4,13 +4,12 @@
 
 default: help
 
-all: config mpv nnn python rust zsh
+all: config kitty mpv nnn packages python rust zsh
 
 config: .config .local .zprofile
 	cp       .zprofile $$HOME
 	cp    -R .config   $$HOME
 	cp    -R .local    $$HOME
-	mkdir -p $$HOME/.local/{bin,share}
 	mkdir -p $${XDG_CACHE_HOME:-$$HOME/.cache}
 
 help:
@@ -20,12 +19,14 @@ help:
 		kitty	Install kitty terminal emulator\n \
 		mpv	Install mpv media player\n \
 		nnn	Install nnn file manager\n \
+		packages	Install packages\n \
 		python	Set up Python\n \
 		rust	Set up Rust\n \
 		zsh	Install Z Shell plugins\n"
 
 kitty:
 	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+	ln -s $$HOME/.local/kitty.app/bin/kitty $$HOME/.local/bin/
 
 mpv:
 	git clone https://github.com/mpv-player/mpv
@@ -36,6 +37,10 @@ nnn:
 	git clone https://github.com/jarun/nnn
 	cd nnn && make O_NERD=1 && sudo make install
 	rm -rf nnn
+
+packages:
+	python3 -m pip install black trash-cli
+	cargo install black fd-find
 
 python:
 	curl https://pyenv.run | bash

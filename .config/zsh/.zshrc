@@ -100,7 +100,7 @@ setopt COMPLETE_ALIASES
 setopt GLOBDOTS
 
 # History settings
-HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zsh_history"
+HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 HISTSIZE=10000
 SAVEHIST=10000
 
