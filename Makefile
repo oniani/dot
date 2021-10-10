@@ -4,8 +4,6 @@
 
 default: help
 
-all: config kitty mpv nnn packages python rust zsh
-
 config: .config .local .zprofile
 	cp       .zprofile $$HOME
 	cp    -R .config   $$HOME
@@ -14,15 +12,14 @@ config: .config .local .zprofile
 
 help:
 	printf "OPTIONS:\n \
-		all	Perform all actions listed below at once\n \
-		config	Copy configuration files\n \
-		kitty	Install kitty terminal emulator\n \
-		mpv	Install mpv media player\n \
-		nnn	Install nnn file manager\n \
-		packages	Install packages\n \
-		python	Set up Python\n \
-		rust	Set up Rust\n \
-		zsh	Install Z Shell plugins\n"
+		config      Copy configuration files\n \
+		kitty       Install kitty terminal emulator\n \
+		mpv         Install mpv media player\n \
+		nnn         Install nnn file manager\n \
+		packages    Install packages\n \
+		python      Set up Python\n \
+		rust        Set up Rust\n \
+		zsh         Install Z Shell plugins\n"
 
 kitty:
 	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
