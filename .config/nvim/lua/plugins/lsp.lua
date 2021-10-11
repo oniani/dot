@@ -56,12 +56,9 @@ local rust_analyzer_settings = {
 }
 
 -- Makes a custom config with the snippet support
-local function make_config(server)
+local function make_config(server, on_attach, engine)
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
-    capabilities.textDocument.completion.completionItem.resolveSupport = {
-        properties = { "documentation", "detail", "additionalTextEdits" },
-    }
+    capabilities = engine.update_capabilities(capabilities)
     local config = { capabilities = capabilities, on_attach = on_attach }
     if server == "efm" then
         config.filetypes = vim.fn.keys(efm_settings.languages)
@@ -73,11 +70,71 @@ local function make_config(server)
     return config
 end
 
--- Access LSP configurations
-local lspconfig = require("lspconfig")
+-- Icons
+local kinds = {
+    Class = "ﴯ Class",
+    Color = " Color",
+    Constant = " Constant",
+    Constructor = " Constructor",
+    Enum = " Enum",
+    EnumMember = " Enum-member",
+    Event = " Event",
+    Field = "ﰠ Field",
+    File = " File",
+    Folder = " Folder",
+    Fun = " Fun",
+    Interface = " Interface",
+    Keyword = " Keyword",
+    Method = " Method",
+    Module = " Module",
+    Operator = " Operator",
+    Property = "ﰠ Property",
+    Reference = " Reference",
+    Snippet = "﬌ Snippet",
+    Struct = "פּ Struct",
+    Text = " Text",
+    TypeParameter = " Type-param",
+    Unit = " Unit",
+    Value = " Value",
+    Var = " Var",
+}
 
--- Set up the servers
+-- Set up nvim-cmp
+local cmp = require("cmp")
+cmp.setup({
+    mapping = {
+        ["<C-o>"] = cmp.mapping.complete(),
+        ["<C-c>"] = cmp.mapping.close(),
+        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-u>"] = cmp.mapping.scroll_docs(4),
+        ["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+        ["<Tab>"] = function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                fallback()
+            end
+        end,
+        ["<S-Tab>"] = function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            else
+                fallback()
+            end
+        end,
+    },
+    sources = { { name = "buffer" }, { name = "nvim_lsp" }, { name = "path" } },
+    formatting = {
+        format = function(_, vim_item)
+            vim_item.kind = kinds[vim_item.kind]
+            return vim_item
+        end,
+    },
+})
+
+-- Use LSP configurations to set up the servers
+local lspconfig = require("lspconfig")
 local servers = { "bashls", "clangd", "cmake", "efm", "gopls", "pyright", "rust_analyzer" }
 for _, server in ipairs(servers) do
-    lspconfig[server].setup(make_config(server))
+    lspconfig[server].setup(make_config(server, on_attach, require("cmp_nvim_lsp")))
 end

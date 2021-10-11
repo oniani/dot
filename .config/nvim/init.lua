@@ -15,11 +15,8 @@ require("general.options")
 -- Packer and plugins
 require("plugins.packer")
 require("plugins.fzf")
+require("plugins.lsp")
 require("plugins.lualine")
 require("plugins.neogit")
 require("plugins.tokyonight")
 require("plugins.treesitter")
-
--- LSP and related settings
-require("plugins.lsp.cmp")
-require("plugins.lsp.config")
