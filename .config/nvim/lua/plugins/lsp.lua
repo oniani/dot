@@ -57,8 +57,7 @@ local rust_analyzer_settings = {
 
 -- Makes a custom config with the snippet support
 local function make_config(server, on_attach, engine)
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = engine.update_capabilities(capabilities)
+    local capabilities = engine.update_capabilities(vim.lsp.protocol.make_client_capabilities())
     local config = { capabilities = capabilities, on_attach = on_attach }
     if server == "efm" then
         config.filetypes = vim.fn.keys(efm_settings.languages)
