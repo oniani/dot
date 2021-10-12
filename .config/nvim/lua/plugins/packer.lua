@@ -9,7 +9,6 @@ local repo = "https://github.com/wbthomason/packer.nvim"
 -- Clone `packer.nvim` repository and and source any plugin files found
 if fn.empty(fn.glob(path)) > 0 then
     api.nvim_command(string.format("!git clone %s %s", repo, path))
-    api.nvim_command("packadd packer.nvim")
 end
 
 -- Required since `packer.nvim` is in `opt` pack
@@ -23,9 +22,9 @@ return require("packer").startup({
 
         -- Productivity
         use("junegunn/fzf.vim")
+        use({ "junegunn/fzf", run = ":call fzf#install()" })
         use("tpope/vim-commentary")
         use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
-        use({ "junegunn/fzf", run = ":call fzf#install()" })
         use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
         -- LSP
@@ -34,7 +33,6 @@ return require("packer").startup({
 
         -- Visuals
         use("folke/tokyonight.nvim")
-        use("kyazdani42/nvim-web-devicons")
-        use("shadmansaleh/lualine.nvim")
+        use({ "shadmansaleh/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
     end,
 })
