@@ -129,6 +129,7 @@ cmp.setup({
             return vim_item
         end,
     },
+    experimental = { ghost_text = true },
 })
 
 -- Use LSP configurations to set up the servers
