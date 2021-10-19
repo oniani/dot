@@ -133,8 +133,16 @@ cmp.setup({
 })
 
 -- Use LSP configurations to set up the servers
+local lsp_installer = require("nvim-lsp-installer")
 local lspconfig = require("lspconfig")
-local servers = { "bashls", "clangd", "cmake", "efm", "gopls", "pyright", "rust_analyzer" }
+local servers = { "bashls", "clangd", "cmake", "efm", "gopls", "pyright", "rust_analyzer", "sumneko_lua" }
 for _, server in ipairs(servers) do
+    local ok, val = lsp_installer.get_server(server)
+    if ok then
+        if not val:is_installed() then
+            print("Installing " .. val)
+            val:install()
+        end
+    end
     lspconfig[server].setup(make_config(server, on_attach, require("cmp_nvim_lsp")))
 end
