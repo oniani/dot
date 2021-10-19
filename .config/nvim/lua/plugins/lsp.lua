@@ -56,14 +56,14 @@ local rust_analyzer_settings = {
 }
 
 -- Makes a custom config with the snippet support
-local function make_config(server, on_attach, engine)
+local function make_config(server_name, on_attach, engine)
     local capabilities = engine.update_capabilities(vim.lsp.protocol.make_client_capabilities())
     local config = { capabilities = capabilities, on_attach = on_attach }
-    if server == "efm" then
+    if server_name == "efm" then
         config.filetypes = vim.fn.keys(efm_settings.languages)
         config.init_options = { documentFormatting = true }
         config.settings = efm_settings
-    elseif server == "rust_analyzer" then
+    elseif server_name == "rust_analyzer" then
         config.settings = rust_analyzer_settings
     end
     return config
@@ -102,10 +102,12 @@ local kinds = {
 local cmp = require("cmp")
 cmp.setup({
     mapping = {
-        ["<C-o>"] = cmp.mapping.complete(),
-        ["<C-c>"] = cmp.mapping.close(),
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-u>"] = cmp.mapping.scroll_docs(4),
+        ["<C-o>"] = cmp.mapping.complete(),
+        ["<C-c>"] = cmp.mapping.close(),
+        ["<C-j>"] = cmp.mapping.select_next_item(),
+        ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
         ["<Tab>"] = function(fallback)
             if cmp.visible() then
@@ -135,14 +137,14 @@ cmp.setup({
 -- Use LSP configurations to set up the servers
 local lsp_installer = require("nvim-lsp-installer")
 local lspconfig = require("lspconfig")
-local servers = { "bashls", "clangd", "cmake", "efm", "gopls", "pyright", "rust_analyzer", "sumneko_lua" }
-for _, server in ipairs(servers) do
-    local ok, val = lsp_installer.get_server(server)
+local server_names = { "bashls", "clangd", "cmake", "efm", "gopls", "pyright", "rust_analyzer", "sumneko_lua" }
+for _, server_name in ipairs(server_names) do
+    local ok, server = lsp_installer.get_server(server_name)
     if ok then
-        if not val:is_installed() then
-            print("Installing " .. val)
-            val:install()
+        if not server:is_installed() then
+            print("Installing " .. server_name)
+            server:install()
         end
     end
-    lspconfig[server].setup(make_config(server, on_attach, require("cmp_nvim_lsp")))
+    lspconfig[server_name].setup(make_config(server_name, on_attach, require("cmp_nvim_lsp")))
 end
