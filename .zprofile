@@ -46,6 +46,10 @@ export NNN_TRASH=1
 export FZF_DEFAULT_COMMAND="fd --hidden --type f"
 export FZF_DEFAULT_OPTS="--reverse"
 
+# bat
+export BAT_STYLE="numbers"
+export BAT_THEME="base16-256"
+
 # Utilities
 export EDITOR="nvim"
 export PAGER="less"

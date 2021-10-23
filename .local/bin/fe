@@ -4,7 +4,7 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-PREVIEW_CMD="bat --color=always --theme=base16-256 {}"
+PREVIEW_CMD="bat --color=always {}"
 
 [ -z "$1" ] && fzf --preview "$PREVIEW_CMD" | xargs "$EDITOR" && exit 1
 

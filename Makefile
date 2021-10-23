@@ -37,7 +37,7 @@ nnn:
 
 packages:
 	python3 -m pip install black trash-cli
-	cargo install black fd-find
+	cargo install bat black fd-find
 
 python:
 	curl https://pyenv.run | bash
