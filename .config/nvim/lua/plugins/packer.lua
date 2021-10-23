@@ -1,18 +1,14 @@
--- Access Nvim API and functions
-local api = vim.api
-local fn = vim.fn
-
 -- Specify the path and repository for `packer.nvim`
-local path = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
+local path = vim.fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
 local repo = "https://github.com/wbthomason/packer.nvim"
 
 -- Clone `packer.nvim` repository and and source any plugin files found
-if fn.empty(fn.glob(path)) > 0 then
-    api.nvim_command(string.format("!git clone --depth 1 %s %s", repo, path))
+if vim.fn.empty(vim.fn.glob(path)) > 0 then
+    vim.api.nvim_command(string.format("!git clone --depth 1 %s %s", repo, path))
 end
 
 -- Required since `packer.nvim` is in `opt` pack
-api.nvim_command("packadd packer.nvim")
+vim.api.nvim_command("packadd packer.nvim")
 
 -- Initialize the plugin system
 return require("packer").startup({
@@ -33,6 +29,6 @@ return require("packer").startup({
 
         -- Visuals
         use("folke/tokyonight.nvim")
-        use({ "shadmansaleh/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
+        use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
     end,
 })

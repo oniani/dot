@@ -1,37 +1,34 @@
--- Access vim options
-local opt = vim.opt
-
 -- Search
-opt.ignorecase = true
-opt.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Backup
-opt.backup = false
-opt.swapfile = false
-opt.writebackup = false
+vim.opt.backup = false
+vim.opt.swapfile = false
+vim.opt.writebackup = false
 
 -- Indent
-opt.expandtab = true
-opt.shiftwidth = 4
-opt.softtabstop = 4
-opt.tabstop = 4
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.tabstop = 4
 
 -- Splits
-opt.splitbelow = true
-opt.splitright = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 -- Visual
-opt.fillchars = "fold: "
-opt.foldmethod = "marker"
-opt.lazyredraw = true
-opt.number = true
-opt.signcolumn = "number"
-opt.termguicolors = true
+vim.opt.fillchars = "fold: "
+vim.opt.foldmethod = "marker"
+vim.opt.lazyredraw = true
+vim.opt.number = true
+vim.opt.signcolumn = "number"
+vim.opt.termguicolors = true
 
 -- Miscellaneous
-opt.clipboard = "unnamedplus"
-opt.completeopt = { "menu", "menuone", "noselect" }
-opt.hidden = true
-opt.mouse = "a"
-opt.updatetime = 250
-opt.wildmode = { "longest", "full", "full" }
+vim.opt.clipboard = "unnamedplus"
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.hidden = true
+vim.opt.mouse = "a"
+vim.opt.updatetime = 250
+vim.opt.wildmode = { "longest", "full", "full" }

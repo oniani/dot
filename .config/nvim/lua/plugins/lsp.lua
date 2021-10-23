@@ -124,7 +124,7 @@ cmp.setup({
             end
         end,
     },
-    sources = { { name = "buffer" }, { name = "nvim_lsp" }, { name = "path" } },
+    sources = { { name = "nvim_lsp" }, { name = "buffer" }, { name = "path" } },
     formatting = {
         format = function(_, vim_item)
             vim_item.kind = kinds[vim_item.kind]
