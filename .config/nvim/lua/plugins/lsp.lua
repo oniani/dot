@@ -69,38 +69,23 @@ local function make_config(server_name, on_attach, engine)
     return config
 end
 
--- Icons
-local kinds = {
-    Class = "ﴯ Class",
-    Color = " Color",
-    Constant = " Constant",
-    Constructor = " Constructor",
-    Enum = " Enum",
-    EnumMember = " Enum-member",
-    Event = " Event",
-    Field = "ﰠ Field",
-    File = " File",
-    Folder = " Folder",
-    Fun = " Fun",
-    Interface = " Interface",
-    Keyword = " Keyword",
-    Method = " Method",
-    Module = " Module",
-    Operator = " Operator",
-    Property = "ﰠ Property",
-    Reference = " Reference",
-    Snippet = "﬌ Snippet",
-    Struct = "פּ Struct",
-    Text = " Text",
-    TypeParameter = " Type-param",
-    Unit = " Unit",
-    Value = " Value",
-    Var = " Var",
-}
-
 -- Set up nvim-cmp
 local cmp = require("cmp")
+local lspkind = require("lspkind")
+
 cmp.setup({
+    experimental = { ghost_text = true },
+    formatting = {
+        format = lspkind.cmp_format({
+            with_text = true,
+            menu = {
+                nvim_lsp = "[LSP]",
+                buffer = "[Buffer]",
+                path = "[PATH]",
+                latex_symbols = "[LaTeX]",
+            },
+        }),
+    },
     mapping = {
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-u>"] = cmp.mapping.scroll_docs(4),
@@ -124,27 +109,25 @@ cmp.setup({
             end
         end,
     },
-    sources = { { name = "nvim_lsp" }, { name = "buffer" }, { name = "path" } },
-    formatting = {
-        format = function(_, vim_item)
-            vim_item.kind = kinds[vim_item.kind]
-            return vim_item
-        end,
+    sources = {
+        { name = "nvim_lsp" },
+        { name = "buffer" },
+        { name = "path" },
     },
-    experimental = { ghost_text = true },
 })
 
 -- Use LSP configurations to set up the servers
 local lsp_installer = require("nvim-lsp-installer")
 local lspconfig = require("lspconfig")
-local server_names = { "bashls", "clangd", "cmake", "efm", "gopls", "pyright", "rust_analyzer", "sumneko_lua" }
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+local server_names = { "bashls", "clangd", "cmake", "efm", "gopls", "pyright", "rust_analyzer" }
 for _, server_name in ipairs(server_names) do
     local ok, server = lsp_installer.get_server(server_name)
     if ok then
         if not server:is_installed() then
-            print("Installing " .. server_name)
             server:install()
         end
     end
-    lspconfig[server_name].setup(make_config(server_name, on_attach, require("cmp_nvim_lsp")))
+    lspconfig[server_name].setup(make_config(server_name, on_attach, cmp_nvim_lsp))
 end

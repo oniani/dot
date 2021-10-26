@@ -17,13 +17,14 @@ return require("packer").startup({
         use({ "wbthomason/packer.nvim", opt = true })
 
         -- Productivity
-        use({ "junegunn/fzf.vim", { "junegunn/fzf", run = ":call fzf#install()" } })
         use("tpope/vim-commentary")
         use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
+        use({ "junegunn/fzf.vim", { "junegunn/fzf", run = ":call fzf#install()" } })
         use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
         -- LSP
         use("neovim/nvim-lspconfig")
+        use("onsails/lspkind-nvim")
         use("williamboman/nvim-lsp-installer")
         use({ "hrsh7th/nvim-cmp", requires = { "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-path" } })
 
