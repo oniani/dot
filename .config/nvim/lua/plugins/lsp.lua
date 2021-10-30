@@ -28,29 +28,15 @@ local on_attach = function(client, bufnr)
 end
 
 -- Configure efm language server
-local efm_settings = {
-    rootMarkers = { ".git/" },
-    languages = {
-        json = { { formatCommand = "prettier --tab-width 4 --stdin-filepath ${INPUT}", formatStdin = true } },
-        lua = { { formatCommand = "stylua --indent-type Spaces -", formatStdin = true } },
-        markdown = { { formatCommand = "prettier --tab-width 4 --stdin-filepath ${INPUT}", formatStdin = true } },
-        python = { { formatCommand = "black -", formatStdin = true } },
-    },
-}
-
--- Configure rust_analyzer language server
-local rust_analyzer_settings = {
-    ["rust-analyzer"] = {
-        checkOnSave = {
-            allFeatures = true,
-            overrideCommand = {
-                "cargo",
-                "clippy",
-                "--all-features",
-                "--all-targets",
-                "--message-format=json",
-                "--workspace",
-            },
+local efm_config = {
+    filetypes = { "lua", "markdown", "python" },
+    init_options = { documentFormatting = true },
+    settings = {
+        rootMarkers = { ".git/" },
+        languages = {
+            lua = { { formatCommand = "stylua --indent-type Spaces -", formatStdin = true } },
+            markdown = { { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true } },
+            python = { { formatCommand = "black -", formatStdin = true } },
         },
     },
 }
@@ -60,11 +46,9 @@ local function make_config(server_name, on_attach, engine)
     local capabilities = engine.update_capabilities(vim.lsp.protocol.make_client_capabilities())
     local config = { capabilities = capabilities, on_attach = on_attach }
     if server_name == "efm" then
-        config.filetypes = vim.fn.keys(efm_settings.languages)
-        config.init_options = { documentFormatting = true }
-        config.settings = efm_settings
-    elseif server_name == "rust_analyzer" then
-        config.settings = rust_analyzer_settings
+        config.filetypes = efm_config.filetypes
+        config.init_options = efm_config.init_options
+        config.settings = efm_config.settings
     end
     return config
 end
