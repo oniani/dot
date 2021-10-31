@@ -1,0 +1,68 @@
+#!/usr/bin/env sh
+
+# Setup utility
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+# Install configuration files
+config() {
+    cp -R .config $HOME
+    cp -R .local  $HOME
+    cp .zprofile $HOME
+    mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}"
+}
+
+# Install kitty terminal emulator
+kitty() {
+    curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+    ln -s $HOME/.local/kitty.app/bin/kitty $$HOME/.local/bin/
+}
+
+# Build and install nnn from the source (+ file icon support <3)
+nnn() {
+    git clone https://github.com/jarun/nnn
+    cd nnn && make O_NERD=1 && sudo make install
+    rm -rf mpv
+}
+
+# Some cool packages
+packages() {
+	cargo install bat black fd-find tokei
+	python3 -m pip install black trash-cli
+}
+
+# Clone and set up Z Shell plugins from the source
+zsh() {
+    rm -rf "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-autosuggestions"
+    rm -rf "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-syntax-highlighting"
+    git clone https://github.com/zsh-users/zsh-autosuggestions \
+        "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-autosuggestions"
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting \
+        "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-syntax-highlighting"
+}
+
+# Help message
+help() {
+    printf "USAGE: \n\n \
+    setup [OPTION]\n\n \
+    --config   Install configuration files\n \
+    --ghcup    Install GHCup\n \
+    --kitty    Install kitty terminal emulator\n \
+    --nnn      Build and install nnn from the source (+ file icon support <3)\n \
+    --packages Install some cool packages\n \
+    --pyenv    Install pyenv\n \
+    --rustup   Install rustup\n \
+    --zsh      Clone and set up Z Shell plugins from the source\n"
+}
+
+case opt in
+    "--config") config;;
+    "--ghcup") curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh;;
+    "--kitty") kitty;;
+    "--nnn") nnn;;
+    "--packages") packages;;
+    "--pyenv") curl https://pyenv.run | bash;;
+    "--rustup") curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh;;
+    "--zsh") zsh;;
+    *) help;;
+esac
