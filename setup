@@ -22,7 +22,7 @@ kitty() {
 nnn() {
     git clone https://github.com/jarun/nnn
     cd nnn && make O_NERD=1 && sudo make install
-    rm -rf mpv
+    rm -rf nnn
 }
 
 # Some cool packages
@@ -55,7 +55,7 @@ help() {
     --zsh      Clone and set up Z Shell plugins from the source\n"
 }
 
-case opt in
+case $1 in
     "--config") config;;
     "--ghcup") curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh;;
     "--kitty") kitty;;
