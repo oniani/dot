@@ -75,7 +75,7 @@ cmp.setup({
             menu = {
                 nvim_lsp = "[LSP]",
                 buffer = "[Buffer]",
-                path = "[PATH]",
+                path = "[Path]",
                 latex_symbols = "[LaTeX]",
             },
         }),
