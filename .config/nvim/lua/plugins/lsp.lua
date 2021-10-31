@@ -34,9 +34,19 @@ local efm_config = {
     settings = {
         rootMarkers = { ".git/" },
         languages = {
-            lua = { { formatCommand = "stylua --indent-type Spaces -", formatStdin = true } },
-            markdown = { { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true } },
-            python = { { formatCommand = "black -", formatStdin = true } },
+            lua = {
+                {
+                    formatCommand = "stylua --column-width 100 --indent-type Spaces -",
+                    formatStdin = true,
+                },
+            },
+            markdown = {
+                {
+                    formatCommand = "prettier --print-width 100 --stdin-filepath ${INPUT}",
+                    formatStdin = true,
+                },
+            },
+            python = { { formatCommand = "black --line-length 100 -", formatStdin = true } },
         },
     },
 }

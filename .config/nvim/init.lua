@@ -9,6 +9,7 @@
 --
 -- Plugin-independent, general settings
 require("general.autocmds")
+require("general.colorscheme")
 require("general.mappings")
 require("general.options")
 
@@ -16,7 +17,5 @@ require("general.options")
 require("plugins.packer")
 require("plugins.fzf")
 require("plugins.lsp")
-require("plugins.lualine")
 require("plugins.neogit")
-require("plugins.tokyonight")
 require("plugins.treesitter")

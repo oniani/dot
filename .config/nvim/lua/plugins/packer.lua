@@ -26,10 +26,9 @@ return require("packer").startup({
         use("neovim/nvim-lspconfig")
         use("onsails/lspkind-nvim")
         use("williamboman/nvim-lsp-installer")
-        use({ "hrsh7th/nvim-cmp", requires = { "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-path" } })
-
-        -- Visuals
-        use("folke/tokyonight.nvim")
-        use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
+        use({
+            "hrsh7th/nvim-cmp",
+            requires = { "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-path" },
+        })
     end,
 })
