@@ -7,7 +7,7 @@
 # Install configuration files
 config() {
     cp -R .config $HOME
-    cp -R .local  $HOME
+    cp -R .local $HOME
     cp .zprofile $HOME
     mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}"
 }
@@ -27,8 +27,8 @@ nnn() {
 
 # Some cool packages
 packages() {
-	cargo install bat black fd-find tokei
-	python3 -m pip install black trash-cli
+    cargo install bat black fd-find tokei
+    python3 -m pip install black trash-cli
 }
 
 # Clone and set up Z Shell plugins from the source
