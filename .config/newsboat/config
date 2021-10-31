@@ -10,8 +10,7 @@
 #
 
 # General settings
-auto-reload yes
-browser open -a $BROWSER
+browser "open -a brave\\ browser '%u'"
 
 # Key bindings
 bind-key j down

@@ -4,19 +4,18 @@
 
 ## Setup
 
-All programs are chosen with simplicity in mind. Cross-platform programs that
-follow the UNIX philosophy are preferred. The setup is compliant with the
-[XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
+All programs are chosen with simplicity in mind. Cross-platform programs that follow the UNIX
+philosophy are preferred. The setup is compliant with the [XDG Base Directory Specification][xdg].
 
 Tools:
 
-- Browser: [Brave](https://github.com/brave/brave-browser)
-- Editor: [Neovim](https://github.com/neovim/neovim)
-- File Manager: [nnn](https://github.com/jarun/nnn)
-- Media Player: [mpv](https://github.com/mpv-player/mpv)
-- RSS Reader: [Newsboat](https://github.com/newsboat/newsboat)
-- Shell: [zsh](https://github.com/zsh-users/zsh)
-- Terminal: [kitty](https://github.com/kovidgoyal/kitty)
+- Browser: [Brave][brave]
+- Editor: [Neovim][neovim]
+- File Manager: [nnn][nnn]
+- Media Player: [mpv][mpv]
+- RSS Reader: [Newsboat][newsboat]
+- Shell: [zsh][zsh]
+- Terminal: [kitty][kitty]
 
 Automation:
 
@@ -27,3 +26,12 @@ $ ./setup --help
 ## License
 
 [MIT License](LICENSE)
+
+[xdg]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+[brave]: https://github.com/brave/brave-browser
+[neovim]: https://github.com/neovim/neovim
+[nnn]: https://github.com/jarun/nnn
+[mpv]: https://github.com/mpv-player/mpv
+[newsboat]: https://github.com/newsboat/newsboat
+[zsh]: https://github.com/zsh-users/zsh
+[kitty]: https://github.com/kovidgoyal/kitty

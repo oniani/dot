@@ -1,4 +1,5 @@
 vim.cmd([[
+
 " Clear `Normal` cterm values, so terminal emulators won't treat negative
 " space as extra whitespace (makes mouse-copy nicer).
 hi Normal cterm=NONE ctermfg=NONE ctermbg=NONE guifg=white guibg=black

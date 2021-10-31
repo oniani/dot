@@ -20,7 +20,7 @@ return require("packer").startup({
         use("tpope/vim-commentary")
         use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
         use({ "junegunn/fzf.vim", { "junegunn/fzf", run = ":call fzf#install()" } })
-        use({ "nvim-treesitter/nvim-treesitter", branch="0.5-compat", run = ":TSUpdate" })
+        use({ "nvim-treesitter/nvim-treesitter", branch = "0.5-compat", run = ":TSUpdate" })
 
         -- LSP
         use("neovim/nvim-lspconfig")
