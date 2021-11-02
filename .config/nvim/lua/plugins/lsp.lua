@@ -81,7 +81,7 @@ local function make_config(server_name, on_attach, engine)
     elseif server_name == "sumneko_lua" then
         local sumneko_path = vim.fn.stdpath("data") .. "/lsp_servers/sumneko_lua/extension/server"
         local sumneko_binary = sumneko_path .. "/bin/Linux/lua-language-server"
-        if vim.fn.has("macunix") then
+        if vim.fn.has("macunix") == 1 then
             sumneko_binary = sumneko_path .. "/bin/macOS/lua-language-server"
         end
         config.cmd = { sumneko_binary, "-E", sumneko_path .. "/main.lua" }
