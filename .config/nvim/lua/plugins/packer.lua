@@ -28,7 +28,14 @@ return require("packer").startup({
         use("williamboman/nvim-lsp-installer")
         use({
             "hrsh7th/nvim-cmp",
-            requires = { "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-path" },
+            requires = {
+                "L3MON4D3/LuaSnip",
+                "hrsh7th/cmp-buffer",
+                "hrsh7th/cmp-cmdline",
+                "hrsh7th/cmp-nvim-lsp",
+                "hrsh7th/cmp-path",
+                "saadparwaiz1/cmp_luasnip",
+            },
         })
     end,
 })

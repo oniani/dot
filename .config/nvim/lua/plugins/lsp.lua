@@ -51,6 +51,25 @@ local efm_config = {
     },
 }
 
+-- Configure sumneko_lua language server
+local sumneko_lua_settings = {
+    Lua = {
+        runtime = {
+            version = "LuaJIT",
+            path = vim.split(package.path, ";"),
+        },
+        diagnostics = {
+            globals = { "vim" },
+        },
+        workspace = {
+            library = vim.api.nvim_get_runtime_file("", true),
+        },
+        telemetry = {
+            enable = false,
+        },
+    },
+}
+
 -- Makes a custom config with the snippet support
 local function make_config(server_name, on_attach, engine)
     local capabilities = engine.update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -59,6 +78,14 @@ local function make_config(server_name, on_attach, engine)
         config.filetypes = efm_config.filetypes
         config.init_options = efm_config.init_options
         config.settings = efm_config.settings
+    elseif server_name == "sumneko_lua" then
+        local sumneko_path = vim.fn.stdpath("data") .. "/lsp_servers/sumneko_lua/extension/server"
+        local sumneko_binary = sumneko_path .. "/bin/Linux/lua-language-server"
+        if vim.fn.has("macunix") then
+            sumneko_binary = sumneko_path .. "/bin/macOS/lua-language-server"
+        end
+        config.cmd = { sumneko_binary, "-E", sumneko_path .. "/main.lua" }
+        config.settings = sumneko_lua_settings
     end
     return config
 end
@@ -74,6 +101,7 @@ cmp.setup({
             with_text = true,
             menu = {
                 nvim_lsp = "[LSP]",
+                luasnip = "[LuaSnip]",
                 buffer = "[Buffer]",
                 path = "[Path]",
                 latex_symbols = "[LaTeX]",
@@ -103,11 +131,33 @@ cmp.setup({
             end
         end,
     },
+    snippet = {
+        expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+        end,
+    },
     sources = {
         { name = "nvim_lsp" },
+        { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
     },
+})
+
+-- Use buffer source for `/` (if you enabled `native_menu`, this wont work anymore).
+cmp.setup.cmdline("/", {
+    sources = {
+        { name = "buffer" },
+    },
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this wont work anymore).
+cmp.setup.cmdline(":", {
+    sources = cmp.config.sources({
+        { name = "path" },
+    }, {
+        { name = "cmdline" },
+    }),
 })
 
 -- Use LSP configurations to set up the servers
@@ -115,7 +165,16 @@ local lsp_installer = require("nvim-lsp-installer")
 local lspconfig = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-local server_names = { "bashls", "clangd", "cmake", "efm", "gopls", "pyright", "rust_analyzer" }
+local server_names = {
+    "bashls",
+    "clangd",
+    "cmake",
+    "efm",
+    "gopls",
+    "pyright",
+    "rust_analyzer",
+    "sumneko_lua",
+}
 for _, server_name in ipairs(server_names) do
     local ok, server = lsp_installer.get_server(server_name)
     if ok then
