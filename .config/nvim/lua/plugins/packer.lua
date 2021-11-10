@@ -24,7 +24,6 @@ return require("packer").startup({
 
         -- LSP
         use("neovim/nvim-lspconfig")
-        use("onsails/lspkind-nvim")
         use("williamboman/nvim-lsp-installer")
         use({
             "hrsh7th/nvim-cmp",
@@ -37,5 +36,6 @@ return require("packer").startup({
                 "saadparwaiz1/cmp_luasnip",
             },
         })
+        use({ "onsails/lspkind-nvim", requires = "kyazdani42/nvim-web-devicons" })
     end,
 })
