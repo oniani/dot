@@ -72,7 +72,7 @@ alias rm="rm -i"
 # Z Shell Settings {{{
 
 # Set the prompt
-PS1="%F{111}%c %F{50}➜%F{reset_color} "
+PS1="%F{#7daea3}%c %F{#a9b665}➜%F{reset_color} "
 
 # Load and enable colors
 autoload -Uz colors && colors
