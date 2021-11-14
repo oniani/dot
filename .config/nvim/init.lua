@@ -15,7 +15,4 @@ require("general.options")
 
 -- Packer and plugins
 require("plugins.packer")
-require("plugins.fzf")
 require("plugins.lsp")
-require("plugins.neogit")
-require("plugins.treesitter")

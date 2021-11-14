@@ -1,4 +1,5 @@
--- Options to be set when attaching a language server
+-- Options to be set when attaching a language server {{{
+
 local on_attach = function(client, bufnr)
     local function keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -27,7 +28,10 @@ local on_attach = function(client, bufnr)
     end
 end
 
--- Configure efm language server
+--- }}}
+
+-- Configure efm language server {{{
+
 local efm_config = {
     filetypes = { "lua", "markdown", "python" },
     init_options = { documentFormatting = true },
@@ -51,7 +55,10 @@ local efm_config = {
     },
 }
 
--- Configure sumneko_lua language server
+-- }}}
+
+-- Configure sumneko_lua language server {{{
+
 local sumneko_lua_settings = {
     Lua = {
         runtime = {
@@ -70,7 +77,10 @@ local sumneko_lua_settings = {
     },
 }
 
--- Makes a custom config with the snippet support
+-- }}}
+
+-- Makes a custom config with the snippet support {{{
+
 local function make_config(server_name, on_attach, engine)
     local capabilities = engine.update_capabilities(vim.lsp.protocol.make_client_capabilities())
     local config = { capabilities = capabilities, on_attach = on_attach }
@@ -90,7 +100,10 @@ local function make_config(server_name, on_attach, engine)
     return config
 end
 
--- Set up nvim-cmp
+-- }}}
+
+-- Set up nvim-cmp {{{
+
 local cmp = require("cmp")
 local lspkind = require("lspkind")
 
@@ -160,7 +173,10 @@ cmp.setup.cmdline(":", {
     }),
 })
 
--- Use LSP configurations to set up the servers
+-- }}}
+
+-- Use LSP configurations to set up the servers {{{
+
 local lsp_installer = require("nvim-lsp-installer")
 local lspconfig = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -175,6 +191,7 @@ local server_names = {
     "rust_analyzer",
     "sumneko_lua",
 }
+
 for _, server_name in ipairs(server_names) do
     local ok, server = lsp_installer.get_server(server_name)
     if ok then
@@ -184,3 +201,5 @@ for _, server_name in ipairs(server_names) do
     end
     lspconfig[server_name].setup(make_config(server_name, on_attach, cmp_nvim_lsp))
 end
+
+-- }}}
