@@ -81,20 +81,14 @@ local sumneko_lua_settings = {
 
 -- Makes a custom config with the snippet support {{{
 
-local function make_config(server_name, on_attach, engine)
+local function make_config(server_name, on_attach_config, engine)
     local capabilities = engine.update_capabilities(vim.lsp.protocol.make_client_capabilities())
-    local config = { capabilities = capabilities, on_attach = on_attach }
+    local config = { capabilities = capabilities, on_attach = on_attach_config }
     if server_name == "efm" then
         config.filetypes = efm_config.filetypes
         config.init_options = efm_config.init_options
         config.settings = efm_config.settings
     elseif server_name == "sumneko_lua" then
-        local sumneko_path = vim.fn.stdpath("data") .. "/lsp_servers/sumneko_lua/extension/server"
-        local sumneko_binary = sumneko_path .. "/bin/Linux/lua-language-server"
-        if vim.fn.has("macunix") == 1 then
-            sumneko_binary = sumneko_path .. "/bin/macOS/lua-language-server"
-        end
-        config.cmd = { sumneko_binary, "-E", sumneko_path .. "/main.lua" }
         config.settings = sumneko_lua_settings
     end
     return config
@@ -178,7 +172,6 @@ cmp.setup.cmdline(":", {
 -- Use LSP configurations to set up the servers {{{
 
 local lsp_installer = require("nvim-lsp-installer")
-local lspconfig = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 local server_names = {
@@ -199,7 +192,7 @@ for _, server_name in ipairs(server_names) do
             server:install()
         end
     end
-    lspconfig[server_name].setup(make_config(server_name, on_attach, cmp_nvim_lsp))
+    server:setup(make_config(server_name, on_attach, cmp_nvim_lsp))
 end
 
 -- }}}
