@@ -1,32 +1,10 @@
--- Autoinstall packer.nvim {{{
-
--- Specify path and repository for packer.nvim
-local path = vim.fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
-local repo = "https://github.com/wbthomason/packer.nvim"
-
--- Clone packer.nvim
-if vim.fn.empty(vim.fn.glob(path)) > 0 then
-    vim.api.nvim_command(string.format("!git clone --depth 1 %s %s", repo, path))
-end
-
--- Required since packer.nvim is in opt pack
-vim.api.nvim_command("packadd packer.nvim")
-
--- }}}
-
--- Plugins {{{
-
+-- Plugins and related settings
 return require("packer").startup({
     function(use)
-        -- packer.nvim {{{
-
         -- NOTE: packer.nvim can manage itself
         use({ "wbthomason/packer.nvim", opt = true })
 
-        -- }}}
-
-        -- Productivity {{{
-
+        -- Productivity
         use("tpope/vim-commentary")
         use({
             "TimUntersberger/neogit",
@@ -57,10 +35,7 @@ return require("packer").startup({
             run = ":TSUpdate",
         })
 
-        -- }}}
-
-        -- LSP {{{
-
+        -- LSP
         use("neovim/nvim-lspconfig")
         use("onsails/lspkind-nvim")
         use("williamboman/nvim-lsp-installer")
@@ -76,19 +51,12 @@ return require("packer").startup({
             },
         })
 
-        -- }}}
-
-        -- Visuals {{{
-
+        -- Visuals
         use({
             "RRethy/nvim-base16",
             config = function()
                 vim.api.nvim_command("colorscheme base16-gruvbox-dark-hard")
             end,
         })
-
-        -- }}}
     end,
 })
-
--- }}}

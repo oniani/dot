@@ -16,22 +16,20 @@ local on_attach = function(client, bufnr)
     keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 
     if client.resolved_capabilities.document_formatting then
-        vim.api.nvim_exec(
-            [[
+        vim.cmd([[
             augroup AutoFormat
                 autocmd!
                 autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync()
             augroup END
-        ]],
-            false
-        )
+        ]])
     end
 end
 
---- }}}
+-- }}}
 
--- Configure efm language server {{{
+-- Language server configurations and settings {{{
 
+-- Configure efm language server
 local efm_config = {
     filetypes = { "lua", "markdown", "python" },
     init_options = { documentFormatting = true },
@@ -55,10 +53,7 @@ local efm_config = {
     },
 }
 
--- }}}
-
--- Configure sumneko_lua language server {{{
-
+-- Configure sumneko_lua language server
 local sumneko_lua_settings = {
     Lua = {
         runtime = {
@@ -77,10 +72,7 @@ local sumneko_lua_settings = {
     },
 }
 
--- }}}
-
--- Makes a custom config with the snippet support {{{
-
+-- Makes a custom config with the snippet support
 local function make_config(server_name, on_attach_config, engine)
     local capabilities = engine.update_capabilities(vim.lsp.protocol.make_client_capabilities())
     local config = { capabilities = capabilities, on_attach = on_attach_config }
@@ -151,14 +143,14 @@ cmp.setup({
     },
 })
 
--- Use buffer source for `/` (if you enabled `native_menu`, this wont work anymore).
+-- Use buffer source for `/` (if you enabled `native_menu`, this wont work anymore)
 cmp.setup.cmdline("/", {
     sources = {
         { name = "buffer" },
     },
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this wont work anymore).
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this wont work anymore)
 cmp.setup.cmdline(":", {
     sources = cmp.config.sources({
         { name = "path" },
