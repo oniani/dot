@@ -13,9 +13,6 @@ vim.api.nvim_set_keymap("n", "<Leader>s", "<Cmd>setlocal spell! spl=en_us<CR>", 
 -- Toggle line wrapping
 vim.api.nvim_set_keymap("n", "<Leader>w", "<Cmd>set wrap!<CR>", opts)
 
--- Make Y similar to C, D, etc.
-vim.api.nvim_set_keymap("n", "Y", "y$", opts)
-
 -- Buffer navigation
 vim.api.nvim_set_keymap("n", "<C-n>", "<Cmd>bn<CR>", opts)
 vim.api.nvim_set_keymap("n", "<C-p>", "<Cmd>bp<CR>", opts)

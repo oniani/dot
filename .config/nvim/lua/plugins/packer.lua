@@ -41,7 +41,6 @@ return require("packer").startup({
         })
         use({
             "nvim-treesitter/nvim-treesitter",
-            branch = "0.5-compat",
             config = function()
                 require("nvim-treesitter.configs").setup({
                     highlight = {

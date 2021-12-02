@@ -30,7 +30,6 @@ vim.opt.termguicolors = true
 -- Miscellaneous
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
-vim.opt.hidden = true
 vim.opt.mouse = "a"
 vim.opt.updatetime = 250
 vim.opt.wildmode = { "longest", "full", "full" }
