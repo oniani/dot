@@ -1,19 +1,16 @@
 -- Options to be set when attaching a language server {{{
 
 local on_attach = function(client, bufnr)
-    local function keymap(...)
-        vim.api.nvim_buf_set_keymap(bufnr, ...)
-    end
     local opts = { noremap = true, silent = true }
 
-    keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    keymap("n", "T", "<Cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-    keymap("n", "cn", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)
-    keymap("n", "dl", "<Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
-    keymap("n", "dn", "<Cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
-    keymap("n", "dp", "<Cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-    keymap("n", "dr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts)
-    keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "T", "<Cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "cn", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "dl", "<Cmd>lua vim.diagnostic.set_loclist()<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "dn", "<Cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "dp", "<Cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "dr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 
     if client.resolved_capabilities.document_formatting then
         vim.cmd([[
