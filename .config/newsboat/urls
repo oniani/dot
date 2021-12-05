@@ -8,12 +8,17 @@
 #  \__,_|_|  |_|___/
 #
 
-"● Individuals"
-https://karpathy.github.io/feed.xml  "~    Andrej Karpathy"
-https://www.davidoniani.com/rss.xml  "~    David Oniani"
-https://nassimtaleb.org/feed/        "~    Nassim Taleb"
+"● Websites"
+https://karpathy.github.io/feed.xml          "~    Andrej Karpathy"
+https://gamozolabs.github.io/feed.xml        "~    Brandon Falk (gamozo)"
+https://github.com/dabeaz/blog/releases.atom "~    David Beazley (dabeaz)"
+https://www.davidoniani.com/rss.xml          "~    David Oniani"
+https://nassimtaleb.org/feed/                "~    Nassim Taleb"
+
+"● Streams"
+https://twitchrss.appspot.com/vod/gamozo     "~    Brandon Falk (gamozo)"
 
 "● Reddit"
-https://www.reddit.com/r/artificial.rss  "~    /r/Artificial"
-https://www.reddit.com/r/neovim.rss      "~    /r/Neovim"
-https://www.reddit.com/r/rust.rss        "~    /r/Rust"
+https://www.reddit.com/r/artificial.rss      "~    /r/Artificial"
+https://www.reddit.com/r/neovim.rss          "~    /r/Neovim"
+https://www.reddit.com/r/rust.rss            "~    /r/Rust"
