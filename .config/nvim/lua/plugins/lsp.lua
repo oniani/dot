@@ -2,7 +2,6 @@
 
 local on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true }
-
     vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "T", "<Cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "cn", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)
@@ -12,6 +11,16 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "dr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+        vim.lsp.handlers.hover,
+        { border = "rounded" }
+    )
+
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+        vim.lsp.handlers.signature_help,
+        { border = "rounded", close_events = { "BufHidden", "CursorMoved", "InsertCharPre" } }
+    )
+
     if client.resolved_capabilities.document_formatting then
         vim.cmd([[
             augroup AutoFormat
@@ -20,10 +29,6 @@ local on_attach = function(client, bufnr)
             augroup END
         ]])
     end
-
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = "rounded",
-    })
 end
 
 -- }}}
