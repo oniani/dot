@@ -62,7 +62,7 @@ case $1 in
     "--nnn") nnn;;
     "--packages") packages;;
     "--pyenv") curl https://pyenv.run | bash;;
-    "--rustup") curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh;;
+    "--rustup") curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh;;
     "--zsh") zsh;;
     *) help;;
 esac
