@@ -56,7 +56,6 @@ export PAGER="less"
 export TERMINAL="kitty"
 
 # Miscellaneous settings
-export CLICOLOR=1
 export LC_ALL=en_US.UTF-8
 export LESSHISTFILE="-"
 export MANPAGER="nvim +Man!"

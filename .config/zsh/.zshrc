@@ -54,8 +54,8 @@ function colormap() {
 alias :q="exit"
 alias grep="grep --color=auto"
 alias icat="kitty +kitten icat"
-alias l="ls -A"
-alias ll="ls -Ahl"
+alias l="ls -A --color=auto"
+alias ll="ls -Ahl --color=auto"
 
 # Interactive
 alias e="nvim"
