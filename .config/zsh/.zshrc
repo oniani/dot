@@ -56,6 +56,7 @@ alias grep="grep --color=auto"
 alias icat="kitty +kitten icat"
 alias l="ls -A --color=auto"
 alias ll="ls -Ahl --color=auto"
+alias open="xdg-open"
 
 # Interactive
 alias e="nvim"
