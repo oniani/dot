@@ -1,1 +1,3 @@
 set selection-clipboard clipboard
+set window-height 1800
+set window-width 1400
