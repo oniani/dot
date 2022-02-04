@@ -1,0 +1,7 @@
+configuration {
+    font: "JetBrains Mono 20";
+    lines: 20;
+    show-icons: true;
+    theme: "gruvbox-dark-hard";
+    width: 2000;
+}
