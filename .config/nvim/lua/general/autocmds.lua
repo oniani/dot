@@ -13,3 +13,11 @@ vim.cmd([[
         autocmd TextYankPost * silent! lua vim.highlight.on_yank()
     augroup end
 ]])
+
+-- Recompile LaTeX document on save
+vim.cmd([[
+    augroup LaTeX
+        autocmd!
+        autocmd BufWritePost *.tex :silent !run %
+    augroup END
+]])
