@@ -36,3 +36,6 @@ vim.api.nvim_set_keymap("c", "<C-h>", "<Left>", opts)
 vim.api.nvim_set_keymap("c", "<C-j>", "<Down>", opts)
 vim.api.nvim_set_keymap("c", "<C-k>", "<Up>", opts)
 vim.api.nvim_set_keymap("c", "<C-l>", "<Right>", opts)
+
+-- Open PDF file with the same name
+vim.api.nvim_set_keymap("n", "<C-o>", "<Cmd>!xdg-open %:r.pdf<CR><CR>", opts)
