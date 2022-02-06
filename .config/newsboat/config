@@ -10,7 +10,7 @@
 #
 
 # General settings
-browser "open -a brave\\ browser '%u'"
+browser "brave-browser %u"
 
 # Key bindings
 bind-key j down
