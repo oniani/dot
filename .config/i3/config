@@ -28,6 +28,9 @@ exec --no-startup-id nitrogen --restore
 # Start picom compositor
 exec_always picom --config ~/.config/picom/picom.conf
 
+# Disable second monitor
+xrandr --output eDP-1-1 --off
+
 # }}}
 
 # General Mappings {{{
