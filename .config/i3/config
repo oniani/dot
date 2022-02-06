@@ -25,6 +25,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Set the wallpaper
 exec --no-startup-id nitrogen --restore
 
+# Start picom compositor
+exec_always picom --config ~/.config/picom/picom.conf
+
 # }}}
 
 # General Mappings {{{
