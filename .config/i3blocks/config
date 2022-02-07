@@ -1,7 +1,7 @@
 # ML News
 [button]
 full_text=🤖 Machine Learning
-command=echo "🤖 Machine Learning" && brave-browser "https://www.reddit.com/r/MachineLearning"
+command=echo "🤖 Machine Learning" && brave-browser "https://www.reddit.com/r/MachineLearning" --incognito --force-device-scale-factor=1.4
 color=#9ba6ad
 
 # Corona stats
