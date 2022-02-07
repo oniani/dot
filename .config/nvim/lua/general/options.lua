@@ -26,6 +26,7 @@ vim.opt.lazyredraw = true
 vim.opt.number = true
 vim.opt.signcolumn = "number"
 vim.opt.termguicolors = true
+vim.opt.textwidth = 100
 
 -- Miscellaneous
 vim.opt.clipboard = "unnamedplus"

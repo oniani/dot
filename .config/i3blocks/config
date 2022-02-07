@@ -1,0 +1,51 @@
+# ML News
+[button]
+full_text=🤖 Machine Learning
+command=echo "🤖 Machine Learning" && brave-browser "https://www.reddit.com/r/MachineLearning"
+color=#9ba6ad
+
+# Corona stats
+[corona]
+command=~/.local/bin/corona
+interval=once
+color=#e84f4f
+
+# Update Bitcoin price every hour
+[bitcoin]
+command=printf "₿ $%0.2f\n" "$(curl -Ls rate.sx/1BTC)"
+interval=3600
+color=#f7931a
+
+# Guess the weather every hour
+[weather]
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo "⛅"
+interval=3600
+color=#A4C2F4
+
+# Update the time every second
+[time]
+command=echo "🕒 $(date "+%I:%M:%S %p")"
+interval=1
+
+# Update the date every hour
+[date]
+command=echo "📆 $(date "+%a, %b %d, %Y")"
+interval=3600
+
+# Update the battery charge every 15 minutes
+[volume]
+command=echo "🔊 $(amixer sget Master | awk -F"[][]" '/dB/ { print $2 }')"
+interval=5
+color=#5baff3
+
+# Update the battery charge every 15 minutes
+[battery]
+command=echo "🔋 $(cat /sys/class/power_supply/BAT0/capacity)%"
+interval=450
+color=#8db600
+
+# Query my default IP address only on startup
+[ip]
+command=echo "🌐 $(hostname -i | awk '{ print "IP:" $1 }')"
+interval=once
+color=#91e78b
