@@ -28,6 +28,9 @@ exec --no-startup-id nitrogen --restore
 # Start picom compositor
 exec_always picom --config ~/.config/picom/picom.conf
 
+# Set the keyboard types and easily switch between them
+exec_always setxkbmap -option grp:alt_shift_toggle -layout us,ru -variant ,phonetic_winkeys
+
 # }}}
 
 # General Mappings {{{

@@ -32,6 +32,12 @@ interval=1
 command=echo "📆 $(date "+%a, %b %d, %Y")"
 interval=3600
 
+# Current human language
+[language]
+command=echo "🌎 $(setxkbmap -query | awk '/layout/{print $2}')"
+interval=5
+color=#77d999
+
 # Update the battery charge every 15 minutes
 [volume]
 command=echo "🔊 $(amixer sget Master | awk -F"[][]" '/dB/ { print $2 }')"
