@@ -33,20 +33,13 @@ exec_always setxkbmap -option grp:alt_shift_toggle -layout us,ru -variant ,phone
 
 # }}}
 
-# General Mappings {{{
+# Default Mappings {{{
 
 # Set the mod key
 set $mod Mod4
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
-# Start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-
-# Start a program launcher
-bindsym $mod+Tab exec rofi -show window
-bindsym $mod+f exec "rofi -modi drun,run -show drun"
 
 # Change focus
 bindsym $mod+h focus left
@@ -60,16 +53,13 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# Change container layout (stacked, tabbed, toggle split)
-bindsym $mod+c layout toggle split
-bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
+# Change layouts (toggle split, stacking, and tabbed)
+bindsym $mod+Shift+c layout toggle split
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+t layout tabbed
 
-# Split in horizontal orientation
-bindsym $mod+i split h
-
-# Split in vertical orientation
-bindsym $mod+v split v
+# Toggle vertical/horizontal split
+bindsym $mod+Shift+v split toggle
 
 # Enter fullscreen mode for the focused container
 bindsym $mod+Shift+f fullscreen toggle
@@ -83,14 +73,25 @@ bindsym $mod+Shift+space focus mode_toggle
 # Kill focused window
 bindsym $mod+Shift+q kill
 
-# Reload the configuration file
-bindsym $mod+Shift+c reload
-
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+# Start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
 # Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# }}}
+
+# Program Mappings {{{
+
+# Start a program launcher
+bindsym $mod+Tab exec rofi -show window
+bindsym $mod+f exec "rofi -modi drun,run -show drun"
+
+# Take a screenshot
+bindsym --release $mod+s exec scrot -s ~/screenshots/%Y-%m-%d-%H-%M-%S.png
 
 # }}}
 

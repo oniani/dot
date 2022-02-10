@@ -38,16 +38,16 @@ command=echo "🌎 $(setxkbmap -query | awk '/layout/{print $2}')"
 interval=5
 color=#77d999
 
-# Update the battery charge every 15 minutes
+# Update the volume every 5 seconds
 [volume]
 command=echo "🔊 $(amixer sget Master | awk -F"[][]" '/dB/ { print $2 }')"
 interval=5
 color=#5baff3
 
-# Update the battery charge every 15 minutes
+# Update battery life every 15 minutes
 [battery]
 command=echo "🔋 $(cat /sys/class/power_supply/BAT0/capacity)%"
-interval=450
+interval=900
 color=#8db600
 
 # Query my default IP address only on startup
