@@ -38,10 +38,11 @@ command=echo "🌎 $(setxkbmap -query | awk '/layout/{print $2}')"
 interval=5
 color=#77d999
 
-# Update the volume every 5 seconds
+# Update the volume
 [volume]
 command=echo "🔊 $(amixer sget Master | awk -F"[][]" '/dB/ { print $2 }')"
-interval=5
+interval=once
+signal=10
 color=#5baff3
 
 # Update battery life every 15 minutes
