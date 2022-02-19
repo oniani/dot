@@ -18,7 +18,7 @@ color=#f7931a
 
 # Guess the weather every hour
 [weather]
-command=curl -Ss "https://wttr.in/Palo+Alto?format=2"
+command=curl "https://wttr.in/Palo+Alto?format=2"
 interval=3600
 color=#A4C2F4
 
