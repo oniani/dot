@@ -71,8 +71,10 @@ return require("packer").startup({
         use({
             "Mofiqul/vscode.nvim",
             config = function()
+                vim.g.vscode_style = "dark"
+                vim.g.vscode_transparent = 1
                 vim.cmd("colorscheme vscode")
-            end
+            end,
         })
     end,
 })
