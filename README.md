@@ -12,7 +12,9 @@ Tools:
 - Browser: [Brave][brave]
 - Editor: [Neovim][neovim]
 - File Manager: [nnn][nnn]
+- Image viewer: [qimgv][qimgv]
 - Media Player: [mpv][mpv]
+- PDF Viewer: [zathura][zathura]
 - RSS Reader: [Newsboat][newsboat]
 - Shell: [zsh][zsh]
 - Terminal: [kitty][kitty]
@@ -31,7 +33,9 @@ $ ./setup --help
 [brave]: https://github.com/brave/brave-browser
 [neovim]: https://github.com/neovim/neovim
 [nnn]: https://github.com/jarun/nnn
+[qimgv]: https://github.com/easymodo/qimgv
 [mpv]: https://github.com/mpv-player/mpv
+[zathura]: https://en.wikipedia.org/wiki/Zathura_(document_viewer)
 [newsboat]: https://github.com/newsboat/newsboat
 [zsh]: https://github.com/zsh-users/zsh
 [kitty]: https://github.com/kovidgoyal/kitty
