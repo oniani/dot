@@ -29,15 +29,15 @@ exec --no-startup-id nitrogen --restore
 exec_always picom --config ~/.config/picom/picom.conf
 
 # Map Caps Lock to escape
-exec_always setxkbmap -option ctrl:swapcaps
+# exec_always setxkbmap -option ctrl:swapcaps
 
 # }}}
 
 # Default Mappings {{{
 
 # Set the mod key
-set $mod Mod1
-# set $mod Mod4
+# set $mod Mod1
+set $mod Mod4
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
