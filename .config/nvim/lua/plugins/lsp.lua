@@ -10,6 +10,7 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "dp", "<Cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "dr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "ta", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
         vim.lsp.handlers.hover,
