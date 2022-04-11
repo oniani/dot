@@ -1,23 +1,20 @@
 -- Equalize splits when resized
-vim.cmd([[
-    augroup AutoResize
-        autocmd!
-        autocmd VimResized * wincmd =
-    augroup end
-]])
-
--- Highlight on yank
-vim.cmd([[
-    augroup YankHighlight
-        autocmd!
-        autocmd TextYankPost * silent! lua vim.highlight.on_yank()
-    augroup end
-]])
+vim.api.nvim_create_augroup("AutoResize", { clear = false })
+vim.api.nvim_create_autocmd("VimResized *", {
+    command = "wincmd =",
+    group = "AutoResize",
+})
 
 -- Recompile LaTeX document on save
-vim.cmd([[
-    augroup LaTeX
-        autocmd!
-        autocmd BufWritePost *.tex :silent !run %
-    augroup END
-]])
+vim.api.nvim_create_augroup("AutoSave", { clear = false })
+vim.api.nvim_create_autocmd("BufWritePost *.tex,*.dot", {
+    command = "silent !run %",
+    group = "AutoSave",
+})
+
+-- Highlight on yank
+vim.api.nvim_create_augroup("YankHighlight", { clear = false })
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = vim.highlight.on_yank,
+    group = "YankHighlight",
+})
