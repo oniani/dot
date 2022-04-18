@@ -27,16 +27,16 @@ return require("packer").startup({
             "TimUntersberger/neogit",
             requires = "nvim-lua/plenary.nvim",
             config = {
-                vim.api.nvim_set_keymap("n", "<Leader>g", "<Cmd>Neogit<CR>", { noremap = true }),
+                vim.keymap.set("n", "<Leader>g", "<Cmd>Neogit<CR>", { noremap = true }),
             },
         })
         use({
             "junegunn/fzf.vim",
             { "junegunn/fzf", run = ":call fzf#install()" },
             config = {
-                vim.api.nvim_set_keymap("n", "<Leader>f", "<Cmd>Files<CR>", { noremap = true }),
-                vim.api.nvim_set_keymap("n", "<Leader>l", "<Cmd>Lines<CR>", { noremap = true }),
-                vim.api.nvim_set_keymap("n", "<Leader>r", "<Cmd>Rg<CR>", { noremap = true }),
+                vim.keymap.set("n", "<Leader>f", "<Cmd>Files<CR>", { noremap = true }),
+                vim.keymap.set("n", "<Leader>l", "<Cmd>Lines<CR>", { noremap = true }),
+                vim.keymap.set("n", "<Leader>r", "<Cmd>Rg<CR>", { noremap = true }),
             },
         })
         use({
