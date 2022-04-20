@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd("VimResized *", {
 
 -- Recompile LaTeX document on save
 vim.api.nvim_create_augroup("AutoSave", { clear = false })
-vim.api.nvim_create_autocmd("BufWritePost *.tex,*.dot", {
+vim.api.nvim_create_autocmd("BufWritePost *.tex", {
     command = "silent !run %",
     group = "AutoSave",
 })
