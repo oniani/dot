@@ -69,11 +69,10 @@ return require("packer").startup({
 
         -- Visuals
         use({
-            "Mofiqul/vscode.nvim",
+            "rebelot/kanagawa.nvim",
             config = function()
-                vim.g.vscode_style = "dark"
-                vim.g.vscode_transparent = 1
-                vim.cmd("colorscheme vscode")
+                vim.cmd("colorscheme kanagawa")
+                vim.cmd("hi! Normal guibg=none")
             end,
         })
     end,
