@@ -54,10 +54,8 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# Change layouts (toggle split, stacking, and tabbed)
+# Toggle split layout
 bindsym $mod+Shift+c layout toggle split
-bindsym $mod+Shift+s layout stacking
-bindsym $mod+Shift+t layout tabbed
 
 # Toggle vertical/horizontal split
 bindsym $mod+Shift+v split toggle
@@ -92,7 +90,8 @@ bindsym $mod+Tab exec rofi -show window
 bindsym $mod+f exec "rofi -modi drun,run -show drun"
 
 # Take a screenshot
-bindsym --release $mod+s exec scrot -s ~/screenshots/%Y-%m-%d-%H-%M-%S.png
+bindsym --release $mod+s exec --no-startup-id flameshot gui --path ~/screenshots
+bindsym --release $mod+Shift+s exec --no-startup-id flameshot full --path ~/screenshots
 
 # }}}
 
@@ -128,14 +127,14 @@ bindsym $mod+Shift+0 move container to workspace number 10
 
 # Resize window (can also use the mouse for this)
 mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -156,6 +155,6 @@ bar {
 
 gaps inner 8
 gaps outer 8
-# smart_gaps on
+smart_gaps on
 
 # }}}

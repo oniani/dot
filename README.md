@@ -16,6 +16,7 @@ Tools:
 - Media Player: [mpv][mpv]
 - PDF Viewer: [zathura][zathura]
 - RSS Reader: [Newsboat][newsboat]
+- Screenshot Utility: [Flameshot][flameshot]
 - Shell: [zsh][zsh]
 - Terminal: [kitty][kitty]
 
@@ -37,5 +38,6 @@ $ ./setup --help
 [mpv]: https://github.com/mpv-player/mpv
 [zathura]: https://en.wikipedia.org/wiki/Zathura_(document_viewer)
 [newsboat]: https://github.com/newsboat/newsboat
+[flameshot]: https://github.com/flameshot-org/flameshot
 [zsh]: https://github.com/zsh-users/zsh
 [kitty]: https://github.com/kovidgoyal/kitty
