@@ -30,7 +30,7 @@ endif()
 
 include("cmake/tooling.cmake")
 
-option(BUILD_EXECUTABLE "Enable building an executable" ON)
+option(BUILD_EXECUTABLE "Enable building an executable" OFF)
 if(BUILD_EXECUTABLE)
   message(STATUS "Building an executable")
   add_executable(${PROJECT_NAME} main.cpp)
