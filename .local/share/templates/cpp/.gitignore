@@ -1,12 +1,41 @@
-# Created by https://www.toptal.com/developers/gitignore/api/c++,linux,vim,cmake
-# Edit at https://www.toptal.com/developers/gitignore?templates=c++,linux,vim,cmake
+# Created by https://www.toptal.com/developers/gitignore/api/c++,linux,cmake
+# Edit at https://www.toptal.com/developers/gitignore?templates=c++,linux,cmake
 
 ### C++ ###
 # Prerequisites
 *.d
 
 # Compiled Object files
-*.slCMake ###
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+### CMake ###
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
@@ -19,13 +48,11 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 build
+.cache
 
 ### CMake Patch ###
 # External projects
 *-prefix/
-
-### clangd ###
-.cache
 
 ### Linux ###
 *~
@@ -42,24 +69,4 @@ build
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-### Vim ###
-# Swap
-[._]*.s[a-v][a-z]
-!*.svg  # comment out if you don't need vector files
-[._]*.sw[a-p]
-[._]s[a-rt-v][a-z]
-[._]ss[a-gi-z]
-[._]sw[a-p]
-
-# Session
-Session.vim
-Sessionx.vim
-
-# Temporary
-.netrwhist
-# Auto-generated tag files
-tags
-# Persistent undo
-[._]*.un~
-
-# End of https://www.toptal.com/developers/gitignore/api/c++,linux,vim,cmake
+# End of https://www.toptal.com/developers/gitignore/api/c++,linux,cmake
