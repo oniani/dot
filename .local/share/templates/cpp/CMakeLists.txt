@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 project(
-  lib
+  project
   VERSION 0.0.1
   DESCRIPTION "Description"
   HOMEPAGE_URL "https://github.com/oniani"
