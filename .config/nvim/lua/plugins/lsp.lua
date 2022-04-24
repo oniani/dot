@@ -82,7 +82,9 @@ local sumneko_lua_settings = {
 local function make_config(server_name, on_attach_config, engine)
     local capabilities = engine.update_capabilities(vim.lsp.protocol.make_client_capabilities())
     local config = { capabilities = capabilities, on_attach = on_attach_config }
-    if server_name == "efm" then
+    if server_name == "clangd" then
+        config.init_options = { fallbackFlags = { "--std=c++20" } }
+    elseif server_name == "efm" then
         config.filetypes = efm_config.filetypes
         config.init_options = efm_config.init_options
         config.settings = efm_config.settings
