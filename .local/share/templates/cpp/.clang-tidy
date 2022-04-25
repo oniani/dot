@@ -3,6 +3,7 @@ Checks: >-
   cppcoreguidelines-*,
   -cppcoreguidelines-avoid-magic-numbers,
   performance-*,
+  portability-*,
   readability-*,
   -readability-identifier-length,
   -readability-magic-numbers
