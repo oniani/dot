@@ -37,17 +37,11 @@ end
 
 -- Configure efm language server
 local efm_config = {
-    filetypes = { "lua", "markdown", "python" },
+    filetypes = { "markdown", "python" },
     init_options = { documentFormatting = true },
     settings = {
         rootMarkers = { ".git/" },
         languages = {
-            lua = {
-                {
-                    formatCommand = "stylua --column-width 100 --indent-type Spaces -",
-                    formatStdin = true,
-                },
-            },
             markdown = {
                 {
                     formatCommand = "prettier --print-width 100 --stdin-filepath ${INPUT}",
