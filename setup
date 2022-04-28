@@ -15,7 +15,7 @@ config() {
 # Install kitty terminal emulator
 kitty() {
     curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-    ln -s $HOME/.local/kitty.app/bin/kitty $$HOME/.local/bin/
+    ln -sf $HOME/.local/kitty.app/bin/kitty $HOME/.local/bin/
 }
 
 # Build and install nnn from the source (+ file icon support <3)
