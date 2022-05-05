@@ -37,7 +37,9 @@ vim.api.nvim_create_autocmd("VimResized *", {
 
 -- Highlights on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-    callback = vim.highlight.on_yank,
+    callback = function()
+        vim.highlight.on_yank()
+    end,
     group = miscellaneous,
     pattern = "*",
 })
