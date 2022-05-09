@@ -26,11 +26,13 @@ color=#A4C2F4
 [time]
 command=echo "🕒 $(date "+%I:%M:%S %p")"
 interval=1
+color=#9ba6ad
 
 # Update the date every hour
 [date]
 command=echo "📆 $(date "+%a, %b %d, %Y")"
 interval=3600
+color=#9ba6ad
 
 # Update the volume
 [volume]
