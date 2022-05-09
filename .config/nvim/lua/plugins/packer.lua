@@ -22,7 +22,10 @@ return require("packer").startup({
         use({ "wbthomason/packer.nvim", opt = true })
 
         -- Productivity
-        use("tpope/vim-commentary")
+        use({
+            "numToStr/Comment.nvim",
+            config = require("Comment").setup()
+        })
         use({
             "TimUntersberger/neogit",
             requires = "nvim-lua/plenary.nvim",
