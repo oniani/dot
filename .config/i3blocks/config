@@ -46,9 +46,3 @@ color=#5baff3
 command=echo "🔋 $(cat /sys/class/power_supply/BAT0/capacity)%"
 interval=900
 color=#8db600
-
-# Query my default IP address only on startup
-[ip]
-command=echo "🌐 $(hostname -i | awk '{ print "IP:" $1 }')"
-interval=once
-color=#91e78b
