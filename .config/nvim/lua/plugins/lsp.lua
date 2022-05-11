@@ -72,28 +72,13 @@ local sumneko_lua_settings = {
     },
 }
 
--- Makes a custom config with the snippet support
-local function make_config(server_name, on_attach_config, engine)
-    local capabilities = engine.update_capabilities(vim.lsp.protocol.make_client_capabilities())
-    local config = { capabilities = capabilities, on_attach = on_attach_config }
-    if server_name == "clangd" then
-        config.init_options = { fallbackFlags = { "--std=c++20" } }
-    elseif server_name == "efm" then
-        config.filetypes = efm_config.filetypes
-        config.init_options = efm_config.init_options
-        config.settings = efm_config.settings
-    elseif server_name == "sumneko_lua" then
-        config.settings = sumneko_lua_settings
-    end
-    return config
-end
-
 -- }}}
 
 -- Set up nvim-cmp {{{
 
 local cmp = require("cmp")
 local lspkind = require("lspkind")
+local luasnip = require("luasnip")
 
 cmp.setup({
     experimental = { ghost_text = true },
@@ -109,32 +94,39 @@ cmp.setup({
             },
         }),
     },
-    mapping = {
+    mapping = cmp.mapping.preset.insert({
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-u>"] = cmp.mapping.scroll_docs(4),
         ["<C-o>"] = cmp.mapping.complete(),
         ["<C-c>"] = cmp.mapping.close(),
         ["<C-j>"] = cmp.mapping.select_next_item(),
         ["<C-k>"] = cmp.mapping.select_prev_item(),
-        ["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-        ["<Tab>"] = function(fallback)
+        ["<CR>"] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+        },
+        ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
             else
                 fallback()
             end
-        end,
-        ["<S-Tab>"] = function(fallback)
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
             else
                 fallback()
             end
-        end,
-    },
+        end, { "i", "s" }),
+    }),
     snippet = {
         expand = function(args)
-            require("luasnip").lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
         end,
     },
     sources = {
@@ -169,28 +161,53 @@ cmp.setup.cmdline(":", {
 
 -- Use LSP configurations to set up the servers {{{
 
-local lsp_installer = require("nvim-lsp-installer")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
+local lspconfig = require("lspconfig")
+local lspinstaller = require("nvim-lsp-installer")
 
-local server_names = {
-    "bashls",
-    "clangd",
-    "cmake",
-    "efm",
-    "gopls",
-    "pyright",
-    "rust_analyzer",
-    "sumneko_lua",
+lspinstaller.setup {
+    ensure_installed = {
+        "bashls",
+        "clangd",
+        "cmake",
+        "efm",
+        "pyright",
+        "rust_analyzer",
+        "sumneko_lua",
+    },
+    automatic_installation = true,
 }
 
-for _, server_name in ipairs(server_names) do
-    local ok, server = lsp_installer.get_server(server_name)
-    if ok then
-        if not server:is_installed() then
-            server:install()
-        end
+local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+for _, server in ipairs(lspinstaller.get_installed_servers()) do
+    local server_name = server.name
+
+    if server_name == "clangd" then
+        lspconfig[server.name].setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            fallbackFlags = { "--std=c++20" },
+        }
+    elseif server_name == "efm" then
+        lspconfig[server.name].setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            filetypes = efm_config.filetypes,
+            init_options = efm_config.init_options,
+            settings = efm_config.settings,
+        }
+    elseif server_name == "sumneko_lua" then
+        lspconfig[server.name].setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = sumneko_lua_settings,
+        }
+    else
+        lspconfig[server.name].setup {
+            capabilities = capabilities,
+            on_attach = on_attach
+        }
     end
-    server:setup(make_config(server_name, on_attach, cmp_nvim_lsp))
 end
 
 -- }}}
