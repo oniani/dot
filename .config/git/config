@@ -49,7 +49,7 @@
     cmd = "nvim -d \"$REMOTE\" \"$LOCAL\" \"$MERGED\" -c 'wincmd w' -c 'wincmd J'"
 
 [alias]
-    l = "git log --all --graph --stat --pretty=format:'%C(red)%h%Creset -%C(blue)%d%Creset %C(yellow)%s%Creset %C(bold blue)by %an <%ae> %C(green)(%cr)%Creset'"
+    l = "log --all --graph --stat --pretty=format:'%C(red)%h%Creset -%C(blue)%d%Creset %C(yellow)%s%Creset %C(bold blue)by %an <%ae> %C(green)(%cr)%Creset'"
     stashls = "stash list"
     stashget = "!f() { git stash apply $(git stash list | grep $1 | cut -d ':' -f 1); }; f"
     stashpop = "!f() { git stash pop $(git stash list | grep $1 | cut -d ':' -f 1); }; f"
