@@ -27,7 +27,7 @@ nnn() {
 
 # Some cool packages
 packages() {
-    cargo install bat black fd-find tokei
+    cargo install bat fd-find tokei
     python3 -m pip install black trash-cli
 }
 
