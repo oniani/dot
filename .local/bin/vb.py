@@ -2,10 +2,7 @@
 import argparse
 import os
 
-from dataclasses import dataclass
 
-
-@dataclass(frozen=True)
 class VisualBar:
     blk: str = "\u2588"
 
@@ -13,14 +10,16 @@ class VisualBar:
         """Formats and prints the visual bar."""
 
         used = round(out / 10)
-        string = f"{name} [{self.blk * used} {' ' * (10 - used)}] {out}{end}"
+        string = f"{name} [{self.blk * used}{' ' * (10 - used)}] {out}{end}"
         print(string)
 
-    def audio(self) -> None:
-        """Displays the audio level."""
+    def volume(self) -> None:
+        """Displays the volume level."""
 
-        audio = int(os.popen("amixer sget Master | awk -F\"[][]\" '/dB/ { print $2 }'").read()[:-2])
-        self.fmt_print(out=audio, name="audio")
+        volume = int(
+            os.popen("amixer sget Master | awk -F\"[][]\" '/dB/ { print $2 }'").read()[:-2]
+        )
+        self.fmt_print(out=volume, name="volume")
 
     def battery(self) -> None:
         """Displays the battery status."""
@@ -48,8 +47,8 @@ def main() -> None:
         vb.battery()
     elif vb_type == "disk":
         vb.disk()
-    elif vb_type == "audio":
-        vb.audio()
+    elif vb_type == "volume":
+        vb.volume()
 
 
 if __name__ == "__main__":

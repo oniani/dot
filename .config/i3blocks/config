@@ -16,20 +16,20 @@ color=#f7931a
 [weather]
 command=curl "https://wttr.in/Palo+Alto?format=2"
 interval=3600
-color=#A4C2F4
+color=#a4c2f4
 
 [time]
-command=echo "🕒 $(date "+%I:%M:%S %p")"
+command=date "+%I:%M:%S %p"
 interval=1
-color=#9ba6ad
+color=#a4c2f4
 
 [date]
-command=echo "📆 $(date "+%a, %b %d, %Y")"
+command=date "+%a, %b %d, %Y"
 interval=3600
-color=#9ba6ad
+color=#a4c2f4
 
 [volume]
-command=~/.local/bin/vb.py --type audio 
+command=~/.local/bin/vb.py --type volume 
 interval=once
 signal=10
 color=#5baff3
