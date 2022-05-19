@@ -58,4 +58,9 @@
     uncommit = "!f() { git reset --soft HEAD~$1; }; f"
 
 [credential]
+    # NOTE: Perform the steps below first.
+    #
+    # sudo apt install libsecret-1-0 libsecret-1-dev
+    # cd /usr/share/doc/git/contrib/credential/libsecret
+    # sudo make
 	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
