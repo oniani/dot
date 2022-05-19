@@ -18,6 +18,13 @@ kitty() {
     ln -sf $HOME/.local/kitty.app/bin/kitty $HOME/.local/bin/
 }
 
+# Installs Nerd Fonts
+nerd_fonts() {
+    git clone https://github.com/ryanoasis/nerd-fonts
+    cd nerd-fonts && sudo ./install.sh
+    cd .. && rm -rf nerd-fonts
+}
+
 # Build and install nnn from the source (+ file icon support <3)
 nnn() {
     git clone https://github.com/jarun/nnn
@@ -45,20 +52,22 @@ zsh() {
 help() {
     printf "USAGE: \n\n \
     setup [OPTION]\n\n \
-    --config   Install configuration files\n \
-    --ghcup    Install GHCup\n \
-    --kitty    Install kitty terminal emulator\n \
-    --nnn      Build and install nnn from the source (+ file icon support <3)\n \
-    --packages Install some cool packages\n \
-    --pyenv    Install pyenv\n \
-    --rustup   Install rustup\n \
-    --zsh      Clone and set up Z Shell plugins from the source\n"
+    --config    Install configuration files\n \
+    --ghcup     Install GHCup\n \
+    --kitty     Install kitty terminal emulator\n \
+    --nerdfonts Installs Nerd Fonts\n \
+    --nnn       Build and install nnn from the source (+ file icon support <3)\n \
+    --packages  Install some cool packages\n \
+    --pyenv     Install pyenv\n \
+    --rustup    Install rustup\n \
+    --zsh       Clone and set up Z Shell plugins from the source\n"
 }
 
 case $1 in
     "--config") config;;
     "--ghcup") curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh;;
     "--kitty") kitty;;
+    "--nerdfonts") nerd_fonts;;
     "--nnn") nnn;;
     "--packages") packages;;
     "--pyenv") curl https://pyenv.run | bash;;
