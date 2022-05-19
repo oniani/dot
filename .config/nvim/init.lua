@@ -16,6 +16,3 @@ require("general.options")
 -- Plugin settings
 require("plugins.packer")
 require("plugins.lsp")
-
-require("kanagawa").setup({ colors = { bg = "#0e0e11" } })
-vim.cmd("colorscheme kanagawa")
