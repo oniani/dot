@@ -24,7 +24,9 @@ return require("packer").startup({
         -- Productivity
         use({
             "numToStr/Comment.nvim",
-            config = require("Comment").setup()
+            config = function()
+                require("Comment").setup()
+            end
         })
         use({
             "TimUntersberger/neogit",
