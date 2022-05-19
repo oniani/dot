@@ -1,5 +1,5 @@
 configuration {
-    font: "JetBrains Mono 32";
+    font: "JetBrainsMono Nerd Font Mono 32";
     show-icons: true;
 
     kb-move-char-back: "Control+u";
