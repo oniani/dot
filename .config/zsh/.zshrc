@@ -54,8 +54,8 @@ function colormap() {
 alias :q="exit"
 alias grep="grep --color=auto"
 alias icat="kitty +kitten icat"
-alias l="ls -Av --color=auto"
-alias ll="ls -Ahlv --color=auto"
+alias l="ls -Av --color=auto --group-directories-first"
+alias ll="ls -Ahlv --color=auto --group-directories-first"
 alias open="xdg-open"
 
 # Interactive
