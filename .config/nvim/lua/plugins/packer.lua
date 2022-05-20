@@ -20,15 +20,15 @@ return require("packer").startup({
 
         -- Productivity
         use {
+            "TimUntersberger/neogit",
+            requires = "nvim-lua/plenary.nvim",
+            config = { vim.keymap.set("n", "<Leader>g", "<Cmd>Neogit<CR>", { noremap = true }) }
+        }
+        use {
             "numToStr/Comment.nvim",
             config = function()
                 require("Comment").setup()
             end
-        }
-        use {
-            "TimUntersberger/neogit",
-            requires = "nvim-lua/plenary.nvim",
-            config = { vim.keymap.set("n", "<Leader>g", "<Cmd>Neogit<CR>", { noremap = true }) }
         }
         use {
             "junegunn/fzf.vim",
@@ -65,10 +65,17 @@ return require("packer").startup({
 
         -- Visuals
         use {
+            "nvim-lualine/lualine.nvim",
+            requires = { "kyazdani42/nvim-web-devicons", opt = true },
+            config = function()
+                require("lualine").setup { options = { theme = "kanagawa" } }
+            end
+        }
+        use {
             "rebelot/kanagawa.nvim",
             config = function()
-		require("kanagawa").setup({ colors = { bg = "#0e0e11" } })
-		vim.cmd("colorscheme kanagawa")
+                require("kanagawa").setup({ colors = { bg = "#0e0e11" } })
+                vim.cmd("colorscheme kanagawa")
             end
         }
     end
