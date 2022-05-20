@@ -1,6 +1,16 @@
+[date]
+command=date "+%a %b %d %Y"
+interval=3600
+color=#8ba8f0
+
+[time]
+command=date "+%I:%M:%S %p"
+interval=1
+color=#8ba8f0
+
 [button]
 full_text=🤖 Machine Learning
-command=echo "🤖 Machine Learning" && brave-browser "https://www.reddit.com/r/MachineLearning" --incognito --force-device-scale-factor=1.75
+command=printf "🤖 Machine Learning\n" && brave-browser "https://www.reddit.com/r/MachineLearning" --incognito
 color=#9ba6ad
 
 [corona]
@@ -14,17 +24,7 @@ interval=3600
 color=#f7931a
 
 [weather]
-command=curl "https://wttr.in/Palo+Alto?format=2"
-interval=3600
-color=#a4c2f4
-
-[time]
-command=date "+%I:%M:%S %p"
-interval=1
-color=#a4c2f4
-
-[date]
-command=date "+%a %b %d %Y"
+command=curl "https://wttr.in/Palo+Alto?format=1" | awk '{ print $1 " " $2 }'
 interval=3600
 color=#a4c2f4
 
