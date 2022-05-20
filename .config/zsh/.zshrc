@@ -31,7 +31,7 @@ function nnn_autocd() {
     # stty lwrap undef
     # stty lnext undef
 
-    nnn "$@"
+    nnn -T v "$@"
 
     if [ -f "$NNN_TMPFILE" ]; then
         . "$NNN_TMPFILE"
