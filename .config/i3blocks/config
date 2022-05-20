@@ -24,7 +24,7 @@ interval=1
 color=#a4c2f4
 
 [date]
-command=date "+%a, %b %d, %Y"
+command=date "+%a %b %d %Y"
 interval=3600
 color=#a4c2f4
 
