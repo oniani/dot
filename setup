@@ -6,16 +6,16 @@
 
 # Install configuration files
 config() {
-    cp -R .config $HOME
-    cp -R .local $HOME
-    cp .zshenv $HOME
+    cp -R .config "$HOME"
+    cp -R .local "$HOME"
+    cp .zshenv "$HOME"
     mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}"
 }
 
 # Install kitty terminal emulator
 kitty() {
     curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-    ln -sf $HOME/.local/kitty.app/bin/kitty $HOME/.local/bin/
+    ln -sf "$HOME/.local/kitty.app/bin/kitty" "$HOME/.local/bin/"
 }
 
 # Installs Nerd Fonts
