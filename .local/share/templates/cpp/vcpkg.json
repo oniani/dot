@@ -1,6 +1,6 @@
 {
   "name": "project",
   "version": "0.0.1",
-  "dependencies": ["catch"],
+  "dependencies": ["catch2"],
   "license": "MIT"
 }

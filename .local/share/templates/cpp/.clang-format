@@ -2,7 +2,7 @@
 Language: Cpp
 BasedOnStyle: Google
 ColumnLimit: 100
+IndentWidth: 4
 AllowShortFunctionsOnASingleLine: Empty
 DerivePointerAlignment: false
 PointerAlignment: Left
-NamespaceIndentation: All
