@@ -10,7 +10,7 @@ class VisualBar:
         """Formats and prints the visual bar."""
 
         used = round(out / 10)
-        string = f"{name} [{self.blk * used}{' ' * (10 - used)}] {out}{end}"
+        string = f"{name} [{self.blk * used}{' ' * (10 - used)}] {out:3}{end}"
         print(string)
 
     def volume(self) -> None:
