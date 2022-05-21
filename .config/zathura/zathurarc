@@ -1,6 +1,12 @@
+set recolor true
+set recolor-darkcolor "#ebdbb2"
+set recolor-lightcolor "#1d2021"
 set selection-clipboard clipboard
 set window-height 1800
 set window-width 1400
+
+map c recolor
+map p print
 
 map <C-d> scroll full-down
 map <C-u> scroll full-up
