@@ -19,31 +19,25 @@ configuration {
     kb-row-down: "Down,Control+j";
 }
 
+@theme "/dev/null"
+
 * {
-    bg0     : #1a1b26;
-    bg1     : #1f2335;
-    bg2     : #24283b;
-    bg3     : #414868;
-    fg0     : #c0caf5;
-    fg1     : #a9b1d6;
-    fg2     : #737aa2;
-    red     : #f7768e;
-    green   : #9ece6a;
-    yellow  : #e0af68;
-    blue    : #7aa2f7;
-    magenta : #9a7ecc;
-    cyan    : #4abaaf;
-  
+    bg0: #1a1b26;
+    bg1: #1f2335;
+    bg2: #414868;
+    fg0: #c0caf5;
+    fg1: #737aa2;
+    red: #f7768e;
+
     accent: @red;
-  
-    background-color : transparent;
-    text-color       : @fg0;
+    background-color: @bg0;
+    text-color: @fg0;
 }
 
 window {
     background-color: @bg1;
     border: 1px;
-    border-color: @bg3;
+    border-color: @bg2;
     border-radius: 8px;
 }
 
@@ -57,13 +51,13 @@ inputbar {
 icon-search {
     expand: false;
     filename: "search-symbolic";
-    size: 14px;
+    size: 32px;
 }
 
 listview {
-    lines        : 10;
-    padding      : 4px 0px;
-    scrollbar    : true;
+    lines: 10;
+    padding: 4px 0px;
+    scrollbar: true;
 }
 
 element {
@@ -81,7 +75,7 @@ element-icon {
 }
 
 scrollbar {
-    handle-color: @fg2;
+    handle-color: @fg1;
     handle-width: 4px;
     padding: 0 4px;
 }
