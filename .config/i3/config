@@ -155,6 +155,5 @@ bar {
 
 gaps inner 8
 gaps outer 8
-smart_gaps on
 
 # }}}
