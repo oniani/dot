@@ -83,8 +83,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Workspaces {{{
 
 # Workspaces
-set $ws1 "1: eng "
-set $ws2 "2: www "
+set $ws1 "1: dev "
+set $ws2 "2: web "
 set $ws3 "3: email "
 set $ws4 "4: other "
 set $ws5 "5: other "
