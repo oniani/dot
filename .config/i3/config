@@ -60,6 +60,9 @@ bindsym $mod+Shift+v split toggle
 # Enter fullscreen mode for the focused container
 bindsym $mod+Shift+f fullscreen toggle
 
+# Switch to the urgent workspace
+bindsym $mod+u [urgent=latest] focus
+
 # Toggle tiling / floating
 bindsym $mod+space floating toggle
 
@@ -157,9 +160,14 @@ bindsym --release $mod+Shift+s exec --no-startup-id flameshot full --path ~/scre
 
 bar {
     position top
-    separator_symbol " | "
-    status_command i3blocks
+    status_command ~/.local/share/cargo/bin/i3status-rs ~/.config/i3status-rust/config.toml
     strip_workspace_numbers yes
+    colors {
+        focused_workspace #5baff3 #5baff3 #000000
+        active_workspace #333333 #333333 #999999
+        inactive_workspace #333333 #333333 #999999
+        urgent_workspace #ff4444 #ff4444 #000000
+    }
 }
 
 # }}}
