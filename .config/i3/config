@@ -160,7 +160,7 @@ bindsym --release $mod+Shift+s exec --no-startup-id flameshot full --path ~/scre
 
 bar {
     position top
-    status_command ~/.local/share/cargo/bin/i3status-rs ~/.config/i3status-rust/config.toml
+    status_command ~/.local/share/cargo/bin/i3status-rs
     strip_workspace_numbers yes
     colors {
         focused_workspace #5baff3 #5baff3 #000000
