@@ -163,9 +163,9 @@ bar {
     status_command ~/.local/share/cargo/bin/i3status-rs
     strip_workspace_numbers yes
     colors {
-        focused_workspace #5baff3 #5baff3 #000000
-        active_workspace #333333 #333333 #999999
-        inactive_workspace #333333 #333333 #999999
+        focused_workspace #5ea3db #5ea3db #000000
+        active_workspace #333333 #333333 #bab8b8
+        inactive_workspace #333333 #333333 #bab8b8
         urgent_workspace #ff4444 #ff4444 #000000
     }
 }
