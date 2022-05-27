@@ -181,7 +181,7 @@ zle -N zle-line-init
 # Key Bindings {{{
 
 bindkey -s "^f" "nnn_autocd\n"
-bindkey -s "^p" "ipython3\n"
+bindkey -s "^p" "python3\n"
 bindkey -s "^z" "fg\n"
 
 # }}}
