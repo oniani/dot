@@ -4,7 +4,7 @@
 # block below.
 font pango:JetBrainsMono Nerd Font Mono 12
 
-# Remove title bar in tiling and floating modes
+# Removes title bar in tiling and floating modes
 default_border pixel 1
 default_floating_border pixel 1
 
@@ -12,21 +12,26 @@ default_floating_border pixel 1
 # desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Use pactl to adjust volume in PulseAudio.
+# Adjusts PulseAudio volume via pactl.
 set $refresh_i3blocks pkill -SIGRTMIN+10 i3blocks
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3blocks
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3blocks
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3blocks
 
-# Disable laptop monitor
-exec xrandr --output eDP-1-1 --off
+# Disables laptop monitor
+exec --no-startup-id xrandr --output eDP-1-1 --off
+
+# Keeps the monitor active even after inactivity.
+exec --no-startup-id xset dpms 0 0 0
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s off
 
 # Set the wallpaper
 exec --no-startup-id nitrogen --restore
 
 # Launch picom compositor
-exec_always picom --config ~/.config/picom/picom.conf
+exec_always picom --no-startup-id --config ~/.config/picom/picom.conf
 
 # }}}
 
