@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+# Open the selected file in the default editor
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+ps aux | fzf | awk '{ print $2 }' | xargs -r kill -9
