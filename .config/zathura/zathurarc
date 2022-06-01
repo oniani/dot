@@ -5,7 +5,7 @@ set selection-clipboard clipboard
 set window-height 1800
 set window-width 1400
 
-map c recolor
+map d recolor
 map p print
 
 map <C-d> scroll full-down
