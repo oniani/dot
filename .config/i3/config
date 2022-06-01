@@ -126,9 +126,6 @@ bindsym $mod+Shift+0 move container to workspace number $ws0
 # Switch to the urgent workspace
 bindsym $mod+u [urgent=latest] focus
 
-# Switch to Zoom workspace
-bindsym $mod+z workspace number $ws6
-
 # }}}
 
 # Resizing {{{
