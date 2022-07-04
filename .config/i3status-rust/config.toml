@@ -5,7 +5,7 @@ theme = "space-villain"
 block = "time"
 format = "%a %b %d %Y %r"
 interval = 1
-timezone = "US/Pacific"
+timezone = "US/Eastern"
 
 [[block]]
 block = "custom"
