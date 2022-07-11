@@ -22,7 +22,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Disables laptop monitor
 # exec --no-startup-id xrandr --output eDP-1-1 --off
 
-# Keeps the monitor active even after inactivity
+# Keeps the monitor active even after inactivity.
 exec --no-startup-id xset dpms 0 0 0
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
@@ -32,6 +32,9 @@ exec --no-startup-id nitrogen --restore
 
 # Launch picom compositor
 exec_always picom --no-startup-id --config ~/.config/picom/picom.conf
+
+# Switching keyboard layouts
+exec_always "setxkbmap -option 'grp:alt_shift_toggle' -layout us,ge,ru -variant ,qwerty,phonetic"
 
 # }}}
 
