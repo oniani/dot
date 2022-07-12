@@ -1,5 +1,5 @@
 configuration {
-    font: "JetBrainsMono Nerd Font Mono 16";
+    font: "JetBrainsMono Nerd Font Mono 24";
     show-icons: true;
 
     kb-move-char-back: "Control+u";
@@ -55,7 +55,7 @@ icon-search {
 }
 
 listview {
-    lines: 10;
+    lines: 8;
     padding: 4px 0px;
     scrollbar: true;
 }
@@ -71,7 +71,7 @@ element selected {
 }
 
 element-icon {
-    size: 32px;
+    size: 48px;
 }
 
 scrollbar {
