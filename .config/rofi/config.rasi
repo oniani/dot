@@ -1,5 +1,5 @@
 configuration {
-    font: "JetBrainsMono Nerd Font Mono 32";
+    font: "JetBrainsMono Nerd Font Mono 16";
     show-icons: true;
 
     kb-move-char-back: "Control+u";
@@ -71,7 +71,7 @@ element selected {
 }
 
 element-icon {
-    size: 64px;
+    size: 32px;
 }
 
 scrollbar {
