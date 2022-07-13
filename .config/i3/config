@@ -152,7 +152,7 @@ bindsym $mod+r mode "resize"
 # Program Mappings {{{
 
 # Start a web browser
-bindsym $mod+w exec brave-browser --force-device-scale-factor=1.5
+bindsym $mod+w exec brave-browser --force-device-scale-factor=1.25
 
 # Start a program launcher
 bindsym $mod+Tab exec rofi -show window
