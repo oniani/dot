@@ -22,7 +22,7 @@ local on_attach = function(client, bufnr)
         { border = "rounded", close_events = { "BufHidden", "CursorMoved", "InsertCharPre" } }
     )
 
-    if client.resolved_capabilities.document_formatting then
+    if client.server_capabilities.document_formatting then
         vim.api.nvim_buf_create_user_command(bufnr, "Format", vim.lsp.buf.formatting, {})
     end
 end
