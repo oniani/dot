@@ -167,6 +167,7 @@ lspinstaller.setup {
         "clangd",
         "cmake",
         "efm",
+        "gopls",
         "pyright",
         "rust_analyzer",
         "sumneko_lua",
