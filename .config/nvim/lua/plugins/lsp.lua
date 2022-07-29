@@ -23,7 +23,19 @@ local on_attach = function(client, bufnr)
     )
 
     if client.server_capabilities.documentFormattingProvider then
-        vim.api.nvim_buf_create_user_command(bufnr, "Format", vim.lsp.buf.formatting, {})
+        local auto_format = vim.api.nvim_create_augroup("AutoFormat", { clear = true })
+
+        vim.api.nvim_create_autocmd("BufWritePost", {
+            command = "lua vim.lsp.buf.format { }",
+            group = auto_format,
+            pattern = "*",
+        })
+
+        vim.api.nvim_create_autocmd("BufWritePost", {
+            command = "lua vim.lsp.buf.code_action { apply = true }",
+            group = auto_format,
+            pattern = "*.go",
+        })
     end
 end
 
