@@ -31,7 +31,7 @@ exec --no-startup-id xset s off
 exec --no-startup-id nitrogen --restore
 
 # Launch picom compositor
-exec_always picom --no-startup-id --config ~/.config/picom/picom.conf
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Switching keyboard layouts
 exec_always "setxkbmap -option 'grp:alt_shift_toggle' -layout us,ge,ru -variant ,qwerty,phonetic"
