@@ -30,6 +30,9 @@ exec --no-startup-id xset s off
 # Set the wallpaper
 exec --no-startup-id nitrogen --restore
 
+# Decreases key repeat delay to 300ms and increases key repeat rate to 50 per second
+exec_always --no-startup-id xset r rate 300 50
+
 # Launch picom compositor
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
