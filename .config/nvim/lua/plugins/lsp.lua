@@ -171,8 +171,9 @@ cmp.setup.cmdline(":", {
 
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local lspconfig = require("lspconfig")
-local lspinstaller = require("nvim-lsp-installer")
+local lspinstaller = require("mason-lspconfig")
 
+require("mason").setup()
 lspinstaller.setup {
     ensure_installed = {
         "bashls",
@@ -188,31 +189,30 @@ lspinstaller.setup {
 }
 
 local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
-for _, server in ipairs(lspinstaller.get_installed_servers()) do
-    local server_name = server.name
 
-    if server_name == "clangd" then
-        lspconfig[server.name].setup {
+for _, server in ipairs(lspinstaller.get_installed_servers()) do
+    if server == "clangd" then
+        lspconfig[server].setup {
             capabilities = capabilities,
             on_attach = on_attach,
             fallbackFlags = { "--std=c++20" },
         }
-    elseif server_name == "efm" then
-        lspconfig[server.name].setup {
+    elseif server == "efm" then
+        lspconfig[server].setup {
             capabilities = capabilities,
             on_attach = on_attach,
             filetypes = efm_config.filetypes,
             init_options = efm_config.init_options,
             settings = efm_config.settings,
         }
-    elseif server_name == "sumneko_lua" then
-        lspconfig[server.name].setup {
+    elseif server == "sumneko_lua" then
+        lspconfig[server].setup {
             capabilities = capabilities,
             on_attach = on_attach,
             settings = sumneko_lua_settings,
         }
     else
-        lspconfig[server.name].setup {
+        lspconfig[server].setup {
             capabilities = capabilities,
             on_attach = on_attach
         }
