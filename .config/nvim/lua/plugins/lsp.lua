@@ -30,12 +30,6 @@ local on_attach = function(client, bufnr)
             group = auto_format,
             pattern = "*",
         })
-
-        vim.api.nvim_create_autocmd("BufWritePost", {
-            command = "lua vim.lsp.buf.code_action { apply = true }",
-            group = auto_format,
-            pattern = "*.go",
-        })
     end
 end
 
