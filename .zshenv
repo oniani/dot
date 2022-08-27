@@ -27,14 +27,15 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
 # Move to ~/.local/share
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
-export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+export GOROOT="${XDG_DATA_HOME:-$HOME/.local/share}/go/go"
+export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go/packages"
 export PYENV_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/pyenv"
 export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
 
 # Make directories reachable
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$PYENV_ROOT/bin:$PATH"
-export PATH="$PYENV_ROOT/shims:$PATH"
+export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
+export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/cargo/bin:$PATH"
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/go/bin:$PATH"
 
