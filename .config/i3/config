@@ -166,8 +166,8 @@ bindsym $mod+Tab exec rofi -show window
 bindsym $mod+f exec "rofi -modi drun,run -show drun"
 
 # Take a screenshot
-bindsym --release $mod+s exec --no-startup-id flameshot gui --path ~/screenshots
-bindsym --release $mod+Shift+s exec --no-startup-id flameshot full --path ~/screenshots
+bindsym --release $mod+s exec --no-startup-id flameshot gui --path ~/pic/screenshots
+bindsym --release $mod+Shift+s exec --no-startup-id flameshot full --path ~/pic/screenshots
 
 # }}}
 
