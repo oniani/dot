@@ -171,6 +171,14 @@ bindsym --release $mod+Shift+s exec --no-startup-id flameshot full --path ~/pic/
 
 # }}}
 
+# Scratch Terminal {{{
+
+exec_always i3-sensible-terminal --class=scratch-terminal
+for_window [class="scratch-terminal"] move to scratchpad
+bindsym $mod+d [class="scratch-terminal"] scratchpad show
+
+# }}}
+
 # i3bar {{{
 
 bar {
