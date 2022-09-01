@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-# Microphone changer
-# by David Oniani <onianidavid@gmail.com>
-# License: MIT License
-
-pactl set-default-source "$(pactl list sources short | cut -f 2 | fzf)"

@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-# Audio changer
-# by David Oniani <onianidavid@gmail.com>
-# License: MIT License
-
-pactl set-default-sink "$(pactl list sinks short | cut -f 2 | fzf)"
