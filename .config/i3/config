@@ -44,9 +44,6 @@ exec_always "v4l2-ctl -d /dev/video0 --set-ctrl=exposure_auto=1"
 exec_always "v4l2-ctl -d /dev/video0 --set-ctrl=focus_absolute=0"
 exec_always "v4l2-ctl -d /dev/video0 --set-ctrl=focus_auto=0"
 
-# Sets the default mic
-exec_always "pactl set-default-source alsa_input.usb-Samson_Technologies_Samson_Q2U_Microphone-00.analog-stereo"
-
 # }}}
 
 # Default Mappings {{{
