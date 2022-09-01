@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+# Microphone changer
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+pactl set-default-sink "$(pactl list short sinks | cut -f2 | fzf)"
