@@ -41,6 +41,7 @@ exec_always "setxkbmap -option 'grp:alt_shift_toggle' -layout us,ge,ru -variant 
 
 # Fixes lag and disables autofocus for Logitech C920 Linux Driver
 exec_always "v4l2-ctl -d /dev/video0 --set-ctrl=exposure_auto=1"
+exec_always "v4l2-ctl -d /dev/video0 --set-ctrl=focus_absolute=0"
 exec_always "v4l2-ctl -d /dev/video0 --set-ctrl=focus_auto=0"
 
 # }}}
