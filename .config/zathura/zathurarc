@@ -9,3 +9,5 @@ map p print
 
 map <C-d> scroll full-down
 map <C-u> scroll full-up
+
+set sandbox none
