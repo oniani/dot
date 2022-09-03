@@ -4,5 +4,4 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-curl -s "$(curl -s https://xkcd.com/ | grep "og:image" | cut -d "\"" -f 4)" \
-    --output xkcd.png
+curl -s "$(curl -s https://xkcd.com/ | grep "og:image" | cut -d "\"" -f 4)" --output xkcd.png
