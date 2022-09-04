@@ -1,4 +1,4 @@
-# `dots`
+# `dot`
 
 <p align="center"><img src=".local/share/applications/kitty.png" alt="Logo" width="180" /></p>
 
