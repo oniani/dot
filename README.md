@@ -26,6 +26,22 @@ Automation:
 $ ./setup --help
 ```
 
+## `$HOME` Directory Structure
+
+```console
+.cache     # User cache(s)
+.config    # User config(s)
+.local     # User data and programs(s)
+dls        # Download(s)
+bld        # Build(s)
+doc        # Document(s)
+git        # Git repo(s)
+pic        # Picture(s)
+vid        # Video(s)
+wip        # Work in Progress File(s)
+.zshenv    # Exports Environment Variable(s)
+```
+
 ## License
 
 [MIT License](LICENSE)
