@@ -36,12 +36,13 @@ export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
 # Make directories reachable
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
+export PATH="$HOME/build/vscode:$PATH"
 export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/cargo/bin:$PATH"
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/go/bin:$PATH"
 
 # nnn
-export NNN_BMS="D:~/Downloads;b:~/build;c:~/git/dots;d:~/Documents;g:~/git;w:~/wip;"
+export NNN_BMS="D:~/Downloads;b:~/build;d:~/doc;c:~/git/dot;g:~/git;w:~/wip;"
 export NNN_FCOLORS="000004000700000700000000"
 export NNN_OPTS="EHderx"
 export NNN_TRASH=1
