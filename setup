@@ -9,7 +9,16 @@ config() {
     cp -R .config "$HOME"
     cp -R .local "$HOME"
     cp .zshenv "$HOME"
+
     mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}"
+
+    mkdir -p "$HOME/bld"
+    mkdir -p "$HOME/dls"
+    mkdir -p "$HOME/doc"
+    mkdir -p "$HOME/git"
+    mkdir -p "$HOME/pic"
+    mkdir -p "$HOME/vid"
+    mkdir -p "$HOME/wip"
 }
 
 # Install kitty terminal emulator
