@@ -2,6 +2,8 @@
 
 <p align="center"><img src=".local/share/applications/kitty.png" alt="Logo" width="180" /></p>
 
+Configuration files and automation wizard for \*nix meta distribution.
+
 ## Setup
 
 All programs are chosen with simplicity in mind. Cross-platform programs that follow the UNIX
