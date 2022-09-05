@@ -12,6 +12,7 @@ config() {
 
     mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}"
 
+    mkdir -p "$HOME/aud"
     mkdir -p "$HOME/bld"
     mkdir -p "$HOME/dls"
     mkdir -p "$HOME/doc"

@@ -42,7 +42,7 @@ export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/cargo/bin:$PATH"
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/go/bin:$PATH"
 
 # nnn
-export NNN_BMS="b:~/bld;D:~/dls;d:~/doc;g:~/git;p:~/pic;v:~/vid;w:~/wip;c:~/git/dot;"
+export NNN_BMS="a:~/aud;b:~/bld;D:~/dls;d:~/doc;g:~/git;p:~/pic;v:~/vid;w:~/wip;c:~/git/dot;"
 export NNN_FCOLORS="000004000700000700000000"
 export NNN_OPTS="EHderx"
 export NNN_TRASH=1
