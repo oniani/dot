@@ -32,7 +32,7 @@ $ ./setup --help
 .cache     # User cache(s)
 .config    # User config(s)
 .local     # User data and programs(s)
-bld        # Audio(s)
+aud        # Audio(s)
 bld        # Build(s)
 dls        # Download(s)
 doc        # Document(s)
