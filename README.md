@@ -17,7 +17,6 @@ Tools:
 - Image viewer: [qimgv][qimgv]
 - Media Player: [mpv][mpv]
 - PDF Viewer: [zathura][zathura]
-- RSS Reader: [Newsboat][newsboat]
 - Screenshot Utility: [Flameshot][flameshot]
 - Shell: [zsh][zsh]
 - Terminal: [kitty][kitty]
