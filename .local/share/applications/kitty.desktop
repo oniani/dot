@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=kitty
-GenericName=Terminal emulator
+GenericName=Terminal Emulator
 Comment=Fast, feature-rich, GPU based terminal
 Exec=/home/david/.local/kitty.app/bin/kitty
 Icon=/home/david/.local/share/applications/kitty.png
