@@ -4,7 +4,6 @@ Type=Application
 Name=kitty
 GenericName=Terminal emulator
 Comment=Fast, feature-rich, GPU based terminal
-TryExec=/home/david/.local/kitty.app/bin/kitty
 Exec=/home/david/.local/kitty.app/bin/kitty
 Icon=/home/david/.local/share/applications/kitty.png
 Categories=System;TerminalEmulator;
