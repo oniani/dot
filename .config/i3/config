@@ -28,7 +28,7 @@ exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
 
 # Set the wallpaper
-exec --no-startup-id nitrogen --restore
+exec_always --no-startup-id nitrogen --restore
 
 # Decreases key repeat delay to 300ms and increases key repeat rate to 50 per second
 exec_always --no-startup-id xset r rate 300 50
@@ -192,9 +192,9 @@ bar {
     status_command ~/.local/share/cargo/bin/i3status-rs
     strip_workspace_numbers yes
     colors {
-        focused_workspace #5ea3db #5ea3db #000000
-        active_workspace #333333 #333333 #bab8b8
-        inactive_workspace #333333 #333333 #bab8b8
+        focused_workspace #ffffff #ffffff #000000
+        active_workspace #ffffff #ffffff #000000
+        inactive_workspace #000000 #000000 #ffffff
         urgent_workspace #ff4444 #ff4444 #000000
     }
 }
