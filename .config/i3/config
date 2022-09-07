@@ -94,7 +94,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+r restart
 
 # Start a terminal
-bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty --single-instance
+bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty
 
 # Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
@@ -179,7 +179,7 @@ bindsym --release $mod+Shift+s exec --no-startup-id flameshot full --path ~/pic/
 
 # Scratch Terminal {{{
 
-exec_always ~/.local/kitty.app/bin/kitty --single-instance --class=scratch-terminal
+exec_always ~/.local/kitty.app/bin/kitty --class=scratch-terminal
 for_window [class="scratch-terminal"] move to scratchpad
 bindsym $mod+d [class="scratch-terminal"] scratchpad show
 
