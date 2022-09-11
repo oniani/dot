@@ -20,6 +20,7 @@ Tools:
 - Screenshot Utility: [Flameshot][flameshot]
 - Shell: [zsh][zsh]
 - Terminal: [kitty][kitty]
+- VS Code: [VS Code (only if using Jupyter)][vscode]
 
 Automation:
 
@@ -59,3 +60,4 @@ wip        # Work in Progress File(s)
 [flameshot]: https://github.com/flameshot-org/flameshot
 [zsh]: https://github.com/zsh-users/zsh
 [kitty]: https://github.com/kovidgoyal/kitty
+[vscode]: https://github.com/microsoft/vscode
