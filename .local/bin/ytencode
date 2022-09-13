@@ -16,7 +16,7 @@
 # (10) `-bf 2`            - Sets 2 consecutive B frames. ffmpeg's default is 16
 # (11) `-coder 1`         - sets the entropy encoder to CABAC
 # (12) `-pix_fmt yuv420p` - Sets the aspect ratio to 16:9
-# (13) `-b:v 15M`         - Sets the bitrate to 15Mbps
+# (13) `-b:v 10M`         - Sets the bitrate to 10Mbps
 # (14) `-threads 4`       - Enables FFMpeg to use 4 threads for multi-core CPUs
 # (15) `-cpu-used 0`      - Most CPU intensive, but best fastest. Uses all cores.
 # (16) `-r 60`            - This is not required by Youtube but optional.
@@ -37,7 +37,7 @@ ffmpeg -i "$1" \
        -bf 2 \
        -coder 1 \
        -pix_fmt yuv420p \
-       -b:v 15M \
+       -b:v 10M \
        -threads 4 \
        -cpu-used 0 \
        -r 60 \
