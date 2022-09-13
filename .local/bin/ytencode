@@ -31,7 +31,7 @@ ffmpeg -i "$1" \
        -c:a aac \
        -ar 48000 \
        -ac 2 \
-       -b:a 320k \
+       -b:a 384k \
        -profile:v high \
        -level 4.0 \
        -bf 2 \
