@@ -20,7 +20,7 @@ Tools:
 - Screenshot Utility: [Flameshot][flameshot]
 - Shell: [zsh][zsh]
 - Terminal: [kitty][kitty]
-- VS Code: [VS Code (only if using Jupyter)][vscode]
+- IDE: [VS Code][vscode] (JupyterLab replacement, [Neovim][neovim] for everything else)
 
 Automation:
 
