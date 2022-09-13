@@ -24,7 +24,6 @@
 #                                        You can upload at whatever FPS you want, but if you want to downsample
 #                                        the content yourself you can use this. It might save you some time
 #                                        waiting for Youtube to encode the video
-# (17) `-filter:a loudnorm=i=-16`      - Sets the integrated loudness to -16
 ffmpeg -i "$1" \
        -c:v libx264 \
        -preset slow \
@@ -42,5 +41,4 @@ ffmpeg -i "$1" \
        -threads 4 \
        -cpu-used 0 \
        -r 60 \
-       -filter:a loudnorm=i=-16 \
        "$2"
