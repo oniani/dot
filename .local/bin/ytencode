@@ -4,26 +4,27 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-# (1)  `-c:v libx264`     - Uses the x264 codec
-# (2)  `-preset slow`     - Uses a slow encoding preset
-# (3)  `-crf 18`          - Sets a constant rate factor to 'visually lossless'
-# (4)  `-c:a aac`         - Converts the audio stream to the "Advanced Audio Coding" codec
-# (5)  `-ar 48000`        - Sets the sampling frequency/sample rate to 48kHz
-# (6)  `-ac 2`            - Downmixes surround audio to stereo
-# (7)  `-b:a 384k         - Sets the bit rate to the minimum of 384k
-# (8)  `-profile:v high`  - Youtube recommends us to use a H.264 profile of "High -level 4.0"
-# (9)  `-level 4.0`       - Youtube recommends us to use a H.264 profile of "High -level 4.0"
-# (10) `-bf 2`            - Sets 2 consecutive B frames. ffmpeg's default is 16
-# (11) `-coder 1`         - sets the entropy encoder to CABAC
-# (12) `-pix_fmt yuv420p` - Sets the aspect ratio to 16:9
-# (13) `-b:v 10M`         - Sets the bitrate to 10Mbps
-# (14) `-threads 4`       - Enables FFMpeg to use 4 threads for multi-core CPUs
-# (15) `-cpu-used 0`      - Most CPU intensive, but best fastest. Uses all cores.
-# (16) `-r 60`            - This is not required by Youtube but optional.
-#                           The current maximum supported frame rate on Youtube is 60fps.
-#                           You can upload at whatever FPS you want, but if you want to downsample
-#                           the content yourself you can use this. It might save you some time
-#                           waiting for Youtube to encode the video.
+# (1)  `-c:v libx264`                  - Uses the x264 codec
+# (2)  `-preset slow`                  - Uses a slow encoding preset
+# (3)  `-crf 18`                       - Sets a constant rate factor to 'visually lossless'
+# (4)  `-c:a aac`                      - Converts the audio stream to the "Advanced Audio Coding" codec
+# (5)  `-ar 48000`                     - Sets the sampling frequency/sample rate to 48kHz
+# (6)  `-ac 2`                         - Downmixes surround audio to stereo
+# (7)  `-b:a 384k                      - Sets the bit rate to the minimum of 384k
+# (8)  `-profile:v high`               - Youtube recommends us to use a H.264 profile of "High -level 4.0"
+# (9)  `-level 4.0`                    - Youtube recommends us to use a H.264 profile of "High -level 4.0"
+# (10) `-bf 2`                         - Sets 2 consecutive B frames. ffmpeg's default is 16
+# (11) `-coder 1`                      - sets the entropy encoder to CABAC
+# (12) `-pix_fmt yuv420p`              - Sets the aspect ratio to 16:9
+# (13) `-b:v 10M`                      - Sets the bitrate to 10Mbps
+# (14) `-threads 4`                    - Enables FFMpeg to use 4 threads for multi-core CPUs
+# (15) `-cpu-used 0`                   - Most CPU intensive, but best fastest. Uses all cores.
+# (16) `-r 60`                         - This is not required by Youtube but optional.
+#                                        The current maximum supported frame rate on Youtube is 60fps.
+#                                        You can upload at whatever FPS you want, but if you want to downsample
+#                                        the content yourself you can use this. It might save you some time
+#                                        waiting for Youtube to encode the video
+# (17) `-filter:a loudnorm=i=-16`      - Sets the integrated loudness to -16
 ffmpeg -i "$1" \
        -c:v libx264 \
        -preset slow \
@@ -41,4 +42,5 @@ ffmpeg -i "$1" \
        -threads 4 \
        -cpu-used 0 \
        -r 60 \
+       -filter:a loudnorm=i=-16 \
        "$2"
