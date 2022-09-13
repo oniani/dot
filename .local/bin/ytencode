@@ -10,7 +10,7 @@
 # (4)  `-c:a aac`         - Converts the audio stream to the "Advanced Audio Coding" codec
 # (5)  `-ar 48000`        - Sets the sampling frequency/sample rate to 48kHz
 # (6)  `-ac 2`            - Downmixes surround audio to stereo
-# (7)  `-b:a 320k         - Sets the bit rate to the minimum of 320k
+# (7)  `-b:a 384k         - Sets the bit rate to the minimum of 384k
 # (8)  `-profile:v high`  - Youtube recommends us to use a H.264 profile of "High -level 4.0"
 # (9)  `-level 4.0`       - Youtube recommends us to use a H.264 profile of "High -level 4.0"
 # (10) `-bf 2`            - Sets 2 consecutive B frames. ffmpeg's default is 16
