@@ -20,6 +20,7 @@ Tools:
 - Screenshot Utility: [Flameshot][flameshot]
 - Shell: [zsh][zsh]
 - Terminal: [kitty][kitty]
+- Diagram Maker: [drawio][drawio]
 - IDE: [VS Code][vscode] (JupyterLab replacement, [Neovim][neovim] for everything else)
 
 Automation:
@@ -60,4 +61,5 @@ wip        # Work in Progress File(s)
 [flameshot]: https://github.com/flameshot-org/flameshot
 [zsh]: https://github.com/zsh-users/zsh
 [kitty]: https://github.com/kovidgoyal/kitty
+[drawio]: https://github.com/jgraph/drawio-desktop
 [vscode]: https://github.com/microsoft/vscode
