@@ -9,13 +9,13 @@ $(info )
 
 .PHONY: all
 all: fmt lint build
-	touch go.sum
 	go mod tidy
 	@printf "\n** OUTPUT **\n\n"
 	@./$(PROJECT)
 
 .PHONY: init
 init:
+	touch go.sum
 	go mod init github.com/oniani/$(PROJECT)
 	go mod tidy
 
