@@ -1,16 +1,14 @@
-FROM golang:1.16-alpine AS builder
+# syntax=docker/dockerfile:1
 
-RUN /sbin/apk update && \
-	/sbin/apk --no-cache add ca-certificates git tzdata && \
-	/usr/sbin/update-ca-certificates
+FROM golang:1.19-alpine
 
-RUN adduser -D -g '' app
-WORKDIR /home/app
+RUN adduser -D -g '' user
+WORKDIR /home/user
+USER user
 
-COPY go.mod /home/app
-#COPY go.sum /home/app
-COPY cmd    /home/app/cmd
-#COPY *.go   /home/app
+COPY go.mod /home/user
+COPY go.sum /home/user
+COPY cmd    /home/user/cmd
 
 ARG VERSION
 
@@ -18,15 +16,6 @@ RUN CGO_ENABLED=0 go build -a -tags netgo,osusergo \
     -ldflags "-extldflags '-static' -s -w" \
     -ldflags "-X main.version=$VERSION" -o app ./cmd/app
 
-FROM busybox:musl
-
-COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
-COPY --from=builder /etc/passwd /etc/passwd
-COPY --from=builder /home/app/app /home/app
-
-USER app
-WORKDIR /home
 EXPOSE 8080
 
-ENTRYPOINT ["/home/app"]
+CMD [ "/home/user/app" ]

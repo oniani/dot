@@ -18,8 +18,11 @@ func main() {
 
 ```console
 $ make init
+$ make fmt
+$ make lint
 $ make build
-$ ./app
+$ make docker
+$ make publish
 ```
 
 ## License
