@@ -1,27 +1,28 @@
 # Good resource for the project layout: https://github.com/golang-standards/project-layout
 PROJECT := app
 SOURCES := $(wildcard *.go cmd/*/*.go)
+VERSION := $(shell git describe --tags --long --dirty --always 2> /dev/null)
 
-# NOTE: Gets at least a hash when there is no tag
-VERSION=$(shell git describe --tags --long --dirty --always 2> /dev/null)
-
-$(info project:            $(PROJECT))
-$(info files:              $(SOURCES))
+$(info project name:       $(PROJECT))
+$(info source files:       $(SOURCES))
 $(info version (hash/tag): $(VERSION))
 $(info )
 
+.PHONY: all
 all: fmt lint build
 	@echo "\n** OUTPUT **\n"
 	@./$(PROJECT)
 
+.PHONY: init
 init:
-	go mod init github.com/oniani/$(PROJECT) 2>/dev/null
+	go mod init github.com/oniani/$(PROJECT) 2> /dev/null
 	go mod tidy
 
+.PHONY: build
 build: $(SOURCES)
 	go build -ldflags "-X main.version=$(VERSION)" -o $(PROJECT) ./cmd/$(PROJECT)
 
-.PHONY: fmt
+.PHONY: clean
 clean:
 	rm $(PROJECT)
 
@@ -31,7 +32,7 @@ fmt:
 
 .PHONY: lint
 lint:
-	go vet $(SOURCES)
+	staticcheck $(SOURCES)
 
 .PHONY: committed
 committed:

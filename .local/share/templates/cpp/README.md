@@ -22,13 +22,8 @@ $ cmake -DCOMPILER=clang -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=VCPKG
 $ cmake --build .
 ```
 
-## References
-
-- [Wikipedia][wikipedia]
-
 ## License
 
 [MIT License][license]
 
-[wikipedia]: https://en.wikipedia.org/wiki/Main_Page
 [license]: LICENSE

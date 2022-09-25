@@ -1,4 +1,4 @@
-FROM golang:1.15-alpine AS builder
+FROM golang:1.16-alpine AS builder
 
 RUN /sbin/apk update && \
 	/sbin/apk --no-cache add ca-certificates git tzdata && \
@@ -8,9 +8,9 @@ RUN adduser -D -g '' app
 WORKDIR /home/app
 
 COPY go.mod /home/app
-COPY go.sum /home/app
+#COPY go.sum /home/app
 COPY cmd    /home/app/cmd
-COPY *.go   /home/app
+#COPY *.go   /home/app
 
 ARG VERSION
 
