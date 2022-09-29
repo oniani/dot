@@ -21,6 +21,7 @@ vim.opt.splitright = true
 vim.opt.colorcolumn = "101"
 vim.opt.fillchars = "fold: "
 vim.opt.foldmethod = "marker"
+vim.opt.formatoptions:remove("t")
 vim.opt.laststatus = 3
 vim.opt.lazyredraw = true
 vim.opt.number = true
