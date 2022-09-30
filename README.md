@@ -9,7 +9,7 @@ Configuration files and automation wizard for \*nix meta distribution.
 All programs are chosen with simplicity in mind. Cross-platform programs that follow the UNIX
 philosophy are preferred. The setup is compliant with the [XDG Base Directory Specification][xdg].
 
-Tools:
+Core Tools and Utilities:
 
 - Browser: [Brave][brave]
 - Editor: [Neovim][neovim]
@@ -19,7 +19,12 @@ Tools:
 - PDF Viewer: [zathura][zathura]
 - Screenshot Utility: [Flameshot][flameshot]
 - Shell: [zsh][zsh]
+- Statusbar: [i3status-rust][i3statusrust]
 - Terminal: [kitty][kitty]
+- Window Manager: [i3-gaps][i3gaps]
+
+Other Tools and Utilities:
+
 - Diagram Maker: [drawio][drawio]
 - IDE: [VS Code][vscode] (JupyterLab replacement, [Neovim][neovim] for everything else)
 
@@ -60,6 +65,8 @@ wip        # Work in Progress File(s)
 [newsboat]: https://github.com/newsboat/newsboat
 [flameshot]: https://github.com/flameshot-org/flameshot
 [zsh]: https://github.com/zsh-users/zsh
+[i3statusrust]: https://github.com/greshake/i3status-rust
 [kitty]: https://github.com/kovidgoyal/kitty
+[i3gaps]: https://github.com/Airblader/i3
 [drawio]: https://github.com/jgraph/drawio-desktop
 [vscode]: https://github.com/microsoft/vscode
