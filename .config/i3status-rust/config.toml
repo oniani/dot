@@ -1,44 +1,56 @@
-icons = "awesome"
+[theme]
 theme = "space-villain"
+
+[icons]
+icons = "material-nf"
 
 [[block]]
 block = "time"
 format = "%a %b %d %Y %r"
-interval = 1
 timezone = "US/Eastern"
 
-[[block]]
-block = "custom"
-command = "echo $(curl 'https://wttr.in/Palo+Alto?format=1')"
-interval = 60
+# [[block]]
+# block = "custom"
+# command = "echo $(curl 'https://wttr.in/Palo+Alto?format=1')"
+# interval = 60
+
+# [[block]]
+# block = "custom"
+# command = "sed 's/  //' <(curl 'https://wttr.in/?format=1' -s)"
+# interval = 600
 
 [[block]]
 block = "sound"
 
 [[block]]
 block = "music"
-buttons = ["prev", "play", "next"]
-player = "spotify"
-
-[[block]]
-block = "disk_space"
-format = "{icon} {used} / {total} ({available} free)"
-
-[[block]]
-block = "memory"
-format_mem = "{mem_used} /{mem_total} ({mem_used_percents})"
-format_swap = "{swap_used} /{swap_total} ({swap_used_percents})"
-interval = 5
 
 [[block]]
 block = "battery"
+full_format = " $icon $percentage"
 interval = 10
 
 [[block]]
-block = "cpu"
-format = "{barchart} {utilization}"
+block = "custom"
+command = "echo  GPU $(nvidia-smi --query-gpu=gpu_name,memory.used --format=csv,noheader | sed 's/,/\\ /')"
 interval = 1
 
 [[block]]
-block = "nvidia_gpu"
+block = "disk_space"
+format = " $icon $used/$total ($available free) "
+
+[[block]]
+block = "memory"
+format_mem = "$icon$mem_used/$mem_total ($mem_used_percents)"
+format_swap = "$icon$swap_used/$swap_total ($swap_used_percents)"
+interval = 5
+
+[[block]]
+block = "cpu"
+format = "$barchart $utilization"
 interval = 1
+
+[[block]]
+block = "custom"
+command = "echo `uname` `uname -r | tr - . | cut -d. -f1-2`"
+interval = "once"
