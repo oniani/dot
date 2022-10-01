@@ -9,15 +9,10 @@ block = "time"
 format = "%a %b %d %Y %r"
 timezone = "US/Eastern"
 
-# [[block]]
-# block = "custom"
-# command = "echo $(curl 'https://wttr.in/Palo+Alto?format=1')"
-# interval = 60
-
-# [[block]]
-# block = "custom"
-# command = "sed 's/  //' <(curl 'https://wttr.in/?format=1' -s)"
-# interval = 600
+[[block]]
+block = "custom"
+command = "sed 's/  //' <(curl 'https://wttr.in/?format=1' -s)"
+interval = 600
 
 [[block]]
 block = "sound"
