@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
-rm -rf vscode
-wget  -O vscode_stable_linux-x64.tar.gz "https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
+wget -O vscode_stable_linux-x64.tar.gz "https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
 tar xzvf vscode_stable_linux-x64.tar.gz
 mv VSCode-linux-x64 vscode
 cd vscode || exit
