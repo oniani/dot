@@ -14,7 +14,7 @@ Core Tools and Utilities:
 - Browser: [Brave][brave]
 - Editor: [Neovim][neovim]
 - File Manager: [nnn][nnn]
-- Image viewer: [qimgv][qimgv]
+- Image viewer: [nsxiv][nsxiv]
 - Media Player: [mpv][mpv]
 - PDF Viewer: [zathura][zathura]
 - Screenshot Utility: [Flameshot][flameshot]
@@ -59,7 +59,7 @@ wip        # Work in Progress File(s)
 [brave]: https://github.com/brave/brave-browser
 [neovim]: https://github.com/neovim/neovim
 [nnn]: https://github.com/jarun/nnn
-[qimgv]: https://github.com/easymodo/qimgv
+[nsxiv]: https://github.com/nsxiv/nsxiv
 [mpv]: https://github.com/mpv-player/mpv
 [zathura]: https://en.wikipedia.org/wiki/Zathura_(document_viewer)
 [newsboat]: https://github.com/newsboat/newsboat

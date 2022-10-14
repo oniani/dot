@@ -54,6 +54,13 @@ nnn() {
     cd .. && rm -rf nnn
 }
 
+# Build and install nsxic from the source
+nsxiv() {
+    git clone https://github.com/nsxiv/nsxiv
+    cd nsxiv && make && sudo make install-all
+    cd .. && rm -rf nsxiv
+}
+
 # Some cool packages
 packages() {
     cargo install bat fd-find tokei
@@ -75,10 +82,12 @@ help() {
     printf "USAGE: \n\n \
     setup [OPTION]\n\n \
     --config    Install configuration files\n \
+    --drawio    Install drawio desktop\n \
     --ghcup     Install GHCup\n \
     --kitty     Install kitty terminal emulator\n \
     --nerdfonts Installs Nerd Fonts\n \
     --nnn       Build and install nnn from the source (+ file icon support <3)\n \
+    --nsxiv     Build and install sxiv from the source\n \
     --packages  Install some cool packages\n \
     --pyenv     Install pyenv\n \
     --rustup    Install rustup\n \
@@ -92,6 +101,7 @@ case $1 in
     "--kitty") kitty;;
     "--nerdfonts") nerd_fonts;;
     "--nnn") nnn;;
+    "--nsxiv") nsxiv;;
     "--packages") packages;;
     "--pyenv") curl https://pyenv.run | bash;;
     "--rustup") curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh;;
