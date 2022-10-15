@@ -83,8 +83,8 @@ local lspkind = require("lspkind")
 local luasnip = require("luasnip")
 
 local has_words_before = function()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
 cmp.setup({
@@ -191,7 +191,7 @@ lspinstaller.setup {
     automatic_installation = true,
 }
 
-local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = cmp_nvim_lsp.default_capabilities()
 
 for _, server in ipairs(lspinstaller.get_installed_servers()) do
     if server == "clangd" then
