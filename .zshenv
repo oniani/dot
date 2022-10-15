@@ -48,7 +48,7 @@ export NNN_OPTS="EHderx"
 export NNN_TRASH=1
 
 # fzf
-export FZF_DEFAULT_COMMAND="fd --hidden --type f --strip-cwd-prefix"
+export FZF_DEFAULT_COMMAND="fd --hidden --type f --strip-cwd-prefix --exclude .git"
 export FZF_DEFAULT_OPTS="--reverse --color bg+:-1"
 
 # bat
