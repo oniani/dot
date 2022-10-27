@@ -60,7 +60,6 @@ alias open="xdg-open"
 
 # Interactive
 alias e="nvim"
-alias news="newsboat --quiet"
 alias ssh="kitty +kitten ssh"
 
 # Safer commands

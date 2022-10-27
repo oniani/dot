@@ -62,7 +62,6 @@ wip        # Work in Progress File(s)
 [nsxiv]: https://github.com/nsxiv/nsxiv
 [mpv]: https://github.com/mpv-player/mpv
 [zathura]: https://en.wikipedia.org/wiki/Zathura_(document_viewer)
-[newsboat]: https://github.com/newsboat/newsboat
 [flameshot]: https://github.com/flameshot-org/flameshot
 [zsh]: https://github.com/zsh-users/zsh
 [i3statusrust]: https://github.com/greshake/i3status-rust
