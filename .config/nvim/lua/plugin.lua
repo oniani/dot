@@ -18,7 +18,7 @@ require("packer").startup({
         -- Productivity
         use "numToStr/Comment.nvim"
         use "nvim-treesitter/nvim-treesitter"
-        use { "junegunn/fzf.vim", { "junegunn/fzf", run = ":call fzf#install()" } }
+        use { "junegunn/fzf.vim", requires = { "junegunn/fzf", run = ":call fzf#install()" } }
 
         -- Installs and manages external programs for LSP, formatting, etc.
         use "williamboman/mason.nvim"
@@ -188,54 +188,6 @@ cmp.setup.cmdline(":", {
 
 -- }}}
 
--- Language server configurations and settings {{{
-
--- Configure efm language server
-local efm_config = {
-    filetypes = { "markdown", "python" },
-    init_options = { documentFormatting = true },
-    settings = {
-        rootMarkers = { ".git/" },
-        languages = {
-            markdown = {
-                {
-                    formatCommand = "prettier --print-width 100 --stdin-filepath ${INPUT}",
-                    formatStdin = true,
-                },
-            },
-            python = { { formatCommand = "black --fast --line-length 100 -", formatStdin = true } },
-        },
-    },
-}
-
--- Configure sumneko_lua language server
-local sumneko_lua_settings = {
-    Lua = {
-        format = {
-            enable = true,
-            defaultConfig = {
-                indent_style = "space",
-                indent_size = "4",
-            }
-        },
-        runtime = {
-            version = "LuaJIT",
-            path = vim.split(package.path, ";"),
-        },
-        diagnostics = {
-            globals = { "vim" },
-        },
-        workspace = {
-            library = vim.api.nvim_get_runtime_file("", true),
-        },
-        telemetry = {
-            enable = false,
-        },
-    },
-}
-
--- }}}
-
 -- `on_attach` {{{
 
 local on_attach = function(client, bufnr)
@@ -251,13 +203,14 @@ local on_attach = function(client, bufnr)
 
     nmap("<Leader>dn", vim.diagnostic.goto_next, "[D]iagnostic [N]ext")
     nmap("<Leader>dp", vim.diagnostic.goto_prev, "[D]iagnostic [P]revious")
-    nmap("<Leader>dl", vim.diagnostic.setloclist, "[D]iagnostic [L]ist")
     nmap("<Leader>df", vim.diagnostic.open_float, "[D]iagnostic [F]loat")
+    nmap("<Leader>dl", vim.diagnostic.setloclist, "[D]iagnostic [L]ist")
 
-    nmap("<Leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-    nmap("<Leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
     nmap("<Leader>gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
     nmap("<Leader>gi", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
+
+    nmap("<Leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+    nmap("<Leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 
     vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
         if vim.lsp.buf.format then
@@ -270,13 +223,7 @@ local on_attach = function(client, bufnr)
     if client.server_capabilities.documentFormattingProvider then
         local auto_format = vim.api.nvim_create_augroup("AutoFormat", { clear = true })
         vim.api.nvim_create_autocmd("BufWritePost", {
-            callback = function()
-                if vim.lsp.buf.format then
-                    vim.lsp.buf.format()
-                elseif vim.lsp.buf.formatting then
-                    vim.lsp.buf.formatting()
-                end
-            end,
+            command = ":Format",
             group = auto_format,
             pattern = "*",
         })
@@ -305,15 +252,37 @@ for _, server in ipairs(servers) do
         lspconfig[server].setup {
             capabilities = capabilities,
             on_attach = on_attach,
-            filetypes = efm_config.filetypes,
-            init_options = efm_config.init_options,
-            settings = efm_config.settings,
+            filetypes = { "markdown", "python" },
+            init_options = { documentFormatting = true },
+            settings = {
+                rootMarkers = { ".git/" },
+                languages = {
+                    markdown = { {
+                        formatCommand = "prettier --print-width 100 --stdin-filepath ${INPUT}",
+                        formatStdin = true,
+                    } },
+                    python = { {
+                        formatCommand = "black --fast --line-length 100 -", formatStdin = true
+                    } }
+                }
+            },
         }
     elseif server == "sumneko_lua" then
         lspconfig[server].setup {
             capabilities = capabilities,
             on_attach = on_attach,
-            settings = sumneko_lua_settings,
+            settings = {
+                Lua = {
+                    format = {
+                        enable = true,
+                        defaultConfig = { indent_style = "space", indent_size = "4", }
+                    },
+                    runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
+                    diagnostics = { globals = { "vim" } },
+                    workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+                    telemetry = { enable = false },
+                },
+            }
         }
     else
         lspconfig[server].setup {

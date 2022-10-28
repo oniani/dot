@@ -18,9 +18,9 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 -- Equalizes splits when resized
 vim.api.nvim_create_autocmd("VimResized *", {
-    command = "wincmd =",
-    group = miscellaneous,
-    pattern = "*",
+     command = "wincmd =",
+     group = miscellaneous,
+     pattern = "*",
 })
 
 -- Highlights on yank
