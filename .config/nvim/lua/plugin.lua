@@ -9,47 +9,46 @@ if vim.fn.empty(vim.fn.glob(path)) > 0 then
     vim.cmd("packadd packer.nvim")
 end
 
--- Installs plugins
 require("packer").startup({
     function(use)
         -- Plugin manager
-        use "wbthomason/packer.nvim"
+        use("wbthomason/packer.nvim")
 
         -- Productivity
-        use "numToStr/Comment.nvim"
-        use "nvim-treesitter/nvim-treesitter"
-        use { "junegunn/fzf.vim", requires = { "junegunn/fzf", run = ":call fzf#install()" } }
+        use("numToStr/Comment.nvim")
+        use("nvim-treesitter/nvim-treesitter")
+        use({ "junegunn/fzf.vim", requires = { "junegunn/fzf", run = ":call fzf#install()" } })
 
         -- Installs and manages external programs for LSP, formatting, etc.
-        use "williamboman/mason.nvim"
-        use "williamboman/mason-lspconfig.nvim"
+        use("williamboman/mason.nvim")
+        use("williamboman/mason-lspconfig.nvim")
 
         -- LSP
-        use "neovim/nvim-lspconfig"
-        use "onsails/lspkind-nvim"
-        use { "hrsh7th/nvim-cmp", requires = { "hrsh7th/cmp-nvim-lsp" } }
-        use { "L3MON4D3/LuaSnip", requires = { "saadparwaiz1/cmp_luasnip" } }
-        use "hrsh7th/cmp-buffer"
-        use "hrsh7th/cmp-cmdline"
-        use "hrsh7th/cmp-path"
+        use("neovim/nvim-lspconfig")
+        use("onsails/lspkind-nvim")
+        use({ "hrsh7th/nvim-cmp", requires = { "hrsh7th/cmp-nvim-lsp" } })
+        use({ "L3MON4D3/LuaSnip", requires = { "saadparwaiz1/cmp_luasnip" } })
+        use("hrsh7th/cmp-buffer")
+        use("hrsh7th/cmp-cmdline")
+        use("hrsh7th/cmp-path")
 
         -- Visuals
-        use "rebelot/kanagawa.nvim"
-        use { "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } }
+        use("rebelot/kanagawa.nvim")
+        use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
 
         -- When bootstrapping the configuration, we need to sync to install the plugins
         if is_bootstrap then
             require("packer").sync()
         end
-    end
+    end,
 })
 
 if is_bootstrap then
-    print "===================================="
-    print "    Plugins are being installed."
-    print "    Wait until Packer completes,"
-    print "       then restart nvim."
-    print "===================================="
+    print("====================================")
+    print("    Plugins are being installed.")
+    print("    Wait until Packer completes,")
+    print("       then restart nvim.")
+    print("====================================")
     return
 end
 
@@ -63,10 +62,10 @@ require("Comment").setup()
 
 -- nvim-treesitter {{{
 
-require("nvim-treesitter.configs").setup {
+require("nvim-treesitter.configs").setup({
     highlight = { enable = true },
-    indent = { enable = true }
-}
+    indent = { enable = true },
+})
 
 -- }}}
 
@@ -81,16 +80,16 @@ vim.keymap.set("n", "<Leader>r", "<Cmd>Rg<CR>", opts)
 
 -- }}}
 
--- lualine.nvim {{{
-
-require("lualine").setup { options = { theme = "kanagawa" } }
-
--- }}}
-
 -- kanagawa.nvim {{{
 
 require("kanagawa").setup({ transparent = true })
 vim.cmd("colorscheme kanagawa")
+
+-- }}}
+
+-- lualine.nvim {{{
+
+require("lualine").setup({ options = { theme = "kanagawa" } })
 
 -- }}}
 
@@ -102,7 +101,9 @@ local luasnip = require("luasnip")
 
 local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+    return col ~= 0
+        and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s")
+            == nil
 end
 
 cmp.setup({
@@ -126,10 +127,10 @@ cmp.setup({
         ["<C-c>"] = cmp.mapping.close(),
         ["<C-j>"] = cmp.mapping.select_next_item(),
         ["<C-k>"] = cmp.mapping.select_prev_item(),
-        ["<CR>"] = cmp.mapping.confirm {
+        ["<CR>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
-        },
+        }),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -172,18 +173,18 @@ cmp.setup({
 cmp.setup.cmdline({ "/", "?" }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-        { name = "buffer" }
-    }
+        { name = "buffer" },
+    },
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-        { name = "path" }
+        { name = "path" },
     }, {
-        { name = "cmdline" }
-    })
+        { name = "cmdline" },
+    }),
 })
 
 -- }}}
@@ -218,13 +219,13 @@ local on_attach = function(client, bufnr)
         elseif vim.lsp.buf.formatting then
             vim.lsp.buf.formatting()
         end
-    end, { desc = "Formats Current Buffer with LSP" })
+    end, { desc = "LSP: Formats Current Buffer" })
 
     if client.server_capabilities.documentFormattingProvider then
-        local auto_format = vim.api.nvim_create_augroup("AutoFormat", { clear = true })
+        local autofmt = vim.api.nvim_create_augroup("AutoFormat", { clear = true })
         vim.api.nvim_create_autocmd("BufWritePost", {
             command = ":Format",
-            group = auto_format,
+            group = autofmt,
             pattern = "*",
         })
     end
@@ -234,61 +235,79 @@ end
 
 -- Use LSP configurations to set up the servers {{{
 
-local servers = { "bashls", "clangd", "efm", "gopls", "pyright", "rust_analyzer", "sumneko_lua" }
-
 require("mason").setup()
-require("mason-lspconfig").setup { ensure_installed = servers }
+
+local mason_lspconfig = require("mason-lspconfig")
+mason_lspconfig.setup({
+    ensure_installed = {
+        "bashls",
+        "clangd",
+        "efm",
+        "gopls",
+        "pyright",
+        "rust_analyzer",
+        "sumneko_lua",
+    },
+})
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
-for _, server in ipairs(servers) do
+for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
     if server == "clangd" then
-        lspconfig[server].setup {
+        lspconfig[server].setup({
             capabilities = capabilities,
             on_attach = on_attach,
             fallbackFlags = { "--std=c++20" },
-        }
+        })
     elseif server == "efm" then
-        lspconfig[server].setup {
+        lspconfig[server].setup({
             capabilities = capabilities,
             on_attach = on_attach,
-            filetypes = { "markdown", "python" },
+            filetypes = { "lua", "markdown", "python" },
             init_options = { documentFormatting = true },
             settings = {
                 rootMarkers = { ".git/" },
                 languages = {
-                    markdown = { {
-                        formatCommand = "prettier --print-width 100 --stdin-filepath ${INPUT}",
-                        formatStdin = true,
-                    } },
-                    python = { {
-                        formatCommand = "black --fast --line-length 100 -", formatStdin = true
-                    } }
-                }
+                    lua = {
+                        {
+                            formatCommand = "stylua --column-width 100 --indent-type Spaces -",
+                            formatStdin = true,
+                        },
+                    },
+                    markdown = {
+                        {
+                            formatCommand = "prettier --print-width 100 --stdin-filepath ${INPUT}",
+                            formatStdin = true,
+                        },
+                    },
+                    python = {
+                        {
+                            formatCommand = "black --fast --line-length 100 -",
+                            formatStdin = true,
+                        },
+                    },
+                },
             },
-        }
+        })
     elseif server == "sumneko_lua" then
-        lspconfig[server].setup {
+        lspconfig[server].setup({
             capabilities = capabilities,
             on_attach = on_attach,
             settings = {
                 Lua = {
-                    format = {
-                        enable = true,
-                        defaultConfig = { indent_style = "space", indent_size = "4", }
-                    },
+                    format = { enable = false },
                     runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
                     diagnostics = { globals = { "vim" } },
                     workspace = { library = vim.api.nvim_get_runtime_file("", true) },
                     telemetry = { enable = false },
                 },
-            }
-        }
+            },
+        })
     else
-        lspconfig[server].setup {
+        lspconfig[server].setup({
             capabilities = capabilities,
-            on_attach = on_attach
-        }
+            on_attach = on_attach,
+        })
     end
 end
 
