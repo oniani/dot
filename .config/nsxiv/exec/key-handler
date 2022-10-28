@@ -5,6 +5,6 @@ do
         "f") convert -flop "$file" "$file";;
         "r") convert -rotate 90 "$file" "$file";;
         "R") convert -rotate -90 "$file" "$file";;
-        "s") xwallpaper --zoom "$file";;
+        "s") nitrogen --set-zoom-fill "$file";;
     esac
 done

@@ -238,7 +238,7 @@ local sumneko_lua_settings = {
 
 -- `on_attach` {{{
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
     local nmap = function(keys, func, desc)
         if desc then
             desc = "LSP: " .. desc
@@ -267,18 +267,20 @@ local on_attach = function(_, bufnr)
         end
     end, { desc = "Formats Current Buffer with LSP" })
 
-    local auto_format = vim.api.nvim_create_augroup("AutoFormat", { clear = true })
-    vim.api.nvim_create_autocmd("BufWritePost", {
-        callback = function()
-            if vim.lsp.buf.format then
-                vim.lsp.buf.format()
-            elseif vim.lsp.buf.formatting then
-                vim.lsp.buf.formatting()
-            end
-        end,
-        group = auto_format,
-        pattern = "*",
-    })
+    if client.server_capabilities.documentFormattingProvider then
+        local auto_format = vim.api.nvim_create_augroup("AutoFormat", { clear = true })
+        vim.api.nvim_create_autocmd("BufWritePost", {
+            callback = function()
+                if vim.lsp.buf.format then
+                    vim.lsp.buf.format()
+                elseif vim.lsp.buf.formatting then
+                    vim.lsp.buf.formatting()
+                end
+            end,
+            group = auto_format,
+            pattern = "*",
+        })
+    end
 end
 
 -- }}}

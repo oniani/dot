@@ -15,7 +15,7 @@ case $FILE in
     *\.hs) runhaskell "$FILE";;
     *\.lua) lua "$FILE";;
     *\.md) pandoc -V linkcolor:blue -f markdown "$FILE" -o "$BASE.pdf";;
-    *\.py) python3 "$FILE";;
+    *\.py) python "$FILE";;
     *\.R) Rscript "$FILE";;
     *\.Rmd) Rscript -e "rmarkdown::render('$FILE', 'pdf_document')";;
     *\.rs) cargo run "$FILE";;

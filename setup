@@ -64,7 +64,7 @@ nsxiv() {
 # Some cool packages
 packages() {
     cargo install bat fd-find tokei
-    python3 -m pip install black trash-cli
+    python -m pip install black trash-cli
 }
 
 # Clone and set up Z Shell plugins from the source
