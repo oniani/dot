@@ -3,12 +3,15 @@ local opts = { noremap = true }
 
 -- Map the leader key to space
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Toggle between buffers
 vim.keymap.set("n", "<Leader><Leader>", "<C-^>", opts)
 
 -- Run the built-in spell checker
-vim.keymap.set("n", "<Leader>s", "<Cmd>setlocal spell! spl=en_us<CR>", opts)
+vim.keymap.set("n", "<Leader>s", "<Cmd>setlocal spell! spelllang=en_us<CR>", opts)
 
 -- Toggle line wrapping
 vim.keymap.set("n", "<Leader>w", "<Cmd>set wrap!<CR>", opts)

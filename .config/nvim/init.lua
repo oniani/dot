@@ -8,11 +8,7 @@
 -- |_|_| |_|_|\__(_)_|\__,_|\__,_|
 --
 
--- General settings
-require("general.autocmds")
-require("general.mappings")
-require("general.options")
-
--- Plugin settings
-require("plugins.packer")
-require("plugins.lsp")
+require("autocmd")
+require("keymap")
+require("option")
+require("plugin")

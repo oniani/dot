@@ -5,8 +5,8 @@
 font pango:JetBrainsMono Nerd Font Mono 12
 
 # Removes title bar in tiling and floating modes
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 4
+default_floating_border pixel 4
 client.focused #44eda8 #44eda8 #44eda8 #44eda8 #44eda8
 
 # NetworkManager is the most popular way to manage wireless networks on Linux, and nm-applet is a
