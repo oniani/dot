@@ -260,6 +260,9 @@ for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
             fallbackFlags = { "--std=c++20" },
         })
     elseif server == "efm" then
+        local efmfmt = function(cmd)
+            return { formatCommand = cmd, formatStdin = true }
+        end
         lspconfig[server].setup({
             capabilities = capabilities,
             on_attach = on_attach,
@@ -268,24 +271,9 @@ for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
             settings = {
                 rootMarkers = { ".git/" },
                 languages = {
-                    lua = {
-                        {
-                            formatCommand = "stylua --column-width 100 --indent-type Spaces -",
-                            formatStdin = true,
-                        },
-                    },
-                    markdown = {
-                        {
-                            formatCommand = "prettier --print-width 100 --stdin-filepath ${INPUT}",
-                            formatStdin = true,
-                        },
-                    },
-                    python = {
-                        {
-                            formatCommand = "black --fast --line-length 100 -",
-                            formatStdin = true,
-                        },
-                    },
+                    lua = { efmfmt("stylua --column-width 100 --indent-type Spaces -") },
+                    markdown = { efmfmt("prettier --print-width 100 --stdin-filepath ${INPUT}") },
+                    python = { efmfmt("black --fast --line-length 100 -") },
                 },
             },
         })
@@ -295,11 +283,11 @@ for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
             on_attach = on_attach,
             settings = {
                 Lua = {
+                    diagnostics = { globals = { "vim" } },
                     format = { enable = false },
                     runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
-                    diagnostics = { globals = { "vim" } },
-                    workspace = { library = vim.api.nvim_get_runtime_file("", true) },
                     telemetry = { enable = false },
+                    workspace = { library = vim.api.nvim_get_runtime_file("", true) },
                 },
             },
         })
