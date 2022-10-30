@@ -4,30 +4,27 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-# Install configuration files
-config() {
+install_config() {
     cp -R .config "$HOME"
     cp -R .local "$HOME"
     cp .zshenv "$HOME"
 
     mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}"
 
-    mkdir -p "$HOME/aud"
-    mkdir -p "$HOME/bld"
-    mkdir -p "$HOME/dls"
-    mkdir -p "$HOME/doc"
-    mkdir -p "$HOME/git"
-    mkdir -p "$HOME/pic"
-    mkdir -p "$HOME/vid"
-    mkdir -p "$HOME/wip"
+    mkdir -p "$HOME/aud" \
+        "$HOME/bld" \
+        "$HOME/dls" \
+        "$HOME/doc" \
+        "$HOME/git" \
+        "$HOME/pic" \
+        "$HOME/vid" \
+        "$HOME/wip"
 }
 
-# Install drawio
-drawio() {
-    rm -f ./drawio-amd64-*\.deb
+install_drawio() {
     curl -s https://api.github.com/repos/jgraph/drawio-desktop/releases/latest |
         grep "browser_download_url.*\.deb" |
-        cut -d '"' -f 4 |
+        cut -d "\"" -f 4 |
         wget -i -
 
     sudo apt purge -y --autoremove draw.io
@@ -35,76 +32,66 @@ drawio() {
     rm -f ./drawio-amd64-*\.deb
 }
 
-# Install kitty terminal emulator
-kitty() {
+install_kitty() {
     curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 }
 
-# Installs Nerd Fonts
-nerd_fonts() {
+install_nerd_fonts() {
     git clone https://github.com/ryanoasis/nerd-fonts
     cd nerd-fonts && sudo ./install.sh
     cd .. && rm -rf nerd-fonts
 }
 
-# Build and install nnn from the source (+ file icon support <3)
-nnn() {
+install_nnn() {
     git clone https://github.com/jarun/nnn
     cd nnn && make O_NERD=1 && sudo make install
     cd .. && rm -rf nnn
 }
 
-# Build and install nsxic from the source
-nsxiv() {
+install_nsxiv() {
     git clone https://github.com/nsxiv/nsxiv
     cd nsxiv && make && sudo make install-all
     cd .. && rm -rf nsxiv
 }
 
-# Some cool packages
-packages() {
-    cargo install bat fd-find tokei
-    python -m pip install black trash-cli
+install_pyenv() {
+    curl https://pyenv.run | bash
 }
 
-# Clone and set up Z Shell plugins from the source
-zsh() {
-    rm -rf "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-autosuggestions"
-    rm -rf "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-syntax-highlighting"
-    git clone https://github.com/zsh-users/zsh-autosuggestions \
-        "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-autosuggestions"
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting \
-        "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-syntax-highlighting"
+install_rustup() {
+    curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh
 }
 
-# Help message
+install_zsh() {
+    autosuggestions="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-autosuggestions"
+    highlighting="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-syntax-highlighting"
+    rm -rf "$autosuggestions" "$highlighting"
+    git clone https://github.com/zsh-users/zsh-autosuggestions "$autosuggestions"
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting "$highlighting"
+}
+
 help() {
-    printf "USAGE: \n\n \
-    setup [OPTION]\n\n \
-    --config    Install configuration files\n \
-    --drawio    Install drawio desktop\n \
-    --ghcup     Install GHCup\n \
-    --kitty     Install kitty terminal emulator\n \
-    --nerdfonts Installs Nerd Fonts\n \
-    --nnn       Build and install nnn from the source (+ file icon support <3)\n \
-    --nsxiv     Build and install sxiv from the source\n \
-    --packages  Install some cool packages\n \
-    --pyenv     Install pyenv\n \
-    --rustup    Install rustup\n \
+    printf "USAGE: ./setup [OPTION]\n\
+    --config    Install configuration files\n\
+    --drawio    Install drawio desktop\n\
+    --kitty     Install kitty terminal emulator\n\
+    --nerdfonts Installs Nerd Fonts\n\
+    --nnn       Clone, build, and install nnn from the source (+ file icon support <3)\n\
+    --nsxiv     Clone, build, and install nsxiv from the source\n\
+    --pyenv     Install pyenv\n\
+    --rustup    Install rustup\n\
     --zsh       Clone and set up Z Shell plugins from the source\n"
 }
 
 case $1 in
-    "--config") config;;
-    "--drawio") drawio;;
-    "--ghcup") curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh;;
-    "--kitty") kitty;;
-    "--nerdfonts") nerd_fonts;;
-    "--nnn") nnn;;
-    "--nsxiv") nsxiv;;
-    "--packages") packages;;
-    "--pyenv") curl https://pyenv.run | bash;;
-    "--rustup") curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh;;
-    "--zsh") zsh;;
+    "--config") install_config;;
+    "--drawio") install_drawio;;
+    "--kitty") install_kitty;;
+    "--nerdfonts") install_nerd_fonts;;
+    "--nnn") install_nnn;;
+    "--nsxiv") install_nsxiv;;
+    "--pyenv") install_pyenv;;
+    "--rustup") install_rustup;;
+    "--zsh") install_zsh;;
     *) help;;
 esac
