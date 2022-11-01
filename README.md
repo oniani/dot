@@ -53,8 +53,9 @@ wip        # Work in Progress File(s)
 
 ## License
 
-[MIT License](LICENSE)
+[MIT License][license]
 
+[license]: LICENSE
 [xdg]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 [brave]: https://github.com/brave/brave-browser
 [neovim]: https://github.com/neovim/neovim
