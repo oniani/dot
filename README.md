@@ -11,17 +11,19 @@ philosophy are preferred. The setup is compliant with the [XDG Base Directory Sp
 
 Core Tools and Utilities:
 
-- Browser: [Brave][brave]
-- Editor: [Neovim][neovim]
-- File Manager: [nnn][nnn]
-- Image Viewer: [nsxiv][nsxiv]
-- Media Player: [mpv][mpv]
-- PDF Viewer: [zathura][zathura]
-- Screenshot Utility: [Flameshot][flameshot]
-- Shell: [zsh][zsh]
-- Statusbar: [i3status-rust][i3statusrust]
-- Terminal: [kitty][kitty]
-- Window Manager: [i3-gaps][i3gaps]
+| Type               | Program                       |
+| ------------------ | ----------------------------- |
+| Browser            | [Brave][brave]                |
+| Editor             | [Neovim][neovim]              |
+| File Manager       | [nnn][nnn]                    |
+| Image Viewer       | [nsxiv][nsxiv]                |
+| Media Player       | [mpv][mpv]                    |
+| PDF Viewer         | [zathura][zathura]            |
+| Screenshot Utility | [Flameshot][flameshot]        |
+| Shell              | [zsh][zsh]                    |
+| Statusbar          | [i3status-rust][i3statusrust] |
+| Terminal           | [kitty][kitty]                |
+| Window Manager     | [i3-gaps][i3gaps]             |
 
 Other Tools and Utilities:
 
