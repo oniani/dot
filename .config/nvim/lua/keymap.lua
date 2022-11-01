@@ -1,35 +1,31 @@
--- Mapping options
-local opts = { noremap = true }
-
--- Map the leader key to space
+-- Mapping the leader key to space
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
--- Toggle between buffers
-vim.keymap.set("n", "<Leader><Leader>", "<C-^>", opts)
+-- Toggling between buffers
+vim.keymap.set("n", "<Leader><Leader>", "<C-^>", { noremap = true })
 
--- Run the built-in spell checker
-vim.keymap.set("n", "<Leader>s", "<Cmd>setlocal spell! spelllang=en_us<CR>", opts)
+-- Running the built-in spell checker
+vim.keymap.set("n", "<Leader>s", "<Cmd>setlocal spell! spelllang=en_us<CR>", { noremap = true })
 
--- Toggle line wrapping
-vim.keymap.set("n", "<Leader>w", "<Cmd>set wrap!<CR>", opts)
+-- Toggling line wrapping
+vim.keymap.set("n", "<Leader>w", "<Cmd>set wrap!<CR>", { noremap = true })
 
 -- Buffer navigation
-vim.keymap.set("n", "<C-n>", "<Cmd>bn<CR>", opts)
-vim.keymap.set("n", "<C-p>", "<Cmd>bp<CR>", opts)
+vim.keymap.set("n", "<C-n>", "<Cmd>bn<CR>", { noremap = true })
+vim.keymap.set("n", "<C-p>", "<Cmd>bp<CR>", { noremap = true })
 
 -- Window navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
-vim.keymap.set("n", "<C-j>", "<C-w>j", opts)
-vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
-vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
+vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true })
 
 -- Command mode navigation
-vim.keymap.set("c", "<C-A>", "<Home>", opts)
-vim.keymap.set("c", "<C-E>", "<End>", opts)
-vim.keymap.set("c", "<C-h>", "<Left>", opts)
-vim.keymap.set("c", "<C-j>", "<Down>", opts)
-vim.keymap.set("c", "<C-k>", "<Up>", opts)
-vim.keymap.set("c", "<C-l>", "<Right>", opts)
+vim.keymap.set("c", "<C-A>", "<Home>", { noremap = true })
+vim.keymap.set("c", "<C-E>", "<End>", { noremap = true })
+vim.keymap.set("c", "<C-h>", "<Left>", { noremap = true })
+vim.keymap.set("c", "<C-j>", "<Down>", { noremap = true })
+vim.keymap.set("c", "<C-k>", "<Up>", { noremap = true })
+vim.keymap.set("c", "<C-l>", "<Right>", { noremap = true })

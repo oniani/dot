@@ -1,4 +1,5 @@
--- Installs packer.nvim and plugins {{{
+-- packer.nvim {{{
+
 local path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 local repo = "https://github.com/wbthomason/packer.nvim"
 
@@ -54,42 +55,19 @@ end
 
 -- }}}
 
--- Comment.nvim {{{
+-- Settings {{{
 
 require("Comment").setup()
-
--- }}}
-
--- nvim-treesitter {{{
-
-require("nvim-treesitter.configs").setup({
-    highlight = { enable = true },
-    indent = { enable = true },
-})
-
--- }}}
-
--- fzf.vim {{{
-
-local opts = { noremap = true }
-
-vim.keymap.set("n", "<Leader>c", "<Cmd>Commands<CR>", opts)
-vim.keymap.set("n", "<Leader>f", "<Cmd>Files<CR>", opts)
-vim.keymap.set("n", "<Leader>l", "<Cmd>Lines<CR>", opts)
-vim.keymap.set("n", "<Leader>r", "<Cmd>Rg<CR>", opts)
-
--- }}}
-
--- kanagawa.nvim {{{
-
 require("kanagawa").setup({ transparent = true })
+require("lualine").setup({ options = { theme = "kanagawa" } })
+require("nvim-treesitter.configs").setup({ highlight = { enable = true } })
+
 vim.cmd("colorscheme kanagawa")
 
--- }}}
-
--- lualine.nvim {{{
-
-require("lualine").setup({ options = { theme = "kanagawa" } })
+vim.keymap.set("n", "<Leader>c", "<Cmd>Commands<CR>", { noremap = true })
+vim.keymap.set("n", "<Leader>f", "<Cmd>Files<CR>", { noremap = true })
+vim.keymap.set("n", "<Leader>l", "<Cmd>Lines<CR>", { noremap = true })
+vim.keymap.set("n", "<Leader>r", "<Cmd>Rg<CR>", { noremap = true })
 
 -- }}}
 
@@ -233,7 +211,7 @@ end
 
 -- }}}
 
--- Use LSP configurations to set up the servers {{{
+-- nvim-lspconfig {{{
 
 require("mason").setup()
 
