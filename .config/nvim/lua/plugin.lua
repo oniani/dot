@@ -18,26 +18,25 @@ require("packer").startup({
         -- Productivity
         use("numToStr/Comment.nvim")
         use("nvim-treesitter/nvim-treesitter")
+        use("stevearc/aerial.nvim")
         use({ "junegunn/fzf.vim", requires = { "junegunn/fzf", run = ":call fzf#install()" } })
 
-        -- Installs and manages external programs for LSP, formatting, etc.
-        use("williamboman/mason.nvim")
-        use("williamboman/mason-lspconfig.nvim")
-
         -- LSP
+        use("williamboman/mason-lspconfig.nvim")
+        use("williamboman/mason.nvim")
         use("neovim/nvim-lspconfig")
         use("onsails/lspkind-nvim")
         use({ "hrsh7th/nvim-cmp", requires = { "hrsh7th/cmp-nvim-lsp" } })
-        use({ "L3MON4D3/LuaSnip", requires = { "saadparwaiz1/cmp_luasnip" } })
         use("hrsh7th/cmp-buffer")
         use("hrsh7th/cmp-cmdline")
         use("hrsh7th/cmp-path")
+        use({ "L3MON4D3/LuaSnip", requires = { "saadparwaiz1/cmp_luasnip" } })
 
         -- Visuals
         use("rebelot/kanagawa.nvim")
         use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
 
-        -- When bootstrapping the configuration, we need to sync to install the plugins
+        -- When bootstrapping the configuration, we need to sync to properly install the plugins
         if is_bootstrap then
             require("packer").sync()
         end
@@ -48,7 +47,7 @@ if is_bootstrap then
     print("====================================")
     print("    Plugins are being installed.")
     print("    Wait until Packer completes,")
-    print("       then restart nvim.")
+    print("        then restart nvim.")
     print("====================================")
     return
 end
@@ -58,13 +57,15 @@ end
 -- Settings {{{
 
 require("Comment").setup()
+require("aerial").setup({ layout = { min_width = 64 } })
 require("kanagawa").setup({ transparent = true })
 require("lualine").setup({ options = { theme = "kanagawa" } })
 require("nvim-treesitter.configs").setup({ highlight = { enable = true } })
 
+vim.keymap.set("n", "<Leader>a", "<Cmd>AerialToggle<CR>", { noremap = true })
+
 vim.cmd("colorscheme kanagawa")
 
-vim.keymap.set("n", "<Leader>c", "<Cmd>Commands<CR>", { noremap = true })
 vim.keymap.set("n", "<Leader>f", "<Cmd>Files<CR>", { noremap = true })
 vim.keymap.set("n", "<Leader>l", "<Cmd>Lines<CR>", { noremap = true })
 vim.keymap.set("n", "<Leader>r", "<Cmd>Rg<CR>", { noremap = true })
@@ -180,16 +181,14 @@ local on_attach = function(client, bufnr)
     nmap("K", vim.lsp.buf.hover, "Hover Documentation")
     nmap("T", vim.lsp.buf.signature_help, "Signature Documentation")
 
-    nmap("<Leader>dn", vim.diagnostic.goto_next, "[D]iagnostic [N]ext")
-    nmap("<Leader>dp", vim.diagnostic.goto_prev, "[D]iagnostic [P]revious")
-    nmap("<Leader>df", vim.diagnostic.open_float, "[D]iagnostic [F]loat")
-    nmap("<Leader>dl", vim.diagnostic.setloclist, "[D]iagnostic [L]ist")
+    nmap("dl", vim.diagnostic.setloclist, "[D]iagnostic [L]ist")
+    nmap("dn", vim.diagnostic.goto_next, "[D]iagnostic [N]ext")
+    nmap("dp", vim.diagnostic.goto_prev, "[D]iagnostic [P]revious")
 
-    nmap("<Leader>gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-    nmap("<Leader>gi", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
+    nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
 
-    nmap("<Leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-    nmap("<Leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+    nmap("ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+    nmap("rn", vim.lsp.buf.rename, "[R]e[n]ame")
 
     vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
         if vim.lsp.buf.format then
@@ -249,7 +248,7 @@ for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
             settings = {
                 rootMarkers = { ".git/" },
                 languages = {
-                    lua = { efmfmt("stylua --column-width 100 --indent-type Spaces -") },
+                    lua = { efmfmt("stylua --column-width 100 --indent-type spaces -") },
                     markdown = { efmfmt("prettier --print-width 100 --stdin-filepath ${INPUT}") },
                     python = { efmfmt("black --fast --line-length 100 -") },
                 },
