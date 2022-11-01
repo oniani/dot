@@ -14,7 +14,7 @@ Core Tools and Utilities:
 - Browser: [Brave][brave]
 - Editor: [Neovim][neovim]
 - File Manager: [nnn][nnn]
-- Image viewer: [nsxiv][nsxiv]
+- Image Viewer: [nsxiv][nsxiv]
 - Media Player: [mpv][mpv]
 - PDF Viewer: [zathura][zathura]
 - Screenshot Utility: [Flameshot][flameshot]
@@ -31,7 +31,7 @@ Other Tools and Utilities:
 Automation:
 
 ```console
-$ ./setup --help
+$ ./setup
 ```
 
 ## `$HOME` Directory Structure
