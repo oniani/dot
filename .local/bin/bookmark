@@ -23,7 +23,7 @@ sel() {
     bookmark="$(dmenu -i -l 16 -fn "$font" < "$CACHE")"
     printf "%s\n" "$bookmark" | xclip -sel clipboard
     xdotool getactivewindow key ctrl+l ctrl+v KP_Enter
-    notify-send "Selected" "$bookmark"
+    [ -n "$bookmark" ] && notify-send "Selected" "$bookmark"
 }
 
 case $1 in
