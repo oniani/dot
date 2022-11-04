@@ -35,7 +35,7 @@ exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id xset r rate 300 50
 
 # Launch picom compositor
-exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf
 
 # Switching keyboard layouts
 exec_always "setxkbmap -option 'grp:alt_shift_toggle' -layout us,ge,ru -variant ,qwerty,phonetic"
@@ -49,6 +49,9 @@ exec_always "v4l2-ctl -d /dev/video0 --set-ctrl=focus_auto=0"
 exec_always --no-startup-id "pactl set-default-sink 'alsa_output.pci-0000_00_1f.3.analog-stereo'"
 exec_always --no-startup-id "pactl set-default-source 'alsa_input.usb-Samson_Technologies_Samson_Q2U_Microphone-00.analog-stereo'"
 exec_always --no-startup-id "alsactl restore"
+
+# Notification daemon
+exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
 
 # }}}
 
@@ -95,10 +98,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+r restart
 
 # Start a terminal
-bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty
-
-# Exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Return exec $HOME/.local/kitty.app/bin/kitty
 
 # }}}
 
@@ -147,7 +147,6 @@ bindsym $mod+u [urgent=latest] focus
 
 # Resizing {{{
 
-# Resize window (can also use the mouse for this)
 mode "resize" {
     bindsym h resize shrink width 10 px or 10 ppt
     bindsym j resize grow height 10 px or 10 ppt
@@ -165,16 +164,16 @@ bindsym $mod+r mode "resize"
 
 # Program Mappings {{{
 
-# Start a web browser
 bindsym $mod+w exec brave-browser --force-device-scale-factor=1.25
 
-# Start a program launcher
 bindsym $mod+Tab exec rofi -show window
 bindsym $mod+f exec "rofi -modi drun,run -show drun"
 
-# Take a screenshot
-bindsym --release $mod+s exec --no-startup-id flameshot gui --path ~/pic/screenshots
-bindsym --release $mod+Shift+s exec --no-startup-id flameshot full --path ~/pic/screenshots
+bindsym --release $mod+Shift+a exec --no-startup-id flameshot gui -p $HOME/pic/screenshots
+bindsym --release $mod+Shift+s exec --no-startup-id flameshot full -p $HOME/pic/screenshots
+
+bindsym $mod+a exec --no-startup-id $HOME/.local/bin/bookmark -a
+bindsym $mod+s exec --no-startup-id $HOME/.local/bin/bookmark -s
 
 # }}}
 
@@ -182,7 +181,7 @@ bindsym --release $mod+Shift+s exec --no-startup-id flameshot full --path ~/pic/
 
 bar {
     position top
-    status_command ~/.local/share/cargo/bin/i3status-rs
+    status_command $HOME/.local/share/cargo/bin/i3status-rs
     strip_workspace_numbers yes
     colors {
         focused_workspace #ffffff #ffffff #000000

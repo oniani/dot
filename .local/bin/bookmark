@@ -1,0 +1,33 @@
+#!/usr/bin/env sh
+
+# Bookmark manager
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+CACHE="${XDG_DATA_HOME:-$HOME/.local/share}/bookmark"
+
+add() {
+    bookmark="$(xclip -o)"
+    if grep -q "^$bookmark$" "$CACHE"; then
+        notify-send "Bookmark already exists" "$bookmark"
+    else
+        printf "%s\n" "$bookmark" >> "$CACHE"
+        tmpfile=$(mktemp)
+        sort -u "$CACHE" > "$tmpfile" && mv "$tmpfile" "$CACHE"
+        notify-send "Bookmarked" "$bookmark"
+    fi
+}
+
+sel() {
+    font="JetBrainsMono Nerd Font Mono:pixelsize=20"
+    bookmark="$(dmenu -i -l 16 -fn "$font" < "$CACHE")"
+    printf "%s\n" "$bookmark" | xclip -sel clipboard
+    xdotool getactivewindow key ctrl+l ctrl+v KP_Enter
+    notify-send "Selected" "$bookmark"
+}
+
+case $1 in
+    -a) add;;
+    -s) sel;;
+    *) printf "Unknown command\n";;
+esac
