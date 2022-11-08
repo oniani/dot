@@ -19,8 +19,7 @@ add() {
 }
 
 sel() {
-    font="JetBrainsMono Nerd Font Mono:pixelsize=20"
-    bookmark="$(dmenu -i -l 16 -fn "$font" < "$CACHE")"
+    bookmark="$(rofi -dmenu < "$CACHE")"
     printf "%s\n" "$bookmark" | xclip -sel clipboard
     xdotool getactivewindow key ctrl+l ctrl+v KP_Enter
     [ -n "$bookmark" ] && notify-send "Selected" "$bookmark"
