@@ -42,13 +42,11 @@ $ ./setup
 .cache     # User cache(s)
 .config    # User config(s)
 .local     # User data and programs(s)
-aud        # Audio(s)
 bld        # Build(s)
 dls        # Download(s)
 doc        # Document(s)
 git        # Git repo(s)
 pic        # Picture(s)
-vid        # Video(s)
 wip        # Work in Progress File(s)
 .zshenv    # Exports Environment Variable(s)
 ```
