@@ -169,8 +169,8 @@ bindsym $mod+w exec brave-browser --force-device-scale-factor=1.25
 bindsym $mod+Tab exec rofi -show window
 bindsym $mod+f exec "rofi -modi drun,run -show drun"
 
-bindsym --release $mod+Shift+a exec --no-startup-id flameshot gui -p $HOME/pic/screenshots
-bindsym --release $mod+Shift+s exec --no-startup-id flameshot full -p $HOME/pic/screenshots
+bindsym --release $mod+Shift+a exec --no-startup-id flameshot gui -p $HOME/pic
+bindsym --release $mod+Shift+s exec --no-startup-id flameshot full -p $HOME/pic
 
 #bindsym $mod+a exec --no-startup-id $HOME/.local/bin/bookmark -a
 bindsym $mod+s exec --no-startup-id $HOME/.local/bin/bookmark -s
