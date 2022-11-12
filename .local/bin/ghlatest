@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+# Gets download links to the latest releases from GitHub
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+repo="$1"
+link="https://api.github.com/repos/$repo/releases/latest"
+curl -s "$link" | grep "browser_download_url" | cut -d '"' -f 4
