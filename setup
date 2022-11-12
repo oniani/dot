@@ -16,7 +16,7 @@ install_config() {
 install_drawio() {
     curl -s https://api.github.com/repos/jgraph/drawio-desktop/releases/latest |
         grep "browser_download_url.*\.deb" |
-        cut -d "\"" -f 4 |
+        cut -d '"' -f 4 |
         wget -i -
 
     sudo apt purge -y --autoremove draw.io
