@@ -32,10 +32,6 @@ require("packer").startup({
         use("hrsh7th/cmp-path")
         use({ "L3MON4D3/LuaSnip", requires = { "saadparwaiz1/cmp_luasnip" } })
 
-        -- Visuals
-        use("rebelot/kanagawa.nvim")
-        use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
-
         -- When bootstrapping the configuration, we need to sync to properly install the plugins
         if is_bootstrap then
             require("packer").sync()
@@ -59,7 +55,6 @@ end
 require("Comment").setup()
 require("aerial").setup({ layout = { min_width = 64 } })
 require("kanagawa").setup({ transparent = true })
-require("lualine").setup({ options = { theme = "kanagawa" } })
 require("nvim-treesitter.configs").setup({ highlight = { enable = true } })
 
 vim.keymap.set("n", "<Leader>a", "<Cmd>AerialToggle<CR>", { noremap = true })
