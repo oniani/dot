@@ -18,7 +18,6 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- Visual
-vim.opt.cmdheight = 0
 vim.opt.colorcolumn = "101"
 vim.opt.fillchars = "fold: "
 vim.opt.foldmethod = "marker"
