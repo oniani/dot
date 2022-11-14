@@ -32,6 +32,9 @@ require("packer").startup({
         use("hrsh7th/cmp-path")
         use({ "L3MON4D3/LuaSnip", requires = { "saadparwaiz1/cmp_luasnip" } })
 
+        -- Visuals
+        use("rebelot/kanagawa.nvim")
+
         -- When bootstrapping the configuration, we need to sync to properly install the plugins
         if is_bootstrap then
             require("packer").sync()
