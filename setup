@@ -56,10 +56,10 @@ install_rustup() {
 
 install_zsh() {
     autosuggestions="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-autosuggestions"
-    highlighting="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-syntax-highlighting"
-    rm -rf "$autosuggestions" "$highlighting"
+    syntaxhighlighting="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-syntax-highlighting"
+    rm -rf "$autosuggestions" "$syntaxhighlighting"
     git clone https://github.com/zsh-users/zsh-autosuggestions "$autosuggestions"
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting "$highlighting"
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting "$syntaxhighlighting"
 }
 
 help() {
