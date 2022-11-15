@@ -52,6 +52,7 @@ function colormap() {
 
 # Core commands
 alias :q="exit"
+alias diff="diff --color=auto"
 alias grep="grep --color=auto"
 alias icat="kitty +kitten icat"
 alias l="ls -Av --color=auto --group-directories-first"
