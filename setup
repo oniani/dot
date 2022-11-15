@@ -24,6 +24,15 @@ install_drawio() {
     rm -f ./drawio-amd64-*\.deb
 }
 
+install_go() {
+    rm -rf "$HOME"/.local/share/go
+    link="https://go.dev/dl/"
+    tarball=$(curl -s "$link" | grep "downloadBox.*linux" | cut -d '"' -f 4 | cut -d '/' -f 3)
+    wget "$link$tarball"
+    tar -C "$HOME"/.local/share -xzf "$tarball"
+    rm -f "$tarball"
+}
+
 install_kitty() {
     curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 }
@@ -66,8 +75,9 @@ help() {
     printf "USAGE: ./setup [OPTION]\n\
     --config    Install configuration files\n\
     --drawio    Install drawio desktop\n\
+    --go        Install the Go programming language\n\
     --kitty     Install kitty terminal emulator\n\
-    --nerdfonts Installs Nerd Fonts\n\
+    --nerdfonts Install Nerd Fonts\n\
     --nnn       Clone, build, and install nnn from the source (+ file icon support <3)\n\
     --nsxiv     Clone, build, and install nsxiv from the source\n\
     --pyenv     Install pyenv\n\
@@ -78,6 +88,7 @@ help() {
 case $1 in
     "--config") install_config;;
     "--drawio") install_drawio;;
+    "--go") install_go;;
     "--kitty") install_kitty;;
     "--nerdfonts") install_nerd_fonts;;
     "--nnn") install_nnn;;
