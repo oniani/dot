@@ -14,27 +14,36 @@ install_config() {
 }
 
 install_drawio() {
-    curl -s https://api.github.com/repos/jgraph/drawio-desktop/releases/latest |
+    curl -s "https://api.github.com/repos/jgraph/drawio-desktop/releases/latest" |
         grep "browser_download_url.*\.deb" |
         cut -d '"' -f 4 |
         wget -i -
 
     sudo apt purge -y --autoremove draw.io
-    sudo apt install -y ./drawio-amd64-*\.deb
-    rm -f ./drawio-amd64-*\.deb
+    sudo apt install -y ./drawio-amd64-*.deb
+    rm -f ./drawio-amd64-*.deb
 }
 
 install_go() {
     rm -rf "$HOME"/.local/share/go
     link="https://go.dev/dl/"
-    tarball=$(curl -s "$link" | grep "downloadBox.*linux" | cut -d '"' -f 4 | cut -d '/' -f 3)
-    wget "$link$tarball"
+    tarball=$(curl -s $link | grep "downloadBox.*linux" | cut -d '"' -f 4 | cut -d '/' -f 3)
+    wget "$link$tarball" -O "$tarball"
     tar -C "$HOME"/.local/share -xzf "$tarball"
     rm -f "$tarball"
 }
 
 install_kitty() {
-    curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+    rm -rf "$HOME"/.local/share/kitty
+    link=$(curl -s "https://api.github.com/repos/kovidgoyal/kitty/releases/latest" |
+        grep "browser_download_url" |
+        cut -d '"' -f 4 |
+        grep "x86_64.txz$")
+    tarball=$(printf "%s" "$link" | cut -d '/' -f 9)
+    wget "$link" -O "$tarball"
+    mkdir -p "$HOME"/.local/share/kitty
+    tar -C "$HOME"/.local/share/kitty -xJf "$tarball"
+    rm -rf "$tarball"
 }
 
 install_nerd_fonts() {
