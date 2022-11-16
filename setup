@@ -29,7 +29,7 @@ install_drawio() {
 install_go() {
     rm -rf "$HOME"/.local/share/go
     link="https://go.dev/dl/"
-    tarball=$(curl -s $link | grep "downloadBox.*linux" | cut -d '"' -f 4 | cut -d '/' -f 3)
+    tarball=$(basename "$(curl -s $link | grep "downloadBox.*linux" | cut -d '"' -f 4)")
     wget "$link$tarball" -O "$tarball"
     tar -C "$HOME"/.local/share -xzf "$tarball"
     rm -f "$tarball"
@@ -38,7 +38,7 @@ install_go() {
 install_kitty() {
     rm -rf "$HOME"/.local/kitty
     link=$(get_github_latest kovidgoyal/kitty | grep "x86_64.txz$")
-    tarball=$(printf "%s" "$link" | cut -d '/' -f 9)
+    tarball=$(basename "$link")
     wget "$link" -O "$tarball"
     mkdir -p "$HOME"/.local/kitty
     tar -C "$HOME"/.local/kitty -xJf "$tarball"
@@ -46,9 +46,15 @@ install_kitty() {
 }
 
 install_nerd_fonts() {
-    git clone https://github.com/ryanoasis/nerd-fonts
-    cd nerd-fonts && sudo ./install.sh
-    cd .. && rm -rf nerd-fonts
+    link=$(get_github_latest ryanoasis/nerd-fonts | grep -i jetbrainsmono)
+    zipfile=$(basename "$link")
+    dirname="${zipfile%.*}"
+    wget "$link" -O "$zipfile"
+    unzip "$zipfile" -d "$dirname"
+    mkdir -p "$HOME"/.local/share/fonts
+    mv -f "$dirname"/* "$HOME"/.local/share/fonts
+    fc-cache -fv
+    rm -rf "$zipfile" "$dirname"
 }
 
 install_nnn() {
