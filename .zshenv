@@ -36,7 +36,7 @@ export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
 # Make directories reachable
 export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/share/kitty/bin/kitty:$PATH"
+export PATH="$HOME/.local/kitty/bin/kitty:$PATH"
 export PATH="$HOME/bld/vscode:$PATH"
 export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/cargo/bin:$PATH"

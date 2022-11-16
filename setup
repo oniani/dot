@@ -4,7 +4,7 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-install_github_latest() {
+get_github_latest() {
     repo="$1"
     link="https://api.github.com/repos/$repo/releases/latest"
     curl -s "$link" | grep "browser_download_url" | cut -d '"' -f 4
@@ -20,7 +20,7 @@ install_config() {
 }
 
 install_drawio() {
-    install_github_latest jgraph/drawio-desktop | grep deb | wget -i -
+    get_github_latest jgraph/drawio-desktop | grep deb | wget -i -
     sudo apt purge -y --autoremove draw.io
     sudo apt install -y ./drawio-amd64-*.deb
     rm -f drawio-amd64-*.deb
@@ -36,12 +36,12 @@ install_go() {
 }
 
 install_kitty() {
-    rm -rf "$HOME"/.local/share/kitty
-    link=$(install_github_latest kovidgoyal/kitty | grep "x86_64.txz$")
+    rm -rf "$HOME"/.local/kitty
+    link=$(get_github_latest kovidgoyal/kitty | grep "x86_64.txz$")
     tarball=$(printf "%s" "$link" | cut -d '/' -f 9)
     wget "$link" -O "$tarball"
-    mkdir -p "$HOME"/.local/share/kitty
-    tar -C "$HOME"/.local/share/kitty -xJf "$tarball"
+    mkdir -p "$HOME"/.local/kitty
+    tar -C "$HOME"/.local/kitty -xJf "$tarball"
     rm -f "$tarball"
 }
 

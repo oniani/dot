@@ -98,7 +98,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+r restart
 
 # Start a terminal
-bindsym $mod+Return exec $HOME/.local/share/kitty/bin/kitty
+bindsym $mod+Return exec $HOME/.local/kitty/bin/kitty
 
 # }}}
 
