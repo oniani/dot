@@ -77,6 +77,16 @@ install_rustup() {
     curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh
 }
 
+install_vscode() {
+    link="https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
+    wget -O vscode_stable_linux-x64.tar.gz "$link"
+    tar -C "$HOME"/.local -xzvf vscode_stable_linux-x64.tar.gz
+    rm -f vscode_stable_linux-x64.tar.gz
+    mv "$HOME"/.local/VSCode-linux-x64 "$HOME"/.local/vscode
+    cd "$HOME"/.local/vscode || exit
+    mkdir data
+}
+
 install_zsh() {
     autosuggestions="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-autosuggestions"
     syntaxhighlighting="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-syntax-highlighting"
@@ -96,6 +106,7 @@ help() {
     --nsxiv     Clone, build, and install nsxiv from the source\n\
     --pyenv     Install pyenv\n\
     --rustup    Install rustup\n\
+    --rustup    Install VS Code\n\
     --zsh       Clone and set up Z Shell plugins from the source\n"
 }
 
@@ -109,6 +120,7 @@ case $1 in
     "--nsxiv") install_nsxiv;;
     "--pyenv") install_pyenv;;
     "--rustup") install_rustup;;
+    "--vscode") install_vscode;;
     "--zsh") install_zsh;;
     *) help;;
 esac
