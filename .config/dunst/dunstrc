@@ -1,6 +1,5 @@
 [global]
 alignment = center
-corner_radius = 16
 font = JetBrainsMono Nerd Font Mono 12
 frame_width = 2
 padding = 16

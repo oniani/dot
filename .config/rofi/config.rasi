@@ -38,7 +38,6 @@ window {
     background-color: @bg1;
     border: 4px;
     border-color: @bg2;
-    border-radius: 16px;
 }
 
 inputbar {
