@@ -59,7 +59,7 @@ install_nerd_fonts() {
 
 install_nnn() {
     git clone https://github.com/jarun/nnn
-    cd nnn && make O_NERD=1 O_STATIC=1 strip && sudo make install
+    cd nnn && sudo make O_NERD=1 O_STATIC=1 strip install
     cd .. && rm -rf nnn
 }
 
