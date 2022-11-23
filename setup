@@ -106,7 +106,7 @@ help() {
     --nsxiv     Clone, build, and install nsxiv from the source\n\
     --pyenv     Install pyenv\n\
     --rustup    Install rustup\n\
-    --rustup    Install VS Code\n\
+    --vscode    Install VS Code\n\
     --zsh       Clone and set up Z Shell plugins from the source\n"
 }
 
