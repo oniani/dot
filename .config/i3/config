@@ -21,7 +21,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3blocks
 
 # Disables laptop monitor
-exec --no-startup-id xrandr --output eDP-1-1 --off
+exec --no-startup-id xrandr --output eDP-1 --off
 
 # Keeps the monitor active even after inactivity.
 exec --no-startup-id xset dpms 0 0 0
