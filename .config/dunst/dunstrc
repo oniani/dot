@@ -2,6 +2,7 @@
 alignment = center
 font = JetBrainsMono Nerd Font Mono 12
 frame_width = 2
+geometry = "300x5-30+20"
 padding = 16
 transparency = 16
 
