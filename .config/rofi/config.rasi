@@ -2,29 +2,17 @@ configuration {
     font: "JetBrainsMono Nerd Font Mono 24";
     show-icons: true;
 
-    kb-move-char-back: "Control+u";
-    kb-move-char-forward: "Control+d";
-    kb-remove-char-forward: "Control+f";
-    kb-remove-to-sol: "Control+b";
-
     kb-accept-entry: "Control+m,Return,KP_Enter";
-    kb-mode-next: "Control+Tab";
-    kb-mode-previous: "Control+Shift+Tab";
-    kb-remove-char-back: "BackSpace";
     kb-remove-to-eol: "Control+Shift+e";
-
-    kb-row-left: "Left,Control+h";
-    kb-row-right: "Right,Control+l";
-    kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
     kb-row-down: "Down,Control+j";
+    kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
 }
 
 @theme "/dev/null"
 
 * {
     bg0: #000000;
-    bg1: #000000;
-    bg2: #8ba8f0;
+    bg1: #8ba8f0;
     fg0: #c0caf5;
     fg1: #737aa2;
     red: #f7768e;
@@ -37,7 +25,7 @@ configuration {
 window {
     background-color: @bg1;
     border: 4px;
-    border-color: @bg2;
+    border-color: @bg1;
 }
 
 inputbar {
@@ -66,10 +54,16 @@ element {
 
 element selected {
     background-color: @accent;
-    text-color: @bg1;
+    text-color: @bg0;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
 }
 
 element-icon {
+    background-color: inherit;
     size: 48px;
 }
 
