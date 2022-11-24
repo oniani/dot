@@ -36,8 +36,8 @@ format = " $icon $used/$total ($available free) "
 
 [[block]]
 block = "memory"
-format_mem = "$icon$mem_used/$mem_total ($mem_used_percents)"
-format_swap = "$icon$swap_used/$swap_total ($swap_used_percents)"
+format = "$icon$mem_used/$mem_total ($mem_used_percents)"
+format_alt = "$icon$swap_used/$swap_total ($swap_used_percents)"
 interval = 5
 
 [[block]]
