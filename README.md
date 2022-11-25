@@ -23,7 +23,7 @@ Core Tools and Utilities:
 | Shell              | [zsh][zsh]                    |
 | Statusbar          | [i3status-rust][i3statusrust] |
 | Terminal           | [kitty][kitty]                |
-| Window Manager     | [i3-gaps][i3gaps]             |
+| Window Manager     | [i3][i3]                      |
 
 Other Tools and Utilities:
 
@@ -39,16 +39,15 @@ $ ./setup
 ## `$HOME` Directory Structure
 
 ```console
-.cache     # User cache(s)
-.config    # User config(s)
-.local     # User data and programs(s)
-bld        # Build(s)
-dls        # Download(s)
-doc        # Document(s)
-git        # Git repo(s)
-pic        # Picture(s)
-wip        # Work in Progress File(s)
-.zshenv    # Exports Environment Variable(s)
+.cache     # User cache
+.config    # User configs
+.local     # User data and programs
+dl         # Downloads
+doc        # Documents
+git        # Git repos
+pic        # Pictures
+wip        # Work in Progress Files
+.zshenv    # Exports Environment Variables
 ```
 
 ## License
@@ -67,6 +66,6 @@ wip        # Work in Progress File(s)
 [zsh]: https://github.com/zsh-users/zsh
 [i3statusrust]: https://github.com/greshake/i3status-rust
 [kitty]: https://github.com/kovidgoyal/kitty
-[i3gaps]: https://github.com/Airblader/i3
+[i3]: https://github.com/i3/i3
 [drawio]: https://github.com/jgraph/drawio-desktop
 [vscode]: https://github.com/microsoft/vscode
