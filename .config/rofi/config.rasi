@@ -26,6 +26,7 @@ window {
     background-color: @bg1;
     border: 4px;
     border-color: @bg1;
+    border-radius: 16px;
 }
 
 inputbar {
