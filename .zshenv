@@ -54,7 +54,7 @@ export FZF_DEFAULT_OPTS="--reverse --color bg+:-1"
 
 # bat
 export BAT_STYLE="numbers"
-export BAT_THEME="gruvbox-dark"
+export BAT_THEME="base16-256"
 
 # Utilities
 export EDITOR="nvim"
