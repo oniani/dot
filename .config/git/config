@@ -60,7 +60,10 @@
 [credential]
     # NOTE: Perform the steps below first.
     #
-    # sudo apt install libsecret-1-0 libsecret-1-dev
-    # cd /usr/share/doc/git/contrib/credential/libsecret
-    # sudo make
-	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+    # $ wget "https://github.com/GitCredentialManager/git-credential-manager/releases/download/v2.0.877/gcm-linux_amd64.2.0.877.deb"
+    # $ sudo dpkg -i ./gcm-linux_amd64.2.0.877.deb
+    # $ git-credential-manager configure
+	credentialStore = cache
+	helper = /usr/local/bin/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
