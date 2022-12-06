@@ -107,8 +107,8 @@ bindsym $mod+Return exec $HOME/.local/kitty/bin/kitty
 # Workspaces
 set $ws1 "1: dev "
 set $ws2 "2: web "
-set $ws3 "3: chat "
-set $ws4 "4: music "
+set $ws3 "3: mail "
+set $ws4 "4: chat "
 set $ws5 "5: other "
 set $ws6 "6: other "
 set $ws7 "7: other "
