@@ -20,7 +20,7 @@ install_config() {
 }
 
 install_drawio() {
-    get_github_latest jgraph/drawio-desktop | grep deb | wget -i -
+    get_github_latest jgraph/drawio-desktop | grep deb | wget -q --show-progress -i -
     sudo apt purge -y --autoremove draw.io
     sudo apt install -y ./drawio-amd64-*.deb
     rm -f drawio-amd64-*.deb
@@ -30,7 +30,7 @@ install_go() {
     rm -rf "$HOME"/.local/share/go
     link="https://go.dev/dl/"
     tarball=$(basename "$(curl -s $link | grep "downloadBox.*linux" | cut -d '"' -f 4)")
-    wget "$link$tarball" -O "$tarball"
+    wget -q --show-progress "$link$tarball" -O "$tarball"
     tar -C "$HOME"/.local/share -xzf "$tarball"
     rm -f "$tarball"
 }
@@ -39,7 +39,7 @@ install_kitty() {
     rm -rf "$HOME"/.local/kitty
     link=$(get_github_latest kovidgoyal/kitty | grep "x86_64.txz$")
     tarball=$(basename "$link")
-    wget "$link" -O "$tarball"
+    wget -q --show-progress "$link" -O "$tarball"
     mkdir -p "$HOME"/.local/kitty
     tar -C "$HOME"/.local/kitty -xJf "$tarball"
     rm -f "$tarball"
@@ -49,7 +49,7 @@ install_nerd_fonts() {
     link=$(get_github_latest ryanoasis/nerd-fonts | grep -i jetbrainsmono)
     zipfile=$(basename "$link")
     dirname="${zipfile%.*}"
-    wget "$link" -O "$zipfile"
+    wget -q --show-progress "$link" -O "$zipfile"
     unzip "$zipfile" -d "$dirname"
     mkdir -p "$HOME"/.local/share/fonts
     mv -f "$dirname"/* "$HOME"/.local/share/fonts
@@ -79,7 +79,7 @@ install_rustup() {
 
 install_vscode() {
     link="https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
-    wget -O vscode_stable_linux-x64.tar.gz "$link"
+    wget -q --show-progress -O vscode_stable_linux-x64.tar.gz "$link"
     tar -C "$HOME"/.local -xzvf vscode_stable_linux-x64.tar.gz
     rm -f vscode_stable_linux-x64.tar.gz
     mv "$HOME"/.local/VSCode-linux-x64 "$HOME"/.local/vscode
