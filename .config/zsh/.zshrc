@@ -58,7 +58,7 @@ alias icat="kitty +kitten icat"
 alias l="ls -Av --color=auto --group-directories-first"
 alias ll="ls -Ahlv --color=auto --group-directories-first"
 alias open="xdg-open"
-alias wget="wget -q --show-progress -U me"
+alias wget="wget --show-progress"
 
 # Interactive
 alias e="nvim"
