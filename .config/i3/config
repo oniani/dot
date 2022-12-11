@@ -164,6 +164,7 @@ bindsym $mod+r mode "resize"
 
 # Program Mappings {{{
 
+bindsym $mod+e exec GTK_THEME=Yaru-dark evolution
 bindsym $mod+w exec brave-browser --force-device-scale-factor=1.25
 
 bindsym $mod+Tab exec rofi -show window
