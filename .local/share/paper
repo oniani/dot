@@ -1,0 +1,13 @@
+# `tail -n+2 paper | while read -r url filename; do wget "$url" -O "$filename"; done`
+https://arxiv.org/pdf/1412.6980.pdf adam.pdf
+https://arxiv.org/pdf/1706.03762.pdf attention_is_all_you_need.pdf
+https://arxiv.org/pdf/1810.04805.pdf bert.pdf
+https://arxiv.org/pdf/1711.05101.pdf fix_adam.pdf
+https://arxiv.org/pdf/2207.09238.pdf formal_algorithms_for_transformers.pdf
+https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf gpt.pdf
+https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf gpt2.pdf
+https://arxiv.org/pdf/2005.14165.pdf gpt3.pdf
+https://openreview.net/pdf?id=xYGNO86OWDH isotropy_in_contextual_embeddings_space.pdf
+https://arxiv.org/pdf/1708.05031.pdf neural_collaborative_filtering.pdf
+https://arxiv.org/pdf/1512.03385.pdf resnet.pdf
+https://arxiv.org/pdf/2112.10752.pdf stable_diffusion.pdf
