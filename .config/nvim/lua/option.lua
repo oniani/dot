@@ -1,4 +1,5 @@
 -- Search
+vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
