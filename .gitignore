@@ -16,4 +16,7 @@
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
+# sumneko/lua-language-server
+.luarc.json
+
 # End of https://www.toptal.com/developers/gitignore/api/linux
