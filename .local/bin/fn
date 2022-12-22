@@ -6,4 +6,5 @@
 
 selection=$(fd . "$HOME/git/note" --hidden --type f --exclude .git | fzf --prompt "Note> ")
 [ -z "$selection" ] && exit 1
-pandoc -V geometry:margin=1in -V fontsize=11pt -f markdown -t pdf "$selection" | zathura -
+pandoc -V fontsize=11pt -V geometry:margin=1in -V linkcolor:blue -f markdown -t pdf "$selection" |
+    zathura -
