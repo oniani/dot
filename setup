@@ -27,11 +27,11 @@ install_drawio() {
 }
 
 install_go() {
-    rm -rf "$HOME"/.local/share/go
+    rm -rf "$HOME"/.local/go "$HOME"/.local/share/go
     link="https://go.dev/dl/"
     tarball=$(basename "$(curl -s $link | grep "downloadBox.*linux" | cut -d '"' -f 4)")
     wget -q --show-progress "$link$tarball" -O "$tarball"
-    tar -C "$HOME"/.local/share -xzf "$tarball"
+    tar -C "$HOME"/.local -xzf "$tarball"
     rm -f "$tarball"
 }
 
