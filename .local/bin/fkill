@@ -4,4 +4,4 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-ps aux | fzf | awk '{ print $2 }' | xargs -r kill -9
+ps aux | fzf --prompt "Process> " | awk '{ print $2 }' | xargs -r kill -9

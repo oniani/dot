@@ -4,4 +4,4 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-man -k . | fzf --prompt="Man> " | awk '{ print $1 }' | xargs -r man
+man -k . | fzf --prompt "Man> " | awk '{ print $1 }' | xargs -r man

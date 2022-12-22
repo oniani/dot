@@ -4,5 +4,4 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-selection=$(fd . "$HOME/doc/paper" --hidden --type f --exclude .git | fzf)
-zathura "$selection"
+fd . "$HOME/doc/paper" --hidden --type f --exclude .git | fzf --prompt "Paper> "| xargs -r zathura
