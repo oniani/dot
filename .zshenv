@@ -34,10 +34,6 @@ export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
 # Go
 export GOROOT="$HOME/.local/go"
 
-# bat
-export BAT_STYLE="numbers"
-export BAT_THEME="base16-256"
-
 # fzf
 export FZF_DEFAULT_COMMAND="fd --hidden --type f --strip-cwd-prefix --exclude .git"
 export FZF_DEFAULT_OPTS="--reverse --color bg+:-1"

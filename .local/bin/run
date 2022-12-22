@@ -1,26 +1,30 @@
 #!/usr/bin/env sh
 
-# General purpose program runner
+# General purpose program compiler and runner
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-FILE=$1
-BASE=${FILE%.*}
+file=$(readlink -f "$1")
+dir=${file%/*}
+base="${file%.*}"
+ext="${file##*.}"
 
-case $FILE in
-    *\.c) gcc -o "$BASE.out" "$FILE" && "./$BASE.out";;
-    *\.cpp) clang++ -Wall -std=c++17 "$FILE" -o "$BASE.out" && "./$BASE.out";;
-    *\.dot) dot -Tpdf "$FILE" -o "$BASE.pdf";;
-    *\.go) go run .;;
-    *\.hs) runhaskell "$FILE";;
-    *\.lua) lua "$FILE";;
-    *\.md) pandoc -V linkcolor:blue -f markdown "$FILE" -o "$BASE.pdf";;
-    *\.py) python "$FILE";;
-    *\.R) Rscript "$FILE";;
-    *\.Rmd) Rscript -e "rmarkdown::render('$FILE', 'pdf_document')";;
-    *\.rs) cargo run "$FILE";;
-    *\.sh) sh "$FILE";;
-    *\.tex) latexmk -interaction=nonstopmode -pdf -shell-escape "$FILE";;
-    *\.ts) tsc "$FILE";;
+cd "$dir" || exit 1
+
+case $ext in
+    c) gcc -o "$base.out" "$file" && "./$base.out";;
+    cpp) clang++ -Wall -std=c++17 "$file" -o "$base.out" && "./$base.out";;
+    dot) dot -Tpdf "$file" -o "$base.pdf";;
+    go) go run "$file";;
+    hs) runhaskell "$file";;
+    lua) lua "$file";;
+    md) pandoc -V linkcolor:blue -V geometry:margin=1in -V fontsize=11pt "$file" -o "$base.pdf";;
+    py) python "$file";;
+    R) Rscript "$file";;
+    Rmd) Rscript -e "rmarkdown::render('$file', 'pdf_document')";;
+    rs) cargo run "$file";;
+    sh) sh "$file";;
+    tex) latexmk -interaction=nonstopmode -pdf -shell-escape "$file";;
+    ts) tsc "$file";;
     *) printf "Unknown file format\n";;
 esac

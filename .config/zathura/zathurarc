@@ -1,7 +1,6 @@
 set recolor-darkcolor "#dcd7ba"
 set recolor-lightcolor "#16161d"
 
-set recolor true
 set recolor-reverse-video true
 
 set sandbox none

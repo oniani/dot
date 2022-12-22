@@ -4,6 +4,6 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-[ -z "$1" ] && fzf --preview "bat --color=always {}" | xargs -r "$EDITOR" && exit 1
+[ -z "$1" ] && fzf --preview "bat {}" | xargs -r "$EDITOR" && exit 1
 
-fd . --hidden --type f "$1" | fzf --preview "bat --color=always {}" | xargs -r "$EDITOR"
+fd . --hidden --type f "$1" | fzf --preview "bat {}" | xargs -r "$EDITOR"

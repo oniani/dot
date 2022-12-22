@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+# Note opener
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+selection=$(fd . "$HOME/git/note" --hidden --type f --exclude .git | fzf)
+pandoc -V geometry:margin=1in -V fontsize=11pt -f markdown -t pdf "$selection" | zathura -
