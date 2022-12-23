@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-# Convenient PDF utility on top of qpdf
-# by David Oniani <onianidavid@gmail.com>
-# License: MIT License
-
-qpdf --empty --pages "$1" "$2" -- "$3"

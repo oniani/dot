@@ -1,7 +1,7 @@
 # `dot`
 
 <p align="center"><img src=".local/share/applications/kitty.png" alt="Logo" width="180" /></p>
-<p align="center">Configuration files and automation wizard for \*nix meta distribution.</p>
+<p align="center">Configuration files and automation wizard for *nix meta distribution.</p>
 
 ## Setup
 
