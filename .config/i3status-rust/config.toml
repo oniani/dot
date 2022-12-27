@@ -11,7 +11,7 @@ timezone = "US/Eastern"
 
 [[block]]
 block = "custom"
-command = "sed 's/  //' <(curl 'https://wttr.in/?format=1' -s)"
+command = "sed 's/  //' <(curl 'https://wttr.in/New-York-City?format=1' -s)"
 interval = 600
 
 [[block]]
