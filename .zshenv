@@ -47,7 +47,7 @@ export NNN_TRASH=1
 # Utilities
 export EDITOR="nvim"
 export PAGER="less"
-export TERMINAL="kitty"
+export TERM="xterm-kitty"
 
 # Miscellaneous settings
 export LC_ALL=en_US.UTF-8
