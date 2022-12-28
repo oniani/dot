@@ -85,12 +85,20 @@ local mason_lspconfig = require "mason-lspconfig"
 mason_lspconfig.setup { ensure_installed = vim.tbl_keys(settings) }
 mason_lspconfig.setup_handlers {
     function(server_name)
-        lspconfig[server_name].setup {
-            capabilities = capabilities,
-            on_attach = on_attach,
-            settings = settings[server_name],
-            init_options = { documentFormatting = true },
-        }
+        if server_name == "efm" then
+            lspconfig[server_name].setup {
+                capabilities = capabilities,
+                on_attach = on_attach,
+                settings = settings[server_name],
+                init_options = { documentFormatting = true },
+            }
+        else
+            lspconfig[server_name].setup {
+                capabilities = capabilities,
+                on_attach = on_attach,
+                settings = settings[server_name],
+            }
+        end
     end,
 }
 
