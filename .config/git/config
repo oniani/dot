@@ -58,12 +58,13 @@
     uncommit = "!f() { git reset --soft HEAD~$1; }; f"
 
 [credential]
-    # NOTE: Perform the steps below first.
+    # NOTE: Perform the following steps first:
     #
-    # $ wget "https://github.com/GitCredentialManager/git-credential-manager/releases/download/v2.0.877/gcm-linux_amd64.2.0.877.deb"
+    # $ wget "https://github.com/GitCredentialManager/git-credential-manager/releases/download/v2.0.886/gcm-linux_amd64.2.0.886.deb"
     # $ sudo dpkg -i ./gcm-linux_amd64.2.0.877.deb
     # $ git-credential-manager configure
 	credentialStore = cache
 	helper = /usr/local/bin/git-credential-manager
+
 [credential "https://dev.azure.com"]
 	useHttpPath = true
