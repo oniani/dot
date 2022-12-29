@@ -39,7 +39,7 @@ export FZF_DEFAULT_COMMAND="fd --hidden --type f --strip-cwd-prefix --exclude .g
 export FZF_DEFAULT_OPTS="--reverse --color bg+:-1"
 
 # nnn
-export NNN_BMS="D:~/dl;d:~/doc;g:~/git;p:~/pic;w:~/wip;c:~/git/dot;"
+export NNN_BMS="D:~/dl;c:~/git/dot;d:~/doc;p:~/pic;s:~/git;w:~/wip;"
 export NNN_FCOLORS="000004300000000000000000"
 export NNN_OPTS="EHderx"
 export NNN_TRASH=1
