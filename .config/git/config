@@ -63,6 +63,7 @@
     # $ wget "https://github.com/GitCredentialManager/git-credential-manager/releases/download/v2.0.886/gcm-linux_amd64.2.0.886.deb"
     # $ sudo dpkg -i ./gcm-linux_amd64.2.0.877.deb
     # $ git-credential-manager configure
+	cacheoptions = --timeout 31536000000000
 	credentialStore = cache
 	helper = /usr/local/bin/git-credential-manager
 
