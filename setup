@@ -26,6 +26,12 @@ install_drawio() {
     rm -f drawio-amd64-*.deb
 }
 
+install_fzf() {
+    git clone --depth 1 https://github.com/junegunn/fzf
+    cd fzf && ./install --bin && sudo mv bin/fzf /usr/local/bin
+    cd .. && rm -rf fzf
+}
+
 install_go() {
     rm -rf "$HOME"/.local/go "$HOME"/.local/share/go
     link="https://go.dev/dl/"
@@ -99,6 +105,7 @@ help() {
     printf "USAGE: ./setup [OPTION]\n\
     --config    Install configuration files\n\
     --drawio    Install drawio desktop\n\
+    --fzf       Install fzf\n\
     --go        Install the Go programming language\n\
     --kitty     Install kitty terminal emulator\n\
     --nerdfonts Install Nerd Fonts\n\
@@ -113,6 +120,7 @@ help() {
 case $1 in
     "--config") install_config;;
     "--drawio") install_drawio;;
+    "--fzf") install_fzf;;
     "--go") install_go;;
     "--kitty") install_kitty;;
     "--nerdfonts") install_nerd_fonts;;
