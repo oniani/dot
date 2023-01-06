@@ -75,6 +75,17 @@ install_nsxiv() {
     cd .. && rm -rf nsxiv
 }
 
+install_nvim() {
+    rm -rf "$HOME"/.local/nvim
+    link=$(get_github_latest neovim/neovim | grep "linux.*.tar.gz$")
+    tarball=$(basename "$link")
+    wget -q --show-progress "$link" -O "$tarball"
+    tar -C "$HOME"/.local -xzvf "$tarball"
+    dirname="${tarball%.*.*}"
+    mv "$HOME/.local/$dirname" "$HOME/.local/nvim"
+    rm -f "$tarball"
+}
+
 install_pyenv() {
     curl https://pyenv.run | bash
 }
@@ -111,6 +122,7 @@ help() {
     --nerdfonts Install Nerd Fonts\n\
     --nnn       Clone, build, and install nnn from the source (+ file icon support <3)\n\
     --nsxiv     Clone, build, and install nsxiv from the source\n\
+    --nvim      Install nvim\n\
     --pyenv     Install pyenv\n\
     --rustup    Install rustup\n\
     --vscode    Install VS Code\n\
@@ -126,6 +138,7 @@ case $1 in
     "--nerdfonts") install_nerd_fonts;;
     "--nnn") install_nnn;;
     "--nsxiv") install_nsxiv;;
+    "--nvim") install_nvim;;
     "--pyenv") install_pyenv;;
     "--rustup") install_rustup;;
     "--vscode") install_vscode;;
