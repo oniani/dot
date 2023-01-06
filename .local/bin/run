@@ -12,7 +12,7 @@ ext="${file##*.}"
 cd "$dir" || exit 1
 
 case $ext in
-    c) gcc -o "$base.out" "$file" && "./$base.out";;
+    c) gcc -o "$base.out" "$file" && "$base.out";;
     cpp) clang++ -Wall -std=c++17 "$file" -o "$base.out" && "./$base.out";;
     dot) dot -Tpdf "$file" -o "$base.pdf";;
     go) go run "$file";;
