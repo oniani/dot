@@ -4,7 +4,7 @@ local repo = "https://github.com/wbthomason/packer.nvim"
 local is_bootstrap = false
 if vim.fn.empty(vim.fn.glob(path)) > 0 then
     is_bootstrap = true
-    vim.fn.system("git", "clone", "--depth", "1", repo, path)
+    vim.fn.system { "git", "clone", "--depth", "1", repo, path }
     vim.cmd.packadd "packer.nvim"
 end
 
