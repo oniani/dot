@@ -80,7 +80,7 @@ install_nvim() {
     link=$(get_github_latest neovim/neovim | grep "linux.*.tar.gz$")
     tarball=$(basename "$link")
     wget -q --show-progress "$link" -O "$tarball"
-    tar -C "$HOME"/.local -xzvf "$tarball"
+    tar -C "$HOME"/.local -xzf "$tarball"
     dirname="${tarball%.*.*}"
     mv "$HOME/.local/$dirname" "$HOME/.local/nvim"
     rm -f "$tarball"
