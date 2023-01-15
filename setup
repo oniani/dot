@@ -4,6 +4,15 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
+config() {
+    cp -R .config "$HOME"
+    cp -R .local "$HOME"
+    cp .zshenv "$HOME"
+
+    mkdir -p "$HOME/dl" "$HOME/doc" "$HOME/git" "$HOME/pic" "$HOME/wip"
+    mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+}
+
 program() {
     sed 1d programs.csv | while IFS=, read -r tag name description; do
         printf "Installing %s (%s)\n" "$name" "$description"
@@ -13,15 +22,6 @@ program() {
             *) printf "%s\n" "Wrong tag!" >&2 && exit 1;;
         esac
     done
-}
-
-config() {
-    cp -R .config "$HOME"
-    cp -R .local "$HOME"
-    cp .zshenv "$HOME"
-
-    mkdir -p "$HOME/dl" "$HOME/doc" "$HOME/git" "$HOME/pic" "$HOME/wip"
-    mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 }
 
 vscode() {

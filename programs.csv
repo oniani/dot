@@ -20,6 +20,7 @@ PACMAN,mpv,a free, open source, and cross-platform media player
 PACMAN,neovim,Fork of Vim aiming to improve user experience, plugins, and GUIs
 PACMAN,network-manager-applet,Applet for managing network connections
 PACMAN,nitrogen,Background browser and setter for X windows
+PACMAN,noto-fonts-emoji,Google Noto emoji fonts
 PACMAN,pyenv,Easily switch between multiple versions of Python
 PACMAN,ripgrep,A search tool that combines the usability of ag with the raw speed of grep
 PACMAN,rustup,The Rust toolchain installer
