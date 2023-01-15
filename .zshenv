@@ -32,9 +32,6 @@ export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/pass"
 export PYENV_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/pyenv"
 export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
 
-# Go
-export GOROOT="$HOME/.local/go"
-
 # fzf
 export FZF_DEFAULT_COMMAND="fd --hidden --type f --strip-cwd-prefix --exclude .git"
 export FZF_DEFAULT_OPTS="--reverse --color bg+:-1"
@@ -42,6 +39,7 @@ export FZF_DEFAULT_OPTS="--reverse --color bg+:-1"
 # nnn
 export NNN_BMS="D:~/dl;c:~/git/dot;d:~/doc;p:~/pic;s:~/git;w:~/wip;"
 export NNN_FCOLORS="000004300000000000000000"
+export NNN_OPENER="$HOME/.local/bin/open"
 export NNN_OPTS="EHderx"
 export NNN_TRASH=1
 
@@ -56,7 +54,7 @@ export LESSHISTFILE="-"
 export MANPAGER="nvim +Man!"
 
 # Adding to PATH
-export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/kitty/bin:$PATH"
 export PATH="$HOME/.local/nvim/bin:$PATH"

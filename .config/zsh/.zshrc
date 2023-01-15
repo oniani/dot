@@ -57,7 +57,6 @@ alias grep="grep --color=auto"
 alias icat="kitty +kitten icat"
 alias l="ls -Av --color=auto --group-directories-first"
 alias ll="ls -Ahlv --color=auto --group-directories-first"
-alias open="xdg-open"
 alias wget="wget --show-progress"
 
 # Interactive
@@ -191,7 +190,7 @@ bindkey -s "^z" "fg\n"
 
 eval "$(pyenv init -)"
 
-source "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # }}}

@@ -4,97 +4,27 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-get_github_latest() {
-    repo="$1"
-    link="https://api.github.com/repos/$repo/releases/latest"
-    curl -s "$link" | grep "browser_download_url" | cut -d '"' -f 4
+program() {
+    sed 1d programs.csv | while IFS=, read -r tag name description; do
+        printf "Installing %s (%s)\n" "$name" "$description"
+        case $tag in
+            PACMAN) sudo pacman -S  --noconfirm "$name";;
+            AUR) paru -S --noconfirm "$name";;
+            *) printf "%s\n" "Wrong tag!" >&2 && exit 1;;
+        esac
+    done
 }
 
-install_config() {
+config() {
     cp -R .config "$HOME"
     cp -R .local "$HOME"
     cp .zshenv "$HOME"
 
     mkdir -p "$HOME/dl" "$HOME/doc" "$HOME/git" "$HOME/pic" "$HOME/wip"
-    mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}"
+    mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 }
 
-install_drawio() {
-    get_github_latest jgraph/drawio-desktop | grep deb | wget -q --show-progress -i -
-    sudo apt purge -y --autoremove draw.io
-    sudo apt install -y ./drawio-amd64-*.deb
-    rm -f drawio-amd64-*.deb
-}
-
-install_fzf() {
-    git clone --depth 1 https://github.com/junegunn/fzf
-    cd fzf && ./install --bin && sudo mv bin/fzf /usr/local/bin
-    cd .. && rm -rf fzf
-}
-
-install_go() {
-    rm -rf "$HOME"/.local/go "$HOME"/.local/share/go
-    link="https://go.dev/dl/"
-    tarball=$(basename "$(curl -s $link | grep "downloadBox.*linux" | cut -d '"' -f 4)")
-    wget -q --show-progress "$link$tarball" -O "$tarball"
-    tar -C "$HOME"/.local -xzf "$tarball"
-    rm -f "$tarball"
-}
-
-install_kitty() {
-    rm -rf "$HOME"/.local/kitty
-    link=$(get_github_latest kovidgoyal/kitty | grep "x86_64.txz$")
-    tarball=$(basename "$link")
-    wget -q --show-progress "$link" -O "$tarball"
-    mkdir -p "$HOME"/.local/kitty
-    tar -C "$HOME"/.local/kitty -xJf "$tarball"
-    rm -f "$tarball"
-}
-
-install_nerd_fonts() {
-    link=$(get_github_latest ryanoasis/nerd-fonts | grep -i jetbrainsmono)
-    zipfile=$(basename "$link")
-    dirname="${zipfile%.*}"
-    wget -q --show-progress "$link" -O "$zipfile"
-    unzip "$zipfile" -d "$dirname"
-    mkdir -p "$HOME"/.local/share/fonts
-    mv -f "$dirname"/* "$HOME"/.local/share/fonts
-    fc-cache -fv
-    rm -rf "$zipfile" "$dirname"
-}
-
-install_nnn() {
-    git clone https://github.com/jarun/nnn
-    cd nnn && sudo make O_NERD=1 O_STATIC=1 strip install
-    cd .. && rm -rf nnn
-}
-
-install_nsxiv() {
-    git clone https://github.com/nsxiv/nsxiv
-    cd nsxiv && make && sudo make install-all
-    cd .. && rm -rf nsxiv
-}
-
-install_nvim() {
-    rm -rf "$HOME"/.local/nvim
-    link=$(get_github_latest neovim/neovim | grep "linux.*.tar.gz$")
-    tarball=$(basename "$link")
-    wget -q --show-progress "$link" -O "$tarball"
-    tar -C "$HOME"/.local -xzf "$tarball"
-    dirname="${tarball%.*.*}"
-    mv "$HOME/.local/$dirname" "$HOME/.local/nvim"
-    rm -f "$tarball"
-}
-
-install_pyenv() {
-    curl https://pyenv.run | bash
-}
-
-install_rustup() {
-    curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh
-}
-
-install_vscode() {
+vscode() {
     link="https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
     wget -q --show-progress -O vscode_stable_linux-x64.tar.gz "$link"
     tar -C "$HOME"/.local -xzvf vscode_stable_linux-x64.tar.gz
@@ -104,44 +34,16 @@ install_vscode() {
     mkdir data
 }
 
-install_zsh() {
-    autosuggestions="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-autosuggestions"
-    syntaxhighlighting="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin/zsh-syntax-highlighting"
-    rm -rf "$autosuggestions" "$syntaxhighlighting"
-    git clone https://github.com/zsh-users/zsh-autosuggestions "$autosuggestions"
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting "$syntaxhighlighting"
-}
-
 help() {
     printf "USAGE: ./setup [OPTION]\n\
-    --config    Install configuration files\n\
-    --drawio    Install drawio desktop\n\
-    --fzf       Install fzf\n\
-    --go        Install the Go programming language\n\
-    --kitty     Install kitty terminal emulator\n\
-    --nerdfonts Install Nerd Fonts\n\
-    --nnn       Clone, build, and install nnn from the source (+ file icon support <3)\n\
-    --nsxiv     Clone, build, and install nsxiv from the source\n\
-    --nvim      Install nvim\n\
-    --pyenv     Install pyenv\n\
-    --rustup    Install rustup\n\
-    --vscode    Install VS Code\n\
-    --zsh       Clone and set up Z Shell plugins from the source\n"
+    --config    Copy configuration files\n\
+    --program   Install all necessary programs\n\
+    --vscode    Install Visual Studio Code (portable mode)\n"
 }
 
 case $1 in
-    "--config") install_config;;
-    "--drawio") install_drawio;;
-    "--fzf") install_fzf;;
-    "--go") install_go;;
-    "--kitty") install_kitty;;
-    "--nerdfonts") install_nerd_fonts;;
-    "--nnn") install_nnn;;
-    "--nsxiv") install_nsxiv;;
-    "--nvim") install_nvim;;
-    "--pyenv") install_pyenv;;
-    "--rustup") install_rustup;;
-    "--vscode") install_vscode;;
-    "--zsh") install_zsh;;
+    "--config") config;;
+    "--program") program;;
+    "--vscode") vscode;;
     *) help;;
 esac

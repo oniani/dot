@@ -1,8 +1,8 @@
 [theme]
-theme = "space-villain"
+name = "space-villain"
 
 [icons]
-icons = "material-nf"
+name = "material-nf"
 
 [[block]]
 block = "time"
@@ -22,7 +22,7 @@ block = "music"
 
 [[block]]
 block = "battery"
-full_format = " $icon $percentage"
+full_format = " {percentage}"
 interval = 10
 
 [[block]]
@@ -32,17 +32,15 @@ interval = 1
 
 [[block]]
 block = "disk_space"
-format = " $icon $used/$total ($available free) "
+format = " {icon} {used}/{total} ({available} free) "
 
 [[block]]
 block = "memory"
-format = "$icon$mem_used/$mem_total ($mem_used_percents)"
-format_alt = "$icon$swap_used/$swap_total ($swap_used_percents)"
 interval = 5
 
 [[block]]
 block = "cpu"
-format = "$barchart $utilization"
+format = "{barchart} {utilization}"
 interval = 1
 
 [[block]]

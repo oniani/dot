@@ -65,7 +65,7 @@
     # $ git-credential-manager configure
 	cacheoptions = --timeout 31536000
 	credentialStore = cache
-	helper = /usr/local/bin/git-credential-manager
+	helper = /usr/bin/git-credential-manager
 
 [credential "https://dev.azure.com"]
 	useHttpPath = true

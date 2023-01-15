@@ -20,6 +20,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3blocks
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3blocks
 
+# Sets up mirroring
+exec --no-startup-id xrandr --output HDMI-1-0 --auto
+exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1440 --pos 0x0 --rotate normal
+
 # Disables laptop monitor
 exec --no-startup-id xrandr --output eDP-1-1 --off
 
@@ -98,7 +102,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+r restart
 
 # Start a terminal
-bindsym $mod+Return exec $HOME/.local/kitty/bin/kitty
+bindsym $mod+Return exec kitty
 
 # }}}
 
@@ -164,7 +168,7 @@ bindsym $mod+r mode "resize"
 
 # Program Mappings {{{
 
-bindsym $mod+w exec brave-browser --force-device-scale-factor=1.25
+bindsym $mod+w exec brave --force-device-scale-factor=1.25
 
 bindsym $mod+Tab exec rofi -show window
 bindsym $mod+f exec "rofi -modi drun,run -show drun"
@@ -180,15 +184,15 @@ bindsym $mod+s exec --no-startup-id $HOME/.local/bin/bookmark -s
 # i3bar {{{
 
 bar {
-    position top
-    status_command $HOME/.local/share/cargo/bin/i3status-rs
-    strip_workspace_numbers yes
-    colors {
-        focused_workspace #ffffff #ffffff #000000
-        active_workspace #ffffff #ffffff #000000
-        inactive_workspace #000000 #000000 #ffffff
-        urgent_workspace #ff4444 #ff4444 #000000
-    }
+   position top
+   status_command i3status-rs
+   strip_workspace_numbers yes
+   colors {
+       focused_workspace #ffffff #ffffff #000000
+       active_workspace #ffffff #ffffff #000000
+       inactive_workspace #000000 #000000 #ffffff
+       urgent_workspace #ff4444 #ff4444 #000000
+   }
 }
 
 # }}}

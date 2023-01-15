@@ -1,0 +1,161 @@
+#!/usr/bin/env sh
+
+# An opener
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+set -euf -o noclobber -o noglob -o nounset
+
+FPATH="$1"
+FNAME=$(basename "$1")
+EDITOR="${VISUAL:-${EDITOR:-vi}}"
+PAGER="${PAGER:-less -R}"
+ext="${FNAME##*.}"
+if [ -n "$ext" ]; then
+    ext="$(printf "%s" "${ext}" | tr '[:upper:]' '[:lower:]')"
+fi
+
+handle_archive() {
+    atool --list -- "${FPATH}" | eval "$PAGER"
+    exit 0
+}
+
+handle_audio() {
+    mpv "${FPATH}" >/dev/null 2>&1 &
+    exit 0
+}
+
+handle_image() {
+    nohup nsxiv "${FPATH}" >/dev/null 2>&1 &
+    exit 0
+}
+
+handle_log() {
+    "$EDITOR" "${FPATH}"
+    exit 0
+}
+
+handle_markdown() {
+    "$EDITOR" "${FPATH}"
+    exit 0
+}
+
+handle_pdf() {
+    nohup zathura "${FPATH}" >/dev/null 2>&1 &
+    exit 0
+}
+
+handle_video() {
+    nohup mpv "${FPATH}" >/dev/null 2>&1 &
+    exit 0
+}
+
+handle_extension() {
+    case "${ext}" in
+        # Archive
+        a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|\
+        rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip) handle_archive;;
+
+        # Audio
+        aac|flac|m4a|mid|midi|mpa|mp2|mp3|ogg|wav|wma) handle_audio;;
+
+        # Image
+        png|jpg|jpeg|gif|webp|tif|ico) handle_image;;
+
+        # Log files
+        log) handle_log;;
+
+        # Markdown
+        md|markdown) handle_markdown;;
+
+        # PDF
+        pdf) handle_pdf;;
+
+        # Video
+        avi|mkv|mp4) handle_video;;
+    esac
+}
+
+handle_multimedia() {
+    mimetype="${1}"
+    case "${mimetype}" in
+        # Audio
+        audio/*) handle_audio;;
+
+        # Image
+        image/*) handle_image;;
+
+        # PDF
+        application/pdf) handle_pdf;;
+
+        # Video
+        video/*) handle_video;;
+    esac
+}
+
+handle_man() {
+    man -l "${FPATH}"
+    exit 0
+}
+
+handle_text() {
+    "$EDITOR" "${FPATH}"
+    exit 0
+}
+
+handle_mime() {
+    mimetype="${1}"
+    case "${mimetype}" in
+        # Manpages
+        text/troff) handle_man;;
+
+        # Text
+        text/* | */xml) handle_text;;
+    esac
+}
+
+handle_xdg() {
+    nohup xdg-open "${FPATH}" >/dev/null 2>&1 &
+    printf "File details\n" && file --dereference --brief -- "${FPATH}"
+    exit 0
+}
+
+handle_fallback() {
+    handle_xdg
+}
+
+handle_blocked() {
+    case "${MIMETYPE}" in
+        application/x-sharedlib) exit 0;;
+        application/x-shared-library-la) exit 0;;
+        application/x-executable) exit 0;;
+        application/x-shellscript) exit 0;;
+        application/octet-stream) exit 0;;
+    esac
+}
+
+handle_bin() {
+    case "${MIMETYPE}" in
+        application/x-executable|application/x-shellscript)
+        clear
+        echo '-------- Executable File --------' && file --dereference --brief -- "${FPATH}"
+        printf "Run executable (y/N/'a'rgs)? "
+        read -r answer
+        case "$answer" in
+            [Yy]* ) exec "${FPATH}";;
+            [Aa]* )
+                printf "args: "
+                read -r args
+                exec "${FPATH}" "$args";;
+            [Nn]* ) exit;;
+        esac
+    esac
+}
+
+MIMETYPE="$(file -bL --mime-type -- "${FPATH}")"
+handle_extension
+handle_multimedia "${MIMETYPE}"
+handle_mime "${MIMETYPE}"
+[ "$BIN" -ne 0 ] && [ -x "${FPATH}" ] && handle_bin
+handle_blocked "${MIMETYPE}"
+handle_fallback
