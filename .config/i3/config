@@ -196,10 +196,3 @@ bar {
 }
 
 # }}}
-
-# Gaps {{{
-
-gaps inner 16
-gaps outer 16
-
-# }}}
