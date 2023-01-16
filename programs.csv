@@ -45,3 +45,4 @@ PACMAN,xclip,Command line interface to the X11 clipboard
 PACMAN,xdotool,Command-line X11 automation tool
 PACMAN,zathura,Minimalistic document viewer
 PACMAN,zathura-pdf-mupdf,PDF support for Zathura (MuPDF backend) (Supports PDF, ePub, and OpenXPS)
+PACMAN,zola,An opinionated static site generator
