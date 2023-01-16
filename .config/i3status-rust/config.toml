@@ -21,22 +21,11 @@ block = "sound"
 block = "music"
 
 [[block]]
-block = "battery"
-full_format = " {percentage}"
-interval = 10
-
-[[block]]
-block = "custom"
-command = "echo  GPU $(nvidia-smi --query-gpu=gpu_name,memory.used --format=csv,noheader | sed 's/,/\\ /')"
-interval = 1
-
-[[block]]
 block = "disk_space"
-format = " {icon} {used}/{total} ({available} free) "
 
 [[block]]
 block = "memory"
-interval = 5
+interval = 1
 
 [[block]]
 block = "cpu"
@@ -44,6 +33,11 @@ format = "{barchart} {utilization}"
 interval = 1
 
 [[block]]
-block = "custom"
-command = "echo `uname` `uname -r | tr - . | cut -d. -f1-2`"
-interval = "once"
+block = "nvidia_gpu"
+label = "Quadro T1000"
+interval = 1
+
+[[block]]
+block = "battery"
+full_format = "{percentage}"
+interval = 1
