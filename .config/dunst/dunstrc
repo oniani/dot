@@ -1,14 +1,12 @@
 [global]
-alignment = left
+alignment = center
 corner_radius = 16
 font = JetBrainsMono Nerd Font Mono 12
-format = "<b>%s</b>\n%b"
 frame_color = "#1db954"
 frame_width = 4
-geometry = "400x128-16+64"
-horizontal_padding = 16
+height = 256
 padding = 16
-transparency = 16
+width = 400
 
 [urgency_critical]
 background = "#000000"
