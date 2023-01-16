@@ -41,6 +41,7 @@ PACMAN,signal-desktop,Signal Private Messenger for Linux
 PACMAN,tokei,A blazingly fast CLOC (Count Lines Of Code) program
 PACMAN,tree,A directory listing program displaying a depth indented list of files
 PACMAN,v4l2loopback-utils,v4l2-loopback device – utilities only
+PACMAN,watchexec,Executes commands in response to file modifications
 PACMAN,wget,Network utility to retrieve files from the Web
 PACMAN,xclip,Command line interface to the X11 clipboard
 PACMAN,xdotool,Command-line X11 automation tool
