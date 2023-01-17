@@ -170,8 +170,9 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+w exec brave --force-device-scale-factor=1.25
 
-bindsym $mod+Tab exec rofi -show window
+bindsym $mod+Tab exec "rofi -show window"
 bindsym $mod+f exec "rofi -modi drun,run -show drun"
+bindsym $mod+e exec "rofi -modi emoji -show emoji -kb-custom-1 Ctrl+C"
 
 bindsym --release $mod+Shift+a exec --no-startup-id flameshot gui -p $HOME/pic
 bindsym --release $mod+Shift+s exec --no-startup-id flameshot full -p $HOME/pic
