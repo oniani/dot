@@ -35,10 +35,10 @@ vscode() {
 }
 
 help() {
-    printf "USAGE: ./setup [OPTION]\n\
-    --config    Copy configuration files\n\
-    --program   Install all necessary programs\n\
-    --vscode    Install Visual Studio Code (portable mode)\n"
+    printf "usage: ./setup [option]\n\
+    --config     Copy configuration files\n\
+    --program    Install all necessary programs\n\
+    --vscode     Install Visual Studio Code (portable mode)\n"
 }
 
 case $1 in

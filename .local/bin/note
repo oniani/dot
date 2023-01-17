@@ -1,0 +1,28 @@
+#!/usr/bin/env sh
+
+# Note utility
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+
+prompt() {
+    fd . "$HOME/git/note" --hidden --type f --exclude .git | fzf --prompt "Note> "
+}
+
+pandocmd() {
+    selection=$(prompt)
+    [ -z "$selection" ] && exit 1
+    pandoc -V fontsize=11pt \
+           -V geometry:margin=1in \
+           -V linkcolor:blue \
+           -f markdown \
+           -t pdf "$selection" |
+               zathura -
+}
+
+case $1 in
+    a) printf "Note: " && read -r name && "$EDITOR" "$HOME/git/note/$name.md";;
+    f) pandocmd;;
+    o) "$EDITOR" "$(prompt)";;
+    *) printf "usage: note [option]\n    a  add a note\n    f  find a note\n    o  open a note\n";;
+esac
