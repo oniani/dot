@@ -13,6 +13,14 @@ config() {
     mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 }
 
+sudoconf() {
+    sudo touch "/etc/sudoers.d/$USER"
+    printf "%s ALL=(ALL:ALL) NOPASSWD: ALL\n" "$USER" | sudo tee "/etc/sudoers.d/$USER"
+
+    sudo touch /etc/sudoers.d/disable_admin_file_in_home
+    printf "Defaults !admin_flag\n" | sudo tee /etc/sudoers.d/disable_admin_file_in_home
+}
+
 program() {
     sed 1d programs.csv | while IFS=, read -r tag name description; do
         printf "Installing %s (%s)\n" "$name" "$description"
@@ -37,6 +45,7 @@ vscode() {
 help() {
     printf "usage: ./setup [option]\n\
     --config     Copy configuration files\n\
+    --nosudo     Configure sudo behavior\n\
     --program    Install all necessary programs\n\
     --vscode     Install Visual Studio Code (portable mode)\n"
 }
@@ -44,6 +53,7 @@ help() {
 case $1 in
     "--config") config;;
     "--program") program;;
+    "--sudoconf") sudoconf;;
     "--vscode") vscode;;
     *) help;;
 esac
