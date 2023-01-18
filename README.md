@@ -10,19 +10,19 @@ philosophy are preferred. The setup is compliant with the [XDG Base Directory Sp
 
 Core Tools and Utilities:
 
-| Type               | Program                       |
-| ------------------ | ----------------------------- |
-| Browser            | [Firefox][firefox]            |
-| Editor             | [Neovim][neovim]              |
-| File Manager       | [nnn][nnn]                    |
-| Image Viewer       | [nsxiv][nsxiv]                |
-| Media Player       | [mpv][mpv]                    |
-| PDF Viewer         | [zathura][zathura]            |
-| Screenshot Utility | [Flameshot][flameshot]        |
-| Shell              | [zsh][zsh]                    |
-| Statusbar          | [i3status-rust][i3statusrust] |
-| Terminal           | [kitty][kitty]                |
-| Window Manager     | [i3][i3]                      |
+| Type               | Program                              |
+| ------------------ | ------------------------------------ |
+| Browser            | [Firefox Developer Edition][firefox] |
+| Editor             | [Neovim][neovim]                     |
+| File Manager       | [nnn][nnn]                           |
+| Image Viewer       | [nsxiv][nsxiv]                       |
+| Media Player       | [mpv][mpv]                           |
+| PDF Viewer         | [zathura][zathura]                   |
+| Screenshot Utility | [Flameshot][flameshot]               |
+| Shell              | [zsh][zsh]                           |
+| Statusbar          | [i3status-rust][i3statusrust]        |
+| Terminal           | [kitty][kitty]                       |
+| Window Manager     | [i3][i3]                             |
 
 Other Tools and Utilities:
 
@@ -56,7 +56,7 @@ wip        # Work in Progress Files
 
 [license]: LICENSE
 [xdg]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-[firefox]: https://www.mozilla.org/en-US/firefox/new/
+[firefox]: https://www.mozilla.org/en-US/firefox/developer/
 [neovim]: https://github.com/neovim/neovim
 [nnn]: https://github.com/jarun/nnn
 [nsxiv]: https://github.com/nsxiv/nsxiv
