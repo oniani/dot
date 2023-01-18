@@ -26,6 +26,7 @@ Core Tools and Utilities:
 
 Other Tools and Utilities:
 
+- Design Tool: [Inkscape][inkscape]
 - Diagram Maker: [drawio][drawio]
 - IDE: [VS Code][vscode] (JupyterLab replacement, [Neovim][neovim] for everything else)
 
@@ -66,5 +67,6 @@ wip        # Work in Progress Files
 [i3statusrust]: https://github.com/greshake/i3status-rust
 [kitty]: https://github.com/kovidgoyal/kitty
 [i3]: https://github.com/i3/i3
+[inkscape]: https://gitlab.com/inkscape/inkscape
 [drawio]: https://github.com/jgraph/drawio-desktop
 [vscode]: https://github.com/microsoft/vscode
