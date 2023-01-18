@@ -168,7 +168,7 @@ bindsym $mod+r mode "resize"
 
 # Program Mappings {{{
 
-bindsym $mod+w exec brave --force-device-scale-factor=1.25
+bindsym $mod+w exec firefox
 
 bindsym $mod+Tab exec "rofi -show window"
 bindsym $mod+f exec "rofi -modi drun,run -show drun"
