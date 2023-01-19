@@ -53,7 +53,7 @@ help() {
 case $1 in
     "--config") config;;
     "--program") program;;
-    "--sudoconf") sudoconf;;
+    "--nosudo") sudoconf;;
     "--vscode") vscode;;
     *) help;;
 esac
