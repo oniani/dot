@@ -20,8 +20,11 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3blocks
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3blocks
 
+# Audio and mic
+exec_always --no-startup-id "pactl set-default-sink 'alsa_output.pci-0000_00_1f.3.analog-stereo'"
+exec_always --no-startup-id "pactl set-default-source 'alsa_input.usb-Samson_Technologies_Samson_Q2U_Microphone-00.analog-stereo'"
+
 # Sets up mirroring
-exec --no-startup-id xrandr --output HDMI-1-0 --auto
 exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1440 --pos 0x0 --rotate normal
 
 # Disables laptop monitor
@@ -44,16 +47,6 @@ exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf
 # Switching keyboard layouts
 exec_always "setxkbmap -option 'grp:alt_shift_toggle' -layout us,ge,ru -variant ,qwerty,phonetic"
 
-# Fixes lag and disables autofocus for Logitech C920 Linux Driver
-exec_always "v4l2-ctl -d /dev/video0 --set-ctrl=exposure_auto=1"
-exec_always "v4l2-ctl -d /dev/video0 --set-ctrl=focus_absolute=0"
-exec_always "v4l2-ctl -d /dev/video0 --set-ctrl=focus_auto=0"
-
-# Audio and mic
-exec_always --no-startup-id "pactl set-default-sink 'alsa_output.pci-0000_00_1f.3.analog-stereo'"
-exec_always --no-startup-id "pactl set-default-source 'alsa_input.usb-Samson_Technologies_Samson_Q2U_Microphone-00.analog-stereo'"
-exec_always --no-startup-id "alsactl restore"
-
 # Notification daemon
 exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
 
@@ -62,7 +55,6 @@ exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
 # Default Mappings {{{
 
 # Set the mod key
-# set $mod Mod1
 set $mod Mod4
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -98,7 +90,7 @@ bindsym $mod+Shift+space focus mode_toggle
 # Kill focused window
 bindsym $mod+Shift+q kill
 
-# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# Restart i3 in-place (preserves your layout/session)
 bindsym $mod+Shift+r restart
 
 # Start a terminal
@@ -177,7 +169,6 @@ bindsym $mod+e exec "rofi -modi emoji -show emoji -kb-custom-1 Ctrl+C"
 bindsym --release $mod+Shift+a exec --no-startup-id flameshot gui -p $HOME/pic
 bindsym --release $mod+Shift+s exec --no-startup-id flameshot full -p $HOME/pic
 
-#bindsym $mod+a exec --no-startup-id $HOME/.local/bin/bookmark -a
 bindsym $mod+s exec --no-startup-id $HOME/.local/bin/bookmark -s
 
 # }}}
