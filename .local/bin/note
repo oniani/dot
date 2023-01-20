@@ -4,7 +4,6 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-
 prompt() {
     fd . "$HOME/git/note" --hidden --type f --exclude .git | fzf --prompt "Note> "
 }
