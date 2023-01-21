@@ -6,7 +6,7 @@
 
 file=$(readlink -f "$1")
 dir=${file%/*}
-base=$(basename "$file")
+base=${file%.*}
 ext="${file##*.}"
 
 cd "$dir" || exit 1
