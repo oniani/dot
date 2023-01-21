@@ -41,3 +41,8 @@ interval = 1
 block = "battery"
 full_format = "{percentage}"
 interval = 1
+
+[[block]]
+block = "networkmanager"
+device_format = "{icon}"
+on_click = "kitty nmtui"

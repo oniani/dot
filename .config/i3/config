@@ -8,19 +8,6 @@ default_border pixel 4
 default_floating_border pixel 4
 client.focused #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0
 
-# Adjusts PulseAudio volume via pactl.
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-
-# Launches NetworkManager
-exec --no-startup-id nm-applet
-
-# Sets audio and mic
-exec --no-startup-id "pactl set-default-sink 'alsa_output.pci-0000_00_1f.3.analog-stereo'"
-exec --no-startup-id "pactl set-default-source 'alsa_input.usb-Samson_Technologies_Samson_Q2U_Microphone-00.analog-stereo'"
-
 # Sets up mirroring
 exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1440 --pos 0x0 --rotate normal
 
@@ -157,15 +144,25 @@ bindsym $mod+r mode "resize"
 
 # Program Mappings {{{
 
+# Adjusts volume via pactl
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Launches Firefox Developer Edition
 bindsym $mod+w exec firefox-developer-edition
 
+# Launches rofi in different modes
 bindsym $mod+Tab exec "rofi -show window"
 bindsym $mod+f exec "rofi -modi drun,run -show drun"
 bindsym $mod+e exec "rofi -modi emoji -show emoji -kb-custom-1 Ctrl+C"
 
+# Launches Flameshot for taking a screenshot
 bindsym --release $mod+Shift+a exec --no-startup-id flameshot gui -p $HOME/pic
 bindsym --release $mod+Shift+s exec --no-startup-id flameshot full -p $HOME/pic
 
+# Launches the bookmark utility to select a link
 bindsym $mod+s exec --no-startup-id $HOME/.local/bin/bookmark -s
 
 # }}}
