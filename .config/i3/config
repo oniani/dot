@@ -1,7 +1,6 @@
 # General Settings {{{
 
-# Font for window titles. Will also be used by the bar unless a different font is used in the bar {}
-# block below.
+# Font for window titles and the bar
 font pango:JetBrainsMono Nerd Font 12
 
 # Removes title bar in tiling and floating modes
@@ -9,20 +8,18 @@ default_border pixel 4
 default_floating_border pixel 4
 client.focused #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0
 
-# NetworkManager is the most popular way to manage wireless networks on Linux, and nm-applet is a
-# desktop environment-independent system tray GUI for it.
+# Adjusts PulseAudio volume via pactl.
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Launches NetworkManager
 exec --no-startup-id nm-applet
 
-# Adjusts PulseAudio volume via pactl.
-set $refresh_i3blocks pkill -SIGRTMIN+10 i3blocks
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3blocks
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3blocks
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3blocks
-
-# Audio and mic
-exec_always --no-startup-id "pactl set-default-sink 'alsa_output.pci-0000_00_1f.3.analog-stereo'"
-exec_always --no-startup-id "pactl set-default-source 'alsa_input.usb-Samson_Technologies_Samson_Q2U_Microphone-00.analog-stereo'"
+# Sets audio and mic
+exec --no-startup-id "pactl set-default-sink 'alsa_output.pci-0000_00_1f.3.analog-stereo'"
+exec --no-startup-id "pactl set-default-source 'alsa_input.usb-Samson_Technologies_Samson_Q2U_Microphone-00.analog-stereo'"
 
 # Sets up mirroring
 exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1440 --pos 0x0 --rotate normal
@@ -35,20 +32,20 @@ exec --no-startup-id xset dpms 0 0 0
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
 
-# Set the wallpaper
-exec_always --no-startup-id nitrogen --restore
+# Sets the wallpaper
+exec --no-startup-id nitrogen --restore
+
+# Launches picom compositor
+exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
+
+# Launches notification daemon
+exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
+
+# Switches keyboard layouts
+exec "setxkbmap -option 'grp:alt_shift_toggle' -layout us,ge,ru -variant ,qwerty,phonetic"
 
 # Decreases key repeat delay to 200ms and increases key repeat rate to 50 per second
 exec_always --no-startup-id xset r rate 200 50
-
-# Launch picom compositor
-exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf
-
-# Switching keyboard layouts
-exec_always "setxkbmap -option 'grp:alt_shift_toggle' -layout us,ge,ru -variant ,qwerty,phonetic"
-
-# Notification daemon
-exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
 
 # }}}
 
