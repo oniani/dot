@@ -13,7 +13,7 @@ config() {
     mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 }
 
-sudoconf() {
+nosudo() {
     sudo touch "/etc/sudoers.d/$USER"
     printf "%s ALL=(ALL:ALL) NOPASSWD: ALL\n" "$USER" | sudo tee "/etc/sudoers.d/$USER"
 
@@ -53,7 +53,7 @@ help() {
 case $1 in
     "--config") config;;
     "--program") program;;
-    "--nosudo") sudoconf;;
+    "--nosudo") nosudo;;
     "--vscode") vscode;;
     *) help;;
 esac

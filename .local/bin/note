@@ -19,9 +19,18 @@ pandocmd() {
                zathura -
 }
 
+help() {
+    printf "usage: note [option]\n\
+    a  add a note\n\
+    f  find a note\n\
+    l  list all notes\n\
+    o  open a note\n"
+}
+
 case $1 in
     a) printf "Note: " && read -r name && "$EDITOR" "$HOME/git/note/$name.md";;
     f) pandocmd;;
+    l) ls -Ahlv --color=auto -I .git "$HOME/git/note";;
     o) "$EDITOR" "$(prompt)";;
-    *) printf "usage: note [option]\n    a  add a note\n    f  find a note\n    o  open a note\n";;
+    *) help;;
 esac
