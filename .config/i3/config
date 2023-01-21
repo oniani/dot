@@ -12,7 +12,7 @@ client.focused #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0
 exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1440 --pos 0x0 --rotate normal
 
 # Disables laptop monitor
-exec --no-startup-id xrandr --output eDP-1-1 --off
+exec_always --no-startup-id xrandr --output eDP-1-1 --off
 
 # Keeps the monitor active even after inactivity.
 exec --no-startup-id xset dpms 0 0 0
