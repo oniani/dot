@@ -7,6 +7,7 @@ name = "material-nf"
 [[block]]
 block = "time"
 format = "%a %b %d %Y %r"
+interval = 1
 timezone = "US/Eastern"
 
 [[block]]
