@@ -5,7 +5,7 @@ font = JetBrainsMono Nerd Font Mono 12
 frame_color = "#1db954"
 frame_width = 4
 height = 256
-padding = 16
+padding = 32
 width = 400
 
 [urgency_critical]
