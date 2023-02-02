@@ -81,6 +81,7 @@ local server_settings = {
 vim.g.coq_settings = {
     auto_start = "shut-up",
     clients = { snippets = { warn = {} } },
+    keymap = { jump_to_mark = "<Nop>" },
 }
 
 M.config = function()
