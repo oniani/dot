@@ -81,9 +81,6 @@ autoload -Uz colors && colors
 # Load and enable completion
 autoload -Uz compinit && compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump_$ZSH_VERSION"
 
-# Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
-
 # Completion settings
 zstyle ":completion:*" accept-exact-dirs true
 zstyle ":completion:*" insert-tab false

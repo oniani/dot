@@ -45,6 +45,80 @@ local on_attach = function(_, bufnr)
             vim.lsp.buf.formatting()
         end
     end, { desc = "LSP: Format current buffer" })
+
+    -- Autocompletion Colors
+    local accent_color = "#8ba8f0"
+    vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = "none" })
+    vim.api.nvim_set_hl(0, "FloatBorder", { fg = accent_color, bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { fg = "none", bg = "none" })
+    vim.api.nvim_set_hl(0, "Pmenu", { fg = "none", bg = "none" })
+    vim.api.nvim_set_hl(0, "PmenuSel", { fg = "black", bg = accent_color })
+    vim.api.nvim_set_hl(0, "PmenuThumb", { fg = "none", bg = accent_color })
+
+    -- Borders (override globally)
+    local border = {
+        { "🭽", "FloatBorder" },
+        { "▔", "FloatBorder" },
+        { "🭾", "FloatBorder" },
+        { "▕", "FloatBorder" },
+        { "🭿", "FloatBorder" },
+        { "▁", "FloatBorder" },
+        { "🭼", "FloatBorder" },
+        { "▏", "FloatBorder" },
+    }
+
+    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+        opts = opts or {}
+        opts.border = opts.border or border
+        return orig_util_open_floating_preview(contents, syntax, opts, ...)
+    end
+
+    -- Customizing how diagnostics are displayed
+    vim.diagnostic.config {
+        virtual_text = false,
+    }
+
+    -- Change diagnostic symbols in the sign column (gutter)
+    local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+    for type, icon in pairs(signs) do
+        local hl = "DiagnosticSign" .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    end
+
+    -- Go-to definition in a split window
+    local function goto_definition(split_cmd)
+        local util = vim.lsp.util
+        local log = require "vim.lsp.log"
+        local api = vim.api
+
+        local handler = function(_, result, ctx)
+            if result == nil or vim.tbl_isempty(result) then
+                local _ = log.info() and log.info(ctx.method, "No location found")
+                return nil
+            end
+
+            if split_cmd then
+                vim.cmd(split_cmd)
+            end
+
+            if vim.tbl_islist(result) then
+                util.jump_to_location(result[1])
+
+                if #result > 1 then
+                    util.set_qflist(util.locations_to_items(result))
+                    api.nvim_command "copen"
+                    api.nvim_command "wincmd p"
+                end
+            else
+                util.jump_to_location(result)
+            end
+        end
+
+        return handler
+    end
+
+    vim.lsp.handlers["textDocument/definition"] = goto_definition "vsplit"
 end
 
 local fmt = function(lang)
@@ -171,11 +245,23 @@ M.config = function()
             { name = "buffer" },
             { name = "path" },
         },
-        window = {
-            completion = cmp.config.window.bordered(),
-            documentation = cmp.config.window.bordered(),
-        },
     }
+
+    cmp.setup.cmdline({ "/", "?" }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+            { name = "buffer" },
+        },
+    })
+
+    cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+            { name = "path" },
+        }, {
+            { name = "cmdline" },
+        }),
+    })
 end
 
 return M
