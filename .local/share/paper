@@ -1,4 +1,5 @@
 # `tail -n+2 paper | while read -r url filename; do wget "$url" -O "$filename"; done`
+https://arxiv.org/pdf/1609.04747.pdf gradient_descent_overview.pdf
 https://arxiv.org/pdf/1412.6980.pdf adam.pdf
 https://arxiv.org/pdf/1706.03762.pdf attention_is_all_you_need.pdf
 https://arxiv.org/pdf/1810.04805.pdf bert.pdf
