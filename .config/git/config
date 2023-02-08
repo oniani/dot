@@ -50,6 +50,7 @@
 
 [alias]
     l = "log --all --graph --stat --pretty=format:'%C(red)%h%Creset -%C(blue)%d%Creset %C(yellow)%s%Creset %C(bold blue)by %an <%ae> %C(green)(%cs, %cr)%Creset'"
+    amend = "commit --amend --no-edit"
     stashls = "stash list"
     stashget = "!f() { git stash apply $(git stash list | grep $1 | cut -d ':' -f 1); }; f"
     stashpop = "!f() { git stash pop $(git stash list | grep $1 | cut -d ':' -f 1); }; f"
@@ -58,14 +59,9 @@
     uncommit = "!f() { git reset --soft HEAD~$1; }; f"
 
 [credential]
-    # NOTE: Perform the following steps first:
-    #
-    # $ wget "https://github.com/GitCredentialManager/git-credential-manager/releases/download/v2.0.886/gcm-linux_amd64.2.0.886.deb"
-    # $ sudo dpkg -i ./gcm-linux_amd64.2.0.877.deb
-    # $ git-credential-manager configure
-	cacheoptions = --timeout 31536000
-	credentialStore = cache
-	helper = /usr/bin/git-credential-manager
+    cacheoptions = --timeout 31536000
+    credentialStore = cache
+    helper = /usr/bin/git-credential-manager
 
 [credential "https://dev.azure.com"]
-	useHttpPath = true
+    useHttpPath = true
