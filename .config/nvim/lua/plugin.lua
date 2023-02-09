@@ -22,7 +22,6 @@ local packages = {
     "nvim-treesitter/nvim-treesitter",
 
     -- Visuals
-    "lukas-reineke/indent-blankline.nvim",
     "nvim-lualine/lualine.nvim",
     "rebelot/kanagawa.nvim",
 
@@ -81,11 +80,6 @@ require("nvim-treesitter.configs").setup {
     },
 }
 
-require("indent_blankline").setup {
-    char = "┊",
-    show_trailing_blankline_indent = false,
-}
-
 require("lualine").setup {
     options = {
         icons_enabled = true,
@@ -126,7 +120,7 @@ local on_attach = function(_, bufnr)
     end, { desc = "LSP: [F]ormat Current Buffer" })
 
     vim.diagnostic.config {
-        float = { border = "rounded" },
+        float = { border = "single" },
         virtual_text = false,
     }
 
