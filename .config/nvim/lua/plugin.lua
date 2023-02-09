@@ -22,8 +22,8 @@ local packages = {
     "nvim-treesitter/nvim-treesitter",
 
     -- Visuals
+    "catppuccin/nvim",
     "nvim-lualine/lualine.nvim",
-    "rebelot/kanagawa.nvim",
 
     -- LSP
     "neovim/nvim-lspconfig",
@@ -55,8 +55,6 @@ if is_bootstrap then
     return
 end
 
--- Plugin Settings {{{
-
 require("Comment").setup()
 
 vim.keymap.set("n", "<Leader>f", "<Cmd>Files<CR>", { noremap = true })
@@ -83,14 +81,16 @@ require("nvim-treesitter.configs").setup {
 require("lualine").setup {
     options = {
         icons_enabled = true,
-        theme = "kanagawa",
+        theme = "catppuccin",
     },
 }
 
-require("kanagawa").setup { transparent = true }
-vim.cmd.colorscheme "kanagawa"
-
--- }}}
+require("catppuccin").setup {
+    flavour = "mocha",
+    term_colors = true,
+    transparent_background = true,
+}
+vim.cmd.colorscheme "catppuccin"
 
 -- LSP and Autocompletion {{{
 
