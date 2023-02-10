@@ -14,9 +14,13 @@ local packages = {
     -- Commenting
     "numToStr/Comment.nvim",
 
-    -- Search
+    -- Fuzzy search
     "junegunn/fzf.vim",
     { "junegunn/fzf", run = ":call fzf#install()" },
+
+    -- File explorer
+    "nvim-tree/nvim-tree.lua",
+    "nvim-tree/nvim-web-devicons",
 
     -- Syntax highlighting and code navigation
     "nvim-treesitter/nvim-treesitter",
@@ -55,11 +59,16 @@ if is_bootstrap then
     return
 end
 
-require("Comment").setup()
+require("Comment").setup {}
 
 vim.keymap.set("n", "<Leader>f", "<Cmd>Files<CR>", { noremap = true })
 vim.keymap.set("n", "<Leader>l", "<Cmd>Lines<CR>", { noremap = true })
 vim.keymap.set("n", "<Leader>r", "<Cmd>Rg<CR>", { noremap = true })
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+require("nvim-tree").setup {}
+vim.keymap.set("n", "<C-n>", "<Cmd>NvimTreeToggle<CR>", { noremap = true })
 
 require("nvim-treesitter.configs").setup {
     highlight = {
