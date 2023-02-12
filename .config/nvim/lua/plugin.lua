@@ -153,7 +153,7 @@ local server_settings = {
     },
     pyright = {},
     rust_analyzer = {},
-    sumneko_lua = {
+    lua_ls = {
         Lua = {
             runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
             diagnostics = { globals = { "vim" } },
