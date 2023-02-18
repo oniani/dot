@@ -97,24 +97,16 @@ require("lualine").setup {
 require("kanagawa").setup { transparent = true }
 vim.cmd.colorscheme "kanagawa"
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#141414" })
-vim.api.nvim_set_hl(0, "PMenuSel", { bg = "#141414", fg = "#fe8019" })
+vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none", fg = "#141414" })
+vim.api.nvim_set_hl(0, "Folded", { bg = "none", fg = "#957FB8" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "PMenu", { bg = "none", fg = "white" })
 vim.api.nvim_set_hl(0, "PMenuSBar", { bg = "#fe8019", fg = "white" })
-vim.api.nvim_set_hl(0, "PMenuThumb", { bg = "#957FB8", fg = "#141414" })
+vim.api.nvim_set_hl(0, "PMenuSel", { bg = "#141414", fg = "#fe8019" })
+vim.api.nvim_set_hl(0, "PMenuThumb", { bg = "#957fb8", fg = "#141414" })
+vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 vim.api.nvim_set_hl(0, "WildMenu", { bg = "none", fg = "#141414" })
-vim.api.nvim_set_hl(0, "Folded", { bg = "none", fg = "#957FB8" })
-vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none", fg = "#141414" })
-vim.api.nvim_set_hl(0, "Cursorline", { bg = "#0f0f0f" })
-vim.api.nvim_set_hl(0, "VertSplit", { fg = "#0f0f0f", bg = "none" })
-vim.api.nvim_set_hl(0, "StatusLine", { fg = "#000000", bg = "#0f0f0f" })
-vim.api.nvim_set_hl(0, "StatusLineNC", { fg = "#000000", bg = "#0f0f0f" })
-vim.api.nvim_set_hl(0, "LineNr", { fg = "#4e4136" })
-vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#4e4136" })
-vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#4e4136" })
 
 -- LSP and Autocompletion {{{
 
