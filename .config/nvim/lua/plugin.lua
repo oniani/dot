@@ -154,6 +154,7 @@ end
 local server_settings = {
     bashls = {},
     clangd = {},
+    cmake = {},
     efm = {
         rootMarkers = { ".git/" },
         languages = {
