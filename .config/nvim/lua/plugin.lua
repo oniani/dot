@@ -61,14 +61,14 @@ end
 
 require("Comment").setup {}
 
-vim.keymap.set("n", "<Leader>f", "<Cmd>Files<CR>", { noremap = true })
-vim.keymap.set("n", "<Leader>l", "<Cmd>Lines<CR>", { noremap = true })
-vim.keymap.set("n", "<Leader>r", "<Cmd>Rg<CR>", { noremap = true })
+vim.keymap.set("n", "<Leader>f", "<Cmd>Files<CR>")
+vim.keymap.set("n", "<Leader>l", "<Cmd>Lines<CR>")
+vim.keymap.set("n", "<Leader>r", "<Cmd>Rg<CR>")
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 require("nvim-tree").setup {}
-vim.keymap.set("n", "<C-n>", "<Cmd>NvimTreeToggle<CR>", { noremap = true })
+vim.keymap.set("n", "<C-n>", "<Cmd>NvimTreeToggle<CR>")
 
 require("nvim-treesitter.configs").setup {
     highlight = {
@@ -115,7 +115,7 @@ local on_attach = function(_, bufnr)
         if desc then
             desc = "LSP: " .. desc
         end
-        vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc, noremap = true })
+        vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
     end
 
     lsp_keymap_set("K", vim.lsp.buf.hover, "Hover Documentation")
