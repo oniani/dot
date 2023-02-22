@@ -1,12 +1,12 @@
 [theme]
-name = "space-villain"
+theme = "space-villain"
 
 [icons]
-name = "material-nf"
+icons = "material-nf"
 
 [[block]]
 block = "time"
-format = "%a %b %d %Y %r"
+format = " $icon $timestamp.datetime(f:'%a %b %d %Y %r') "
 interval = 1
 timezone = "US/Eastern"
 
@@ -30,20 +30,9 @@ interval = 1
 
 [[block]]
 block = "cpu"
-format = "{barchart} {utilization}"
-interval = 1
-
-[[block]]
-block = "nvidia_gpu"
-label = "Quadro T1000"
+format = "$barchart $utilization"
 interval = 1
 
 [[block]]
 block = "battery"
-full_format = "{percentage}"
 interval = 1
-
-[[block]]
-block = "networkmanager"
-device_format = "{icon}"
-on_click = "kitty nmtui"
