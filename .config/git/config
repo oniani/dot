@@ -59,7 +59,7 @@
     uncommit = "!f() { git reset --soft HEAD~$1; }; f"
 
 [credential]
-    cacheoptions = --timeout 900
+    cacheoptions = --timeout 0
     credentialStore = cache
     helper = /usr/bin/git-credential-manager
 
