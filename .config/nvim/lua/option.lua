@@ -20,6 +20,7 @@ vim.opt.splitright = true
 
 -- Visual
 vim.opt.colorcolumn = "101"
+vim.opt.cursorline = true
 vim.opt.fillchars = "fold: "
 vim.opt.foldmethod = "marker"
 vim.opt.lazyredraw = true

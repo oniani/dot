@@ -26,7 +26,6 @@ local packages = {
     "nvim-treesitter/nvim-treesitter",
 
     -- Visuals
-    "nvim-lualine/lualine.nvim",
     "rebelot/kanagawa.nvim",
 
     -- LSP
@@ -87,16 +86,14 @@ require("nvim-treesitter.configs").setup {
     },
 }
 
-require("lualine").setup {
-    options = {
-        icons_enabled = true,
-        theme = "kanagawa",
-    },
-}
-
-require("kanagawa").setup { transparent = true }
+-- Color scheme
+require("kanagawa").setup {}
 vim.cmd.colorscheme "kanagawa"
 
+vim.api.nvim_set_hl(0, "Normal", { bg = "black" })
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#727169" })
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none", fg = "#ff9e3b" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#141414" })
 vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none", fg = "#141414" })
 vim.api.nvim_set_hl(0, "Folded", { bg = "none", fg = "#957FB8" })
@@ -226,17 +223,17 @@ cmp.setup {
         },
     },
     mapping = cmp.mapping.preset.insert {
-        ["<C-d>"] = cmp.mapping.scroll_docs( -4),
-        ["<C-u>"] = cmp.mapping.scroll_docs(4),
-        ["<C-o>"] = cmp.mapping.complete(),
-        ["<C-c>"] = cmp.mapping.close(),
-        ["<C-j>"] = cmp.mapping.select_next_item(),
-        ["<C-k>"] = cmp.mapping.select_prev_item(),
-        ["<CR>"] = cmp.mapping.confirm {
+            ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+            ["<C-u>"] = cmp.mapping.scroll_docs(4),
+            ["<C-o>"] = cmp.mapping.complete(),
+            ["<C-c>"] = cmp.mapping.close(),
+            ["<C-j>"] = cmp.mapping.select_next_item(),
+            ["<C-k>"] = cmp.mapping.select_prev_item(),
+            ["<CR>"] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         },
-        ["<Tab>"] = cmp.mapping(function(fallback)
+            ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
@@ -245,11 +242,11 @@ cmp.setup {
                 fallback()
             end
         end, { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
+            ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif luasnip.jumpable( -1) then
-                luasnip.jump( -1)
+            elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
             else
                 fallback()
             end
