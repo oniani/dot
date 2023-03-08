@@ -62,6 +62,7 @@ alias wget="wget --show-progress"
 # Interactive
 alias e="nvim"
 alias ssh="kitty +kitten ssh"
+alias t="tmux"
 
 # Safer commands
 alias cp="cp -i"
