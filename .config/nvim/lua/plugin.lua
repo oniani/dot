@@ -15,8 +15,7 @@ local packages = {
     "numToStr/Comment.nvim",
 
     -- Fuzzy search
-    "junegunn/fzf.vim",
-    { "junegunn/fzf", run = ":call fzf#install()" },
+    "ibhagwan/fzf-lua",
 
     -- File explorer
     "nvim-tree/nvim-tree.lua",
@@ -60,9 +59,11 @@ end
 
 require("Comment").setup {}
 
-vim.keymap.set("n", "<Leader>f", "<Cmd>Files<CR>")
-vim.keymap.set("n", "<Leader>l", "<Cmd>Lines<CR>")
-vim.keymap.set("n", "<Leader>r", "<Cmd>Rg<CR>")
+local fzf = require "fzf-lua"
+vim.keymap.set("n", "<Leader>f", fzf.files)
+vim.keymap.set("n", "<Leader>l", fzf.lines)
+vim.keymap.set("n", "<Leader>r", fzf.live_grep)
+vim.g.fzf_action = { ["ctrl-s"] = "split",["ctrl-v"] = "vsplit" }
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -94,16 +95,16 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "black" })
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#727169" })
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none", fg = "#ff9e3b" })
-vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#646464" })
-vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none", fg = "#646464" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#141414" })
+vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none", fg = "#141414" })
 vim.api.nvim_set_hl(0, "Folded", { bg = "none", fg = "#957FB8" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "PMenu", { bg = "none", fg = "white" })
 vim.api.nvim_set_hl(0, "PMenuSBar", { bg = "#ff9e3b", fg = "white" })
 vim.api.nvim_set_hl(0, "PMenuSel", { bg = "none", fg = "#8ba8f0" })
-vim.api.nvim_set_hl(0, "PMenuThumb", { bg = "#957fb8", fg = "#646464" })
+vim.api.nvim_set_hl(0, "PMenuThumb", { bg = "#957fb8", fg = "#141414" })
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-vim.api.nvim_set_hl(0, "WildMenu", { bg = "none", fg = "#646464" })
+vim.api.nvim_set_hl(0, "WildMenu", { bg = "none", fg = "#141414" })
 
 -- LSP and Autocompletion {{{
 
@@ -223,17 +224,17 @@ cmp.setup {
         },
     },
     mapping = cmp.mapping.preset.insert {
-            ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-            ["<C-u>"] = cmp.mapping.scroll_docs(4),
-            ["<C-o>"] = cmp.mapping.complete(),
-            ["<C-c>"] = cmp.mapping.close(),
-            ["<C-j>"] = cmp.mapping.select_next_item(),
-            ["<C-k>"] = cmp.mapping.select_prev_item(),
-            ["<CR>"] = cmp.mapping.confirm {
+        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-u>"] = cmp.mapping.scroll_docs(4),
+        ["<C-o>"] = cmp.mapping.complete(),
+        ["<C-c>"] = cmp.mapping.close(),
+        ["<C-j>"] = cmp.mapping.select_next_item(),
+        ["<C-k>"] = cmp.mapping.select_prev_item(),
+        ["<CR>"] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         },
-            ["<Tab>"] = cmp.mapping(function(fallback)
+        ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
@@ -242,7 +243,7 @@ cmp.setup {
                 fallback()
             end
         end, { "i", "s" }),
-            ["<S-Tab>"] = cmp.mapping(function(fallback)
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
             elseif luasnip.jumpable(-1) then
