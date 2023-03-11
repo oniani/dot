@@ -91,13 +91,17 @@ require("nvim-treesitter.configs").setup {
 require("kanagawa").setup {}
 vim.cmd.colorscheme "kanagawa"
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "black" })
-vim.api.nvim_set_hl(0, "LineNr", { fg = "#727169" })
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none", fg = "#ff9e3b" })
+vim.api.nvim_set_hl(0, "DiagnosticSignError", { bg = "none", fg = "#e82424" })
+vim.api.nvim_set_hl(0, "DiagnosticSignHint", { bg = "none", fg = "#6a9589" })
+vim.api.nvim_set_hl(0, "DiagnosticSignInfo", { bg = "none", fg = "#658594" })
+vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { bg = "none", fg = "#ff9e3b" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#141414" })
 vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none", fg = "#141414" })
 vim.api.nvim_set_hl(0, "Folded", { bg = "none", fg = "#957FB8" })
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#727169" })
+vim.api.nvim_set_hl(0, "Normal", { bg = "black" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "PMenu", { bg = "none", fg = "white" })
 vim.api.nvim_set_hl(0, "PMenuSBar", { bg = "#ff9e3b", fg = "white" })
