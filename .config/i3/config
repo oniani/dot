@@ -128,19 +128,6 @@ bindsym $mod+u [urgent=latest] focus
 
 # }}}
 
-# Scratchpad {{{
-
-exec_always --no-startup-id pgrep -f "^kitty --class btop" || kitty --class btop -e btop
-exec_always --no-startup-id pgrep -f "^kitty --class python" || kitty --class python -e ipython
-
-for_window [class="btop"] move to scratchpad
-for_window [class="python"] move to scratchpad
-
-bindsym $mod+b [class="btop"] scratchpad show; move position center
-bindsym $mod+p [class="python"] scratchpad show; move position center
-
-# }}}
-
 # Resizing {{{
 
 mode "resize" {
