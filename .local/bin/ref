@@ -4,7 +4,7 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-BIBFILE="$HOME/git/dot/.local/share/templates/tex/ref.bib"
+BIBFILE="$HOME/git/tex/ref.bib"
 SEL=$(grep "@" "$BIBFILE" | cut -d '{' -f 2 | cut -d ',' -f 1 | fzf)
 RES=$(sed -n "/$SEL,/,/^}/p" "$BIBFILE")
 printf "%s\n" "$RES"
