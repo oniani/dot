@@ -1,6 +1,7 @@
 tag,name,description
 AUR,advcpmv,"'cp' and 'mv' utilities with progress bar patches"
 AUR,drawio-desktop,"Diagram drawing application built on web technology"
+AUR,erdtree,"multi-threaded file-tree visualizer and disk usage analyzer"
 AUR,git-credential-manager-core,"A secure Git credential helper built on .NET that runs on Windows, macOS, and Linux"
 AUR,kanagawa-gtk-theme-git,"GTK theme with the Kanagawa colour palette"
 AUR,macchina,"A system information fetcher, with an (unhealthy) emphasis on performance."
