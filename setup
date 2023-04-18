@@ -37,6 +37,7 @@ vscode() {
     wget -q --show-progress -O vscode_stable_linux-x64.tar.gz "$link"
     tar -C "$HOME"/.local -xzvf vscode_stable_linux-x64.tar.gz
     rm -f vscode_stable_linux-x64.tar.gz
+    rm -rf "$HOME"/.local/vscode
     mv "$HOME"/.local/VSCode-linux-x64 "$HOME"/.local/vscode
     cd "$HOME"/.local/vscode || exit
     mkdir data
