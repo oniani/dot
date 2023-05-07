@@ -40,7 +40,7 @@ export FZF_DEFAULT_OPTS="--reverse --color bg+:-1"
 export NNN_BMS="D:~/dl;c:~/git/dot;d:~/doc;g:~/git;p:~/pic;t:~/git/tex;w:~/wip;"
 export NNN_FCOLORS="000004300000000000000000"
 export NNN_OPENER="$HOME/.local/bin/open"
-export NNN_OPTS="AEHderx"
+export NNN_OPTS="AEHder"
 export NNN_TRASH=1
 
 # Utilities
