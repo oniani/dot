@@ -1,6 +1,6 @@
 -- Defines groups
 local autogen = vim.api.nvim_create_augroup("AutoGenerate", { clear = true })
-local miscellaneous = vim.api.nvim_create_augroup("Miscellaneous", { clear = true })
+local misc = vim.api.nvim_create_augroup("Miscellaneous", { clear = true })
 
 -- Regenerates Graphviz file on write
 vim.api.nvim_create_autocmd("BufWritePost *.dot", {
@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 -- Equalizes splits when resized
 vim.api.nvim_create_autocmd("VimResized *", {
     command = "wincmd =",
-    group = miscellaneous,
+    group = misc,
     pattern = "*",
 })
 
@@ -28,6 +28,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
         vim.highlight.on_yank()
     end,
-    group = miscellaneous,
+    group = misc,
+    pattern = "*",
+})
+
+-- Highlights trailing whitespace
+vim.api.nvim_create_autocmd("ColorScheme *", {
+    callback = function()
+        vim.api.nvim_set_hl(0, "ExtraWhitespace", { bg = "red" })
+        vim.cmd("match ExtraWhitespace /\\s\\+$/")
+    end,
+    group = misc,
     pattern = "*",
 })
