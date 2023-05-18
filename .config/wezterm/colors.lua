@@ -39,11 +39,19 @@ function module.apply_to_config(config)
 
         tab_bar = {
             background = "#000000",
+            active_tab = {
+                bg_color = "#ffffff",
+                fg_color = "#000000",
+            },
+            inactive_tab = {
+                bg_color = "#000000",
+                fg_color = "#ffffff",
+            },
             new_tab = {
-                bg_color = '#000000',
-                fg_color = '#808080',
-            }
-        }
+                bg_color = "#000000",
+                fg_color = "#808080",
+            },
+        },
     }
 end
 
