@@ -54,14 +54,12 @@ function colormap() {
 alias :q="exit"
 alias diff="diff --color=auto"
 alias grep="grep --color=auto"
-alias icat="kitty +kitten icat"
 alias l="ls -Av --color=auto --group-directories-first"
 alias ll="ls -Ahlv --color=auto --group-directories-first"
 alias wget="wget --show-progress"
 
 # Interactive
 alias e="nvim"
-alias ssh="kitty +kitten ssh"
 alias t="tmux"
 
 # Safer commands
@@ -189,6 +187,6 @@ bindkey -s "^z" "fg\n"
 eval "$(pyenv init -)"
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # }}}

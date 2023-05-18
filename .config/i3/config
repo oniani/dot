@@ -81,7 +81,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+r restart
 
 # Start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec wezterm
 
 # }}}
 

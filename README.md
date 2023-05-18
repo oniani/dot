@@ -1,7 +1,6 @@
 # `dot`
 
-<p align="center"><img src=".local/share/applications/kitty.png" alt="Logo" width="180" /></p>
-<p align="center">Configuration files and automation wizard for *nix meta distribution.</p>
+Configuration files and automation wizard for \*nix meta distribution.
 
 ## Setup
 
@@ -21,7 +20,7 @@ Core Tools and Utilities:
 | Screenshot Utility | [Flameshot][flameshot]               |
 | Shell              | [zsh][zsh]                           |
 | Statusbar          | [i3status-rust][i3statusrust]        |
-| Terminal           | [kitty][kitty]                       |
+| Terminal           | [WezTerm][wezterm]                   |
 | Window Manager     | [i3][i3]                             |
 
 Other Tools and Utilities:
@@ -65,7 +64,7 @@ wip        # Work in Progress Files
 [flameshot]: https://github.com/flameshot-org/flameshot
 [zsh]: https://github.com/zsh-users/zsh
 [i3statusrust]: https://github.com/greshake/i3status-rust
-[kitty]: https://github.com/kovidgoyal/kitty
+[wezterm]: https://github.com/wez/wezterm
 [i3]: https://github.com/i3/i3
 [inkscape]: https://gitlab.com/inkscape/inkscape
 [drawio]: https://github.com/jgraph/drawio-desktop

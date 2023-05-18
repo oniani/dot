@@ -46,7 +46,7 @@ export NNN_TRASH=1
 # Utilities
 export EDITOR="nvim"
 export PAGER="less"
-export TERM="xterm-kitty"
+export TERM="wezterm"
 
 # Miscellaneous settings
 export LC_ALL=en_US.UTF-8

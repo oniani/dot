@@ -9,7 +9,7 @@ AUR,macchina,"A system information fetcher, with an (unhealthy) emphasis on perf
 AUR,nnn-nerd,"The fastest terminal file manager ever written (with icon support using a patched nerd font)."
 AUR,nsxiv,"Neo (or New or Not) Simple (or Small or Suckless) X Image Viewer"
 AUR,zsh-autosuggestions-git,"zsh-autosuggestions-git"
-AUR,zsh-syntax-highlighting-git,"zsh-syntax-highlighting-git"
+AUR,zsh-fast-syntax-highlighting,"Optimized and extended zsh-syntax-highlighting"
 PACMAN,atool,"A script for managing file archives of various types"
 PACMAN,bat,"Cat clone with syntax highlighting and git integration"
 PACMAN,blueman,"GTK+ Bluetooth Manager"
