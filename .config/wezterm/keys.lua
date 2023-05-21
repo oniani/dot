@@ -12,12 +12,12 @@ function module.apply_to_config(config)
         {
             key = "h",
             mods = "CTRL|SHIFT",
-            action = wezterm.action.MoveTabRelative(-1),
+            action = wezterm.action.ActivateTabRelative(-1),
         },
         {
             key = "l",
             mods = "CTRL|SHIFT",
-            action = wezterm.action.MoveTabRelative(1),
+            action = wezterm.action.ActivateTabRelative(1),
         },
     }
 end
