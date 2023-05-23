@@ -1,6 +1,7 @@
 local module = {}
 
 function module.apply_to_config(config)
+    config.audible_bell = "Disabled"
     config.cursor_blink_rate = 0
     config.use_fancy_tab_bar = false
     config.window_padding = {
