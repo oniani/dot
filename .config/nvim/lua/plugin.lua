@@ -63,7 +63,7 @@ local fzf = require "fzf-lua"
 vim.keymap.set("n", "<Leader>f", fzf.files)
 vim.keymap.set("n", "<Leader>l", fzf.lines)
 vim.keymap.set("n", "<Leader>r", fzf.live_grep)
-vim.g.fzf_action = { ["ctrl-s"] = "split",["ctrl-v"] = "vsplit" }
+vim.g.fzf_action = { ["ctrl-s"] = "split", ["ctrl-v"] = "vsplit" }
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -165,7 +165,19 @@ local server_settings = {
             python = { f "black --fast --line-length 100 -" },
         },
     },
-    pyright = {},
+    pyright = {
+        pyright = {
+            autoImportCompletion = true,
+        },
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                diagnosticMode = "openFilesOnly",
+                useLibraryCodeForTypes = true,
+                typeCheckingMode = "off",
+            },
+        },
+    },
     rust_analyzer = {},
     lua_ls = {
         Lua = {
