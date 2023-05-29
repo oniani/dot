@@ -24,7 +24,7 @@ case $ext in
     Rmd) Rscript -e "rmarkdown::render('$file', 'pdf_document')";;
     rs) cargo run "$file";;
     sh) sh "$file";;
-    tex) latexmk -interaction=nonstopmode -pdf -shell-escape "$file";;
+    tex) latexmk -interaction=nonstopmode -pdf -quiet -shell-escape "$file";;
     ts) tsc "$file";;
     *) printf "Unknown file format\n";;
 esac

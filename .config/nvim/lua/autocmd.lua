@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd("BufWritePost *.dot", {
 
 -- Regenerates LaTeX document on write
 vim.api.nvim_create_autocmd("BufWritePost", {
-    command = "silent !latexmk -interaction=nonstopmode -pdf -shell-escape %",
+    command = "silent !latexmk -interaction=nonstopmode -pdf -quiet -shell-escape %",
     group = autogen,
     pattern = "*.tex",
 })
