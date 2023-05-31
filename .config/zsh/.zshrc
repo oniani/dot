@@ -57,7 +57,7 @@ alias grep="grep --color=auto"
 alias l="ls -Av --color=auto --group-directories-first"
 alias ll="ls -Ahlv --color=auto --group-directories-first"
 alias wget="wget --show-progress"
-alias x="latexmk -pdf -outdir=target"
+alias x="latexmk -interaction=nonstopmode -pdf -outdir=target"
 
 # Interactive
 alias e="nvim"
