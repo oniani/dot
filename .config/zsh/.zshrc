@@ -58,6 +58,7 @@ alias l="ls -Av --color=auto --group-directories-first"
 alias ll="ls -Ahlv --color=auto --group-directories-first"
 alias wget="wget --show-progress"
 alias x="latexmk -interaction=nonstopmode -pdf -outdir=target"
+alias xa="latexmk -interaction=nonstopmode -pdf -pvc -outdir=target"
 
 # Interactive
 alias e="nvim"
