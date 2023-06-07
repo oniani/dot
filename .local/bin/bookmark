@@ -14,7 +14,6 @@ add() {
         printf "%s\n" "$bookmark" >> "$CACHE"
         tmpfile=$(mktemp)
         sort -u "$CACHE" > "$tmpfile" && mv "$tmpfile" "$CACHE"
-        notify-send "Bookmarked" "$bookmark"
     fi
 }
 
@@ -22,7 +21,6 @@ sel() {
     bookmark="$(rofi -dmenu < "$CACHE")"
     printf "%s\n" "$bookmark" | xclip -sel clipboard
     xdotool getactivewindow key ctrl+l ctrl+v KP_Enter
-    [ -n "$bookmark" ] && notify-send "Selected" "$bookmark"
 }
 
 case $1 in
