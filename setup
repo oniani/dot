@@ -7,10 +7,12 @@
 config() {
     cp -R .config "$HOME"
     cp -R .local "$HOME"
-    cp .zshenv "$HOME"
 
     mkdir -p "$HOME/dl" "$HOME/doc" "$HOME/git" "$HOME/pic" "$HOME/wip"
     mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+
+    sudo touch "/etc/zsh/zshenv"
+    printf "export ZDOTDIR=%s/.config/zsh\n" "$HOME" | sudo tee "/etc/zsh/zshenv"
 }
 
 nosudo() {
