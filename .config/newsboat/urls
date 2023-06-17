@@ -1,0 +1,20 @@
+#
+# Author: David Oniani
+#
+#             _
+#  _   _ _ __| |___
+# | | | | '__| / __|
+# | |_| | |  | \__ \
+#  \__,_|_|  |_|___/
+#
+
+https://gamozolabs.github.io/feed.xml        "~ [website] Brandon Falk (gamozo)"
+https://github.com/dabeaz/blog/releases.atom "~ [website] David Beazley (dabeaz)"
+https://karpathy.github.io/feed.xml          "~ [website] Andrej Karpathy"
+https://nassimtaleb.org/feed/                "~ [website] Nassim Taleb"
+https://oniani.ai/rss.xml                    "~ [website] David Oniani"
+https://twitchrss.appspot.com/vod/gamozo     "~ [twitch] Brandon Falk (gamozo)"
+https://www.reddit.com/r/cpp.rss             "~ [subreddit] /r/cpp"
+https://www.reddit.com/r/neovim.rss          "~ [subreddit] /r/neovim"
+https://www.reddit.com/r/rust.rss            "~ [subreddit] /r/rust"
+https://www.reddit.com/r/worldnews.rss       "~ [subreddit] /r/worldnews"

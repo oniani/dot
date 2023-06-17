@@ -1,0 +1,48 @@
+#
+# Author:   David Oniani
+#
+#                   __ _
+#   ___ ___  _ __  / _(_) __ _
+#  / __/ _ \| '_ \| |_| |/ _` |
+# | (_| (_) | | | |  _| | (_| |
+#  \___\___/|_| |_|_| |_|\__, |
+#                        |___/
+#
+
+# General settings
+browser "brave %u"
+pager "nvim -R"
+datetime-format "%D, %R"
+
+# Key bindings
+bind-key j down
+bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key G end
+bind-key g home
+bind-key d pagedown
+bind-key u pageup
+bind-key l open
+bind-key h quit
+bind-key a toggle-article-read
+bind-key n next-unread
+bind-key N prev-unread
+bind-key D pb-download
+bind-key U show-urls
+bind-key x pb-delete
+bind-key ^t next-unread
+
+# Color settings
+color listnormal blue default
+color listfocus red default
+color listnormal_unread red default
+color listfocus_unread black blue
+color info blue default
+color article white default
+
+# Highlighting
+highlight all ".*●.*" magenta
+highlight feedlist "\s*.0/0." black

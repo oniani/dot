@@ -31,7 +31,7 @@ local packages = {
     "neovim/nvim-lspconfig",
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    "j-hui/fidget.nvim",
+    { "j-hui/fidget.nvim", branch = "legacy" },
 
     -- Autocompletion
     "hrsh7th/nvim-cmp",
