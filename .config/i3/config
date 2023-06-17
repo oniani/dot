@@ -83,6 +83,9 @@ bindsym $mod+Shift+r restart
 # Start a terminal
 bindsym $mod+Return exec wezterm
 
+# Restarts LightDM
+bindsym $mod+Shift+x exec "sudo systemctl restart lightdm.service"
+
 # }}}
 
 # Workspaces {{{
