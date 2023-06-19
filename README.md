@@ -46,7 +46,6 @@ doc        # Documents
 git        # Git repos
 pic        # Pictures
 wip        # Work in Progress Files
-.zshenv    # Exports Environment Variables
 ```
 
 ## License
