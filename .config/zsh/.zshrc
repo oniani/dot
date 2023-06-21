@@ -63,6 +63,7 @@ alias xa="latexmk -interaction=nonstopmode -pdf -pvc -outdir=target"
 # Interactive
 alias e="nvim"
 alias n="newsboat --quiet"
+alias o="libreoffice"
 alias t="tmux"
 
 # Safer commands
