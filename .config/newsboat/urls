@@ -8,13 +8,12 @@
 #  \__,_|_|  |_|___/
 #
 
-https://gamozolabs.github.io/feed.xml        "~ [website] Brandon Falk (gamozo)"
-https://github.com/dabeaz/blog/releases.atom "~ [website] David Beazley (dabeaz)"
-https://karpathy.github.io/feed.xml          "~ [website] Andrej Karpathy"
-https://nassimtaleb.org/feed/                "~ [website] Nassim Taleb"
-https://oniani.ai/rss.xml                    "~ [website] David Oniani"
-https://twitchrss.appspot.com/vod/gamozo     "~ [twitch] Brandon Falk (gamozo)"
-https://www.reddit.com/r/cpp.rss             "~ [subreddit] /r/cpp"
-https://www.reddit.com/r/neovim.rss          "~ [subreddit] /r/neovim"
-https://www.reddit.com/r/rust.rss            "~ [subreddit] /r/rust"
-https://www.reddit.com/r/worldnews.rss       "~ [subreddit] /r/worldnews"
+https://gamozolabs.github.io/feed.xml        "~ Brandon Falk (gamozo)"
+https://github.com/dabeaz/blog/releases.atom "~ David Beazley (dabeaz)"
+https://karpathy.github.io/feed.xml          "~ Andrej Karpathy"
+https://nassimtaleb.org/feed/                "~ Nassim Taleb"
+https://oniani.ai/rss.xml                    "~ David Oniani (stylepoint)"
+https://www.reddit.com/r/cpp.rss             "~ /r/cpp"
+https://www.reddit.com/r/neovim.rss          "~ /r/neovim"
+https://www.reddit.com/r/rust.rss            "~ /r/rust"
+https://www.reddit.com/r/worldnews.rss       "~ /r/worldnews"
