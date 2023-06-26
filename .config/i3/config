@@ -80,11 +80,14 @@ bindsym $mod+Shift+q kill
 # Restart i3 in-place (preserves your layout/session)
 bindsym $mod+Shift+r restart
 
+# Locks i3
+bindsym $mod+Shift+z exec i3lock --nofork -c 000000
+
 # Start a terminal
 bindsym $mod+Return exec wezterm
 
 # Restarts LightDM
-bindsym $mod+Shift+x exec "sudo systemctl restart lightdm.service"
+bindsym $mod+Shift+x exec sudo systemctl restart lightdm.service
 
 # }}}
 
