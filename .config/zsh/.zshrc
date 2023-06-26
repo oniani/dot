@@ -62,7 +62,6 @@ alias xa="latexmk -interaction=nonstopmode -pdf -pvc -outdir=target"
 
 # Interactive
 alias e="nvim"
-alias n="newsboat --quiet"
 alias o="libreoffice"
 alias t="tmux"
 
@@ -183,6 +182,7 @@ zle -N zle-line-init
 bindkey -s "^f" "nnn_autocd\n"
 bindkey -s "^p" "ipython\n"
 bindkey -s "^z" "fg\n"
+bindkey -s "^n" "newsboat --quiet\n"
 
 # }}}
 
