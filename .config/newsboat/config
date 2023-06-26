@@ -10,8 +10,7 @@
 #
 
 # General settings
-browser "brave %u"
-pager "nvim -R"
+browser brave
 datetime-format "%D, %R"
 
 # Key bindings
@@ -35,11 +34,6 @@ bind-key u pageup
 # Color settings
 color listnormal blue default
 color listfocus red default
-color listnormal_unread red default
-color listfocus_unread black blue
+color listnormal_unread blue default
+color listfocus_unread red default
 color info blue default
-color article white default
-
-# Highlighting
-highlight all ".*●.*" magenta
-highlight feedlist "\s*.0/0." black
