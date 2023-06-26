@@ -81,7 +81,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+r restart
 
 # Locks i3
-bindsym $mod+Shift+z exec i3lock --nofork -c 000000
+bindsym $mod+Shift+z exec i3lock --nofork -c 181818
 
 # Start a terminal
 bindsym $mod+Return exec wezterm
