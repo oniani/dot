@@ -11,7 +11,7 @@
 
 # General settings
 browser brave
-datetime-format "%D, %R"
+datetime-format "%D, %R %p"
 
 # Key bindings
 bind-key D pb-download
@@ -31,9 +31,8 @@ bind-key l open
 bind-key n next-unread
 bind-key u pageup
 
-# Color settings
-color listnormal blue default
-color listfocus red default
+# Colors
+color listfocus color232 blue
 color listnormal_unread blue default
 color listfocus_unread red default
 color info blue default
