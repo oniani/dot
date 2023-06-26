@@ -33,6 +33,5 @@ bind-key u pageup
 
 # Colors
 color listfocus color232 blue
-color listnormal_unread blue default
-color listfocus_unread red default
+color listfocus_unread color232 blue
 color info blue default
