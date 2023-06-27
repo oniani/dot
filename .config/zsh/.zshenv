@@ -55,8 +55,6 @@ export MANPAGER="nvim +Man!"
 # Adding to PATH
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/kitty/bin:$PATH"
-export PATH="$HOME/.local/nvim/bin:$PATH"
 export PATH="$HOME/.local/vscode:$PATH"
 export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/cargo/bin:$PATH"
