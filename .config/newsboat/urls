@@ -8,12 +8,12 @@
 #  \__,_|_|  |_|___/
 #
 
+https://awesomekling.github.io/feed.xml      "~ Andreas Kling"
 https://karpathy.github.io/feed.xml          "~ Andrej Karpathy"
 https://gamozolabs.github.io/feed.xml        "~ Brandon Falk (gamozo)"
 https://github.com/dabeaz/blog/releases.atom "~ David Beazley (dabeaz)"
 https://oniani.ai/rss.xml                    "~ David Oniani (stylepoint)"
 https://news.ycombinator.com/rss             "~ Hacker News"
-https://nassimtaleb.org/feed                 "~ Nassim Taleb"
 https://api.quantamagazine.org/feed          "~ Quanta Magazine"
 https://www.reddit.com/r/cpp.rss             "~ /r/cpp"
 https://www.reddit.com/r/neovim.rss          "~ /r/neovim"
