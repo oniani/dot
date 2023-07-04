@@ -32,7 +32,7 @@ exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
 exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
 
 # Switches keyboard layouts
-exec "setxkbmap -option 'grp:alt_shift_toggle' -layout us,ge,ru -variant ,qwerty,phonetic"
+exec_always setxkbmap -option 'grp:alt_shift_toggle' -layout us,ge,ru -variant ,qwerty,phonetic
 
 # Decreases key repeat delay to 200ms and increases key repeat rate to 50 per second
 exec_always --no-startup-id xset r rate 200 50

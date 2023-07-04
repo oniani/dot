@@ -10,7 +10,7 @@
 #
 
 # General settings
-browser brave
+browser "brave >/dev/null 2>&1"
 datetime-format "%D, %R %p"
 
 # Key bindings
