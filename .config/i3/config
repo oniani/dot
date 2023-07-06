@@ -83,8 +83,8 @@ bindsym $mod+Shift+r restart
 # Locks i3
 bindsym $mod+Shift+z exec i3lock --nofork -c 181818
 
-# Start a terminal
-bindsym $mod+Return exec wezterm
+# Starts kitty terminal
+bindsym $mod+Return exec kitty --single-instance
 
 # Restarts LightDM
 bindsym $mod+Shift+x exec sudo systemctl restart lightdm.service
