@@ -20,7 +20,7 @@ Core Tools and Utilities:
 | Screenshot Utility | [Flameshot][flameshot]               |
 | Shell              | [zsh][zsh]                           |
 | Statusbar          | [i3status-rust][i3statusrust]        |
-| Terminal           | [WezTerm][wezterm]                   |
+| Terminal           | [kitty][kitty]                       |
 | Window Manager     | [i3][i3]                             |
 
 Other Tools and Utilities:
@@ -63,7 +63,7 @@ wip        # Work in Progress Files
 [flameshot]: https://github.com/flameshot-org/flameshot
 [zsh]: https://github.com/zsh-users/zsh
 [i3statusrust]: https://github.com/greshake/i3status-rust
-[wezterm]: https://github.com/wez/wezterm
+[kitty]: https://github.com/kovidgoyal/kitty
 [i3]: https://github.com/i3/i3
 [inkscape]: https://gitlab.com/inkscape/inkscape
 [drawio]: https://github.com/jgraph/drawio-desktop
