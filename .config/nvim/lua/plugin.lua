@@ -28,9 +28,10 @@ local packages = {
     "rebelot/kanagawa.nvim",
 
     -- LSP
+    "microsoft/python-type-stubs",
     "neovim/nvim-lspconfig",
-    "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
+    "williamboman/mason.nvim",
     { "j-hui/fidget.nvim", branch = "legacy" },
 
     -- Autocompletion
@@ -167,8 +168,9 @@ local server_settings = {
             analysis = {
                 autoSearchPaths = true,
                 diagnosticMode = "openFilesOnly",
-                useLibraryCodeForTypes = true,
                 typeCheckingMode = "off",
+                useLibraryCodeForTypes = true,
+                stubPath = vim.fn.stdpath "data" .. "/site/pack/paqs/start/python-type-stubs",
             },
         },
     },
