@@ -64,6 +64,7 @@ alias xa="latexmk -interaction=nonstopmode -pdf -pvc -outdir=target"
 # Interactive
 alias e="nvim"
 alias f="thunar"
+alias j="python -m jupyterlab"
 alias o="libreoffice"
 alias t="tmux"
 
