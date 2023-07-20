@@ -16,6 +16,8 @@ map <C-u> scroll full-up
 map [normal] P toggle_presentation
 map [presentation] <C-d> navigate next
 map [presentation] <C-u> navigate previous
+map [presentation] j navigate next
+map [presentation] k navigate previous
 map [presentation] G goto bottom
 map [presentation] P toggle_presentation
 map [presentation] d recolor
