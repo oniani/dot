@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+# Papers
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+path="$XDG_CACHE_HOME/paper"
+url="https://gist.githubusercontent.com/oniani/1b4a8cc22f5c9015d9a1d6625ebfd97a/raw/e916b8f7e1deea774a10eb5d75037ef8a4c65af5/paper"
+
+[ ! -f "$path" ] && curl -s -o "$path" "$url"
+brave >/dev/null 2>&1 "$(cut -d ',' "$path" -f 1 | fzf | xargs -I {} grep -F {} "$path" | cut -d ',' -f 2)"
