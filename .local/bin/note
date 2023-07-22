@@ -31,7 +31,6 @@ help() {
     o  open a note\n"
 }
 
-
 notedir="$HOME/git/oniani.github.io/content/notes"
 case $1 in
     a) printf "Note: " && read -r name && "$EDITOR" "$notedir/$name.md";;

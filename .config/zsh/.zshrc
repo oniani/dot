@@ -183,7 +183,7 @@ zle -N zle-line-init
 # Key Bindings {{{
 
 bindkey -s "^f" "nnn_autocd\n"
-bindkey -s "^p" "ipython\n"
+bindkey -s "^p" "paperls\n"
 bindkey -s "^z" "fg\n"
 bindkey -s "^n" "newsboat --quiet\n"
 
