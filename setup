@@ -34,29 +34,16 @@ program() {
     done
 }
 
-vscode() {
-    link="https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
-    wget -q --show-progress -O vscode_stable_linux-x64.tar.gz "$link"
-    tar -C "$HOME"/.local -xzvf vscode_stable_linux-x64.tar.gz
-    rm -f vscode_stable_linux-x64.tar.gz
-    rm -rf "$HOME"/.local/vscode
-    mv "$HOME"/.local/VSCode-linux-x64 "$HOME"/.local/vscode
-    cd "$HOME"/.local/vscode || exit
-    mkdir data
-}
-
 help() {
     printf "usage: ./setup [option]\n\
     --config     Copy configuration files\n\
     --nosudo     Configure sudo behavior\n\
-    --program    Install all necessary programs\n\
-    --vscode     Install Visual Studio Code (portable mode)\n"
+    --program    Install all necessary programs\n"
 }
 
 case $1 in
     "--config") config;;
     "--program") program;;
     "--nosudo") nosudo;;
-    "--vscode") vscode;;
     *) help;;
 esac
