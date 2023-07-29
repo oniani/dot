@@ -160,6 +160,14 @@ local server_settings = {
             python = { f "black --fast --line-length 100 -" },
         },
     },
+    lua_ls = {
+        Lua = {
+            runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
+            diagnostics = { globals = { "vim" } },
+            workspace = { checkThirdParty = false },
+            telemetry = { enable = false },
+        },
+    },
     pyright = {
         pyright = {
             autoImportCompletion = true,
@@ -175,14 +183,7 @@ local server_settings = {
         },
     },
     rust_analyzer = {},
-    lua_ls = {
-        Lua = {
-            runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
-            diagnostics = { globals = { "vim" } },
-            workspace = { checkThirdParty = false },
-            telemetry = { enable = false },
-        },
-    },
+    texlab = {},
 }
 
 require("fidget").setup {}
