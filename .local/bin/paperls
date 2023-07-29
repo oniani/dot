@@ -4,8 +4,8 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-path="$XDG_CACHE_HOME/paper"
-url="https://gist.githubusercontent.com/oniani/1b4a8cc22f5c9015d9a1d6625ebfd97a/raw/e916b8f7e1deea774a10eb5d75037ef8a4c65af5/paper"
+path="$XDG_CACHE_HOME/paper.txt"
+url="https://gist.githubusercontent.com/oniani/1b4a8cc22f5c9015d9a1d6625ebfd97a/raw/e916b8f7e1deea774a10eb5d75037ef8a4c65af5/paper.txt"
 
 [ "$1" = "-u" ] && curl -s -o "$path" "$url" && exit 0;
 
