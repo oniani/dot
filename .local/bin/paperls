@@ -7,6 +7,8 @@
 path="$XDG_CACHE_HOME/paper"
 url="https://gist.githubusercontent.com/oniani/1b4a8cc22f5c9015d9a1d6625ebfd97a/raw/e916b8f7e1deea774a10eb5d75037ef8a4c65af5/paper"
 
+[ "$1" = "-u" ] && curl -s -o "$path" "$url" && exit 0;
+
 [ ! -f "$path" ] && curl -s -o "$path" "$url"
 cut -d ',' "$path" -f 1 |
     fzf |
