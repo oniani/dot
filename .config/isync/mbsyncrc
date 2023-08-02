@@ -1,0 +1,27 @@
+# Configuration file for isync
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+IMAPStore oniani-remote
+Host imap.gmail.com
+Port 993
+User onianidavid@gmail.com
+PassCmd "pass email"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore oniani-local
+Subfolders Verbatim
+PATH /home/oniani/.local/share/mail/
+Inbox /home/oniani/.local/share/mail/INBOX
+
+Channel oniani
+Expunge Both
+Far :oniani-remote:
+Near :oniani-local:
+Patterns * !"[Gmail]/All Mail" !"*fts-flatcurve*" !"*virtual*"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no

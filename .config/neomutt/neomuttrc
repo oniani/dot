@@ -1,0 +1,201 @@
+# Configuration file for Neomutt
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+# Read and Send Mail {{{
+
+set mbox_type = Maildir
+set folder = "$HOME/.local/share/mail/"
+
+set sendmail = "msmtp -a gmail"
+set smtp_authenticators = "gssapi:login"
+
+set mailcap_path = "$HOME/.config/neomutt/mailcap"
+
+# }}}
+
+# Caching {{{
+
+set header_cache = "~/.cache/neomutt/headers"
+set message_cachedir = "~/.cache/neomutt/messages"
+
+# }}}
+
+# Mailboxes {{{
+
+set spoolfile = "+INBOX"
+set record    = "+[Gmail].Sent Mail"
+set postponed = "+[Gmail].Drafts"
+set mbox      = "+[Gmail].All Mail"
+set trash     = "+[Gmail].Trash"
+
+named-mailboxes "  Inbox"     ="INBOX"
+named-mailboxes "  Sent"      ="[Gmail].Sent Mail"
+named-mailboxes "  Important" ="[Gmail].Starred"
+named-mailboxes "  Drafts"    ="[Gmail].Drafts"
+named-mailboxes "  Junk"      ="[Gmail].Spam"
+named-mailboxes "  Trash"     ="[Gmail].Trash"
+named-mailboxes "  Archive"   ="[Gmail].All Mail"
+
+# Informative icons
+set crypt_chars = " "
+set flag_chars = "      "
+set to_chars=""
+set status_chars = " "
+
+# Do not save copies of outgoing messages (Gmail does it by default)
+set copy = no
+
+# }}}
+
+# Composition {{{
+
+# Personal Info
+set from = "onianidavid@gmail.com"
+set realname = "David Oniani"
+set signature = "$HOME/.config/neomutt/signature"
+
+# Editor
+set editor = "$EDITOR -c 'set cc=100 tw=99' -c 'norm O' -c 'startinsert'"
+
+# Reply
+set include
+set fast_reply
+set reverse_name
+set markers = no
+set mark_old = no
+
+# Forward
+set fcc_attach
+set forward_format = "Fwd: %s"
+set forward_quote
+set mime_forward = yes
+
+# Performance Tuning
+set sleep_time = 0
+set mail_check = 60
+
+# Other
+set wait_key = no
+set rfc2047_parameters = yes
+set query_command = "aquery"
+
+# }}}
+
+# Index {{{
+
+set date_format="%Y-%m-%d %I:%M%p"
+set index_format="%5C %Z %?X?A& ? %D %-25.25F %s (%-5.5c)"
+
+set sort = "threads"
+set sort_aux = "reverse-date"
+set collapse_all = yes
+
+# }}}
+
+# Sidebar {{{
+
+set mail_check_stats = yes
+set sidebar_width = 25
+set sidebar_visible = no
+set sidebar_short_path = yes
+set sidebar_next_new_wrap = yes
+set sidebar_format = "%D%?F? [%F]?%* %?N?%N/?%S"
+
+# }}}
+
+# Key Bindings {{{
+
+# Comfy index navigation
+bind index h exit
+bind index j next-entry
+bind index k previous-entry
+bind index l display-message
+
+# Comfy pager navigation
+bind pager h exit
+bind pager j next-line
+bind pager k previous-line
+bind pager l view-attachments
+
+# Comfy attachment menu navigation
+bind attach h exit
+bind attach j next-entry
+bind attach k previous-entry
+bind attach l view-mailcap
+
+# Comfy sidebar navigation
+macro index,pager J <sidebar-next><sidebar-open> "switch to folder down"
+macro index,pager K <sidebar-prev><sidebar-open> "switch to folder up"
+
+# G and g
+bind attach,index G last-entry
+bind attach,index g first-entry
+
+bind pager G bottom
+bind pager g top
+
+# Quick navigation
+bind attach,index,pager \Cu half-up
+bind attach,index,pager \Cd half-down
+
+# Group reply
+bind index,pager R group-reply
+
+# Toggle the sidebar
+bind index,pager S sidebar-toggle-visible
+
+# Thread management
+bind index - collapse-thread
+bind index _ collapse-all
+
+# Abook completion
+bind editor <Tab> complete-query
+
+# Automation
+macro index,pager A "<pipe-message>newcontact<return>" "new abook entry"
+macro index,pager B "<tag-pattern>~A<return><tag-prefix>A" "fill abook"
+macro index,pager C "<shell-escape>refreshmail<enter>" "sync all mail"
+
+# }}}
+
+# Colors {{{
+
+# Index {{{
+
+# Default
+color index         red         default ".*"
+color index_author  green       default ".*"
+color index_subject blue        default ".*"
+color index_number  yellow      default
+
+# New mail
+color index         brightred   default "~N"
+color index_author  brightgreen default "~N"
+color index_subject brightblue  default "~N"
+
+# Tags
+color index         brightred   default "~T"
+color index_author  brightgreen default "~T"
+color index_subject brightblue  default "~T"
+
+# }}}
+
+# Sidebar {{{
+
+color sidebar_highlight yellow default
+color sidebar_divider   yellow default
+color sidebar_flagged   yellow default
+color sidebar_new       yellow default
+
+# }}}
+
+# Other {{{
+
+color status     yellow  default
+color signature  yellow  default
+color hdrdefault yellow  default
+
+# }}}
+
+# }}}

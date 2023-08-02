@@ -1,0 +1,23 @@
+# Configuration file for Notmuch
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+[user]
+name=David Oniani
+primary_email=onianidavid@gmail.com
+
+[database]
+path=/home/oniani/.local/share/mail
+
+[new]
+tags=inbox;unread;
+ignore=.mbsyncstate;.uidvalidity
+
+[search]
+exclude_tags=deleted;spam;
+
+[maildir]
+synchronize_flags=true
+
+[crypto]
+gpg_path=gpg

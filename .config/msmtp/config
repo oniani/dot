@@ -1,0 +1,18 @@
+# Configuration file for msmtp
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
+account oniani
+from oniani
+user onianidavid@gmail.com
+
+host smtp.gmail.com
+port 587
+
+auth on
+passwordeval "pass email"
+
+tls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+
+logfile /home/oniani/.cache/msmtp/msmtp.log
