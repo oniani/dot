@@ -5,10 +5,13 @@ ACM Computing Surveys 2023|Pre-train, Prompt, and Predict: A Systematic Survey o
 ICLR 2015|Adam: A Method for Stochastic Optimization|https://arxiv.org/abs/1412.6980
 ICLR 2019|Decoupled Weight Decay Regularization|https://arxiv.org/abs/1711.05101
 ICLR 2021|Isotropy in the Contextual Embedding Space: Clusters and Manifolds|https://openreview.net/forum?id=xYGNO86OWDH
+ICLR 2023|Self-Consistency Improves Chain of Thought Reasoning in Language Models|https://openreview.net/forum?id=1PL1NIMMrw
 N/A|Improving Language Understanding by Generative Pre-Training|https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf
 N/A|Language Models are Unsupervised Multitask Learners (GPT-2)|https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf
 Nature 2022|Language models can learn complex molecular distributions|https://www.nature.com/articles/s41467-022-30839-x
 Nature 2023|Foundation models for generalist medical artificial intelligence|https://www.nature.com/articles/s41586-023-05881-4
 NeurIPS 2017|Attention is All you Need|https://papers.nips.cc/paper_files/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html
 NeurIPS 2020|Language Models are Few-Shot Learners (GPT-3)|https://papers.nips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html
+NeurIPS 2022|Chain-of-Thought Prompting Elicits Reasoning in Large Language Models|https://openreview.net/forum?id=_VjQlMeSB_J
+NeurIPS 2022|Training language models to follow instructions with human feedback|https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract-Conference.html
 arXiv 2023|GPT-4 Technical Report (GPT-4),https://arxiv.org/abs/2303.08774
