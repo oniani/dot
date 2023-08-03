@@ -5,7 +5,7 @@
 # License: MIT License
 
 tail -n+2 "${XDG_DATA_HOME:-$HOME/.local/share}/paper.csv" |
-    column -s, -t |
-    rofi -dmenu -font "JetBrainsMono Nerd Font 12" -i -l 20 -p "Paper" -theme Paper |
+    column -s'|' -t |
+    rofi -dmenu -font "JetBrainsMono Nerd Font 16" -i -l 20 -p "Paper" -theme Paper |
     grep -o "\S*https\S*" |
     xargs -r brave >/dev/null 2>&1
