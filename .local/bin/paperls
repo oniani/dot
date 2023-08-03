@@ -4,14 +4,15 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-path="$XDG_CACHE_HOME/paper.txt"
-url="https://gist.githubusercontent.com/oniani/1b4a8cc22f5c9015d9a1d6625ebfd97a/raw/4ef4ae4fbeaca198a1b420048df0afb384f10c3d/paper.txt"
+path="$XDG_CACHE_HOME/paper.csv"
+url="https://gist.githubusercontent.com/oniani/1b4a8cc22f5c9015d9a1d6625ebfd97a/raw/410722ab98b903e345e267f5d38e67b545f91d4a/paper.csv"
+font="JetBrainsMono Nerd Font 12"
 
 [ "$1" = "-u" ] && curl -s -o "$path" "$url" && exit 0;
-
 [ ! -f "$path" ] && curl -s -o "$path" "$url"
-cut -d ',' "$path" -f 1 |
-    fzf |
-    xargs -I {} grep -F {} "$path" |
-    cut -d ',' -f 2 |
+
+tail -n+2 "$path" |
+    column -s, -t |
+    rofi -dmenu -font "$font" -i -l 20 -theme Paper -p "Paper" |
+    grep -o "\S*https\S*" |
     xargs -r brave >/dev/null 2>&1

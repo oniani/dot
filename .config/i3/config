@@ -95,6 +95,34 @@ bindsym $mod+Shift+x exec sudo systemctl restart lightdm.service
 
 # }}}
 
+# Program Mappings {{{
+
+# Adjusts volume via pactl
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Launches Firefox Developer Edition
+bindsym $mod+w exec brave --force-device-scale-factor=1.28
+
+# Launches rofi in different modes
+bindsym $mod+Tab exec "rofi -show window"
+bindsym $mod+f exec "rofi -modi drun,run -show drun"
+bindsym $mod+e exec "rofi -modi emoji -show emoji -kb-custom-1 Ctrl+C"
+
+# Launches Flameshot for taking a screenshot
+bindsym --release $mod+Shift+a exec --no-startup-id flameshot gui -p $HOME/pic
+bindsym --release $mod+Shift+s exec --no-startup-id flameshot full -p $HOME/pic
+
+# Launches the paper utility
+bindsym $mod+p exec --no-startup-id $HOME/.local/bin/paperls
+
+# Launches the bookmark utility
+bindsym $mod+s exec --no-startup-id $HOME/.local/bin/bookmark -s
+
+# }}}
+
 # Workspaces {{{
 
 # Workspaces
@@ -152,31 +180,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# }}}
-
-# Program Mappings {{{
-
-# Adjusts volume via pactl
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-
-# Launches Firefox Developer Edition
-bindsym $mod+w exec brave --force-device-scale-factor=1.28
-
-# Launches rofi in different modes
-bindsym $mod+Tab exec "rofi -show window"
-bindsym $mod+f exec "rofi -modi drun,run -show drun"
-bindsym $mod+e exec "rofi -modi emoji -show emoji -kb-custom-1 Ctrl+C"
-
-# Launches Flameshot for taking a screenshot
-bindsym --release $mod+Shift+a exec --no-startup-id flameshot gui -p $HOME/pic
-bindsym --release $mod+Shift+s exec --no-startup-id flameshot full -p $HOME/pic
-
-# Launches the bookmark utility to select a link
-bindsym $mod+s exec --no-startup-id $HOME/.local/bin/bookmark -s
 
 # }}}
 

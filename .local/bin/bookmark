@@ -4,23 +4,22 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-CACHE="${XDG_DATA_HOME:-$HOME/.local/share}/bookmark"
+path="${XDG_DATA_HOME:-$HOME/.local/share}/bookmark.txt"
 
 add() {
     bookmark="$(xclip -o)"
-    if grep -q "^$bookmark$" "$CACHE"; then
+    if grep -q "^$bookmark$" "$path"; then
         notify-send "Bookmark already exists" "$bookmark"
     else
-        printf "%s\n" "$bookmark" >> "$CACHE"
+        printf "%s\n" "$bookmark" >> "$path"
         tmpfile=$(mktemp)
-        sort -u "$CACHE" > "$tmpfile" && mv "$tmpfile" "$CACHE"
+        sort -u "$path" > "$tmpfile" && mv "$tmpfile" "$path"
     fi
 }
 
 sel() {
-    bookmark="$(rofi -dmenu < "$CACHE")"
-    printf "%s\n" "$bookmark" | xclip -sel clipboard
-    xdotool getactivewindow key ctrl+l ctrl+v KP_Enter
+    bookmark="$(rofi -dmenu -i < "$path")"
+    printf "%s\n" "$bookmark" | xargs -r brave >/dev/null 2>&1
 }
 
 case $1 in
