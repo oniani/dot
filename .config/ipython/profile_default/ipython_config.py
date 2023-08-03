@@ -1,3 +1,7 @@
+# IPython configuration file
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
 from IPython.terminal.prompts import ClassicPrompts
 
 config = get_config()

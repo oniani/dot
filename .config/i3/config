@@ -1,3 +1,7 @@
+# i3 configuration file
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
 # General Settings {{{
 
 # Font for window titles and the bar

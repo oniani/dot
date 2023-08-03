@@ -1,3 +1,7 @@
+# i3status-rust configuration file
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
 [theme]
 theme = "space-villain"
 

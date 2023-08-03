@@ -1,12 +1,6 @@
---
--- Author: David Oniani
---
---  _       _ _     _
--- (_)_ __ (_) |_  | |_   _  __ _
--- | | '_ \| | __| | | | | |/ _` |
--- | | | | | | |_ _| | |_| | (_| |
--- |_|_| |_|_|\__(_)_|\__,_|\__,_|
---
+-- Neovim configuration file
+-- by David Oniani <onianidavid@gmail.com>
+-- License: MIT License
 
 -- Perf
 vim.g.loaded_gzip = 1

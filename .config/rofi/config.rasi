@@ -1,3 +1,7 @@
+// Rofi configuration file
+// by David Oniani <onianidavid@gmail.com>
+// License: MIT License
+
 configuration {
     font: "JetBrainsMono Nerd Font Mono 24";
     show-icons: true;

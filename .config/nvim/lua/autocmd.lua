@@ -1,3 +1,7 @@
+-- Neovim configuration file
+-- by David Oniani <onianidavid@gmail.com>
+-- License: MIT License
+
 -- Defines groups
 local misc = vim.api.nvim_create_augroup("Miscellaneous", { clear = true })
 
@@ -21,7 +25,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.api.nvim_create_autocmd("ColorScheme *", {
     callback = function()
         vim.api.nvim_set_hl(0, "ExtraWhitespace", { bg = "#ff5d62" })
-        vim.cmd("match ExtraWhitespace /\\s\\+$/")
+        vim.cmd "match ExtraWhitespace /\\s\\+$/"
     end,
     group = misc,
     pattern = "*",

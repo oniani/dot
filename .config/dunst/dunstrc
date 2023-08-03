@@ -1,3 +1,7 @@
+# dunst configuration file
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
+
 [global]
 alignment = center
 corner_radius = 16

@@ -1,3 +1,7 @@
+-- Neovim configuration file
+-- by David Oniani <onianidavid@gmail.com>
+-- License: MIT License
+
 local is_bootstrap = false
 local path = vim.fn.stdpath "data" .. "/site/pack/paqs/start/paq-nvim"
 local repo = "https://github.com/savq/paq-nvim.git"

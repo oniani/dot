@@ -1,12 +1,6 @@
-#
-# Author: David Oniani
-#
-#            _
-#    _______| |__  _ __ ___
-#   |_  / __| '_ \| '__/ __|
-#  _ / /\__ \ | | | | | (__
-# (_)___|___/_| |_|_|  \___|
-#
+# zsh configuration file
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
 
 # Functions {{{
 

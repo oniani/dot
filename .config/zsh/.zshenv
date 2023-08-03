@@ -1,12 +1,6 @@
-#
-# Author: David Oniani
-#
-#            _
-#    _______| |__   ___ _ ____   __
-#   |_  / __| '_ \ / _ \ '_ \ \ / /
-#  _ / /\__ \ | | |  __/ | | \ V /
-# (_)___|___/_| |_|\___|_| |_|\_/
-#
+# zsh configuration file
+# by David Oniani <onianidavid@gmail.com>
+# License: MIT License
 
 # XDG base directory specification
 export XDG_CACHE_HOME="$HOME/.cache"
