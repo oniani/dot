@@ -4,15 +4,8 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-path="$XDG_CACHE_HOME/paper.csv"
-url="https://gist.githubusercontent.com/oniani/1b4a8cc22f5c9015d9a1d6625ebfd97a/raw/410722ab98b903e345e267f5d38e67b545f91d4a/paper.csv"
-font="JetBrainsMono Nerd Font 12"
-
-[ "$1" = "-u" ] && curl -s -o "$path" "$url" && exit 0;
-[ ! -f "$path" ] && curl -s -o "$path" "$url"
-
-tail -n+2 "$path" |
+tail -n+2 "${XDG_DATA_HOME:-$HOME/.local/share}/paper.csv" |
     column -s, -t |
-    rofi -dmenu -font "$font" -i -l 20 -theme Paper -p "Paper" |
+    rofi -dmenu -font "JetBrainsMono Nerd Font 12" -i -l 20 -p "Paper" -theme Paper |
     grep -o "\S*https\S*" |
     xargs -r brave >/dev/null 2>&1
