@@ -1,12 +1,12 @@
 Venue|Year|Title|Url
 ACL|2005|METEOR: An Automatic Metric for MT Evaluation with Improved Correlation with Human Judgments|https://aclanthology.org/W05-0909/
-ACL|2012|LEPOR: A Robust Evaluation Metric for Machine Translation with Augmented Factors|https://aclanthology.org/C12-2044/
 ACL|2022|Bleu: a Method for Automatic Evaluation of Machine Translation|https://aclanthology.org/P02-1040/
 ACL|2022|Problems with Cosine as a Measure of Embedding Similarity for High Frequency Words|https://aclanthology.org/2022.acl-short.45/
-ACL|2022|Translation between Molecules and Natural Language|https://aclanthology.org/2022.emnlp-main.26/
 ACM Computing Surveys|2023|Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in Natural Language Processing|https://dl.acm.org/doi/full/10.1145/3560815
 ACM-BCB [FA]|2020|A Qualitative Evaluation of Language Models on Automatic Question-Answering for COVID-19|https://dl.acm.org/doi/abs/10.1145/3388440.3412413
 AMIA [FA]|2023|Toward Improving Health Literacy in Patient Education Materials with Neural Machine Translation Models|https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10283125/
+COLING|2012|LEPOR: A Robust Evaluation Metric for Machine Translation with Augmented Factors|https://aclanthology.org/C12-2044/
+EMNLP|2022|Translation between Molecules and Natural Language|https://aclanthology.org/2022.emnlp-main.26/
 HDS [CA]|2021|Social and Behavioral Determinants of Health in the Era of Artificial Intelligence with Electronic Health Records: A Scoping Review|https://spj.science.org/doi/10.34133/2021/9759016
 ICLR|2015|Adam: A Method for Stochastic Optimization|https://arxiv.org/abs/1412.6980
 ICLR|2019|Decoupled Weight Decay Regularization|https://arxiv.org/abs/1711.05101
