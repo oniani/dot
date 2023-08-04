@@ -4,8 +4,7 @@
 # by David Oniani <onianidavid@gmail.com>
 # License: MIT License
 
-tail -n+2 "${XDG_DATA_HOME:-$HOME/.local/share}/paper.csv" |
-    column -s'|' -t |
+column -s'|' -t < "${XDG_DATA_HOME:-$HOME/.local/share}/paper.csv" |
     rofi -dmenu -font "JetBrainsMono Nerd Font 16" -i -l 20 -p "Paper" -theme Paper |
     grep -o "\S*https\S*" |
     xargs -r brave >/dev/null 2>&1
