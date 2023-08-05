@@ -8,7 +8,7 @@ primary_email=onianidavid@gmail.com
 other_email=davidoniani@proton.me
 
 [database]
-path=~/.local/share/mail
+path=~/.local/share/email
 
 [new]
 tags=inbox;unread
