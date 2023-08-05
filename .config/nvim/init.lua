@@ -3,6 +3,7 @@
 -- License: MIT License
 
 -- Perf
+vim.g.did_install_default_menus = 1
 vim.g.loaded_gzip = 1
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
