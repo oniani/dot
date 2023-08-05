@@ -1,6 +1,6 @@
 -- Neovim configuration file
 -- by David Oniani <onianidavid@gmail.com>
--- License: MIT License
+-- MIT License
 
 -- Perf
 vim.g.did_install_default_menus = 1

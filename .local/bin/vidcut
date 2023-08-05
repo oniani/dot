@@ -2,7 +2,7 @@
 
 # Cut a video
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 INPUT="$1"
 START="$2"

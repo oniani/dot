@@ -2,7 +2,7 @@
 
 # Open the selected file in the default editor
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 [ -z "$1" ] && fzf --preview "bat {}" --prompt "File: " | xargs -r "$EDITOR" && exit 1
 

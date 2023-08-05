@@ -2,6 +2,6 @@
 
 # Open the selected file in the default editor
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 ps aux | fzf --prompt "Process> " | awk '{ print $2 }' | xargs -r kill -9

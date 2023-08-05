@@ -1,6 +1,6 @@
 -- Neovim configuration file
 -- by David Oniani <onianidavid@gmail.com>
--- License: MIT License
+-- MIT License
 
 -- Defines groups
 local misc = vim.api.nvim_create_augroup("Miscellaneous", { clear = true })

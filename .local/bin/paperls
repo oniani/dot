@@ -2,7 +2,7 @@
 
 # Papers
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 column -s'|' -t < "${XDG_DATA_HOME:-$HOME/.local/share}/paper.csv" |
     rofi -dmenu -font "JetBrainsMono Nerd Font 16" -i -l 20 -p "Paper" -theme Paper |

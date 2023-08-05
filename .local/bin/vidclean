@@ -2,7 +2,7 @@
 
 # Video cleanup
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 FILE=$1
 BASE=${FILE%.*}

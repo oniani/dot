@@ -2,7 +2,7 @@
 
 # Gets download links to the latest releases from GitHub
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 repo="$1"
 link="https://api.github.com/repos/$repo/releases/latest"

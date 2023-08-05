@@ -2,7 +2,7 @@
 
 # Encodes video for YouTube
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 # (1)  `-c:v libx264`                  - Uses the x264 codec
 # (2)  `-preset slow`                  - Uses a slow encoding preset

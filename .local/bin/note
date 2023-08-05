@@ -2,7 +2,7 @@
 
 # Note utility
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 cmd() {
     fd . "$1" --hidden --type f --exclude .git --exclude _index.md

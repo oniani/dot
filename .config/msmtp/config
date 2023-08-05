@@ -1,18 +1,24 @@
 # msmtp configuration file
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
-account oniani
-from oniani
-user onianidavid@gmail.com
+defaults
+auth             on
+port             587
+tls              on
+tls_starttls     on
+tls_trust_file   /etc/ssl/certs/ca-certificates.crt
 
-host smtp.gmail.com
-port 587
+account        gmail
+from           David Oniani <onianidavid@gmail.com>
+host           smtp.gmail.com
+passwordeval   "pass gmail"
+user           onianidavid@gmail.com
 
-auth on
-passwordeval "pass email"
+account        proton
+from           David Oniani <davidoniani@proton.me>
+host           smtp.proton.com
+passwordeval   "pass proton"
+user           davidoniani@proton.me
 
-tls on
-tls_trust_file /etc/ssl/certs/ca-certificates.crt
-
-logfile /home/oniani/.cache/msmtp/msmtp.log
+account default : gmail

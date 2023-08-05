@@ -2,6 +2,6 @@
 
 # Normalize audio
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 ffmpeg -i "$1" -af loudnorm=i=-16 "$2"

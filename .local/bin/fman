@@ -2,6 +2,6 @@
 
 # Open the selected manual page in the default editor
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 man -k . | fzf --prompt "Man> " | awk '{ print $1 }' | xargs -r man

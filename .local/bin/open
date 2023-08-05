@@ -2,7 +2,7 @@
 
 # An opener
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 set -euf -o noclobber -o noglob -o nounset
 

@@ -1,6 +1,6 @@
 -- Neovim configuration file
 -- by David Oniani <onianidavid@gmail.com>
--- License: MIT License
+-- MIT License
 
 -- Search
 vim.opt.hlsearch = false

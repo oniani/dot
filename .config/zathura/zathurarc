@@ -1,6 +1,6 @@
 # zathura configuration file
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 set recolor-darkcolor "#dcd7ba"
 set recolor-lightcolor "#16161d"

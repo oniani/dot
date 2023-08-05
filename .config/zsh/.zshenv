@@ -1,6 +1,6 @@
 # zsh configuration file
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 # XDG base directory specification
 export XDG_CACHE_HOME="$HOME/.cache"

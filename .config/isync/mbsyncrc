@@ -1,6 +1,6 @@
 # isync configuration file
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 IMAPStore oniani-remote
 Host imap.gmail.com

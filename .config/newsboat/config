@@ -1,6 +1,6 @@
 # newsboat configuration file
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 # General settings
 browser "brave >/dev/null 2>&1"

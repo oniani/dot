@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-# Paper opener
-# by David Oniani <onianidavid@gmail.com>
-# License: MIT License
-
-fd . "$HOME/doc/paper" --hidden --type f --exclude .git | fzf --prompt "Paper> "| xargs -r zathura

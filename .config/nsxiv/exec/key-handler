@@ -2,7 +2,7 @@
 
 # nsxiv configuration file
 # by David Oniani <onianidavid@gmail.com>
-# License: MIT License
+# MIT License
 
 while read -r file
 do
