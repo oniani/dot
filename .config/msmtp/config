@@ -8,18 +8,18 @@ tls            on
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
 logfile        ~/.cache/msmtp/msmtp.log
 
-account      gmail
-host         smtp.gmail.com
-port         587
-from         David Oniani <onianidavid@gmail.com>
-user         onianidavid@gmail.com
-passwordeval "pass gmail"
+account        gmail
+host           smtp.gmail.com
+port           587
+from           David Oniani <onianidavid@gmail.com>
+user           onianidavid@gmail.com
+passwordeval   "pass gmail"
 
-account      proton
-host         smtp.proton.com
-port         587
-from         David Oniani <davidoniani@proton.me>
-user         davidoniani@proton.me
-passwordeval "pass proton"
+account        proton
+host           smtp.proton.com
+port           587
+from           David Oniani <davidoniani@proton.me>
+user           davidoniani@proton.me
+passwordeval   "pass proton"
 
 account default: gmail
