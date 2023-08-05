@@ -3,22 +3,23 @@
 # MIT License
 
 defaults
-auth             on
-port             587
-tls              on
-tls_starttls     on
-tls_trust_file   /etc/ssl/certs/ca-certificates.crt
+auth           on
+tls            on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+logfile        ~/.cache/msmtp/msmtp.log
 
-account        gmail
-from           David Oniani <onianidavid@gmail.com>
-host           smtp.gmail.com
-passwordeval   "pass gmail"
-user           onianidavid@gmail.com
+account      gmail
+host         smtp.gmail.com
+port         587
+from         David Oniani <onianidavid@gmail.com>
+user         onianidavid@gmail.com
+passwordeval "pass gmail"
 
-account        proton
-from           David Oniani <davidoniani@proton.me>
-host           smtp.proton.com
-passwordeval   "pass proton"
-user           davidoniani@proton.me
+account      proton
+host         smtp.proton.com
+port         587
+from         David Oniani <davidoniani@proton.me>
+user         davidoniani@proton.me
+passwordeval "pass proton"
 
-account default : gmail
+account default: gmail
