@@ -5,16 +5,17 @@
 [user]
 name=David Oniani
 primary_email=onianidavid@gmail.com
+other_email=davidoniani@proton.me
 
 [database]
-path=/home/oniani/.local/share/mail
+path=~/.local/share/mail
 
 [new]
-tags=inbox;unread;
+tags=inbox;unread
 ignore=.mbsyncstate;.uidvalidity
 
 [search]
-exclude_tags=deleted;spam;
+exclude_tags=deleted;spam
 
 [maildir]
 synchronize_flags=true
