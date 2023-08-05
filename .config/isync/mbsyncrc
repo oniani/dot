@@ -4,24 +4,24 @@
 
 Create Both
 Expunge Both
-Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail" !"[Protonmail]*" !"*fts-flatcurve*" !"*virtual*"
 SyncState *
+
+IMAPAccount     gmail
+Host            imap.gmail.com
+User            onianidavid@gmail.com
+PassCmd         "pass gmail"
+SSLType         IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-Channel gmail
-Far :gmail-remote:
-Near :gmail-local:
-
-IMAPAccount gmail
-Host        imap.gmail.com
-User        onianidavid@gmail.com
-PassCmd     "pass gmail"
-SSLType     IMAPS
 
 IMAPStore gmail-remote
 Account   gmail
 
 MaildirStore gmail-local
 Subfolders   Verbatim
-Path         ~/.local/share/mail/gmail/
-Inbox        ~/.local/share/mail/gmail/INBOX
+Path         ~/.local/share/email/gmail/
+Inbox        ~/.local/share/email/gmail/INBOX
+
+Channel  gmail
+Far      :gmail-remote:
+Near     :gmail-local:
+Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail"
