@@ -78,7 +78,7 @@ set mail_check = 60
 # Other
 set menu_scroll
 set pager_context = 3
-set pager_index_lines = 16
+set pager_index_lines = 20
 set pager_stop
 set query_command = "aquery"
 set rfc2047_parameters = yes
@@ -111,7 +111,6 @@ set sidebar_format = "%D%?F? [%F]?%* %?N?%N/?%S"
 # Key Bindings {{{
 
 # Comfy index navigation
-unbind index h
 bind index j next-entry
 bind index k previous-entry
 bind index l display-message
@@ -121,11 +120,13 @@ bind pager h exit
 bind pager j next-line
 bind pager k previous-line
 bind pager l view-attachments
+bind pager \Cj next-entry
+bind pager \Ck previous-entry
 
 # Comfy sidebar navigation
-bind  index,pager \Cn sidebar-toggle-visible
-macro index,pager \Cj <sidebar-next><sidebar-open> "switch to folder down"
-macro index,pager \Ck <sidebar-prev><sidebar-open> "switch to folder up"
+bind  index \Cn sidebar-toggle-visible
+macro index \Cj <sidebar-next><sidebar-open> "switch to folder down"
+macro index \Ck <sidebar-prev><sidebar-open> "switch to folder up"
 
 # Comfy attachment menu navigation
 bind attach h exit
