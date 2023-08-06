@@ -3,8 +3,8 @@ Description=Email synchronization service
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/mbsync -Va -c ~/.config/isync/mbsyncrc
-ExecStartPost=/usr/bin/notmuch new
+ExecStart=mbsync -Va -c /home/oniani/.config/isync/mbsyncrc
+ExecStartPost=notmuch new
 
 [Install]
 WantedBy=default.target
