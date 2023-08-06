@@ -16,6 +16,10 @@ config() {
     printf "export ZDOTDIR=%s/.config/zsh\n" "$HOME" | sudo tee "/etc/zsh/zshenv"
 }
 
+emailsync() {
+    sudo systemctl daemon-reload && systemctl enable --user emailsync.timer
+}
+
 nosudo() {
     sudo touch "/etc/sudoers.d/$USER"
     printf "%s ALL=(ALL:ALL) NOPASSWD: ALL\n" "$USER" | sudo tee "/etc/sudoers.d/$USER"
@@ -39,12 +43,14 @@ help() {
     printf "usage: ./setup [option]\n\
     --config     Copy configuration files\n\
     --nosudo     Configure sudo behavior\n\
+    --emailsync  Activates email synchronization\n\
     --program    Install all necessary programs\n"
 }
 
 case $1 in
     "--config") config;;
-    "--program") program;;
+    "--emailsync") emailsync;;
     "--nosudo") nosudo;;
+    "--program") program;;
     *) help;;
 esac

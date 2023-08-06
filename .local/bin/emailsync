@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+# Email synchronization utility
+# by David Oniani <onianidavid@gmail.com>
+# MIT License
+
+export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
+
+start=$(find "${XDG_DATA_HOME:-$HOME/.local/share}/email" -type f | wc -l)
+mbsync -aq -c "${XDG_CONFIG_HOME:-$HOME/.config}/isync/mbsyncrc" && notmuch new
+end=$(find "${XDG_DATA_HOME:-$HOME/.local/share}/email" -type f | wc -l)
+
+[ "$end" -gt "$start" ] && notify-send "📬 $((end - start)) new email(s)" || exit 0
