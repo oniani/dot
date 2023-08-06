@@ -50,10 +50,10 @@ set copy = no
 
 # Composition {{{
 
-# Personal Info
+# Personal info
 set from = "onianidavid@gmail.com"
 set realname = "David Oniani"
-set signature = "$HOME/.config/neomutt/signature"
+set signature = "$XDG_CONFIG_HOME/neomutt/signature"
 
 # Editor
 set editor = "$EDITOR"
@@ -76,9 +76,13 @@ set sleep_time = 0
 set mail_check = 60
 
 # Other
-set wait_key = no
-set rfc2047_parameters = yes
+set menu_scroll
+set pager_context = 3
+set pager_index_lines = 16
+set pager_stop
 set query_command = "aquery"
+set rfc2047_parameters = yes
+set wait_key = no
 
 # }}}
 
@@ -107,7 +111,7 @@ set sidebar_format = "%D%?F? [%F]?%* %?N?%N/?%S"
 # Key Bindings {{{
 
 # Comfy index navigation
-bind index h exit
+unbind index h
 bind index j next-entry
 bind index k previous-entry
 bind index l display-message
@@ -118,15 +122,16 @@ bind pager j next-line
 bind pager k previous-line
 bind pager l view-attachments
 
+# Comfy sidebar navigation
+bind  index,pager \Cn sidebar-toggle-visible
+macro index,pager \Cj <sidebar-next><sidebar-open> "switch to folder down"
+macro index,pager \Ck <sidebar-prev><sidebar-open> "switch to folder up"
+
 # Comfy attachment menu navigation
 bind attach h exit
 bind attach j next-entry
 bind attach k previous-entry
 bind attach l view-mailcap
-
-# Comfy sidebar navigation
-macro index,pager \Cj <sidebar-next><sidebar-open> "switch to folder down"
-macro index,pager \Ck <sidebar-prev><sidebar-open> "switch to folder up"
 
 # G and g
 bind attach,index G last-entry
@@ -141,9 +146,6 @@ bind attach,index,pager \Cd half-down
 
 # Group reply
 bind index,pager R group-reply
-
-# Toggle the sidebar
-bind index,pager S sidebar-toggle-visible
 
 # Thread management
 bind index - collapse-thread
