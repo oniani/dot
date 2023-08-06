@@ -24,4 +24,4 @@ Inbox        ~/.local/share/email/gmail/INBOX
 Channel  gmail
 Far      :gmail-remote:
 Near     :gmail-local:
-Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail"
+Patterns *

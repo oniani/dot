@@ -5,12 +5,12 @@
 # Read and Send Mail {{{
 
 set mbox_type = Maildir
-set folder = "$HOME/.local/share/mail/"
+set folder = "~/.local/share/email/gmail/"
 
 set sendmail = "msmtp -a gmail"
 set smtp_authenticators = "gssapi:login"
 
-set mailcap_path = "$HOME/.config/neomutt/mailcap"
+set mailcap_path = "~/.config/neomutt/mailcap"
 
 # }}}
 
@@ -24,18 +24,18 @@ set message_cachedir = "~/.cache/neomutt/messages"
 # Mailboxes {{{
 
 set spoolfile = "+INBOX"
-set record    = "+[Gmail].Sent Mail"
-set postponed = "+[Gmail].Drafts"
-set mbox      = "+[Gmail].All Mail"
-set trash     = "+[Gmail].Trash"
+set record    = "+[Gmail]/Sent Mail"
+set postponed = "+[Gmail]/Drafts"
+set trash     = "+[Gmail]/Trash"
+set mbox      = "+[Gmail]/All Mail"
 
 named-mailboxes "  Inbox"     ="INBOX"
-named-mailboxes "  Sent"      ="[Gmail].Sent Mail"
-named-mailboxes "  Important" ="[Gmail].Starred"
-named-mailboxes "  Drafts"    ="[Gmail].Drafts"
-named-mailboxes "  Junk"      ="[Gmail].Spam"
-named-mailboxes "  Trash"     ="[Gmail].Trash"
-named-mailboxes "  Archive"   ="[Gmail].All Mail"
+named-mailboxes "  Sent"      ="[Gmail]/Sent Mail"
+named-mailboxes "  Important" ="[Gmail]/Starred"
+named-mailboxes "  Drafts"    ="[Gmail]/Drafts"
+named-mailboxes "  Junk"      ="[Gmail]/Spam"
+named-mailboxes "  Trash"     ="[Gmail]/Trash"
+named-mailboxes "  Archive"   ="[Gmail]/All Mail"
 
 # Informative icons
 set crypt_chars = " "
@@ -56,7 +56,7 @@ set realname = "David Oniani"
 set signature = "$HOME/.config/neomutt/signature"
 
 # Editor
-set editor = "$EDITOR -c 'set cc=100 tw=99' -c 'norm O' -c 'startinsert'"
+set editor = "$EDITOR"
 
 # Reply
 set include
@@ -84,8 +84,8 @@ set query_command = "aquery"
 
 # Index {{{
 
-set date_format="%Y-%m-%d %I:%M%p"
-set index_format="%5C %Z %?X?A& ? %D %-25.25F %s (%-5.5c)"
+set date_format="%Y-%m-%d %I:%M %p"
+set index_format="%5C %Z %?X?A& ? %D %-25.25F [%-5.5c] %s"
 
 set sort = "threads"
 set sort_aux = "reverse-date"
@@ -125,8 +125,8 @@ bind attach k previous-entry
 bind attach l view-mailcap
 
 # Comfy sidebar navigation
-macro index,pager J <sidebar-next><sidebar-open> "switch to folder down"
-macro index,pager K <sidebar-prev><sidebar-open> "switch to folder up"
+macro index,pager \Cj <sidebar-next><sidebar-open> "switch to folder down"
+macro index,pager \Ck <sidebar-prev><sidebar-open> "switch to folder up"
 
 # G and g
 bind attach,index G last-entry
@@ -161,41 +161,34 @@ macro index,pager C "<shell-escape>refreshmail<enter>" "sync all mail"
 
 # Colors {{{
 
-# Index {{{
-
 # Default
-color index         red         default ".*"
-color index_author  green       default ".*"
-color index_subject blue        default ".*"
-color index_number  yellow      default
+color index         default     default
+color index_author  blue        default
+color index_date    red         default
+color index_number  default     default
+color index_size    brightgreen default
+color index_subject default     default
+color indicator     color232    blue
 
 # New mail
-color index         brightred   default "~N"
+color index         brightgreen default "~N"
 color index_author  brightgreen default "~N"
-color index_subject brightblue  default "~N"
+color index_subject brightgreen default "~N"
 
 # Tags
-color index         brightred   default "~T"
-color index_author  brightgreen default "~T"
-color index_subject brightblue  default "~T"
+color index         brightblue default "~T"
+color index_author  brightblue default "~T"
+color index_subject brightblue default "~T"
 
-# }}}
+# Sidebar
+color sidebar_divider   blue default
+color sidebar_flagged   blue default
+color sidebar_highlight blue default
+color sidebar_new       blue default
 
-# Sidebar {{{
-
-color sidebar_highlight yellow default
-color sidebar_divider   yellow default
-color sidebar_flagged   yellow default
-color sidebar_new       yellow default
-
-# }}}
-
-# Other {{{
-
-color status     yellow  default
-color signature  yellow  default
-color hdrdefault yellow  default
-
-# }}}
+# Miscellaneous
+color hdrdefault blue  default
+color signature  blue  default
+color status     blue  default
 
 # }}}
