@@ -12,6 +12,10 @@ default_border pixel 2
 default_floating_border pixel 2
 client.focused #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0
 
+# Gaps
+gaps inner 16
+gaps outer 16
+
 # Sets up mirroring
 exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1440 --pos 0x0 --rotate normal
 
@@ -130,15 +134,15 @@ bindsym $mod+m exec --no-startup-id kitty neomutt
 
 # Workspaces
 set $ws1 "1: dev "
-set $ws2 "2: web "
-set $ws3 "3: chat "
-set $ws4 "4: other "
-set $ws5 "5: other "
-set $ws6 "6: other "
-set $ws7 "7: other "
-set $ws8 "8: other "
-set $ws9 "9: other "
-set $ws0 "10: other "
+set $ws2 "2: www "
+set $ws3 "3: mut "
+set $ws4 "4: app "
+set $ws5 "5: msc "
+set $ws6 "6: msc "
+set $ws7 "7: msc "
+set $ws8 "8: msc "
+set $ws9 "9: msc "
+set $ws0 "10: msc "
 
 # Switch to a workspace
 bindsym $mod+1 workspace number $ws1
