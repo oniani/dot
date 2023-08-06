@@ -6,6 +6,7 @@
 
 config() {
     cp -R .config "$HOME"
+    cp -R .gnupg "$HOME"
     cp -R .local "$HOME"
 
     mkdir -p "$HOME/.local/share/email/gmail"
