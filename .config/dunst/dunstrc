@@ -10,7 +10,7 @@ frame_color = "#1db954"
 frame_width = 4
 height = 256
 padding = 32
-width = 400
+width = 512
 
 [urgency_critical]
 background = "#000000"
