@@ -1,0 +1,10 @@
+[Unit]
+Description=Email synchronization service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mbsync -Va -c ~/.config/isync/mbsyncrc
+ExecStartPost=/usr/bin/notmuch new
+
+[Install]
+WantedBy=default.target
