@@ -47,6 +47,49 @@ exec_always --no-startup-id xset r rate 200 50
 
 # }}}
 
+# Workspaces {{{
+
+# Workspaces
+set $ws1 "1: dev "
+set $ws2 "2: www "
+set $ws3 "3: mua "
+set $ws4 "4: app "
+set $ws5 "5: msc "
+set $ws6 "6: msc "
+set $ws7 "7: msc "
+set $ws8 "8: msc "
+set $ws9 "9: msc "
+set $ws0 "10: msc "
+
+# Switch to a workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws0
+
+# Move focused container to a workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws0
+
+# Switch to the urgent workspace
+bindsym $mod+u [urgent=latest] focus
+
+# }}}
+
 # Default Mappings {{{
 
 # Set the mod key
@@ -113,7 +156,7 @@ bindsym $mod+w exec brave --force-device-scale-factor=1.28
 # Launches rofi in different modes
 bindsym $mod+Tab exec "rofi -show window"
 bindsym $mod+f exec "rofi -modi drun,run -show drun"
-bindsym $mod+e exec "rofi -modi emoji -show emoji -kb-custom-1 Ctrl+C"
+bindsym $mod+e exec "rofi -modi emoji -show emoji"
 
 # Launches Flameshot for taking a screenshot
 bindsym --release $mod+Shift+a exec --no-startup-id flameshot gui -p $HOME/pic
@@ -125,51 +168,8 @@ bindsym $mod+p exec --no-startup-id $HOME/.local/bin/paperls
 # Launches the bookmark utility
 bindsym $mod+s exec --no-startup-id $HOME/.local/bin/bookmark -s
 
-# Launches Neomutt email client
+# Launches Neomutt mail user agent
 bindsym $mod+m exec --no-startup-id kitty neomutt
-
-# }}}
-
-# Workspaces {{{
-
-# Workspaces
-set $ws1 "1: dev "
-set $ws2 "2: www "
-set $ws3 "3: mut "
-set $ws4 "4: app "
-set $ws5 "5: msc "
-set $ws6 "6: msc "
-set $ws7 "7: msc "
-set $ws8 "8: msc "
-set $ws9 "9: msc "
-set $ws0 "10: msc "
-
-# Switch to a workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws0
-
-# Move focused container to a workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws0
-
-# Switch to the urgent workspace
-bindsym $mod+u [urgent=latest] focus
 
 # }}}
 

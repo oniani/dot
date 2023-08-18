@@ -48,8 +48,10 @@ function colormap() {
 alias :q="exit"
 alias diff="diff --color=auto"
 alias grep="grep --color=auto"
+alias icat="kitty +kitten icat"
 alias l="ls -Av --color=auto --group-directories-first"
 alias ll="ls -Ahlv --color=auto --group-directories-first"
+alias s="bat -Pp"
 alias ssh="kitty +kitten ssh"
 alias wget="wget --show-progress"
 alias x="latexmk -interaction=nonstopmode -pdf -outdir=target"
@@ -59,7 +61,7 @@ alias xa="latexmk -interaction=nonstopmode -pdf -pvc -outdir=target"
 alias e="nvim"
 alias f="thunar"
 alias j="python -m jupyterlab"
-alias o="libreoffice"
+alias o="xdg-open"
 alias t="tmux"
 
 # Safer commands
@@ -177,7 +179,8 @@ zle -N zle-line-init
 # Key Bindings {{{
 
 bindkey -s "^f" "nnn_autocd\n"
-bindkey -s "^n" "newsboat --quiet\n"
+bindkey -s "^k" "newsboat --quiet\n"
+bindkey -s "^n" "neomutt\n"
 bindkey -s "^p" "ipython\n"
 bindkey -s "^z" "fg\n"
 

@@ -13,13 +13,13 @@ host           smtp.gmail.com
 port           587
 from           onianidavid@gmail.com
 user           onianidavid
-passwordeval   "pass gmail"
+passwordeval   "secret-tool lookup gmail pass"
 
 account        proton
 host           smtp.proton.com
 port           587
 from           davidoniani@proton.me
 user           davidoniani
-passwordeval   "pass proton"
+passwordeval   "secret-tool lookup proton pass"
 
 account default: gmail

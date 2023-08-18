@@ -2,22 +2,47 @@
 # by David Oniani <onianidavid@gmail.com>
 # MIT License
 
-# Read and Send Mail {{{
+# Send and Receive Email {{{
 
 set mbox_type = Maildir
-set folder = "~/.local/share/email/gmail/"
-
-set sendmail = "msmtp -a gmail"
+set folder = "$HOME/.local/share/email/gmail/"
+set send_charset = "us-ascii:utf-8"
 set smtp_authenticators = "gssapi:login"
 
-set mailcap_path = "~/.config/neomutt/mailcap"
+set header_cache = "$HOME/.cache/neomutt/headers"
+set message_cachedir = "$HOME/.cache/neomutt/messages"
 
-# }}}
+alternative_order text/plain text/html
+auto_view text/html
+set mailcap_path = "$HOME/.config/neomutt/mailcap:$mailcap_path"
+set mime_type_query_command = "file --mime-type -b %s"
 
-# Caching {{{
+set nm_config_file = "/home/oniani/.config/notmuch/config"
+set nm_default_uri = "notmuch:///home/oniani/.local/share/email"
 
-set header_cache = "~/.cache/neomutt/headers"
-set message_cachedir = "~/.cache/neomutt/messages"
+set query_command = "abook --mutt-query '%s'"
+set sleep_time = 0
+
+set from = "onianidavid@gmail.com"
+set sendmail = "msmtp --account gmail"
+set signature = "$HOME/.config/neomutt/signature"
+
+set fast_reply
+set include
+set reverse_name
+
+set forward_attachments = yes
+set forward_format = "Fwd: %s"
+set forward_quote
+
+set mark_old = no
+set markers = no
+set wait_key = no
+
+set menu_scroll
+set pager_context = 4
+set pager_index_lines = 20
+set pager_stop
 
 # }}}
 
@@ -29,158 +54,133 @@ set postponed = "+[Gmail]/Drafts"
 set trash     = "+[Gmail]/Trash"
 set mbox      = "+[Gmail]/All Mail"
 
-named-mailboxes "  Inbox"     ="INBOX"
-named-mailboxes "  Sent"      ="[Gmail]/Sent Mail"
-named-mailboxes "  Important" ="[Gmail]/Starred"
-named-mailboxes "  Drafts"    ="[Gmail]/Drafts"
-named-mailboxes "  Junk"      ="[Gmail]/Spam"
-named-mailboxes "  Trash"     ="[Gmail]/Trash"
-named-mailboxes "  Archive"   ="[Gmail]/All Mail"
-
-# Informative icons
-set crypt_chars = " "
-set flag_chars = "      "
-set to_chars=""
-set status_chars = " "
-
-# Do not save copies of outgoing messages (Gmail does it by default)
-set copy = no
-
-# }}}
-
-# Composition {{{
-
-# Personal info
-set from = "onianidavid@gmail.com"
-set realname = "David Oniani"
-set signature = "$XDG_CONFIG_HOME/neomutt/signature"
-
-# Editor
-set editor = "$EDITOR"
-
-# Reply
-set include
-set fast_reply
-set reverse_name
-set markers = no
-set mark_old = no
-
-# Forward
-set fcc_attach
-set forward_format = "Fwd: %s"
-set forward_quote
-set mime_forward = yes
-
-# Performance Tuning
-set sleep_time = 0
-set mail_check = 60
-
-# Other
-set menu_scroll
-set pager_context = 3
-set pager_index_lines = 20
-set pager_stop
-set query_command = "aquery"
-set rfc2047_parameters = yes
-set wait_key = no
-
-# }}}
-
-# Index {{{
-
-set date_format="%Y-%m-%d %I:%M %p"
-set index_format="%5C %Z %?X?A& ? %D %-25.25F [%-5.5c] %s"
-
-set sort = "threads"
-set sort_aux = "reverse-date"
-set collapse_all = yes
-
-# }}}
-
-# Sidebar {{{
-
-set mail_check_stats = yes
-set sidebar_width = 25
-set sidebar_visible = no
-set sidebar_short_path = yes
-set sidebar_next_new_wrap = yes
-set sidebar_format = "%D%?F? [%F]?%* %?N?%N/?%S"
+named-mailboxes " 📬 Inbox"   ="INBOX"
+named-mailboxes " 📨 Sent"    ="[Gmail]/Sent Mail"
+named-mailboxes " 📌 Pinned"  ="[Gmail]/Starred"
+named-mailboxes " 📝 Drafts"  ="[Gmail]/Drafts"
+named-mailboxes " ⛔ Junk"    ="[Gmail]/Spam"
+named-mailboxes " 🚮 Trash"   ="[Gmail]/Trash"
+named-mailboxes " 📚 Archive" ="[Gmail]/All Mail"
 
 # }}}
 
 # Key Bindings {{{
 
-# Comfy index navigation
+set abort_key = "<Esc>"
+
+unbind index M
+unbind index q
+unbind index x
+unbind pager F
+
+bind index G last-entry
+bind index \Cd half-down
+bind index \Cu half-up
+bind index g first-entry
 bind index j next-entry
 bind index k previous-entry
 bind index l display-message
 
-# Comfy pager navigation
+bind pager G bottom
+bind pager g top
 bind pager h exit
-bind pager j next-line
-bind pager k previous-line
 bind pager l view-attachments
-bind pager \Cj next-entry
-bind pager \Ck previous-entry
 
-# Comfy sidebar navigation
-bind  index \Cn sidebar-toggle-visible
-macro index \Cj <sidebar-next><sidebar-open> "switch to folder down"
-macro index \Ck <sidebar-prev><sidebar-open> "switch to folder up"
-
-# Comfy attachment menu navigation
+bind attach G last-entry
+bind attach g first-entry
 bind attach h exit
 bind attach j next-entry
 bind attach k previous-entry
 bind attach l view-mailcap
 
-# G and g
-bind attach,index G last-entry
-bind attach,index g first-entry
+bind index,pager ! flag-message
+bind index,pager $ shell-escape
 
-bind pager G bottom
-bind pager g top
+bind index,pager \Cn sidebar-toggle-visible
+macro index,pager \Cj <sidebar-next><sidebar-open>
+macro index,pager \Ck <sidebar-prev><sidebar-open>
 
-# Quick navigation
-bind attach,index,pager \Cu half-up
-bind attach,index,pager \Cd half-down
+bind index,pager S sync-mailbox
 
-# Group reply
-bind index,pager R group-reply
+macro index,pager Mi "<save-message>=INBOX<enter>"
+macro index,pager Md "<save-message>=Drafts<enter>"
+macro index,pager Mj "<save-message>=Junk<enter>"
+macro index,pager Mt "<save-message>=Trash<enter>"
+macro index,pager Ms "<save-message>=Sent<enter>"
+macro index,pager Ma "<save-message>=Archive<enter>"
 
 # Thread management
 bind index - collapse-thread
 bind index _ collapse-all
 
+# Group reply
+bind index,pager R group-reply
+
 # Abook completion
 bind editor <Tab> complete-query
 
-# Automation
-macro index,pager A "<pipe-message>newcontact<return>" "new abook entry"
-macro index,pager B "<tag-pattern>~A<return><tag-prefix>A" "fill abook"
-macro index,pager C "<shell-escape>refreshmail<enter>" "sync all mail"
+# Filter
+macro index F <vfolder-from-query>
+
+# }}}
+
+# User Interface {{{
+
+set date_format  = "%Y-%m-%d"
+set index_format = "%5C %Z %?X?A& ? %D %-32.32F [%-4.4c] %s"
+
+set sort = threads
+set sort_aux = reverse-last-date-received
+
+set collapse_all = yes
+
+set mail_check_stats = yes
+
+set sidebar_format = "%D%<F? [%F]>%* %<N?%N/>%S"
+set sidebar_next_new_wrap = yes
+set sidebar_visible = yes
+set sidebar_width = 25
 
 # }}}
 
 # Colors {{{
 
+# set crypt_chars = "SPsK "
+# set flag_chars = "*!DdrONon- "
+# set status_chars = "-*%A"
+# set to_chars = " +TCFLR"
+
 # Default
-color index         default     default
-color index_author  blue        default
-color index_date    red         default
-color index_number  default     default
-color index_size    brightgreen default
-color index_subject default     default
-color indicator     color232    blue
+color index         default  default
+color index_author  blue     default
+color index_date    red      default
+color index_number  default  default
+color index_size    cyan     default
+color index_subject default  default
+color indicator     color232 blue
 
 # New mail
 color index         brightgreen default "~N"
 color index_author  brightgreen default "~N"
+color index_date    brightgreen default "~N"
+color index_number  brightgreen default "~N"
+color index_size    brightgreen default "~N"
 color index_subject brightgreen default "~N"
+
+# Important
+color index         brightred default "~F"
+color index_author  brightred default "~F"
+color index_date    brightred default "~F"
+color index_number  brightred default "~F"
+color index_size    brightred default "~F"
+color index_subject brightred default "~F"
 
 # Tags
 color index         brightblue default "~T"
 color index_author  brightblue default "~T"
+color index_date    brightblue default "~T"
+color index_number  brightblue default "~T"
+color index_size    brightblue default "~T"
 color index_subject brightblue default "~T"
 
 # Sidebar
@@ -190,8 +190,8 @@ color sidebar_highlight blue default
 color sidebar_new       blue default
 
 # Miscellaneous
-color hdrdefault blue  default
-color signature  blue  default
-color status     blue  default
+color hdrdefault blue default
+color signature  blue default
+color status     blue default
 
 # }}}

@@ -18,8 +18,9 @@ add() {
 }
 
 sel() {
-    bookmark="$(rofi -dmenu -i < "$path")"
-    printf "%s\n" "$bookmark" | xargs -r brave >/dev/null 2>&1
+    bookmark="$(rofi -dmenu < "$path")"
+    printf "%s\n" "$bookmark" | xclip -sel clipboard
+    xdotool getactivewindow key ctrl+l ctrl+v KP_Enter
 }
 
 case $1 in

@@ -4,6 +4,14 @@
 # by David Oniani <onianidavid@gmail.com>
 # MIT License
 
+uid=$(id -u)
+export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$uid/bus"
+export DISPLAY=:0
+export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch/config"
+
 mbsync -aq -c "${XDG_CONFIG_HOME:-$HOME/.config}/isync/mbsyncrc"
+logfile="${XDG_CACHE_HOME:-$HOME/.cache}/emailsync.log"
 res=$(notmuch new)
-[ -n "${res#No new mail.}" ] && notify-send "📬 $res" || exit 0
+msg="📬 $res"
+printf "%s" "$res" | grep -q "No new mail." || notify-send "$msg"
+printf "%s\n%s\n" "$(date)" "$msg" > "$logfile"

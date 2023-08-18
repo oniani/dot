@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=Office;Network;Email;
+Comment=The NeoMutt Mail User Agent (MUA)
+Exec=kitty neomutt
+Icon=/home/oniani/.local/share/applications/neomutt.png
+Name=Neomutt
+MimeType=x-scheme-handler/mailto;
+NoDisplay=false
+Terminal=false
+Type=Application

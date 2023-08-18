@@ -6,7 +6,6 @@
 
 config() {
     cp -R .config "$HOME"
-    cp -R .gnupg "$HOME"
     cp -R .local "$HOME"
 
     mkdir -p "$HOME/.local/share/email/gmail"
@@ -19,7 +18,19 @@ config() {
 }
 
 emailsync() {
-    sudo systemctl daemon-reload && systemctl enable --user emailsync.timer
+    pass=$(secret-tool lookup gmail pass)
+    [ -n "$pass" ] || (printf "Input email pass\n" && secret-tool store --label="pass" gmail pass)
+    fcron="$(mktemp)"
+    fcrontab -l > "$fcron"
+    if grep -q emailsync "$fcron"; then
+        printf "Removing automatic emailsync...\n"
+        sed -ibu /emailsync/d "$fcron"
+        rm -f "$fcron"bu
+    else
+        printf "Adding automatic emailsync every 2 minutes...\n"
+        printf "*/2 * * * * %s\n" "$HOME/.local/bin/emailsync" >> "$fcron"
+    fi && fcrontab "$fcron"
+    rm -f "$fcron"
 }
 
 nosudo() {

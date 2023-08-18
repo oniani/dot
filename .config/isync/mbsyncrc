@@ -9,7 +9,7 @@ SyncState *
 IMAPAccount     gmail
 Host            imap.gmail.com
 User            onianidavid@gmail.com
-PassCmd         "pass gmail"
+PassCmd         "secret-tool lookup gmail pass"
 SSLType         IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 

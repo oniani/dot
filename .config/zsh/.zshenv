@@ -22,6 +22,7 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
 # Move to ~/.local/share
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/pass"
 export PYENV_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/pyenv"
@@ -43,6 +44,7 @@ export EDITOR="nvim"
 export PAGER="less"
 
 # Miscellaneous settings
+export ESCDELAY=0
 export LC_ALL=en_US.UTF-8
 export LESSHISTFILE="-"
 export MANPAGER="nvim +Man!"
