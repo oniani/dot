@@ -4,6 +4,8 @@
 # by David Oniani <onianidavid@gmail.com>
 # MIT License
 
-[ -z "$1" ] && fzf --preview "bat {}" --prompt "File: " | xargs -r "$EDITOR" && exit 1
+cmd="bat --color=always {}"
 
-fd . --hidden --type f "$1" | fzf --preview "bat {}" --prompt "File: " | xargs -r "$EDITOR"
+[ -z "$1" ] && fzf --preview "$cmd" --prompt "File: " | xargs -r "$EDITOR" && exit 0
+
+fd . --hidden --type f "$1" | fzf --preview "$cmd" --prompt "File: " | xargs -r "$EDITOR" && exit 0
