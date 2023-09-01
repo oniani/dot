@@ -46,6 +46,7 @@ function colormap() {
 
 # Core commands
 alias :q="exit"
+alias cal="cal -m"
 alias diff="diff --color=auto"
 alias grep="grep --color=auto"
 alias icat="kitty +kitten icat"
