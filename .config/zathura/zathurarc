@@ -3,7 +3,7 @@
 # MIT License
 
 set recolor-darkcolor "#dcd7ba"
-set recolor-lightcolor "#16161d"
+set recolor-lightcolor "#161616"
 
 set recolor-reverse-video true
 
