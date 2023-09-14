@@ -2,8 +2,8 @@
 # by David Oniani <onianidavid@gmail.com>
 # MIT License
 
-set recolor-darkcolor "#dcd7ba"
-set recolor-lightcolor "#161616"
+set recolor-darkcolor "#e8e6e3"
+set recolor-lightcolor "#181a1b"
 
 set recolor-reverse-video true
 
