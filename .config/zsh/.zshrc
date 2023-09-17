@@ -75,7 +75,7 @@ alias rm="rm -i"
 # Z Shell Settings {{{
 
 # Set the prompt
-PROMPT="%F{#a9b665}%n@%m%F{reset_color}:%F{#8ba8f0}%c%F{#e78a4e} ➜%F{reset_color} "
+PROMPT='%F{green}%n@%m%F{white}:%F{blue}%1~ %F{yellow}➜%f '
 
 # Load and enable colors
 autoload -Uz colors && colors
@@ -90,7 +90,7 @@ zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
 zstyle ":completion:*" list-dirs-first true
 zstyle ":completion:*" menu select
 
-# Case/hyphen-insensitive autocompletion (à la Oh My Zsh)
+# Case/hyphen-insensitive autocompletion à la Oh My Zsh
 zstyle ":completion:*" matcher-list "m:{a-zA-Z-_}={A-Za-z_-}" "r:|=*" "l:|=* r:|=*"
 
 # Complete aliases
