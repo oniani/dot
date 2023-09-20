@@ -13,8 +13,8 @@ default_floating_border pixel 2
 client.focused #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0
 
 # Gaps
-gaps inner 16
-gaps outer 16
+# gaps inner 16
+# gaps outer 16
 
 # Sets up mirroring
 exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1440 --pos 0x0 --rotate normal
