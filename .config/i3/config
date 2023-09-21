@@ -27,9 +27,6 @@ exec --no-startup-id xset dpms 0 0 0
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
 
-# Configures Logitech C920 Linux Webcam
-exec --no-startup-id v4l2-ctl -d /dev/video0 -c auto_exposure=1 -c exposure_time_absolute=800
-
 # Sets the wallpaper
 exec --no-startup-id nitrogen --restore
 
