@@ -191,7 +191,7 @@ bindsym $mod+r mode "resize"
 # i3bar {{{
 
 bar {
-   position top
+   position bottom
    status_command i3status-rs
    strip_workspace_numbers yes
    colors {
