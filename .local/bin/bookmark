@@ -19,6 +19,7 @@ add() {
 
 sel() {
     bookmark=$(rofi -dmenu -i < "$path")
+    [ -z "$bookmark" ] && exit 0
     printf "%s\n" "$bookmark" | xclip -sel clipboard
     xdotool getactivewindow key ctrl+l ctrl+v KP_Enter
 }

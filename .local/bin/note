@@ -14,7 +14,7 @@ prompt() {
 
 pandocmd() {
     selection=$(prompt "$1")
-    [ -z "$selection" ] && exit 1
+    [ -z "$selection" ] && exit 0
     pandoc -V fontsize=11pt \
            -V geometry:margin=1in \
            -V linkcolor:blue \
