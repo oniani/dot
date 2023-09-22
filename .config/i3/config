@@ -8,9 +8,10 @@
 font pango:JetBrainsMono Nerd Font 12
 
 # Removes title bar in tiling and floating modes
-default_border pixel 0
-default_floating_border pixel 0
 client.focused #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0
+default_border pixel 2
+default_floating_border pixel 2
+smart_borders on
 
 # Gaps
 # gaps inner 16
