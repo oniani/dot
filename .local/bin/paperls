@@ -5,6 +5,7 @@
 # MIT License
 
 column -s'|' -t < "${XDG_DATA_HOME:-$HOME/.local/share}/paper.csv" |
-    rofi -dmenu -font "JetBrainsMono Nerd Font 16" -i -l 20 -p "Paper" -theme Paper |
-    grep -o "\S*https\S*" |
+    awk '{ print "📰" " " $0 }' |
+    rofi -dmenu -font "JetBrainsMono Nerd Font 16" -i -l 20 -p "Paper" -theme Arc-Dark |
+    grep -o "https.*" |
     xargs -r firefox-developer-edition
