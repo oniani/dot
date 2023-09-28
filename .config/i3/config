@@ -18,7 +18,7 @@ smart_borders on
 # gaps outer 16
 
 # Sets up mirroring
-exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1440 --pos 0x0 --rotate normal
+exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1440
 
 # Disables laptop monitor
 exec_always --no-startup-id xrandr --output eDP-1-1 --off
@@ -50,8 +50,8 @@ exec_always --no-startup-id xset r rate 200 50
 # Workspaces
 set $ws1 "1: dev "
 set $ws2 "2: www "
-set $ws3 "3: app "
-set $ws4 "4: mua "
+set $ws4 "3: mua "
+set $ws3 "4: sig "
 set $ws5 "5: msc "
 set $ws6 "6: msc "
 set $ws7 "7: msc "
