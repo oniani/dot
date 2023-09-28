@@ -50,8 +50,8 @@ exec_always --no-startup-id xset r rate 200 50
 # Workspaces
 set $ws1 "1: dev "
 set $ws2 "2: www "
-set $ws4 "3: mua "
-set $ws3 "4: sig "
+set $ws3 "3: mua "
+set $ws4 "4: sig "
 set $ws5 "5: msc "
 set $ws6 "6: msc "
 set $ws7 "7: msc "
