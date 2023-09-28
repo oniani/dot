@@ -32,7 +32,7 @@ Other Tools and Utilities:
 Automation:
 
 ```console
-$ ./setup
+$ ./auto
 ```
 
 ## `$HOME` Directory Structure
