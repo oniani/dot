@@ -48,6 +48,7 @@ function colormap() {
 alias :q="exit"
 alias cal="cal -m"
 alias diff="diff --color=auto"
+alias doc2pdf="libreoffice --headless --invisible --norestore --convert-to pdf"
 alias grep="grep --color=auto"
 alias icat="kitty +kitten icat"
 alias l="ls -Av --color=auto --group-directories-first"
