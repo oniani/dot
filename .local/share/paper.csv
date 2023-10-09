@@ -1,8 +1,8 @@
 Venue|Year|Title|Url
-MICS|2020|Setting Up Python Development Environment for Use in a Small Classroom|https://www.micsymposium.org/mics_2020_Proceedings/MICS2020_paper_61.pdf
-JAMIA|2020|Constructing co-occurrence network embeddings to assist association extraction for COVID-19 and other coronavirus infectious diseases|https://doi.org/10.1093/jamia/ocaa117
-ACM-BCB|2020|A Qualitative Evaluation of Language Models on Automatic Question-Answering for COVID-19|https://doi.org/10.1145/3388440.3412413
-HDS|2021|Social and Behavioral Determinants of Health in the Era of Artificial Intelligence with Electronic Health Records: A Scoping Review|https://doi.org/10.34133/2021/9759016
-AMIA|2023|Toward Improving Health Literacy in Patient Education Materials with Neural Machine Translation Models|https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10283125/
-JMIR AI|2023|Few-Shot Learning for Clinical Natural Language Processing Using Siamese Neural Networks: Algorithm Development and Validation Study|https://doi.org/10.2196/44293
 IJMI|2023|ReDWINE: A clinical datamart with text analytical capabilities to facilitate rehabilitation research|https://doi.org/10.1016/j.ijmedinf.2023.105144
+JMIR AI|2023|Few-Shot Learning for Clinical Natural Language Processing Using Siamese Neural Networks: Algorithm Development and Validation Study|https://doi.org/10.2196/44293
+AMIA|2023|Toward Improving Health Literacy in Patient Education Materials with Neural Machine Translation Models|https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10283125/
+HDS|2021|Social and Behavioral Determinants of Health in the Era of Artificial Intelligence with Electronic Health Records: A Scoping Review|https://doi.org/10.34133/2021/9759016
+ACM-BCB|2020|A Qualitative Evaluation of Language Models on Automatic Question-Answering for COVID-19|https://doi.org/10.1145/3388440.3412413
+JAMIA|2020|Constructing co-occurrence network embeddings to assist association extraction for COVID-19 and other coronavirus infectious diseases|https://doi.org/10.1093/jamia/ocaa117
+MICS|2020|Setting Up Python Development Environment for Use in a Small Classroom|https://www.micsymposium.org/mics_2020_Proceedings/MICS2020_paper_61.pdf
