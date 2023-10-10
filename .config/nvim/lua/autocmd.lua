@@ -6,7 +6,7 @@
 local misc = vim.api.nvim_create_augroup("Miscellaneous", { clear = true })
 
 -- Equalizes splits when resized
-vim.api.nvim_create_autocmd("VimResized *", {
+vim.api.nvim_create_autocmd("VimResized", {
     command = "wincmd =",
     group = misc,
     pattern = "*",
@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Highlights trailing whitespace
-vim.api.nvim_create_autocmd("ColorScheme *", {
+vim.api.nvim_create_autocmd("ColorScheme", {
     callback = function()
         vim.api.nvim_set_hl(0, "ExtraWhitespace", { bg = "#ff5d62" })
         vim.cmd "match ExtraWhitespace /\\s\\+$/"
