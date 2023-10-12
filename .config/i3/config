@@ -43,6 +43,9 @@ exec_always setxkbmap -option 'grp:alt_shift_toggle' -layout us,ge,ru -variant ,
 # Decreases key repeat delay to 200ms and increases key repeat rate to 50 per second
 exec_always --no-startup-id xset r rate 200 50
 
+# Configures Logitech C920 Linux Webcam
+exec_always --no-startup-id v4l2-ctl -d /dev/video0 -c auto_exposure=1 -c exposure_time_absolute=800
+
 # }}}
 
 # Workspaces {{{
