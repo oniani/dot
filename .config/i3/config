@@ -53,7 +53,7 @@ exec_always --no-startup-id v4l2-ctl -d /dev/video0 -c auto_exposure=1 -c exposu
 # Workspaces
 set $ws1 "1: dev "
 set $ws2 "2: www "
-set $ws3 "3: sig "
+set $ws3 "3: chat "
 set $ws4 "4: mua "
 set $ws5 "5: msc "
 set $ws6 "6: msc "
