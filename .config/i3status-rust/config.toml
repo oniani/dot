@@ -16,7 +16,7 @@ timezone = "US/Eastern"
 
 [[block]]
 block = "custom"
-command = "curl -s 'https://wttr.in/Brooklyn?format=2&u'"
+command = "curl -s 'https://wttr.in/New-York-City?format=2&u'"
 interval = 600
 
 [[block]]
