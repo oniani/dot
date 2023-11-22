@@ -3,7 +3,7 @@
 // MIT License
 
 configuration {
-    font: "JetBrainsMono Nerd Font Mono 24";
+    font: "JetBrainsMono NF 24";
     show-icons: true;
 
     kb-accept-entry: "Control+m,Return,KP_Enter";
