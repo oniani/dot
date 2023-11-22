@@ -41,7 +41,7 @@ inputbar {
 }
 
 textbox-prompt-colon {
-    str: "";
+    str: " ";
     expand: false;
 }
 
