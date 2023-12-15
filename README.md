@@ -11,7 +11,7 @@ Core Tools and Utilities:
 
 | Type               | Program                       |
 | ------------------ | ----------------------------- |
-| Browser            | [Thorium][thorium]            |
+| Browser            | [Google Chrome][chrome]       |
 | Editor             | [Neovim][neovim]              |
 | File Manager       | [nnn][nnn]                    |
 | Image Viewer       | [nsxiv][nsxiv]                |
@@ -54,7 +54,7 @@ wip        # Work in Progress Files
 
 [license]: LICENSE
 [xdg]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-[thorium]: https://github.com/Alex313031/thorium
+[chrome]: https://github.com/googlechrome
 [neovim]: https://github.com/neovim/neovim
 [nnn]: https://github.com/jarun/nnn
 [nsxiv]: https://github.com/nsxiv/nsxiv

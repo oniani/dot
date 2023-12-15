@@ -151,8 +151,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-# Launches Thorium browser
-bindsym $mod+w exec thorium-browser --force-device-scale-factor=1.28
+# Launches Google Chrome browser
+bindsym $mod+w exec google-chrome-stable --force-device-scale-factor=1.28
 
 # Launches rofi in different modes
 bindsym $mod+Tab exec "rofi -show window"
