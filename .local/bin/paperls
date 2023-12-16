@@ -8,4 +8,4 @@ column -s'|' -t < "${XDG_DATA_HOME:-$HOME/.local/share}/paper.csv" |
     awk '{ print "📜" " " $0 }' |
     rofi -dmenu -font "JetBrainsMono NF 16" -i -l 20 -p Paper -theme Arc-Dark |
     grep -o "https.*" |
-    xargs -r google-chrome-stable --force-device-scale-factor=1.28
+    xargs -r firefox-developer-edition
