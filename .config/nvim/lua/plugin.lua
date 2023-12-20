@@ -97,7 +97,6 @@ require("nvim-treesitter.configs").setup {
 require("kanagawa").setup {}
 vim.cmd.colorscheme "kanagawa"
 
-vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none", fg = "#ff9e3b" })
 vim.api.nvim_set_hl(0, "DiagnosticSignError", { bg = "none", fg = "#e82424" })
 vim.api.nvim_set_hl(0, "DiagnosticSignHint", { bg = "none", fg = "#6a9589" })
