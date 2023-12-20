@@ -30,6 +30,7 @@ local packages = {
 
     -- Visuals
     "rebelot/kanagawa.nvim",
+    "nvim-lualine/lualine.nvim",
 
     -- LSP
     "microsoft/python-type-stubs",
@@ -114,6 +115,8 @@ vim.api.nvim_set_hl(0, "PMenuSel", { bg = "#8ba8f0", fg = "black" })
 vim.api.nvim_set_hl(0, "PMenuThumb", { bg = "#957fb8", fg = "#141414" })
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 vim.api.nvim_set_hl(0, "WildMenu", { bg = "none", fg = "#141414" })
+
+require("lualine").setup { options = { theme = "kanagawa" } }
 
 -- LSP and Autocompletion {{{
 
