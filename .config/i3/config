@@ -169,9 +169,6 @@ bindsym $mod+p exec --no-startup-id $HOME/.local/bin/paperls
 # Launches the bookmark utility
 bindsym $mod+s exec --no-startup-id $HOME/.local/bin/bookmark -s
 
-# Launches Neomutt mail user agent
-bindsym $mod+m exec --no-startup-id kitty neomutt
-
 # }}}
 
 # Resizing {{{
