@@ -5,7 +5,7 @@
 vim.cmd.colorscheme "default"
 
 vim.api.nvim_set_hl(0, "Directory", { fg = "None" })
-vim.api.nvim_set_hl(0, "Normal", { bg = "None" })
+vim.api.nvim_set_hl(0, "Normal", { bg = "Black" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "None" })
 vim.api.nvim_set_hl(0, "PMenu", { bg = "None" })
 vim.api.nvim_set_hl(0, "PMenuSel", { bg = "NvimLightBlue", fg = "Black" })
