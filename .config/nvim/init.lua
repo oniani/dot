@@ -16,6 +16,7 @@ vim.loader.enable()
 
 -- Setup
 require "autocmd"
+require "color"
 require "keymap"
 require "option"
 require "plugin"

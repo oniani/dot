@@ -76,7 +76,7 @@ alias rm="rm -i"
 # Z Shell Settings {{{
 
 # Set the prompt
-PROMPT='%F{green}%n@%m%F{white}:%F{blue}%1~ %F{yellow}➜%f '
+PROMPT='%F{red}%n@%m%F{white}:%F{blue}%1~%F{green}$%f '
 
 # Load and enable colors
 autoload -Uz colors && colors
