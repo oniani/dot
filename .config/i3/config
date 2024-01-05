@@ -32,7 +32,7 @@ exec --no-startup-id xset s off
 exec --no-startup-id nitrogen --restore
 
 # Launches picom compositor
-exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
+exec --no-startup-id picom --config $HOME/.config/picom/picom.conf --daemon
 
 # Launches notification daemon
 exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
