@@ -4,9 +4,14 @@
 
 vim.cmd.colorscheme "default"
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "PMenu", { bg = "none" })
-vim.api.nvim_set_hl(0, "PMenuSel", { bg = "NvimLightBlue", fg = "black" })
+vim.api.nvim_set_hl(0, "Normal", { bg = "Black" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "Black" })
+vim.api.nvim_set_hl(0, "PMenu", { bg = "Black" })
+vim.api.nvim_set_hl(0, "PMenuSel", { bg = "NvimLightBlue", fg = "Black" })
 vim.api.nvim_set_hl(0, "PMenuThumb", { bg = "NvimLightGrey4" })
-vim.api.nvim_set_hl(0, "Statusline", { bg = "NvimLightGrey2", fg="black" })
+vim.api.nvim_set_hl(0, "Statusline", { bg = "NvimLightGrey2", fg="Black" })
+
+vim.api.nvim_set_hl(0, "Directory", { fg="#e9fdac" })
+vim.api.nvim_set_hl(0, "Function", { fg="#e9fdac" })
+vim.api.nvim_set_hl(0, "MoreMsg", { fg="#e9fdac" })
+vim.api.nvim_set_hl(0, "Special", { fg="#e9fdac" })
