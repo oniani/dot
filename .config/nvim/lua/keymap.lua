@@ -11,9 +11,11 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Text navigation
+-- BoL and EoL
 vim.keymap.set("n", "H", "^", { silent = true })
 vim.keymap.set("n", "L", "$", { silent = true })
+
+-- Change inner word and delete inner word
 vim.keymap.set("n", "S", "ciw", { silent = true })
 vim.keymap.set("n", "X", "diw", { silent = true })
 
