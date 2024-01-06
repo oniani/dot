@@ -15,6 +15,3 @@ vim.api.nvim_set_hl(0, "Statusline", { bg = "NvimLightGrey2", fg = "Black" })
 vim.api.nvim_set_hl(0, "Function", { fg = "#e9fdac" })
 vim.api.nvim_set_hl(0, "MoreMsg", { fg = "#e9fdac" })
 vim.api.nvim_set_hl(0, "Special", { fg = "#e9fdac" })
-
-vim.api.nvim_set_hl(0, "NvimTreeExecFile", { fg = "NvimLightGreen" })
-vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { fg = "None" })

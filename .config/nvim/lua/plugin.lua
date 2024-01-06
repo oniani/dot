@@ -71,6 +71,8 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 require("nvim-tree").setup {}
 vim.keymap.set("n", "<C-n>", "<Cmd>NvimTreeToggle<CR>")
+vim.api.nvim_set_hl(0, "NvimTreeExecFile", { fg = "NvimLightGreen" })
+vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { fg = "None" })
 
 require("nvim-treesitter.configs").setup {
     highlight = {
@@ -120,6 +122,12 @@ local on_attach = function(_, bufnr)
         float = { border = "single" },
         virtual_text = false,
     }
+
+    vim.lsp.handlers["textDocument/hover"] =
+        vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
+
+    vim.lsp.handlers["textDocument/signatureHelp"] =
+        vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
 end
 
 local f = function(cmd)
@@ -165,7 +173,8 @@ local server_settings = {
 }
 
 require("fidget").setup {}
-require("mason").setup {}
+require("lspconfig.ui.windows").default_options.border = "single"
+require("mason").setup { ui = { border = "single" } }
 
 local lspconfig = require "lspconfig"
 local mason_lspconfig = require "mason-lspconfig"
