@@ -9,20 +9,20 @@ philosophy are preferred. The setup is compliant with the [XDG Base Directory Sp
 
 Core Tools and Utilities:
 
-| Type               | Program                                                                                                      |
-| ------------------ | ------------------------------------------------------------------------------------------------------------ |
-| Browser            | [Firefox Developer Edition][firefox]                                                                         |
-| Editor             | [Neovim][neovim]                                                                                             |
-| File Manager       | [nnn][nnn]                                                                                                   |
-| Font               | [Comic Mono][comicmono] (manually patched with 1. [Nerd Fonts Patcher][nerdfontspatcher] and 2. [Ligaturizer][ligaturizer]) |
-| Image Viewer       | [nsxiv][nsxiv]                                                                                               |
-| Media Player       | [mpv][mpv]                                                                                                   |
-| PDF Viewer         | [zathura][zathura]                                                                                           |
-| Screenshot Utility | [Flameshot][flameshot]                                                                                       |
-| Shell              | [zsh][zsh]                                                                                                   |
-| Statusbar          | [i3status-rust][i3statusrust]                                                                                |
-| Terminal           | [kitty][kitty]                                                                                               |
-| Window Manager     | [i3][i3]                                                                                                     |
+| Type               | Program                                                                                                               |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| Browser            | [Firefox Developer Edition][firefox]                                                                                  |
+| Editor             | [Neovim][neovim]                                                                                                      |
+| File Manager       | [nnn][nnn]                                                                                                            |
+| Font               | [Comic Mono][comicmono] (manually patched with [Nerd Fonts Patcher][nerdfontspatcher] and [Ligaturizer][ligaturizer]) |
+| Image Viewer       | [nsxiv][nsxiv]                                                                                                        |
+| Media Player       | [mpv][mpv]                                                                                                            |
+| PDF Viewer         | [zathura][zathura]                                                                                                    |
+| Screenshot Utility | [Flameshot][flameshot]                                                                                                |
+| Shell              | [zsh][zsh]                                                                                                            |
+| Statusbar          | [i3status-rust][i3statusrust]                                                                                         |
+| Terminal           | [kitty][kitty]                                                                                                        |
+| Window Manager     | [i3][i3]                                                                                                              |
 
 Other Tools and Utilities:
 
