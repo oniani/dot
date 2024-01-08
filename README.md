@@ -14,7 +14,7 @@ Core Tools and Utilities:
 | Browser            | [Firefox Developer Edition][firefox]                                                                         |
 | Editor             | [Neovim][neovim]                                                                                             |
 | File Manager       | [nnn][nnn]                                                                                                   |
-| Font               | [Comic Mono][comicmono] (manually patched with 1. [Nerd Fonts][nerdfonts] and 2. [Ligaturizer][ligaturizer]) |
+| Font               | [Comic Mono][comicmono] (manually patched with 1. [Nerd Fonts Patcher][nerdfontspatcher] and 2. [Ligaturizer][ligaturizer]) |
 | Image Viewer       | [nsxiv][nsxiv]                                                                                               |
 | Media Player       | [mpv][mpv]                                                                                                   |
 | PDF Viewer         | [zathura][zathura]                                                                                           |
@@ -59,7 +59,7 @@ wip        # Work in Progress Files
 [neovim]: https://github.com/neovim/neovim
 [nnn]: https://github.com/jarun/nnn
 [comicmono]: https://github.com/dtinth/comic-mono-font
-[nerdfonts]: https://github.com/ryanoasis/nerd-fonts
+[nerdfontspatcher]: https://github.com/ryanoasis/nerd-fonts#font-patcher
 [ligaturizer]: https://github.com/ToxicFrog/Ligaturizer
 [nsxiv]: https://github.com/nsxiv/nsxiv
 [mpv]: https://github.com/mpv-player/mpv
