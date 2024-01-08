@@ -30,6 +30,8 @@ Other Tools and Utilities:
 - Diagram Maker: [drawio][drawio]
 - IDE: [VS Code][vscode] (JupyterLab replacement, [Neovim][neovim] for everything else)
 
+Manually patched Comic Mono font is available [here][font].
+
 Automation:
 
 ```console
@@ -72,3 +74,4 @@ wip        # Work in Progress Files
 [inkscape]: https://gitlab.com/inkscape/inkscape
 [drawio]: https://github.com/jgraph/drawio-desktop
 [vscode]: https://github.com/microsoft/vscode
+[font]: https://github.com/oniani/dot/tree/main/.local/share/fonts/ttf
