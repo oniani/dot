@@ -9,19 +9,20 @@ philosophy are preferred. The setup is compliant with the [XDG Base Directory Sp
 
 Core Tools and Utilities:
 
-| Type               | Program                              |
-| ------------------ | ------------------------------------ |
-| Browser            | [Firefox Developer Edition][firefox] |
-| Editor             | [Neovim][neovim]                     |
-| File Manager       | [nnn][nnn]                           |
-| Image Viewer       | [nsxiv][nsxiv]                       |
-| Media Player       | [mpv][mpv]                           |
-| PDF Viewer         | [zathura][zathura]                   |
-| Screenshot Utility | [Flameshot][flameshot]               |
-| Shell              | [zsh][zsh]                           |
-| Statusbar          | [i3status-rust][i3statusrust]        |
-| Terminal           | [kitty][kitty]                       |
-| Window Manager     | [i3][i3]                             |
+| Type               | Program                                                                                                      |
+| ------------------ | ------------------------------------------------------------------------------------------------------------ |
+| Browser            | [Firefox Developer Edition][firefox]                                                                         |
+| Editor             | [Neovim][neovim]                                                                                             |
+| File Manager       | [nnn][nnn]                                                                                                   |
+| Font               | [Comic Mono][comicmono] (manually patched with 1. [Nerd Fonts][nerdfonts] and 2. [Ligaturizer][ligaturizer]) |
+| Image Viewer       | [nsxiv][nsxiv]                                                                                               |
+| Media Player       | [mpv][mpv]                                                                                                   |
+| PDF Viewer         | [zathura][zathura]                                                                                           |
+| Screenshot Utility | [Flameshot][flameshot]                                                                                       |
+| Shell              | [zsh][zsh]                                                                                                   |
+| Statusbar          | [i3status-rust][i3statusrust]                                                                                |
+| Terminal           | [kitty][kitty]                                                                                               |
+| Window Manager     | [i3][i3]                                                                                                     |
 
 Other Tools and Utilities:
 
@@ -57,6 +58,9 @@ wip        # Work in Progress Files
 [firefox]: https://www.mozilla.org/en-US/firefox/developer/
 [neovim]: https://github.com/neovim/neovim
 [nnn]: https://github.com/jarun/nnn
+[comicmono]: https://github.com/dtinth/comic-mono-font
+[nerdfonts]: https://github.com/ryanoasis/nerd-fonts
+[ligaturizer]: https://github.com/ToxicFrog/Ligaturizer
 [nsxiv]: https://github.com/nsxiv/nsxiv
 [mpv]: https://github.com/mpv-player/mpv
 [zathura]: https://en.wikipedia.org/wiki/Zathura_(document_viewer)
