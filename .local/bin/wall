@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+# Wallpaper setter
+# by David Oniani <onianidavid@gmail.com>
+# MIT License
+
+fd . ~/git/walls/walls | fzf | xargs -I {} -r && mv {} ~/.cache/wall && xwallpaper --zoom ~/.cache/wall
