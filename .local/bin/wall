@@ -6,4 +6,4 @@
 
 dir="$HOME/git/wall/wall"
 img="${XDG_CACHE_HOME:-$HOME/.cache}/wall"
-fd . "$dir" | fzf | xargs -I {} -r && mv {} "$img" && xwallpaper --zoom "$img"
+fd . "$dir" | fzf | xargs -I {} -r cp {} "$img" && xwallpaper --zoom "$img"
