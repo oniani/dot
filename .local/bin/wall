@@ -4,4 +4,6 @@
 # by David Oniani <onianidavid@gmail.com>
 # MIT License
 
-fd . ~/git/walls/walls | fzf | xargs -I {} -r && mv {} ~/.cache/wall && xwallpaper --zoom ~/.cache/wall
+dir="$HOME/git/walls/wall"
+img="${XDG_CACHE_HOME:-$HOME/.cache}/wall"
+fd . "$dir" | fzf | xargs -I {} -r && mv {} "$img" && xwallpaper --zoom "$img"
