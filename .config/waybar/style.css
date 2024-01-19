@@ -1,0 +1,9 @@
+* {
+    font-family: Jetbrains Mono NF;
+    font-size: 24px;
+}
+
+#workspaces button.active {
+    background-color: black;
+    color: white;
+}

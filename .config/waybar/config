@@ -1,0 +1,72 @@
+{
+    "position": "bottom",
+
+    "height": 32,
+    "width": 2048,
+
+    "spacing": 32,
+
+    "modules-left": [ "custom/logo", "hyprland/workspaces" ],
+    "modules-center": [ "clock" ],
+    "modules-right": [ "memory", "network", "pulseaudio", "battery" ],
+
+    "custom/logo": { "format": "  " },
+
+    "hyprland/workspaces": {
+        "format": "{icon} ",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "urgent": "",
+            "default": ""
+        },
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+        },
+        "sort-by-number": true
+    },
+
+    "memory": {
+        "format": "󰍛 {used:0.2f}G/{total:0.2f}G ({}%) ",
+    },
+
+    "clock": {
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "format": "  {:%a %b %d %Y %r}",
+        "interval": 1
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-bluetooth": "󰂰",
+        "nospacing": 1,
+        "tooltip-format": "Volume : {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "",
+            "default": ["󰖀","󰕾",""]
+        },
+        "on-click": "pamixer -t",
+        "scroll-step": 1
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}% ",
+        "format-icons": {
+            "charging": [ "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅" ],
+            "default": [ "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ]
+        },
+        "interval": 5,
+        "states": { "warning": 20, "critical": 10 }
+    },
+}
