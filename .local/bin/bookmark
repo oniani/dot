@@ -7,7 +7,7 @@
 path="${XDG_DATA_HOME:-$HOME/.local/share}/bookmark.txt"
 
 add() {
-    bookmark=$(xclip -o)
+    bookmark=$(wl-paste)
     if grep -q "^$bookmark$" "$path"; then
         notify-send "Bookmark already exists" "$bookmark"
     else
@@ -20,8 +20,8 @@ add() {
 sel() {
     bookmark=$(rofi -dmenu -i < "$path")
     [ -z "$bookmark" ] && exit 0
-    printf "%s\n" "$bookmark" | xclip -sel clipboard
-    xdotool getactivewindow key ctrl+l ctrl+v KP_Enter
+    printf "%s\n" "$bookmark" | wl-copy
+    wtype -M ctrl l -m ctrl && wtype -M ctrl -M shift v && wtype -k return
 }
 
 case $1 in
