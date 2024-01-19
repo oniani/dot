@@ -5,5 +5,10 @@
 # MIT License
 
 dir="$HOME/git/wall/wall"
-img="${XDG_CACHE_HOME:-$HOME/.cache}/wall"
-fd . "$dir" | fzf | xargs -I {} -r cp {} "$img"
+wall=$(fd . "$dir" | fzf)
+monitor=$(hyprctl monitors | grep -i monitor | awk '{print $2}')
+
+cp "$wall" "$HOME"/.cache/wall
+
+hyprctl hyprpaper unload all
+hyprctl hyprpaper preload "$wall" && hyprctl hyprpaper wallpaper "$monitor,$wall"
