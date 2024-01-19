@@ -26,7 +26,7 @@ handle_audio() {
 }
 
 handle_image() {
-    nohup nsxiv "${FPATH}" >/dev/null 2>&1 &
+    nohup imv "${FPATH}" >/dev/null 2>&1 &
     exit 0
 }
 

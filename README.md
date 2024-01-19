@@ -9,20 +9,18 @@ philosophy are preferred. The setup is compliant with the [XDG Base Directory Sp
 
 Core Tools and Utilities:
 
-| Type               | Program                                                                                                               |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| Browser            | [Firefox Developer Edition][firefox]                                                                                  |
-| Editor             | [Neovim][neovim]                                                                                                      |
-| File Manager       | [nnn][nnn]                                                                                                            |
-| Font               | [Comic Mono][comicmono] (manually patched with [Nerd Fonts Patcher][nerdfontspatcher] and [Ligaturizer][ligaturizer]) |
-| Image Viewer       | [nsxiv][nsxiv]                                                                                                        |
-| Media Player       | [mpv][mpv]                                                                                                            |
-| PDF Viewer         | [zathura][zathura]                                                                                                    |
-| Screenshot Utility | [Flameshot][flameshot]                                                                                                |
-| Shell              | [zsh][zsh]                                                                                                            |
-| Statusbar          | [i3status-rust][i3statusrust]                                                                                         |
-| Terminal           | [kitty][kitty]                                                                                                        |
-| Window Manager     | [i3][i3]                                                                                                              |
+| Type           | Program                                                                                                               |
+| -------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Browser        | [Firefox Developer Edition][firefox]                                                                                  |
+| Editor         | [Neovim][neovim]                                                                                                      |
+| File Manager   | [nnn][nnn]                                                                                                            |
+| Font           | [Comic Mono][comicmono] (manually patched with [Nerd Fonts Patcher][nerdfontspatcher] and [Ligaturizer][ligaturizer]) |
+| Image Viewer   | [nsxiv][nsxiv]                                                                                                        |
+| Media Player   | [mpv][mpv]                                                                                                            |
+| PDF Viewer     | [zathura][zathura]                                                                                                    |
+| Shell          | [zsh][zsh]                                                                                                            |
+| Terminal       | [kitty][kitty]                                                                                                        |
+| Window Manager | [Hyprland][hyprland]                                                                                                  |
 
 Other Tools and Utilities:
 
@@ -66,11 +64,9 @@ wip        # Work in Progress Files
 [nsxiv]: https://github.com/nsxiv/nsxiv
 [mpv]: https://github.com/mpv-player/mpv
 [zathura]: https://en.wikipedia.org/wiki/Zathura_(document_viewer)
-[flameshot]: https://github.com/flameshot-org/flameshot
 [zsh]: https://github.com/zsh-users/zsh
-[i3statusrust]: https://github.com/greshake/i3status-rust
 [kitty]: https://github.com/kovidgoyal/kitty
-[i3]: https://github.com/i3/i3
+[hyprland]: https://github.com/hyprwm/Hyprland
 [inkscape]: https://gitlab.com/inkscape/inkscape
 [drawio]: https://github.com/jgraph/drawio-desktop
 [vscode]: https://github.com/microsoft/vscode
