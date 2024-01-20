@@ -1,13 +1,17 @@
-* {
-    background-color: ghostwhite;
+window#waybar {
+    background-color: black;
     border-radius: 2rem;
+    border: 2px solid #8ba8f0;
+    color: white;
     font-family: Jetbrains Mono NF;
     font-size: 1.5rem;
-    margin: 0;
 }
 
-#workspaces button.active * {
-    border-radius: 0;
-    color: royalblue;
+#workspaces button {
+    color: white;
+}
+
+#workspaces button.active {
+    color: #8ba8f0;
     font-size: 2rem;
 }
