@@ -8,8 +8,16 @@ window#waybar {
 }
 
 #workspaces button {
+    background: none;
+    border: none;
     color: white;
     font-size: 2rem;
+}
+
+#workspaces button:hover {
+    box-shadow: none;
+    color: #8ba8f0;
+    text-shadow: none;
 }
 
 #workspaces button.active {
