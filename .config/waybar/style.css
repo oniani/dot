@@ -9,9 +9,9 @@ window#waybar {
 
 #workspaces button {
     color: white;
+    font-size: 2rem;
 }
 
 #workspaces button.active {
     color: #8ba8f0;
-    font-size: 2rem;
 }
