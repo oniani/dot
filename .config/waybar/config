@@ -57,6 +57,11 @@
         "ignored-sinks": ["Easy Effects Sink"]
     },
 
+    "temperature": {
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+
     "battery": {
         "format": "{icon} {capacity}% ",
         "format-icons": {
