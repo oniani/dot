@@ -28,6 +28,7 @@
 
     "tray": {
         "icon-size": 24,
+        "spacing": 16,
     },
 
     "custom/weather": {
