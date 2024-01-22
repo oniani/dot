@@ -7,7 +7,7 @@
     "spacing": 32,
 
     "modules-left": ["custom/logo", "hyprland/workspaces"],
-    "modules-center": ["clock", "custom/weather"],
+    "modules-center": ["clock", "tray", "custom/weather"],
     "modules-right": ["memory", "pulseaudio", "temperature", "battery"],
 
     "custom/logo": {"format": "  "},
@@ -24,6 +24,10 @@
         "format": "  {:%r}",
         "format-alt": "  {:%a %b %d %Y}",
         "interval": 1
+    },
+
+    "tray": {
+        "icon-size": 24,
     },
 
     "custom/weather": {
