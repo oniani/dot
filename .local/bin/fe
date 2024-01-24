@@ -6,6 +6,6 @@
 
 cmd="bat --color=always --theme=1337 {}"
 
-[ -z "$1" ] && fzf --preview "$cmd" --prompt "File: " | xargs -r "$EDITOR" && exit 0
+[ -z "$1" ] && fzf --preview "$cmd" --prompt "File: " | xargs -r -I {} "$EDITOR" {} && exit 0
 
 fd . --hidden --type f "$1" | fzf --preview "$cmd" --prompt "File: " | xargs -r "$EDITOR" && exit 0
