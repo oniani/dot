@@ -21,7 +21,7 @@ sel() {
     bookmark=$(rofi -dmenu -i < "$path")
     [ -z "$bookmark" ] && exit 0
     printf "%s\n" "$bookmark" | wl-copy
-    wtype -M ctrl l -m ctrl && wtype -M ctrl -M shift v && wtype -k return
+    wtype -M ctrl l && wtype -M ctrl v && wtype -k return
 }
 
 case $1 in
