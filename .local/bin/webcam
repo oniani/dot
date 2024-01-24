@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+# Webcam configurator
+# by David Oniani <onianidavid@gmail.com>
+# MIT License
+
+opt="high\nlow\nmid"
+res=$(printf "%b" "$opt" | rofi -dmenu -font "JetBrainsMono NF 16" -i -l 16 -p Paper -theme Paper)
+case $res in
+    high) v4l2-ctl -d /dev/video0 -c auto_exposure=1 -c exposure_time_absolute=1200;;
+    low) v4l2-ctl -d /dev/video0 -c auto_exposure=1 -c exposure_time_absolute=400;;
+    mid) v4l2-ctl -d /dev/video0 -c auto_exposure=1 -c exposure_time_absolute=800;;
+    *) printf "Unknown command\n";;
+esac
