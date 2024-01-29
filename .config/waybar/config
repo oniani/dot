@@ -54,6 +54,7 @@
 
     "memory": {
         "format": "󰍛 {used:0.2f}G/{total:0.2f}G ({}%) ",
+        "interval": 5,
     },
 
     "pulseaudio": {
