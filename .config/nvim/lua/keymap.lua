@@ -41,3 +41,6 @@ vim.keymap.set("c", "<C-h>", "<Left>")
 vim.keymap.set("c", "<C-j>", "<Down>")
 vim.keymap.set("c", "<C-k>", "<Up>")
 vim.keymap.set("c", "<C-l>", "<Right>")
+
+-- Run current file
+vim.keymap.set("n", "<C-CR>", "<Cmd>!run %<CR>")
