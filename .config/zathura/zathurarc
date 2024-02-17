@@ -2,30 +2,36 @@
 # by David Oniani <onianidavid@gmail.com>
 # MIT License
 
-set recolor-darkcolor "#e8e6e3"
-set recolor-lightcolor "#181a1b"
+set font "Liga ComicMono Nerd Font"
 
+set default-bg "#000000"
+set default-fg "#ffffff"
+set recolor-darkcolor "#ffffff"
+set recolor-lightcolor "#000000"
+
+set recolor-keephue true
 set recolor-reverse-video true
 
 set sandbox none
 set selection-clipboard clipboard
 
+map <C-d> scroll full-down
+map <C-u> scroll full-up
 map d recolor
 map i toggle_index
 map p print
 
-map <C-d> scroll full-down
-map <C-u> scroll full-up
-
 map [normal] P toggle_presentation
 map [presentation] <C-d> navigate next
 map [presentation] <C-u> navigate previous
-map [presentation] j navigate next
-map [presentation] k navigate previous
 map [presentation] G goto bottom
 map [presentation] P toggle_presentation
 map [presentation] d recolor
 map [presentation] f follow
 map [presentation] gg goto top
 map [presentation] i toggle_index
+map [presentation] j navigate next
+map [presentation] k navigate previous
+map [presentation] p print
 map [presentation] q toggle_presentation
+map [presentation] r rotate
