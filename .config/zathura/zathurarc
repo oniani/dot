@@ -4,9 +4,7 @@
 
 set font "Liga ComicMono Nerd Font"
 
-set default-bg "#000000"
-set default-fg "#ffffff"
-set recolor-darkcolor "#ffffff"
+set recolor-darkcolor "#dcd7ba"
 set recolor-lightcolor "#000000"
 
 set recolor-keephue true
