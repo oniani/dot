@@ -19,9 +19,6 @@ vim.keymap.set("n", "L", "$", { silent = true })
 vim.keymap.set("n", "S", "ciw", { silent = true })
 vim.keymap.set("n", "X", "diw", { silent = true })
 
--- Consistent Ctrl-Backspace behavior in insert mode
-vim.keymap.set("i", "<C-BS>", "<C-W>", { silent = true })
-
 -- Toggling between buffers
 vim.keymap.set("n", "<Leader><Leader>", "<C-^>")
 
