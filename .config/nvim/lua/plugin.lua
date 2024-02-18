@@ -28,6 +28,11 @@ local packages = {
     -- Syntax highlighting and code navigation
     "nvim-treesitter/nvim-treesitter",
 
+    -- Git
+    "NeogitOrg/neogit",
+    "nvim-lua/plenary.nvim",
+    "sindrets/diffview.nvim",
+
     -- LSP
     "microsoft/python-type-stubs",
     "neovim/nvim-lspconfig",
@@ -90,6 +95,10 @@ require("nvim-treesitter.configs").setup {
         },
     },
 }
+
+local neogit = require "neogit"
+neogit.setup { integrations = { diffview = true, fzf_lua = true } }
+vim.api.nvim_create_user_command("Git", neogit.open, { desc = { "Open Neo[Git] in a new tab" } })
 
 -- LSP and Autocompletion {{{
 
