@@ -29,9 +29,9 @@ local packages = {
     "nvim-treesitter/nvim-treesitter",
 
     -- Git
-    "NeogitOrg/neogit",
     "nvim-lua/plenary.nvim",
     "sindrets/diffview.nvim",
+    "NeogitOrg/neogit",
 
     -- LSP
     "microsoft/python-type-stubs",
