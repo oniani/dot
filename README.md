@@ -4,8 +4,9 @@ Configuration files and automation wizard for Arch Linux meta distribution
 
 ## Setup
 
-All programs are chosen with simplicity in mind. Cross-platform programs that follow the UNIX
-philosophy are preferred. The setup is compliant with the [XDG Base Directory Specification][xdg].
+All programs are chosen with simplicity in mind. Cross-platform programs that follow the [UNIX
+philosophy][unix] are preferred. The setup is compliant with the [XDG Base Directory
+Specification][xdg].
 
 Core Tools and Utilities:
 
@@ -53,7 +54,7 @@ wip        # Work in Progress Files
 
 [MIT License][license]
 
-[license]: LICENSE
+[unix]: https://en.wikipedia.org/wiki/Unix_philosophy
 [xdg]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 [firefox]: https://www.mozilla.org/en-US/firefox/developer/
 [neovim]: https://github.com/neovim/neovim
@@ -71,3 +72,4 @@ wip        # Work in Progress Files
 [drawio]: https://github.com/jgraph/drawio-desktop
 [vscode]: https://github.com/microsoft/vscode
 [font]: https://github.com/oniani/dot/tree/main/.local/share/fonts/ttf
+[license]: LICENSE
