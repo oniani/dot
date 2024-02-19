@@ -70,3 +70,7 @@ scrollbar {
     handle-width: 4px;
     padding: 0 4px;
 }
+
+entry {
+    blink: false;
+}
