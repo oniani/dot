@@ -17,7 +17,7 @@ configuration {
 * {
     bg0: #000000;
     bg1: #8ba8f0;
-    fg0: #c0caf5;
+    fg0: #dcd7ba;
     fg1: #737aa2;
 
     background-color: @bg0;
