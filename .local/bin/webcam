@@ -5,7 +5,7 @@
 # MIT License
 
 opt="high\nlow\nmid"
-res=$(printf "%b" "$opt" | rofi -dmenu -font "Liga ComicMono Nerd Font" -i -l 16 -p Webcam -theme Paper)
+res=$(printf "%b" "$opt" | rofi -dmenu -i -l 16 -p Webcam -theme Paper)
 case $res in
     high) v4l2-ctl -d /dev/video0 -c auto_exposure=1 -c exposure_time_absolute=1200;;
     low) v4l2-ctl -d /dev/video0 -c auto_exposure=1 -c exposure_time_absolute=400;;
