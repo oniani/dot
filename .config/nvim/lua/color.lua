@@ -10,6 +10,7 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "None" })
 vim.api.nvim_set_hl(0, "PMenu", { bg = "None" })
 vim.api.nvim_set_hl(0, "PMenuSel", { bg = "NvimLightBlue", fg = "Black" })
 vim.api.nvim_set_hl(0, "PMenuThumb", { bg = "NvimLightGrey4" })
+vim.api.nvim_set_hl(0, "Statement", { fg = "NvimLightBlue" })
 vim.api.nvim_set_hl(0, "Statusline", { bg = "NvimLightGrey2", fg = "Black" })
 
 vim.api.nvim_set_hl(0, "Function", { fg = "#e9fdac" })
