@@ -47,6 +47,7 @@ dl         # Downloads
 doc        # Documents
 git        # Git repos
 pic        # Pictures
+vid        # Videos
 wip        # Work in Progress Files
 ```
 

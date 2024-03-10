@@ -9,7 +9,7 @@ config() {
     cp -R .local "$HOME"
 
     mkdir -p "$HOME/.local/share/email/gmail"
-    mkdir -p "$HOME/dl" "$HOME/doc" "$HOME/git" "$HOME/pic" "$HOME/wip"
+    mkdir -p "$HOME/dl" "$HOME/doc" "$HOME/git" "$HOME/pic" "$HOME/vid" "$HOME/wip"
     mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/msmtp"
     mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 
