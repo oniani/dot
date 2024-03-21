@@ -12,7 +12,7 @@ Core Tools and Utilities:
 
 | Type           | Program                                                                                                               |
 | -------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Browser        | [Firefox Developer Edition][firefox]                                                                                  |
+| Browser        | [Firefox][firefox]                                                                                                    |
 | Editor         | [Neovim][neovim]                                                                                                      |
 | File Manager   | [nnn][nnn]                                                                                                            |
 | Font           | [Comic Mono][comicmono] (manually patched with [Nerd Fonts Patcher][nerdfontspatcher] and [Ligaturizer][ligaturizer]) |
@@ -57,7 +57,7 @@ wip        # Work in Progress Files
 
 [unix]: https://en.wikipedia.org/wiki/Unix_philosophy
 [xdg]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-[firefox]: https://www.mozilla.org/en-US/firefox/developer/
+[firefox]: https://www.mozilla.org/en-US/firefox/new/
 [neovim]: https://github.com/neovim/neovim
 [nnn]: https://github.com/jarun/nnn
 [comicmono]: https://github.com/dtinth/comic-mono-font

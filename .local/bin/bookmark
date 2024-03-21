@@ -20,7 +20,7 @@ add() {
 sel() {
     bookmark=$(rofi -dmenu -i -no-show-icons < "$path")
     [ -z "$bookmark" ] && exit 0
-    firefox-developer-edition --new-tab --url "$bookmark"
+    firefox --new-tab --url "$bookmark"
 }
 
 case $1 in
