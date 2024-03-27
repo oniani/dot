@@ -3,7 +3,6 @@
 -- MIT License
 
 -- Search
-vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
@@ -13,6 +12,7 @@ vim.opt.swapfile = false
 vim.opt.writebackup = false
 
 -- Indent
+vim.opt.breakindent = true
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
@@ -26,7 +26,10 @@ vim.opt.splitright = true
 vim.opt.colorcolumn = "101"
 vim.opt.fillchars = "fold: "
 vim.opt.foldmethod = "marker"
+vim.opt.inccommand = "split"
 vim.opt.lazyredraw = true
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.number = true
 vim.opt.signcolumn = "number"
 vim.opt.termguicolors = true
@@ -36,5 +39,5 @@ vim.opt.textwidth = 100
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.mouse = "a"
-vim.opt.updatetime = 250
+vim.opt.updatetime = 256
 vim.opt.wildmode = { "longest", "full", "full" }

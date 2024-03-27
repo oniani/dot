@@ -19,10 +19,10 @@ vim.keymap.set("n", "L", "$", { silent = true })
 vim.keymap.set("n", "S", "ciw", { silent = true })
 vim.keymap.set("n", "X", "diw", { silent = true })
 
--- Toggling between buffers
+-- Toggle between buffers
 vim.keymap.set("n", "<Leader><Leader>", "<C-^>")
 
--- Running the built-in spell checker
+-- Run built-in spell checker
 vim.keymap.set("n", "<Leader>s", "<Cmd>setlocal spell! spelllang=en_us<CR>")
 
 -- Toggling line wrapping
@@ -33,6 +33,9 @@ vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
+
+-- Clear search highlighting
+vim.keymap.set("n", "<CR>", "<Cmd>nohlsearch<CR>")
 
 -- Command mode navigation
 vim.keymap.set("c", "<C-A>", "<Home>")

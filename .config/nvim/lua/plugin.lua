@@ -29,11 +29,10 @@ local packages = {
     "nvim-treesitter/nvim-treesitter",
 
     -- LSP
-    "microsoft/python-type-stubs",
+    "j-hui/fidget.nvim",
     "neovim/nvim-lspconfig",
     "williamboman/mason-lspconfig.nvim",
     "williamboman/mason.nvim",
-    "j-hui/fidget.nvim",
 
     -- Autocompletion
     "hrsh7th/nvim-cmp",
@@ -75,25 +74,11 @@ vim.api.nvim_set_hl(0, "NvimTreeExecFile", { fg = "NvimLightGreen" })
 vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { fg = "None" })
 
 require("nvim-treesitter.configs").setup {
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    },
-    indent = { enable = true, disable = { "python" } },
-    incremental_selection = {
-        enable = true,
-        keymaps = {
-            init_selection = "<CR>",
-            node_decremental = "<BS>",
-            node_incremental = "<CR>",
-            scope_incremental = "<S-CR>",
-        },
-    },
+    highlight = { enable = true, additional_vim_regex_highlighting = false },
+    indent = { enable = true },
 }
 
--- LSP and Autocompletion {{{
-
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
     local lsp_keymap_set = function(keys, func, desc)
         if desc then
             desc = "LSP: " .. desc
@@ -128,44 +113,36 @@ local on_attach = function(_, bufnr)
 
     vim.lsp.handlers["textDocument/signatureHelp"] =
         vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
+
+    if client.name == "ruff_lsp" then
+        client.server_capabilities.hoverProvider = false
+    end
 end
 
-local f = function(cmd)
-    return { formatCommand = cmd, formatStdin = true }
-end
-
-local server_settings = {
+local servers = {
     bashls = {},
     clangd = {},
     cmake = {},
-    efm = {
-        rootMarkers = { ".git/" },
-        languages = {
-            lua = { f "stylua --column-width 100 --indent-type spaces --call-parentheses None -" },
-            markdown = { f "prettier --print-width 100 --stdin-filepath ${INPUT}" },
-            python = { f "black --fast --line-length 100 -" },
-        },
-    },
     lua_ls = {
-        Lua = {
-            runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
-            diagnostics = { globals = { "vim" } },
-            workspace = { checkThirdParty = false },
-            telemetry = { enable = false },
+        settings = {
+            Lua = {
+                completion = { callSnippet = "Replace" },
+                diagnostics = { globals = { "vim" } },
+                telemetry = { enable = false },
+                workspace = { checkThirdParty = false },
+            },
         },
     },
     pyright = {
-        pyright = {
-            autoImportCompletion = true,
+        settings = {
+            pyright = { disableOrganizeImports = true },
+            python = { analysis = { ignore = { "*" } } },
         },
-        python = {
-            analysis = {
-                autoSearchPaths = true,
-                diagnosticMode = "openFilesOnly",
-                typeCheckingMode = "off",
-                useLibraryCodeForTypes = true,
-                stubPath = vim.fn.stdpath "data" .. "/site/pack/paqs/start/python-type-stubs",
-            },
+    },
+    ruff_lsp = {
+        init_options = {
+            documentFormatting = true,
+            settings = { format = { args = { "--line-length", "100" } } },
         },
     },
     rust_analyzer = {},
@@ -183,14 +160,17 @@ local cmp_capabilities = require "cmp_nvim_lsp"
 local default_capabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = cmp_capabilities.default_capabilities(default_capabilities)
 
-mason_lspconfig.setup { ensure_installed = vim.tbl_keys(server_settings) }
+mason_lspconfig.setup { ensure_installed = vim.tbl_keys(servers) }
 mason_lspconfig.setup_handlers {
-    function(server)
-        lspconfig[server].setup {
+    function(server_name)
+        lspconfig[server_name].setup {
             capabilities = capabilities,
             on_attach = on_attach,
-            settings = server_settings[server],
-            init_options = { documentFormatting = true },
+            settings = servers[server_name].settings or {},
+            init_options = {
+                documentFormatting = true,
+                settings = servers[server_name].settings or {},
+            },
         }
     end,
 }
@@ -291,5 +271,3 @@ cmp.setup.cmdline(":", {
         { name = "cmdline" },
     }),
 })
-
--- }}}
