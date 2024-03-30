@@ -48,7 +48,7 @@
     },
 
     "custom/weather": {
-        "exec": "curl -s 'https://wttr.in/Brooklyn?format=2&u'",
+        "exec": "curl -s 'https://wttr.in/NYC?format=2&u'",
         "interval": 60,
     },
 
