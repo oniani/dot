@@ -141,8 +141,10 @@ local servers = {
     },
     ruff_lsp = {
         init_options = {
-            documentFormatting = true,
-            settings = { format = { args = { "--line-length", "100" } } },
+            settings = {
+                format = { args = { "--line-length", "100" } },
+                lint = { args = { "--line-length", "100" } },
+            },
         },
     },
     rust_analyzer = {},
@@ -169,7 +171,7 @@ mason_lspconfig.setup_handlers {
             settings = servers[server_name].settings or {},
             init_options = {
                 documentFormatting = true,
-                settings = servers[server_name].settings or {},
+                settings = (servers[server_name].init_options or {}).settings or {},
             },
         }
     end,
