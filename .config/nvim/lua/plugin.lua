@@ -15,9 +15,6 @@ local packages = {
     -- Let Paq manage itself
     "savq/paq-nvim",
 
-    -- Commenting
-    "numToStr/Comment.nvim",
-
     -- Fuzzy search
     "ibhagwan/fzf-lua",
 
@@ -57,8 +54,6 @@ if is_bootstrap then
     print "================================"
     return
 end
-
-require("Comment").setup {}
 
 local fzf = require "fzf-lua"
 vim.keymap.set("n", "<Leader>f", fzf.files)
