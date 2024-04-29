@@ -69,10 +69,11 @@ vim.api.nvim_set_hl(0, "NvimTreeExecFile", { fg = "NvimLightGreen" })
 vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { fg = "None" })
 
 require("nvim-treesitter.configs").setup {
-    ensure_installed = { "bash", "c", "css", "html", "latex", "lua", "markdown", "python", "rust" },
+    ensure_installed = { "bash", "c", "css", "html", "lua", "markdown", "python", "rust" },
     highlight = { enable = true, additional_vim_regex_highlighting = false },
     indent = { enable = true },
 }
+require("nvim-treesitter.install").prefer_git = true
 
 local on_attach = function(client, bufnr)
     local lsp_keymap_set = function(keys, func, desc)
