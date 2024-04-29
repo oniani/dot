@@ -4,13 +4,14 @@
 # by David Oniani <onianidavid@gmail.com>
 # MIT License
 
-dir="$HOME/git/wall/wall"
-wall=$(fd . "$dir" | fzf --preview='kitty +kitten icat --clear --transfer-mode=memory --stdin=no --place=${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}@20x1 {}')
-monitor=$(hyprctl monitors | grep -i monitor | awk '{print $2}')
+wall=$(fd . "$HOME/git/wall/wall" | fzf --preview='kitty +kitten icat --clear --place=${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}@20x1 --stdin=no --transfer-mode=memory {}')
 
 [ -z "$wall" ] && exit 0
+
+monitor=$(hyprctl monitors | grep -i monitor | awk '{print $2}')
 
 cp "$wall" "$HOME"/.cache/wall
 
 hyprctl hyprpaper unload all >/dev/null
-(hyprctl hyprpaper preload "$wall" && hyprctl hyprpaper wallpaper "$monitor,$wall") >/dev/null
+hyprctl hyprpaper preload "$wall" >/dev/null
+hyprctl hyprpaper wallpaper "$monitor,$wall" >/dev/null
