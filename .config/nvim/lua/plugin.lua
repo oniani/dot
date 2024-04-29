@@ -69,6 +69,7 @@ vim.api.nvim_set_hl(0, "NvimTreeExecFile", { fg = "NvimLightGreen" })
 vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { fg = "None" })
 
 require("nvim-treesitter.configs").setup {
+    ensure_installed = { "bash", "c", "css", "html", "latex", "lua", "markdown", "python", "rust" },
     highlight = { enable = true, additional_vim_regex_highlighting = false },
     indent = { enable = true },
 }
