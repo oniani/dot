@@ -6,9 +6,9 @@
     "margin-top": 32,
     "spacing": 32,
 
-    "modules-left": ["custom/logo", "hyprland/workspaces", "tray"],
+    "modules-left": ["custom/logo", "hyprland/workspaces"],
     "modules-center": ["clock", "custom/weather"],
-    "modules-right": ["memory", "pulseaudio", "temperature", "battery"],
+    "modules-right": ["tray", "memory", "pulseaudio", "temperature", "battery"],
 
     "custom/logo": {"format": "  "},
 
