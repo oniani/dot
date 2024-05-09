@@ -18,9 +18,10 @@ add() {
 }
 
 sel() {
-    bookmark=$(rofi -dmenu -i -no-show-icons < "$path")
-    [ -z "$bookmark" ] && exit 0
-    firefox --new-tab --url "$bookmark"
+    column -s'|' -t < "${XDG_DATA_HOME:-$HOME/.local/share}/bookmark.csv" |
+        rofi -dmenu -i -no-show-icons |
+        grep -o "https.*" |
+        xargs -r firefox --new-tab --url
 }
 
 case $1 in

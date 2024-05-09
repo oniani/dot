@@ -5,6 +5,6 @@
 # MIT License
 
 column -s'|' -t < "${XDG_DATA_HOME:-$HOME/.local/share}/paper.csv" |
-    rofi -dmenu -i -p Paper -no-show-icons |
+    rofi -dmenu -i -no-show-icons |
     grep -o "https.*" |
     xargs -r firefox --new-tab --url
