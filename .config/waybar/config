@@ -1,4 +1,7 @@
 {
+    "margin-top": 32,
+    "width": 2048,
+
     "modules-left": ["custom/logo", "tray"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["clock", "memory", "pulseaudio", "temperature", "battery"],
