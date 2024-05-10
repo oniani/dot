@@ -1,7 +1,7 @@
 {
-    "modules-left": ["custom/logo", "custom/weather", "clock"],
+    "modules-left": ["custom/logo", "tray"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray", "memory", "pulseaudio", "temperature", "battery"],
+    "modules-right": ["clock", "memory", "pulseaudio", "temperature", "battery"],
 
     "custom/logo": {"format": " "},
 
@@ -31,11 +31,6 @@
     "tray": {
         "icon-size": 24,
         "spacing": 16,
-    },
-
-    "custom/weather": {
-        "exec": "curl -s 'https://wttr.in/Arlington+VA?format=2&u'",
-        "interval": 60,
     },
 
     "memory": {
