@@ -1,22 +1,24 @@
 {
-    "position": "top",
-
-    "height": 32,
-    "width": 2048,
-    "margin-top": 32,
-    "spacing": 32,
-
-    "modules-left": ["custom/logo", "hyprland/workspaces"],
-    "modules-center": ["clock", "custom/weather"],
+    "modules-left": ["custom/logo", "custom/weather", "clock"],
+    "modules-center": ["hyprland/workspaces"],
     "modules-right": ["tray", "memory", "pulseaudio", "temperature", "battery"],
 
-    "custom/logo": {"format": "  "},
+    "custom/logo": {"format": " "},
 
     "hyprland/workspaces": {
-        "format": "{icon} ",
+        "format": "{icon}",
         "on-click": "activate",
         "format-icons": { "1": "", "2": "", "3": "", "urgent": "", "default": "" },
-        "persistent-workspaces": { "1": [], "2": [], "3": [] },
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+        },
         "sort-by-number": true
     },
 
@@ -32,7 +34,7 @@
     },
 
     "custom/weather": {
-        "exec": "curl -s 'https://wttr.in/NYC?format=2&u'",
+        "exec": "curl -s 'https://wttr.in/Arlington+VA?format=2&u'",
         "interval": 60,
     },
 

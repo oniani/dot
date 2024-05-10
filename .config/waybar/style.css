@@ -1,17 +1,21 @@
-window#waybar {
-    background-color: black;
-    border-radius: 8px;
-    border: 2px solid #8ba8f0;
-    color: white;
+#waybar {
+    background: none;
     font-family: Liga ComicMono Nerd Font;
     font-size: 1.5rem;
+}
+
+#workspaces {
+    background-color: black;
+    border-radius: 1rem;
+    border: 0.125rem solid #8ba8f0;
+    padding: 0 1rem;
 }
 
 #workspaces button {
     background: none;
     border: none;
-    color: white;
     font-size: 2rem;
+    margin: 0 0.5rem;
 }
 
 #workspaces button:hover {
@@ -22,4 +26,22 @@ window#waybar {
 
 #workspaces button.active {
     color: #8ba8f0;
+}
+
+.modules-left, .modules-right {
+    background-color: black;
+    border-radius: 1rem;
+    border: 0.125rem solid #8ba8f0;
+    color: white;
+    margin: 0 4rem;
+    padding: 0 1rem;
+}
+
+.modules-left, .modules-center, .modules-right {
+    margin-top: 2rem;
+}
+
+
+#custom-logo, #custom-weather, #clock, #tray, #memory, #pulseaudio, #temperature, #battery {
+    margin: 0 1rem;
 }
