@@ -24,7 +24,8 @@
     rebase = true
 
 [diff]
-    tool = nvimdiff
+    algorithm = histogram
+    indentHeuristic = true
 
 [difftool]
     prompt = false
