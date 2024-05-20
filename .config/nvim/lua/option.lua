@@ -31,6 +31,7 @@ vim.opt.lazyredraw = true
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.number = true
+vim.opt.scrolloff = 4
 vim.opt.signcolumn = "number"
 vim.opt.termguicolors = true
 vim.opt.textwidth = 100

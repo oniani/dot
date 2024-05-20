@@ -25,6 +25,9 @@ local packages = {
     -- Syntax highlighting and code navigation
     "nvim-treesitter/nvim-treesitter",
 
+    -- Git
+    "lewis6991/gitsigns.nvim",
+
     -- LSP
     "j-hui/fidget.nvim",
     "neovim/nvim-lspconfig",
@@ -69,28 +72,51 @@ vim.api.nvim_set_hl(0, "NvimTreeExecFile", { fg = "NvimLightGreen" })
 vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { fg = "None" })
 
 require("nvim-treesitter.configs").setup {
-    ensure_installed = { "bash", "c", "css", "html", "lua", "markdown", "python", "rust" },
+    ensure_installed = {
+        "bash",
+        "c",
+        "css",
+        "diff",
+        "html",
+        "javascript",
+        "lua",
+        "luadoc",
+        "markdown",
+        "python",
+        "rust",
+        "typescript",
+        "vim",
+        "vimdoc",
+    },
     highlight = { enable = true, additional_vim_regex_highlighting = false },
     indent = { enable = true },
 }
 require("nvim-treesitter.install").prefer_git = true
 
+local gitsigns = require("gitsigns")
+gitsigns.setup {
+    signs = {
+        add = { text = "+" },
+        change = { text = "~" },
+        delete = { text = "_" },
+        topdelete = { text = "‾" },
+        changedelete = { text = "~" },
+    },
+}
+vim.keymap.set("n", "B", gitsigns.toggle_current_line_blame, { desc = "Toggles git blame " })
+
 local on_attach = function(client, bufnr)
-    local lsp_keymap_set = function(keys, func, desc)
-        if desc then
-            desc = "LSP: " .. desc
-        end
-        vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
+    local m = function(keys, func, desc)
+        vim.keymap.set("n", keys, func, { buffer = bufnr, desc = "LSP: " .. desc })
     end
 
-    lsp_keymap_set("K", vim.lsp.buf.hover, "Hover Documentation")
-    lsp_keymap_set("T", vim.lsp.buf.signature_help, "Signature Documentation")
-    lsp_keymap_set("ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-    lsp_keymap_set("dl", vim.diagnostic.setloclist, "[D]iagnostic [L]ist")
-    lsp_keymap_set("dn", vim.diagnostic.goto_next, "[D]iagnostic [N]ext")
-    lsp_keymap_set("dp", vim.diagnostic.goto_prev, "[D]iagnostic [P]revious")
-    lsp_keymap_set("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-    lsp_keymap_set("rn", vim.lsp.buf.rename, "[R]e[n]ame")
+    m("F", vim.lsp.buf.signature_help, "[F]unction Signature")
+    m("H", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, "[H]ints")
+    m("T", vim.lsp.buf.signature_help, "[T]ype Definition")
+    m("ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+    m("dl", vim.diagnostic.setloclist, "[D]iagnostic [L]ist")
+    m("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+    m("rn", vim.lsp.buf.rename, "[R]e[n]ame")
 
     vim.api.nvim_buf_create_user_command(bufnr, "F", function()
         if vim.lsp.buf.format then
@@ -98,7 +124,7 @@ local on_attach = function(client, bufnr)
         elseif vim.lsp.buf.formatting then
             vim.lsp.buf.formatting()
         end
-    end, { desc = "LSP: [F]ormat Current Buffer" })
+    end, { desc = "[F]ormat Current Buffer" })
 
     vim.diagnostic.config {
         float = { border = "single" },

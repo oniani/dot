@@ -2,48 +2,31 @@
 -- by David Oniani <onianidavid@gmail.com>
 -- MIT License
 
--- Mapping the leader key to space
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { desc = "Map space to no-op", silent = true })
 
--- Word wrapping navigation
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set("n", "<Leader><Leader>", "<C-^>", { desc = "Toggle between buffers" })
+vim.keymap.set("n", "<Leader>s", "<Cmd>setl spell! spl=en_us<CR>", { desc = "Toggle spell checker" })
+vim.keymap.set("n", "<Leader>w", "<Cmd>set wrap!<CR>", { desc = "Toggle line wrapping" })
 
--- BoL and EoL
-vim.keymap.set("n", "H", "^", { silent = true })
-vim.keymap.set("n", "L", "$", { silent = true })
+vim.keymap.set("n", "<C-CR>", "<Cmd>!run %<CR>", { desc = "Run current file" })
+vim.keymap.set("n", "<CR>", "<Cmd>nohlsearch<CR>", { desc = "Clear search highlighting" })
 
--- Change inner word and delete inner word
-vim.keymap.set("n", "S", "ciw", { silent = true })
-vim.keymap.set("n", "X", "diw", { silent = true })
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 
--- Toggle between buffers
-vim.keymap.set("n", "<Leader><Leader>", "<C-^>")
+vim.keymap.set("c", "<C-A>", "<Home>", { desc = "Move cursor to beginning of line" })
+vim.keymap.set("c", "<C-E>", "<End>", { desc = "Move cursor to end of line" })
+vim.keymap.set("c", "<C-h>", "<Left>", { desc = "Move cursor left" })
+vim.keymap.set("c", "<C-j>", "<Down>", { desc = "Move cursor down" })
+vim.keymap.set("c", "<C-k>", "<Up>", { desc = "Move cursor up" })
+vim.keymap.set("c", "<C-l>", "<Right>", { desc = "Move cursor right" })
 
--- Run built-in spell checker
-vim.keymap.set("n", "<Leader>s", "<Cmd>setlocal spell! spelllang=en_us<CR>")
+vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
+vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 
--- Toggling line wrapping
-vim.keymap.set("n", "<Leader>w", "<Cmd>set wrap!<CR>")
-
--- Window navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
-vim.keymap.set("n", "<C-l>", "<C-w>l")
-
--- Clear search highlighting
-vim.keymap.set("n", "<CR>", "<Cmd>nohlsearch<CR>")
-
--- Command mode navigation
-vim.keymap.set("c", "<C-A>", "<Home>")
-vim.keymap.set("c", "<C-E>", "<End>")
-vim.keymap.set("c", "<C-h>", "<Left>")
-vim.keymap.set("c", "<C-j>", "<Down>")
-vim.keymap.set("c", "<C-k>", "<Up>")
-vim.keymap.set("c", "<C-l>", "<Right>")
-
--- Run current file
-vim.keymap.set("n", "<C-CR>", "<Cmd>!run %<CR>")
+vim.keymap.set("n", "S", "ciw", { silent = true }, { desc = "Change inner word" })
+vim.keymap.set("n", "X", "diw", { silent = true }, { desc = "Delete inner word" })
