@@ -1,6 +1,6 @@
 {
     "margin-top": 32,
-    "width": 1850,
+    "width": 3780,
 
     "modules-left": ["custom/logo", "hyprland/workspaces", "tray"],
     "modules-center": ["hyprland/window"],
