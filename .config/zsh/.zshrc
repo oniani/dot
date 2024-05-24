@@ -183,6 +183,7 @@ zle -N zle-line-init
 
 bindkey -s "^f" "nnn_autocd\n"
 bindkey -s "^n" "neomutt\n"
+bindkey -s "^o" "lazygit\n"
 bindkey -s "^p" "ipython\n"
 bindkey -s "^z" "fg\n"
 
