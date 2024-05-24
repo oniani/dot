@@ -6,7 +6,9 @@
     "modules-center": ["hyprland/window"],
     "modules-right": ["clock", "memory", "pulseaudio", "temperature", "battery"],
 
-    "custom/logo": {"format": " "},
+    "custom/logo": {
+        "format": " "
+    },
 
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -25,15 +27,14 @@
         "sort-by-number": true
     },
 
-    "clock": {
-        "format": "  {:%r}",
-        "format-alt": "  {:%a %b %d %Y}",
-        "interval": 1
-    },
-
     "tray": {
         "icon-size": 24,
         "spacing": 16,
+    },
+
+    "clock": {
+        "format": "  {:%c}",
+        "interval": 1
     },
 
     "memory": {
