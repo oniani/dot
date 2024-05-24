@@ -11,7 +11,6 @@ vim.keymap.set("n", "<Leader>s", "<Cmd>setl spell! spl=en_us<CR>", { desc = "Tog
 vim.keymap.set("n", "<Leader>w", "<Cmd>set wrap!<CR>", { desc = "Toggle line wrapping" })
 
 vim.keymap.set("n", "<C-CR>", "<Cmd>!run %<CR>", { desc = "Run current file" })
-vim.keymap.set("n", "<CR>", "<Cmd>nohlsearch<CR>", { desc = "Clear search highlighting" })
 
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
@@ -25,8 +24,5 @@ vim.keymap.set("c", "<C-j>", "<Down>", { desc = "Move cursor down" })
 vim.keymap.set("c", "<C-k>", "<Up>", { desc = "Move cursor up" })
 vim.keymap.set("c", "<C-l>", "<Right>", { desc = "Move cursor right" })
 
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
-
-vim.keymap.set("n", "S", "ciw", { silent = true }, { desc = "Change inner word" })
-vim.keymap.set("n", "X", "diw", { silent = true }, { desc = "Delete inner word" })
+vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })

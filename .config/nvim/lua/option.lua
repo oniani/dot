@@ -32,7 +32,7 @@ vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.number = true
 vim.opt.scrolloff = 4
-vim.opt.signcolumn = "number"
+vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 vim.opt.textwidth = 100
 
@@ -40,5 +40,6 @@ vim.opt.textwidth = 100
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.mouse = "a"
+vim.opt.shortmess:append "c"
 vim.opt.updatetime = 256
 vim.opt.wildmode = { "longest", "full", "full" }

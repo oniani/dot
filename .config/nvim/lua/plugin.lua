@@ -18,9 +18,10 @@ local packages = {
     -- Fuzzy search
     "ibhagwan/fzf-lua",
 
-    -- File explorer
+    -- File management
     "nvim-tree/nvim-tree.lua",
     "nvim-tree/nvim-web-devicons",
+    "stevearc/oil.nvim",
 
     -- Syntax highlighting and code navigation
     "nvim-treesitter/nvim-treesitter",
@@ -40,8 +41,6 @@ local packages = {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-path",
-    "L3MON4D3/LuaSnip",
-    "saadparwaiz1/cmp_luasnip",
     "onsails/lspkind-nvim",
 }
 
@@ -71,6 +70,9 @@ vim.keymap.set("n", "<C-n>", "<Cmd>NvimTreeToggle<CR>")
 vim.api.nvim_set_hl(0, "NvimTreeExecFile", { fg = "NvimLightGreen" })
 vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { fg = "None" })
 
+require "oil".setup {}
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
 require("nvim-treesitter.configs").setup {
     ensure_installed = {
         "bash",
@@ -95,6 +97,7 @@ require("nvim-treesitter.install").prefer_git = true
 
 local gitsigns = require "gitsigns"
 gitsigns.setup {
+    current_line_blame = true,
     signs = {
         add = { text = "+" },
         change = { text = "~" },
@@ -103,7 +106,6 @@ gitsigns.setup {
         changedelete = { text = "~" },
     },
 }
-vim.keymap.set("n", "B", gitsigns.toggle_current_line_blame, { desc = "Toggles git blame " })
 
 local on_attach = function(client, bufnr)
     local m = function(keys, func, desc)
@@ -200,9 +202,9 @@ mason_lspconfig.setup_handlers {
     end,
 }
 
+require("lspkind").init {}
+
 local cmp = require "cmp"
-local lspkind = require "lspkind"
-local luasnip = require "luasnip"
 
 local border = {
     { "╭", "FoldColumn" },
@@ -217,82 +219,46 @@ local border = {
 
 cmp.setup {
     experimental = { ghost_text = true },
-    formatting = {
-        format = lspkind.cmp_format {
-            menu = {
-                nvim_lsp = "LSP",
-                luasnip = "LuaSnip",
-                buffer = "Buffer",
-                path = "Path",
-                latex_symbols = "LaTeX",
-            },
-        },
-    },
-    mapping = cmp.mapping.preset.insert {
-        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-u>"] = cmp.mapping.scroll_docs(4),
-        ["<C-o>"] = cmp.mapping.complete(),
-        ["<C-c>"] = cmp.mapping.close(),
-        ["<C-j>"] = cmp.mapping.select_next_item(),
-        ["<C-k>"] = cmp.mapping.select_prev_item(),
-        ["<CR>"] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-        },
-        ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
-    },
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body)
-        end,
-    },
     sources = {
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
     },
+    mapping = cmp.mapping.preset.insert {
+        ["<C-j>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+        ["<C-k>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+        ["<TAB>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+        ["<S-TAB>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+        ["<CR>"] = cmp.mapping.confirm { select = true },
+        ["<C-c>"] = cmp.mapping.close(),
+        ["<C-y>"] = cmp.mapping(
+            cmp.mapping.confirm {
+                behavior = cmp.ConfirmBehavior.Insert,
+                select = true,
+            },
+            { "i", "c" }
+        ),
+        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-u>"] = cmp.mapping.scroll_docs(4),
+    },
+    snippet = {
+        expand = function(args)
+            vim.snippet.expand(args.body)
+        end,
+    },
     window = {
-        completion = {
-            border = border,
-            scrollbar = "║",
-        },
-        documentation = {
-            border = border,
-            scrollbar = "║",
-        },
+        completion = { border = border, scrollbar = "║" },
+        documentation = { border = border, scrollbar = "║" },
     },
 }
 
 cmp.setup.cmdline({ "/", "?" }, {
     mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-        { name = "buffer" },
-    },
+    sources = { { name = "buffer" } },
 })
 
 cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-        { name = "path" },
-    }, {
-        { name = "cmdline" },
-    }),
+    sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
 })

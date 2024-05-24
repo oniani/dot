@@ -4,7 +4,7 @@
 
 vim.api.nvim_create_autocmd("VimResized", {
     desc = "Equalize splits when resized",
-    group = vim.api.nvim_create_augroup("winresize", { clear = true }),
+    group = vim.api.nvim_create_augroup("window-resize", { clear = true }),
     command = "wincmd =",
     pattern = "*",
 })
