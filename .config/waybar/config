@@ -33,7 +33,7 @@
     },
 
     "clock": {
-        "format": "  {:%c}",
+        "format": "  {:%a %b %d %r %Y %Z}",
         "interval": 1
     },
 
