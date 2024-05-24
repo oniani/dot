@@ -10,6 +10,7 @@ vim.keymap.set("n", "<Leader><Leader>", "<C-^>", { desc = "Toggle between buffer
 vim.keymap.set("n", "<Leader>s", "<Cmd>setl spell! spl=en_us<CR>", { desc = "Toggle spell check" })
 vim.keymap.set("n", "<Leader>w", "<Cmd>set wrap!<CR>", { desc = "Toggle line wrapping" })
 
+vim.keymap.set("n", "<CR>", "<Cmd>nohlsearch<CR>", { desc = "Clear search highlighting" })
 vim.keymap.set("n", "<C-CR>", "<Cmd>!run %<CR>", { desc = "Run current file" })
 
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })

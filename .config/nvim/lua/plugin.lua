@@ -70,7 +70,7 @@ vim.keymap.set("n", "<C-n>", "<Cmd>NvimTreeToggle<CR>")
 vim.api.nvim_set_hl(0, "NvimTreeExecFile", { fg = "NvimLightGreen" })
 vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { fg = "None" })
 
-require "oil".setup {}
+require("oil").setup { view_options = { show_hidden = true } }
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 require("nvim-treesitter.configs").setup {
