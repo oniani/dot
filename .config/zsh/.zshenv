@@ -28,6 +28,11 @@ export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/pass"
 export PYENV_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/pyenv"
 export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
 
+# Python
+export PYTHONPYCACHEPREFIX="${XDG_CACHE_HOME:-$HOME/.cache}/python"
+export PYTHONUSERBASE="${XDG_DATA_HOME:-$HOME/.local/share}/python"
+export PYTHON_HISTORY="${XDG_STATE_HOME:-$HOME/.local/state}/python/history"
+
 # fzf
 export FZF_DEFAULT_COMMAND="fd --hidden --type f --strip-cwd-prefix --exclude .git"
 export FZF_DEFAULT_OPTS="--reverse --color bg+:-1"
@@ -54,6 +59,5 @@ export MANPAGER="nvim +Man!"
 # Adding to PATH
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/vscode:$PATH"
 export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/cargo/bin:$PATH"
