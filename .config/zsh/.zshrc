@@ -2,78 +2,6 @@
 # by David Oniani <onianidavid@gmail.com>
 # MIT License
 
-# Functions {{{
-
-# Change directory on quit
-function nnn_autocd() {
-    # Block nesting of nnn in subshells
-    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-        printf "nnn is already running\n"
-        return
-    fi
-
-    # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
-    # To cd on quit only on ^G, either remove the "export" as in:
-    #    NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-    #    (or, to a custom path: NNN_TMPFILE=/tmp/.lastd)
-    # or, export NNN_TMPFILE after nnn invocation
-    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-
-    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
-    # stty start undef
-    # stty stop undef
-    # stty lwrap undef
-    # stty lnext undef
-
-    nnn -T v "$@"
-
-    if [ -f "$NNN_TMPFILE" ]; then
-        . "$NNN_TMPFILE"
-        rm -f "$NNN_TMPFILE" > /dev/null
-    fi
-}
-
-# Print the color map
-function colormap() {
-    for i in {0..255}; do
-        print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'};
-    done
-}
-
-# }}}
-
-# Aliases {{{
-
-# Core commands
-alias :q="exit"
-alias cal="cal -m -3"
-alias diff="diff --color=auto"
-alias doc2pdf="libreoffice --headless --invisible --norestore --convert-to pdf"
-alias grep="grep --color=auto"
-alias icat="kitty +kitten icat"
-alias j2py="jupyter nbconvert --to script"
-alias l="ls -Av --color=auto --group-directories-first"
-alias ll="ls -Ahlv --color=auto --group-directories-first"
-alias s="bat -p --theme=1337"
-alias ssh="kitty +kitten ssh"
-alias wget="wget --show-progress"
-alias x="latexmk -interaction=nonstopmode -pdf -outdir=target"
-alias xa="latexmk -interaction=nonstopmode -pdf -pvc -outdir=target"
-
-# Interactive
-alias e="nvim"
-alias f="thunar"
-alias j="python -m jupyterlab"
-alias o="xdg-open"
-alias t="tmux"
-
-# Safer commands
-alias cp="cp -i"
-alias mv="mv -i"
-alias rm="rm -i"
-
-# }}}
-
 # Z Shell Settings {{{
 
 # Set the prompt
@@ -176,6 +104,78 @@ zle-line-init() {
 
 zle -N zle-keymap-select
 zle -N zle-line-init
+
+# }}}
+
+# Aliases {{{
+
+# Core commands
+alias :q="exit"
+alias cal="cal -m -3"
+alias diff="diff --color=auto"
+alias doc2pdf="libreoffice --headless --invisible --norestore --convert-to pdf"
+alias grep="grep --color=auto"
+alias icat="kitty +kitten icat"
+alias j2py="jupyter nbconvert --to script"
+alias l="ls -Av --color=auto --group-directories-first"
+alias ll="ls -Ahlv --color=auto --group-directories-first"
+alias s="bat -p --theme=1337"
+alias ssh="kitty +kitten ssh"
+alias wget="wget --show-progress"
+alias x="latexmk -interaction=nonstopmode -pdf -outdir=target"
+alias xa="latexmk -interaction=nonstopmode -pdf -pvc -outdir=target"
+
+# Interactive
+alias e="nvim"
+alias f="thunar"
+alias j="python -m jupyterlab"
+alias o="xdg-open"
+alias t="tmux"
+
+# Safer commands
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+
+# }}}
+
+# Functions {{{
+
+# Change directory on quit
+function nnn_autocd() {
+    # Block nesting of nnn in subshells
+    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+        printf "nnn is already running\n"
+        return
+    fi
+
+    # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # To cd on quit only on ^G, either remove the "export" as in:
+    #    NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    #    (or, to a custom path: NNN_TMPFILE=/tmp/.lastd)
+    # or, export NNN_TMPFILE after nnn invocation
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
+    # stty start undef
+    # stty stop undef
+    # stty lwrap undef
+    # stty lnext undef
+
+    nnn -T v "$@"
+
+    if [ -f "$NNN_TMPFILE" ]; then
+        . "$NNN_TMPFILE"
+        rm -f "$NNN_TMPFILE" > /dev/null
+    fi
+}
+
+# Print the color map
+function colormap() {
+    for i in {0..255}; do
+        print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'};
+    done
+}
 
 # }}}
 
