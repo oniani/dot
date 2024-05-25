@@ -11,7 +11,6 @@ AUR,zotero-beta-bin,"Zotero is a free, easy-to-use tool to help you collect, org
 AUR,zsh-autosuggestions-git,"zsh-autosuggestions-git"
 AUR,zsh-fast-syntax-highlighting,"Optimized and extended zsh-syntax-highlighting"
 PACMAN,atool,"A script for managing file archives of various types"
-PACMAN,bat,"Cat clone with syntax highlighting and git integration"
 PACMAN,blueman,"GTK+ Bluetooth Manager"
 PACMAN,bluez,"Daemons for the bluetooth protocol stack"
 PACMAN,bluez-utils,"Development and debugging utilities for the bluetooth protocol stack"
