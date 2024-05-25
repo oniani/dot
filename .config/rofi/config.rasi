@@ -3,7 +3,7 @@
 // MIT License
 
 configuration {
-    font: "Liga ComicMono Nerd Font 20";
+    font: "Liga ComicMono Nerd Font 24";
     show-icons: true;
 
     kb-accept-entry: "Control+m,Return,KP_Enter";
@@ -63,7 +63,7 @@ element-text {
 
 element-icon {
     background-color: inherit;
-    size: 36px;
+    size: 48px;
 }
 
 scrollbar {
