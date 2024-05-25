@@ -180,7 +180,7 @@ function colormap() {
 # Key Bindings {{{
 
 bindkey -s "^f" "nnn_autocd\n"
-bindkey -s "^n" "gitui\n"
+bindkey -s "^g" "gitui\n"
 bindkey -s "^p" "ipython\n"
 bindkey -s "^z" "fg\n"
 
