@@ -34,7 +34,7 @@ export PYTHONUSERBASE="${XDG_DATA_HOME:-$HOME/.local/share}/python"
 export PYTHON_HISTORY="${XDG_STATE_HOME:-$HOME/.local/state}/python/history"
 
 # fzf
-export FZF_DEFAULT_COMMAND="fd --hidden --type f --strip-cwd-prefix --exclude .git"
+export FZF_DEFAULT_COMMAND="fd --hidden --type file --follow --strip-cwd-prefix --exclude .git"
 export FZF_DEFAULT_OPTS="--reverse --color bg+:-1"
 
 # nnn
