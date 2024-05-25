@@ -27,7 +27,7 @@ Other Tools and Utilities:
 
 - Design Tool: [Inkscape][inkscape]
 - Diagram Maker: [drawio][drawio]
-- IDE: [VS Code][vscode] (JupyterLab replacement, [Neovim][neovim] for everything else)
+- Notebooks: [JupyterLab][jupyterlab]
 
 Manually patched Comic Mono font is available [here][font].
 
@@ -71,6 +71,6 @@ wip        # Work in Progress Files
 [hyprland]: https://github.com/hyprwm/Hyprland
 [inkscape]: https://gitlab.com/inkscape/inkscape
 [drawio]: https://github.com/jgraph/drawio-desktop
-[vscode]: https://github.com/microsoft/vscode
+[jupyterlab]: https://jupyter.org
 [font]: https://github.com/oniani/dot/tree/main/.local/share/fonts/ttf
 [license]: LICENSE
