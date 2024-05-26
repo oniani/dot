@@ -64,10 +64,8 @@ vim.keymap.set("n", "<Leader>r", fzf.live_grep, { desc = "Search Terms via [R]g"
 vim.keymap.set("n", "<Leader>d", fzf.diagnostics_document, { desc = "LSP: Document [D]iagnostics" })
 vim.g.fzf_action = { ["ctrl-s"] = "split", ["ctrl-v"] = "vsplit" }
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-require("nvim-tree").setup {}
-vim.keymap.set("n", "<C-n>", "<Cmd>NvimTreeToggle<CR>")
+require "nvim-tree".setup {}
+vim.keymap.set("n", "<C-n>", function() require "nvim-tree.api".tree.toggle({ focus = false }) end)
 vim.api.nvim_set_hl(0, "NvimTreeExecFile", { fg = "NvimLightGreen" })
 vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { fg = "None" })
 
