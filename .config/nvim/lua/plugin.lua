@@ -152,6 +152,14 @@ local servers = {
             Lua = {
                 completion = { callSnippet = "Replace" },
                 diagnostics = { globals = { "vim" } },
+                format = {
+                    enable = true,
+                    defaultConfig = {
+                        indent_size = "4",
+                        indent_style = "space",
+                        max_line_length = "100",
+                    },
+                },
                 telemetry = { enable = false },
                 workspace = { checkThirdParty = false },
             },
