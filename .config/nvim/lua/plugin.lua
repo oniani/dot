@@ -23,11 +23,11 @@ local packages = {
     "nvim-tree/nvim-web-devicons",
     "stevearc/oil.nvim",
 
-    -- Syntax highlighting and code navigation
-    "nvim-treesitter/nvim-treesitter",
-
     -- Git
     "lewis6991/gitsigns.nvim",
+
+    -- Syntax highlighting and code navigation
+    "nvim-treesitter/nvim-treesitter",
 
     -- LSP
     "j-hui/fidget.nvim",
@@ -35,7 +35,7 @@ local packages = {
     "williamboman/mason-lspconfig.nvim",
     "williamboman/mason.nvim",
 
-    -- Autocompletion
+    -- LSP: Autocompletion
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
@@ -57,20 +57,48 @@ if is_bootstrap then
     return
 end
 
+-- Fuzzy search {{{
+
 local fzf = require "fzf-lua"
+vim.keymap.set("n", "<Leader>d", fzf.diagnostics_document, { desc = "LSP: Document [D]iagnostics" })
 vim.keymap.set("n", "<Leader>f", fzf.files, { desc = "Find [F]iles" })
 vim.keymap.set("n", "<Leader>l", fzf.lines, { desc = "Open [L]ines" })
 vim.keymap.set("n", "<Leader>r", fzf.live_grep, { desc = "Search Terms via [R]g" })
-vim.keymap.set("n", "<Leader>d", fzf.diagnostics_document, { desc = "LSP: Document [D]iagnostics" })
 vim.g.fzf_action = { ["ctrl-s"] = "split", ["ctrl-v"] = "vsplit" }
 
+-- }}}
+
+-- File management {{{
+
 require "nvim-tree".setup {}
-vim.keymap.set("n", "<C-n>", function() require "nvim-tree.api".tree.toggle({ focus = false }) end)
 vim.api.nvim_set_hl(0, "NvimTreeExecFile", { fg = "NvimLightGreen" })
-vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { fg = "None" })
+vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "NvimLightBlue" })
+vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { fg = "NvimLightBlue" })
+vim.keymap.set("n", "<C-n>", function() require "nvim-tree.api".tree.toggle({ focus = false }) end)
 
 require("oil").setup { view_options = { show_hidden = true } }
+vim.api.nvim_set_hl(0, "OilDir", { fg = "NvimLightBlue" })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- }}}
+
+-- Git {{{
+
+local gitsigns = require "gitsigns"
+gitsigns.setup {
+    current_line_blame = true,
+    signs = {
+        add = { text = "+" },
+        change = { text = "~" },
+        changedelete = { text = "~" },
+        delete = { text = "_" },
+        topdelete = { text = "‾" },
+    },
+}
+
+-- }}}
+
+-- Syntax highlighting and code navigation {{{
 
 require("nvim-treesitter.configs").setup {
     ensure_installed = {
@@ -94,17 +122,9 @@ require("nvim-treesitter.configs").setup {
 }
 require("nvim-treesitter.install").prefer_git = true
 
-local gitsigns = require "gitsigns"
-gitsigns.setup {
-    current_line_blame = true,
-    signs = {
-        add = { text = "+" },
-        change = { text = "~" },
-        delete = { text = "_" },
-        topdelete = { text = "‾" },
-        changedelete = { text = "~" },
-    },
-}
+-- }}}
+
+-- LSP {{{
 
 local on_attach = function(client, bufnr)
     local m = function(keys, func, desc)
@@ -181,6 +201,7 @@ local servers = {
     },
     rust_analyzer = {},
     texlab = {},
+    tsserver = {},
 }
 
 require("fidget").setup {}
@@ -208,6 +229,8 @@ mason_lspconfig.setup_handlers {
         }
     end,
 }
+
+-- LSP: Autocompletion {{{
 
 require("lspkind").init {}
 
@@ -269,3 +292,7 @@ cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
 })
+
+-- }}}
+
+-- }}}

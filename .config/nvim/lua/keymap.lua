@@ -18,8 +18,8 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 
-vim.keymap.set("c", "<C-A>", "<Home>", { desc = "Move cursor to beginning of line" })
-vim.keymap.set("c", "<C-E>", "<End>", { desc = "Move cursor to end of line" })
+vim.keymap.set("c", "<C-A>", "<Home>", { desc = "Move cursor to the beginning of line" })
+vim.keymap.set("c", "<C-E>", "<End>", { desc = "Move cursor to the end of line" })
 vim.keymap.set("c", "<C-h>", "<Left>", { desc = "Move cursor left" })
 vim.keymap.set("c", "<C-j>", "<Down>", { desc = "Move cursor down" })
 vim.keymap.set("c", "<C-k>", "<Up>", { desc = "Move cursor up" })
