@@ -24,7 +24,7 @@ vim.opt.splitright = true
 
 -- Visual
 vim.opt.colorcolumn = "101"
-vim.opt.fillchars = "fold: "
+vim.opt.fillchars = { eob = " ", fold = " " }
 vim.opt.foldmethod = "marker"
 vim.opt.inccommand = "split"
 vim.opt.lazyredraw = true
