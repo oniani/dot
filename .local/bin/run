@@ -25,6 +25,6 @@ case $ext in
     rs) cargo run "$file";;
     sh) sh "$file";;
     tex) latexmk -interaction=nonstopmode -pdf -quiet -shell-escape "$file";;
-    ts) tsc "$file";;
+    ts) tsc "$file" && node "$file";;
     *) printf "Unknown file format\n";;
 esac
