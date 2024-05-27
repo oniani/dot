@@ -145,6 +145,8 @@ local on_attach = function(client, bufnr)
     m("T", vim.lsp.buf.signature_help, "[T]ype Definition")
     m("ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
     m("dl", vim.diagnostic.setloclist, "[D]iagnostic [L]ist")
+    m("dn", vim.diagnostic.goto_next, "[D]iagnostic [N]ext")
+    m("dp", vim.diagnostic.goto_prev, "[D]iagnostic [P]revious")
     m("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
     m("rn", vim.lsp.buf.rename, "[R]e[n]ame")
 

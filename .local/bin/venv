@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+# A simple [v]irtual [env]ironment (venv) manager for Python
+# by David Oniani <onianidavid@gmail.com>
+# MIT License
+
+[ -d .venv ] && printf ".venv exists\n" || printf "Creating .venv...\n" && python -m venv .venv &&
+    printf "Sourcing .venv/bin/activate...\n" && . .venv/bin/activate
