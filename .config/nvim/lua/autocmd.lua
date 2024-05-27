@@ -34,7 +34,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
         local border_opt = { border = "single" }
         vim.diagnostic.config { float = border_opt, virtual_text = false }
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, border_opt)
-        vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, border_opt)
+        vim.lsp.handlers["textDocument/signatureHelp"] =
+            vim.lsp.with(vim.lsp.handlers.signature_help, border_opt)
 
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
         if client and client.server_capabilities.documentHighlightProvider then
