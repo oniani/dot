@@ -91,6 +91,8 @@ local neogit = require "neogit"
 neogit.setup { integrations = { diffview = true, fzf_lua = true } }
 vim.api.nvim_create_user_command("G", neogit.open, { desc = "Open Neo[G]it" })
 
+vim.api.nvim_set_hl(0, "DiffviewFolderSign", { fg = "NvimLightBlue" })
+
 local gitsigns = require "gitsigns"
 gitsigns.setup {
     current_line_blame = true,
