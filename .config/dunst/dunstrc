@@ -5,12 +5,12 @@
 [global]
 alignment = center
 corner_radius = 16
-font = Liga ComicMono Nerd Font
+font = Liga ComicMono Nerd Font 16
 frame_color = "#8ba8f0"
 frame_width = 2
-height = 256
+height = 512
 padding = 32
-width = 512
+width = 768
 
 [urgency_critical]
 background = "#000000"
