@@ -26,7 +26,6 @@ PACMAN,font-manager,"A simple font management application for GTK+ Desktop Envir
 PACMAN,fzf,"Command-line fuzzy finder"
 PACMAN,gcc,"The GNU Compiler Collection - C and C++ frontends"
 PACMAN,git,"the fast distributed version control system"
-PACMAN,gitui,"Blazing fast terminal-ui for git written in Rust"
 PACMAN,gnome-keyring,"Stores passwords and encryption keys"
 PACMAN,go,"Core compiler tools for the Go programming language"
 PACMAN,grim,"Screenshot utility for Wayland"
