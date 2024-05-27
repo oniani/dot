@@ -133,7 +133,7 @@ require("nvim-treesitter.install").prefer_git = true
 
 -- }}}
 
--- Server Setup {{{
+-- Language server setup {{{
 
 local servers = {
     bashls = {},
@@ -232,7 +232,6 @@ cmp.setup {
         ["<TAB>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
         ["<S-TAB>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
         ["<CR>"] = cmp.mapping.confirm { select = true },
-        ["<C-c>"] = cmp.mapping.close(),
         ["<C-y>"] = cmp.mapping(
             cmp.mapping.confirm {
                 behavior = cmp.ConfirmBehavior.Insert,
@@ -240,6 +239,7 @@ cmp.setup {
             },
             { "i", "c" }
         ),
+        ["<C-c>"] = cmp.mapping.close(),
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-u>"] = cmp.mapping.scroll_docs(4),
     },
