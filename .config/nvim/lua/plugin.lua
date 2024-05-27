@@ -133,46 +133,7 @@ require("nvim-treesitter.install").prefer_git = true
 
 -- }}}
 
--- LSP {{{
-
-local on_attach = function(client, bufnr)
-    local m = function(keys, func, desc)
-        vim.keymap.set("n", keys, func, { buffer = bufnr, desc = "LSP: " .. desc })
-    end
-
-    m("F", vim.lsp.buf.signature_help, "[F]unction Signature")
-    m("H", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, "[H]ints")
-    m("T", vim.lsp.buf.signature_help, "[T]ype Definition")
-    m("ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-    m("dl", vim.diagnostic.setloclist, "[D]iagnostic [L]ist")
-    m("dn", vim.diagnostic.goto_next, "[D]iagnostic [N]ext")
-    m("dp", vim.diagnostic.goto_prev, "[D]iagnostic [P]revious")
-    m("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-    m("rn", vim.lsp.buf.rename, "[R]e[n]ame")
-
-    vim.api.nvim_buf_create_user_command(bufnr, "F", function()
-        if vim.lsp.buf.format then
-            vim.lsp.buf.format()
-        elseif vim.lsp.buf.formatting then
-            vim.lsp.buf.formatting()
-        end
-    end, { desc = "[F]ormat Current Buffer" })
-
-    vim.diagnostic.config {
-        float = { border = "single" },
-        virtual_text = false,
-    }
-
-    vim.lsp.handlers["textDocument/hover"] =
-        vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
-
-    vim.lsp.handlers["textDocument/signatureHelp"] =
-        vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
-
-    if client.name == "ruff_lsp" then
-        client.server_capabilities.hoverProvider = false
-    end
-end
+-- Server Setup {{{
 
 local servers = {
     bashls = {},
@@ -231,7 +192,6 @@ mason_lspconfig.setup_handlers {
     function(server_name)
         lspconfig[server_name].setup {
             capabilities = capabilities,
-            on_attach = on_attach,
             settings = servers[server_name].settings or {},
             init_options = {
                 documentFormatting = true,
