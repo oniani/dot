@@ -16,6 +16,9 @@ config() {
     printf "export ZDOTDIR=%s/.config/zsh\n" "$HOME" | sudo tee "/etc/zsh/zshenv"
 
     dir="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugin"
+    [ ! -d "$dir/powerlevel10k" ] &&
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
+        "$dir/powerlevel10k"
     [ ! -d "$dir/zsh-autosuggestions" ] &&
         git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git \
         "$dir/zsh-autosuggestions"

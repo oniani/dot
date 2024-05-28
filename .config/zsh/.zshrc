@@ -199,7 +199,10 @@ function palette() {
 eval "$(pyenv init -)"
 
 dir="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugin"
-. "$dir/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
 . "$dir/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+. "$dir/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+
+p10f="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
+. "$dir/powerlevel10k/powerlevel10k.zsh-theme" && [ ! -f "$p10f" ] || . "$p10f"
 
 # }}}
