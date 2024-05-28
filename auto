@@ -36,16 +36,24 @@ program() {
     done
 }
 
+nosudo() {
+    sudo touch "/etc/sudoers.d/$USER"
+    printf "%s ALL=(ALL:ALL) NOPASSWD: ALL\n" "$USER" | sudo tee "/etc/sudoers.d/$USER"
+
+    sudo touch /etc/sudoers.d/disable_admin_file_in_home
+    printf "Defaults !admin_flag\n" | sudo tee /etc/sudoers.d/disable_admin_file_in_home
+}
+
 help() {
     printf "usage: ./setup [option]\n\
     --config     Copy configuration files\n\
-    --emailsync  Activates email synchronization\n\
+    --nosudo     Configure sudo behavior\n\
     --program    Install all necessary programs\n"
 }
 
 case $1 in
     "--config") config;;
-    "--emailsync") emailsync;;
+    "--nosudo") nosudo;;
     "--program") program;;
     *) help;;
 esac
