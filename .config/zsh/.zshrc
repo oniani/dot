@@ -107,6 +107,14 @@ zle -N zle-line-init
 
 # }}}
 
+# Key Bindings {{{
+
+bindkey -s "^f" "nnn_autocd\n"
+bindkey -s "^p" "ipython\n"
+bindkey -s "^z" "fg\n"
+
+# }}}
+
 # Aliases {{{
 
 # Core commands
@@ -175,13 +183,14 @@ function colormap() {
     done
 }
 
-# }}}
-
-# Key Bindings {{{
-
-bindkey -s "^f" "nnn_autocd\n"
-bindkey -s "^p" "ipython\n"
-bindkey -s "^z" "fg\n"
+# Print the current palette
+function palette() {
+    local -a colors
+    for i in {000..16}; do
+        colors+=("%F{$i}hello: $i%f")
+    done
+    print -cP $colors
+}
 
 # }}}
 

@@ -8,7 +8,6 @@ config() {
     cp -R .config "$HOME"
     cp -R .local "$HOME"
 
-    mkdir -p "$HOME/.local/share/email/gmail"
     mkdir -p "$HOME/dl" "$HOME/doc" "$HOME/git" "$HOME/pic" "$HOME/vid" "$HOME/wip"
     mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/msmtp"
     mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
@@ -17,36 +16,13 @@ config() {
     printf "export ZDOTDIR=%s/.config/zsh\n" "$HOME" | sudo tee "/etc/zsh/zshenv"
 
     dir="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugin"
-    git clone --depth=1 --quiet https://github.com/romkatv/powerlevel10k.git \
-        "$dir/powerlevel10k" >/dev/null 2>&1 || exit 0
-    git clone --depth=1 --quiet https://github.com/zsh-users/zsh-autosuggestions.git \
-        "$dir/zsh-autosuggestions" >/dev/null 2>&1 || exit 0
-    git clone --depth=1 --quiet https://github.com/zsh-users/zsh-syntax-highlighting.git \
-        "$dir/zsh-syntax-highlighting" >/dev/null 2>&1 || exit 0
-}
+    p10k="$dir/powerlevel10k"
+    as="$dir/zsh-autosuggestions"
+    sh="$dir/zsh-syntax-highlighting"
 
-emailsync() {
-    pass=$(secret-tool lookup gmail pass)
-    [ -n "$pass" ] || (printf "Input email pass\n" && secret-tool store --label="pass" gmail pass)
-    fcron="$(mktemp)"
-    fcrontab -l > "$fcron"
-    if grep -q emailsync "$fcron"; then
-        printf "Removing automatic emailsync...\n"
-        sed -ibu /emailsync/d "$fcron"
-        rm -f "$fcron"bu
-    else
-        printf "Adding automatic emailsync every 2 minutes...\n"
-        printf "*/2 * * * * %s\n" "$HOME/.local/bin/emailsync" >> "$fcron"
-    fi && fcrontab "$fcron"
-    rm -f "$fcron"
-}
-
-nosudo() {
-    sudo touch "/etc/sudoers.d/$USER"
-    printf "%s ALL=(ALL:ALL) NOPASSWD: ALL\n" "$USER" | sudo tee "/etc/sudoers.d/$USER"
-
-    sudo touch /etc/sudoers.d/disable_admin_file_in_home
-    printf "Defaults !admin_flag\n" | sudo tee /etc/sudoers.d/disable_admin_file_in_home
+    [ ! -d "$p10k" ] && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$p10k"
+    [ ! -d "$as" ] && git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git "$as"
+    [ ! -d "$sh" ] && git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git "$sh"
 }
 
 program() {
@@ -63,7 +39,6 @@ program() {
 help() {
     printf "usage: ./setup [option]\n\
     --config     Copy configuration files\n\
-    --nosudo     Configure sudo behavior\n\
     --emailsync  Activates email synchronization\n\
     --program    Install all necessary programs\n"
 }
@@ -71,7 +46,6 @@ help() {
 case $1 in
     "--config") config;;
     "--emailsync") emailsync;;
-    "--nosudo") nosudo;;
     "--program") program;;
     *) help;;
 esac
