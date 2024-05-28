@@ -24,10 +24,8 @@ local packages = {
     "stevearc/oil.nvim",
 
     -- Git
-    "nvim-lua/plenary.nvim",
-    "NeogitOrg/neogit",
     "lewis6991/gitsigns.nvim",
-    "sindrets/diffview.nvim",
+    "tpope/vim-fugitive",
 
     -- Syntax highlighting and code navigation
     "nvim-treesitter/nvim-treesitter",
@@ -86,12 +84,6 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 -- }}}
 
 -- Git {{{
-
-local neogit = require "neogit"
-neogit.setup { integrations = { diffview = true, fzf_lua = true } }
-vim.api.nvim_create_user_command("G", neogit.open, { desc = "Open Neo[G]it" })
-
-vim.api.nvim_set_hl(0, "DiffviewFolderSign", { fg = "NvimLightBlue" })
 
 local gitsigns = require "gitsigns"
 gitsigns.setup {
