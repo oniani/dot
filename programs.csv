@@ -8,8 +8,6 @@ AUR,macchina,"A system information fetcher, with an (unhealthy) emphasis on perf
 AUR,nnn-nerd,"The fastest terminal file manager ever written (with icon support using a patched nerd font)."
 AUR,xdg-ninja,"A shell script which checks your $HOME for unwanted files and directories."
 AUR,zotero-beta-bin,"Zotero is a free, easy-to-use tool to help you collect, organize, cite, and share research."
-AUR,zsh-autosuggestions-git,"zsh-autosuggestions-git"
-AUR,zsh-fast-syntax-highlighting,"Optimized and extended zsh-syntax-highlighting"
 PACMAN,atool,"A script for managing file archives of various types"
 PACMAN,blueman,"GTK+ Bluetooth Manager"
 PACMAN,bluez,"Daemons for the bluetooth protocol stack"

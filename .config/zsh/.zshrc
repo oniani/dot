@@ -185,11 +185,13 @@ bindkey -s "^z" "fg\n"
 
 # }}}
 
-# Sourcing {{{
+# Eval and Sourcing {{{
 
 eval "$(pyenv init -)"
 
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+dir="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugin"
+source "$dir/powerlevel10k/powerlevel10k.zsh-theme"
+source "$dir/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+source "$dir/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 
 # }}}

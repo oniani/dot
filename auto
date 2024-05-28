@@ -15,6 +15,14 @@ config() {
 
     sudo touch "/etc/zsh/zshenv"
     printf "export ZDOTDIR=%s/.config/zsh\n" "$HOME" | sudo tee "/etc/zsh/zshenv"
+
+    dir="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugin"
+    git clone --depth=1 --quiet https://github.com/romkatv/powerlevel10k.git \
+        "$dir/powerlevel10k" >/dev/null 2>&1 || exit 0
+    git clone --depth=1 --quiet https://github.com/zsh-users/zsh-autosuggestions.git \
+        "$dir/zsh-autosuggestions" >/dev/null 2>&1 || exit 0
+    git clone --depth=1 --quiet https://github.com/zsh-users/zsh-syntax-highlighting.git \
+        "$dir/zsh-syntax-highlighting" >/dev/null 2>&1 || exit 0
 }
 
 emailsync() {
