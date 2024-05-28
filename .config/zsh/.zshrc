@@ -200,6 +200,6 @@ eval "$(pyenv init -)"
 
 dir="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugin"
 . "$dir/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
-. "$dir/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+. "$dir/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
 # }}}
