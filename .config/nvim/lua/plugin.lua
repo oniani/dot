@@ -76,13 +76,9 @@ vim.g.fzf_action = { ["ctrl-s"] = "split", ["ctrl-v"] = "vsplit" }
 -- File management {{{
 
 require "nvim-tree".setup {}
-vim.api.nvim_set_hl(0, "NvimTreeExecFile", { fg = "NvimLightGreen" })
-vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "NvimLightBlue" })
-vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { fg = "NvimLightBlue" })
 vim.keymap.set("n", "<C-n>", function() require "nvim-tree.api".tree.toggle({ focus = false }) end)
 
 require("oil").setup { view_options = { show_hidden = true } }
-vim.api.nvim_set_hl(0, "OilDir", { fg = "NvimLightBlue" })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- }}}
@@ -279,16 +275,16 @@ vim.api.nvim_set_hl(0, "DiagnosticSignInfo", { bg = "none", fg = "#658594" })
 vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { bg = "none", fg = "#ff9e3b" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#141414" })
 vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none", fg = "#141414" })
-vim.api.nvim_set_hl(0, "Folded", { bg = "none", fg = "#957FB8" })
+vim.api.nvim_set_hl(0, "Folded", { bg = "none", fg = "#727169" })
 vim.api.nvim_set_hl(0, "GitSignsAdd", { bg = "none", fg = "#76946a" })
 vim.api.nvim_set_hl(0, "GitSignsChange", { bg = "none", fg = "#dca561" })
 vim.api.nvim_set_hl(0, "GitSignsChangeDelete", { bg = "none", fg = "#dca561" })
 vim.api.nvim_set_hl(0, "GitSignsDelete", { bg = "none", fg= "#c34043" })
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#727169" })
-vim.api.nvim_set_hl(0, "Normal", { bg = "black" })
+vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "PMenu", { bg = "none", fg = "white" })
-vim.api.nvim_set_hl(0, "PMenuSBar", { bg = "#ff9e3b", fg = "white" })
+vim.api.nvim_set_hl(0, "PMenu", { bg = "none", fg = "#ffffff" })
+vim.api.nvim_set_hl(0, "PMenuSBar", { bg = "#ff9e3b", fg = "#ffffff" })
 vim.api.nvim_set_hl(0, "PMenuSel", { bg = "none", fg = "#8ba8f0" })
 vim.api.nvim_set_hl(0, "PMenuThumb", { bg = "#957fb8", fg = "#141414" })
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
