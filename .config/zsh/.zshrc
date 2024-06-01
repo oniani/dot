@@ -4,40 +4,34 @@
 
 # Z Shell Settings {{{
 
-# Set the prompt
+# Prompt
 PROMPT='%F{white}%n@%m%F{yellow}:%F{blue}%1~%F{red} >%f '
 
-# Load and enable colors
+# Colors
 autoload -Uz colors && colors
 
-# Load and enable completion
+# Completion
 autoload -Uz compinit && compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump_$ZSH_VERSION"
-
-# Completion settings
+zmodload zsh/complist
 zstyle ":completion:*" accept-exact-dirs true
 zstyle ":completion:*" insert-tab false
 zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
 zstyle ":completion:*" list-dirs-first true
 zstyle ":completion:*" menu select
-
-# Case/hyphen-insensitive autocompletion à la Oh My Zsh
-zstyle ":completion:*" matcher-list "m:{a-zA-Z-_}={A-Za-z_-}" "r:|=*" "l:|=* r:|=*"
-
-# Complete aliases
 setopt COMPLETE_ALIASES
-
-# Complete dotfiles
 setopt GLOBDOTS
 
-# History settings
+# History
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 HISTSIZE=10000
 SAVEHIST=10000
-
-# History options
 setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt INC_APPEND_HISTORY
+
+# Misc
+setopt AUTOCD
+setopt INTERACTIVE_COMMENTS
 
 # }}}
 
@@ -45,6 +39,18 @@ setopt INC_APPEND_HISTORY
 
 # Enable Vi mode on the commmand line
 bindkey -v
+
+# No delay entering normal mode
+# Confer https://coderwall.com/p/h63etq
+# Confer https://github.com/pda/dotzsh/blob/master/keyboard.zsh#L10
+#
+# The time the shell waits, in hundredths of seconds, for another key
+# to be pressed when reading bound multi-character sequences.
+#
+# Set to shortest possible delay is 1/100 second (10ms).
+# This allows escape sequences like cursor/arrow keys to work,
+# while eliminating the delay exiting Vi insert mode.
+KEYTIMEOUT=1
 
 # Add missing Vim hotkeys
 # Confer http://zshwiki.org/home/zle/vi-mode
@@ -59,20 +65,7 @@ bindkey "^?" backward-delete-char
 bindkey -M vicmd "^h" history-incremental-search-backward
 bindkey -M viins "^h" history-incremental-search-backward
 
-# No delay entering normal mode
-# Confer https://coderwall.com/p/h63etq
-# Confer https://github.com/pda/dotzsh/blob/master/keyboard.zsh#L10
-#
-# The time the shell waits, in hundredths of seconds, for another key
-# to be pressed when reading bound multi-character sequences.
-#
-# Set to shortest possible delay is 1/100 second (10ms).
-# This allows escape sequences like cursor/arrow keys to work,
-# while eliminating the delay exiting Vi insert mode.
-KEYTIMEOUT=1
-
 # Use Vi keys in tab complete menu
-zmodload zsh/complist
 bindkey -M menuselect "h" vi-backward-char
 bindkey -M menuselect "j" vi-down-line-or-history
 bindkey -M menuselect "k" vi-up-line-or-history
@@ -198,11 +191,11 @@ function palette() {
 
 eval "$(pyenv init -)"
 
-dir="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugin"
-. "$dir/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
-. "$dir/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+dir_cfg="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugin"
+dir_p10k="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
 
-p10f="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
-. "$dir/powerlevel10k/powerlevel10k.zsh-theme" && [ ! -f "$p10f" ] || . "$p10f"
+. "$dir_cfg/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+. "$dir_cfg/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+. "$dir_cfg/powerlevel10k/powerlevel10k.zsh-theme" && [ ! -f "$dir_p10k" ] || . "$dir_p10k"
 
 # }}}
