@@ -128,6 +128,7 @@ alias xa="latexmk -interaction=nonstopmode -pdf -pvc -outdir=target"
 # Interactive
 alias e="nvim"
 alias f="thunar"
+alias g="nvim +Git +only"
 alias j="python -m jupyterlab"
 alias o="xdg-open"
 
