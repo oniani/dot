@@ -15,7 +15,6 @@ vim.g.python3_host_prog = "/home/oniani/.local/share/pyenv/shims/python"
 vim.loader.enable()
 
 require "autocmd"
-require "color"
 require "keymap"
 require "option"
 require "plugin"

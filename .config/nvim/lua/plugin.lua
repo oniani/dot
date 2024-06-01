@@ -20,15 +20,14 @@ local packages = {
 
     -- File management
     "nvim-tree/nvim-tree.lua",
-    "nvim-tree/nvim-web-devicons",
     "stevearc/oil.nvim",
+
+    -- Syntax highlighting and code navigation
+    "nvim-treesitter/nvim-treesitter",
 
     -- Git
     "lewis6991/gitsigns.nvim",
     "tpope/vim-fugitive",
-
-    -- Syntax highlighting and code navigation
-    "nvim-treesitter/nvim-treesitter",
 
     -- LSP
     "j-hui/fidget.nvim",
@@ -43,6 +42,11 @@ local packages = {
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-path",
     "onsails/lspkind-nvim",
+
+    -- Visuals
+    "nvim-lualine/lualine.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "rebelot/kanagawa.nvim",
 }
 
 local paq = require "paq"
@@ -83,22 +87,6 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- }}}
 
--- Git {{{
-
-local gitsigns = require "gitsigns"
-gitsigns.setup {
-    current_line_blame = true,
-    signs = {
-        add = { text = "+" },
-        change = { text = "~" },
-        changedelete = { text = "~" },
-        delete = { text = "_" },
-        topdelete = { text = "‾" },
-    },
-}
-
--- }}}
-
 -- Syntax highlighting and code navigation {{{
 
 require("nvim-treesitter.configs").setup {
@@ -122,6 +110,22 @@ require("nvim-treesitter.configs").setup {
     indent = { enable = true },
 }
 require("nvim-treesitter.install").prefer_git = true
+
+-- }}}
+
+-- Git {{{
+
+local gitsigns = require "gitsigns"
+gitsigns.setup {
+    current_line_blame = true,
+    signs = {
+        add = { text = "+" },
+        change = { text = "~" },
+        changedelete = { text = "~" },
+        delete = { text = "_" },
+        topdelete = { text = "‾" },
+    },
+}
 
 -- }}}
 
@@ -257,5 +261,14 @@ cmp.setup.cmdline(":", {
 })
 
 -- }}}
+
+-- }}}
+
+-- Colorscheme {{{
+
+require("lualine").setup { }
+
+require("kanagawa").setup { transparent = true }
+vim.cmd.colorscheme "kanagawa"
 
 -- }}}
