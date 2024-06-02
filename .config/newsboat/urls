@@ -2,12 +2,13 @@
 # by David Oniani <onianidavid@gmail.com>
 # MIT License
 
-https://awesomekling.github.io/feed.xml      "~ Andreas Kling"
+https://awesomekling.github.io/feed.xml      "~ Andreas Kling (awesomekling)"
 https://gamozolabs.github.io/feed.xml        "~ Brandon Falk (gamozo)"
+https://geohot.github.io/blog/feed.xml       "~ George Hotz (geohot)"
 https://github.com/dabeaz/blog/releases.atom "~ David Beazley (dabeaz)"
-https://karpathy.github.io/feed.xml          "~ Andrej Karpathy"
+https://karpathy.github.io/feed.xml          "~ Andrej Karpathy (karpathy)"
 https://matklad.github.io/feed.xml           "~ Alex Kladov (matklad)"
-https://oniani.ai/rss.xml                    "~ David Oniani"
+https://oniani.ai/rss.xml                    "~ David Oniani (oniani,stylepoint)"
 https://api.quantamagazine.org/feed          "~ Quanta Magazine"
 https://news.ycombinator.com/rss             "~ Hacker News"
 https://www.reddit.com/r/cpp.rss             "~ /r/cpp"
