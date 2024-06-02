@@ -104,6 +104,7 @@ zle -N zle-line-init
 
 bindkey -s "^f" "nnn_autocd\n"
 bindkey -s "^p" "ipython\n"
+bindkey -s "^r" "newsboat --quiet\n"
 bindkey -s "^z" "fg\n"
 
 # }}}
