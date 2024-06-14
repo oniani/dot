@@ -2,6 +2,27 @@
 # by David Oniani <onianidavid@gmail.com>
 # MIT License
 
+# Eval and Sourcing {{{
+
+eval "$(pyenv init -)"
+
+typeset -A plugins=(
+    ["powerlevel10k"]="https://github.com/romkatv/powerlevel10k.git"
+    ["zsh-autosuggestions"]="https://github.com/zsh-users/zsh-autosuggestions.git"
+    ["zsh-syntax-highlighting"]="https://github.com/zsh-users/zsh-syntax-highlighting.git"
+)
+
+dir_cfg="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin"
+for plugin in ${(k)plugins}; do
+    [ ! -d "$dir_cfg/$plugin" ] && git clone --depth=1 "$plugins[$plugin]" "$dir_cfg/$plugin"
+done
+
+. "$dir_cfg/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+. "$dir_cfg/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+. "$dir_cfg/powerlevel10k/powerlevel10k.zsh-theme" && [ ! -f "$dir_p10k" ] || . "$dir_p10k"
+
+# }}}
+
 # Z Shell Settings {{{
 
 # Prompt
@@ -17,6 +38,7 @@ zstyle ":completion:*" accept-exact-dirs true
 zstyle ":completion:*" insert-tab false
 zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
 zstyle ":completion:*" list-dirs-first true
+zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
 zstyle ":completion:*" menu select
 setopt COMPLETE_ALIASES
 setopt GLOBDOTS
@@ -128,10 +150,8 @@ alias xa="latexmk -interaction=nonstopmode -pdf -pvc -outdir=target"
 
 # Interactive
 alias e="nvim"
-alias f="thunar"
 alias g="nvim +Git +only"
 alias j="python -m jupyterlab"
-alias o="xdg-open"
 
 # Safer commands
 alias cp="cp -i"
@@ -186,18 +206,5 @@ function palette() {
     done
     print -cP $colors
 }
-
-# }}}
-
-# Eval and Sourcing {{{
-
-eval "$(pyenv init -)"
-
-dir_cfg="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugin"
-dir_p10k="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
-
-. "$dir_cfg/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
-. "$dir_cfg/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
-. "$dir_cfg/powerlevel10k/powerlevel10k.zsh-theme" && [ ! -f "$dir_p10k" ] || . "$dir_p10k"
 
 # }}}
