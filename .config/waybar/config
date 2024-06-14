@@ -13,7 +13,7 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
-        "format-icons": { "1": "", "2": "", "3": "", "urgent": "", "default": "" },
+        "format-icons": { "1": "", "2": "", "urgent": "", "default": "" },
         "persistent-workspaces": {
             "1": [],
             "2": [],
