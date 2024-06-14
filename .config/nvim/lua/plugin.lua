@@ -78,7 +78,7 @@ vim.g.fzf_action = { ["ctrl-s"] = "split", ["ctrl-v"] = "vsplit" }
 require "nvim-tree".setup {}
 vim.keymap.set("n", "<C-n>", function() require "nvim-tree.api".tree.toggle({ focus = false }) end)
 
-require("oil").setup { view_options = { show_hidden = true } }
+require("oil").setup { skip_confirm_for_simple_edits = true, view_options = { show_hidden = true } }
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- }}}
@@ -122,6 +122,11 @@ gitsigns.setup {
         topdelete = { text = "‾" },
     },
 }
+
+vim.api.nvim_set_hl(0, "GitSignsAdd", { bg = "none", fg = "#76946a" })
+vim.api.nvim_set_hl(0, "GitSignsChange", { bg = "none", fg = "#dca561" })
+vim.api.nvim_set_hl(0, "GitSignsChangeDelete", { bg = "none", fg = "#dca561" })
+vim.api.nvim_set_hl(0, "GitSignsDelete", { bg = "none", fg= "#c34043" })
 
 -- }}}
 
@@ -276,10 +281,6 @@ vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { bg = "none", fg = "#ff9e3b" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#141414" })
 vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none", fg = "#141414" })
 vim.api.nvim_set_hl(0, "Folded", { bg = "none", fg = "#727169" })
-vim.api.nvim_set_hl(0, "GitSignsAdd", { bg = "none", fg = "#76946a" })
-vim.api.nvim_set_hl(0, "GitSignsChange", { bg = "none", fg = "#dca561" })
-vim.api.nvim_set_hl(0, "GitSignsChangeDelete", { bg = "none", fg = "#dca561" })
-vim.api.nvim_set_hl(0, "GitSignsDelete", { bg = "none", fg= "#c34043" })
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#727169" })
 vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
