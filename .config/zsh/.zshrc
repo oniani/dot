@@ -12,6 +12,7 @@ typeset -A plugins=(
     ["zsh-syntax-highlighting"]="https://github.com/zsh-users/zsh-syntax-highlighting.git"
 )
 
+dir_p10k="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
 dir_cfg="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin"
 for plugin in ${(k)plugins}; do
     [ ! -d "$dir_cfg/$plugin" ] && git clone --depth=1 "$plugins[$plugin]" "$dir_cfg/$plugin"
