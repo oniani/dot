@@ -2,8 +2,6 @@
 -- by David Oniani <onianidavid@gmail.com>
 -- MIT License
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { desc = "Map space to no-op", silent = true })
 
 vim.keymap.set("n", "<Leader><Leader>", "<C-^>", { desc = "Toggle between buffers" })
