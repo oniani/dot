@@ -9,7 +9,7 @@ cmd='kitty +kitten icat --clear \
                         --stdin=no \
                         --transfer-mode=memory {}'
 
-wall=$(fd . "$HOME/git/wall/wall" | fzf --preview="$cmd")
+wall=$(fd . --color never "$HOME/git/wall/wall" | fzf --preview="$cmd")
 
 [ -z "$wall" ] && exit 0
 

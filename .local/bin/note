@@ -5,7 +5,7 @@
 # MIT License
 
 cmd() {
-    fd . "$1" --hidden --type f --exclude .git --exclude _index.md
+    fd . --color never --exclude .git --exclude _index.md --hidden --type f "$1"
 }
 
 prompt() {
