@@ -27,6 +27,7 @@ vim.opt.colorcolumn = "101"
 vim.opt.fillchars = { eob = " ", fold = " " }
 vim.opt.foldmethod = "marker"
 vim.opt.inccommand = "split"
+vim.opt.laststatus = 3
 vim.opt.lazyredraw = true
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
