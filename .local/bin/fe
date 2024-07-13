@@ -4,7 +4,7 @@
 # by David Oniani <onianidavid@gmail.com>
 # MIT License
 
-cmd="bat --color=always --theme=1337 {}"
+cmd="bat --color=always --theme=base16-256 {}"
 
 [ -z "$1" ] && fzf --preview "$cmd" --prompt "File: " | xargs -r -I {} "$EDITOR" {} && exit 0
 
