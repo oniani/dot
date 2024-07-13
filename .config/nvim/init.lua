@@ -34,7 +34,7 @@ vim.loader.enable()
 -- Set up lazy.nvim
 require("lazy").setup({
     spec = {
-        { import = "plugins" },
+        { import = "plugin" },
     },
     change_detection = {
         notify = false,

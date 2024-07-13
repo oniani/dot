@@ -2,10 +2,6 @@
 -- by David Oniani <onianidavid@gmail.com>
 -- MIT License
 
--- Search
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-
 -- Backup
 vim.opt.backup = false
 vim.opt.swapfile = false
@@ -17,6 +13,10 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.tabstop = 4
+
+-- Search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Splits
 vim.opt.splitbelow = true
