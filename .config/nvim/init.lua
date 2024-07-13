@@ -28,6 +28,9 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Set Python3 provider
+vim.g.python3_host_prog = vim.fn.expand("$XDG_DATA_HOME") .. "/pyenv/shims/python"
+
 -- Enable the experimental Lua module loader
 vim.loader.enable()
 

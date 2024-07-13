@@ -8,6 +8,6 @@ cmd="bat --color=always --theme=base16-256 {}"
 
 [ -z "$1" ] && fzf --preview "$cmd" --prompt "File: " | xargs -r -I {} "$EDITOR" {} && exit 0
 
-fd . --unrestricted --type file "$1" |
+fd . --color never --type file --unrestricted "$1" |
     fzf --preview "$cmd" --prompt "File: " |
     xargs -r "$EDITOR" && exit 0
