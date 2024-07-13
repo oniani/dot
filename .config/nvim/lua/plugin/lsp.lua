@@ -78,5 +78,66 @@ return {
                 }
             end,
         }
+
+        require("lspkind").init {}
+
+        local cmp = require "cmp"
+
+        local border = {
+            { "╭", "FoldColumn" },
+            { "─", "FoldColumn" },
+            { "╮", "FoldColumn" },
+            { "│", "FoldColumn" },
+            { "╯", "FoldColumn" },
+            { "─", "FoldColumn" },
+            { "╰", "FoldColumn" },
+            { "│", "FoldColumn" },
+        }
+
+        cmp.setup {
+            experimental = { ghost_text = true },
+            sources = {
+                { name = "nvim_lsp" },
+                { name = "luasnip" },
+                { name = "buffer" },
+                { name = "path" },
+            },
+            mapping = cmp.mapping.preset.insert {
+                ["<C-j>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+                ["<C-k>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+                ["<TAB>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+                ["<S-TAB>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+                ["<CR>"] = cmp.mapping.confirm { select = true },
+                ["<C-y>"] = cmp.mapping(
+                    cmp.mapping.confirm {
+                        behavior = cmp.ConfirmBehavior.Insert,
+                        select = true,
+                    },
+                    { "i", "c" }
+                ),
+                ["<C-c>"] = cmp.mapping.close(),
+                ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+                ["<C-u>"] = cmp.mapping.scroll_docs(4),
+            },
+            snippet = {
+                expand = function(args)
+                    vim.snippet.expand(args.body)
+                end,
+            },
+            window = {
+                completion = { border = border, scrollbar = "║" },
+                documentation = { border = border, scrollbar = "║" },
+            },
+        }
+
+        cmp.setup.cmdline({ "/", "?" }, {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = { { name = "buffer" } },
+        })
+
+        cmp.setup.cmdline(":", {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
+        })
     end
 }
