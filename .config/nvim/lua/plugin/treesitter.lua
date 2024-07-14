@@ -3,7 +3,7 @@ return {
     -- Last release is way too old and doesn't work on Windows
     version = false,
     build = ":TSUpdate",
-    event = { "LazyFile", "VeryLazy" },
+    event = "VeryLazy",
     -- Load treesitter early when opening a file from the cmdline
     lazy = vim.fn.argc(-1) == 0,
     init = function(plugin)
