@@ -52,8 +52,20 @@ return {
         },
     },
     config = function(_, opts)
+        local dedup = function(list)
+          local ret = {}
+          local seen = {}
+          for _, v in ipairs(list) do
+            if not seen[v] then
+              table.insert(ret, v)
+              seen[v] = true
+            end
+          end
+          return ret
+        end
+
         if type(opts.ensure_installed) == "table" then
-            opts.ensure_installed = LazyVim.dedup(opts.ensure_installed)
+            opts.ensure_installed = dedup(opts.ensure_installed)
         end
         require("nvim-treesitter.configs").setup(opts)
     end,
