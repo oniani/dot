@@ -13,12 +13,12 @@ return {
         -- Luckily, the only things that those plugins need are the custom queries, which we make
         -- available during startup.
         require("lazy.core.loader").add_to_rtp(plugin)
-        require("nvim-treesitter.query_predicates")
+        require "nvim-treesitter.query_predicates"
     end,
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
     keys = {
         { "<c-space>", desc = "Increment Selection" },
-        { "<bs>",      desc = "Decrement Selection", mode = "x" },
+        { "<bs>", desc = "Decrement Selection", mode = "x" },
     },
     opts_extend = { "ensure_installed" },
     opts = {
@@ -53,15 +53,15 @@ return {
     },
     config = function(_, opts)
         local dedup = function(list)
-          local ret = {}
-          local seen = {}
-          for _, v in ipairs(list) do
-            if not seen[v] then
-              table.insert(ret, v)
-              seen[v] = true
+            local ret = {}
+            local seen = {}
+            for _, v in ipairs(list) do
+                if not seen[v] then
+                    table.insert(ret, v)
+                    seen[v] = true
+                end
             end
-          end
-          return ret
+            return ret
         end
 
         if type(opts.ensure_installed) == "table" then

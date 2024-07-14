@@ -1,5 +1,5 @@
 -- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     local lazyrepo = "https://github.com/folke/lazy.nvim.git"
     local out = vim.fn.system {
@@ -29,13 +29,13 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Set Python3 provider
-vim.g.python3_host_prog = vim.fn.expand("$XDG_DATA_HOME") .. "/pyenv/shims/python"
+vim.g.python3_host_prog = vim.fn.expand "$XDG_DATA_HOME" .. "/pyenv/shims/python"
 
 -- Enable the experimental Lua module loader
 vim.loader.enable()
 
 -- Set up lazy.nvim
-require("lazy").setup({
+require("lazy").setup {
     spec = {
         { import = "plugin" },
     },
@@ -55,6 +55,6 @@ require("lazy").setup({
                 "tutor",
                 "zipPlugin",
             },
-        }
-    }
-})
+        },
+    },
+}
