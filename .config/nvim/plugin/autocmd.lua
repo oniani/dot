@@ -28,9 +28,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         lsp_keymap_set("K", vim.lsp.buf.hover, "Hover Documentation")
 
-        vim.api.nvim_create_user_command("F", function() vim.lsp.buf.format() end,
-            { desc = "LSP: [F]ormat" })
-
         local border_opt = { border = "single" }
         vim.diagnostic.config { float = border_opt, virtual_text = false }
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, border_opt)
