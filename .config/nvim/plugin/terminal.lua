@@ -1,3 +1,5 @@
+-- NOTE: Cursor shape may not match that of `$TERM`
+-- See: https://github.com/neovim/neovim/issues/3681
 vim.api.nvim_create_autocmd("TermOpen", {
     desc = "Custom local settings for terminal buffers",
     group = vim.api.nvim_create_augroup("custom-term-open", {}),
@@ -5,6 +7,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
         vim.bo.filetype = "terminal"
         vim.cmd.startinsert()
         vim.opt_local.number = false
+        vim.opt_local.signcolumn = "no"
     end,
 })
 
