@@ -43,7 +43,6 @@ export NNN_FCOLORS="000004300000000000000000"
 export NNN_FIFO="/tmp/nnn.fifo"
 export NNN_OPENER="$HOME/.local/bin/nuke"
 export NNN_OPTS="AEHder"
-export NNN_PLUG=";:preview-tui;"
 export NNN_TRASH=1
 
 # Utilities
