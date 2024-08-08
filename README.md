@@ -10,18 +10,18 @@ Specification][xdg].
 
 Core Tools and Utilities:
 
-| Type           | Program                                                                                                               |
-| -------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Browser        | [Firefox][firefox]                                                                                                    |
-| Editor         | [Neovim][neovim]                                                                                                      |
-| File Manager   | [nnn][nnn]                                                                                                            |
-| Font           | [JetBrains Mono][jetbrainsmono]                                                                                       |
-| Image Viewer   | [nsxiv][nsxiv]                                                                                                        |
-| Media Player   | [mpv][mpv]                                                                                                            |
-| PDF Viewer     | [zathura][zathura]                                                                                                    |
-| Shell          | [zsh][zsh]                                                                                                            |
-| Terminal       | [kitty][kitty]                                                                                                        |
-| Window Manager | [Hyprland][hyprland]                                                                                                  |
+| Type           | Program                         |
+| -------------- | ------------------------------- |
+| Browser        | [Firefox][firefox]              |
+| Editor         | [Neovim][neovim]                |
+| File Manager   | [nnn][nnn]                      |
+| Font           | [JetBrains Mono][jetbrainsmono] |
+| Image Viewer   | [nsxiv][nsxiv]                  |
+| Media Player   | [mpv][mpv]                      |
+| PDF Viewer     | [zathura][zathura]              |
+| Shell          | [zsh][zsh]                      |
+| Terminal       | [kitty][kitty]                  |
+| Window Manager | [Hyprland][hyprland]            |
 
 Other Tools and Utilities:
 
