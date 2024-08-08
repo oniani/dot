@@ -1,5 +1,7 @@
 {
-    "margin": 32,
+    "margin-left": 32,
+    "margin-right": 32,
+    "margin-top": 32,
 
     "modules-left": ["custom/logo", "hyprland/workspaces", "tray"],
     "modules-center": ["hyprland/window"],
