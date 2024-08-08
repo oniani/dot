@@ -5,9 +5,9 @@
 vim.api.nvim_create_autocmd("LspAttach", {
     desc = "LSP configuration on attach",
     group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
-    callback = function(ev)
+    callback = function(event)
         local lsp_keymap_set = function(keys, func, desc)
-            vim.keymap.set("n", keys, func, { buffer = ev.buf, desc = "LSP: " .. desc })
+            vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
         end
 
         lsp_keymap_set("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
@@ -34,25 +34,25 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.lsp.handlers["textDocument/signatureHelp"] =
             vim.lsp.with(vim.lsp.handlers.signature_help, border_opt)
 
-        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client.server_capabilities.documentHighlightProvider then
             local hi_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
             vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-                buffer = ev.buf,
+                buffer = event.buf,
                 callback = vim.lsp.buf.document_highlight,
                 group = hi_augroup,
             })
 
             vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-                buffer = ev.buf,
+                buffer = event.buf,
                 callback = vim.lsp.buf.clear_references,
                 group = hi_augroup,
             })
 
             vim.api.nvim_create_autocmd("LspDetach", {
-                callback = function(ev2)
+                callback = function(event2)
                     vim.lsp.buf.clear_references()
-                    vim.api.nvim_clear_autocmds { group = "lsp-highlight", buffer = ev2.buf }
+                    vim.api.nvim_clear_autocmds { group = "lsp-highlight", buffer = event2.buf }
                 end,
                 group = vim.api.nvim_create_augroup("lsp-detach", { clear = true }),
             })
