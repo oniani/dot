@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         lsp_keymap_set("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
         lsp_keymap_set("gr", vim.lsp.buf.references, "[G]oto [R]eferences")
 
-        lsp_keymap_set("dl", vim.diagnostic.setloclist, "[D]iagnostic [L]ist")
+        lsp_keymap_set("dl", vim.diagnostic.setqflist, "[D]iagnostic [L]ist")
         lsp_keymap_set("dn", vim.diagnostic.goto_next, "[D]iagnostic [N]ext")
         lsp_keymap_set("dp", vim.diagnostic.goto_prev, "[D]iagnostic [P]revious")
 
