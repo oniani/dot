@@ -27,6 +27,7 @@ vim.opt.rtp:prepend(lazypath)
 -- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true, desc = "Map space to no-op" })
 
 -- Set Python3 provider
 vim.g.python3_host_prog = vim.fn.expand "$XDG_DATA_HOME" .. "/pyenv/shims/python"
