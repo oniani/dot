@@ -17,7 +17,7 @@ return {
         },
         formatters = {
             prettier = { prepend_args = { "--print-width", "100" } },
-            ruff_format = { { "ruff_format", "100" } },
+            ruff_format = { append_args = { "--line-length", "100" } },
             shfmt = { prepend_args = { "--indent", "4" } },
             stylua = {
                 prepend_args = {
