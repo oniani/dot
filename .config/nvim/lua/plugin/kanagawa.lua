@@ -22,6 +22,9 @@ return {
         vim.api.nvim_set_hl(0, "PMenuSel", { bg = "none", fg = "#8ba8f0" })
         vim.api.nvim_set_hl(0, "PMenuThumb", { bg = "#957fb8", fg = "#141414" })
         vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+        vim.api.nvim_set_hl(0, "Tabline", { bg = "none" })
+        vim.api.nvim_set_hl(0, "TablineFill", { bg = "none" })
+        vim.api.nvim_set_hl(0, "TablineSel", { bg = "#8ba8f0", fg = "#000000" })
         vim.api.nvim_set_hl(0, "WildMenu", { bg = "none", fg = "#141414" })
     end,
 }

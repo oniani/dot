@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
 vim.keymap.set("n", "T", function()
     vim.wo.winfixheight = true
     vim.cmd.new()
-    vim.api.nvim_win_set_height(0, 11)
+    vim.api.nvim_win_set_height(0, 10)
     vim.cmd.term()
 end)
 
