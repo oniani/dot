@@ -1,6 +1,6 @@
 # `dot`
 
-Configuration files and automation wizard for Arch Linux meta distribution
+Configuration files and automation wizard for \*nix meta distribution.
 
 ## Setup
 
