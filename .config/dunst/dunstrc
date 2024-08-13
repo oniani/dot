@@ -5,7 +5,7 @@
 [global]
 alignment = center
 corner_radius = 16
-font = Liga ComicMono Nerd Font 16
+font = JetBrains Mono 16
 frame_color = "#8ba8f0"
 frame_width = 2
 height = 512
