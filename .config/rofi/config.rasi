@@ -63,7 +63,7 @@ element-text {
 
 element-icon {
     background-color: inherit;
-    size: 32px;
+    size: 48px;
 }
 
 scrollbar {
