@@ -43,12 +43,11 @@ $ ./auto
 .cache     # User cache
 .config    # User configs
 .local     # User data and programs
-dl         # Downloads
-doc        # Documents
+Desktop    # Desktop
+Documents  # Documents
+Downloads  # Downloads
 git        # Git repos
-pic        # Pictures
-vid        # Videos
-wip        # Work in Progress Files
+wip        # Work in progress
 ```
 
 ## License
