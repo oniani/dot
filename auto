@@ -8,8 +8,7 @@ config() {
     cp -R .config "$HOME"
     cp -R .local "$HOME"
 
-    mkdir -p "$HOME/dl" "$HOME/doc" "$HOME/git" "$HOME/pic" "$HOME/vid" "$HOME/wip"
-    mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/msmtp"
+    mkdir -p "$HOME/git" "$HOME/wip"
     mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 
     sudo touch "/etc/zsh/zshenv"
@@ -39,7 +38,7 @@ help() {
     printf "usage: ./setup [option]\n\
     --config     Copy configuration files\n\
     --nosudo     Configure sudo behavior\n\
-    --program    Install all necessary programs\n"
+    --program    Install all programs\n"
 }
 
 case $1 in
