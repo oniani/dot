@@ -15,29 +15,25 @@ mkdir -p "$HOME/git" "$HOME/wip" "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 cp -R .config .local "$HOME"
 ```
 
-Install packages on Arch Linux:
+> [!IMPORTANT]
+> Install packages on Arch Linux
+>
+> ```console
+> # Arch Official Repositories
+> grep ,PACMAN programs.csv | cut -d',' -f1 | xargs sudo pacman -S --noconfirm
+>
+> # Arch User Repository
+> sudo pacman -S --needed base-devel
+> git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && rm -rf paru
+> grep ,AUR programs.csv | cut -d',' -f1 | xargs paru -S
+> ```
 
-```console
-# Arch Official Repositories
-grep ,PACMAN programs.csv | cut -d',' -f1 | xargs sudo pacman -S --noconfirm
-
-# Arch User Repository
-sudo pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && rm -rf paru
-grep ,AUR programs.csv | cut -d',' -f1 | xargs paru -S
-```
-
-Install packages on macOS:
-
-```console
-# Arch Official Repositories
-grep ,PACMAN programs.csv | cut -d',' -f1 | xargs sudo pacman -S --noconfirm
-
-# Arch User Repository
-sudo pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && rm -rf paru
-grep ,AUR programs.csv | cut -d',' -f1 | xargs paru -S
-```
+> [!IMPORTANT]
+> Install packages on macOS
+>
+> ```console
+> TODO
+> ```
 
 > [!TIP]
 > It is possible to set a default location for `.zshenv`.
