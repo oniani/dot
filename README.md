@@ -1,6 +1,6 @@
 # `dot`
 
-Configuration files and automation wizard for \*nix meta distribution.
+Configuration files and setup instructions for Linux & macOS meta distribution.
 
 All programs are chosen with simplicity in mind. Cross-platform programs that follow the
 [UNIX philosophy][unix] are preferred. The setup is compliant with the
