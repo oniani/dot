@@ -8,11 +8,11 @@ All programs are chosen with simplicity in mind. Cross-platform programs that fo
 
 ## Setup
 
-Create directories and copy over the contents:
+Copy over the contents and create directories:
 
 ```console
-mkdir -p "$HOME/git" "$HOME/wip" "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 cp -R .config .local "$HOME"
+mkdir -p "$HOME/git" "$HOME/wip" "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 ```
 
 > [!IMPORTANT]
