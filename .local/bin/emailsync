@@ -14,4 +14,4 @@ logfile="${XDG_CACHE_HOME:-$HOME/.cache}/emailsync.log"
 res=$(notmuch new)
 msg="📬 $res"
 printf "%s" "$res" | grep -q "No new mail." || notify-send "$msg"
-printf "%s\n%s\n" "$(date)" "$msg" > "$logfile"
+printf "%s\n%s\n" "$(date)" "$msg" >"$logfile"

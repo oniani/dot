@@ -12,19 +12,19 @@ ext="${file##*.}"
 cd "$dir" || exit 1
 
 case $ext in
-    c) gcc -o "$base.out" "$file" && "$base.out";;
-    cpp) clang++ -Wall -std=c++17 "$file" -o "$base.out" && "./$base.out";;
-    dot) dot -Tpdf "$file" -o "$base.pdf";;
-    go) go run "$file";;
-    hs) runhaskell "$file";;
-    lua) lua "$file";;
-    md) pandoc -V linkcolor:blue -V geometry:margin=1in -V fontsize=11pt "$file" -o "$base.pdf";;
-    py) python "$file";;
-    R) Rscript "$file";;
-    Rmd) Rscript -e "rmarkdown::render('$file', 'pdf_document')";;
-    rs) cargo run "$file";;
-    sh) sh "$file";;
-    tex) latexmk -interaction=nonstopmode -pdf -quiet -shell-escape "$file";;
-    ts) tsc "$file" && node "$file";;
-    *) printf "Unknown file format\n";;
+c) gcc -o "$base.out" "$file" && "$base.out" ;;
+cpp) clang++ -Wall -std=c++17 "$file" -o "$base.out" && "./$base.out" ;;
+dot) dot -Tpdf "$file" -o "$base.pdf" ;;
+go) go run "$file" ;;
+hs) runhaskell "$file" ;;
+lua) lua "$file" ;;
+md) pandoc -V linkcolor:blue -V geometry:margin=1in -V fontsize=11pt "$file" -o "$base.pdf" ;;
+py) python "$file" ;;
+R) Rscript "$file" ;;
+Rmd) Rscript -e "rmarkdown::render('$file', 'pdf_document')" ;;
+rs) cargo run "$file" ;;
+sh) sh "$file" ;;
+tex) latexmk -interaction=nonstopmode -pdf -quiet -shell-escape "$file" ;;
+ts) tsc "$file" && node "$file" ;;
+*) printf "Unknown file format\n" ;;
 esac

@@ -11,7 +11,7 @@ help() {
 }
 
 case $1 in
-    -e) $EDITOR "$HOME"/.local/share/todo.txt;;
-    -l|"") cat -n "$HOME"/.local/share/todo.txt;;
-    *) help;;
+-e) $EDITOR "$HOME"/.local/share/todo.txt ;;
+-l | "") cat -n "$HOME"/.local/share/todo.txt ;;
+*) help ;;
 esac

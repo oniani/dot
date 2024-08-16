@@ -25,20 +25,20 @@
 #                                        downsample the content yourself you can use this. It might
 #                                        save you some time waiting for YouTube to encode the video.
 ffmpeg -i "$1" \
-       -c:v libx264 \
-       -preset slow \
-       -crf 18 \
-       -c:a aac \
-       -ar 48000 \
-       -ac 2 \
-       -b:a 384k \
-       -profile:v high \
-       -level 4.0 \
-       -bf 2 \
-       -coder 1 \
-       -pix_fmt yuv420p \
-       -b:v 10M \
-       -threads 4 \
-       -cpu-used 0 \
-       -r 60 \
-       "$2"
+    -c:v libx264 \
+    -preset slow \
+    -crf 18 \
+    -c:a aac \
+    -ar 48000 \
+    -ac 2 \
+    -b:a 384k \
+    -profile:v high \
+    -level 4.0 \
+    -bf 2 \
+    -coder 1 \
+    -pix_fmt yuv420p \
+    -b:v 10M \
+    -threads 4 \
+    -cpu-used 0 \
+    -r 60 \
+    "$2"

@@ -11,21 +11,21 @@ add() {
     if grep -q "^$bookmark$" "$path"; then
         notify-send "Bookmark already exists" "$bookmark"
     else
-        printf "%s\n" "$bookmark" >> "$path"
+        printf "%s\n" "$bookmark" >>"$path"
         tmpfile=$(mktemp)
-        sort -u "$path" > "$tmpfile" && mv "$tmpfile" "$path"
+        sort -u "$path" >"$tmpfile" && mv "$tmpfile" "$path"
     fi
 }
 
 sel() {
-    column -s'|' -t < "${XDG_DATA_HOME:-$HOME/.local/share}/bookmark.csv" |
+    column -s'|' -t <"${XDG_DATA_HOME:-$HOME/.local/share}/bookmark.csv" |
         rofi -dmenu -i -no-show-icons |
         grep -o "https.*" |
         xargs -r firefox --new-tab --url
 }
 
 case $1 in
-    -a) add;;
-    -s) sel;;
-    *) printf "Unknown command\n";;
+-a) add ;;
+-s) sel ;;
+*) printf "Unknown command\n" ;;
 esac

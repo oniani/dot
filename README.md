@@ -2,53 +2,66 @@
 
 Configuration files and automation wizard for \*nix meta distribution.
 
+All programs are chosen with simplicity in mind. Cross-platform programs that follow the
+[UNIX philosophy][unix] are preferred. The setup is compliant with the
+[XDG Base Directory Specification][xdg].
+
 ## Setup
 
-All programs are chosen with simplicity in mind. Cross-platform programs that follow the [UNIX
-philosophy][unix] are preferred. The setup is compliant with the [XDG Base Directory
-Specification][xdg].
-
-Core Tools and Utilities:
-
-| Type           | Program                         |
-| -------------- | ------------------------------- |
-| Browser        | [Firefox][firefox]              |
-| Editor         | [Neovim][neovim]                |
-| File Manager   | [nnn][nnn]                      |
-| Font           | [JetBrains Mono][jetbrainsmono] |
-| Image Viewer   | [nsxiv][nsxiv]                  |
-| Media Player   | [mpv][mpv]                      |
-| PDF Viewer     | [zathura][zathura]              |
-| Shell          | [zsh][zsh]                      |
-| Terminal       | [kitty][kitty]                  |
-| Window Manager | [Hyprland][hyprland]            |
-
-Other Tools and Utilities:
-
-- Design Tool: [Inkscape][inkscape]
-- Diagram Maker: [drawio][drawio]
-- Notebooks: [JupyterLab][jupyterlab]
-
-Manually patched Comic Mono font is available [here][font].
-
-Automation:
+Create directories and copy over the contents:
 
 ```console
-$ ./auto
+mkdir -p "$HOME/git" "$HOME/wip" "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+cp -R .config .local "$HOME"
 ```
 
-## `$HOME` Directory Structure
+Install packages on Arch Linux:
 
 ```console
-.cache     # User cache
-.config    # User configs
-.local     # User data and programs
-Desktop    # Desktop
-Documents  # Documents
-Downloads  # Downloads
-git        # Git repos
-wip        # Work in progress
+# Arch Official Repositories
+grep ,PACMAN programs.csv | cut -d',' -f1 | xargs sudo pacman -S --noconfirm
+
+# Arch User Repository
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && rm -rf paru
+grep ,AUR programs.csv | cut -d',' -f1 | xargs paru -S
 ```
+
+Install packages on macOS:
+
+```console
+# Arch Official Repositories
+grep ,PACMAN programs.csv | cut -d',' -f1 | xargs sudo pacman -S --noconfirm
+
+# Arch User Repository
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && rm -rf paru
+grep ,AUR programs.csv | cut -d',' -f1 | xargs paru -S
+```
+
+> [!TIP]
+> It is possible to set a default location for `.zshenv`.
+>
+> ```console
+> sudo touch /etc/zsh/zshenv
+> printf "export ZDOTDIR=%s/.config/zsh\n" "$HOME" | sudo tee /etc/zsh/zshenv
+> ```
+
+> [!TIP]
+> One can disable asking for a password when using `sudo`:
+>
+> ```console
+> sudo touch "/etc/sudoers.d/$USER"
+> printf "%s ALL=(ALL:ALL) NOPASSWD: ALL\n" "$USER" | sudo tee "/etc/sudoers.d/$USER"
+> ```
+
+> [!TIP]
+> Stop generating `.sudo_as_admin_successful`.
+>
+> ```console
+> sudo touch /etc/sudoers.d/disable_admin_file_in_home
+> printf "Defaults !admin_flag\n" | sudo tee /etc/sudoers.d/disable_admin_file_in_home
+> ```
 
 ## License
 

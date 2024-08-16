@@ -11,7 +11,7 @@ help() {
 }
 
 case $1 in
-    -c) mpv --really-quiet --loop --no-osc https://radar.weather.gov/ridge/standard/CONUS_loop.gif;;
-    -l) mpv --really-quiet --loop --no-osc https://radar.weather.gov/ridge/standard/KOKX_loop.gif;;
-    *) help;;
+-c) mpv --really-quiet --loop --no-osc https://radar.weather.gov/ridge/standard/CONUS_loop.gif ;;
+-l) mpv --really-quiet --loop --no-osc https://radar.weather.gov/ridge/standard/KOKX_loop.gif ;;
+*) help ;;
 esac

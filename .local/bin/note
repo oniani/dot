@@ -16,11 +16,11 @@ pandocmd() {
     selection=$(prompt "$1")
     [ -z "$selection" ] && exit 0
     pandoc -V fontsize=11pt \
-           -V geometry:margin=1in \
-           -V linkcolor:blue \
-           -f markdown \
-           -t pdf "$selection" |
-               zathura -
+        -V geometry:margin=1in \
+        -V linkcolor:blue \
+        -f markdown \
+        -t pdf "$selection" |
+        zathura -
 }
 
 help() {
@@ -33,9 +33,9 @@ help() {
 
 notedir="$HOME/git/oniani.github.io/content/notes"
 case $1 in
-    a) printf "Note: " && read -r name && "$EDITOR" "$notedir/$name.md";;
-    f) pandocmd "$notedir";;
-    l) cmd "$notedir";;
-    o) "$EDITOR" "$(prompt "$notedir")";;
-    *) help;;
+a) printf "Note: " && read -r name && "$EDITOR" "$notedir/$name.md" ;;
+f) pandocmd "$notedir" ;;
+l) cmd "$notedir" ;;
+o) "$EDITOR" "$(prompt "$notedir")" ;;
+*) help ;;
 esac

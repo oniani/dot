@@ -11,7 +11,6 @@ return {
             json = { "prettier" },
             lua = { "stylua" },
             markdown = { "prettier" },
-            nix = { "nixpkgs_fmt" },
             python = { "isort", "ruff_format" },
             sh = { "shfmt" },
             typescript = { "prettier" },
