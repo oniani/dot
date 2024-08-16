@@ -20,12 +20,12 @@ mkdir -p "$HOME/git" "$HOME/wip" "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 >
 > ```console
 > # Arch Official Repositories
-> grep ,PACMAN programs.csv | cut -d',' -f1 | xargs sudo pacman -S --noconfirm
+> sudo pacman -S --noconfirm - < pkg_arch.txt
 >
 > # Arch User Repository
 > sudo pacman -S --needed base-devel
 > git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && rm -rf paru
-> grep ,AUR programs.csv | cut -d',' -f1 | xargs paru -S
+> paru -S --noconfirm - < pkg_aur.txt
 > ```
 
 > [!IMPORTANT]
