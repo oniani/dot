@@ -25,7 +25,7 @@ mkdir -p "$HOME/git" "$HOME/wip" "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 > # Arch User Repository
 > sudo pacman -S --needed base-devel
 > git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && rm -rf paru
-> paru -S --noconfirm - < pkg_aur.txt
+> paru -S --noconfirm - < pkg_arch_aur.txt
 > ```
 
 > [!IMPORTANT]

@@ -1,0 +1,39 @@
+atool
+btop
+cmake
+erdtree
+fd
+ffmpeg
+font-symbols-only-nerd-font <-- cask
+fzf
+gcc
+git
+go
+htop
+imagemagick
+isort
+jq
+kitty <-- cask
+libreoffice-still <-- cask
+llvm
+lynx
+man-db
+mpv
+neovim
+newsboat
+node
+prettier
+pyenv
+ripgrep
+ruff
+rustup
+shellcheck
+shfmt
+signal <-- cask
+stylua
+tokei
+trash-cli
+watchexec
+wget
+zola
+zsh
