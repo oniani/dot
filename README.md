@@ -12,7 +12,7 @@ Copy over the contents and create directories:
 
 ```console
 cp -R .config .local "$HOME"
-mkdir -p "$HOME/git" "$HOME/wip" "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+mkdir -p "$HOME/git" "$HOME/workspace" "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 ```
 
 > [!IMPORTANT]
