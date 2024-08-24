@@ -55,6 +55,7 @@
 [credential]
     cacheoptions = --timeout 86400
     credentialStore = cache
+    guiPrompt = false
     helper = /usr/bin/git-credential-manager
 
 [credential "https://dev.azure.com"]
