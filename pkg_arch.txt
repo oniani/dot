@@ -22,6 +22,8 @@ htop
 hyprland
 hyprlock
 hyprpaper
+i3-wm
+i3status-rust
 imagemagick
 imv
 jq
