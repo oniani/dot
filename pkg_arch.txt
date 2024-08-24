@@ -37,6 +37,7 @@ mpv
 neovim
 network-manager-applet
 newsboat
+nitrogen
 nodejs
 noto-fonts-cjk
 noto-fonts-emoji

@@ -9,29 +9,30 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
 # Move to ~/.cache
-export CUDA_CACHE_PATH="${XDG_CACHE_HOME:-$HOME/.cache}/nv"
-export NPM_CONFIG_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/npm"
+export CUDA_CACHE_PATH="${XDG_CACHE_HOME:-$HOME/.cache}"/nv
+export NPM_CONFIG_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}"/npm
 
 # Move to ~/.config
-export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/inputrc"
-export IPYTHONDIR="${XDG_CONFIG_HOME:-$HOME/.config}/ipython"
-export JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/jupyter"
-export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch/config"
-export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
-export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}"/zsh/inputrc
+export IPYTHONDIR="${XDG_CONFIG_HOME:-$HOME/.config}"/ipython
+export JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"/jupyter
+export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}"/notmuch/config
+export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}"/wget/wgetrc
+export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}"/zsh
 
 # Move to ~/.local/share
-export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
-export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
-export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
-export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/pass"
-export PYENV_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/pyenv"
-export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
+export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"/cargo
+export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}"/gnupg
+export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}"/go
+export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}"/pass
+export PYENV_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}"/pyenv
+export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"/rustup
 
 # Python
-export PYTHONPYCACHEPREFIX="${XDG_CACHE_HOME:-$HOME/.cache}/python"
-export PYTHONUSERBASE="${XDG_DATA_HOME:-$HOME/.local/share}/python"
-export PYTHON_HISTORY="${XDG_STATE_HOME:-$HOME/.local/state}/python/history"
+export PYTHONPYCACHEPREFIX="${XDG_CACHE_HOME:-$HOME/.cache}"/python
+export PYTHONUSERBASE="${XDG_DATA_HOME:-$HOME/.local/share}"/python
+export PYTHON_HISTORY="${XDG_STATE_HOME:-$HOME/.local/state}"/python/history
 
 # fzf
 export FZF_DEFAULT_COMMAND="fd --color never --exclude .git --follow --hidden --type file"
