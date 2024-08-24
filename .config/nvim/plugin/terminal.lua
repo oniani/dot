@@ -1,3 +1,7 @@
+-- Neovim configuration file
+-- by David Oniani <onianidavid@gmail.com>
+-- MIT License
+
 -- NOTE: Cursor shape may not match that of `$TERM`
 -- See: https://github.com/neovim/neovim/issues/3681
 vim.api.nvim_create_autocmd("TermOpen", {

@@ -1,12 +1,11 @@
-return {
-    "ibhagwan/fzf-lua",
-    config = function()
-        local fzf = require "fzf-lua"
+-- Neovim configuration file
+-- by David Oniani <onianidavid@gmail.com>
+-- MIT License
 
-        vim.g.fzf_action = { ["ctrl-s"] = "split", ["ctrl-v"] = "vsplit" }
+local fzf = require "fzf-lua"
 
-        vim.keymap.set("n", "<Leader>f", fzf.files, { desc = "Find [F]iles" })
-        vim.keymap.set("n", "<Leader>g", fzf.live_grep, { desc = "[G]rep" })
-        vim.keymap.set("n", "<Leader>l", fzf.lines, { desc = "Open [L]ines" })
-    end,
-}
+vim.g.fzf_action = { ["ctrl-s"] = "split", ["ctrl-v"] = "vsplit" }
+
+vim.keymap.set("n", "<Leader>f", fzf.files, { desc = "Find [F]iles" })
+vim.keymap.set("n", "<Leader>g", fzf.live_grep, { desc = "[G]rep" })
+vim.keymap.set("n", "<Leader>l", fzf.lines, { desc = "Open [L]ines" })

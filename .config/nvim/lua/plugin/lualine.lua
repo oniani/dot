@@ -1,13 +1,9 @@
-return {
-    "nvim-lualine/lualine.nvim",
-    dependencies = {
-        "nvim-tree/nvim-web-devicons",
+-- Neovim configuration file
+-- by David Oniani <onianidavid@gmail.com>
+-- MIT License
+
+require("lualine").setup {
+    options = {
+        globalstatus = true,
     },
-    config = function()
-        require("lualine").setup {
-            options = {
-                globalstatus = true,
-            },
-        }
-    end,
 }
