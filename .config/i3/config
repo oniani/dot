@@ -28,7 +28,7 @@ exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
 
 # Sets the wallpaper
-exec --no-startup-id xwallpaper --zoom $HOME/.cache/wall
+exec --no-startup-id nitrogen --restore
 
 # Launches picom compositor
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf --daemon
