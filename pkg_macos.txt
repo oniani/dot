@@ -4,7 +4,7 @@ cmake
 erdtree
 fd
 ffmpeg
-font-symbols-only-nerd-font <-- cask
+font-symbols-only-nerd-font
 fzf
 gcc
 git
@@ -13,8 +13,7 @@ htop
 imagemagick
 isort
 jq
-kitty <-- cask
-libreoffice-still <-- cask
+kitty
 llvm
 lynx
 man-db
@@ -29,7 +28,7 @@ ruff
 rustup
 shellcheck
 shfmt
-signal <-- cask
+signal
 stylua
 tokei
 trash-cli
