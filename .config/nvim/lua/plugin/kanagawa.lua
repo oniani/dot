@@ -27,3 +27,8 @@ vim.api.nvim_set_hl(0, "Tabline", { bg = "none" })
 vim.api.nvim_set_hl(0, "TablineFill", { bg = "none" })
 vim.api.nvim_set_hl(0, "TablineSel", { bg = "#8ba8f0", fg = "#000000" })
 vim.api.nvim_set_hl(0, "WildMenu", { bg = "none", fg = "#141414" })
+
+vim.api.nvim_set_hl(0, "GitSignsAdd", { bg = "none", fg = "#76946a" })
+vim.api.nvim_set_hl(0, "GitSignsChange", { bg = "none", fg = "#dca561" })
+vim.api.nvim_set_hl(0, "GitSignsChangeDelete", { bg = "none", fg = "#dca561" })
+vim.api.nvim_set_hl(0, "GitSignsDelete", { bg = "none", fg= "#c34043" })
