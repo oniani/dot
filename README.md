@@ -17,12 +17,13 @@ The setup is intended for (Arch) Linux and macOS.
 
 Copy over the contents and create directories:
 
-```console
-cp -R .config .local "$HOME"
-mkdir -p "$HOME/git" "$HOME/workspace" "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
-```
-
 > [!IMPORTANT]
+>
+> ```console
+> cp -R .config .local "$HOME"
+> mkdir -p "$HOME/git" "$HOME/workspace" "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+> ```
+>
 > Install packages on Arch Linux
 >
 > ```console
@@ -34,8 +35,7 @@ mkdir -p "$HOME/git" "$HOME/workspace" "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 > git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && rm -rf paru
 > paru -S --noconfirm - < pkg_arch_aur.txt
 > ```
-
-> [!IMPORTANT]
+>
 > Install packages on macOS
 >
 > ```console
