@@ -51,7 +51,7 @@ Copy over the contents and create directories:
 > ```
 
 > [!TIP]
-> One can disable asking for a password when using `sudo`:
+> It is also possible to bypass a password prompt when using `sudo`:
 >
 > ```console
 > sudo touch "/etc/sudoers.d/$USER"
@@ -59,7 +59,7 @@ Copy over the contents and create directories:
 > ```
 
 > [!TIP]
-> Stop generating `.sudo_as_admin_successful`.
+> The following will stop generating `.sudo_as_admin_successful`.
 >
 > ```console
 > sudo touch /etc/sudoers.d/disable_admin_file_in_home
