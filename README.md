@@ -39,7 +39,7 @@ mkdir -p "$HOME/git" "$HOME/workspace" "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 > Install packages on macOS
 >
 > ```console
-> TODO
+> xargs brew install < pkg_macos.txt
 > ```
 
 > [!TIP]
