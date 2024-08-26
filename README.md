@@ -6,6 +6,8 @@ All programs are chosen with simplicity in mind. Cross-platform programs that fo
 [UNIX philosophy][unix] are preferred. The setup is compliant with the
 [XDG Base Directory Specification][xdg].
 
+The setup is intended for (Arch) Linux and macOS.
+
 <p float="left">
   <img src="https://wiki.installgentoo.com/images/f/f9/Arch-linux-logo.png" width="150px" height="150px"/>
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Homebrew_logo.svg" width="150px" height="150px" />
