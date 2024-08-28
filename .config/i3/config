@@ -17,7 +17,7 @@ gaps inner 16
 gaps outer 16
 
 # Sets up mirroring
-exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1440
+exec --no-startup-id xrandr --output eDP-1-1 --mode 3840x2160
 
 # Disables laptop monitor
 # exec_always --no-startup-id xrandr --output eDP-1-1 --off

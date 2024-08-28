@@ -7,27 +7,24 @@
 eval "$(pyenv init -)"
 
 typeset -A plugins=(
-    ["powerlevel10k"]="https://github.com/romkatv/powerlevel10k.git"
     ["zsh-autosuggestions"]="https://github.com/zsh-users/zsh-autosuggestions.git"
     ["zsh-syntax-highlighting"]="https://github.com/zsh-users/zsh-syntax-highlighting.git"
 )
 
-dir_p10k="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh"
-dir_cfg="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugin"
+dir_cfg="${XDG_DATA_HOME:-$HOME/.local/share}"/zsh/plugin
 for plugin in ${(k)plugins}; do
     [ ! -d "$dir_cfg/$plugin" ] && git clone --depth=1 "$plugins[$plugin]" "$dir_cfg/$plugin"
 done
 
-. "$dir_cfg/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
-. "$dir_cfg/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
-. "$dir_cfg/powerlevel10k/powerlevel10k.zsh-theme" && [ ! -f "$dir_p10k" ] || . "$dir_p10k"
+source "$dir_cfg"/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source "$dir_cfg"/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # }}}
 
 # Z Shell Settings {{{
 
 # Prompt
-PROMPT='%F{white}%n@%m%F{yellow}:%F{blue}%1~%F{red} >%f '
+PROMPT='%F{green}%n@%m%F{red}:%F{blue}%1~%F{blue} ❯%f '
 
 # Colors
 autoload -Uz colors && colors

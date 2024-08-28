@@ -15,9 +15,8 @@ The setup is intended for (Arch) Linux and macOS.
 
 ## Setup
 
-Copy over the contents and create directories:
-
 > [!IMPORTANT]
+> Copy over the contents and create directories:
 >
 > ```console
 > cp -R .config .local "$HOME"
@@ -30,7 +29,7 @@ Copy over the contents and create directories:
 > # Arch Official Repositories
 > sudo pacman -S --noconfirm - < pkg_arch.txt
 >
-> # Arch User Repository
+> # Arch User Repository (AUR)
 > sudo pacman -S --needed base-devel
 > git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && rm -rf paru
 > paru -S --noconfirm - < pkg_arch_aur.txt
