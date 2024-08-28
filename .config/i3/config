@@ -36,6 +36,9 @@ exec --no-startup-id picom --config $HOME/.config/picom/picom.conf --daemon
 # Launches notification daemon
 exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
 
+# Remap ctrl to caps lock
+exec_always setxkbmap -option ctrl:swapcaps
+
 # Switches keyboard layouts
 exec_always setxkbmap -option 'grp:alt_shift_toggle' -layout us,ge,ru -variant ,qwerty,phonetic
 
