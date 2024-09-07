@@ -40,7 +40,7 @@ local servers = {
     },
     rust_analyzer = {},
     texlab = {},
-    tsserver = {},
+    ts_ls = {},
 }
 
 require("fidget").setup {}
