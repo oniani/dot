@@ -2,29 +2,15 @@
 -- by David Oniani <onianidavid@gmail.com>
 -- MIT License
 
-local function clone_paq()
-    local path = vim.fn.stdpath "data" .. "/site/pack/paqs/start/paq-nvim"
-    local is_installed = vim.fn.empty(vim.fn.glob(path)) == 0
-    if not is_installed then
-        vim.fn.system { "git", "clone", "--depth=1", "https://github.com/savq/paq-nvim.git", path }
-        return true
-    end
+local path = vim.fn.stdpath "data" .. "/site/pack/paqs/start/paq-nvim"
+local is_installed = vim.loop.fs_stat(path)
+if not is_installed then
+    vim.fn.system { "git", "clone", "--depth=1", "https://github.com/savq/paq-nvim.git", path }
 end
+vim.cmd.packadd "paq-nvim"
+local paq = require "paq"
 
-local function bootstrap_paq(packages)
-    local first_install = clone_paq()
-    vim.cmd.packadd "paq-nvim"
-    local paq = require "paq"
-    if first_install then
-        vim.notify "Installing plugins... If prompted, hit Enter to continue."
-    end
-
-    -- Read and install packages
-    paq(packages)
-    paq.install()
-end
-
-bootstrap_paq {
+paq {
     -- Let Paq manage itself
     "savq/paq-nvim",
 
@@ -64,6 +50,11 @@ bootstrap_paq {
     "nvim-tree/nvim-web-devicons",
     "rebelot/kanagawa.nvim",
 }
+
+if not is_installed then
+    paq.install()
+    return
+end
 
 -- Set Python3 provider
 vim.g.python3_host_prog = vim.fn.expand "$XDG_DATA_HOME" .. "/pyenv/shims/python"
