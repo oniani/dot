@@ -15,11 +15,6 @@ interval = 1
 timezone = "US/Eastern"
 
 [[block]]
-block = "custom"
-command = "curl -s 'https://wttr.in/Arlington-VA?format=2&u'"
-interval = 600
-
-[[block]]
 block = "sound"
 
 [[block]]
