@@ -20,7 +20,7 @@ gaps outer 16
 exec --no-startup-id xrandr --output eDP-1-1 --mode 3840x2160
 
 # Disables laptop monitor
-# exec_always --no-startup-id xrandr --output eDP-1-1 --off
+exec_always --no-startup-id xrandr --output eDP-1-1 --off
 
 # Keeps the monitor active even after inactivity.
 exec --no-startup-id xset dpms 0 0 0
