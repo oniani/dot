@@ -19,6 +19,9 @@ gaps outer 16
 # Sets up mirroring
 exec --no-startup-id xrandr --output eDP-1-1 --mode 3840x2160
 
+# Sets up Logitech C920 webcam
+exec --no-startup-id v4l2-ctl -d /dev/video0 -c auto_exposure=1 -c exposure_time_absolute=800
+
 # Disables laptop monitor
 exec_always --no-startup-id xrandr --output eDP-1-1 --off
 
