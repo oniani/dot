@@ -30,6 +30,7 @@ The setup is intended for (Arch) Linux and macOS.
 > sudo pacman -S --noconfirm - < pkg_arch.txt
 >
 > # Arch User Repository (AUR)
+> rustup toolchain install stable
 > sudo pacman -S --needed base-devel
 > git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && rm -rf paru
 > paru -S --noconfirm - < pkg_arch_aur.txt
@@ -39,6 +40,13 @@ The setup is intended for (Arch) Linux and macOS.
 >
 > ```console
 > xargs brew install < pkg_macos.txt
+> ```
+
+> [!TIP]
+> Change shell to Zsh
+>
+> ```console
+> chsh -s /usr/bin/zsh
 > ```
 
 > [!TIP]

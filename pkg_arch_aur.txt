@@ -1,5 +1,4 @@
 drawio-desktop
 git-credential-manager-core
-macchina-bin
 nnn-nerd
 xdg-ninja

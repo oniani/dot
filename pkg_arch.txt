@@ -22,16 +22,15 @@ htop
 hyprland
 hyprlock
 hyprpaper
-i3-wm
-i3status-rust
 imagemagick
 imv
 jq
 kitty
+less
 libreoffice-still
 lld
-lxappearance
 lynx
+macchina
 man-db
 mpv
 neovim
@@ -60,6 +59,7 @@ tokei
 trash-cli
 ttf-dejavu
 ttf-nerd-fonts-symbols
+unzip
 v4l2loopback-utils
 watchexec
 waybar
@@ -68,3 +68,4 @@ zathura
 zathura-pdf-mupdf
 zola
 zsh
+zsh-completions
