@@ -40,7 +40,7 @@ local servers = {
     },
     rust_analyzer = {},
     texlab = {},
-    tsserver = {},
+    ts_ls = {},
 }
 
 require("fidget").setup {}
@@ -57,10 +57,7 @@ local capabilities = cmp_capabilities.default_capabilities(default_capabilities)
 mason_lspconfig.setup { ensure_installed = vim.tbl_keys(servers) }
 mason_lspconfig.setup_handlers {
     function(server_name)
-        -- See: https://github.com/neovim/nvim-lspconfig/pull/3232
-        -- Can remove the line below and replace `tmp_server_name` with `server_name` once fixed.
-        local tmp_server_name = server_name == "tsserver" and "ts_ls" or server_name
-        lspconfig[tmp_server_name].setup {
+        lspconfig[server_name].setup {
             capabilities = capabilities,
             settings = servers[server_name].settings or {},
             init_options = {
