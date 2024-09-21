@@ -56,6 +56,7 @@ slurp
 stylua
 swappy
 thunar
+tk
 tokei
 trash-cli
 ttf-dejavu
