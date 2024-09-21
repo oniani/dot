@@ -1,4 +1,5 @@
 atool
+bat
 blueman
 bluez
 bluez-utils
