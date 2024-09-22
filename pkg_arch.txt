@@ -66,6 +66,7 @@ v4l2loopback-utils
 watchexec
 waybar
 wget
+wl-clipboard
 zathura
 zathura-pdf-mupdf
 zola
