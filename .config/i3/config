@@ -5,7 +5,7 @@
 # General Settings {{{
 
 # Font for window titles and the bar
-font pango:JetBrains Mono 16
+font pango:JetBrains Mono 24
 
 # Removes title bar in tiling and floating modes
 client.focused #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0
