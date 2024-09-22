@@ -165,8 +165,8 @@ bindsym $mod+space exec "rofi -modi drun,run -show drun"
 bindsym $mod+e exec "rofi -modi emoji -show emoji"
 
 # Launches Flameshot for taking a screenshot
-bindsym --release $mod+Shift+a exec --no-startup-id flameshot gui -p $HOME/pic
-bindsym --release $mod+Shift+s exec --no-startup-id flameshot full -p $HOME/pic
+bindsym --release $mod+Shift+a exec --no-startup-id flameshot gui -p $HOME/workspace
+bindsym --release $mod+Shift+s exec --no-startup-id flameshot full -p $HOME/workspace
 
 # Launches the paper utility
 bindsym $mod+p exec --no-startup-id $HOME/.local/bin/paperls
