@@ -5,7 +5,7 @@
 # General Settings {{{
 
 # Font for window titles and the bar
-font pango:JetBrainsMono NF 16
+font pango:JetBrains Mono 16
 
 # Removes title bar in tiling and floating modes
 client.focused #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0 #8ba8f0
@@ -17,13 +17,13 @@ gaps inner 16
 gaps outer 16
 
 # Sets up mirroring
-exec --no-startup-id xrandr --output eDP-1-1 --mode 3840x2160
+exec --no-startup-id xrandr --output eDP-1 --mode 3840x2160
+
+# Disables laptop monitor
+exec_always --no-startup-id xrandr --output eDP-1 --off
 
 # Sets up Logitech C920 webcam
 exec --no-startup-id v4l2-ctl -d /dev/video0 -c auto_exposure=1 -c exposure_time_absolute=800
-
-# Disables laptop monitor
-exec_always --no-startup-id xrandr --output eDP-1-1 --off
 
 # Keeps the monitor active even after inactivity.
 exec --no-startup-id xset dpms 0 0 0
