@@ -19,6 +19,7 @@ paq {
 
     -- File management
     "nvim-tree/nvim-tree.lua",
+    "nvim-tree/nvim-web-devicons",
     "stevearc/oil.nvim",
 
     -- Code formatting
@@ -44,11 +45,6 @@ paq {
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-path",
     "onsails/lspkind-nvim",
-
-    -- Visuals
-    "nvim-lualine/lualine.nvim",
-    "nvim-tree/nvim-web-devicons",
-    "rebelot/kanagawa.nvim",
 }
 
 if not is_installed then

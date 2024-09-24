@@ -2,9 +2,7 @@
 -- by David Oniani <onianidavid@gmail.com>
 -- MIT License
 
-require("kanagawa").setup { transparent = true }
-
-vim.cmd.colorscheme "kanagawa"
+vim.cmd.colorscheme "default"
 
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none", fg = "#ff9e3b" })
