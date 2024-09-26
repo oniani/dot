@@ -120,15 +120,6 @@ zle -N zle-line-init
 
 # }}}
 
-# Key Bindings {{{
-
-bindkey -s "^f" "nnn_autocd\n"
-bindkey -s "^p" "ipython\n"
-bindkey -s "^r" "newsboat --quiet\n"
-bindkey -s "^z" "fg\n"
-
-# }}}
-
 # Aliases {{{
 
 # Core commands
@@ -189,6 +180,13 @@ function nnn_autocd() {
     fi
 }
 
+# Fuzzy find files
+function find_file_fuzzy() {
+    fzf --preview "bat --color=always --theme=base16-256 {}" \
+        --prompt "File: " |
+        xargs -r -I {} "$EDITOR" {}
+}
+
 # Print the color map
 function colormap() {
     for i in {0..255}; do
@@ -204,5 +202,14 @@ function palette() {
     done
     print -cP $colors
 }
+
+# }}}
+
+# Key Bindings {{{
+
+bindkey -s "^f" "nnn_autocd\n"
+bindkey -s "^p" "find_file_fuzzy\n"
+bindkey -s "^r" "newsboat --quiet\n"
+bindkey -s "^z" "fg\n"
 
 # }}}

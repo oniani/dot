@@ -4,18 +4,14 @@
 
 vim.cmd.colorscheme "default"
 
-vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
-vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none", fg = "#ff9e3b" })
-vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#141414" })
-vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none", fg = "#141414" })
-vim.api.nvim_set_hl(0, "Folded", { bg = "none", fg = "#727169" })
-vim.api.nvim_set_hl(0, "LineNr", { fg = "#727169" })
+vim.api.nvim_set_hl(0, "Folded", { bg = "none", fg = "NvimLightGrey4" })
 vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "PMenu", { bg = "none", fg = "#ffffff" })
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 vim.api.nvim_set_hl(0, "Tabline", { bg = "none" })
 vim.api.nvim_set_hl(0, "TablineFill", { bg = "none" })
-vim.api.nvim_set_hl(0, "TablineSel", { bg = "#8ba8f0", fg = "#000000" })
-vim.api.nvim_set_hl(0, "WildMenu", { bg = "none", fg = "#141414" })
-vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none", fg = "#16161d" })
+vim.api.nvim_set_hl(0, "TablineSel", { bg = "NvimLightBlue", fg = "#000000" })
+vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none", fg = "NvimDarkGray2" })
+
+vim.api.nvim_set_hl(0, "FzfLuaBorder", { bg = "none", fg = "NvimDarkGray4" })
