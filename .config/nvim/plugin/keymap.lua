@@ -12,6 +12,9 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-t>", "<C-w><S-t>", { desc = "Maximize the current window" })
 
+vim.keymap.set("n", "<A-j>", "<Cmd>cnext<Cr>", { desc = "Move to the next QuickFix item" })
+vim.keymap.set("n", "<A-k>", "<Cmd>cprev<Cr>", { desc = "Move to the previous QuickFix item" })
+
 vim.keymap.set("n", "<Down>", "<C-W>-", { desc = "Shrink window vertically" })
 vim.keymap.set("n", "<Left>", "<c-w>4>", { desc = "Shrink window horizontally" })
 vim.keymap.set("n", "<Right>", "<c-w>4<", { desc = "Expand window horizontally" })

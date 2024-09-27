@@ -6,8 +6,10 @@ local fzf = require "fzf-lua"
 
 vim.g.fzf_action = { ["ctrl-s"] = "split", ["ctrl-v"] = "vsplit" }
 
+fzf.setup { keymap = { fzf = { ["ctrl-q"] = "select-all+accept" } } }
+
 vim.keymap.set("n", "<C-p>", fzf.files, { desc = "Find Files" })
 
-vim.api.nvim_create_user_command("C", fzf.git_commits, { desc = "[C]ommits" })
+vim.api.nvim_create_user_command("Commits", fzf.git_commits, { desc = "[C]ommits" })
 vim.api.nvim_create_user_command("Grep", fzf.live_grep, { desc = "[G]rep" })
-vim.api.nvim_create_user_command("L", fzf.lines, { desc = "[L]ines" })
+vim.api.nvim_create_user_command("Lines", fzf.lines, { desc = "[L]ines" })
