@@ -15,7 +15,7 @@ isort
 jq
 kitty
 llvm
-lynx
+mactex
 man-db
 mpv
 neovim

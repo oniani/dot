@@ -30,7 +30,6 @@ kitty
 less
 libreoffice-still
 lld
-lynx
 macchina
 man-db
 mpv
