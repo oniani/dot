@@ -5,11 +5,16 @@
 vim.cmd.colorscheme "default"
 
 local highlights = {
+    ["Diagnosticinfo"] = { fg = "#a6dbff" },
+    ["Directory"] = { fg = "#a6dbff" },
     ["Folded"] = { bg = "none", fg = "#9b9ea4" },
     ["Function"] = { fg = "#a6dbff" },
+    ["MoreMsg"] = { fg = "#a6dbff" },
     ["Normal"] = { bg = "#000000" },
     ["NormalFloat"] = { bg = "none" },
     ["Pmenu"] = { bg = "none", fg = "#ffffff" },
+    ["Question"] = { fg = "#a6dbff" },
+    ["QuickFixLine"] = { fg = "#a6dbff" },
     ["SignColumn"] = { bg = "none" },
     ["Special"] = { fg = "#ffcaff" },
     ["Tabline"] = { bg = "none" },
