@@ -4,14 +4,23 @@
 
 vim.cmd.colorscheme "default"
 
-vim.api.nvim_set_hl(0, "Folded", { bg = "none", fg = "NvimLightGrey4" })
-vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "PMenu", { bg = "none", fg = "#ffffff" })
-vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-vim.api.nvim_set_hl(0, "Tabline", { bg = "none" })
-vim.api.nvim_set_hl(0, "TablineFill", { bg = "none" })
-vim.api.nvim_set_hl(0, "TablineSel", { bg = "NvimLightBlue", fg = "#000000" })
-vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none", fg = "NvimDarkGray2" })
+local highlights = {
+    ["Folded"] = { bg = "none", fg = "#9b9ea4" },
+    ["Normal"] = { bg = "#000000" },
+    ["NormalFloat"] = { bg = "none" },
+    ["Pmenu"] = { bg = "none", fg = "#ffffff" },
+    ["SignColumn"] = { bg = "none" },
+    ["Tabline"] = { bg = "none" },
+    ["TablineFill"] = { bg = "none" },
+    ["TablineSel"] = { bg = "#a6dbff", fg = "#000000" },
+    ["WinSeparator"] = { bg = "none", fg = "#14161b" },
 
-vim.api.nvim_set_hl(0, "FzfLuaBorder", { bg = "none", fg = "NvimDarkGray4" })
+    ["FzfLuaBorder"] = { bg = "none", fg = "#a6dbff" },
+    ["NvimTreeExecFile"] = { fg = "#b3f6c0" },
+    ["NvimTreeFolderName"] = { fg = "none" },
+    ["NvimTreeOpenedFolderName"] = { fg = "none" },
+}
+
+for group, style in pairs(highlights) do
+    vim.api.nvim_set_hl(0, group, style)
+end
