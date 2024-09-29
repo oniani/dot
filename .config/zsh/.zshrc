@@ -24,7 +24,7 @@ source "$dir_cfg"/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 # Z Shell Settings {{{
 
 # Prompt
-PROMPT='%F{green}%n@%m%F{red}:%F{blue}%1~%F{blue} ❯%f '
+PROMPT='%F{green}%n@%m%F{red}:%F{blue}%1~%F{yellow} $%f '
 
 # Colors
 autoload -Uz colors && colors
