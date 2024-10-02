@@ -16,7 +16,7 @@ local highlights = {
     ["Question"] = { fg = "#a6dbff" },
     ["QuickFixLine"] = { fg = "#a6dbff" },
     ["SignColumn"] = { bg = "none" },
-    ["Special"] = { fg = "none" },
+    ["Special"] = { fg = "#dcd7ba" },
     ["Tabline"] = { bg = "none" },
     ["TablineFill"] = { bg = "none" },
     ["TablineSel"] = { bg = "#a6dbff", fg = "#000000" },
