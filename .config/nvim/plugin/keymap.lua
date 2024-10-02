@@ -6,6 +6,10 @@ vim.keymap.set("n", "<Leader><Leader>", "<C-^>", { desc = "Toggle between buffer
 vim.keymap.set("n", "<Leader>s", "<Cmd>setl spell! spl=en_us<CR>", { desc = "Toggle spell check" })
 vim.keymap.set("n", "<Leader>w", "<Cmd>set wrap!<CR>", { desc = "Toggle line wrapping" })
 
+vim.keymap.set("n", "<C-=>", "=Gzz", { desc = "Indent files and center" })
+vim.keymap.set("n", "N", "Nzz", { desc = "Move to the previous search result and center" })
+vim.keymap.set("n", "n", "nzz", { desc = "Move to the next search result and center" })
+
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
