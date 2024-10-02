@@ -24,7 +24,6 @@ vim.opt.splitright = true
 
 -- Visual
 vim.opt.colorcolumn = "101"
-vim.opt.conceallevel = 2
 vim.opt.fillchars = { eob = " ", fold = " " }
 vim.opt.foldmethod = "marker"
 vim.opt.inccommand = "split"
