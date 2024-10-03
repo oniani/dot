@@ -19,8 +19,8 @@ The setup is intended for (Arch) Linux and macOS.
 > Copy over the contents and create directories:
 >
 > ```console
-> cp -R .config .local "$HOME"
-> mkdir -p "$HOME/git" "$HOME/workspace" "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+> \cp -R .config .local "$HOME"
+> \mkdir -p "$HOME/git" "$HOME/workspace" "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 > ```
 >
 > Install packages on Arch Linux
