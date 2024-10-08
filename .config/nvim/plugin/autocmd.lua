@@ -35,6 +35,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
             vim.lsp.with(vim.lsp.handlers.signature_help, border_opt)
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
+        client.server_capabilities.semanticTokensProvider = nil
+
         if client and client.server_capabilities.documentHighlightProvider then
             local hi_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
             vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
