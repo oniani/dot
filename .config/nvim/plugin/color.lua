@@ -24,10 +24,11 @@ local highlights = {
     -- Other components
     ["DiagnosticHint"] = { fg = "NvimLightGreen" },
     ["Folded"] = { fg = "NvimLightGray4" },
-    ["Normal"] = { bg = "Black" },
+    ["Normal"] = { fg = "NvimLightGrey2", bg = "Black" },
     ["NormalFloat"] = { bg = "Black" },
     ["Pmenu"] = { bg = "Black", fg = "NvimLightGray2" },
     ["PmenuSel"] = { bg = "NvimLightBlue", fg = "Black" },
+    ["Statement"] = { fg = "NvimLightYellow" },
     ["Tabline"] = { bg = "Black", fg = "NvimLightGray2" },
     ["TablineSel"] = { bg = "NvimLightBlue", fg = "Black" },
     ["WinSeparator"] = { fg = "NvimDarkGray3" },
@@ -41,6 +42,5 @@ local highlights = {
 }
 
 for group, style in pairs(highlights) do
-    style["bold"] = false
     vim.api.nvim_set_hl(0, group, style)
 end
