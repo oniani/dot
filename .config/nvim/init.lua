@@ -52,10 +52,14 @@ if not is_installed then
     return
 end
 
+-- Enable the experimental Lua module loader
+vim.loader.enable()
+
 -- Set Python3 provider
 vim.g.python3_host_prog = vim.fn.expand "$XDG_DATA_HOME" .. "/pyenv/shims/python"
 
 -- Disable some rtp plugins for improved perf
+vim.g.did_install_default_menus = 1
 vim.g.loaded_gzip = 1
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -63,9 +67,6 @@ vim.g.loaded_tar = 1
 vim.g.loaded_tarPlugin = 1
 vim.g.loaded_zip = 1
 vim.g.loaded_zipPlugin = 1
-
--- Enable the experimental Lua module loader
-vim.loader.enable()
 
 -- Set leader key
 vim.g.mapleader = " "

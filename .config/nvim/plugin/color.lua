@@ -5,25 +5,29 @@
 vim.cmd.colorscheme "default"
 
 local highlights = {
-    -- Language and text
+    -- NvimDarkCyan -> NvimDarkBlue && NvimLightCyan -> NvimLightBlue
+    ["Changed"] = { fg = "NvimLightBlue" },
+    ["DiagnosticInfo"] = { fg = "NvimLightBlue" },
+    ["DiffText"] = { bg = "NvimDarkBlue" },
+    ["Directory"] = { fg = "NvimLightBlue" },
     ["Function"] = { fg = "NvimLightBlue" },
-    ["Identifier"] = { fg = "NvimLightBlue" },
-    ["Special"] = { fg = "NvimLightGray2" },
-    ["Statement"] = { fg = "NvimLightGray2" },
-    ["Todo"] = { bg = "NvimLightBlue", fg = "Black" },
-    ["Type"] = { fg = "NvimLightGray2" },
+    ["MoreMsg"] = { fg = "NvimLightBlue" },
+    ["Question"] = { fg = "NvimLightBlue" },
+    ["QuickFixLine"] = { fg = "NvimLightBlue" },
+    ["Special"] = { fg = "NvimLightBlue" },
+
+    ["DiffAdd"] = { fg = "NvimLightBlue" },
+    ["DiffChange"] = { fg = "NvimLightBlue" },
+
+    ["Todo"] = { fg = "NvimLightBlue" },
 
     -- Other components
-    ["Diagnosticinfo"] = { fg = "NvimLightBlue" },
-    ["Directory"] = { fg = "NvimLightBlue" },
+    ["DiagnosticHint"] = { fg = "NvimLightGreen" },
     ["Folded"] = { fg = "NvimLightGray4" },
-    ["MoreMsg"] = { fg = "NvimLightBlue" },
     ["Normal"] = { bg = "Black" },
     ["NormalFloat"] = { bg = "Black" },
     ["Pmenu"] = { bg = "Black", fg = "NvimLightGray2" },
     ["PmenuSel"] = { bg = "NvimLightBlue", fg = "Black" },
-    ["Question"] = { fg = "NvimLightBlue" },
-    ["QuickFixLine"] = { fg = "NvimLightBlue" },
     ["Tabline"] = { bg = "Black", fg = "NvimLightGray2" },
     ["TablineSel"] = { bg = "NvimLightBlue", fg = "Black" },
     ["WinSeparator"] = { fg = "NvimDarkGray3" },

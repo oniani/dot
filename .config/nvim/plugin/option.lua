@@ -24,6 +24,7 @@ vim.opt.splitright = true
 
 -- Visual
 vim.opt.colorcolumn = "101"
+vim.opt.cursorline = true
 vim.opt.fillchars = { eob = " ", fold = " " }
 vim.opt.foldmethod = "marker"
 vim.opt.inccommand = "split"
@@ -32,7 +33,10 @@ vim.opt.lazyredraw = true
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.number = true
+vim.opt.scrolloff = 4
+vim.opt.showmode = false
 vim.opt.signcolumn = "yes"
+vim.opt.synmaxcol = 256
 vim.opt.termguicolors = true
 vim.opt.textwidth = 100
 

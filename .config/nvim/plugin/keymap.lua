@@ -7,9 +7,13 @@ vim.keymap.set("n", "<Leader>s", "<Cmd>setl spell! spl=en_us<CR>", { desc = "Tog
 vim.keymap.set("n", "<Leader>w", "<Cmd>set wrap!<CR>", { desc = "Toggle line wrapping" })
 
 vim.keymap.set("n", "<C-=>", "=Gzz", { desc = "Indent files and center" })
+vim.keymap.set("n", "<C-l>", "<Cmd>nohlsearch<CR>", { desc = "Stops highlighting search queries" })
+
 vim.keymap.set("n", "N", "Nzz", { desc = "Move to the previous search result and center" })
+vim.keymap.set("n", "g:", ":lua=", { desc = "Run current file" })
 vim.keymap.set("n", "n", "nzz", { desc = "Move to the next search result and center" })
-vim.keymap.set({ "n", "v" }, "F", "gw", { desc = "Format lines" })
+vim.keymap.set("n", "yY", "%y", { desc = "Copy contents of the entire file" })
+vim.keymap.set({ "n", "v" }, "Q", "gw", { desc = "Format lines" })
 
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
@@ -36,3 +40,21 @@ vim.keymap.set("n", "<A-j>", "<Cmd>cnext<Cr>", { desc = "Move to the next QuickF
 vim.keymap.set("n", "<A-k>", "<Cmd>cprev<Cr>", { desc = "Move to the previous QuickFix item" })
 
 vim.keymap.set("n", "<C-CR>", "<Cmd>!run %<CR>", { desc = "Run current file" })
+
+vim.keymap.set("n", "gX", function()
+    vim.ui.open(("https://google.com/search?q=%s"):format(vim.fn.expand "<cword>"))
+end, { desc = "Web Search (Normal Mode)" })
+
+vim.keymap.set("x", "gX", function()
+    vim.ui.open(
+        ("https://google.com/search?q=%s"):format(
+            vim.trim(
+                table.concat(
+                    vim.fn.getregion(vim.fn.getpos ".", vim.fn.getpos "v", { type = vim.fn.mode() }),
+                    " "
+                )
+            )
+        )
+    )
+    vim.api.nvim_input "<esc>"
+end, { desc = "Web Search (Visual Mode)" })
