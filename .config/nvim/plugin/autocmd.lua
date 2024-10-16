@@ -19,12 +19,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
         lsp_keymap_set("dn", vim.diagnostic.goto_next, "[D]iagnostic [N]ext")
         lsp_keymap_set("dp", vim.diagnostic.goto_prev, "[D]iagnostic [P]revious")
 
-        lsp_keymap_set("<Leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-        lsp_keymap_set("<Leader>ds", vim.lsp.buf.document_symbol, "[D]ocument [S]ymbols")
-        lsp_keymap_set("<Leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-        lsp_keymap_set("<Leader>ss", vim.lsp.buf.signature_help, "[S]how [S]ignature")
-        lsp_keymap_set("<Leader>td", vim.lsp.buf.type_definition, "[T]ype [D]efinition")
-        lsp_keymap_set("<Leader>ws", vim.lsp.buf.workspace_symbol, "[W]orkspace [S]ymbols")
+        lsp_keymap_set("ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+        lsp_keymap_set("cn", vim.lsp.buf.rename, "[C]hange [N]ame")
+        lsp_keymap_set("ds", vim.lsp.buf.document_symbol, "[D]ocument [S]ymbols")
 
         lsp_keymap_set("K", vim.lsp.buf.hover, "Hover Documentation")
 
@@ -36,6 +33,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         client.server_capabilities.semanticTokensProvider = nil
+
+        if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+            lsp_keymap_set("<C-h>", function()
+                vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
+            end, "Toggle Inlay [H]ints")
+        end
 
         if client and client.server_capabilities.documentHighlightProvider then
             local hi_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
