@@ -10,7 +10,6 @@ vim.keymap.set("n", "<C-=>", "=Gzz", { desc = "Indent files and center" })
 vim.keymap.set("n", "<C-l>", "<Cmd>nohlsearch<CR>", { desc = "Stops highlighting search queries" })
 
 vim.keymap.set("n", "N", "Nzz", { desc = "Move to the previous search result and center" })
-vim.keymap.set("n", "g:", ":lua=", { desc = "Run current file" })
 vim.keymap.set("n", "n", "nzz", { desc = "Move to the next search result and center" })
 vim.keymap.set("n", "yY", "<Cmd>%y<CR>", { desc = "Copy contents of the entire file" })
 vim.keymap.set({ "n", "v" }, "Q", "gw", { desc = "Format lines" })
