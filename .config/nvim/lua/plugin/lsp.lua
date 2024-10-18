@@ -72,17 +72,6 @@ require("lspkind").init {}
 
 local cmp = require "cmp"
 
-local border = {
-    { "╭", "FoldColumn" },
-    { "─", "FoldColumn" },
-    { "╮", "FoldColumn" },
-    { "│", "FoldColumn" },
-    { "╯", "FoldColumn" },
-    { "─", "FoldColumn" },
-    { "╰", "FoldColumn" },
-    { "│", "FoldColumn" },
-}
-
 cmp.setup {
     experimental = { ghost_text = true },
     sources = {
@@ -114,8 +103,8 @@ cmp.setup {
         end,
     },
     window = {
-        completion = { border = border, scrollbar = "║" },
-        documentation = { border = border, scrollbar = "║" },
+        completion = { border = "single", scrollbar = "║" },
+        documentation = { border = "single", scrollbar = "║" },
     },
 }
 
