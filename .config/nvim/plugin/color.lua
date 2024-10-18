@@ -34,6 +34,7 @@ local highlights = {
     ["WinSeparator"] = { fg = "NvimDarkGray3" },
 
     -- Plugins
+    ["CmpBorderBg"] = { fg = "NvimDarkGray3" },
     ["CmpItemAbbrDefault"] = {},
     ["CmpItemAbbrMatchDefault"] = {},
     ["CmpItemKindDefault"] = { fg = "NvimLightBlue" },

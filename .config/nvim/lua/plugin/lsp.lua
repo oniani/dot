@@ -103,8 +103,16 @@ cmp.setup {
         end,
     },
     window = {
-        completion = { border = "single", scrollbar = "║" },
-        documentation = { border = "single", scrollbar = "║" },
+        completion = {
+            border = "single",
+            scrollbar = "║",
+            winhighlight = "Normal:Normal,FloatBorder:CmpBorderBG,CursorLine:PmenuSel,Search:None",
+        },
+        documentation = {
+            border = "single",
+            scrollbar = "║",
+            winhighlight = "Normal:Normal,FloatBorder:CmpBorderBG,CursorLine:PmenuSel,Search:None",
+        },
     },
 }
 
