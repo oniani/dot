@@ -18,10 +18,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
         lsp_keymap_set("dl", vim.diagnostic.setqflist, "[D]iagnostic [L]ist")
         lsp_keymap_set("dn", vim.diagnostic.goto_next, "[D]iagnostic [N]ext")
         lsp_keymap_set("dp", vim.diagnostic.goto_prev, "[D]iagnostic [P]revious")
+        lsp_keymap_set("ds", vim.diagnostic.open_float, "[D]iagnostic [S]how")
 
         lsp_keymap_set("ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-        lsp_keymap_set("cn", vim.lsp.buf.rename, "[C]hange [N]ame")
-        lsp_keymap_set("ds", vim.lsp.buf.document_symbol, "[D]ocument [S]ymbols")
+        lsp_keymap_set("rn", vim.lsp.buf.rename, "[R]e[N]ame")
 
         lsp_keymap_set("K", vim.lsp.buf.hover, "Hover Documentation")
 
