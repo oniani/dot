@@ -25,7 +25,7 @@ local highlights = {
     ["DiagnosticHint"] = { fg = "NvimLightGreen" },
     ["Folded"] = { fg = "NvimLightGray4" },
     ["Normal"] = { fg = "NvimLightGrey2", bg = "Black" },
-    ["NormalFloat"] = { fg = "NvimDarkGray3", bg = "Black" },
+    ["NormalFloat"] = { fg = "NvimLightGray4", bg = "Black" },
     ["Pmenu"] = { bg = "Black", fg = "NvimLightGray2" },
     ["PmenuSel"] = { bg = "NvimLightBlue", fg = "Black" },
     ["Statement"] = { fg = "NvimLightYellow" },
@@ -34,7 +34,7 @@ local highlights = {
     ["WinSeparator"] = { fg = "NvimDarkGray3" },
 
     -- Plugins
-    ["CmpBorderBg"] = { fg = "NvimDarkGray3" },
+    ["CmpBorderBg"] = { fg = "NvimLightGray4" },
     ["CmpItemAbbrDefault"] = {},
     ["CmpItemAbbrMatchDefault"] = {},
     ["CmpItemKindDefault"] = { fg = "NvimLightBlue" },
