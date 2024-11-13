@@ -51,12 +51,3 @@
     stashput = "!f() { git stash push -m $1; }; f"
     squashit = "!f() { git reset --soft HEAD~$1 && git commit --edit -m \"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; }; f"
     uncommit = "!f() { git reset --soft HEAD~$1; }; f"
-
-[credential]
-    cacheoptions = --timeout 86400
-    credentialStore = cache
-    guiPrompt = false
-    helper = /usr/bin/git-credential-manager
-
-[credential "https://dev.azure.com"]
-    useHttpPath = true

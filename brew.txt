@@ -10,6 +10,7 @@ font-jetbrains-mono
 font-symbols-only-nerd-font
 fzf
 gcc
+gh
 git
 go
 htop
