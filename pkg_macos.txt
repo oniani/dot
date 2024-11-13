@@ -1,9 +1,12 @@
 atool
+bat
 btop
 cmake
+coreutils
 erdtree
 fd
 ffmpeg
+font-jetbrains-mono
 font-symbols-only-nerd-font
 fzf
 gcc

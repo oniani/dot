@@ -30,7 +30,7 @@ local servers = {
             python = { analysis = { ignore = { "*" } } },
         },
     },
-    ruff_lsp = {
+    ruff = {
         init_options = {
             settings = {
                 format = { args = { "--line-length", "100" } },

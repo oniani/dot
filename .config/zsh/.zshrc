@@ -4,7 +4,8 @@
 
 # Eval and Sourcing {{{
 
-eval "$(pyenv init -)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/pyenv init -)"
 
 typeset -A plugins=(
     ["zsh-autosuggestions"]="https://github.com/zsh-users/zsh-autosuggestions.git"
@@ -130,8 +131,8 @@ alias doc2pdf="libreoffice --headless --invisible --norestore --convert-to pdf"
 alias grep="grep --color=auto"
 alias icat="kitty +kitten icat"
 alias j2py="jupyter nbconvert --to script"
-alias l="ls -Av --color=auto --group-directories-first"
-alias ll="ls -Ahlv --color=auto --group-directories-first"
+alias l="gls -Av --color=auto --group-directories-first"
+alias ll="gls -Ahlv --color=auto --group-directories-first"
 alias ssh="kitty +kitten ssh"
 alias wget="wget --show-progress"
 alias x="latexmk -interaction=nonstopmode -pdf -outdir=target"
