@@ -9,7 +9,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
 # Move to ~/.cache
-export CUDA_CACHE_PATH="${XDG_CACHE_HOME:-$HOME/.cache}"/nv
 export NPM_CONFIG_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}"/npm
 
 # Move to ~/.config
