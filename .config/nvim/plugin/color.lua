@@ -40,6 +40,7 @@ local highlights = {
     ["CmpItemKindDefault"] = { fg = "NvimLightBlue" },
     ["FzfLuaBorder"] = { link = "Winseparator" },
     ["NvimTreeExecFile"] = { link = "NvimLightGreen" },
+    ["NvimTreeFolderIcon"] = { link = "NvimLightBlue" },
 }
 
 for group, style in pairs(highlights) do
