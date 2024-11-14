@@ -38,7 +38,7 @@ export FZF_DEFAULT_OPTS="--reverse --color bg+:-1"
 export NNN_BMS="D:~/Downloads;c:~/git/dot;d:~/Documents;g:~/git;t:~/git/tex;w:~/workspace;"
 export NNN_FCOLORS="000004300000000000000000"
 export NNN_FIFO="/tmp/nnn.fifo"
-export NNN_OPENER="$HOME/.local/bin/nuke"
+export NNN_OPENER="$HOME"/.local/bin/nuke
 export NNN_OPTS="AEHder"
 export NNN_TRASH=1
 
