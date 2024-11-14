@@ -27,13 +27,13 @@ The setup is intended for (Arch) Linux and macOS.
 >
 > ```console
 > # Arch Official Repositories
-> sudo pacman -S --noconfirm - < arch/arch.txt
+> sudo pacman -S --noconfirm - < linux/arch/arch.txt
 >
 > # Arch User Repository (AUR)
 > rustup toolchain install stable
 > sudo pacman -S --needed base-devel
 > git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && rm -rf paru
-> paru -S --noconfirm - < arch/arch_aur.txt
+> paru -S --noconfirm - < linux/arch/aur.txt
 > ```
 >
 > Install packages on macOS
