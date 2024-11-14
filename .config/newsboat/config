@@ -3,7 +3,7 @@
 # MIT License
 
 # General settings
-browser "firefox >/dev/null 2>&1"
+browser "open -a safari >/dev/null 2>&1"
 datetime-format "%D, %R %p"
 
 # Key bindings
