@@ -7,7 +7,6 @@ vim.keymap.set("n", "<Leader>s", "<Cmd>setl spell! spl=en_us<CR>", { desc = "Tog
 vim.keymap.set("n", "<Leader>w", "<Cmd>set wrap!<CR>", { desc = "Toggle line wrapping" })
 
 vim.keymap.set("n", "<C-=>", "=Gzz", { desc = "Indent files and center" })
-vim.keymap.set("n", "<C-l>", "<Cmd>nohlsearch<CR>", { desc = "Stops highlighting search queries" })
 
 vim.keymap.set("n", "N", "Nzz", { desc = "Move to the previous search result and center" })
 vim.keymap.set("n", "n", "nzz", { desc = "Move to the next search result and center" })
