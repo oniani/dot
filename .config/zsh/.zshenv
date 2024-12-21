@@ -52,7 +52,7 @@ export LC_ALL=en_US.UTF-8
 export LESSHISTFILE="-"
 export MANPAGER="nvim +Man!"
 
-# Adding to PATH
+# Add to `$PATH`
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"

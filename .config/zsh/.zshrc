@@ -142,6 +142,7 @@ alias xa="latexmk -interaction=nonstopmode -pdf -pvc -outdir=target"
 alias e="nvim"
 alias g="nvim +Git +only"
 alias j="python -m jupyterlab"
+alias t="tmux"
 
 # Safer commands
 alias cp="cp -i"

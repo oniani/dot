@@ -36,6 +36,7 @@ shfmt
 signal
 slack
 stylua
+tmux
 tokei
 trash-cli
 watchexec
