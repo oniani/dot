@@ -189,6 +189,12 @@ function find_file_fuzzy() {
         xargs -r -I {} "$EDITOR" {}
 }
 
+# Fuzzy find tmux session
+function find_session_fuzzy() {
+    selected=$(tmux list-sessions | fzf | cut -d':' -f1)
+    ([ -z "$selected" ] && exit 0) || tmux attach -t "$selected"
+}
+
 # Print the color map
 function colormap() {
     for i in {0..255}; do
@@ -212,6 +218,7 @@ function palette() {
 bindkey -s "^f" "nnn_autocd\n"
 bindkey -s "^p" "find_file_fuzzy\n"
 bindkey -s "^r" "newsboat --quiet\n"
+bindkey -s "^t" "find_session_fuzzy\n"
 bindkey -s "^z" "fg\n"
 
 # }}}
