@@ -19,6 +19,7 @@ isort
 jq
 kitty
 llvm
+macchina
 mactex
 man-db
 mpv
