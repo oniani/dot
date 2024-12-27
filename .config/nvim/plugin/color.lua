@@ -24,8 +24,8 @@ local highlights = {
     -- Other components
     ["DiagnosticHint"] = { fg = "NvimLightGreen" },
     ["Folded"] = { fg = "NvimLightGray4" },
-    ["Normal"] = { fg = "NvimLightGrey2", bg = "Black" },
-    ["NormalFloat"] = { fg = "NvimLightGray4", bg = "Black" },
+    ["Normal"] = { fg = "NvimLightGrey2", bg = "None" },
+    ["NormalFloat"] = { fg = "NvimLightGray4", bg = "None" },
     ["Pmenu"] = { bg = "Black", fg = "NvimLightGray2" },
     ["PmenuSel"] = { bg = "NvimLightBlue", fg = "Black" },
     ["Statement"] = { fg = "NvimLightYellow" },

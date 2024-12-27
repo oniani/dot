@@ -1,0 +1,30 @@
+# Keymaps
+keybind = cmd+shift+f=toggle_fullscreen
+keybind = ctrl+shift+j=jump_to_prompt:1
+keybind = ctrl+shift+k=jump_to_prompt:-1
+keybind = global:cmd+`=toggle_quick_terminal
+keybind = shift+ctrl+enter=new_tab
+keybind = shift+ctrl+h=previous_tab
+keybind = shift+ctrl+l=next_tab
+keybind = shift+ctrl+minus=decrease_font_size:1
+keybind = shift+ctrl+n=new_window
+keybind = shift+ctrl+plus=increase_font_size:1
+
+# Font
+font-family = "JetBrains Mono"
+font-size = 16
+
+# Color
+theme = "NvimDark"
+background = "#000000"
+
+# Style
+background-opacity = 0.8
+background-blur-radius = 40
+
+# Miscellaneous
+auto-update = off
+macos-option-as-alt = true
+macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = tabs
+quick-terminal-position = center
