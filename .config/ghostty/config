@@ -11,20 +11,25 @@ keybind = shift+ctrl+n=new_window
 keybind = shift+ctrl+plus=increase_font_size:1
 
 # Font
-font-family = "JetBrains Mono"
+font-family = Symbols Nerd Font Mono
+font-family = JetBrains Mono
 font-size = 16
 
 # Color
-theme = "NvimDark"
+theme = NvimDark
 background = "#000000"
 
 # Style
-background-opacity = 0.8
 background-blur-radius = 40
+background-opacity = 0.8
+
+# Quake
+quick-terminal-animation-duration = 0
+quick-terminal-position = center
 
 # Miscellaneous
 auto-update = off
 macos-option-as-alt = true
 macos-titlebar-proxy-icon = hidden
 macos-titlebar-style = tabs
-quick-terminal-position = center
+shell-integration = zsh
