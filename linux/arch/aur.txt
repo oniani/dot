@@ -1,4 +1,0 @@
-drawio-desktop
-git-credential-manager-core
-nnn-nerd
-xdg-ninja

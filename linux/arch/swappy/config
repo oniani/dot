@@ -1,7 +1,0 @@
-[Default]
-line_size=4
-save_dir=$HOME/pic
-save_filename_format=img-%Y%m%d-%H%M%S.png
-show_panel=true
-text_font=Liga ComicMono Nerd Font
-text_size=32
