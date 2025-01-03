@@ -21,10 +21,6 @@ adjust-cursor-height = 4
 theme = NvimDark
 background = "#000000"
 
-# Style
-background-blur-radius = 40
-background-opacity = 0.8
-
 # Quake
 quick-terminal-animation-duration = 0
 quick-terminal-position = center
