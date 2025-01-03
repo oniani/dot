@@ -29,6 +29,10 @@ background-opacity = 0.8
 quick-terminal-animation-duration = 0
 quick-terminal-position = center
 
+# Window size
+window-height = 25
+window-width = 100
+
 # Miscellaneous
 auto-update = off
 macos-option-as-alt = true
