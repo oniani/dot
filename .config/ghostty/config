@@ -17,14 +17,6 @@ font-size = 16
 adjust-cell-height = 4
 adjust-cursor-height = 4
 
-# Color
-theme = NvimDark
-background = "#000000"
-
-# Style
-background-blur-radius = 32
-background-opacity = 0.8
-
 # Quake
 quick-terminal-animation-duration = 0
 quick-terminal-position = center
@@ -32,6 +24,14 @@ quick-terminal-position = center
 # Window size
 window-height = 25
 window-width = 100
+
+# Color
+theme = NvimDark
+background = "#000000"
+
+# Window style
+background-blur-radius = 32
+background-opacity = 0.8
 
 # Miscellaneous
 auto-update = off
