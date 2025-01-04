@@ -102,10 +102,10 @@ bindkey -M viins "^e" edit-command-line
 zle-keymap-select() {
     case $KEYMAP in
         # Normal mode
-        vicmd) echo -ne "\e[1 q";;
+        vicmd) echo -ne "\e[2 q";;
 
         # Insert mode
-        viins|main) echo -ne "\e[5 q";;
+        viins|main) echo -ne "\e[6 q";;
     esac
 }
 
@@ -113,7 +113,7 @@ zle-line-init() {
     # Initiate `vi insert` as keymap
     # NOTE: Can be removed if `bindkey -V` has been set elsewhere
     zle -K viins
-    echo -ne "\e[5 q"
+    echo -ne "\e[6 q"
 }
 
 zle -N zle-keymap-select

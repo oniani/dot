@@ -21,17 +21,22 @@ adjust-cursor-height = 4
 quick-terminal-animation-duration = 0
 quick-terminal-position = center
 
-# Window size
-window-height = 25
-window-width = 100
-
 # Color
 theme = NvimDark
 background = "#000000"
 
+# Window size
+window-height = 25
+window-width = 100
+
 # Window style
 background-blur-radius = 32
 background-opacity = 0.8
+
+# Cursor
+cursor-style = bar
+cursor-style-blink = false
+shell-integration-features = no-cursor
 
 # Miscellaneous
 auto-update = off
