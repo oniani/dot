@@ -24,6 +24,7 @@ mactex
 man-db
 mpv
 neovim
+netron
 newsboat
 node
 prettier
