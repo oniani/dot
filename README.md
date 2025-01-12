@@ -13,7 +13,7 @@ The setup is intended for (Arch) Linux and macOS.
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Homebrew_logo.svg" width="150px" height="150px" />
 </p>
 
-NOTE: For `linux`, switch to the `linux` branch.
+**NOTE**: For (Arch) Linux, switch to the `linux` branch.
 
 ## Setup
 
@@ -38,50 +38,10 @@ NOTE: For `linux`, switch to the `linux` branch.
 > chsh -s /usr/bin/zsh
 > ```
 
-> [!TIP]
-> It is possible to set a default location for `.zshenv`.
->
-> ```console
-> sudo touch /etc/zsh/zshenv
-> printf "export ZDOTDIR=%s/.config/zsh\n" "$HOME" | sudo tee /etc/zsh/zshenv
-> ```
-
-> [!TIP]
-> It is also possible to bypass a password prompt when using `sudo`:
->
-> ```console
-> sudo touch "/etc/sudoers.d/$USER"
-> printf "%s ALL=(ALL:ALL) NOPASSWD: ALL\n" "$USER" | sudo tee "/etc/sudoers.d/$USER"
-> ```
-
-> [!TIP]
-> The following will stop generating `.sudo_as_admin_successful`.
->
-> ```console
-> sudo touch /etc/sudoers.d/disable_admin_file_in_home
-> printf "Defaults !admin_flag\n" | sudo tee /etc/sudoers.d/disable_admin_file_in_home
-> ```
-
 ## License
 
 [MIT License][license]
 
 [unix]: https://en.wikipedia.org/wiki/Unix_philosophy
 [xdg]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-[firefox]: https://www.mozilla.org/en-US/firefox/new/
-[neovim]: https://github.com/neovim/neovim
-[nnn]: https://github.com/jarun/nnn
-[jetbrainsmono]: https://github.com/JetBrains/JetBrainsMono
-[nerdfontspatcher]: https://github.com/ryanoasis/nerd-fonts#font-patcher
-[ligaturizer]: https://github.com/ToxicFrog/Ligaturizer
-[nsxiv]: https://github.com/nsxiv/nsxiv
-[mpv]: https://github.com/mpv-player/mpv
-[zathura]: https://en.wikipedia.org/wiki/Zathura_(document_viewer)
-[zsh]: https://github.com/zsh-users/zsh
-[kitty]: https://github.com/kovidgoyal/kitty
-[hyprland]: https://github.com/hyprwm/Hyprland
-[inkscape]: https://gitlab.com/inkscape/inkscape
-[drawio]: https://github.com/jgraph/drawio-desktop
-[jupyterlab]: https://jupyter.org
-[font]: https://github.com/oniani/dot/tree/main/.local/share/fonts/ttf
 [license]: LICENSE
