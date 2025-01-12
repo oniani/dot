@@ -31,6 +31,7 @@ local highlights = {
     ["Statement"] = { fg = "NvimLightYellow" },
     ["Tabline"] = { bg = "Black", fg = "NvimLightGray2" },
     ["TablineSel"] = { bg = "NvimLightBlue", fg = "Black" },
+    ["WinBar"] = { bg = "None" },
     ["WinSeparator"] = { fg = "NvimDarkGray3" },
 
     -- Plugins
