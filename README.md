@@ -13,6 +13,8 @@ The setup is intended for (Arch) Linux and macOS.
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Homebrew_logo.svg" width="150px" height="150px" />
 </p>
 
+NOTE: For `linux`, switch to the `linux` branch.
+
 ## Setup
 
 > [!IMPORTANT]
@@ -23,22 +25,7 @@ The setup is intended for (Arch) Linux and macOS.
 > \mkdir -p "$HOME/git" "$HOME/workspace" "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 > ```
 >
-> Install packages on Arch Linux
->
-> ```console
-> git checkout linux
->
-> # Arch Official Repositories
-> sudo pacman -S --noconfirm - < arch.txt
->
-> # Arch User Repository (AUR)
-> rustup toolchain install stable
-> sudo pacman -S --needed base-devel
-> git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && rm -rf paru
-> paru -S --noconfirm - < aur.txt
-> ```
->
-> Install packages on macOS
+> Install packages:
 >
 > ```console
 > xargs brew install < brew.txt
