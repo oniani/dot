@@ -6,12 +6,12 @@
 
 help() {
     printf "usage: todo [option]\n\
-    -e  edit entries\n\
-    -l  list entries\n"
+    e  edit entries\n\
+    l  list entries\n"
 }
 
 case $1 in
--e) $EDITOR "$HOME"/.local/share/todo.md ;;
--l | "") bat -n "$HOME"/.local/share/todo.md ;;
+e) $EDITOR "$HOME"/.local/share/todo.md ;;
+l | "") bat -n "$HOME"/.local/share/todo.md ;;
 *) help ;;
 esac
