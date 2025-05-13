@@ -39,12 +39,8 @@ paq {
     "williamboman/mason.nvim",
 
     -- LSP: Autocompletion
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-cmdline",
-    "hrsh7th/cmp-path",
-    "onsails/lspkind-nvim",
+    { "saghen/blink.cmp", branch = "v1.2.0", pin = true },
+    "rafamadriz/friendly-snippets",
 }
 
 if not is_installed then
