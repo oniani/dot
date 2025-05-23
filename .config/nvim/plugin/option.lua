@@ -41,9 +41,16 @@ vim.opt.termguicolors = true
 vim.opt.textwidth = 100
 
 -- Miscellaneous
-vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.mouse = "a"
 vim.opt.shortmess:append "c"
 vim.opt.updatetime = 256
 vim.opt.wildmode = { "longest", "full", "full" }
+
+vim.api.nvim_create_autocmd("UIEnter", {
+    desc = "Sync clipboard between OS and Neovim after `UiEnter` to decrease startup time.",
+    group = vim.api.nvim_create_augroup("sync-clipboard", { clear = true }),
+    callback = function()
+        vim.o.clipboard = "unnamedplus"
+    end,
+})
