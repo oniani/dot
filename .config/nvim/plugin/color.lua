@@ -40,6 +40,8 @@ local highlights = {
     ["CmpItemAbbrMatchDefault"] = {},
     ["CmpItemKindDefault"] = { fg = "NvimLightBlue" },
     ["FzfLuaBorder"] = { link = "Winseparator" },
+    ["IndentLine"] = { fg = "NvimDarkGray2" },
+    ["IndentLineCurrent"] = { fg = "NvimDarkGray2" },
     ["NvimTreeExecFile"] = { link = "NvimLightGreen" },
     ["NvimTreeFolderIcon"] = { link = "NvimLightBlue" },
 }

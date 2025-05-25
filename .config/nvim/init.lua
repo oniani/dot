@@ -25,8 +25,9 @@ paq {
     -- Code formatting
     "stevearc/conform.nvim",
 
-    -- Syntax highlighting and code navigation
+    -- Syntax highlighting, code navigation, and indentation
     "nvim-treesitter/nvim-treesitter",
+    "nvimdev/indentmini.nvim",
 
     -- Git
     "lewis6991/gitsigns.nvim",
