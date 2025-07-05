@@ -3,6 +3,7 @@ ipython
 ipywidgets
 jinja2
 jupyterlab
+matplotlib
 numpy
 pandas
 polars
