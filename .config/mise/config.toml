@@ -1,0 +1,9 @@
+[tools]
+go = "1.24.4"
+lua = "5.4.7"
+node = "24.3.0"
+python = "3.13.5"
+rust = "1.88.0"
+
+[settings.python]
+default_packages_file = "~/.config/mise/requirements.txt"

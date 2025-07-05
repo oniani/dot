@@ -22,7 +22,6 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}"/zsh
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"/cargo
 export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}"/gnupg
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}"/go
-export PYENV_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}"/pyenv
 export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"/rustup
 
 # Python
@@ -55,6 +54,5 @@ export MANPAGER="nvim +Man!"
 # Add to `$PATH`
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/cargo/bin:$PATH"
 export PATH="/opt/homebrew/opt/trash-cli/bin:$PATH"

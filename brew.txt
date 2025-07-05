@@ -13,7 +13,6 @@ gcc
 gh
 ghostty
 git
-go
 htop
 imagemagick
 isort
@@ -26,13 +25,10 @@ mpv
 neovim
 netron
 newsboat
-node
 prettier
-pyenv
 rectangle
 ripgrep
 ruff
-rustup
 shellcheck
 shfmt
 signal

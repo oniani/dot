@@ -1,0 +1,12 @@
+great_tables
+ipython
+ipywidgets
+jinja2
+jupyterlab
+numpy
+pandas
+polars
+scipy
+torch
+torchaudio
+torchvision

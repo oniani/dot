@@ -5,7 +5,7 @@
 # Eval and Sourcing {{{
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(/opt/homebrew/bin/pyenv init -)"
+eval "$(mise activate zsh)"
 
 typeset -A plugins=(
     ["zsh-autosuggestions"]="https://github.com/zsh-users/zsh-autosuggestions.git"
