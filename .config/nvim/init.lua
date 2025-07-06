@@ -2,58 +2,43 @@
 -- by David Oniani <onianidavid@gmail.com>
 -- MIT License
 
-local path = vim.fn.stdpath "data" .. "/site/pack/paqs/start/paq-nvim"
-local is_installed = vim.loop.fs_stat(path)
-if not is_installed then
-    vim.fn.system { "git", "clone", "--depth=1", "https://github.com/savq/paq-nvim.git", path }
-end
-vim.cmd.packadd "paq-nvim"
-local paq = require "paq"
-
-paq {
-    -- Let Paq manage itself
-    "savq/paq-nvim",
-
+vim.pack.add {
     -- Fuzzy search
-    "ibhagwan/fzf-lua",
+    { src = "https://github.com/ibhagwan/fzf-lua" },
 
     -- File management
-    "nvim-tree/nvim-tree.lua",
-    "nvim-tree/nvim-web-devicons",
-    "stevearc/oil.nvim",
+    { src = "https://github.com/nvim-tree/nvim-tree.lua" },
+    { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+    { src = "https://github.com/stevearc/oil.nvim" },
 
     -- Code formatting
-    "stevearc/conform.nvim",
+    { src = "https://github.com/stevearc/conform.nvim" },
 
     -- Syntax highlighting, code navigation, and indentation
-    "nvim-treesitter/nvim-treesitter",
-    "nvimdev/indentmini.nvim",
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+    { src = "https://github.com/nvimdev/indentmini.nvim" },
 
     -- Git
-    "lewis6991/gitsigns.nvim",
-    "tpope/vim-fugitive",
+    { src = "https://github.com/lewis6991/gitsigns.nvim" },
+    { src = "https://github.com/tpope/vim-fugitive" },
 
     -- LSP
-    "j-hui/fidget.nvim",
-    "neovim/nvim-lspconfig",
-    "williamboman/mason-lspconfig.nvim",
-    "williamboman/mason.nvim",
+    { src = "https://github.com/j-hui/fidget.nvim" },
+    { src = "https://github.com/neovim/nvim-lspconfig" },
+    { src = "https://github.com/williamboman/mason-lspconfig.nvim" },
+    { src = "https://github.com/williamboman/mason.nvim" },
 
     -- LSP: Autocompletion
-    { "saghen/blink.cmp", branch = "v1.2.0", pin = true },
-    "rafamadriz/friendly-snippets",
+    { src = "https://github.com/saghen/blink.cmp", version = "v1.2.0" },
+    { src = "https://github.com/rafamadriz/friendly-snippets" },
 }
-
-if not is_installed then
-    paq.install()
-    return
-end
 
 -- Enable the experimental Lua module loader
 vim.loader.enable()
 
 -- Set Python3 provider
-vim.g.python3_host_prog = vim.fn.expand "$XDG_DATA_HOME" .. "/pyenv/shims/python"
+vim.g.python3_host_prog = vim.fn.expand "$XDG_DATA_HOME"
+    .. "/mise/installs/python/3.13.5/bin/python3"
 
 -- Disable some rtp plugins for improved perf
 vim.g.did_install_default_menus = 1
