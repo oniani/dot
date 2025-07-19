@@ -16,7 +16,7 @@ export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}"/zsh/inputrc
 export IPYTHONDIR="${XDG_CONFIG_HOME:-$HOME/.config}"/ipython
 export JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"/jupyter
 export MATPLOTLIBRC="${XDG_CONFIG_HOME:-$HOME/.config}"/matplotlib/matplotlibrc
-export MPLCONFIGDIR="${XDG_DATA_HOME:-$HOME/.local/share}"/matplotlib
+export MPLCONFIGDIR="${XDG_CONFIG_HOME:-$HOME/.config}"/matplotlib
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}"/wget/wgetrc
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}"/zsh
 
