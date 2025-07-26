@@ -6,6 +6,7 @@ coreutils
 erdtree
 fd
 ffmpeg
+font-iosevka
 font-jetbrains-mono
 font-symbols-only-nerd-font
 fzf
