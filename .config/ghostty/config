@@ -12,7 +12,7 @@ keybind = shift+ctrl+plus=increase_font_size:1
 
 # Font
 font-family = Symbols Nerd Font Mono
-font-family = Iosevka
+font-family = Iosevka Term
 font-size = 20
 adjust-cell-height = 4
 adjust-cursor-height = 4
