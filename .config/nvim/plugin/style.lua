@@ -20,7 +20,6 @@ local styles = {
     ["DiffChange"] = { fg = "NvimLightBlue" },
 
     -- Comments
-    ["@comment.documentation"] = { fg = "NvimLightBlue", bold = true },
     ["@comment.note"] = { fg = "NvimLightBlue", bold = true },
     ["@comment.todo"] = { fg = "NvimLightBlue", bold = true },
     ["@string.documentation.python"] = { fg = "NvimLightGray4", italic = true },
