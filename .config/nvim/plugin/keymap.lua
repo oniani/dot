@@ -50,3 +50,8 @@ vim.keymap.set("x", "gX", function()
     )
     vim.api.nvim_input "<esc>"
 end, { desc = "Web Search (Visual Mode)" })
+
+vim.api.nvim_create_user_command("PackUpdate", function()
+    vim.pack.update()
+    vim.cmd "write"
+end, { desc = "Update plugins" })
