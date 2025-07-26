@@ -44,7 +44,7 @@ vim.loader.enable()
 vim.g.python3_host_prog = vim.fn.expand "$XDG_DATA_HOME"
     .. "/mise/installs/python/3.13.5/bin/python3"
 
--- Disable some rtp plugins for improved perf
+-- Disable some rtp plugins for perf improvement
 vim.g.did_install_default_menus = 1
 vim.g.loaded_gzip = 1
 vim.g.loaded_netrw = 1
@@ -54,7 +54,7 @@ vim.g.loaded_tarPlugin = 1
 vim.g.loaded_zip = 1
 vim.g.loaded_zipPlugin = 1
 
--- Set leader key
+-- Set the leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true, desc = "Map space to no-op" })
