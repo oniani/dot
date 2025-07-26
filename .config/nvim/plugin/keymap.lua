@@ -51,15 +51,7 @@ vim.keymap.set("n", "gX", function()
 end, { desc = "Web Search (Normal Mode)" })
 
 vim.keymap.set("x", "gX", function()
-    vim.ui.open(
-        ("https://google.com/search?q=%s"):format(
-            vim.trim(
-                table.concat(
-                    vim.fn.getregion(vim.fn.getpos ".", vim.fn.getpos "v", { type = vim.fn.mode() }),
-                    " "
-                )
-            )
-        )
-    )
+    local region = vim.fn.getregion(vim.fn.getpos ".", vim.fn.getpos "v", { type = vim.fn.mode() })
+    vim.ui.open(("https://google.com/search?q=%s"):format(vim.trim(table.concat(region, " "))))
     vim.api.nvim_input "<esc>"
 end, { desc = "Web Search (Visual Mode)" })
