@@ -26,8 +26,8 @@ theme = NvimDark
 background = "#000000"
 
 # Window size
-window-height = 28
-window-width = 120
+window-height = 25
+window-width = 115
 
 # Window style
 background-blur-radius = 32
