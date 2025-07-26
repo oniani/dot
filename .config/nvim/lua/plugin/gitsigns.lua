@@ -14,5 +14,5 @@ gitsigns.setup {
     },
 }
 
-vim.keymap.set({ "n", "v" }, "hr", gitsigns.reset_hunk, { desc = "Reset hunk" })
-vim.keymap.set({ "n", "v" }, "hs", gitsigns.stage_hunk, { desc = "Stage hunk" })
+vim.keymap.set({ "n", "v" }, "<Leader>gr", gitsigns.reset_hunk, { desc = "Reset hunk" })
+vim.keymap.set({ "n", "v" }, "<Leader>gs", gitsigns.stage_hunk, { desc = "Stage hunk" })
