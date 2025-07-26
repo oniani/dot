@@ -4,7 +4,7 @@
 
 vim.cmd.colorscheme "default"
 
-local highlights = {
+local styles = {
     -- NvimDarkCyan -> NvimDarkBlue && NvimLightCyan -> NvimLightBlue
     ["Changed"] = { fg = "NvimLightBlue" },
     ["DiagnosticInfo"] = { fg = "NvimLightBlue" },
@@ -19,7 +19,14 @@ local highlights = {
     ["DiffAdd"] = { fg = "NvimLightBlue" },
     ["DiffChange"] = { fg = "NvimLightBlue" },
 
-    ["Todo"] = { fg = "NvimLightBlue" },
+    -- Comments
+    ["@comment.documentation"] = { fg = "NvimLightBlue", bold = true },
+    ["@comment.note"] = { fg = "NvimLightBlue", bold = true },
+    ["@comment.todo"] = { fg = "NvimLightBlue", bold = true },
+    ["@string.documentation.python"] = { fg = "NvimLightGray4", italic = true },
+    ["Comment"] = { fg = "NvimLightGray4", italic = true },
+    ["Note"] = { fg = "NvimLightBlue", bold = true },
+    ["Todo"] = { fg = "NvimLightBlue", bold = true },
 
     -- Other components
     ["DiagnosticHint"] = { fg = "NvimLightGreen" },
@@ -35,10 +42,6 @@ local highlights = {
     ["WinSeparator"] = { fg = "NvimDarkGray3" },
 
     -- Plugins
-    ["CmpBorderBg"] = { fg = "NvimDarkGray3" },
-    ["CmpItemAbbrDefault"] = {},
-    ["CmpItemAbbrMatchDefault"] = {},
-    ["CmpItemKindDefault"] = { fg = "NvimLightBlue" },
     ["FzfLuaBorder"] = { link = "Winseparator" },
     ["IndentLine"] = { fg = "NvimDarkGray2" },
     ["IndentLineCurrent"] = { fg = "NvimDarkGray2" },
@@ -46,6 +49,6 @@ local highlights = {
     ["NvimTreeFolderIcon"] = { link = "NvimLightBlue" },
 }
 
-for group, style in pairs(highlights) do
+for group, style in pairs(styles) do
     vim.api.nvim_set_hl(0, group, style)
 end
