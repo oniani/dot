@@ -1,41 +1,36 @@
 #!/usr/bin/env sh
 
-# Note utility
+# Note-taking utility
 # by David Oniani <onianidavid@gmail.com>
 # MIT License
 
-cmd() {
-    fd . --color never --exclude .git --exclude _index.md --hidden --type f "$1"
-}
-
-prompt() {
-    cmd "$1" | fzf --prompt "Note> "
-}
-
-pandocmd() {
-    selection=$(prompt "$1")
+pick() {
+    selection=$(fd . --color never --exclude .git --hidden --type f "$1" | fzf --prompt "Note> ")
     [ -z "$selection" ] && exit 0
+    $EDITOR "$selection"
+}
+
+to_pdf() {
+    base="${1%.*}"
+    printf "Converting %s to %s ...\n" "$1" "$base.pdf"
     pandoc -V fontsize=11pt \
         -V geometry:margin=1in \
         -V linkcolor:blue \
         -f markdown \
-        -t pdf "$selection" |
-        zathura -
+        -t pdf "$1" \
+        -o "$base.pdf"
+    printf "Saved PDF as %s\n" "$base.pdf"
 }
 
 help() {
     printf "usage: note [option]\n\
-    a  add a note\n\
-    f  find a note\n\
-    l  list all notes\n\
-    o  open a note\n"
+    pdf convert a note to pdf\n\
+    ls  list all notes\n"
 }
 
-notedir="$HOME/git/oniani.github.io/content/notes"
 case $1 in
-a) printf "Note: " && read -r name && "$EDITOR" "$notedir/$name.md" ;;
-f) pandocmd "$notedir" ;;
-l) cmd "$notedir" ;;
-o) "$EDITOR" "$(prompt "$notedir")" ;;
+ls) ls -1 "$2" ;;
+pdf) to_pdf "$2" ;;
+pick) pick "$2" ;;
 *) help ;;
 esac

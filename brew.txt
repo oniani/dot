@@ -24,6 +24,7 @@ mpv
 neovim
 netron
 newsboat
+pandoc
 prettier
 rectangle
 ripgrep
