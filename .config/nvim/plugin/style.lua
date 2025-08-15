@@ -16,8 +16,10 @@ local styles = {
     ["QuickFixLine"] = { fg = "NvimLightBlue" },
     ["Special"] = { fg = "NvimLightBlue" },
 
-    ["DiffAdd"] = { fg = "NvimLightBlue" },
-    ["DiffChange"] = { fg = "NvimLightBlue" },
+    -- Diff
+    ["DiffAdd"] = { fg = "Black", bg = "NvimLightGreen" },
+    ["DiffChange"] = { fg = "Black", bg = "NvimLightYellow" },
+    ["DiffDelete"] = { fg = "Black", bg = "NvimLightRed" },
 
     -- Comments
     ["@comment.note"] = { fg = "NvimLightBlue", bold = true },

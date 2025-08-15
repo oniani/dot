@@ -25,8 +25,8 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "Up" })
 
 -- Command mode navigation
-vim.keymap.set("c", "<C-A>", "<Home>", { desc = "Move cursor to the beginning of line" })
-vim.keymap.set("c", "<C-E>", "<End>", { desc = "Move cursor to the end of line" })
+vim.keymap.set("c", "<C-a>", "<Home>", { desc = "Move cursor to the beginning of line" })
+vim.keymap.set("c", "<C-e>", "<End>", { desc = "Move cursor to the end of line" })
 vim.keymap.set("c", "<C-h>", "<Left>", { desc = "Move cursor left" })
 vim.keymap.set("c", "<C-j>", "<Down>", { desc = "Move cursor down" })
 vim.keymap.set("c", "<C-k>", "<Up>", { desc = "Move cursor up" })
@@ -39,7 +39,7 @@ vim.keymap.set("n", "<A-k>", "<Cmd>cprev<Cr>", { desc = "Move to the previous Qu
 -- Update all plugins
 vim.api.nvim_create_user_command("PackUpdate", function()
     vim.pack.update()
-    vim.cmd "write"
+    vim.cmd.write()
 end, { desc = "Update all plugins" })
 
 -- Generic command runner
