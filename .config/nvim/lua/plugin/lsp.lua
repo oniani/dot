@@ -111,7 +111,13 @@ require("mason-lspconfig").setup { ensure_installed = vim.tbl_keys(servers) }
 
 local blink = require "blink.cmp"
 blink.setup {
-    completion = { documentation = { auto_show = true } },
+    completion = {
+        documentation = { auto_show = true },
+        menu = {
+            border = "single",
+            winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
+        },
+    },
     keymap = {
         ["<C-y>"] = { "select_and_accept" },
         ["<CR>"] = { "select_and_accept", "fallback" },
