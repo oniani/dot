@@ -4,7 +4,7 @@ prepend_keymap = [
     { on = "e", run = "open", desc = "Open a file or a directory" },
     { on = "n", run = "create", desc = "Create a new file" },
     { on = [ "g", "D" ], run = "cd ~/Downloads", desc = "Change directory to ~/Downloads" },
-    { on = [ "g", "G" ], run = "cd ~/Downloads", desc = "Change directory to ~/git" },
+    { on = [ "g", "G" ], run = "cd ~/git", desc = "Change directory to ~/git" },
     { on = [ "g", "d" ], run = "cd ~/Documents", desc = "Change directory to ~/Documents" },
     { on = [ "g", "o" ], run = "cd ~/git/dot", desc = "Change directory to ~/git/dot" },
     { on = [ "g", "w" ], run = "cd ~/workspace", desc = "Change directory to ~/workspace" },
