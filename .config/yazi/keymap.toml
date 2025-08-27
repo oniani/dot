@@ -9,6 +9,7 @@ prepend_keymap = [
     { on = [ "g", "G" ], run = "cd ~/git", desc = "Change directory to ~/git" },
     { on = [ "g", "d" ], run = "cd ~/Documents", desc = "Change directory to ~/Documents" },
     { on = [ "g", "o" ], run = "cd ~/git/dot", desc = "Change directory to ~/git/dot" },
+    { on = [ "g", "t" ], run = "cd ~/git/tex", desc = "Change directory to ~/git/tex" },
     { on = [ "g", "w" ], run = "cd ~/workspace", desc = "Change directory to ~/workspace" },
 
     # Plugin mappings
