@@ -3,9 +3,9 @@ ratio = [2, 3, 4]
 show_hidden = true
 
 [preview]
+max_height = 4096
+max_width = 4096
 wrap = "yes"
-max_width = 1024
-max_height = 1024
 
 [plugin]
 prepend_fetchers = [

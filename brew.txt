@@ -25,10 +25,13 @@ neovim
 netron
 newsboat
 pandoc
+poppler
 prettier
 rectangle
+resvg
 ripgrep
 ruff
+sevenzip
 shellcheck
 shfmt
 signal
@@ -39,6 +42,8 @@ tokei
 trash-cli
 watchexec
 wget
+yazi
 zola
 zotero
+zoxide
 zsh
