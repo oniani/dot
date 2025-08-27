@@ -1,0 +1,8 @@
+[mgr]
+ratio = [2, 3, 4]
+show_hidden = true
+
+[preview]
+wrap = "yes"
+max_width = 1024
+max_height = 1024
