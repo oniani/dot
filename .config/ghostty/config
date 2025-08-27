@@ -31,7 +31,7 @@ window-width = 115
 
 # Window style
 background-blur-radius = 32
-background-opacity = 1.0
+background-opacity = 0.8
 
 # Cursor
 cursor-style = bar
