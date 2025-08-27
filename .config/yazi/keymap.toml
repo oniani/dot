@@ -12,6 +12,7 @@ prepend_keymap = [
     { on = [ "g", "w" ], run = "cd ~/workspace", desc = "Change directory to ~/workspace" },
 
     # Plugin mappings
+    { on = "<Enter>", run = "plugin smart-enter", desc = "Restore last deleted files/folders" },
     { on = "l", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
-    { on = "u", run = "plugin restore", desc = "Restore last deleted files/folders" },
+    { on = "u", run = "plugin restore", desc = "Restore last deleted files/folders" }
 ]
