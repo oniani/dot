@@ -1,6 +1,7 @@
 [mgr]
 prepend_keymap = [
     # Built-in mappings
+    { on = "<C-l>", run = "escape --all", desc = "Cancel find, exit visual mode, clear selected, cancel filter, and cancel search." },
     { on = "e", run = "open", desc = "Open a file or a directory" },
     { on = "n", run = "create", desc = "Create a new file" },
     { on = [ "g", "D" ], run = "cd ~/Downloads", desc = "Change directory to ~/Downloads" },
