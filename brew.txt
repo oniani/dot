@@ -4,6 +4,7 @@ btop
 cmake
 coreutils
 erdtree
+exiftool
 fd
 ffmpeg
 font-symbols-only-nerd-font

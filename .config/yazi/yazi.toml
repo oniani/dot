@@ -10,6 +10,17 @@ wrap = "yes"
 [tasks]
 image_bound = [ 65_535, 65_535 ]
 
+[[opener.set-wallpaper]]
+run = '''
+    osascript -e 'on run {img}' -e 'tell application "System Events" to set picture of every desktop to img' -e 'end run' "$0"
+'''
+for  = "macos"
+desc = "Set as wallpaper"
+
+[[open.prepend_rules]]
+mime = "image/*"
+use  = [ "set-wallpaper", "open" ]
+
 [plugin]
 prepend_fetchers = [
     { id = "git", name = "*", run = "git" },
