@@ -7,6 +7,9 @@ max_height = 4096
 max_width = 4096
 wrap = "yes"
 
+[tasks]
+image_bound = [ 65_535, 65_535 ]
+
 [plugin]
 prepend_fetchers = [
     { id = "git", name = "*", run = "git" },
