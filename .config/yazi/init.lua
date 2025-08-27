@@ -9,6 +9,7 @@ local function install(package)
 end
 
 if not file_exists(os.getenv "XDG_CONFIG_HOME" .. "/yazi/package.toml") then
+    install "yazi-rs/plugins:diff"
     install "yazi-rs/plugins:full-border"
     install "yazi-rs/plugins:git"
     install "yazi-rs/plugins:no-status"
