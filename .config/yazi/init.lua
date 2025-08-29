@@ -15,7 +15,7 @@ if not file_exists(os.getenv "XDG_CONFIG_HOME" .. "/yazi/package.toml") then
     install "yazi-rs/plugins:no-status"
     install "yazi-rs/plugins:smart-enter"
 end
-require("full-border"):setup()
+require("full-border"):setup { type = ui.Border.PLAIN }
 require("git"):setup()
 require("no-status"):setup()
 
