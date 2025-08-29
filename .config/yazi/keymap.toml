@@ -16,7 +16,6 @@ prepend_keymap = [
     { on = "e", run = "open", desc = "Open a file or a directory" },
 
     # Plugin mappings
-    { on = "<C-d>", run = "plugin diff", desc = "Diff the selected with the hovered file" },
     { on = "<Enter>", run = "plugin smart-enter", desc = "Restore last deleted files/folders" },
     { on = "l", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
     { on = "u", run = "plugin restore", desc = "Restore last deleted files/folders" }
