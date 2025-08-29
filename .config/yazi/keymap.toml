@@ -1,14 +1,14 @@
 [mgr]
 prepend_keymap = [
     # Navigation
-    { on = [ "g", "/" ], run = "cd /", desc = "Go to /" },
-    { on = [ "g", "D" ], run = "cd ~/Downloads", desc = "Go to ~/Downloads" },
+    { on = [ "g", "/" ], run = "cd /", desc = "Go /" },
+    { on = [ "g", "D" ], run = "cd ~/Downloads", desc = "Go ~/Downloads" },
     { on = [ "g", "G" ], run = "cd ~/git", desc = "Change directory to ~/git" },
-    { on = [ "g", "d" ], run = "cd ~/Documents", desc = "Go to ~/Documents" },
-    { on = [ "g", "o" ], run = "cd ~/git/dot", desc = "Go to ~/git/dot" },
-    { on = [ "g", "t" ], run = "cd ~/git/tex", desc = "Go to ~/git/tex" },
-    { on = [ "g", "w" ], run = "cd ~/workspace", desc = "Go to ~/workspace" },
-    { on = [ "g", "~" ], run = "cd ~/", desc = "Go to ~/" },
+    { on = [ "g", "d" ], run = "cd ~/Documents", desc = "Go ~/Documents" },
+    { on = [ "g", "o" ], run = "cd ~/git/dot", desc = "Go ~/git/dot" },
+    { on = [ "g", "t" ], run = "cd ~/git/tex", desc = "Go ~/git/tex" },
+    { on = [ "g", "w" ], run = "cd ~/workspace", desc = "Go ~/workspace" },
+    { on = [ "g", "~" ], run = "cd ~/", desc = "Go ~/" },
 
     # Built-in mappings
     { on = "<C-l>", run = "escape --all", desc = "Cancel find/filter/search, exit visual mode, and clear selected." },
