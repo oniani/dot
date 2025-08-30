@@ -1,5 +1,5 @@
 [mgr]
-cwd = { hidden = true, italic = true }
+cwd = { hidden = true }
 preview_hovered = { underline = false }
 marker_selected = { fg = "#fce094", bg = "#fce094" }
 marker_marked = { fg = "#fce094", bg = "#fce094" }
