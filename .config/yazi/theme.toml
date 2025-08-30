@@ -3,6 +3,7 @@ cwd = { hidden = true }
 preview_hovered = { underline = false }
 marker_selected = { fg = "#fce094", bg = "#fce094" }
 marker_marked = { fg = "#fce094", bg = "#fce094" }
+count_selected = { fg = "#fce094", bg = "reset" }
 
 [status]
 overall = { fg = "white", bg = "reset" }
@@ -24,3 +25,14 @@ select_main = { fg = "white", bg = "reset" }
 select_alt = { fg = "white", bg = "reset" }
 unset_main = { fg = "white", bg = "reset" }
 unset_alt = { fg = "white", bg = "reset" }
+
+[which]
+mask = { fg = "white", bg = "reset" }
+cand = { fg = "white", bg = "reset" }
+desc = { fg = "white", bg = "reset" }
+
+[tabs]
+active = { fg = "black", bg = "#a6dbff" }
+inactive = { fg = "white", bg = "reset" }
+sep_inner = {open = "", close = ""}
+sep_outer = {open = "", close = ""}
