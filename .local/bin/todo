@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+# A simple to-do app
+# by David Oniani <onianidavid@gmail.com>
+# MIT License
+
+help() {
+    printf "Usage: %s [option]\n" "$(basename "$0")"
+    printf "  -e, --edit    edit the to-do list file\n"
+    printf "  -l, --list    list the to-do entries\n"
+    printf "  -h, --help    show this help message\n"
+}
+
+case "$1" in
+-e | --edit) "${EDITOR:-vi}" "$HOME"/.local/share/todo.md ;;
+-l | --list | "") bat -np "$HOME"/.local/share/todo.md ;;
+-h | --help) help ;;
+*) [ -n "$1" ] && printf "Error: Invalid option \`%s\`\n" "$1" >&2 && help && exit 1 ;;
+esac
