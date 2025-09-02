@@ -5,5 +5,6 @@ node = "24.3.0"
 python = "3.13.5"
 rust = "1.88.0"
 
-[settings.python]
-default_packages_file = "~/.config/mise/requirements.txt"
+[settings]
+node = { gpg_verify = false }
+python = { default_packages_file = "~/.config/mise/requirements.txt" }
