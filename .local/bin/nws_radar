@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-# National Weather Service (NWS) radar
-# by David Oniani <onianidavid@gmail.com>
-# MIT License
+# Author: David Oniani <onianidavid@gmail.com>
+# License: MIT
+# Description: National Weather Service (NWS) radar
 
 help() {
     printf "usage: nws_radar [option]\n\

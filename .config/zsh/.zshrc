@@ -158,16 +158,16 @@ alias rm="rm -i"
 # Change directory on quit
 function nnn_autocd() {
     # Block nesting of nnn in subshells
-    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-        printf "nnn is already running\n"
+    [ "${NNNLVL:-0}" -eq 0 ] || {
+        echo "nnn is already running"
         return
-    fi
+    }
 
     # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
-    # To cd on quit only on ^G, either remove the "export" as in:
-    #    NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-    #    (or, to a custom path: NNN_TMPFILE=/tmp/.lastd)
-    # or, export NNN_TMPFILE after nnn invocation
+    # If NNN_TMPFILE is set to a custom path, it must be exported for nnn to
+    # see. To cd on quit only on ^G, remove the "export" and make sure not to
+    # use a custom path, i.e. set NNN_TMPFILE *exactly* as follows:
+    #      NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
     export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
 
     # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
@@ -176,12 +176,14 @@ function nnn_autocd() {
     # stty lwrap undef
     # stty lnext undef
 
-    nnn -T v "$@"
+    # The command builtin allows one to alias nnn to n, if desired, without
+    # making an infinitely recursive alias
+    command nnn "$@"
 
-    if [ -f "$NNN_TMPFILE" ]; then
+    [ ! -f "$NNN_TMPFILE" ] || {
         . "$NNN_TMPFILE"
-        rm -f "$NNN_TMPFILE" > /dev/null
-    fi
+        rm -f -- "$NNN_TMPFILE" > /dev/null
+    }
 }
 
 # Fuzzy find files

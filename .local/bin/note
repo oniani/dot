@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-# Note-taking utility
-# by David Oniani <onianidavid@gmail.com>
-# MIT License
+# Author: David Oniani <onianidavid@gmail.com>
+# License: MIT
+# Description: Note-taking utility
 
 pick() {
     selection=$(fd . --color never --exclude .git --hidden --type f "$1" | fzf --prompt "Note> ")

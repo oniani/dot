@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-# Encodes video for YouTube
-# by David Oniani <onianidavid@gmail.com>
-# MIT License
+# Author: David Oniani <onianidavid@gmail.com>
+# License: MIT
+# Description: Encodes video for YouTube
 
 # (1)  `-c:v libx264`                  - Uses the x264 codec
 # (2)  `-preset slow`                  - Uses a slow encoding preset

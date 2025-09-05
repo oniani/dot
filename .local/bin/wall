@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-# Wallpaper setter
-# by David Oniani <onianidavid@gmail.com>
-# MIT License
+# Author: David Oniani <onianidavid@gmail.com>
+# License: MIT
+# Description: Wallpaper setter
 
 cmd='kitty +kitten icat --clear \
                         --place=${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}@20x1 \

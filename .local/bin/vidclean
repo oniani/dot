@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-# Video cleanup
-# by David Oniani <onianidavid@gmail.com>
-# MIT License
+# Author: David Oniani <onianidavid@gmail.com>
+# License: MIT
+# Description: Video cleanup
 
 FILE=$1
 BASE=${FILE%.*}

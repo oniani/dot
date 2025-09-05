@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-# A simple to-do app
-# by David Oniani <onianidavid@gmail.com>
-# MIT License
+# Author: David Oniani <onianidavid@gmail.com>
+# License: MIT
+# Description: A simple to-do app
 
 help() {
     printf "Usage: %s [option]\n" "$(basename "$0")"

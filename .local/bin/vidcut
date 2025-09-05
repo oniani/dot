@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-# Cut a video
-# by David Oniani <onianidavid@gmail.com>
-# MIT License
+# Author: David Oniani <onianidavid@gmail.com>
+# License: MIT
+# Description: Cut a video
 
 INPUT="$1"
 START="$2"
