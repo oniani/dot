@@ -27,23 +27,14 @@
     algorithm = histogram
     indentHeuristic = true
 
-[difftool]
-    prompt = false
-
-[difftool "nvimdiff"]
-    cmd = "nvim -d \"$REMOTE\" \"$LOCAL\""
-
 [merge]
-    tool = nvimdiff
+    tool = nvim -d
 
-[mergetool]
-    prompt = true
-
-[mergetool "nvimdiff"]
-    cmd = "nvim -d \"$REMOTE\" \"$LOCAL\" \"$MERGED\" -c 'wincmd w' -c 'wincmd J'"
+[help]
+    autocorrect = prompt
 
 [alias]
-    l = "log --all --graph --stat --pretty=format:'%C(red)%h%Creset -%C(blue)%d%Creset %C(yellow)%s%Creset %C(bold blue)by %an <%ae> %C(green)(%cs, %cr)%Creset'"
+    l = "log --abbrev-commit --decorate --graph --parents"
     amend = "commit --amend --no-edit"
     stashls = "stash list"
     stashget = "!f() { git stash apply $(git stash list | grep $1 | cut -d ':' -f 1); }; f"
