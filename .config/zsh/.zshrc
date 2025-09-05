@@ -156,12 +156,32 @@ alias rm="rm -i"
 # Functions {{{
 
 # Change directory on quit
-function yazi_autocd() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
+function nnn_autocd() {
+    # Block nesting of nnn in subshells
+    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+        printf "nnn is already running\n"
+        return
+    fi
+
+    # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # To cd on quit only on ^G, either remove the "export" as in:
+    #    NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    #    (or, to a custom path: NNN_TMPFILE=/tmp/.lastd)
+    # or, export NNN_TMPFILE after nnn invocation
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
+    # stty start undef
+    # stty stop undef
+    # stty lwrap undef
+    # stty lnext undef
+
+    nnn -T v "$@"
+
+    if [ -f "$NNN_TMPFILE" ]; then
+        . "$NNN_TMPFILE"
+        rm -f "$NNN_TMPFILE" > /dev/null
+    fi
 }
 
 # Fuzzy find files
@@ -197,7 +217,7 @@ function palette() {
 
 # Key Bindings {{{
 
-bindkey -s "^f" "yazi_autocd\n"
+bindkey -s "^f" "nnn_autocd\n"
 bindkey -s "^p" "find_file_fuzzy\n"
 bindkey -s "^r" "newsboat --quiet\n"
 bindkey -s "^t" "find_session_fuzzy\n"

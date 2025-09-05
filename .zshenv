@@ -35,6 +35,14 @@ export PYTHON_HISTORY="${XDG_STATE_HOME:-$HOME/.local/state}"/python/history
 export FZF_DEFAULT_COMMAND="fd --color never --exclude .git --follow --hidden --type file"
 export FZF_DEFAULT_OPTS="--reverse --color bg+:-1"
 
+# nnn
+export NNN_BMS="D:~/Downloads;c:~/git/dot;d:~/Documents;g:~/git;t:~/git/tex;w:~/workspace;"
+export NNN_FCOLORS="000004300000000000000000"
+export NNN_FIFO="/tmp/nnn.fifo"
+export NNN_OPENER="$HOME"/.local/bin/nuke
+export NNN_OPTS="AEHder"
+export NNN_TRASH=1
+
 # Utilities
 export EDITOR="nvim"
 export PAGER="less"
