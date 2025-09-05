@@ -142,6 +142,7 @@ alias xa="latexmk -interaction=nonstopmode -pdf -pvc -outdir=target"
 # Interactive
 alias e="nvim"
 alias g="nvim +Git +only"
+alias gl="nvim '+Git log --stat' +only"
 alias j="python -m jupyterlab"
 alias t="tmux"
 
