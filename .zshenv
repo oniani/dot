@@ -41,6 +41,7 @@ export NNN_FCOLORS="000004300000000000000000"
 export NNN_FIFO="/tmp/nnn.fifo"
 export NNN_OPENER="$HOME"/.local/bin/nuke
 export NNN_OPTS="AEHder"
+export NNN_PLUG="f:!fe;r:!trash-restore;t:!trash-empty"
 export NNN_TRASH=1
 
 # Utilities
