@@ -1,14 +1,13 @@
--- Neovim configuration file
--- by David Oniani <onianidavid@gmail.com>
--- MIT License
+-- Author: David Oniani <onianidavid@gmail.com>
+-- License: MIT
+-- Description: Neovim configuration file
 
 vim.pack.add {
     -- Fuzzy search
     { src = "https://github.com/ibhagwan/fzf-lua" },
 
     -- File management
-    { src = "https://github.com/nvim-tree/nvim-tree.lua" },
-    { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+    { src = "https://github.com/luukvbaal/nnn.nvim" },
     { src = "https://github.com/stevearc/oil.nvim" },
 
     -- Code formatting

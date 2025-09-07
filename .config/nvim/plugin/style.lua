@@ -1,6 +1,6 @@
--- Neovim configuration file
--- by David Oniani <onianidavid@gmail.com>
--- MIT License
+-- Author: David Oniani <onianidavid@gmail.com>
+-- License: MIT
+-- Description: Neovim configuration file
 
 vim.cmd.colorscheme "default"
 
@@ -48,8 +48,6 @@ local styles = {
     ["FzfLuaBorder"] = { link = "Winseparator" },
     ["IndentLine"] = { fg = "NvimDarkGray2" },
     ["IndentLineCurrent"] = { fg = "NvimDarkGray2" },
-    ["NvimTreeExecFile"] = { link = "NvimLightGreen" },
-    ["NvimTreeFolderIcon"] = { link = "NvimLightBlue" },
 }
 
 for group, style in pairs(styles) do

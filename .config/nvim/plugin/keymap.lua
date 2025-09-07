@@ -1,6 +1,6 @@
--- Neovim configuration file
--- by David Oniani <onianidavid@gmail.com>
--- MIT License
+-- Author: David Oniani <onianidavid@gmail.com>
+-- License: MIT
+-- Description: Neovim configuration file
 
 -- Leader mappings
 vim.keymap.set("n", "<Leader><Leader>", "<C-^>", { desc = "Toggle between buffers" })

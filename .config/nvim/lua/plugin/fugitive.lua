@@ -1,3 +1,7 @@
+-- Author: David Oniani <onianidavid@gmail.com>
+-- License: MIT
+-- Description: Neovim configuration file
+
 vim.api.nvim_create_autocmd("FileType", {
     desc = "Use Tab key for toggling diff in fugitive.vim",
     group = vim.api.nvim_create_augroup("fugitive-vim-tab-diff", { clear = true }),

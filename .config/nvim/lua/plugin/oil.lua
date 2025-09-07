@@ -1,6 +1,6 @@
--- Neovim configuration file
--- by David Oniani <onianidavid@gmail.com>
--- MIT License
+-- Author: David Oniani <onianidavid@gmail.com>
+-- License: MIT
+-- Description: Neovim configuration file
 
 require("oil").setup {
     skip_confirm_for_simple_edits = true,
