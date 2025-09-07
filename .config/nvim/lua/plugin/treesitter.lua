@@ -1,6 +1,6 @@
 -- Author: David Oniani <onianidavid@gmail.com>
--- License: MIT
 -- Description: Neovim configuration file
+-- License: MIT
 
 require("nvim-treesitter.configs").setup {
     ensure_installed = {

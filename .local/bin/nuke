@@ -65,7 +65,7 @@
 #   2. Clean-up the unnecessary exit codes
 
 # set to 1 to enable GUI apps and/or BIN execution
-GUI="${GUI:-0}"
+GUI="${GUI:-1}"
 BIN="${BIN:-0}"
 
 set -euf -o noclobber -o noglob -o nounset

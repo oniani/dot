@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Author: David Oniani <onianidavid@gmail.com>
-# License: MIT
 # Description: Open the selected manual page in the default editor
+# License: MIT
 
 man -k . | fzf --prompt "Man> " | awk '{ print $1 }' | xargs -r man

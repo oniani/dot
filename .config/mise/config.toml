@@ -1,6 +1,6 @@
 # Author: David Oniani <onianidavid@gmail.com>
-# License: MIT
 # Description: mise configuration file
+# License: MIT
 
 [tools]
 go = "1.25.0"

@@ -1,5 +1,5 @@
 -- Author: David Oniani <onianidavid@gmail.com>
--- License: MIT
 -- Description: Neovim configuration file
+-- License: MIT
 
 require("indentmini").setup {}

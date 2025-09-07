@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
 # Author: David Oniani <onianidavid@gmail.com>
-# License: MIT
 # Description: Cut a video
+# License: MIT
 
 INPUT="$1"
 START="$2"

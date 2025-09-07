@@ -1,6 +1,6 @@
 # Author: David Oniani <onianidavid@gmail.com>
-# License: MIT
 # Description: IPython configuration file
+# License: MIT
 
 from IPython.terminal.prompts import ClassicPrompts
 

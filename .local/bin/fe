@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
 # Author: David Oniani <onianidavid@gmail.com>
-# License: MIT
 # Description: Open the selected file in the default editor
+# License: MIT
 
 cmd="bat --color=always --theme=base16-256 {}"
 

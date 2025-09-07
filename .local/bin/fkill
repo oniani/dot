@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-# License: MIT
 # Author: David Oniani <onianidavid@gmail.com>
 # Description: Open the selected file in the default editor
+# License: MIT
 
 ps aux | fzf --prompt "Process> " | awk '{ print $2 }' | xargs -r kill -9

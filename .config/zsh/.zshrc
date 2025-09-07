@@ -1,6 +1,6 @@
 # Author: David Oniani <onianidavid@gmail.com>
-# License: MIT
 # Description: zsh configuration file
+# License: MIT
 
 # Eval and Sourcing {{{
 

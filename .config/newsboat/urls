@@ -1,6 +1,6 @@
 # Author: David Oniani <onianidavid@gmail.com>
-# License: MIT
 # Description: newsboat configuration file
+# License: MIT
 
 https://matklad.github.io/feed.xml           "~ Alex Kladov (matklad)"
 https://awesomekling.github.io/feed.xml      "~ Andreas Kling (awesomekling)"

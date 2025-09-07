@@ -1,6 +1,6 @@
 -- Author: David Oniani <onianidavid@gmail.com>
--- License: MIT
 -- Description: Neovim configuration file
+-- License: MIT
 
 -- NOTE: Cursor shape may not match that of `$TERM`
 -- See: https://github.com/neovim/neovim/issues/3681

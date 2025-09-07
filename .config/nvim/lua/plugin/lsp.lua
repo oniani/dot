@@ -1,6 +1,6 @@
 -- Author: David Oniani <onianidavid@gmail.com>
--- License: MIT
 -- Description: Neovim configuration file
+-- License: MIT
 
 vim.api.nvim_create_autocmd("LspAttach", {
     desc = "LSP configuration on attach",

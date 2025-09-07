@@ -1,6 +1,6 @@
 # Author: David Oniani <onianidavid@gmail.com>
-# License: MIT
 # Description: Ghostty configuration file
+# License: MIT
 
 # Keymaps
 keybind = cmd+shift+f=toggle_fullscreen

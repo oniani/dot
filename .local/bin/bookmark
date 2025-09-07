@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
 # Author: David Oniani <onianidavid@gmail.com>
-# License: MIT
 # Description: Bookmark manager
+# License: MIT
 
 path="${XDG_DATA_HOME:-$HOME/.local/share}/bookmark.txt"
 

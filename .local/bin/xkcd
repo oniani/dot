@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Author: David Oniani <onianidavid@gmail.com>
-# License: MIT
 # Description: Get the latest xkcd
+# License: MIT
 
 curl -s "$(curl -s https://xkcd.com/ | grep "og:image" | cut -d'"' -f 4)" -o xkcd.png
