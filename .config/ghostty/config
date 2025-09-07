@@ -1,3 +1,7 @@
+# Author: David Oniani <onianidavid@gmail.com>
+# License: MIT
+# Description: Ghostty configuration file
+
 # Keymaps
 keybind = cmd+shift+f=toggle_fullscreen
 keybind = ctrl+enter=text:\r

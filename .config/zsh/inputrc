@@ -1,6 +1,6 @@
-# GNU Readline configuration file
-# by David Oniani <onianidavid@gmail.com>
-# MIT License
+# Author: David Oniani <onianidavid@gmail.com>
+# License: MIT
+# Description: GNU Readline configuration file
 
 set editing-mode vi
 Control-l: clear-screen

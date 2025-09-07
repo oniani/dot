@@ -1,3 +1,7 @@
+# Author: David Oniani <onianidavid@gmail.com>
+# License: MIT
+# Description: mise configuration file
+
 [tools]
 go = "1.25.0"
 lua = "5.4.8"
