@@ -1,5 +1,6 @@
 # Keymaps
 keybind = cmd+shift+f=toggle_fullscreen
+keybind = ctrl+enter=text:\r
 keybind = ctrl+shift+j=jump_to_prompt:1
 keybind = ctrl+shift+k=jump_to_prompt:-1
 keybind = global:cmd+`=toggle_quick_terminal
