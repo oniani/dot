@@ -48,6 +48,8 @@ local styles = {
     ["FzfLuaBorder"] = { link = "Winseparator" },
     ["IndentLine"] = { fg = "NvimDarkGray2" },
     ["IndentLineCurrent"] = { fg = "NvimDarkGray2" },
+    ["OilDirHidden"] = { fg = "NvimLightBlue" },
+    ["OilFileHidden"] = { fg = "None" },
 }
 
 for group, style in pairs(styles) do
