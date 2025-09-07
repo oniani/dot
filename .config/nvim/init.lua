@@ -2,6 +2,28 @@
 -- Description: Neovim configuration file
 -- License: MIT
 
+-- Install nnn if not already installed
+local homedir = os.getenv "HOME"
+local path = homedir .. "/.local/bin/nnn"
+local stat = vim.loop.fs_stat(path)
+
+if not (stat and stat.type == "file" and vim.fn.executable(path) == 1) then
+    vim.notify("Installing nnn ...", vim.log.levels.INFO)
+
+    -- Ensure ~/.local/bin exists
+    vim.fn.mkdir(homedir .. "/.local/bin", "p")
+
+    -- Install nnn
+    vim.fn.system(table.concat({
+        "git clone --depth=1 https://github.com/jarun/nnn",
+        "make -C nnn O_NERD=1 O_QSORT=1",
+        "mv nnn/nnn ~/.local/bin/",
+        "rm -rf nnn",
+    }, " && "))
+
+    vim.notify("nnn has been installed!", vim.log.levels.INFO)
+end
+
 vim.pack.add {
     -- Fuzzy search
     { src = "https://github.com/ibhagwan/fzf-lua" },
