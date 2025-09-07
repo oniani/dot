@@ -24,6 +24,7 @@ if not (stat and stat.type == "file" and vim.fn.executable(path) == 1) then
     vim.notify("nnn was successfully installed", vim.log.levels.INFO)
 end
 
+-- Install packages
 vim.pack.add {
     -- Fuzzy search
     { src = "https://github.com/ibhagwan/fzf-lua" },
