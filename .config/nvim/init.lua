@@ -21,7 +21,7 @@ if not (stat and stat.type == "file" and vim.fn.executable(path) == 1) then
         "rm -rf nnn",
     }, " && "))
 
-    vim.notify("nnn has been installed!", vim.log.levels.INFO)
+    vim.notify("nnn was successfully installed", vim.log.levels.INFO)
 end
 
 vim.pack.add {
