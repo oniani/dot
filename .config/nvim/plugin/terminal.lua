@@ -2,8 +2,6 @@
 -- Description: Neovim configuration file
 -- License: MIT
 
--- NOTE: Cursor shape may not match that of `$TERM`
--- See: https://github.com/neovim/neovim/issues/3681
 vim.api.nvim_create_autocmd("TermOpen", {
     desc = "Custom local settings for terminal buffers",
     group = vim.api.nvim_create_augroup("custom-term-open", {}),
