@@ -83,8 +83,3 @@ vim.g.loaded_zipPlugin = 1
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true, desc = "Map space to no-op" })
-
--- Load plugins
-for _, plugin in pairs(vim.split(vim.fn.glob(vim.fn.stdpath "config" .. "/lua/plugin/*"), "\n")) do
-    require("plugin/" .. vim.fn.fnamemodify(plugin, ":t:r"))
-end
