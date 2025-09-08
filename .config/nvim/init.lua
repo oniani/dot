@@ -57,6 +57,9 @@ vim.pack.add {
         opts = { fuzzy = { implementation = "prefer_rust_with_warning" } },
     },
     { src = "https://github.com/rafamadriz/friendly-snippets" },
+
+    -- Nerd Font icons (glyphs)
+    { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 }
 
 -- Enable the experimental Lua module loader
