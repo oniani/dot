@@ -15,7 +15,7 @@ if not (stat and stat.type == "file" and vim.fn.executable(path) == 1) then
 
     -- Install nnn
     vim.fn.system(table.concat({
-        "git clone --depth=1 https://github.com/jarun/nnn",
+        "git clone --depth 1 https://github.com/jarun/nnn",
         "make -C nnn O_NERD=1 O_QSORT=1",
         "mv nnn/nnn ~/.local/bin/",
         "rm -rf nnn",
