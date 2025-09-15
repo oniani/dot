@@ -28,7 +28,7 @@ The setup is intended for (Arch) Linux and macOS.
 > Install packages:
 >
 > ```console
-> xargs brew install < brew.txt
+> brew bundle
 > ```
 
 > [!TIP]
