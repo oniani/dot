@@ -12,20 +12,32 @@ typeset -A plugins=(
     ["zsh-syntax-highlighting"]="https://github.com/zsh-users/zsh-syntax-highlighting.git"
 )
 
-dir_cfg="${XDG_DATA_HOME:-$HOME/.local/share}"/zsh/plugin
-for plugin in ${(k)plugins}; do
-    [ ! -d "$dir_cfg/$plugin" ] && git clone --depth=1 "$plugins[$plugin]" "$dir_cfg/$plugin"
+plugin_dir="${XDG_DATA_HOME:-$HOME/.local/share}"/zsh/plugin
+mkdir -p "$plugin_dir"
+for name url in ${(kv)plugins}; do
+    [ ! -d "$plugin_dir/$name" ] && git clone --depth=1 "$url" "$plugin_dir/$name"
 done
 
-source "$dir_cfg"/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source "$dir_cfg"/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+fpath+="$plugin_dir"/zsh-autosuggestions
+fpath+="$plugin_dir"/zsh-syntax-highlighting
+
+. "$plugin_dir"/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+. "$plugin_dir"/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
+# }}}
+
+# Prompt {{{
+
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats '(%b)'
+
+setopt PROMPT_SUBST
+PROMPT='%F{green}%n@core%f%F{red}:%f%F{blue}%1~%f %F{yellow}${vcs_info_msg_0_}%f %F{magenta}%#%f '
 
 # }}}
 
 # Z Shell Settings {{{
-
-# Prompt
-PROMPT='%F{green}%n@core%F{red}:%F{blue}%1~%F{magenta} $%f '
 
 # Colors
 autoload -Uz colors && colors
