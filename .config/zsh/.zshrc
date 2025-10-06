@@ -21,8 +21,8 @@ done
 fpath+="$plugin_dir"/zsh-autosuggestions
 fpath+="$plugin_dir"/zsh-syntax-highlighting
 
-. "$plugin_dir"/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-. "$plugin_dir"/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source "$plugin_dir"/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source "$plugin_dir"/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # }}}
 
@@ -43,14 +43,21 @@ PROMPT='%F{green}%n@core%f%F{red}:%f%F{blue}%1~%f %F{yellow}${vcs_info_msg_0_}%f
 autoload -Uz colors && colors
 
 # Completion
-autoload -Uz compinit && compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump_$ZSH_VERSION"
+cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+zcdump="${cache_dir}/zcompdump_$ZSH_VERSION"
+mkdir -p "$cache_dir"
+
 zmodload zsh/complist
+autoload -Uz compinit && compinit -d "$zcdump"
+[[ -f $zcdump && (! -f $zcdump.zwc || $zcdump -nt $zcdump.zwc) ]] && zcompile "$zcdump"
+
 zstyle ":completion:*" accept-exact-dirs true
 zstyle ":completion:*" insert-tab false
 zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
 zstyle ":completion:*" list-dirs-first true
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
 zstyle ":completion:*" menu select
+
 setopt COMPLETE_ALIASES
 setopt GLOBDOTS
 
@@ -60,11 +67,15 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
 setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 
 # Misc
 setopt AUTOCD
 setopt INTERACTIVE_COMMENTS
+setopt NO_BEEP
 
 # }}}
 
