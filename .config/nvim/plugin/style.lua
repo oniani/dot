@@ -39,6 +39,7 @@ local styles = {
     ["Statement"] = { fg = "NvimLightYellow" },
     ["Tabline"] = { bg = "Black", fg = "NvimLightGray2" },
     ["TablineSel"] = { bg = "NvimLightBlue", fg = "Black" },
+    ["Type"] = { fg = "NvimLightRed" },
     ["WinBar"] = { bg = "None" },
     ["WinSeparator"] = { fg = "NvimDarkGray3" },
 
