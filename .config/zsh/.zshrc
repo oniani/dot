@@ -28,8 +28,8 @@ source "$plugin_dir"/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # Prompt {{{
 
-autoload -Uz vcs_info
-precmd() { vcs_info }
+autoload -Uz add-zsh-hook vcs_info
+add-zsh-hook precmd vcs_info
 zstyle ':vcs_info:git:*' formats '(%b)'
 
 setopt PROMPT_SUBST
