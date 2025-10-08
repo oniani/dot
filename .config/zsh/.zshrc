@@ -4,25 +4,25 @@
 
 # Eval and Sourcing {{{
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(mise activate zsh)"
-
 typeset -A plugins=(
-    ["zsh-autosuggestions"]="https://github.com/zsh-users/zsh-autosuggestions.git"
+    ["zsh-defer"]="https://github.com/romkatv/zsh-defer.git"
     ["zsh-syntax-highlighting"]="https://github.com/zsh-users/zsh-syntax-highlighting.git"
+    ["zsh-autosuggestions"]="https://github.com/zsh-users/zsh-autosuggestions.git"
 )
 
 plugin_dir="${XDG_DATA_HOME:-$HOME/.local/share}"/zsh/plugin
 mkdir -p "$plugin_dir"
 for name url in ${(kv)plugins}; do
     [ ! -d "$plugin_dir/$name" ] && git clone --depth=1 "$url" "$plugin_dir/$name"
+    fpath+="$plugin_dir/$name"
 done
 
-fpath+="$plugin_dir"/zsh-autosuggestions
-fpath+="$plugin_dir"/zsh-syntax-highlighting
+source "$plugin_dir"/zsh-defer/zsh-defer.plugin.zsh
+zsh-defer source "$plugin_dir"/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+zsh-defer source "$plugin_dir"/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
-source "$plugin_dir"/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source "$plugin_dir"/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+zsh-defer eval "$(/opt/homebrew/bin/brew shellenv)"
+zsh-defer eval "$(/opt/homebrew/bin/mise activate zsh)"
 
 # }}}
 
@@ -178,7 +178,7 @@ alias rm="rm -i"
 # Functions {{{
 
 # Change directory on quit
-function nnn_autocd() {
+function n() {
     # Block nesting of nnn in subshells
     [ "${NNNLVL:-0}" -eq 0 ] || {
         echo "nnn is already running"
@@ -241,7 +241,7 @@ function palette() {
 
 # Key Bindings {{{
 
-bindkey -s "^f" "nnn_autocd\n"
+bindkey -s "^f" "n\n"
 bindkey -s "^p" "find_file_fuzzy\n"
 bindkey -s "^r" "newsboat --quiet\n"
 bindkey -s "^t" "find_session_fuzzy\n"
