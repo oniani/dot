@@ -44,12 +44,18 @@ autoload -Uz colors && colors
 
 # Completion
 cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
-zcdump="${cache_dir}/zcompdump_$ZSH_VERSION"
+zcdump="$cache_dir/zcompdump_$ZSH_VERSION"
+zcdumpzwc="$zcdump.zwc"
 mkdir -p "$cache_dir"
 
-zmodload zsh/complist
-autoload -Uz compinit && compinit -d "$zcdump"
-[[ -f $zcdump && (! -f $zcdump.zwc || $zcdump -nt $zcdump.zwc) ]] && zcompile "$zcdump"
+zmodload -i zsh/complist
+autoload -Uz compinit
+if [[ ! -s $zcdump || $zcdump -nt $zcdumpzwc ]]; then
+    compinit -d "$zcdump"
+    zcompile "$zcdump"
+else
+    compinit -C -d "$zcdump"
+fi
 
 zstyle ":completion:*" accept-exact-dirs true
 zstyle ":completion:*" insert-tab false
