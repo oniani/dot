@@ -15,9 +15,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
         lsp_keymap_set("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
         lsp_keymap_set("gr", vim.lsp.buf.references, "[G]oto [R]eferences")
 
+        vim.diagnostic.config { jump = { float = true } }
         lsp_keymap_set("dl", vim.diagnostic.setqflist, "[D]iagnostic [L]ist")
-        lsp_keymap_set("dn", vim.diagnostic.goto_next, "[D]iagnostic [N]ext")
-        lsp_keymap_set("dp", vim.diagnostic.goto_prev, "[D]iagnostic [P]revious")
+        lsp_keymap_set("dn", function()
+            vim.diagnostic.jump { count = 1 }
+        end, "[D]iagnostic [N]ext")
+        lsp_keymap_set("dp", function()
+            vim.diagnostic.jump { count = -1 }
+        end, "[D]iagnostic [P]revious")
         lsp_keymap_set("ds", vim.diagnostic.open_float, "[D]iagnostic [S]how")
 
         lsp_keymap_set("ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
@@ -25,14 +30,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         lsp_keymap_set("K", vim.lsp.buf.hover, "Hover Documentation")
 
-        local border_opt = { border = "single" }
-        vim.diagnostic.config { float = border_opt, virtual_text = false }
-        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, border_opt)
+        local border = { border = "single" }
+        vim.diagnostic.config { float = border, virtual_text = false }
+        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, border)
         vim.lsp.handlers["textDocument/signatureHelp"] =
-            vim.lsp.with(vim.lsp.handlers.signature_help, border_opt)
+            vim.lsp.with(vim.lsp.handlers.signature_help, border)
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
-        client.server_capabilities.semanticTokensProvider = nil
 
         if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
             lsp_keymap_set("<C-h>", function()
@@ -40,27 +44,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
             end, "Toggle Inlay [H]ints")
         end
 
-        if client and client.server_capabilities.documentHighlightProvider then
-            local hi_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
-            vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-                buffer = event.buf,
-                callback = vim.lsp.buf.document_highlight,
-                group = hi_augroup,
-            })
-
-            vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-                buffer = event.buf,
-                callback = vim.lsp.buf.clear_references,
-                group = hi_augroup,
-            })
-
-            vim.api.nvim_create_autocmd("LspDetach", {
-                callback = function(event2)
-                    vim.lsp.buf.clear_references()
-                    vim.api.nvim_clear_autocmds { group = "lsp-highlight", buffer = event2.buf }
-                end,
-                group = vim.api.nvim_create_augroup("lsp-detach", { clear = true }),
-            })
+        if client then
+            client.server_capabilities.semanticTokensProvider = nil
         end
     end,
 })
@@ -87,12 +72,6 @@ local servers = {
             },
         },
     },
-    basedpyright = {
-        settings = {
-            pyright = { disableOrganizeImports = true },
-            python = { analysis = { ignore = { "*" } } },
-        },
-    },
     ruff = {
         init_options = {
             settings = {
@@ -104,6 +83,7 @@ local servers = {
     rust_analyzer = {},
     texlab = {},
     ts_ls = {},
+    ty = {},
 }
 
 require("mason").setup { ui = { border = "single" } }
@@ -133,25 +113,24 @@ blink.setup {
     },
 }
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = vim.tbl_deep_extend("force", capabilities, blink.get_lsp_capabilities({}, false))
-capabilities = vim.tbl_deep_extend("force", capabilities, {
-    textDocument = {
-        foldingRange = {
-            dynamicRegistration = false,
-            lineFoldingOnly = true,
-        },
-    },
-})
+local capabilities = {
+    textDocument = { foldingRange = { dynamicRegistration = false, lineFoldingOnly = true } },
+}
+capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
 for server_name, _ in pairs(servers) do
-    vim.lsp.config[server_name] = {
-        capabilities = capabilities,
-        settings = servers[server_name].settings or {},
-        init_options = {
-            documentFormatting = true,
-            settings = (servers[server_name].init_options or {}).settings or {},
-        },
-    }
+    -- NOTE: 'ty' LSP server does not support init_options or settings
+    if server_name == "ty" then
+        vim.lsp.config[server_name] = { capabilities = capabilities }
+    else
+        vim.lsp.config[server_name] = {
+            capabilities = capabilities,
+            settings = servers[server_name].settings or {},
+            init_options = {
+                documentFormatting = true,
+                settings = (servers[server_name].init_options or {}).settings or {},
+            },
+        }
+    end
     vim.lsp.enable(server_name)
 end
