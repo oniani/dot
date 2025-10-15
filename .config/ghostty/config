@@ -25,9 +25,10 @@ adjust-cursor-height = 4
 # Quake
 quick-terminal-animation-duration = 0
 quick-terminal-position = center
+quick-terminal-size = 64%, 64%
 
 # Color
-theme = NvimDark
+theme = Nvim Dark
 background = "#000000"
 
 # Window size
