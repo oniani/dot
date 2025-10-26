@@ -5,16 +5,15 @@
 vim.cmd.colorscheme "default"
 
 local styles = {
-    -- NvimDarkCyan -> NvimDarkBlue && NvimLightCyan -> NvimLightBlue
-    ["Changed"] = { fg = "NvimLightBlue" },
-    ["DiagnosticInfo"] = { fg = "NvimLightBlue" },
-    ["DiffText"] = { bg = "NvimDarkBlue" },
-    ["Directory"] = { fg = "NvimLightBlue" },
+    -- Language
+    ["Constant"] = { fg = "NvimLightGray2" },
+    ["Delimiter"] = { fg = "NvimLightGray2" },
     ["Function"] = { fg = "NvimLightBlue" },
-    ["MoreMsg"] = { fg = "NvimLightBlue" },
-    ["Question"] = { fg = "NvimLightBlue" },
-    ["QuickFixLine"] = { fg = "NvimLightBlue" },
-    ["Special"] = { fg = "NvimLightBlue" },
+    ["Identifier"] = { fg = "NvimLightGray2" },
+    ["Special"] = { fg = "NvimLightGray2" },
+    ["Statement"] = { fg = "NvimLightYellow" },
+    ["String"] = { fg = "NvimLightGreen" },
+    ["Type"] = { fg = "NvimLightGray2" },
 
     -- Diff
     ["DiffAdd"] = { fg = "Black", bg = "NvimLightGreen" },
@@ -29,14 +28,20 @@ local styles = {
     ["Note"] = { fg = "NvimLightBlue", bold = true },
     ["Todo"] = { fg = "NvimLightBlue", bold = true },
 
-    -- Other components
+    -- Miscellaneous
+    ["Changed"] = { fg = "NvimLightBlue" },
     ["DiagnosticHint"] = { fg = "NvimLightGreen" },
+    ["DiagnosticInfo"] = { fg = "NvimLightBlue" },
+    ["DiffText"] = { bg = "NvimDarkBlue" },
+    ["Directory"] = { fg = "NvimLightBlue" },
     ["Folded"] = { fg = "NvimLightGray4" },
+    ["MoreMsg"] = { fg = "NvimLightBlue" },
     ["Normal"] = { fg = "NvimLightGray2", bg = "None" },
     ["NormalFloat"] = { fg = "NvimLightGray4", bg = "None" },
     ["Pmenu"] = { bg = "Black", fg = "NvimLightGray2" },
     ["PmenuSel"] = { bg = "NvimLightBlue", fg = "Black" },
-    ["Statement"] = { fg = "NvimLightYellow" },
+    ["Question"] = { fg = "NvimLightBlue" },
+    ["QuickFixLine"] = { fg = "NvimLightBlue" },
     ["Tabline"] = { bg = "Black", fg = "NvimLightGray2" },
     ["TablineSel"] = { bg = "NvimLightBlue", fg = "Black" },
     ["WinBar"] = { bg = "None" },

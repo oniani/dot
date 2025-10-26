@@ -10,6 +10,7 @@ require("nvim-treesitter.configs").setup {
         "cpp",
         "css",
         "diff",
+        "go",
         "html",
         "javascript",
         "lua",
