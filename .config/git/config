@@ -41,4 +41,5 @@
     stashpop = "!f() { git stash pop $(git stash list | grep $1 | cut -d ':' -f 1); }; f"
     stashput = "!f() { git stash push -m $1; }; f"
     squashit = "!f() { git reset --soft HEAD~$1 && git commit --edit -m \"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; }; f"
+    sync = "pull --rebase --autostash"
     uncommit = "!f() { git reset --soft HEAD~$1; }; f"
