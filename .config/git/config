@@ -12,26 +12,30 @@
 
 [core]
     editor = $EDITOR
+    pager = delta
     whitespace = tabwidth=4
 
 [init]
     defaultBranch = main
 
-[push]
-    default = simple
-
 [pull]
-    rebase = true
+    ff = only
+
+[interactive]
+    diffFilter = delta --color-only
 
 [diff]
     algorithm = histogram
     indentHeuristic = true
 
 [merge]
-    tool = nvim -d
+    conflictStyle = zdiff3
 
-[help]
-    autocorrect = prompt
+[delta]
+    dark = true
+    navigate = true
+    plus-style = syntax
+    minus-style = syntax
 
 [alias]
     l = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an <%ae>%C(reset)%C(auto)%d%C(reset)'"
@@ -43,3 +47,6 @@
     squashit = "!f() { git reset --soft HEAD~$1 && git commit --edit -m \"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; }; f"
     sync = "pull --rebase --autostash"
     uncommit = "!f() { git reset --soft HEAD~$1; }; f"
+
+[help]
+    autocorrect = prompt
