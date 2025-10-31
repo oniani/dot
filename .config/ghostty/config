@@ -29,15 +29,15 @@ quick-terminal-size = 64%, 64%
 
 # Color
 theme = Nvim Dark
-background = "#000000"
+background = "#111111"
 
 # Window size
 window-height = 25
 window-width = 115
 
 # Window style
-background-blur-radius = 32
-background-opacity = 0.8
+# background-blur-radius = 32
+# background-opacity = 0.8
 
 # Cursor
 cursor-style = bar
