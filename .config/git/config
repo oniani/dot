@@ -36,6 +36,7 @@
     navigate = true
     plus-style = syntax
     minus-style = syntax
+    line-numbers = true
 
 [alias]
     l = "log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an <%ae>%C(reset)%C(auto)%d%C(reset)'"
