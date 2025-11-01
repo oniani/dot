@@ -35,6 +35,7 @@ vim.opt.number = true
 vim.opt.scrolloff = 4
 vim.opt.showmode = false
 vim.opt.signcolumn = "yes"
+vim.opt.splitkeep = "screen"
 vim.opt.synmaxcol = 256
 vim.opt.termguicolors = true
 vim.opt.textwidth = 100
