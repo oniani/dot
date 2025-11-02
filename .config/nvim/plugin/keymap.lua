@@ -23,6 +23,12 @@ vim.keymap.set("n", "<Up>", "<Cmd>resize +4<CR>", { desc = "Expand vertically" }
 vim.keymap.set({ "n", "v" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, desc = "Down" })
 vim.keymap.set({ "n", "v" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, desc = "Up" })
 
+-- Quickfix navigation
+vim.keymap.set("n", "<A-o>", "<Cmd>copen<CR>", { desc = "Open Quickfix list" })
+vim.keymap.set("n", "<A-j>", "<Cmd>cnext<CR>", { desc = "Jump to next Quickfix item" })
+vim.keymap.set("n", "<A-k>", "<Cmd>cprev<CR>", { desc = "Jump to previous Quickfix item" })
+vim.keymap.set("n", "<A-c>", "<Cmd>cclose<CR>", { desc = "Close Quickfix list" })
+
 -- Command mode navigation
 vim.keymap.set("c", "<C-a>", "<Home>", { desc = "Move cursor to the beginning of line" })
 vim.keymap.set("c", "<C-e>", "<End>", { desc = "Move cursor to the end of line" })
@@ -30,12 +36,6 @@ vim.keymap.set("c", "<C-h>", "<Left>", { desc = "Move cursor left" })
 vim.keymap.set("c", "<C-j>", "<Down>", { desc = "Move cursor down" })
 vim.keymap.set("c", "<C-k>", "<Up>", { desc = "Move cursor up" })
 vim.keymap.set("c", "<C-l>", "<Right>", { desc = "Move cursor right" })
-
--- Quickfix navigation
-vim.keymap.set("n", "<A-o>", "<Cmd>copen<CR>", { desc = "Open Quickfix list" })
-vim.keymap.set("n", "<A-j>", "<Cmd>cnext<CR>", { desc = "Jump to next Quickfix item" })
-vim.keymap.set("n", "<A-k>", "<Cmd>cprev<CR>", { desc = "Jump to previous Quickfix item" })
-vim.keymap.set("n", "<A-c>", "<Cmd>cclose<CR>", { desc = "Close Quickfix list" })
 
 -- Web search
 vim.keymap.set("n", "gX", function()
