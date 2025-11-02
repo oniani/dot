@@ -20,8 +20,8 @@ vim.keymap.set("n", "<Right>", "<Cmd>vertical resize -4<CR>", { desc = "Expand h
 vim.keymap.set("n", "<Up>", "<Cmd>resize +4<CR>", { desc = "Expand vertically" })
 
 -- Vertical navigation
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "Down" })
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "Up" })
+vim.keymap.set({ "n", "v" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, desc = "Down" })
+vim.keymap.set({ "n", "v" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, desc = "Up" })
 
 -- Command mode navigation
 vim.keymap.set("c", "<C-a>", "<Home>", { desc = "Move cursor to the beginning of line" })
@@ -40,9 +40,6 @@ vim.api.nvim_create_user_command("PackUpdate", function()
     vim.pack.update()
     vim.cmd.write()
 end, { desc = "Update all plugins" })
-
--- Generic command runner
-vim.keymap.set("n", "<C-CR>", "<Cmd>!run %<CR>", { desc = "Run current file" })
 
 -- Web search
 vim.keymap.set("n", "gX", function()
