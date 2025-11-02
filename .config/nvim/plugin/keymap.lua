@@ -32,8 +32,10 @@ vim.keymap.set("c", "<C-k>", "<Up>", { desc = "Move cursor up" })
 vim.keymap.set("c", "<C-l>", "<Right>", { desc = "Move cursor right" })
 
 -- Quickfix navigation
-vim.keymap.set("n", "<A-j>", "<Cmd>cnext<Cr>", { desc = "Move to the next QuickFix item" })
-vim.keymap.set("n", "<A-k>", "<Cmd>cprev<Cr>", { desc = "Move to the previous QuickFix item" })
+vim.keymap.set("n", "<A-o>", "<Cmd>copen<CR>", { desc = "Open Quickfix list" })
+vim.keymap.set("n", "<A-j>", "<Cmd>cnext<CR>", { desc = "Jump to next Quickfix item" })
+vim.keymap.set("n", "<A-k>", "<Cmd>cprev<CR>", { desc = "Jump to previous Quickfix item" })
+vim.keymap.set("n", "<A-c>", "<Cmd>cclose<CR>", { desc = "Close Quickfix list" })
 
 -- Web search
 vim.keymap.set("n", "gX", function()
