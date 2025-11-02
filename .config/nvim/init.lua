@@ -80,6 +80,6 @@ vim.g.loaded_zip = 1
 vim.g.loaded_zipPlugin = 1
 
 -- Set the leader key
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = vim.keycode("<Space>")
+vim.g.maplocalleader = vim.keycode("<Space>")
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true, desc = "Map space to no-op" })
