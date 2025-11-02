@@ -11,6 +11,7 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
-vim.keymap.set("n", "g!", "<Cmd>Git!", { desc = "Run in background and stream to preview window" })
-vim.keymap.set("n", "g<CR>", "<Cmd>tab Git<CR>", { desc = "Show Git status in a new tab" })
-vim.keymap.set("n", "g<Space>", "<Cmd>Git<Space>", { desc = "Toggle between buffers" })
+vim.keymap.set("n", "g<CR>", "<Cmd>Git | only<CR>", { desc = "Show Git status in a new tab" })
+vim.keymap.set("n", "g!", function()
+    vim.api.nvim_input ":Git! "
+end, { desc = "Run in background and stream to preview window" })
