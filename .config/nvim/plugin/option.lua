@@ -2,55 +2,49 @@
 -- Description: Neovim configuration file
 -- License: MIT
 
--- Backup
-vim.opt.backup = false
-vim.opt.swapfile = false
-vim.opt.writebackup = false
-
--- Indent
-vim.opt.breakindent = true
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
-vim.opt.tabstop = 4
+-- Indent, no tabs, and spaces
+vim.o.breakindent = true
+vim.o.expandtab = true
+vim.o.shiftround = true
+vim.o.shiftwidth = 4
+vim.o.smartindent = true
+vim.o.softtabstop = 4
+vim.o.tabstop = 4
 
 -- Search
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
 -- Splits
-vim.opt.splitbelow = true
-vim.opt.splitright = true
+vim.o.splitbelow = true
+vim.o.splitright = true
+
+-- Folding
+vim.o.fillchars = "eob: ,fold: "
+vim.o.foldmethod = "marker"
+
+-- Completion
+vim.o.completeopt = "menu,menuone,popup,fuzzy"
+vim.o.shortmess = vim.o.shortmess .. "c"
+vim.o.wildmode = "longest:full,full"
 
 -- Visual
-vim.opt.colorcolumn = "101"
-vim.opt.fillchars = { eob = " ", fold = " " }
-vim.opt.foldmethod = "marker"
-vim.opt.inccommand = "split"
-vim.opt.laststatus = 3
-vim.opt.lazyredraw = true
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-vim.opt.number = true
-vim.opt.scrolloff = 4
-vim.opt.showmode = false
-vim.opt.signcolumn = "yes"
-vim.opt.splitkeep = "screen"
-vim.opt.synmaxcol = 256
-vim.opt.termguicolors = true
-vim.opt.textwidth = 100
+vim.o.colorcolumn = "101"
+vim.o.inccommand = "split"
+vim.o.laststatus = 3
+vim.o.list = true
+vim.o.listchars = "tab:» ,trail:·,nbsp:␣"
+vim.o.number = true
+vim.o.scrolloff = 4
+vim.o.showmode = false
+vim.o.signcolumn = "yes"
+vim.o.splitkeep = "screen"
+vim.o.synmaxcol = 256
+vim.o.termguicolors = true
+vim.o.textwidth = 100
 
 -- Miscellaneous
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
-vim.opt.mouse = "a"
-vim.opt.shortmess:append "c"
-vim.opt.updatetime = 256
-vim.opt.wildmode = { "longest", "full", "full" }
-
-vim.api.nvim_create_autocmd("UIEnter", {
-    desc = "Sync clipboard between OS and Neovim after `UIEnter` to decrease startup time",
-    group = vim.api.nvim_create_augroup("sync-clipboard", { clear = true }),
-    callback = function()
-        vim.o.clipboard = "unnamedplus"
-    end,
-})
+vim.o.clipboard = "unnamedplus"
+vim.o.mouse = "a"
+vim.o.swapfile = false
+vim.o.updatetime = 256
