@@ -35,12 +35,6 @@ vim.keymap.set("c", "<C-l>", "<Right>", { desc = "Move cursor right" })
 vim.keymap.set("n", "<A-j>", "<Cmd>cnext<Cr>", { desc = "Move to the next QuickFix item" })
 vim.keymap.set("n", "<A-k>", "<Cmd>cprev<Cr>", { desc = "Move to the previous QuickFix item" })
 
--- Update all plugins
-vim.api.nvim_create_user_command("PackUpdate", function()
-    vim.pack.update()
-    vim.cmd.write()
-end, { desc = "Update all plugins" })
-
 -- Web search
 vim.keymap.set("n", "gX", function()
     vim.ui.open(("https://google.com/search?q=%s"):format(vim.fn.expand "<cword>"))
@@ -51,3 +45,12 @@ vim.keymap.set("x", "gX", function()
     vim.ui.open(("https://google.com/search?q=%s"):format(vim.trim(table.concat(region, " "))))
     vim.api.nvim_input "<esc>"
 end, { desc = "Web Search (Visual Mode)" })
+
+-- Undotree
+vim.keymap.set("n", "<Leader>u", function()
+    vim.cmd.packadd "nvim.undotree"
+    require("undotree").open {
+        title = "undotree",
+        command = "topleft 32vnew",
+    }
+end, { desc = "Toggle undotree" })

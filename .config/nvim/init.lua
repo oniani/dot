@@ -62,6 +62,12 @@ vim.pack.add {
     { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 }
 
+-- Command for updating all packages
+vim.api.nvim_create_user_command("PackUpdate", function()
+    vim.pack.update()
+    vim.cmd.write()
+end, { desc = "Update all plugins" })
+
 -- Enable the experimental Lua module loader
 vim.loader.enable()
 
@@ -80,6 +86,6 @@ vim.g.loaded_zip = 1
 vim.g.loaded_zipPlugin = 1
 
 -- Set the leader key
-vim.g.mapleader = vim.keycode("<Space>")
-vim.g.maplocalleader = vim.keycode("<Space>")
+vim.g.mapleader = vim.keycode "<Space>"
+vim.g.maplocalleader = vim.keycode "<Space>"
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true, desc = "Map space to no-op" })
