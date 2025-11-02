@@ -13,6 +13,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.api.nvim_create_autocmd("VimResized", {
     desc = "Equalize splits when resized",
     group = vim.api.nvim_create_augroup("window-resize", { clear = true }),
-    command = "wincmd =",
     pattern = "*",
+    callback = function()
+        vim.cmd "wincmd ="
+    end,
 })
