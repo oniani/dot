@@ -21,8 +21,8 @@ source "$plugin_dir"/zsh-defer/zsh-defer.plugin.zsh
 zsh-defer source "$plugin_dir"/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 zsh-defer source "$plugin_dir"/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
-zsh-defer eval "$(/opt/homebrew/bin/brew shellenv)"
-zsh-defer eval "$(/opt/homebrew/bin/mise activate zsh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/mise activate zsh)"
 
 # }}}
 
@@ -253,5 +253,13 @@ bindkey -s "^p" "find_file_fuzzy\n"
 bindkey -s "^r" "newsboat --quiet\n"
 bindkey -s "^t" "find_session_fuzzy\n"
 bindkey -s "^z" "fg\n"
+
+# }}}
+
+# Launch tmux {{{
+
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t main || tmux new -s main
+fi
 
 # }}}
