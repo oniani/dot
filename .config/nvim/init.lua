@@ -30,6 +30,7 @@ vim.pack.add {
     { src = "https://github.com/ibhagwan/fzf-lua" },
 
     -- File management
+    { src = "https://github.com/lewis6991/fileline.nvim" },
     { src = "https://github.com/luukvbaal/nnn.nvim" },
     { src = "https://github.com/stevearc/oil.nvim" },
 
