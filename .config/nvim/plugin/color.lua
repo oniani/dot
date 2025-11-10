@@ -49,7 +49,7 @@ local styles = {
 
     -- Plugins
     ["BlinkCmpDoc"] = { fg = "NvimLightGray2", bg = "None" },
-    ["BlinkCmpDocCursorLine"] = { fg = "Black", bg = "NvimLightGray4" },
+    ["BlinkCmpDocCursorLine"] = { fg = "Black", bg = "NvimLightBlue" },
     ["FzfLuaBorder"] = { link = "Winseparator" },
     ["IndentLine"] = { fg = "NvimDarkGray2" },
     ["IndentLineCurrent"] = { fg = "NvimDarkGray2" },

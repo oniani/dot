@@ -29,7 +29,7 @@ quick-terminal-size = 64%, 64%
 
 # Color
 theme = Nvim Dark
-background = #111111
+background = #000000
 
 # Window size
 window-height = 25
