@@ -1,15 +1,19 @@
 local cfgs = {
-    c      = { build = "gcc % -o %<",           run = "./%<" },
-    cpp    = { build = "g++ % -o %<",           run = "./%<" },
-    dot    = { build = "dot -Tpdf % -o %<.pdf", run = nil },
-    go     = { build = "go build %",            run = "go run %" },
-    hs     = { build = nil,                     run = "runhaskell %" },
-    lua    = { build = nil,                     run = "lua %" },
-    python = { build = nil,                     run = "python3 %" },
-    rust   = { build = "cargo build",           run = "cargo run" },
-    sh     = { build = nil,                     run = "sh %" },
-    tex    = { build = nil,                     run = "latexmk -interaction=nonstopmode -pdf -quiet -shell-escape %" },
-    ts     = { build = "tsc %",                 run = "node %<.js" },
+    c = { build = "gcc % -o %<", run = "./%<", test = nil },
+    cpp = { build = "g++ % -o %<", run = "./%<", test = nil },
+    dot = { build = "dot -Tpdf % -o %<.pdf", run = nil, test = nil },
+    go = { build = "go build %", run = "go run %", test = nil },
+    hs = { build = nil, run = "runhaskell %", test = nil },
+    lua = { build = nil, run = "lua %", test = nil },
+    python = { build = nil, run = "python3 %", test = nil },
+    rust = { build = "cargo build", run = "cargo run", test = "cargo test" },
+    sh = { build = nil, run = "sh %", test = nil },
+    tex = {
+        build = nil,
+        run = "latexmk -interaction=nonstopmode -pdf -quiet -shell-escape %",
+        test = nil,
+    },
+    ts = { build = "tsc %", run = "node %<.js", test = nil },
 }
 
 vim.api.nvim_create_user_command("Make", function(opts)
@@ -21,11 +25,7 @@ vim.api.nvim_create_user_command("Make", function(opts)
         return
     end
 
-    local action = (opts.args and opts.args ~= "")
-        or (cfg.build and "build")
-        or (cfg.run and "run")
-        or "all"
-
+    local action = opts.args
     local cmd = cfg[action]
     if not cmd then
         if action == "all" then
@@ -41,6 +41,6 @@ vim.api.nvim_create_user_command("Make", function(opts)
 end, {
     nargs = "?",
     complete = function()
-        return { "all", "build", "run" }
+        return { "all", "build", "run", "test" }
     end,
 })
