@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd("FileType", {
     callback = function()
         local ft_to_prg = {
             c = "gcc '%' -o '%<' && './%<'",
-            cpp = "clang '%' -o '%<' && './%<'",
+            cpp = "clang++ -std=c++23 '%' -o '%<' && './%<'",
             go = "go",
             haskell = "runhaskell '%'",
             python = "python3 '%'",
