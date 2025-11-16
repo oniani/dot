@@ -122,6 +122,16 @@ for server_name, _ in pairs(servers) do
     -- NOTE: 'ty' LSP server does not support init_options or settings
     if server_name == "ty" then
         vim.lsp.config[server_name] = { capabilities = capabilities }
+    elseif server_name == "clangd" then
+        vim.lsp.config[server_name] = {
+            capabilities = capabilities,
+            settings = servers[server_name].settings or {},
+            init_options = {
+                documentFormatting = true,
+                settings = (servers[server_name].init_options or {}).settings or {},
+                fallbackFlags = { "-std=c++23" },
+            },
+        }
     else
         vim.lsp.config[server_name] = {
             capabilities = capabilities,
