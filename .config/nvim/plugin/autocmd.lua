@@ -18,3 +18,19 @@ vim.api.nvim_create_autocmd("VimResized", {
         vim.cmd "wincmd ="
     end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+    desc = "Sets `makeprg` based on filetype",
+    group = vim.api.nvim_create_augroup("set-makeprg", { clear = true }),
+    pattern = { "c", "cpp", "rust", "go" },
+    callback = function()
+        local ft_to_prg = {
+            c = "gcc % -o %< && ./%<",
+            cpp = "clang % -o %< && ./%<",
+            rust = "cargo",
+            go = "go",
+        }
+        local ft = vim.bo.filetype
+        vim.opt_local.makeprg = ft_to_prg[ft] or "make"
+    end,
+})
