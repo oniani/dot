@@ -49,7 +49,6 @@ vim.pack.add {
     { src = "https://github.com/tpope/vim-fugitive" },
 
     -- LSP
-    { src = "https://github.com/j-hui/fidget.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/williamboman/mason-lspconfig.nvim" },
     { src = "https://github.com/williamboman/mason.nvim" },
