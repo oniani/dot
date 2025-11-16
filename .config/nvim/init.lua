@@ -29,6 +29,9 @@ vim.pack.add {
     -- Fuzzy search
     { src = "https://github.com/ibhagwan/fzf-lua" },
 
+    -- Asynchronous build and test dispatcher
+    { src = "https://github.com/tpope/vim-dispatch" },
+
     -- File management
     { src = "https://github.com/lewis6991/fileline.nvim" },
     { src = "https://github.com/luukvbaal/nnn.nvim" },
