@@ -25,7 +25,7 @@ if not (stat and stat.type == "file" and vim.fn.executable(path) == 1) then
 end
 
 -- Install packages
-vim.pack.add {
+vim.pack.add({
     -- Fuzzy search
     { src = "https://github.com/ibhagwan/fzf-lua" },
 
@@ -63,7 +63,9 @@ vim.pack.add {
 
     -- Nerd Font icons (glyphs)
     { src = "https://github.com/nvim-tree/nvim-web-devicons" },
-}
+}, {
+    confirm = false,
+})
 
 -- Command for updating all packages
 vim.api.nvim_create_user_command("PackUpdate", function()
