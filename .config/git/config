@@ -34,8 +34,6 @@
 [delta]
     dark = true
     navigate = true
-    plus-style = syntax
-    minus-style = syntax
     line-numbers = true
 
 [alias]
