@@ -49,14 +49,7 @@ vim.pack.add({
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/williamboman/mason-lspconfig.nvim" },
     { src = "https://github.com/williamboman/mason.nvim" },
-
-    -- LSP: Autocompletion
-    {
-        src = "https://github.com/saghen/blink.cmp",
-        version = "v1.6.0",
-        opts = { fuzzy = { implementation = "prefer_rust_with_warning" } },
-    },
-    { src = "https://github.com/rafamadriz/friendly-snippets" },
+    { src = "https://github.com/saghen/blink.cmp", version = "v1.8.0" },
 
     -- Nerd Font icons (glyphs)
     { src = "https://github.com/nvim-tree/nvim-web-devicons" },
