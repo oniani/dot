@@ -57,6 +57,6 @@ vim.api.nvim_create_autocmd("FileType", {
             typescript = "prettier --parser typescript --print-width 100",
             zsh = "shfmt -filename %",
         }
-        vim.opt_local.makeprg = ft_to_fmt[ev.match] or ""
+        vim.opt_local.formatprg = ft_to_fmt[ev.match] or ""
     end,
 })

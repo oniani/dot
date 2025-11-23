@@ -37,6 +37,13 @@ vim.keymap.set("c", "<C-j>", "<Down>", { desc = "Move cursor down" })
 vim.keymap.set("c", "<C-k>", "<Up>", { desc = "Move cursor up" })
 vim.keymap.set("c", "<C-l>", "<Right>", { desc = "Move cursor right" })
 
+-- Formatting
+vim.api.nvim_create_user_command("F", function()
+    local view = vim.fn.winsaveview()
+    vim.cmd([[keepjumps normal! gggqG]])
+    vim.fn.winrestview(view)
+end, { desc = "Format buffer and restore the view" })
+
 -- Web search
 vim.keymap.set("n", "gX", function()
     vim.ui.open(("https://google.com/search?q=%s"):format(vim.fn.expand "<cword>"))
