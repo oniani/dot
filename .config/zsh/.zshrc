@@ -172,7 +172,7 @@ alias e="nvim"
 alias g="nvim +Git +only"
 alias gl="nvim '+Git log --stat' +only"
 alias j="python -m jupyterlab"
-alias p="ipython -c 'import numpy as np; import polars as pl; import scipy; import torch;'"
+alias p="ipython -i --InteractiveShellApp.exec_lines='import numpy as np; import polars as pl; import scipy; import torch;'"
 alias t="tmux"
 
 # Safer commands
