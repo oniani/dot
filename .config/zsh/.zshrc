@@ -172,6 +172,7 @@ alias e="nvim"
 alias g="nvim +Git +only"
 alias gl="nvim '+Git log --stat' +only"
 alias j="python -m jupyterlab"
+alias p="ipython"
 alias t="tmux"
 
 # Safer commands
