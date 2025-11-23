@@ -50,9 +50,6 @@ vim.pack.add({
     { src = "https://github.com/williamboman/mason-lspconfig.nvim" },
     { src = "https://github.com/williamboman/mason.nvim" },
     { src = "https://github.com/saghen/blink.cmp", version = "v1.8.0" },
-
-    -- Nerd Font icons (glyphs)
-    { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 }, {
     confirm = false,
 })
