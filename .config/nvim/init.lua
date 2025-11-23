@@ -37,9 +37,6 @@ vim.pack.add({
     { src = "https://github.com/luukvbaal/nnn.nvim" },
     { src = "https://github.com/stevearc/oil.nvim" },
 
-    -- Code formatting
-    { src = "https://github.com/stevearc/conform.nvim" },
-
     -- Syntax highlighting, code navigation, and indentation
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
     { src = "https://github.com/nvimdev/indentmini.nvim" },
