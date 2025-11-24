@@ -24,10 +24,19 @@ vim.keymap.set({ "n", "v" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, de
 vim.keymap.set({ "n", "v" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, desc = "Up" })
 
 -- Quickfix navigation
-vim.keymap.set("n", "<A-o>", "<Cmd>copen<CR>", { desc = "Open Quickfix list" })
-vim.keymap.set("n", "<A-j>", "<Cmd>cnext<CR>", { desc = "Jump to next Quickfix item" })
-vim.keymap.set("n", "<A-k>", "<Cmd>cprev<CR>", { desc = "Jump to previous Quickfix item" })
-vim.keymap.set("n", "<A-c>", "<Cmd>cclose<CR>", { desc = "Close Quickfix list" })
+vim.keymap.set("n", "<C-j>", "<Cmd>cnext<CR>", { desc = "Jump to next Quickfix item" })
+vim.keymap.set("n", "<C-k>", "<Cmd>cprev<CR>", { desc = "Jump to previous Quickfix item" })
+vim.keymap.set("n", "<C-q>", function()
+        if vim.fn.getqflist({ winid = 0 }).winid ~= 0 then
+            vim.cmd.cclose()
+        else
+            local max_height, min_height, qf_height = 16, 8, #vim.fn.getqflist()
+            vim.cmd.copen({ count = math.max(min_height, math.min(qf_height, max_height)) })
+            vim.cmd.wincmd({ args = { "p" } })
+        end
+    end,
+    { desc = "Toggle Quickfix" }
+)
 
 -- Command mode navigation
 vim.keymap.set("c", "<C-a>", "<Home>", { desc = "Move cursor to the beginning of line" })
