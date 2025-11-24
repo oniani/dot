@@ -15,14 +15,14 @@ vim.api.nvim_create_autocmd("VimResized", {
     group = vim.api.nvim_create_augroup("resize-window", { clear = true }),
     pattern = "*",
     callback = function()
-        vim.cmd "wincmd ="
+        vim.cmd.wincmd { args = { "=" } }
     end,
 })
 
 vim.api.nvim_create_autocmd("FileType", {
     desc = "Sets `makeprg` based on filetype",
     group = vim.api.nvim_create_augroup("set-makeprg", { clear = true }),
-    pattern = { "c", "cpp", "go", "haskell", "python", "rust", "sh", "tex", "zsh" },
+    pattern = "*",
     callback = function(ev)
         local ft_to_prg = {
             c = "gcc '%' -o '%<' && './%<'",
@@ -42,19 +42,33 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     desc = "Sets `formatprg` based on filetype",
     group = vim.api.nvim_create_augroup("set-formatprg", { clear = true }),
-    pattern = { "c", "cpp", "go", "haskell", "python", "rust", "sh", "tex", "zsh" },
+    pattern = {
+        "css",
+        "go",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "markdown",
+        "python",
+        "rust",
+        "sh",
+        "typescript",
+        "zsh",
+    },
     callback = function(ev)
         local ft_to_fmt = {
-            css = "prettier --parser css --print-width 100",
+            css = "prettier --parser css --print-width 100 --stdin-filepath",
             go = "gofmt -w",
-            html = "prettier --parser html --print-width 100",
-            javascript = "prettier --parser babel --print-width 100",
-            json = "prettier --parser json --print-width 100",
-            lua = "stylua --column-width 100 --indent-type Spaces --indent-width 2 -",
-            markdown = "prettier --parser markdown --print-width 100",
+            html = "prettier --parser html --print-width 100 --stdin-filepath",
+            javascript = "prettier --parser babel --print-width 100 --stdin-filepath",
+            json = "prettier --parser json --print-width 100 --stdin-filepath",
+            lua = "stylua --call-parentheses None --column-width 100 --indent-type Spaces --indent-width 4 -",
+            markdown = "prettier --parser markdown --print-width 100 --stdin-filepath",
             python = "ruff format --line-length 100 - && isort --profile black -",
+            rust = "cargo fmt --emit=stdout --stdin",
             sh = "shfmt -filename %",
-            typescript = "prettier --parser typescript --print-width 100",
+            typescript = "prettier --parser typescript --print-width 100 --stdin-filepath",
             zsh = "shfmt -filename %",
         }
         vim.opt_local.formatprg = ft_to_fmt[ev.match] or ""
