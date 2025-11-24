@@ -12,7 +12,7 @@ vim.keymap.set({ "n", "t" }, "<C-n>", function()
     vim.cmd "NnnExplorer"
     -- We defer with 100ms delay to ensure nnn vsplit has time to open
     vim.defer_fn(function()
-        vim.cmd "wincmd p"
+        vim.cmd.wincmd({ args = { "p" } })
     end, 100)
 end, { desc = "Toggle nnn in a vertical split" })
 
