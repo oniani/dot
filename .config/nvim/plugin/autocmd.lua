@@ -59,7 +59,7 @@ vim.api.nvim_create_autocmd("FileType", {
     callback = function(ev)
         local ft_to_fmt = {
             css = "prettier --parser css --print-width 100 --stdin-filepath",
-            go = "gofmt -w",
+            go = "gofmt",
             html = "prettier --parser html --print-width 100 --stdin-filepath",
             javascript = "prettier --parser babel --print-width 100 --stdin-filepath",
             json = "prettier --parser json --print-width 100 --stdin-filepath",
