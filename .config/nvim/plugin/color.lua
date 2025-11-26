@@ -42,6 +42,7 @@ local styles = {
     ["PmenuSel"] = { bg = "NvimLightBlue", fg = "Black" },
     ["Question"] = { fg = "NvimLightBlue" },
     ["QuickFixLine"] = { fg = "NvimLightBlue" },
+    ["Statusline"] = { bg = "NvimDarkGray2", fg = "NvimLightGray2" },
     ["Tabline"] = { bg = "Black", fg = "NvimLightGray2" },
     ["TablineSel"] = { bg = "NvimLightBlue", fg = "Black" },
     ["WinBar"] = { bg = "None" },
