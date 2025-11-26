@@ -27,16 +27,14 @@ vim.keymap.set({ "n", "v" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, de
 vim.keymap.set("n", "<C-j>", "<Cmd>cnext<CR>", { desc = "Jump to next Quickfix item" })
 vim.keymap.set("n", "<C-k>", "<Cmd>cprev<CR>", { desc = "Jump to previous Quickfix item" })
 vim.keymap.set("n", "<C-q>", function()
-        if vim.fn.getqflist({ winid = 0 }).winid ~= 0 then
-            vim.cmd.cclose()
-        else
-            local max_height, min_height, qf_height = 16, 8, #vim.fn.getqflist()
-            vim.cmd.copen({ count = math.max(min_height, math.min(qf_height, max_height)) })
-            vim.cmd.wincmd({ args = { "p" } })
-        end
-    end,
-    { desc = "Toggle Quickfix" }
-)
+    if vim.fn.getqflist({ winid = 0 }).winid ~= 0 then
+        vim.cmd.cclose()
+    else
+        local max_height, min_height, qf_height = 16, 8, #vim.fn.getqflist()
+        vim.cmd.copen { count = math.max(min_height, math.min(qf_height, max_height)) }
+        vim.cmd.wincmd { args = { "p" } }
+    end
+end, { desc = "Toggle Quickfix" })
 
 -- Command mode navigation
 vim.keymap.set("c", "<C-a>", "<Home>", { desc = "Move cursor to the beginning of line" })
@@ -48,9 +46,23 @@ vim.keymap.set("c", "<C-l>", "<Right>", { desc = "Move cursor right" })
 
 -- Formatting
 vim.api.nvim_create_user_command("F", function()
-    local view = vim.fn.winsaveview()
-    vim.cmd([[keepjumps normal! gggqG]])
-    vim.fn.winrestview(view)
+    if vim.opt_local.formatprg:get():len() > 0 then
+        local view = vim.fn.winsaveview()
+        vim.cmd [[keepjumps normal! gggqG]]
+        vim.fn.winrestview(view)
+        vim.notify(
+            string.format("Formatted via 'formatprg': `%s`", vim.opt_local.formatprg:get()),
+            vim.log.levels.INFO
+        )
+    else
+        vim.notify(
+            string.format(
+                "No 'formatprg' set for filetype '%s', skipping formatting",
+                vim.bo.filetype
+            ),
+            vim.log.levels.ERROR
+        )
+    end
 end, { desc = "Format buffer and restore the view" })
 
 -- Web search

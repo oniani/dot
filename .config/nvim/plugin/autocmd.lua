@@ -42,20 +42,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     desc = "Sets `formatprg` based on filetype",
     group = vim.api.nvim_create_augroup("set-formatprg", { clear = true }),
-    pattern = {
-        "css",
-        "go",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "python",
-        "rust",
-        "sh",
-        "typescript",
-        "zsh",
-    },
+    pattern = "*",
     callback = function(ev)
         local ft_to_fmt = {
             css = "prettier --parser css --print-width 100 --stdin-filepath",
