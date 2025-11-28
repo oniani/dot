@@ -53,7 +53,7 @@ vim.api.nvim_create_autocmd("FileType", {
             lua = "stylua --call-parentheses None --column-width 100 --indent-type Spaces --indent-width 4 -",
             markdown = "prettier --parser markdown --print-width 100 --stdin-filepath",
             python = "ruff format --line-length 100 - && isort --profile black -",
-            rust = "cargo fmt --emit=stdout --stdin",
+            rust = "rustfmt",
             sh = "shfmt -filename %",
             typescript = "prettier --parser typescript --print-width 100 --stdin-filepath",
             zsh = "shfmt -filename %",
