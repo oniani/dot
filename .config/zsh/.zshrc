@@ -154,7 +154,7 @@ zle -N zle-line-init
 
 # Core commands
 alias :q="exit"
-alias cal="cal -m -3"
+alias cal="cal -3"
 alias diff="diff --color=auto"
 alias doc2pdf="libreoffice --headless --invisible --norestore --convert-to pdf"
 alias grep="grep --color=auto"
