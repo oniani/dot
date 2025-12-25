@@ -4,16 +4,32 @@
 # Description: A simple to-do app
 # License: MIT
 
+NOTEFILE="$HOME"/.local/share/todo/todo.md
+
 help() {
     printf "Usage: %s [option]\n" "$(basename "$0")"
-    printf "  -e, --edit    edit the to-do list file\n"
-    printf "  -l, --list    list the to-do entries\n"
+    printf "  -e, --edit    edit to-do list file\n"
+    printf "  -l, --list    list to-do entries\n"
+    printf "  -p, --pdf     convert to-do list to PDF\n"
     printf "  -h, --help    show this help message\n"
 }
 
+to_pdf() {
+    base="${1%.*}"
+    printf "Converting %s to %s ...\n" "$1" "$base.pdf"
+    pandoc -V fontsize=11pt \
+        -V geometry:margin=1in \
+        -V linkcolor:blue \
+        -f markdown \
+        -t pdf "$1" \
+        -o "$base.pdf"
+    printf "Saved PDF as %s\n" "$base.pdf"
+}
+
 case "$1" in
--e | --edit) "${EDITOR:-vi}" "$HOME"/.local/share/todo.md ;;
--l | --list | "") bat -np "$HOME"/.local/share/todo.md ;;
+-e | --edit) "${EDITOR:-vi}" "$NOTEFILE" ;;
+-l | --list | "") bat -np "$NOTEFILE" ;;
+-p | --pdf) to_pdf "$NOTEFILE" ;;
 -h | --help) help ;;
 *) [ -n "$1" ] && printf "Error: Invalid option \`%s\`\n" "$1" >&2 && help && exit 1 ;;
 esac
