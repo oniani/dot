@@ -27,9 +27,11 @@ end
 --- - Installs and then attaches if the parser is available
 --- - Falls back to attempting attachment for custom/external parsers
 vim.api.nvim_create_autocmd("FileType", {
+    desc = "Handle FileType events to attach Treesitter",
+    group = vim.api.nvim_create_augroup("handle-treesitter-filetype", { clear = true }),
     callback = function(args)
-        local buf, filetype = args.buf, args.match
-        local lang = vim.treesitter.language.get_lang(filetype)
+        local buf, ft = args.buf, args.match
+        local lang = vim.treesitter.language.get_lang(ft)
         if not lang then
             return
         end
