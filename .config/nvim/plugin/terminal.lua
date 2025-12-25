@@ -4,7 +4,7 @@
 
 vim.api.nvim_create_autocmd("TermOpen", {
     desc = "Custom local settings for terminal buffers",
-    group = vim.api.nvim_create_augroup("custom-term-open", {}),
+    group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
     callback = function()
         vim.bo.filetype = "terminal"
         vim.cmd.startinsert()
