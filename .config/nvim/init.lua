@@ -66,10 +66,6 @@ end, { desc = "Update all plugins" })
 -- Enable the experimental Lua module loader
 vim.loader.enable()
 
--- Set Python3 provider
--- vim.g.python3_host_prog = vim.fn.expand "$XDG_DATA_HOME"
---     .. "/mise/installs/python/3.13.5/bin/python3"
-
 -- Disable some rtp plugins for perf improvement
 vim.g.did_install_default_menus = 1
 vim.g.loaded_gzip = 1
