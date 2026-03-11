@@ -28,16 +28,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
         lsp_keymap_set("ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
         lsp_keymap_set("rn", vim.lsp.buf.rename, "[R]e[N]ame")
 
-        lsp_keymap_set("K", vim.lsp.buf.hover, "Hover Documentation")
-
         local border = { border = "single" }
+        lsp_keymap_set("K", function() vim.lsp.buf.hover(border) end, "Hover Documentation")
         vim.diagnostic.config { float = border, virtual_text = false }
-        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, border)
-        vim.lsp.handlers["textDocument/signatureHelp"] =
-            vim.lsp.with(vim.lsp.handlers.signature_help, border)
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
-
         if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
             lsp_keymap_set("<C-h>", function()
                 vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
