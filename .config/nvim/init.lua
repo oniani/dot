@@ -2,10 +2,25 @@
 -- Description: Neovim configuration file
 -- License: MIT
 
+-- Enable the experimental Lua module loader
+vim.loader.enable()
+
+-- Disable some rtp plugins for perf improvement
+local disabled_builtins = { "gzip", "netrw", "netrwPlugin", "tar", "tarPlugin", "zip", "zipPlugin" }
+for _, name in ipairs(disabled_builtins) do
+    vim.g["loaded_" .. name] = 1
+end
+vim.g.did_install_default_menus = 1
+
+-- Set the leader key
+vim.g.mapleader = vim.keycode "<Space>"
+vim.g.maplocalleader = vim.keycode "<Space>"
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true, desc = "Map space to no-op" })
+
 -- Install nnn if not already installed
 local homedir = os.getenv "HOME"
-local path = homedir .. "/.local/bin/nnn"
-local stat = vim.loop.fs_stat(path)
+local path = vim.fs.joinpath(homedir, ".local", "bin", "nnn")
+local stat = vim.uv.fs_stat(path)
 
 if not (stat and stat.type == "file" and vim.fn.executable(path) == 1) then
     vim.notify("Installing nnn ...", vim.log.levels.INFO)
@@ -53,30 +68,10 @@ vim.pack.add({
 
     -- Nerd Font icons (glyphs)
     { src = "https://github.com/nvim-tree/nvim-web-devicons" },
-}, {
-    confirm = false,
-})
+}, { confirm = false })
 
 -- Command for updating all packages
 vim.api.nvim_create_user_command("PackUpdate", function()
     vim.pack.update()
     vim.cmd.write()
 end, { desc = "Update all plugins" })
-
--- Enable the experimental Lua module loader
-vim.loader.enable()
-
--- Disable some rtp plugins for perf improvement
-vim.g.did_install_default_menus = 1
-vim.g.loaded_gzip = 1
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_tar = 1
-vim.g.loaded_tarPlugin = 1
-vim.g.loaded_zip = 1
-vim.g.loaded_zipPlugin = 1
-
--- Set the leader key
-vim.g.mapleader = vim.keycode "<Space>"
-vim.g.maplocalleader = vim.keycode "<Space>"
-vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true, desc = "Map space to no-op" })
