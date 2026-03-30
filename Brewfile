@@ -1,4 +1,5 @@
 brew "atool"
+brew "awscli"
 brew "bat"
 brew "btop"
 brew "cmake"
