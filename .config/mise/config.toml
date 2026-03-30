@@ -3,11 +3,12 @@
 # License: MIT
 
 [tools]
-go = "1.25.5"
+go = "1.26.1"
 lua = "5.4.8"
-node = "25.2.1"
+node = "25.8.2"
 python = "3.13.11"
-rust = "1.91.1"
+rust = "1.94.1"
+uv = "0.11.2"
 
 [settings]
 node = { gpg_verify = false }
