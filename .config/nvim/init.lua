@@ -17,28 +17,6 @@ vim.g.mapleader = vim.keycode "<Space>"
 vim.g.maplocalleader = vim.keycode "<Space>"
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true, desc = "Map space to no-op" })
 
--- Install nnn if not already installed
-local homedir = os.getenv "HOME"
-local path = vim.fs.joinpath(homedir, ".local", "bin", "nnn")
-local stat = vim.uv.fs_stat(path)
-
-if not (stat and stat.type == "file" and vim.fn.executable(path) == 1) then
-    vim.notify("Installing nnn ...", vim.log.levels.INFO)
-
-    -- Ensure ~/.local/bin exists
-    vim.fn.mkdir(homedir .. "/.local/bin", "p")
-
-    -- Install nnn
-    vim.fn.system(table.concat({
-        "git clone --depth 1 https://github.com/jarun/nnn",
-        "make -C nnn O_NERD=1 O_QSORT=1",
-        "mv nnn/nnn ~/.local/bin/",
-        "rm -rf nnn",
-    }, " && "))
-
-    vim.notify("nnn was successfully installed", vim.log.levels.INFO)
-end
-
 -- Install packages
 vim.pack.add({
     -- Fuzzy search
