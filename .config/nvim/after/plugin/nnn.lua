@@ -3,26 +3,39 @@
 -- License: MIT
 
 -- Install nnn if not already installed
-local homedir = os.getenv "HOME"
-local path = vim.fs.joinpath(homedir, ".local", "bin", "nnn")
-local stat = vim.uv.fs_stat(path)
+local function reinstall_nnn()
+    local homedir = os.getenv "HOME"
+    local path = vim.fs.joinpath(homedir, ".local", "bin", "nnn")
 
-if not (stat and stat.type == "file" and vim.fn.executable(path) == 1) then
-    vim.notify("Installing nnn ...", vim.log.levels.INFO)
+    -- Always reinstall (remove existing first if present)
+    if vim.uv.fs_stat(path) then
+        vim.notify("Removing existing nnn ...", vim.log.levels.INFO)
+        os.remove(path)
+    end
 
     -- Ensure ~/.local/bin exists
     vim.fn.mkdir(homedir .. "/.local/bin", "p")
 
     -- Install nnn
-    vim.fn.system(table.concat({
+    vim.notify("Installing nnn ...", vim.log.levels.INFO)
+    local cmd = table.concat({
         "git clone --depth 1 https://github.com/jarun/nnn",
         "make -C nnn O_NERD=1 O_QSORT=1",
         "mv nnn/nnn ~/.local/bin/",
         "rm -rf nnn",
-    }, " && "))
+    }, " && ")
+
+    local result = vim.fn.system(cmd)
+
+    if vim.v.shell_error ~= 0 then
+        vim.notify("Failed to install nnn:\n" .. result, vim.log.levels.ERROR)
+        return
+    end
 
     vim.notify("nnn was successfully installed", vim.log.levels.INFO)
 end
+
+vim.api.nvim_create_user_command("NNNReinstall", reinstall_nnn, {})
 
 -- nnn.nvim setup
 require("nnn").setup {
