@@ -258,10 +258,10 @@ bindkey -s "^z" "fg\n"
 
 # }}}
 
-# Launch tmux {{{
+# Launch tmux (optional) {{{
 
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach -t main || tmux new -s main
-fi
+# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#     tmux attach -t main || tmux new -s main
+# fi
 
 # }}}
