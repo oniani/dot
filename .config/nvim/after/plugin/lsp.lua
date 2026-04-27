@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         lsp_keymap_set("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
         lsp_keymap_set("gr", vim.lsp.buf.references, "[G]oto [R]eferences")
 
-        vim.diagnostic.config { jump = { float = true } }
+        vim.diagnostic.config { jump = { on_jump = vim.diagnostic.open_float } }
         lsp_keymap_set("dl", vim.diagnostic.setqflist, "[D]iagnostic [L]ist")
         lsp_keymap_set("dn", function()
             vim.diagnostic.jump { count = 1 }
