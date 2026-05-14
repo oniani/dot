@@ -221,7 +221,7 @@ function n() {
 #   gl <commit-ish>  -> shows that commit (branch, tag, hash, etc.)
 #   gl <number>      -> shows HEAD~<number> (0 = current commit)
 # Falls back to error if input is neither a valid commit nor a number
-gl() {
+function gl() {
     emulate -L zsh
 
     local arg=${1:-0}
