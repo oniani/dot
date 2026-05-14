@@ -172,7 +172,6 @@ alias xa="latexmk -interaction=nonstopmode -pdf -pvc -outdir=target"
 # Interactive
 alias e="nvim"
 alias g="nvim +Git +only"
-alias gl="nvim '+Git log --stat' +only"
 alias j="python -m jupyterlab"
 alias p="ipython -i --InteractiveShellApp.exec_lines='import numpy as np; import polars as pl; import scipy; import torch;'"
 alias t="tmux"
@@ -215,6 +214,26 @@ function n() {
         . "$NNN_TMPFILE"
         rm -f -- "$NNN_TMPFILE" > /dev/null
     }
+}
+
+# gl: show a single git commit
+# Usage:
+#   gl <commit-ish>  -> shows that commit (branch, tag, hash, etc.)
+#   gl <number>      -> shows HEAD~<number> (0 = current commit)
+# Falls back to error if input is neither a valid commit nor a number
+gl() {
+    emulate -L zsh
+
+    local arg=${1:-0}
+
+    if git rev-parse --quiet --verify "$arg^{commit}" >/dev/null 2>&1; then
+        git --no-pager log --stat -n1 "$arg"
+    elif [[ $arg == <-> ]]; then
+        git --no-pager log --stat -n1 "HEAD~$arg"
+    else
+        echo "gl: invalid input '$arg' (not a commit or number)" >&2
+        return 1
+    fi
 }
 
 # Fuzzy find files
