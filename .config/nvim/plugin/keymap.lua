@@ -10,7 +10,6 @@ vim.keymap.set("n", "<Leader>w", "<Cmd>set wrap!<CR>", { desc = "Toggle line wra
 -- Convenient mappings
 vim.keymap.set("n", "N", "Nzz", { desc = "Move to the previous search result and center" })
 vim.keymap.set("n", "n", "nzz", { desc = "Move to the next search result and center" })
-vim.keymap.set("n", "yY", "<Cmd>%y<CR>", { desc = "Copy contents of the entire file" })
 vim.keymap.set({ "n", "v" }, "Q", "gw", { desc = "Format lines" })
 
 -- Window resizing
@@ -64,17 +63,6 @@ vim.api.nvim_create_user_command("F", function()
         )
     end
 end, { desc = "Format buffer and restore the view" })
-
--- Web search
-vim.keymap.set("n", "gX", function()
-    vim.ui.open(("https://google.com/search?q=%s"):format(vim.fn.expand "<cword>"))
-end, { desc = "Web Search (Normal Mode)" })
-
-vim.keymap.set("x", "gX", function()
-    local region = vim.fn.getregion(vim.fn.getpos ".", vim.fn.getpos "v", { type = vim.fn.mode() })
-    vim.ui.open(("https://google.com/search?q=%s"):format(vim.trim(table.concat(region, " "))))
-    vim.api.nvim_input "<esc>"
-end, { desc = "Web Search (Visual Mode)" })
 
 -- Undotree
 vim.keymap.set("n", "<Leader>u", function()
