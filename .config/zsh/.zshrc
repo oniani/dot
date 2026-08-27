@@ -153,33 +153,33 @@ zle -N zle-line-init
 # Aliases {{{
 
 # Core commands
-alias :q="exit"
-alias cal="cal -3"
-alias diff="diff --color=auto"
-alias doc2pdf="libreoffice --headless --invisible --norestore --convert-to pdf"
-alias grep="grep --color=auto"
-alias icat="kitty +kitten icat"
-alias img="viu"
-alias j2py="jupyter nbconvert --to script"
-alias l="gls -Av --color=auto --group-directories-first"
-alias ll="gls -Ahlv --color=auto --group-directories-first"
-alias s3="aws s3"
-alias s3size="aws s3 ls --summarize --human-readable --recursive"
-alias wget="wget --show-progress"
-alias x="latexmk -interaction=nonstopmode -pdf -outdir=target"
-alias xa="latexmk -interaction=nonstopmode -pdf -pvc -outdir=target"
+alias :q='exit'
+alias cal='cal -3'
+alias diff='diff --color=auto'
+alias doc2pdf='libreoffice --headless --invisible --norestore --convert-to pdf'
+alias grep='grep --color=auto'
+alias icat='kitty +kitten icat'
+alias img='viu'
+alias j2py='jupyter nbconvert --to script'
+alias l='gls -Av --color=auto --group-directories-first'
+alias ll='gls -Ahlv --color=auto --group-directories-first'
+alias s3='aws s3'
+alias s3size='aws s3 ls --summarize --human-readable --recursive'
+alias wget='wget --show-progress'
+alias x='latexmk -interaction=nonstopmode -pdf -outdir=target'
+alias xa='latexmk -interaction=nonstopmode -pdf -pvc -outdir=target'
 
 # Interactive
-alias e="nvim"
-alias g="nvim +Git +only"
-alias j="python -m jupyterlab"
+alias e='nvim'
+alias g='nvim +Git +only'
+alias j='python -m jupyterlab'
 alias p="ipython -i --InteractiveShellApp.exec_lines='import numpy as np; import polars as pl; import scipy; import torch;'"
-alias t="tmux"
+alias t='tmux'
 
 # Safer commands
-alias cp="cp -i"
-alias mv="mv -i"
-alias rm="rm -i"
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
 
 # }}}
 

@@ -5,10 +5,17 @@ jinja2
 jupyterlab
 matplotlib
 numpy
+onnx
+onnx-tool
+onnxruntime
+onnxruntime-genai
 pandas
 polars
 scikit-learn
 scipy
+sentence-transformers
+tokenizers
 torch
 torchaudio
 torchvision
+transformers

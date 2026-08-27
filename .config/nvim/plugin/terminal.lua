@@ -20,4 +20,4 @@ vim.keymap.set("n", "T", function()
     vim.cmd.term()
 end)
 
-vim.keymap.set("t", "<Esc><Esc>", "<c-\\><c-n>", { desc = "Simpler escape" })
+vim.keymap.set("t", "<Esc><Esc>", "<c-\\><c-n>", { desc = "Terminal escape" })
