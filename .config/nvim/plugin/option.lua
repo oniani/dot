@@ -40,7 +40,6 @@ vim.o.showmode = false
 vim.o.signcolumn = "yes"
 vim.o.splitkeep = "screen"
 vim.o.synmaxcol = 256
-vim.o.termguicolors = true
 vim.o.textwidth = 100
 
 -- Miscellaneous

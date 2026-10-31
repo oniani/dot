@@ -8,15 +8,13 @@ vim.api.nvim_create_autocmd("TermOpen", {
     callback = function()
         vim.bo.filetype = "terminal"
         vim.cmd.startinsert()
-        vim.opt_local.number = false
-        vim.opt_local.signcolumn = "no"
     end,
 })
 
 vim.keymap.set("n", "T", function()
     vim.wo.winfixheight = true
     vim.cmd.new()
-    vim.api.nvim_win_set_height(0, 12)
+    vim.api.nvim_win_resize(0, -1, 12)
     vim.cmd.term()
 end)
 

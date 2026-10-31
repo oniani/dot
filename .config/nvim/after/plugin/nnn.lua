@@ -4,17 +4,18 @@
 
 -- Install nnn if not already installed
 local function reinstall_nnn()
-    local homedir = os.getenv "HOME"
-    local path = vim.fs.joinpath(homedir, ".local", "bin", "nnn")
+    local homedir = vim.env.HOME
+    local bindir = vim.fs.joinpath(homedir, ".local", "bin")
+    local path = vim.fs.joinpath(bindir, "nnn")
 
     -- Always reinstall (remove existing first if present)
     if vim.uv.fs_stat(path) then
         vim.notify("Removing existing nnn ...", vim.log.levels.INFO)
-        os.remove(path)
+        vim.fs.rm(path, { force = true })
     end
 
     -- Ensure ~/.local/bin exists
-    vim.fn.mkdir(homedir .. "/.local/bin", "p")
+    vim.fs.mkdir(bindir, { parents = true })
 
     -- Install nnn
     vim.notify("Installing nnn ...", vim.log.levels.INFO)

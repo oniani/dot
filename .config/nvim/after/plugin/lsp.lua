@@ -2,12 +2,22 @@
 -- Description: Neovim configuration file
 -- License: MIT
 
+local border = { border = "single" }
+
+vim.diagnostic.config {
+    float = border,
+    jump = { on_jump = vim.diagnostic.open_float },
+    virtual_text = false,
+}
+
+vim.lsp.semantic_tokens.enable(false)
+
 vim.api.nvim_create_autocmd("LspAttach", {
     desc = "LSP configuration on attach",
     group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
     callback = function(event)
         local lsp_keymap_set = function(keys, func, desc)
-            vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+            vim.keymap.set("n", keys, func, { buf = event.buf, desc = "LSP: " .. desc })
         end
 
         lsp_keymap_set("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
@@ -15,7 +25,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
         lsp_keymap_set("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
         lsp_keymap_set("gr", vim.lsp.buf.references, "[G]oto [R]eferences")
 
-        vim.diagnostic.config { jump = { on_jump = vim.diagnostic.open_float } }
         lsp_keymap_set("dl", vim.diagnostic.setqflist, "[D]iagnostic [L]ist")
         lsp_keymap_set("dn", function()
             vim.diagnostic.jump { count = 1 }
@@ -28,9 +37,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
         lsp_keymap_set("ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
         lsp_keymap_set("rn", vim.lsp.buf.rename, "[R]e[N]ame")
 
-        local border = { border = "single" }
-        lsp_keymap_set("K", function() vim.lsp.buf.hover(border) end, "Hover Documentation")
-        vim.diagnostic.config { float = border, virtual_text = false }
+        lsp_keymap_set("K", function()
+            vim.lsp.buf.hover(border)
+        end, "Hover Documentation")
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
@@ -38,16 +47,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
                 vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, "Toggle Inlay [H]ints")
         end
-
-        if client then
-            client.server_capabilities.semanticTokensProvider = nil
-        end
     end,
 })
 
 local servers = {
     bashls = {},
-    clangd = {},
+    clangd = {
+        init_options = {
+            fallbackFlags = { "-std=c++23" },
+        },
+    },
     cmake = {},
     lua_ls = {
         settings = {
@@ -111,31 +120,12 @@ blink.setup {
 local capabilities = {
     textDocument = { foldingRange = { dynamicRegistration = false, lineFoldingOnly = true } },
 }
-capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+capabilities = blink.get_lsp_capabilities(capabilities)
 
-for server_name, _ in pairs(servers) do
-    -- NOTE: 'ty' LSP server does not support init_options or settings
-    if server_name == "ty" then
-        vim.lsp.config[server_name] = { capabilities = capabilities }
-    elseif server_name == "clangd" then
-        vim.lsp.config[server_name] = {
-            capabilities = capabilities,
-            settings = servers[server_name].settings or {},
-            init_options = {
-                documentFormatting = true,
-                settings = (servers[server_name].init_options or {}).settings or {},
-                fallbackFlags = { "-std=c++23" },
-            },
-        }
-    else
-        vim.lsp.config[server_name] = {
-            capabilities = capabilities,
-            settings = servers[server_name].settings or {},
-            init_options = {
-                documentFormatting = true,
-                settings = (servers[server_name].init_options or {}).settings or {},
-            },
-        }
-    end
-    vim.lsp.enable(server_name)
+vim.lsp.config("*", { capabilities = capabilities })
+
+for server_name, server_config in pairs(servers) do
+    vim.lsp.config(server_name, server_config)
 end
+
+vim.lsp.enable(vim.tbl_keys(servers))

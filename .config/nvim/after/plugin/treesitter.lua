@@ -16,8 +16,8 @@ local function try_attach(buf, lang)
 
     vim.treesitter.start(buf, lang)
 
-    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-    vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+    vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
 end
 
 --- Handle FileType events to attach Treesitter.

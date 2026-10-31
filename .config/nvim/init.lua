@@ -6,7 +6,7 @@
 vim.loader.enable()
 
 -- Disable some rtp plugins for perf improvement
-local disabled_builtins = { "gzip", "netrw", "netrwPlugin", "tar", "tarPlugin", "zip", "zipPlugin" }
+local disabled_builtins = { "gzip", "netrw", "netrwPlugin", "nvim_zip_plugin", "tar", "tarPlugin" }
 for _, name in ipairs(disabled_builtins) do
     vim.g["loaded_" .. name] = 1
 end
@@ -40,9 +40,9 @@ vim.pack.add({
 
     -- LSP
     { src = "https://github.com/neovim/nvim-lspconfig" },
-    { src = "https://github.com/williamboman/mason-lspconfig.nvim" },
-    { src = "https://github.com/williamboman/mason.nvim" },
-    { src = "https://github.com/saghen/blink.cmp", version = "v1.10.1" },
+    { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
+    { src = "https://github.com/mason-org/mason.nvim" },
+    { src = "https://github.com/saghen/blink.cmp", version = vim.version.range "1.x" },
 
     -- Nerd Font icons (glyphs)
     { src = "https://github.com/nvim-tree/nvim-web-devicons" },
@@ -50,6 +50,5 @@ vim.pack.add({
 
 -- Command for updating all packages
 vim.api.nvim_create_user_command("PackUpdate", function()
-    vim.pack.update()
-    vim.cmd.write()
+    vim.pack.update(nil, { force = true })
 end, { desc = "Update all plugins" })
