@@ -1,3 +1,4 @@
+brew "antigravity-cli"
 brew "atool"
 brew "awscli"
 brew "bat"
