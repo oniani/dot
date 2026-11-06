@@ -1,0 +1,197 @@
+#!/usr/bin/env python3
+"""CLI utility for inspecting schemas, previewing rows, and concatenating datasets."""
+
+from __future__ import annotations
+
+import argparse
+import sys
+from collections.abc import Sequence
+from pathlib import Path
+
+import polars as pl
+
+SUPPORTED_EXTENSIONS = ".parquet, .pq, .csv, .tsv, .ndjson, .jsonl, .ipc, .arrow, .feather, .json"
+MAX_HEAD_ARGS = 2
+MIN_CONCAT_ARGS = 2
+
+
+def scan_dataset(path: Path) -> pl.LazyFrame:
+    """Create a Polars LazyFrame from a file path based on its extension."""
+
+    if not path.exists():
+        msg = f"File not found: {path}"
+        raise FileNotFoundError(msg)
+
+    ext = path.suffix.lower().lstrip(".")
+    if ext in ("parquet", "pq"):
+        return pl.scan_parquet(path)
+    if ext == "csv":
+        return pl.scan_csv(path)
+    if ext == "tsv":
+        return pl.scan_csv(path, separator="\t")
+    if ext in ("ndjson", "jsonl"):
+        return pl.scan_ndjson(path)
+    if ext in ("ipc", "arrow", "feather"):
+        return pl.scan_ipc(path)
+    if ext == "json":
+        return pl.read_json(path).lazy()
+
+    msg = (
+        f"Unsupported file extension '{path.suffix}' for '{path}'. "
+        f"Supported extensions: {SUPPORTED_EXTENSIONS}"
+    )
+    raise ValueError(msg)
+
+
+def write_dataset(lf: pl.LazyFrame, path: Path) -> None:
+    """Write a Polars LazyFrame to disk based on the output file extension."""
+
+    ext = path.suffix.lower().lstrip(".")
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    if ext in ("parquet", "pq"):
+        lf.sink_parquet(path)
+    elif ext == "csv":
+        lf.sink_csv(path)
+    elif ext == "tsv":
+        lf.sink_csv(path, separator="\t")
+    elif ext in ("ndjson", "jsonl"):
+        lf.sink_ndjson(path)
+    elif ext in ("ipc", "arrow", "feather"):
+        lf.sink_ipc(path)
+    elif ext == "json":
+        lf.collect().write_json(path)
+    else:
+        msg = (
+            f"Unsupported output extension '{path.suffix}' for '{path}'. "
+            f"Supported extensions: {SUPPORTED_EXTENSIONS}"
+        )
+        raise ValueError(msg)
+
+
+def show_schema(path: Path) -> None:
+    """Print the schema of the dataset."""
+
+    lf = scan_dataset(path)
+    schema = lf.collect_schema()
+    for name, dtype in schema.items():
+        print(f"{name}: {dtype}")
+
+
+def show_head(path: Path, n: int = 5) -> None:
+    """Print the first n rows of the dataset."""
+
+    if n < 0:
+        msg = f"Row count must be non-negative, got {n}"
+        raise ValueError(msg)
+
+    lf = scan_dataset(path)
+    with pl.Config(tbl_cols=-1, tbl_width_chars=1000):
+        print(lf.head(n).collect())
+
+
+def concat_datasets(inputs: Sequence[Path], output: Path) -> None:
+    """Validate identical schemas across input datasets and concatenate into output."""
+
+    if not inputs:
+        msg = "At least one input file is required for concatenation."
+        raise ValueError(msg)
+
+    resolved_output = output.resolve()
+    for path in inputs:
+        if path.exists() and path.resolve() == resolved_output:
+            msg = f"Output file '{output}' cannot be one of the input files."
+            raise ValueError(msg)
+
+    lazy_frames: list[pl.LazyFrame] = []
+    reference_path = inputs[0]
+    reference_lf = scan_dataset(reference_path)
+    reference_schema = reference_lf.collect_schema()
+    lazy_frames.append(reference_lf)
+
+    for path in inputs[1:]:
+        lf = scan_dataset(path)
+        schema = lf.collect_schema()
+        if schema != reference_schema:
+            msg = (
+                f"Schema mismatch between '{reference_path}' and '{path}':\n"
+                f"  {reference_path}: {dict(reference_schema)}\n"
+                f"  {path}: {dict(schema)}"
+            )
+            raise ValueError(msg)
+        lazy_frames.append(lf)
+
+    unified = pl.concat(lazy_frames, how="vertical")
+    write_dataset(unified, output)
+    print(f"Concatenated {len(inputs)} file(s) -> {output}")
+
+
+def build_parser() -> argparse.ArgumentParser:
+    """Build and return the command-line argument parser."""
+
+    parser = argparse.ArgumentParser(
+        prog="pltool",
+        description=(
+            "Inspect schemas, preview rows, and concatenate datasets across formats using Polars."
+        ),
+    )
+
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument(
+        "--head",
+        nargs="+",
+        metavar=("FILE", "ROWS"),
+        help="Display the first N rows (default: 5) of the input dataset.",
+    )
+    group.add_argument(
+        "--schema",
+        metavar="FILE",
+        type=Path,
+        help="Display the schema of the input dataset.",
+    )
+    group.add_argument(
+        "--concat",
+        nargs="+",
+        metavar="FILE",
+        type=Path,
+        help=("Concatenate multiple input datasets into a single output dataset (last argument)."),
+    )
+
+    return parser
+
+
+def main(argv: Sequence[str] | None = None) -> int:
+    """Parse CLI arguments and run the requested command."""
+
+    parser = build_parser()
+    args = parser.parse_args(argv)
+
+    try:
+        if args.head is not None:
+            if len(args.head) > MAX_HEAD_ARGS:
+                parser.error("--head accepts at most 2 arguments: FILE [ROWS].")
+            head_path = Path(args.head[0])
+            rows = 5
+            if len(args.head) == MAX_HEAD_ARGS:
+                try:
+                    rows = int(args.head[1])
+                except ValueError:
+                    parser.error(f"--head row count must be an integer, got '{args.head[1]}'.")
+            show_head(head_path, n=rows)
+        elif args.schema is not None:
+            show_schema(args.schema)
+        elif args.concat is not None:
+            if len(args.concat) < MIN_CONCAT_ARGS:
+                parser.error("--concat requires at least one input file and one output file.")
+            inputs = args.concat[:-1]
+            output = args.concat[-1]
+            concat_datasets(inputs, output)
+    except (OSError, ValueError, pl.exceptions.PolarsError) as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 1
+
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
